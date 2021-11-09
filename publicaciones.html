@@ -1,0 +1,977 @@
+<!doctype html>
+<html lang="es">
+   <head>
+      <!--Favicon-->
+      <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+      <!-- meta tags -->
+      <meta charset="utf-8">
+      <meta name="revisit-after" content="1 hour">
+      <meta name="distribution" content="all">
+      <meta
+         name="viewport"
+         content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.5, user-scalable=yes">
+      <meta name="expires" content="1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="robots" content="all">
+      <meta http-equiv="cache-control" content="no-cache" />
+      <!-- CSS -->
+      <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/frontend.css" rel="stylesheet">
+      <link href="node_modules/open-iconic/font/css/open-iconic-bootstrap.min.css"  rel="stylesheet">
+      <link href="css/accesibilidad.css" rel="stylesheet">
+      <title>Publicaciones - PLaS</title>
+   </head>
+   <body>
+      <header>
+         <div class="logo">
+            <a href="https://unal.edu.co">
+               <div class="svg">
+                  <img
+                     src="images/escudoUnal.svg"
+                     class="d-print-none img-fluid"
+                     alt="Escudo de la Universidad Nacional de Colombia"/>
+               </div>
+            </a>
+            <div style="position: absolute; top :1px; width: 60px;" class="d-none d-print-block">
+               <img
+                  src="images/escudoUnal_black.png"
+                  class="d-none d-print-block"
+                  alt="Escudo de la Universidad Nacional de Colombia"
+                  />
+            </div>
+         </div>
+         <div id="pestania-accesibilidad-mobile" class="d-block d-md-none"></div>
+         <div class="seal">
+            <img
+               class="d-print-none"
+               alt="Escudo de la República de Colombia"
+               src="images/sealColombia.png"
+               width="66"
+               height="66"/>
+            
+         </div>
+         <!--menú contextual-->
+         <div class="firstMenu ">
+            <div class="content-fluid">
+               <!--prueba navbar-->
+               <!--fin de prueba navbar-->
+               <nav class="navbar nav navbar-toggler navbar-expand-md navbar-dark">
+                  <!-- perfiles -->
+                  <button
+                     class="navbar-toggler"
+                     type="button"
+                     data-bs-toggle="collapse"
+                     data-bs-target="#navbarSupportedContent"
+                     aria-controls="navbarScroll"
+                     aria-expanded="false"
+                     aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class=" collapse navbar-collapse navbar-default"  >
+                     <nav id="profiles">
+                        <ul class="me-auto nav justify-content-end">
+                           <li class="nav-item item_Aspirantes ">
+                              <a href="http://aspirantes.unal.edu.co">Aspirantes</a>
+                           </li>
+                           <li class="nav-item item_Estudiantes">
+                              <a href="http://estudiantes.unal.edu.co">Estudiantes</a>
+                           </li>
+                           <li class="nav-item item_Egresados">
+                              <a href="http://egresados.unal.edu.co">Egresados</a>
+                           </li>
+                           <li class="nav-item item_Docentes">
+                              <a href="http://docentes.unal.edu.co">Docentes</a>
+                           </li>
+                           <li class="nav-item item_Administrativos">
+                              <a href="http://administrativos.unal.edu.co">Administrativos</a>
+                           </li>
+                        </ul>
+                     </nav>
+                  </div>
+                  <!-- redes sociales -->
+                  <ul class="socialLinks d-none d-md-block">
+                     <li >
+                        <a
+                           href="https://www.facebook.com/UNALOficial"
+                           target="_blank"
+                           class="facebook"
+                           title="Página oficial en Facebook"></a>
+                     </li>
+                     <li>
+                        <a
+                           href="https://twitter.com/UNALOficial"
+                           target="_blank"
+                           class="twitter"
+                           title="Cuenta oficial en Twitter"></a>
+                     </li>
+                     <li>
+                        <a
+                           href="https://www.youtube.com/channel/UCnE6Zj2llVxcvL5I38B0Ceg"
+                           target="_blank"
+                           class="youtube"
+                           title="Canal oficial de Youtube"></a>
+                     </li>
+                  </ul>
+                  <!-- idioma -->
+                  <div class="btn-group d-print-none">
+                     <button
+                        type="button"
+                        class="btn btn-secondary dropdown-toggle language-button"
+                        data-bs-toggle="dropdown"
+                        data-bs-display="static"
+                        aria-expanded="false">
+                     ES
+                     </button>
+                     <ul
+                        class="dropdown-menu dropdown-menu-start dropdown-menu-lg-start language-dropdown">
+                        <li>
+                           <a class="dropdown-item" href="#">EN - English</a>
+                        </li>
+                        <li>
+                           <a class="dropdown-item" href="#">GUC - Wayuunaiki</a>
+                        </li>
+                        <li>
+                           <a class="dropdown-item" href="#">PBB - Nasa yuwe</a>
+                        </li>
+                     </ul>
+                  </div>
+               </nav>
+            </div>
+         </div>
+         <!-- Menú inferior -->
+         <div id="bs-navbar" class="navigation ">
+            <!-- Título del sitio -->
+            <div class="container-fluid myb d-print-inline-block">
+               <div class="site-url row d-print-none" id="subdominio">
+                  <span class="oi oi-map-marker"></span>
+                  <a href="https://ingenieria.bogota.unal.edu.co/" target="_blank">ingenieria.bogota.unal.edu.co</a>
+               </div>
+               <!-- Buscador-->
+               <div class="buscador row" id="buscador"></div>
+            </div>
+            <!-- Main menu -->
+            <nav class="navbar navbar-expand-md navbar-dark menuPrincipal">
+               <div class="container-fluid">
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav">
+                          <li class="nav-item">
+                              <a class="nav-link" href="index.html">Inicio</a>
+                          </li>
+                          <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle"
+                                 href="#"
+                                 role="button"
+                                 data-bs-toggle="dropdown"
+                                 aria-expanded="false">
+                                  Líneas de Investigación
+                              </a>
+                              <ul class="dropdown-menu">
+                                  <li>
+                                      <a class="dropdown-item" href="lenguajes.html">Lenguajes de programación</a>
+                                  </li>
+                                  <li>
+                                      <a class="dropdown-item" href="educacion.html">Educación en ingeniería</a>
+                                  </li>
+                                  <li>
+                                      <a class="dropdown-item" href="embebidos.html">Sistemas embebidos confiables</a>
+                                  </li>
+                                  <li>
+                                      <a class="dropdown-item" href="transporte.html">Sistemas Inteligentes de Transporte - ITS</a>
+                                  </li>
+                                  <li>
+                                      <a class="dropdown-item" href="agricultura.html">Agricultura de precisión</a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="integrantes.html">Integrantes</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="proyectos.html">Proyectos</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="publicaciones.html">Publicaciones</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="contactenos.html">Contáctenos</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="collapse navbar-collapse menuSedes" id="navbarSupportedContent">
+                     <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                           <a
+                              class="nav-link dropdown-toggle"
+                              href="#"
+                              
+                              role="button"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false">
+                           Sedes
+                           </a>
+                           <ul class="dropdown-menu" id="sedes">
+                              <li>
+                                 <a class="dropdown-item" href="http://amazonia.unal.edu.co" target="_blank">Amazonia</a>
+                                 <span class="caret-right"></span>
+                              </li>
+                              <li>
+                                 <a class="dropdown-item" href="http://bogota.unal.edu.co" target="_blank">Bogotá</a>
+                                 <span class="caret-right"></span>
+                              </li>
+                              <li>
+                                 <a class="dropdown-item" href="http://caribe.unal.edu.co" target="_blank">Caribe</a>
+                                 <span class="caret-right"></span>
+                              </li>
+                              <li>
+                                 <a class="dropdown-item" href="http://delapaz.unal.edu.co" target="_blank">De La Paz</a>
+                                 <span class="caret-right"></span>
+                              </li>
+                              <li>
+                                 <a
+                                    class="dropdown-item"
+                                    href="http://www.manizales.unal.edu.co"
+                                    target="_blank">Manizales</a>
+                                 <span class="caret-right"></span>
+                              </li>
+                              <li>
+                                 <a class="dropdown-item" href="http://medellin.unal.edu.co" target="_blank">Medellín</a>
+                                 <span class="caret-right"></span>
+                              </li>
+                              <li>
+                                 <a class="dropdown-item" href="http://orinoquia.unal.edu.co" target="_blank">Orinoquia</a>
+                                 <span class="caret-right"></span>
+                              </li>
+                              <li>
+                                 <a class="dropdown-item" href="http://www.palmira.unal.edu.co" target="_blank">Palmira</a>
+                                 <span class="caret-right"></span>
+                              </li>
+                              <li>
+                                 <a
+                                    class="dropdown-item"
+                                    href="http://tumaco-pacifico.unal.edu.co"
+                                    target="_blank">Tumaco</a>
+                                 <span class="caret-right"></span>
+                              </li>
+                           </ul>
+                        </li>
+                     </ul>
+                     <div class="collapse navbar-collapse menuProfiles" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                           <li class="nav-item dropdown">
+                              <a
+                                 class="nav-link dropdown-toggle"
+                                 href="#"
+                                 
+                                 role="button"
+                                 data-bs-toggle="dropdown"
+                                 aria-expanded="false">
+                              Perfiles
+                              </a>
+                              <ul class="dropdown-menu" >
+                                 <li class="nav-item item_Aspirantes ">
+                                    <a href="http://aspirantes.unal.edu.co">Aspirantes</a>
+                                 </li>
+                                 <li class="nav-item item_Estudiantes">
+                                    <a href="http://estudiantes.unal.edu.co">Estudiantes</a>
+                                 </li>
+                                 <li class="nav-item item_Egresados">
+                                    <a href="http://egresados.unal.edu.co">Egresados</a>
+                                 </li>
+                                 <li class="nav-item item_Docentes">
+                                    <a href="http://docentes.unal.edu.co">Docentes</a>
+                                 </li>
+                                 <li class="nav-item item_Administrativos">
+                                    <a href="http://administrativos.unal.edu.co">Administrativos</a>
+                                 </li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="collapse navbar-collapse menuServices" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                           <li class="nav-item dropdown">
+                              <a
+                                 class="nav-link dropdown-toggle"
+                                 href="#"
+                                 
+                                 role="button"
+                                 data-bs-toggle="dropdown"
+                                 aria-expanded="false">
+                              Servicios
+                              </a>
+                              <ul class="dropdown-menu" id="servicios">
+                                 <li>
+                                    <a href="http://correo.unal.edu.co" target="_blank"><img
+                                       src="images/icnServEmail.png"
+                                       width="32"
+                                       height="32"
+                                       alt="Correo Electrónico">Correo Electrónico</a>
+                                 </li>
+                                 <li>
+                                    <a href="https://dninfoa.unal.edu.co" target="_blank"><img
+                                       src="images/icnServSia.png"
+                                       width="32"
+                                       height="32"
+                                       alt="Dirección Nacional de Información Académica">DNINFOA - SIA</a>
+                                 </li>
+                                 <li>
+                                    <a href="http://bibliotecas.unal.edu.co" target="_blank"><img src="images/icnServLibrary.png" width="32" height="32" alt="Biblioteca">Bibliotecas</a>
+                                 </li>
+                                 <li>
+                                    <a href="http://personal.unal.edu.co" target="_blank"><img src="images/icnServCall.png" width="32" height="32" alt="Convocatorias">Convocatorias</a>
+                                 </li>
+                                 <li>
+                                    <a href="http://identidad.unal.edu.co"><img
+                                       src="images/icnServIdentidad.png"
+                                       width="32"
+                                       height="32"
+                                       alt="Identidad UNAL">Identidad UNAL</a>
+                                 </li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </nav>
+         </div>
+      </header>
+      <!-- Panel de accesibilidad -->
+      <div class="tx-unal-accesibilidad d-print-none">
+         <!-- defaultpanel -->
+         <div
+            id="panel-accesibilidad"
+            style="display:none"
+            class="panel-content container-fluid">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="row">
+                     <div class="col-md-3 ">
+                        <h4>Tamaño letra</h4>
+                        <button
+                           class="boton-panel"
+                           id="letra-disminuir"
+                           onclick="cambiarTamanioLetra('-')"
+                           type="submit"
+                           name="Disminuir letra"
+                           value="">A<sup>-</sup>
+                        </button>
+                        <button
+                           class="boton-panel"
+                           id="letra-aumentar"
+                           onclick="cambiarTamanioLetra('+')"
+                           type="submit"
+                           name="Aumentar Letra"
+                           value="">
+                        A<sup>+</sup>
+                        </button>
+                        <input
+                           disabled="1"
+                           class="letras-porcentaje"
+                           id="letter-percent"
+                           type="text"
+                           name="Porcentaje de letra"
+                           value="100%">
+                     </div>
+                     <div class="col-md-3 ">
+                        <h4>Cambiar Contrastes</h4>
+                        <button
+                           class="boton-panel"
+                           id="contraste-1"
+                           onclick="cambiarContrastes(1)"
+                           type="submit"
+                           name="Cambiar contraste 1"
+                           value="">1
+                        </button>
+                        <button
+                           class="boton-panel"
+                           id="contraste-2"
+                           onclick="cambiarContrastes(2)"
+                           type="submit"
+                           name="Cambiar contraste 2"
+                           value="">2
+                        </button>
+                        <button
+                           class="boton-panel"
+                           id="contrate-3"
+                           onclick="cambiarContrastes(3)"
+                           type="submit"
+                           name="Cambiar contraste 3"
+                           value="">3
+                        </button>
+                     </div>
+                     <div class="col-md-3 ">
+                        <h4>Invertir colores</h4>
+                        <button
+                           class="boton-panel"
+                           id="inversor"
+                           onclick="invertirColores()"
+                           type="submit"
+                           name="Invertir colores"
+                           value="">Aplicar
+                        </button>
+                     </div>
+                     <div class="col-md-3">
+                        <h4>Restablecer ajustes</h4>
+                        <button
+                           class="boton-panel"
+                           id="defaul-config"
+                           onclick="defaultConfig()"
+                           type="submit"
+                           name="Restablecer ajustes"
+                           value="">
+                        Aplicar
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="pestania-accesibilidad" class="">Panel de Accesibilidad</div>
+      </div>
+      <!--Pestaña de servicios-->
+      <div id="mySidebar"  class="sidebar hsidebar">
+         <div class="indicator d-none d-md-block"></div>
+         <ul id="services">
+            <li>
+               <a href="http://correo.unal.edu.co" target="_blank"><img
+                  src="images/icnServEmail.png"
+                  width="32"
+                  height="32"
+                  alt="Correo Electrónico">Correo Electrónico</a>
+            </li>
+            <li>
+               <a href="https://dninfoa.unal.edu.co" target="_blank"><img
+                  src="images/icnServSia.png"
+                  width="32"
+                  height="32"
+                  alt="Dirección Nacional de Información Académica">DNINFOA - SIA</a>
+            </li>
+            <li>
+               <a href="http://bibliotecas.unal.edu.co" target="_blank"><img src="images/icnServLibrary.png" width="32" height="32" alt="Biblioteca">Bibliotecas</a>
+            </li>
+            <li>
+               <a href="http://personal.unal.edu.co" target="_blank"><img src="images/icnServCall.png" width="32" height="32" alt="Convocatorias">Convocatorias</a>
+            </li>
+            <li>
+               <a href="http://identidad.unal.edu.co"><img
+                  src="images/icnServIdentidad.png"
+                  width="32"
+                  height="32"
+                  alt="Identidad UNAL">Identidad UNAL</a>
+            </li>
+         </ul>
+      </div>
+      <div id="main" class="hsidebar">
+         <div class="openbtn" id="openbtnId" onclick="toggleNav() "></div>
+      </div>
+      <main class="detalle">
+          <div class="breadcrumb-class d-print-none">
+              Está en:<a href="index.html" target="_self" title="Inicio">Inicio</a><img src="images/arrow.png" />
+              <span>Publicaciones</span>
+          </div>
+          &nbsp;
+          <h1 class="text-center">Publicaciones PLaS</h1>
+          &nbsp;
+          <div id="publicaciones" class="container p-4 border w-100 text-justify overflow-hidden">
+              <div class="row">
+                  <div class="col-3">
+                      <button class="btn d-block w-100 my-1 listado" data-bs-toggle="collapse" data-bs-target="#publicacion1">Lenguajes de programación</button>
+                      <button class="btn d-block w-100 my-1 listado" data-bs-toggle="collapse" data-bs-target="#publicacion2">Educación en ingeniería</button>
+                      <button class="btn d-block w-100 my-1 listado" data-bs-toggle="collapse" data-bs-target="#publicacion3">Sistemas embebidos confiables</button>
+                      <button class="btn d-block w-100 my-1 listado" data-bs-toggle="collapse" data-bs-target="#publicacion4">Sistemas Inteligentes de Transporte - ITS</button>
+                      <button class="btn d-block w-100 my-1 listado" data-bs-toggle="collapse" data-bs-target="#publicacion5">Agricultura de precisión</button>
+                  </div>
+                  <div class="col-9 d-inline-block align-top">
+                      <div id="publicacion1" class="collapse show" data-bs-parent="#publicaciones">
+                          <h4 class="fw-bold">Lenguajes de programación</h4>
+                          <hr />
+                          <h5 class="fw-bold">Libros:</h5>
+                          <h5 class="fw-bold">Capítulos de libros:</h5>
+                          <ul>
+                              <li>
+                                  Alfonso Hoyos Jean Pierre, Restrepo-Calle Felipe. Ch 9: Fast Prototyping of Web-Based Information Systems Using a Restricted Natural Language Specification. In: Damiani E., Spanoudakis G., Maciaszek L. (eds) Evaluation of Novel Approaches to Software Engineering. Communications in Computer and Information Science, vol 866. Springer, Cham. 2018.
+                              </li>
+                              <li>
+                                  Carlos G. Hidalgo S., Victor A. Bucheli, Felipe Restrepo-Calle , Fabio A. González. Ch 27: ""A Strategy Based on Technological Maps for the Identification of the State-of-the-Art Techniques in Software Development Projects: Virtual Judge Projects as a Case Study.". J. E. Serrano C. and J. C. Martínez-Santos (Eds.) Advances in Computing. CCC 2018. Communications in Computer and Information Science, vol 885, pp. 1–17, Springer, Cham. 2018.
+                              </li>
+                              <li>
+                                  Baquero J.F., Camargo J.E., Restrepo-Calle F., Aponte J.H., González F.A. ""Predicting the Programming Language: Extracting Knowledge from Stack Overflow Posts.". In: Solano A., Ordoñez H. (eds) Advances in Computing. CCC 2017. Communications in Computer and Information Science, vol 735. pp 199-210. Springer, Cham. 2017. DOI: 10.1007/978-3-319-66562-7_15
+                              </li>
+                          </ul>
+                          <h5 class="fw-bold">Artículos de revista:</h5>
+                          <ul>
+                              <li>
+                                  Ingrid Sofía Echavarría-Flórez, F. Restrepo-Calle. "Métricas de legibilidad del código fuente: revisión sistemática de literatura," in Revista Facultad de Ingeniería, vol. 29, no. 54, p. e11756, Sep. 2020.
+                              </li>
+                          </ul>
+                          <h5 class="fw-bold">Artículos en conferencia internacional:</h5>
+                          <ul>
+                              <li>
+                                  Ivan Del Pozo, Mauricio Iturralde, and Felipe Restrepo. "Social engineering: Application of psychology to information security". In SoNet 2018: The International Symposium on Social Networks and Applications. Collocated with the IEEE 6th International Conference on Future Internet of Things and Cloud FiCloud 2018. pp. 108-114, Barcelona, Spain, 6-8 Aug, 2018. doi: 10.1109/W-FiCloud.2018.00023.
+                              </li>
+                              <li>
+                                  Óscar Garavito, Jairo Aponte, Felipe Restrepo-Calle, and Fabio González. "Towards a Developer's Reputation Model Based on Source Code Features". In Proceedings of the XXI Conference on Software Engineering CibSE 2018. Bogotá, Colombia, 2018, pp. 99-106.
+                              </li>
+                              <li>
+                                  Jean Pierre Alfonso Hoyos, and Felipe Restrepo-Calle. "Automatic Source Code Generation for Web-based Process-oriented Information Systems". In Proceedings of the 12th International Conference on Evaluation of Novel Approaches to Software Engineering - Volume 1: ENASE. Porto, Portugal. pages 103-113. 28th - 29th April, 2017. ISBN 978-989-758-250-9. DOI: 10.5220/0006333901030113
+                              </li>
+                              <li>
+                                  Francisco Rangel, Fabio A González, Felipe Restrepo-Calle, Manuel Montes, Paolo Rosso. "PAN at FIRE: Overview of the PR-SOCO Track on Personality Recognition in SOurce COde”. Working notes of FIRE. Dec 7-10. Kalkota, India. 2016.
+                              </li>
+                              <li>
+                                  Oscar Hernán Paruma-Pabón, Fabio A. González, Jairo Aponte, Jorge E. Camargo, and Felipe Restrepo-Calle. "Finding relationships between socio-technical aspects and personality traits by mining developer e-mails". 9th International Workshop on Cooperative and Human Aspects of Software Engineering (CHASE '16). Collocated with ICSE 2016. Austin, Texas, USA, May 16, 2016.
+                              </li>
+                          </ul>
+                          <h5 class="fw-bold">Artículos en conferencia a nivel nacional:</h5>
+                          <ul>
+                              <li>
+                                  Tesis doctoral: Security Assurance in the Architectural Evolution of Large Software Systems with Web Front-Ends. Autor: Jeisson Andrés Vergara Vargas.
+                              </li>
+                              <li>
+                                  Trabajo final de maestría: Métricas de legibilidad del software: una revisión sistemática de literatura. Autora: Sofía Echavarría Florez. 2019.
+                              </li>
+                              <li>
+                                  Tesis de maestría: Building a Developer’s Reputation Model for Programming Contest Platforms based on Source Code Analysis. Autor: Oscar Javier Garavito. 2019.
+                              </li>
+                              <li>
+                                  Tesis de maestría: Static Analysis of Python Programs using Abstract Interpretation: An Application to Tensor Shape Analysis. Autor: Elkin Alejandro Cruz. 2019.
+                              </li>
+                              <li>
+                                  Tesis de maestría: An information retrieval strategy for large multimodal data collections involving source code and natural language. Autor: Juan Felipe Baquero. 2019.
+                              </li>
+                              <li>
+                                  Trabajo final de maestría: Social engineering: psychology applied to Information Security. Autor: Iván Mauricio del Pozo. 2018.
+                              </li>
+                              <li>
+                                  Tesis de maestría: Prototipado automático de sistemas de información transaccionales usando una especificación en lenguaje natural restringido. Autor: Jean Pierre Alonso. 2017.
+                              </li>
+                              <li>
+                                  Tesis de maestría: Plataforma para la descripción en binario de documentos web. Autor: Sergio Herrera Villamil.
+                              </li>
+                              <li>
+                                  Tesis de maestría: Propuesta de una estrategia para la detección de vulnerabilidades de seguridad en el código fuente basada en técnicas de análisis automático, teniendo en cuenta estándares internacionales de ciberseguridad. Autor: Hermes Ricardo Narváez Terán.
+                              </li>
+                              <li>
+                                  Tesis de maestría: Study of code optimization strategies for symbolically defined mathematical expressions executed in computer algebra systems (CAS). Autor: Harry Alexis Sánchez Norato.
+                              </li>
+                          </ul>
+                      </div>
+                      <div id="publicacion2" class="collapse" data-bs-parent="#publicaciones">
+                          <h4 class="fw-bold">Educación en ingeniería</h4>
+                          <hr />
+                          <h5 class="fw-bold">Libros:</h5>
+                          <h5 class="fw-bold">Capítulos de libros:</h5>
+                          <h5 class="fw-bold">Artículos de revista:</h5>
+                          <ul>
+                              <li>
+                                  Sustainability 2021
+                              </li>
+                              <li>
+                                  C. G. Hidalgo Suarez, V. A. Bucheli Guerrero, F. Restrepo-Calle, F. A. González. "Estrategia de enseñanza basada en la colaboración y la evaluación automática de código fuente en un curso de programación CS1," in Investigación e Innovación en Ingenierías, vol. 9, no. 1, pp. 50-60, 2021.
+                              </li>
+                              <li>
+                                  F. Restrepo-Calle, JJ Ramírez Echeverry, FA González. "Using an Interactive Software Tool for the Formative and Summative Evaluation in a Computer Programming Course: an Experience Report," in Global Journal of Engineering Education, vol. 22, no. 3, pp. 174–185, 2020.
+                              </li>
+                              <li>
+                                  A. Fuster-Guilló, M.L. Pertegal-Felices, A. Jimeno-Morenilla, J. Azorín-López, M.L. Rico-Soliveres, and F. Restrepo-Calle. "Evaluating Impact on Motivation and Academic Performance of a Game-Based Learning Experience Using Kahoot," in Front. Psychol., 13 December 2019.
+                              </li>
+                              <li>
+                                  Felipe Restrepo-Calle, Jhon J. Ramírez Echeverry, Fabio A. González. "Continuous assessment in a computer programming course supported by a software tool," in Computer Applications in Engineering Education, Vol. 27, Issue 1, Pages 80-89, January 2019.
+                              </li>
+                              <li>
+                                  J. J. Ramírez Echeverry, L. F. Rosales-Castro, F. Restrepo-Calle and F. A. González, "Self-Regulated Learning in a Computer Programming Course," in IEEE Revista Iberoamericana de Tecnologías del Aprendizaje, vol. 13, no. 2, pp. 75-83, May 2018. doi: 10.1109/RITA.2018.2831758.
+                              </li>
+                              <li>
+                                  J. J. Ramírez Echeverry, L. F. Rosales-Castro, F. Restrepo-Calle and F. A. González, "Aprendizaje Autorregulado en un Curso de Programación de Computadores," in VAEP-RITA Versión Abierta Español-Portugués, Vol. 6, Num. 2, May 2018.
+                              </li>
+                          </ul>
+                          <h5 class="fw-bold">Artículos en conferencia internacional:</h5>
+                          <ul>
+                              <li>
+                                  LALA 2021 Edna
+                              </li>
+                              <li>
+                                  EDULEARN 2021 Karen
+                              </li>
+                              <li>
+                                  EDULEARN 2021 Jhon
+                              </li>
+                              <li>
+                                  K.D. Cuervo-Cely, J.J. Ramírez-Echeverry, F. Restrepo-Calle. "Computer-assisted Gamification in a Computer Programming Course: an Experience Report". In 13th annual International Conference of Education, Research and Innovation ICERI 2020. pp. 6006-6015, 9th - 10th of November, 2020.
+                              </li>
+                              <li>
+                                  Stephanie Torres Jiménez, Jhon Jairo Ramírez Echeverry, Felipe Restrepo Calle, Fabio González Osorio. "Diseño y validación de un instrumento de recolección de información y auto-reporte referente a las estrategias de Aprendizaje de Programación de Computadores". En Encuentro Internacional de Educación en Ingeniería ACOFI 2019. Cartagena, Colombia, 10-13th Sept 2019.
+                              </li>
+                              <li>
+                                  F. Restrepo-Calle, J.J. Ramírez-Echeverry, F.A. Gonzalez. "UNCode: Interactive system for learning and automatic evaluation of computer programming skills.". In Proceedings of the 10th annual International Conference on Education and New Learning Technologies EDULEARN 2018. Palma de Mallorca, Spain, 2nd-4th July 2018, pp. 6888-6898. doi: 10.21125/edulearn.2018.1632.
+                              </li>
+                              <li>
+                                  H. Castellanos, F. Restrepo-Calle, F. A. González and J. J. Ramirez Echeverry. "Understanding the relationships between self-regulated learning and students source code in a computer programming course". In Proceedings of the 2017 IEEE Frontiers in Education Conference (FIE). Indianapolis, IN, 2017, pp. 1-9. DOI: 10.1109/FIE.2017.8190467
+                              </li>
+                          </ul>
+                          <h5 class="fw-bold">Artículos en conferencia a nivel nacional:</h5>
+                          <h5 class="fw-bold">Software:</h5>
+                          <ul>
+                              <li>
+                                  UN Code: <a href="https://juezun.github.io/" target="_blank">Ir al sitio.</a>
+                              </li>
+                          </ul>
+                          <h5 class="fw-bold">Tesis:</h5>
+                          <ul>
+                              <li>
+                                  Tesis doctoral: Modelo de alerta tempran basado en la predicción del éxito académico de resultados de aprendizaje para disminuir la deserción en estudiantes de cursos de programación. Autor: José Miguel Llanos Mosquera
+                              </li>
+                              <li>
+                                  Tesis doctoral: título tesis Edgar. Autor: Edgar Hernando Criollo Velazquez.
+                              </li>
+                              <li>
+                                  Tesis de maestría: Evaluación del efecto de un laboratorio híbrido en el aprendizaje de un Lenguaje de Descripción de Hardware (HDL). Autor: Father Alexander Rodriguez Pinto
+                              </li>
+                              <li>
+                                  Tesis de maestría: Analítica de aprendizaje en la asignatura Programación de Computadores: una investigación basada en métodos mixtos. Autora: Edna Johanna Chaparro Amaya. 2022.
+                              </li>
+                              <li>
+                                  Tesis de maestría: Evaluación del impacto en la motivación en el aprendizaje de los estudiantes de programación de computadores mediante el uso de una herramienta de evaluación automática. Autor: Hernán Darío Lozano Rojas. 2022.
+                              </li>
+                              <li>
+                                  Trabajo final de maestría: Prototipo de una Herramienta de Software de Calificación Automática con Proceso de Realimentación para el Apoyo al Aprendizaje de Lenguajes de Descripción de Hardware. Autor: Andrés Francisco José Corso Pinzón. 2022.
+                              </li>
+                              <li>
+                                  Tesis de maestría: Evaluación del efecto de la gamificación asistida por computador en la motivación de los estudiantes de programación de computadores. Autora: Karen Daniela Cuervo Cely. 2021.
+                              </li>
+                              <li>
+                                  Tesis de maestría: Diseño y validación interna de un instrumento de autoinforme para caracterizar las estrategias de aprendizaje de programación de computadores. Autora: Stephanie Torres Jiménez. 2021.
+                              </li>
+                              <li>
+                                  Tesis de maestría: Prototipo de herramienta computacional para el aprendizaje colaborativo de programación de computadores. Autor: Jhon Alexis Mendez Lara. 2021.
+                              </li>
+                              <li>
+                                  Tesis de maestría: Automatic source code analysis for assessment of solutions to programming tasks. Autora: Lina Fernanda Rosales. 2019.
+                              </li>
+                              <li>
+                                  Tesis de maestría: Source code analysis on student assignments using machine learning techniques. Autor: Hugo Armando Castellanos. 2017.
+                              </li>
+                          </ul>
+                      </div>
+                      <div id="publicacion3" class="collapse" data-bs-parent="#publicaciones">
+                          <h4 class="fw-bold">Sistemas embebidos confiables</h4>
+                          <hr />
+                          <h5 class="fw-bold">Libros:</h5>
+                          <ul>
+                              <li>
+                                  Editores: Sergio A. Cuenca Asensi, Antonio Jimeno Morenilla, Antonio Martínez Álvarez, Felipe Restrepo Calle. Actas de las XII Jornadas de Computación Reconfigurable y Aplicaciones 2012. JCRA 2012. ISBN:978-84-695-4470-9. Servicio de Publicaciones. Universidad Miguel Hernández, Elche, España, 2012.
+                              </li>
+                              <li>
+                                  Felipe Restrepo-Calle. Co-diseño de sistemas hardware/software tolerantes a fallos inducidos por radiación. Ed. Universidad de Alicante, España. Septiembre 2011. ISBN: 978-84-695-4166-1.
+                              </li>
+                          </ul>
+                          <h5 class="fw-bold">Capítulos de libros:</h5>
+                          <ul>
+                              <li>
+                                  Felipe Restrepo-Calle, Sergio Cuenca-Asensi , Antonio Martínez-Álvarez. Ch. 17: Reducing implicit overheads of soft error mitigation techniques using selective hardening. In "FPGAs and Parallel Architectures for Aerospace Applications". Editors: Fernanda Lima Kastensmidt and Paolo Rech. Springer. ISBN 978-3-319-14351-4. 2016.
+                              </li>
+                              <li>
+                                  Antonio Martínez-Álvarez, Sergio Cuenca-Asensi, Felipe Restrepo-Calle. Ch. 16: Soft Error mitigation in soft-core processors". In "FPGAs and Parallel Architectures for Aerospace Applications". Editors: Fernanda Lima Kastensmidt and Paolo Rech. Springer. ISBN 978-3-319-14351-4. 2016.
+                              </li>
+                          </ul>
+                          <h5 class="fw-bold">Artículos de revista:</h5>
+                          <ul>
+                              <li>
+                                  A. Aponte-Moreno, F. Restrepo-Calle and C. Pedraza, "FTxAC: Leveraging the Approximate Computing Paradigm in the Design of Fault-Tolerant Embedded Systems to Reduce Overheads," in IEEE Transactions on Emerging Topics in Computing, vol. 9, no. 2, pp. 797-810, 1 April-June 2021, doi: 10.1109/TETC.2020.2986235.
+                              </li>
+                              <li>
+                                  A. Aponte-Moreno, F. Restrepo-Calle, C. Pedraza. "Using Approximate Computing and Selective Hardening for the Reduction of Overheads in the Design of Radiation-Induced Fault-Tolerant Systems," in Electronics, vol 8 (issue 12), 1539, 18 pages, 13 December 2019.
+                              </li>
+                              <li>
+                                  A. Serrano-Cases, F. Restrepo-Calle, S. Cuenca-Asensi, A. Martínez-Álvarez. "Multi-Threaded Mitigation of Radiation-Induced Soft Errors in Bare-Metal Embedded Systems," in Journal of Electronic Testing: Theory and Applications, December 2019.
+                              </li>
+                              <li>
+                                  J. Isaza-González, F. Restrepo-Calle, A. Martínez-Álvarez, S. Cuenca-Asensi. "SHARC: an Efficient Metric for Selective Protection of Software against Soft Errors," in Microelectronics Reliability, Vols. 88–90, Pages. 903-908, Sept. 2018.
+                              </li>
+                              <li>
+                                  José Isaza-González, Alejandro Serrano-Cases, Felipe Restrepo-Calle, Sergio Cuenca-Asensi, Antonio Martínez-Álvarez. “Evaluación de la fiabilidad de microprocesadores COTS mediante las infraestructuras de depuración On-Chip”. I+D Tecnológico, Vol. 13, Núm. 1. pp. 8-17. 2017. ISSN: 1680-8894.
+                              </li>
+                              <li>
+                                  Martinez-Alvarez, A.; Restrepo-Calle, F.; Cuenca-Asensi, S.; Reyneri, L.M.; Lindoso, A.; Entrena, L., "A Hardware-Software Approach for On-line Soft Error Mitigation in Interrupt-Driven Applications," IEEE Transactions on Dependable and Secure Computing, vol. 13, no. 4, pp. 502-508, July-Aug. 2016. ISSN: 1545-5971. doi:10.1109/TDSC.2014.2382593.
+                              </li>
+                              <li>
+                                  Felipe Restrepo-Calle, Sergio Cuenca-Asensi, Antonio Martínez-Álvarez, Eduardo Chielle, Fernanda Lima Kastensmidt. “Application-based Analysis of Register File Criticality for Reliability Assessment in Embedded Microprocessors”. Journal of Electronic Testing: Theory and Applications, Vol. 31, no. 2, pp. 139-150, April 2015. ISSN: 0923-8174. doi:10.1007/s10836-015-5513-9.
+                              </li>
+                              <li>
+                                  L. Parra, A. Lindoso, M. Portela, L. Entrena, F. Restrepo-Calle, S. Cuenca-Asensi, A. Martínez-Álvarez. “Efficient Mitigation of Data and Control Flow Errors in Microprocessors”. IEEE Transactions on Nuclear Science, vol.61, no.4, pp.1590,1596, Aug. 2014. doi:10.1109/TNS.2014.2310492. ISSN: 0018-9499.
+                              </li>
+                              <li>
+                                  Felipe Restrepo-Calle, Antonio Martínez-Álvarez, Sergio Cuenca-Asensi, Antonio Jimeno. "Selective SWIFT-R: A flexible software-based technique for soft error mitigation in low-cost embedded systems". Journal of Electronic Testing: Theory and Applications, vol. 29, no. 6, pp. 825-838, Dec., 2013. DOI:10.1007/s10836-013-5416-6.
+                              </li>
+                              <li>
+                                  Antonio Martínez-Álvarez, Felipe Restrepo-Calle, Luis Alberto Vivas Tejuelo, Sergio Cuenca-Asensi, "Fault tolerant embedded systems design by multi-objective optimization", Expert Systems with Applications, Volume 40, Issue 17, December 2013, Pages 6813-6822, ISSN 0957-4174, DOI:10.1016/j.eswa.2013.06.060.
+                              </li>
+                              <li>
+                                  Almudena Lindoso, Luis Entrena, Enrique San Millán, Sergio Cuenca-Asensi, Antonio Martínez-Álvarez, Felipe Restrepo-Calle. "A Co-Design Approach for SET Mitigation in Embedded Systems". IEEE Transactions on Nuclear Science. Vol. 59, no. 4, pp. 1034-1039. Aug. 2012. ISSN:0018-9499 DOI:10.1109/TNS.2011.2182524.
+                              </li>
+                              <li>
+                                  Antonio Martínez-Álvarez, Sergio Cuenca-Asensi, Felipe Restrepo-Calle, Francisco R. Palomo, Hipólito Guzmán-Miranda, and Miguel A. Aguirre. "Compiler-Directed Soft Error Mitigation for Embedded Systems," IEEE Transactions on Dependable and Secure Computing, vol.9, no.2, pp.159-172, March-April 2012. ISSN:1545-5971. DOI=10.1109/TDSC.2011.54.
+                              </li>
+                              <li>
+                                  Sergio Cuenca-Asensi, Antonio Martínez-Álvarez, Felipe Restrepo-Calle, Francisco R. Palomo, Hipólito Guzmán-Miranda, Miguel A. Aguirre, "Soft core based embedded systems in critical aerospace applications", Journal of Systems Architecture, Vol. 57, no. 10, Pages 886-895, Nov. 2011. ISSN:1383-7621. DOI:10.1016/j.sysarc.2011.04.006.
+                              </li>
+                              <li>
+                                  Sergio Cuenca-Asensi, Antonio Martínez-Álvarez, Felipe Restrepo-Calle, Francisco R. Palomo, Hipólito Guzmán-Miranda, and Miguel A. Aguirre. "A novel co-design approach for soft errors mitigation in embedded systems". IEEE Transactions on Nuclear Science, vol. 58, no. 3, pp.1059-1065, June 2011. ISSN:0018-9499. DOI:10.1109/TNS.2011.2112379.
+                              </li>
+                          </ul>
+                          <h5 class="fw-bold">Artículos en conferencia internacional:</h5>
+                          <ul>
+                              <li>
+                                  LATS 2021
+                              </li>
+                              <li>
+                                  Alexander Aponte-Moreno, J. Isaza-González, A. Serrano-Cases, A. Martínez-Álvarez, S. Cuenca-Asensi, and Felipe Restrepo-Calle. "An Experimental Comparison of Fault Injection Tools for Microprocessor-based Systems". In Proceedings of the 2020 IEEE 21st Latin-American Test Symposium (LATS). Jatiúca (Maceió), Brazil, 30th March - 2nd April 2020.
+                              </li>
+                              <li>
+                                  Aponte-Moreno, A.; Restrepo-Calle, F.; Pedraza, C.  A Low-Overhead Radiation Hardening Approach using Approximate Computing and Selective Fault Tolerance Techniques at the Software Level.  30th European Conference on Radiation and Its Effects on Components and Systems. RADECS. IEEE, Montpellier, France. 16-20 September, 2019.
+                              </li>
+                              <li>
+                                  Alexander Aponte-Moreno, Cesar Pedraza, and Felipe Restrepo-Calle. "Reducing Overheads in Software-based Fault Tolerant Systems using Approximate Computing". In Proceedings of the 2019 IEEE 20th Latin-American Test Symposium (LATS). Santiago, Chile, 11th - 13th March, 2019.
+                              </li>
+                              <li>
+                                  Alexander Aponte-Moreno, Felipe Restrepo-Calle and Cesar Pedraza. "MiFIT: A Fault Injection Tool to Validate the Reliability of Microprocessors". In Proceedings of the 2019 IEEE 20th Latin-American Test Symposium (LATS). Santiago, Chile, 11th - 13th March, 2019.
+                              </li>
+                              <li>
+                                  Alejandro Serrano-Cases, Felipe Restrepo-Calle, Sergio Cuenca-Asensi, and Antonio Martínez-Álvarez."Softerror mitigation for multi-core processors based on thread replication". In Proceedings of the 2019 IEEE 20th Latin-American Test Symposium (LATS). Santiago, Chile, 11th - 13th March, 2019.
+                              </li>
+                              <li>
+                                  José Iván Isaza-González, Felipe Restrepo-Calle, Antonio Martínez-Álvarez and Sergio Cuenca-Asensi. "SHARC: Efficient Metric for Selective Protection of Software against Soft Errors.". In Proceedings of the ESREF 2018: 29th European Symposium on Reliability of Electron Devices, Failure Physics and Analysis. Aalborg, Denmark, October 1st-5th, 2018.
+                              </li>
+                              <li>
+                                  A. Aponte-Moreno, A. Moncada, F. Restrepo-Calle and C. Pedraza. "A review of approximate computing techniques towards fault mitigation in HW/SW systems". In Proceedings of the 2018 IEEE 19th Latin-American Test Symposium (LATS). Sao Paulo, Brazil, 2018, pp. 1-6. doi: 10.1109/LATW.2018.8347241.
+                              </li>
+                              <li>
+                                  Felipe Restrepo-Calle, Sergio Cuenca-Asensi, Antonio Martínez-Álvarez. "An effective strategy for selective hardening of software". 18th IEEE Latin-American Test Symposium LATS. Bogotá, Colombia, pp. 1-6. 13 - 15th March, 2017. DOI: 10.1109/LATW.2017.7906744
+                              </li>
+                              <li>
+                                  Jose Isaza-Gonzalez, Alejandro Serrano-Cases, Felipe Restrepo-Calle, Sergio Cuenca-Asensi, Antonio Martínez-Álvarez. "Dependability Evaluation of COTS Microprocessors via On-Chip Debugging Facilities". 17th IEEE Latin-American Test Symposium LATS. Foz do Iguaçu, Brazil. 6th - 8th April, 2016.
+                              </li>
+                              <li>
+                                  Felipe Restrepo-Calle, Sergio Cuenca-Asensi, Antonio Martínez-Álvarez, Fernanda Lima Kastensmidt. "Considerations on Application of Selective Hardening based on Software Fault Tolerance Techniques". 16th IEEE Latin-American Test Symposium. Puerto Vallarta, Mexico. March 25 - 27, 2015.
+                              </li>
+                              <li>
+                                  F. Restrepo-Calle, S. Cuenca-Asensi, A. Martínez-Álvarez, E. Chielle, F. Kastensmidt. “Efficient Metric for Register File Criticality in Processor-Based Systems”. In Proceedings of the 15th IEEE Latin-American Test Workshop (LATW). Fortaleza, Brazil. 12th-15th March 2014.
+                              </li>
+                              <li>
+                                  L. Parra, A. Lindoso, M. Portela, L. Entrena, F. Restrepo-Calle, S. Cuenca-Asensi, A. Martínez-Álvarez. "Efficient Mitigation of Data and Control Flow Errors in Microprocessors". In Proceedings of the 14th European Conference on Radiation and its Effects on Components and Systems RADECS 2013. Oxford, UK. Sept 23 - 27, 2013.
+                              </li>
+                              <li>
+                                  A. Martínez-Álvarez, F. Restrepo-Calle, S. Cuenca-Asensi, L. Reinery, A. Lindoso, L. Entrena. "A hybrid technique for soft error mitigation in interrupt-driven applications". In Proceedings of the 13th European Conference on Radiation and its Effects on Components and Systems RADECS 2012. Biarritz, France. Sept 24 - 28, 2012.
+                              </li>
+                              <li>
+                                  Restrepo-Calle, F., Cuenca-Asensi, S., Aguirre, M. A., Palomo, F. R., Guzmán-Miranda, H., and Martínez-Álvarez, A., "On the definition of real conditions for a fault injection experiment on embedded systems". In Proceedings of the 12th European Conference on Radiation and its Effects on Components and Systems RADECS 2011. Sevilla, Spain. Sept 19 - 23, 2011. ISBN: 978-1-4577-0585-4. Pp. 497-500.
+                              </li>
+                              <li>
+                                  Lindoso, A., Entrena, L., San Millán, E., Cuenca-Asensi, S., Martínez-Álvarez, A., and Restrepo-Calle, F., "A co-design approach for SET mitigation in embedded systems". In Proceedings of the 12th European Conference on Radiation and its Effects on Components and Systems RADECS 2011. Sevilla, Spain. Sept 19 - 23, 2011. ISBN: 978-1-4577-0585-4. Pp. 489-492.
+                              </li>
+                              <li>
+                                  Restrepo-Calle, F., Martínez-Álvarez,A., Palomo, F. R., Guzmán-Miranda, H., Aguirre, M. A., and Cuenca-Asensi, S. "A novel co-design approach for soft errors mitigation in embedded systems". In Proceedings of the 11th European Conference on Radiation and its Effects on Components and Systems RADECS 2010. Langenfeld, Austria. Sept 20 - 24, 2010.
+                              </li>
+                              <li>
+                                  F. Restrepo-Calle, A. Martínez-Álvarez, F.R. Palomo, H. Guzmán-Miranda, M.A. Aguirre and S. Cuenca-Asensi. "Rapid Prototyping of Radiation-Tolerant Embedded Systems on FPGA". In Proc. of the 20th International Conference on Field Programmable Logic and Applications FPL 2010. Pags. 326-331. Milano, ITALY, Aug. 31st - Sep. 2nd, 2010. ISBN:978-0-7695-4179-2. Nominado al premio “Michael Servit”.
+                              </li>
+                              <li>
+                                  F. Restrepo-Calle, A. Martínez-Álvarez, H. Guzmán-Miranda, F.R. Palomo, and S. Cuenca-Asensi. "Application-Driven Co-design of Fault-Tolerant Industrial Systems". In Proceedings of the IEEE International Symposium on Industrial Electronics, ISIE 2010, July 4-7, 2010. Bari, Italy. ISBN: 978-1-4244-6391-6. Pp 2005-2010.
+                              </li>
+                              <li>
+                                  Felipe Restrepo-Calle, Antonio Martínez-Álvarez, Hipólito Guzmán-Miranda, F.R. Palomo, M.A Aguirre, and Sergio Cuenca-Asensi. "A Compiler-Based Infrastructure for Fault-Tolerant Co-Design". In Proceedings of the 13th International Workshop on Software and Compilers for Embedded Systems, SCOPES 2010, June 28-29, 2010 Schloss Rheinfels, St. Goar, Germany. ISBN: 978-1-4503-0084-1.
+                              </li>
+                              <li>
+                                  Felipe Restrepo-Calle, Antonio Martínez-Álvarez, Sergio Cuenca-Asensi, Francisco Rogelio Palomo and Miguel Aguirre. "Hardening Development Environment for Embedded Systems". In Proceedings of the 2nd HiPEAC Workshop on Design for Reliability (DFR’10), held in conjunction with The 5th International Conference on High Performance and Embedded Architectures and Compilers, January 25-27, 2010, Pisa, Italy.
+                              </li>
+                          </ul>
+                          <h5 class="fw-bold">Artículos en conferencia a nivel nacional:</h5>
+                          <h5 class="fw-bold">Tesis:</h5>
+                          <ul>
+                              <li>
+                                  Tesis doctoral: Diseño de Sistemas Embebidos tolerantes a fallos mediante técnicas de Computación Aproximada. Autor: Alexander Aponte Moreno. 2022.
+                              </li>
+                              <li>
+                                  Trabajo final de maestría: Desarrollo de una técnica de tolerancia a fallos basada en software para la arquitectura de procesadores RISC-V. Autor: Edwin Javier Sanabria Mesa.
+                              </li>
+                              <li>
+                                  Tesis de maestría: Análisis y Optimización de código fuente para Computación Aproximada. Autor: Elvert Mora Escobar.
+                              </li>
+                          </ul>
+                      </div>
+                      <div id="publicacion4" class="collapse" data-bs-parent="#publicaciones">
+                          <h4 class="fw-bold">Sistemas Inteligentes de Transporte - ITS</h4>
+                          <hr />
+                          <h5 class="fw-bold">Libros:</h5>
+                          <h5 class="fw-bold">Capítulos de libros:</h5>
+                          <h5 class="fw-bold">Artículos de revista:</h5>
+                          <ul>
+                              <li>
+                                  Santiago Morales, César Augusto Pedraza, Felipe Restrepo Calle, Jose Félix Vega Stavro, Victor Hugo Bastidas Alvear." Análisis de requisitos para dispositivos de localización vehicular seguros para sistemas de transporte público terrestre en Colombia," in Revista Científica Ingeniería y Desarrollo, vol. 36, no. 2, pp. 298-326, Julio-Diciembre 2018.
+                              </li>
+                          </ul>
+                          <h5 class="fw-bold">Artículos en conferencia internacional:</h5>
+                          <ul>
+                              <li>
+                                  F. Restrepo-Calle, C. Pedraza and F. Vega, "A Vehicle Tracking Device with Built-in Safety Features for Public Transportation Systems," 2019 2nd Latin American Conference on Intelligent Transportation Systems (ITS LATAM), Bogota, Colombia, 19-20 March 2019, pp. 1-6. doi: 10.1109/ITSLATAM.2019.8721339
+                              </li>
+                          </ul>
+                          <h5 class="fw-bold">Artículo en conferencia a nivel nacional:</h5>
+                          <h5 class="fw-bold">Tesis:</h5>
+                          <ul>
+                              <li>
+                                  Supervisión de Tráfico Vehicular con Tecnología Bluetooth y Wifi. Tesis de Maestría en Ingeniería Electrónica, Universidad Nacional de Colombia - Sede Bogotá. Daniel Silva (2019)
+                              </li>
+                              <li>
+                                  Sistema de monitoreo y clasificación de tráfico urbano en tiempo real a través de procesamiento digital de imágenes. Tesis de Maestría en Ingeniería Electrónica, Universidad Nacional de Colombia - Sede Bogotá. Camacho Poveda, Edgar Camilo (2018)
+                              </li>
+                              <li>
+                                  Diseño y validación de un sistema de procesamiento de imágenes en sitio para el reconocimiento vehicular en intersecciones viales. Tesis de maestría en Ingeniería de Sistemas. Santiago Morales.
+                              </li>
+                              <li>
+                                  Sistema para la medición de velocidad media vehicular mediante tecnologías Bluetooth y Wifi. Tesis de maestría en Ingeniería electrónica. Daniel Silva.
+                              </li>
+                              <li>
+                                  Conteo de vehículos a partir de videos usando machine learning. Tesis de maestría en Ingeniería de Sistemas. Juan Sebastián Navarro.
+                              </li>
+                              <li>
+                                  Relación entre los eventos públicos y los accidentes de tránsito a partir del análisis de datos en Bogotá. Trabajo final de maestría en ingeniería de sistemas. Yefersson Adrián Rojas.
+                              </li>
+                              <li>
+                                  Extracción y análisis de información de accidentes de tránsito desde redes sociales. Trabajo final de maestría en ingeniería de sistemas. Néstor Suat
+                              </li>
+                              <li>
+                                  Análisis de la relación entre usos del suelo, variables sociodemográficas y de movilidad y la accidentalidad vehicular en Bogotá.  Alejandro Sandoval Pineda. Tesis de Maestría, Facultad de Ciencias Agrarias
+                              </li>
+                              <li>
+                                  Análisis de datos de accidentalidad vial de la ciudad de Bogotá a partir de datos abiertos y datos obtenidos desde redes sociales. Fernando Vargas, Trabajo final de maestría en Ingeniería de Sistemas.
+                              </li>
+                              <li>
+                                  Diseño de un Modelo Basado en Aprendizaje Profundo para la Predicción del Tráfico Vial en la Ciudad de Bogotá. Maria Camila Preciado. Tesis en Ingeniería de Sistemas e Industrial.
+                              </li>
+                          </ul>
+                      </div>
+                      <div id="publicacion5" class="collapse" data-bs-parent="#publicaciones">
+                          <h4 class="fw-bold">Agricultura de precisión</h4>
+                          <hr />
+                          <h5 class="fw-bold">Libros:</h5>
+                          <h5 class="fw-bold">Capítulos de libros:</h5>
+                          <h5 class="fw-bold">Artículos de revista:</h5>
+                          <h5 class="fw-bold">Artículos en conferencia internacional:</h5>
+                          <h5 class="fw-bold">Artículos en conferencia a nivel nacional:</h5>
+                          <h5 class="fw-bold">Tesis:</h5>
+                          <ul>
+                              <li>
+                                  Clasificación y cuantificación de maleza en cultivos de hortalizas por medio de procesamiento de imágenes digitales multiespectrales. Tesis de Maestría en Ingeniería Electrónica, Universidad Nacional de Colombia - Sede Bogotá. Puerto Lara, Andrés Esteban (2018)
+                              </li>
+                              <li>
+                                  Método para la estimación de maleza en cultivos de lechuga utilizando aprendizaje profundo e imágenes multiespectrales. Tesis de Maestría en Ingeniería de Sistemas, Universidad Nacional de Colombia - Sede Bogotá. Osorio Delgado, Anderson Kavir (2021)
+                              </li>
+                              <li>
+                                  Detección y caracterización espectral individual de palmas aceiteras en imágenes aéreas mediante técnicas de visión artificial. Tesis de maestría en Ingeniería de Sistemas. Andrés Felipe Gómez Rivera.
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <button onclick="topFunction()" id="myBtn" title="Ir al inicio"><span class="oi oi-arrow-circle-top"></span></button>
+      </main>
+      <footer class="container-fluid d-print-table">
+         <div class="row">
+            <div class="col-sm-6 col-md-3 d-print-none">
+               <nav class="gobiernoLinea">
+                  <a href="http://www.legal.unal.edu.co" target="_top">Régimen Legal</a>
+                  <a href="http://personal.unal.edu.co" target="_top">Talento humano</a>
+                  <a href="http://contratacion.unal.edu.co" target="_top">Contratación</a>
+                  <a href="http://personal.unal.edu.co" target="_top">Ofertas de empleo</a>
+                  <a href="http://launalcuenta.unal.edu.co/" target="_top">Rendición de cuentas</a>
+                  <a href="http://docentes.unal.edu.co/concurso-profesoral/" target="_top">Concurso docente</a>
+                  <a href="http://www.pagovirtual.unal.edu.co/" target="_top">Pago Virtual</a>
+                  <a href="http://controlinterno.unal.edu.co/" target="_top">Control interno</a>
+                  <a href="http://siga.unal.edu.co" target="_top">Calidad</a>
+                  <a href="http://unal.edu.co/buzon-de-notificaciones/" target="_self">Buzón de notificaciones</a>
+               </nav>
+            </div>
+            <div class="col-sm-6 col-md-3 d-print-none">
+               <nav class="gobiernoLinea">
+                  <a href="http://correo.unal.edu.co" target="_top">Correo institucional</a>
+                  <a href="index.html#">Mapa del sitio</a>
+                  <a href="http://redessociales.unal.edu.co" target="_top">Redes Sociales</a>
+                  <a href="index.html#">FAQ</a>
+                  <a href="http://unal.edu.co/quejas-y-reclamos/" target="_self">Quejas y reclamos</a>
+                  <a href="http://unal.edu.co/atencion-en-linea/" target="_self">Atención en línea</a>
+                  <a href="http://unal.edu.co/encuesta/" target="_self">Encuesta</a>
+                  <a href="index.html#">Contáctenos</a>
+                  <a href="http://estadisticas.unal.edu.co/" target="_top">Estadísticas</a>
+                  <a href="index.html#">Glosario</a>
+               </nav>
+            </div>
+            <div class="col-sm-7 col-md-4 contder">
+               <div class="col contacto">
+                  <b>Contacto página web:</b><br/>
+                  Dirección ...<br/>
+                  Edificio ...<br/>
+                  Bogotá D.C., Colombia<br/>
+                  (+57 1) 316 5000 Ext.
+               </div>
+               <div class="col derechos">
+                  <a
+                     href="https://unal.edu.co/fileadmin/user_upload/docs/legal.pdf"
+                     target="_blank">&copy; Copyright 2019</a><br/>
+                  Algunos derechos reservados.<br/>
+                  <a
+                     title="Comuníquese con el administrador de este sitio web"
+                     href="mailto:EMAIL@unal.edu.co">EMAIL@unal.edu.co</a><br/>
+                  <a href="index.html#">Acerca de este sitio web</a><br/>
+                  Actualización:14/05/21
+               </div>
+            </div>
+            <div class="col-sm-5 col-md-2 asoc-img d-print-none">
+               <div class="container ">
+                  <div class="row row-cols-2">
+                     <div class="col"><img class="img-fluid" alt="Orgullo UN" src="images/log_orgullo.png"/>
+                        <a href="http://orgullo.unal.edu.co/">
+                        <img
+                           class="d-none d-print-block img-fluid"
+                           alt="Orgullo UN"
+                           src="images/log_orgullo_black.png"/>
+                        </a>
+                     </div>
+                     <div class="col">
+                        <a href="https://www.gov.co/">
+                        <img
+                           class="img-fluid"
+                           alt="Portal Único del Estado Colombiano"
+                           src="images/log_gobiern.png"/>
+                        </a>
+                     </div>
+                     <div class="col">
+                        <a class="imgAgencia" href="http://agenciadenoticias.unal.edu.co">
+                        <img class="img-fluid" alt="Agencia de Noticias" src="images/log_agenc.png"/>
+                        <img
+                           class="d-none d-print-block"
+                           alt="Agencia de Noticias"
+                           src="images/log_agenc_black.png"/>
+                        </a>
+                     </div>
+                     <div class="col">
+                        <a href="http://www.contaduria.gov.co/">
+                        <img
+                           class="img-fluid"
+                           alt="Contaduría General de la República"
+                           src="images/log_contra.png"/>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- JS -->
+      <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="js/unal.js"></script>
+      <script src="js/accesibilidad.js"></script>
+   </body>
+</html>

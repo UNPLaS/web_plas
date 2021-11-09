@@ -1,0 +1,24 @@
+{
+  "name": "unal_skin_default",
+  "version": "1.0.0",
+  "description": "plantilla unal en bootstrap 5",
+  "main": "index.html",
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/cobogotar/unal_skin_default/src/master/"
+  },
+  "keywords": [
+    "unal"
+  ],
+  "author": "Cristian Bogotá",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.0.1",
+    "lite-server": "^2.6.1",
+    "open-iconic": "^1.1.1"
+  }
+}
