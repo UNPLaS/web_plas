@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="es">
+   <head>
+      <!--Favicon-->
+      <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+      <!-- meta tags -->
+      <meta charset="utf-8">
+      <meta name="revisit-after" content="1 hour">
+      <meta name="distribution" content="all">
+      <meta
+         name="viewport"
+         content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.5, user-scalable=yes">
+      <meta name="expires" content="1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="robots" content="all">
+      <meta http-equiv="cache-control" content="no-cache" />
+      <!-- CSS -->
+      <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link href="../css/frontend.css" rel="stylesheet">
+      <link href="../node_modules/open-iconic/font/css/open-iconic-bootstrap.min.css"  rel="stylesheet">
+      <link href="../css/accesibilidad.css" rel="stylesheet">
+      <title>Gamificación - PLaS</title>
+   </head>
+   <body>
+      <header>
+         <div class="logo">
+            <a href="https://unal.edu.co">
+               <div class="svg">
+                  <img
+                     src="../images/escudoUnal.svg"
+                     class="d-print-none img-fluid"
+                     alt="Escudo de la Universidad Nacional de Colombia"/>
+               </div>
+            </a>
+            <div style="position: absolute; top :1px; width: 60px;" class="d-none d-print-block">
+               <img
+                  src="../images/escudoUnal_black.png"
+                  class="d-none d-print-block"
+                  alt="Escudo de la Universidad Nacional de Colombia"
+                  />
+            </div>
+         </div>
+         <div id="pestania-accesibilidad-mobile" class="d-block d-md-none"></div>
+         <div class="seal">
+            <img
+               class="d-print-none"
+               alt="Escudo de la República de Colombia"
+               src="../images/sealColombia.png"
+               width="66"
+               height="66"/>
+            
+         </div>
+         <!--menú contextual-->
+         <div class="firstMenu ">
+            <div class="content-fluid">
+               <!--prueba navbar-->
+               <!--fin de prueba navbar-->
+               <nav class="navbar nav navbar-toggler navbar-expand-md navbar-dark">
+                  <!-- perfiles -->
+                  <button
+                     class="navbar-toggler"
+                     type="button"
+                     data-bs-toggle="collapse"
+                     data-bs-target="#navbarSupportedContent"
+                     aria-controls="navbarScroll"
+                     aria-expanded="false"
+                     aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class=" collapse navbar-collapse navbar-default"  >
+                     <nav id="profiles">
+                        <ul class="me-auto nav justify-content-end">
+                           <li class="nav-item item_Aspirantes ">
+                              <a href="http://aspirantes.unal.edu.co">Aspirantes</a>
+                           </li>
+                           <li class="nav-item item_Estudiantes">
+                              <a href="http://estudiantes.unal.edu.co">Estudiantes</a>
+                           </li>
+                           <li class="nav-item item_Egresados">
+                              <a href="http://egresados.unal.edu.co">Egresados</a>
+                           </li>
+                           <li class="nav-item item_Docentes">
+                              <a href="http://docentes.unal.edu.co">Docentes</a>
+                           </li>
+                           <li class="nav-item item_Administrativos">
+                              <a href="http://administrativos.unal.edu.co">Administrativos</a>
+                           </li>
+                        </ul>
+                     </nav>
+                  </div>
+                  <!-- redes sociales -->
+                  <ul class="socialLinks d-none d-md-block">
+                     <li >
+                        <a
+                           href="https://www.facebook.com/UNALOficial"
+                           target="_blank"
+                           class="facebook"
+                           title="Página oficial en Facebook"></a>
+                     </li>
+                     <li>
+                        <a
+                           href="https://twitter.com/UNALOficial"
+                           target="_blank"
+                           class="twitter"
+                           title="Cuenta oficial en Twitter"></a>
+                     </li>
+                     <li>
+                        <a
+                           href="https://www.youtube.com/channel/UCnE6Zj2llVxcvL5I38B0Ceg"
+                           target="_blank"
+                           class="youtube"
+                           title="Canal oficial de Youtube"></a>
+                     </li>
+                  </ul>
+                  <!-- idioma -->
+                  <div class="btn-group d-print-none">
+                     <button
+                        type="button"
+                        class="btn btn-secondary dropdown-toggle language-button"
+                        data-bs-toggle="dropdown"
+                        data-bs-display="static"
+                        aria-expanded="false">
+                     ES
+                     </button>
+                     <ul
+                        class="dropdown-menu dropdown-menu-start dropdown-menu-lg-start language-dropdown">
+                        <li>
+                           <a class="dropdown-item" href="#">EN - English</a>
+                        </li>
+                        <li>
+                           <a class="dropdown-item" href="#">GUC - Wayuunaiki</a>
+                        </li>
+                        <li>
+                           <a class="dropdown-item" href="#">PBB - Nasa yuwe</a>
+                        </li>
+                     </ul>
+                  </div>
+               </nav>
+            </div>
+         </div>
+         <!-- Menú inferior -->
+         <div id="bs-navbar" class="navigation ">
+            <!-- Título del sitio -->
+            <div class="container-fluid myb d-print-inline-block">
+               <div class="site-url row d-print-none" id="subdominio">
+                  <span class="oi oi-map-marker me-0"></span>
+                  <a href="https://ingenieria.bogota.unal.edu.co/" target="_blank">ingenieria.bogota.unal.edu.co</a>
+               </div>
+               <!-- Buscador-->
+               <div class="buscador row" id="buscador"></div>
+            </div>
+            <!-- Main menu -->
+            <nav class="navbar navbar-expand-md navbar-dark menuPrincipal">
+               <div class="container-fluid">
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav">
+                          <li class="nav-item">
+                              <a class="nav-link" href="../index.html">Inicio</a>
+                          </li>
+                          <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle"
+                                 href="#"
+                                 role="button"
+                                 data-bs-toggle="dropdown"
+                                 aria-expanded="false">
+                                  Líneas de Investigación
+                              </a>
+                              <ul class="dropdown-menu">
+                                  <li>
+                                      <a class="dropdown-item" href="../investigaciones/lenguajes.html">Lenguajes de programación</a>
+                                  </li>
+                                  <li>
+                                      <a class="dropdown-item" href="../investigaciones/educacion.html">Educación en ingeniería</a>
+                                  </li>
+                                  <li>
+                                      <a class="dropdown-item" href="../investigaciones/embebidos.html">Sistemas embebidos confiables</a>
+                                  </li>
+                                  <li>
+                                      <a class="dropdown-item" href="../investigaciones/transporte.html">Sistemas Inteligentes de Transporte - ITS</a>
+                                  </li>
+                                  <li>
+                                      <a class="dropdown-item" href="../investigaciones/agricultura.html">Agricultura de precisión</a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="../integrantes.html">Integrantes</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="../proyectos/proyectos.html">Proyectos</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="../publicaciones.html">Publicaciones</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="../contactenos.html">Contáctenos</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="collapse navbar-collapse menuSedes" id="navbarSupportedContent">
+                     <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                           <a
+                              class="nav-link dropdown-toggle"
+                              href="#"
+                              
+                              role="button"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false">
+                           Sedes
+                           </a>
+                           <ul class="dropdown-menu" id="sedes">
+                              <li>
+                                 <a class="dropdown-item" href="http://amazonia.unal.edu.co" target="_blank">Amazonia</a>
+                                 <span class="caret-right"></span>
+                              </li>
+                              <li>
+                                 <a class="dropdown-item" href="http://bogota.unal.edu.co" target="_blank">Bogotá</a>
+                                 <span class="caret-right"></span>
+                              </li>
+                              <li>
+                                 <a class="dropdown-item" href="http://caribe.unal.edu.co" target="_blank">Caribe</a>
+                                 <span class="caret-right"></span>
+                              </li>
+                              <li>
+                                 <a class="dropdown-item" href="http://delapaz.unal.edu.co" target="_blank">De La Paz</a>
+                                 <span class="caret-right"></span>
+                              </li>
+                              <li>
+                                 <a
+                                    class="dropdown-item"
+                                    href="http://www.manizales.unal.edu.co"
+                                    target="_blank">Manizales</a>
+                                 <span class="caret-right"></span>
+                              </li>
+                              <li>
+                                 <a class="dropdown-item" href="http://medellin.unal.edu.co" target="_blank">Medellín</a>
+                                 <span class="caret-right"></span>
+                              </li>
+                              <li>
+                                 <a class="dropdown-item" href="http://orinoquia.unal.edu.co" target="_blank">Orinoquia</a>
+                                 <span class="caret-right"></span>
+                              </li>
+                              <li>
+                                 <a class="dropdown-item" href="http://www.palmira.unal.edu.co" target="_blank">Palmira</a>
+                                 <span class="caret-right"></span>
+                              </li>
+                              <li>
+                                 <a
+                                    class="dropdown-item"
+                                    href="http://tumaco-pacifico.unal.edu.co"
+                                    target="_blank">Tumaco</a>
+                                 <span class="caret-right"></span>
+                              </li>
+                           </ul>
+                        </li>
+                     </ul>
+                     <div class="collapse navbar-collapse menuProfiles" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                           <li class="nav-item dropdown">
+                              <a
+                                 class="nav-link dropdown-toggle"
+                                 href="#"
+                                 
+                                 role="button"
+                                 data-bs-toggle="dropdown"
+                                 aria-expanded="false">
+                              Perfiles
+                              </a>
+                              <ul class="dropdown-menu" >
+                                 <li class="nav-item item_Aspirantes ">
+                                    <a href="http://aspirantes.unal.edu.co">Aspirantes</a>
+                                 </li>
+                                 <li class="nav-item item_Estudiantes">
+                                    <a href="http://estudiantes.unal.edu.co">Estudiantes</a>
+                                 </li>
+                                 <li class="nav-item item_Egresados">
+                                    <a href="http://egresados.unal.edu.co">Egresados</a>
+                                 </li>
+                                 <li class="nav-item item_Docentes">
+                                    <a href="http://docentes.unal.edu.co">Docentes</a>
+                                 </li>
+                                 <li class="nav-item item_Administrativos">
+                                    <a href="http://administrativos.unal.edu.co">Administrativos</a>
+                                 </li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="collapse navbar-collapse menuServices" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                           <li class="nav-item dropdown">
+                              <a
+                                 class="nav-link dropdown-toggle"
+                                 href="#"
+                                 
+                                 role="button"
+                                 data-bs-toggle="dropdown"
+                                 aria-expanded="false">
+                              Servicios
+                              </a>
+                              <ul class="dropdown-menu" id="servicios">
+                                 <li>
+                                    <a href="http://correo.unal.edu.co" target="_blank"><img
+                                       src="../images/icnServEmail.png"
+                                       width="32"
+                                       height="32"
+                                       alt="Correo Electrónico">Correo Electrónico</a>
+                                 </li>
+                                 <li>
+                                    <a href="https://dninfoa.unal.edu.co" target="_blank"><img
+                                       src="../images/icnServSia.png"
+                                       width="32"
+                                       height="32"
+                                       alt="Dirección Nacional de Información Académica">DNINFOA - SIA</a>
+                                 </li>
+                                 <li>
+                                    <a href="http://bibliotecas.unal.edu.co" target="_blank"><img src="../images/icnServLibrary.png" width="32" height="32" alt="Biblioteca">Bibliotecas</a>
+                                 </li>
+                                 <li>
+                                    <a href="http://personal.unal.edu.co" target="_blank"><img src="../images/icnServCall.png" width="32" height="32" alt="Convocatorias">Convocatorias</a>
+                                 </li>
+                                 <li>
+                                    <a href="http://identidad.unal.edu.co"><img
+                                       src="../images/icnServIdentidad.png"
+                                       width="32"
+                                       height="32"
+                                       alt="Identidad UNAL">Identidad UNAL</a>
+                                 </li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </nav>
+         </div>
+      </header>
+      <!-- Panel de accesibilidad -->
+      <div class="tx-unal-accesibilidad d-print-none">
+         <!-- defaultpanel -->
+         <div
+            id="panel-accesibilidad"
+            style="display:none"
+            class="panel-content container-fluid">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="row">
+                     <div class="col-md-3 ">
+                        <h4>Tamaño letra</h4>
+                        <button
+                           class="boton-panel"
+                           id="letra-disminuir"
+                           onclick="cambiarTamanioLetra('-')"
+                           type="submit"
+                           name="Disminuir letra"
+                           value="">A<sup>-</sup>
+                        </button>
+                        <button
+                           class="boton-panel"
+                           id="letra-aumentar"
+                           onclick="cambiarTamanioLetra('+')"
+                           type="submit"
+                           name="Aumentar Letra"
+                           value="">
+                        A<sup>+</sup>
+                        </button>
+                        <input
+                           disabled="1"
+                           class="letras-porcentaje"
+                           id="letter-percent"
+                           type="text"
+                           name="Porcentaje de letra"
+                           value="100%">
+                     </div>
+                     <div class="col-md-3 ">
+                        <h4>Cambiar Contrastes</h4>
+                        <button
+                           class="boton-panel"
+                           id="contraste-1"
+                           onclick="cambiarContrastes(1)"
+                           type="submit"
+                           name="Cambiar contraste 1"
+                           value="">1
+                        </button>
+                        <button
+                           class="boton-panel"
+                           id="contraste-2"
+                           onclick="cambiarContrastes(2)"
+                           type="submit"
+                           name="Cambiar contraste 2"
+                           value="">2
+                        </button>
+                        <button
+                           class="boton-panel"
+                           id="contrate-3"
+                           onclick="cambiarContrastes(3)"
+                           type="submit"
+                           name="Cambiar contraste 3"
+                           value="">3
+                        </button>
+                     </div>
+                     <div class="col-md-3 ">
+                        <h4>Invertir colores</h4>
+                        <button
+                           class="boton-panel"
+                           id="inversor"
+                           onclick="invertirColores()"
+                           type="submit"
+                           name="Invertir colores"
+                           value="">Aplicar
+                        </button>
+                     </div>
+                     <div class="col-md-3">
+                        <h4>Restablecer ajustes</h4>
+                        <button
+                           class="boton-panel"
+                           id="defaul-config"
+                           onclick="defaultConfig()"
+                           type="submit"
+                           name="Restablecer ajustes"
+                           value="">
+                        Aplicar
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="pestania-accesibilidad" class="">Panel de Accesibilidad</div>
+      </div>
+      <!--Pestaña de servicios-->
+      <div id="mySidebar"  class="sidebar hsidebar">
+         <div class="indicator d-none d-md-block"></div>
+         <ul id="services">
+            <li>
+               <a href="http://correo.unal.edu.co" target="_blank"><img
+                  src="../images/icnServEmail.png"
+                  width="32"
+                  height="32"
+                  alt="Correo Electrónico">Correo Electrónico</a>
+            </li>
+            <li>
+               <a href="https://dninfoa.unal.edu.co" target="_blank"><img
+                  src="../images/icnServSia.png"
+                  width="32"
+                  height="32"
+                  alt="Dirección Nacional de Información Académica">DNINFOA - SIA</a>
+            </li>
+            <li>
+               <a href="http://bibliotecas.unal.edu.co" target="_blank"><img src="../images/icnServLibrary.png" width="32" height="32" alt="Biblioteca">Bibliotecas</a>
+            </li>
+            <li>
+               <a href="http://personal.unal.edu.co" target="_blank"><img src="../images/icnServCall.png" width="32" height="32" alt="Convocatorias">Convocatorias</a>
+            </li>
+            <li>
+               <a href="http://identidad.unal.edu.co"><img
+                  src="../images/icnServIdentidad.png"
+                  width="32"
+                  height="32"
+                  alt="Identidad UNAL">Identidad UNAL</a>
+            </li>
+         </ul>
+      </div>
+      <div id="main" class="hsidebar">
+         <div class="openbtn" id="openbtnId" onclick="toggleNav() "></div>
+      </div>
+      <main class="detalle">
+          <div class="breadcrumb-class d-print-none">
+              Está en:<a href="../index.html" target="_self" title="Inicio">Inicio</a><img src="../images/arrow.png" />
+              <a href="../proyectos/proyectos.html" target="_self" title="Inicio">Proyectos</a><img src="../images/arrow.png" />
+              <span>Gamificación</span>
+          </div>
+          &nbsp;
+          <h1 class="text-center w-75 mx-auto">Evaluación del efecto de la gamificación asistida por computador en la motivación de los estudiantes de programación de computadores</h1>
+          &nbsp;
+          <div id="proyectos" class="container p-4 border w-100 text-justify overflow-hidden proyecto">
+              <div class="row">
+                  <div class="col-3">
+                      <button class="btn d-block w-100 my-1 listado" data-bs-toggle="collapse" data-bs-target="#listado1">Contenido</button>
+                      <button class="btn d-block w-100 my-1 listado" data-bs-toggle="collapse" data-bs-target="#listado2">Documento</button>
+                      <button class="btn d-block w-100 my-1 listado" data-bs-toggle="collapse" data-bs-target="#listado3">Diapositivas</button>
+                      <button class="btn d-block w-100 my-1 listado" data-bs-toggle="collapse" data-bs-target="#listado4">Autoría</button>
+                  </div>
+                  <div class="col-9 d-inline-block align-top">
+                      <div id="listado1" class="collapse show" data-bs-parent="#proyectos">
+                          <h4 class="fw-bold">Contenido</h4>
+                          <hr />
+                          <p>
+                              La enseñanza-aprendizaje de la Programación de Computadores conlleva desafíos que implican buscar nuevas metodologías de enseñanza en la que el estudiante se involucre activamente. Actualmente las metodologías relacionadas con el juego son ampliamente utilizadas por los efectos que pueden generar en aspectos como la motivación, participación, rendimiento académico y compromiso en los estudiantes. La gamificación está inmersa en dichas metodologías haciendo referencia al uso de elementos relacionados con el juego en contextos ajenos al juego. En el área de la Programación de Computadores se han realizado estudios que integran la gamificación asistida por computador en contextos académicos, con el objetivo de evidenciar los efectos reales que genera el uso de elementos relacionados con el juego en procesos formativos. Generalmente los resultados cualitativos evidencian efectos destacables en los diferentes aspectos analizados, sin embargo distintos estudios donde realizan análisis cuantitativos contradicen dichos hallazgos y exponen que integrar la gamificación no genera efectos estadísticamente significativos en aspectos evaluados como la motivación, participación, rendimiento académico, entre otros.
+                          </p>
+                          <p>
+                              La revisión de literatura analizada evidencia la necesidad de realizar más estudios empíricos en los que se integre la gamificación con el propósito de comprender y demostrar los efectos reales que genera en los distintos aspectos formativos. Por lo cual, esta investigación tiene como propósito encontrar el efecto que la gamificación asistida por computador genera en la motivación por aprender de los estudiantes de Programación de Computadores. Para tal fin, se diseñó y llevó a cabo un estudio cuasi-experimental en el que se integró una herramienta gamificada en la metodología de un curso de Introducción a la Programación de Computadores. A través de una revisión de literatura y un análisis comparativo se realizó la selección de CodeGym como el ambiente gamificado asistido por computador apto para la integración dentro de la metodología de la clase.
+                          </p>
+                          <p>
+                              A continuación, se estableció el diseño del estudio cuasi-experimental en el que se planteó la metodología de la intervención educativa y la aplicación de los instrumentos para medir el constructo motivacional por medio del cuestionario de auto-informe MSLQ-Colombia y una encuesta de percepciones dirigida a los estudiantes que participaron en el estudio. En este estudio participaron 48 estudiantes distribuidos en dos grupos de control y uno experimental, quienes fueron seleccionados mediante la técnica de muestreo no probabilístico por conveniencia. La información recolectada permitió realizar un análisis estadístico de la variación de la motivación en cada uno de los grupos participantes.
+                          </p>
+                          <p>
+                              La información cuantitativa obtenida mediante el MSLQ-Colombia permitió evidenciar que los estudiantes del grupo experimental en el que se integró el ambiente gamificado en la metodología de la clase, incrementaron significativamente los niveles relacionados con valoración de la tarea, atribuyendo un mayor grado de importancia, utilidad, gusto o interés hacia las temáticas expuestas en la asignatura. Los resultados reportados en esta investigación permiten comprender mejor los efectos, beneficios, y desafíos que brinda la integración de la gamificación asistida por computador en los procesos de enseñanza-aprendizaje de la programación de computadores.
+                          </p>
+                          <p class="fw-bold">
+                              Palabras clave:
+                          </p>
+                          <ul>
+                              <li>
+                                  Gamificación
+                              </li>
+                              <li>
+                                  Programación de Computadores
+                              </li>
+                              <li>
+                                  Entornos gamificados asistidos por computador
+                              </li>
+                              <li>
+                                  Motivación en el aprendizaje
+                              </li>
+                          </ul>
+                          <p class="fw-bold">
+                              Publicaciones:
+                          </p>
+                          <ul>
+                              <li>
+                                  K.D. Cuervo-Cely, J.J. Ramírez-Echeverry, F. Restrepo-Calle (2020). Computer-Assisted Gamification In A Computer Programming Course: An Experience Report, In 13th annual International Conference of Education, Research and Innovation - ICERI, pp. 6006-6015. 9-11 November, 2020.
+                                  <a href="https://library.iated.org/view/CUERVOCELY2020COM" target="_blank" class="conocerMas"><img src="../images/box-arrow-up-right.svg" title="Conocer más" /></a>
+                              </li>
+                          </ul>
+                          <img src="../images/PLaS/proyectos/gamificacion.png" />
+                      </div>
+                      <div id="listado2" class="collapse" data-bs-parent="#proyectos">
+                          <h4 class="fw-bold">Documento</h4>
+                          <hr />
+                          <object data="sources/gamificacion0.pdf" type="application/pdf" class="w-100" height="700"></object>
+                      </div>
+                      <div id="listado3" class="collapse" data-bs-parent="#proyectos">
+                          <h4 class="fw-bold">Diapositivas</h4>
+                          <hr />
+                          <object data="sources/gamificacion1.pdf" type="application/pdf" class="w-100" height="600"></object>
+                      </div>
+                      <div id="listado4" class="collapse" data-bs-parent="#proyectos">
+                          <h4 class="fw-bold">Autoría</h4>
+                          <hr />
+                          <p>
+                              Karen Daniela Cuervo Cely <br />
+                              Estudiante Maestría en Ingeniería de Sistemas y Computación <br />
+                              Universidad Nacional de Colombia <br />
+                              Correo: <a href="mailto:kcuervoc@unal.edu.co">kcuervoc@unal.edu.co</a> <br />
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <button onclick="topFunction()" id="myBtn" title="Ir al inicio"><span class="oi oi-arrow-circle-top"></span></button>
+      </main>
+      <footer class="container-fluid d-print-table">
+         <div class="row">
+            <div class="col-sm-6 col-md-3 d-print-none">
+               <nav class="gobiernoLinea">
+                  <a href="http://www.legal.unal.edu.co" target="_top">Régimen Legal</a>
+                  <a href="http://personal.unal.edu.co" target="_top">Talento humano</a>
+                  <a href="http://contratacion.unal.edu.co" target="_top">Contratación</a>
+                  <a href="http://personal.unal.edu.co" target="_top">Ofertas de empleo</a>
+                  <a href="http://launalcuenta.unal.edu.co/" target="_top">Rendición de cuentas</a>
+                  <a href="http://docentes.unal.edu.co/concurso-profesoral/" target="_top">Concurso docente</a>
+                  <a href="http://www.pagovirtual.unal.edu.co/" target="_top">Pago Virtual</a>
+                  <a href="http://controlinterno.unal.edu.co/" target="_top">Control interno</a>
+                  <a href="http://siga.unal.edu.co" target="_top">Calidad</a>
+                  <a href="http://unal.edu.co/buzon-de-notificaciones/" target="_self">Buzón de notificaciones</a>
+               </nav>
+            </div>
+            <div class="col-sm-6 col-md-3 d-print-none">
+               <nav class="gobiernoLinea">
+                  <a href="http://correo.unal.edu.co" target="_top">Correo institucional</a>
+                  <a href="../index.html#">Mapa del sitio</a>
+                  <a href="http://redessociales.unal.edu.co" target="_top">Redes Sociales</a>
+                  <a href="../index.html#">FAQ</a>
+                  <a href="http://unal.edu.co/quejas-y-reclamos/" target="_self">Quejas y reclamos</a>
+                  <a href="http://unal.edu.co/atencion-en-linea/" target="_self">Atención en línea</a>
+                  <a href="http://unal.edu.co/encuesta/" target="_self">Encuesta</a>
+                  <a href="../contactenos.html">Contáctenos</a>
+                  <a href="http://estadisticas.unal.edu.co/" target="_top">Estadísticas</a>
+                  <a href="../index.html#">Glosario</a>
+               </nav>
+            </div>
+            <div class="col-sm-7 col-md-4 contder">
+                <div class="col contacto">
+                    <b>Contacto página web:</b><br />
+                    Carrera 30 No 45A-03<br />
+                    Edif. Aulas de Ingeniería - 453<br />
+                    Bogotá D.C., Colombia<br />
+                    (+57 1) 316 5000 Ext. 14077
+                </div>
+                <div class="col derechos">
+                    <a href="https://unal.edu.co/fileadmin/user_upload/docs/legal.pdf"
+                       target="_blank">&copy; Copyright 2021</a><br />
+                    Algunos derechos reservados.<br />
+                    <a title="Comuníquese con el administrador de este sitio web"
+                       href="mailto:plas_fibog@unal.edu.co@unal.edu.co">plas_fibog@unal.edu.co</a><br />
+                    <a href="../index.html#">Acerca de este sitio web</a><br />
+                    Actualización:22/11/21
+                </div>
+            </div>
+            <div class="col-sm-5 col-md-2 asoc-img d-print-none">
+               <div class="container ">
+                  <div class="row row-cols-2">
+                     <div class="col"><img class="img-fluid" alt="Orgullo UN" src="../images/log_orgullo.png"/>
+                        <a href="http://orgullo.unal.edu.co/">
+                        <img
+                           class="d-none d-print-block img-fluid"
+                           alt="Orgullo UN"
+                           src="../images/log_orgullo_black.png"/>
+                        </a>
+                     </div>
+                     <div class="col">
+                        <a href="https://www.gov.co/">
+                        <img
+                           class="img-fluid"
+                           alt="Portal Único del Estado Colombiano"
+                           src="../images/log_gobiern.png"/>
+                        </a>
+                     </div>
+                     <div class="col">
+                        <a class="imgAgencia" href="http://agenciadenoticias.unal.edu.co">
+                        <img class="img-fluid" alt="Agencia de Noticias" src="../images/log_agenc.png"/>
+                        <img
+                           class="d-none d-print-block"
+                           alt="Agencia de Noticias"
+                           src="../images/log_agenc_black.png"/>
+                        </a>
+                     </div>
+                     <div class="col">
+                        <a href="http://www.contaduria.gov.co/">
+                        <img
+                           class="img-fluid"
+                           alt="Contaduría General de la República"
+                           src="../images/log_contra.png"/>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- JS -->
+      <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="../js/unal.js"></script>
+      <script src="../js/accesibilidad.js"></script>
+   </body>
+</html>
