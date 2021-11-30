@@ -2739,7 +2739,7 @@ div#pestania-accesibilidad-mobile {
 }
 .carousel-control-next, .carousel-control-prev {
     filter: invert(100%);
-    margin: 200px;
+    margin: 12%;
 }
 .carousel-indicators {
     margin-bottom: -40px;
@@ -2779,9 +2779,6 @@ div#pestania-accesibilidad-mobile {
     width: 100%;
     height: 350px;
 }
-.swiper-pagination {
-    margin-bottom: -4.5%;
-}
 .proyectos img {
     width: 100%;
     height: 20em;
@@ -2798,9 +2795,6 @@ div#pestania-accesibilidad-mobile {
 .listado:hover {
     border-color: black;
     filter: brightness(85%);
-}
-#proyectos img {
-    margin-left: 15%;
 }
 .social-link {
     width: 30px;
@@ -2826,9 +2820,9 @@ div#pestania-accesibilidad-mobile {
         color: #555;
     }
 .estado img{
-    width: 15px;
-    height: 15px;
-    margin: auto;
+    width: 10px;
+    height: 10px;
+    margin-left: 50%;
 }
 .estados img{
     width: 30px;
@@ -2838,7 +2832,7 @@ div#pestania-accesibilidad-mobile {
     display: none;
     position: fixed;
     bottom: 20px;
-    right: 30px;
+    left: 1%;
     z-index: 99;
     border: none;
     outline: none;
@@ -2855,4 +2849,329 @@ div#pestania-accesibilidad-mobile {
     }
 footer {
     z-index: 100;
+}
+iframe {
+    width: 100%;
+    height: 300px;
+}
+.card-body {
+    font-size: 15px;
+}
+.card-body h5 {
+    font-size: 17px;
+    text-align: center;
+}
+.card-body img {
+    max-height: 230px;
+}
+.card {
+    height: 600px;
+}
+.card button {
+    margin-bottom: -190px;
+}
+.social {
+    height: 7em;
+}
+.proyecto img {
+    width: 60%;
+    height: 18em;
+    margin-left: 15%;
+    margin-bottom: 2%;
+}
+.conocerMas img {
+    width: 15px;
+    height: 1em;
+    margin: auto;
+}
+    .conocerMas img:hover {
+        -webkit-filter: invert(40%);
+        filter: invert(40%);
+    }
+.publicaciones img:hover {
+    -webkit-filter: invert(40%);
+    filter: invert(40%);
+}
+#listado2 .card {
+    max-height: 450px;
+}
+#listado3 .card {
+    max-height: 450px;
+}
+@media only screen and (min-width: 800px) and (max-width: 1200px) {
+    .carousel-item img {
+        height: 22em;
+    }
+    .container {
+        font-size: 13px;
+    }
+    .swiper-slide img {
+        height: 250px;
+    }
+    .swiper-pagination {
+        display: none;
+    }
+    .investigacion {
+        font-size: 13px;
+    }
+    .investigacion button {
+        font-size: 13px;
+    }
+    .col-3 button {
+        font-size: 12px;
+    }
+    #myBtn {
+        left: 1%;
+        font-size: 15px;
+    }
+    .col-9 {
+        overflow: hidden;
+    }
+    .col-9 img {
+        width: 85%;
+    }
+    .estado img {
+        width: 10px;
+        height: 10px;
+    }
+    .card-body img {
+        max-height: 200px;
+    }
+    .proyectos img {
+        width: 100%;
+        height: 10em;
+    }
+    .carousel-caption h5 {
+        font-size: 14px;
+    }
+    #proyectos .carousel-caption {
+        height: 10px;
+    }
+    #proyectos .carousel-caption h5 {
+        font-size: 11px;
+        margin-top: -7%;
+    }
+    header {
+        font-size: 73%;
+    }
+    header #bs-navbar li {
+        margin-right: -18.5px;
+    }
+    .dropdown-menu {
+        font-size: 73%;
+        overflow: hidden;
+    }
+    #subdominio a {
+        font-size: 73%;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    h4 {
+        font-size: 20px;
+    }
+    h5 {
+        font-size: 16px;
+    }
+    .publicaciones img {
+        width: 14px;
+    }
+        .publicaciones img:hover {
+            -webkit-filter: invert(40%);
+            filter: invert(40%);
+        }
+    select {
+        height: 35px;
+    }
+        optgroup {
+            font-size: 10px;
+        }
+    select:first-child {
+        font-size: 13px;
+    }
+    .contactenos input{
+        font-size: 12px;
+    }
+    .contactenos textarea {
+        font-size: 12px;
+    }
+    .card p {
+        font-size: 12px;
+    }
+    .card {
+        height: 610px;
+    }
+    .card button {
+        margin-bottom: -230px;
+    }
+        .card .social-link {
+            width: 25px;
+        }
+    #integrantes #listado2 .card {
+        height: 450px;
+    }
+    #integrantes #listado3 .card {
+        height: 450px;
+    }
+    .breadcrumb-class {
+        font-size: 13px;
+    }
+    .proyecto img {
+        width: 80%;
+        margin-left: 10%;
+    }
+    .conocerMas img {
+        width: 13px;
+        height: 1em;
+        margin: auto;
+    }
+        .conocerMas img:hover {
+            -webkit-filter: invert(40%);
+            filter: invert(40%);
+        }
+    .contactenos button {
+        font-size: 13px;
+    }
+    #listado2 .card {
+        max-height: 450px;
+    }
+
+    #listado3 .card {
+        max-height: 450px;
+    }
+}
+@media only screen and (min-width: 300px) and (max-width: 800px) {
+    .carousel-item img {
+        height: 15em;
+    }
+    .carousel-caption h5{
+        font-size: 12px;
+    }
+    .container {
+        font-size: 11px;
+    }
+    .contactenos p {
+        text-align: left;
+    }
+    .contactenos button {
+        font-size: 11px;
+    }
+    .form-control {
+        font-size: 70%;
+    }
+    .swiper-slide img {
+        height: 180px;
+    }
+    .investigacion {
+        font-size: 11px;
+    }
+    .investigacion button {
+        font-size: 11px;
+    }
+    .col-3 button {
+        font-size: 10px;
+    }
+    #myBtn {
+        left: 1%;
+        font-size: 13px;
+    }
+    .col-9 {
+        overflow: hidden;
+    }
+    .col-9 img {
+        width: 85%;
+    }
+    .estado img {
+        width: 10px;
+        height: 10px;
+    }
+    .card-body img {
+        max-height: 300px;
+    }
+    .proyectos img {
+        width: 100%;
+        height: 7em;
+    }
+    #proyectos .carousel-caption {
+        height: 8px;
+        margin-bottom: -7%;
+    }
+    #proyectos .carousel-caption h5 {
+        font-size: 7px;
+        margin-top: -9%;
+    }
+    .carousel-item {
+        overflow: hidden;
+    }
+    header {
+        font-size: 70%;
+    }
+
+        header #bs-navbar li {
+            margin-right: -19px;
+        }
+    .dropdown-menu {
+        font-size: 70%;
+        overflow: hidden;
+    }
+    #subdominio a {
+        font-size: 70%;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    h4 {
+        font-size: 14px;
+    }
+    h5 {
+        font-size: 13px;
+    }
+    .publicaciones img {
+        width: 10px;
+    }
+    select {
+        height: 28px;
+    }
+
+    optgroup {
+        font-size: 8px;
+    }
+
+    select:first-child {
+        font-size: 10px;
+    }
+    .breadcrumb-class {
+        font-size: 11px;
+    }
+    .proyecto img {
+        width: 70%;
+        margin-left: 10%;
+    }
+    .conocerMas img {
+        width: 12px;
+        height: 1em;
+        margin: auto;
+    }
+        .conocerMas img:hover {
+            -webkit-filter: invert(40%);
+            filter: invert(40%);
+        }
+    .publicaciones img:hover {
+        -webkit-filter: invert(40%);
+        filter: invert(40%);
+    }
+    .card {
+        height: 670px;
+    }
+
+        .card button {
+            margin-bottom: -230px;
+        }
+    #listado2 .card {
+        max-height: 500px;
+    }
+
+    #listado3 .card {
+        max-height: 500px;
+    }
 }

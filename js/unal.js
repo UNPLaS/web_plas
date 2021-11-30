@@ -57,4 +57,33 @@ function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+
+document.getElementById("btnProyectos").onclick = function () {
+    var url = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+    if (url === "lenguajes.html") {
+        location.href = "../proyectos/proyectos.html";
+    } else if (url === "educacion.html") {
+        location.href = "../proyectos/proyectos.html#listado2";
+    } else if (url === "embebidos.html") {
+        location.href = "../proyectos/proyectos.html#listado3";
+    } else if (url === "transporte.html") {
+        location.href = "../proyectos/proyectos.html#listado4";
+    } else if (url === "agricultura.html") {
+        location.href = "../proyectos/proyectos.html#listado5";
+    }
+};
+document.getElementById("btnPublicaciones").onclick = function () {
+    var url = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+    if (url === "lenguajes.html") {
+        location.href = "../publicaciones.html";
+    } else if (url === "educacion.html") {
+        location.href = "../publicaciones.html#publicacion2";
+    } else if (url === "embebidos.html") {
+        location.href = "../publicaciones.html#publicacion3";
+    } else if (url === "transporte.html") {
+        location.href = "../publicaciones.html#publicacion4";
+    } else if (url === "agricultura.html") {
+        location.href = "../publicaciones.html#publicacion5";
+    }
+};
             

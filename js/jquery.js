@@ -11136,3 +11136,10 @@ $carousel.carousel($carousel.data())
 })
 })
 }(jQuery);
+$("#publicaciones ul").each(function () {
+	$(this).find('li').sort(function (a, b) {
+		var aText = $(a).text(),
+			bText = $(b).text();
+		return aText < bText ? -1 : aText > bText ? 1 : 0;
+	}).appendTo(this);
+});
