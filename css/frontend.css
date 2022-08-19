@@ -3475,15 +3475,31 @@ iframe {
     background: rgb(248,249,250);
 }
 
-.plas-button:focus {
+.plas-button.active {
     border: 2px #224B0C solid;
-    /*background: #0a58ca;*/
-    /*color: white;*/
-    /*background: #C1D5A4;*/
 }
 
 .info-icons i:hover{
     cursor: pointer;
+}
+.info-hover-white{
+    color: white;
+}
+
+.info-hover-white:hover{
+    color: white;
+    cursor: pointer;
+    text-decoration: 1px underline white;
+}
+
+.info-hover-black{
+    color: black;
+}
+
+.info-hover-black:hover{
+    color: black;
+    cursor: pointer;
+    text-decoration: 1px underline black;
 }
 
 footer {

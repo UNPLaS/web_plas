@@ -502,22 +502,19 @@
                 <br/>
                 <div class="row w-100 px-lg-3">
                     <div class="col-lg-4 col-xl-6 col-sm-6 col-12 border rounded-3 d-flex p-2 gap-2">
-                        <button class="plas-button rounded-4 d-block w-100 my-1 p-2" data-bs-toggle="collapse"
-                                data-bs-target="#profesores" id="btn-profesores">
+                        <button class="plas-button active rounded-4 d-block w-100 my-1 p-2" id="btn-profesores">
                             Profesores
                         </button>
-                        <button class="plas-button rounded-4 d-block w-100 my-1 p-2" data-bs-toggle="collapse"
-                                data-bs-target="#doctorado" id="btn-doctorado" onclick="showDoctorado()">Estudiantes de
+                        <button class="plas-button rounded-4 d-block w-100 my-1 p-2" id="btn-doctorado">Estudiantes de
                             doctorado
                         </button>
-                        <button class="plas-button rounded-4 d-block w-100 my-1 p-2" data-bs-toggle="collapse"
-                                data-bs-target="#maestria" id="btn-maestria">Estudiantes de maestría
+                        <button class="plas-button rounded-4 d-block w-100 my-1 p-2" id="btn-maestria">Estudiantes de maestría
                         </button>
                     </div>
                 </div>
                 <div class="row w-100 px-3 mt-4 " id="integrantes">
                     <div class="col-12 border rounded-3 d-flex p-1 w-100">
-                        <div id="profesores" class="collapse show w-100" data-bs-parent="#integrantes">
+                        <div id="profesores" class="" data-bs-parent="#integrantes">
                             <div class="row p-2 g-1">
                                 <div class="col-lg-6 col-xl-4 col-md-6 col-12 ">
                                     <div class="card h-auto">
@@ -676,7 +673,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="doctorado" class="collapse w-100" data-bs-parent="#integrantes">
+                        <div id="doctorado" style="display: none;" data-bs-parent="#integrantes">
                             <div class="row p-2 g-1">
                                 <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
                                     <div class="card h-auto">
@@ -816,7 +813,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="maestria" class="collapse w-100" data-bs-parent="#integrantes">
+                        <div id="maestria" style="display: none;" data-bs-parent="#integrantes">
                             <div class="row p-2 g-1">
                                 <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
                                     <div class="card h-auto">
@@ -2398,8 +2395,9 @@
     </div>
 </footer>
 <!-- JS -->
-<script type="module" src="js/integrantes.js"></script>
+<script type="module" src="js/popovers.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/accesibilidad.js"></script>
+<script src="js/integrantes.js"></script>
 </body>
 </html>
