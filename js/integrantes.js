@@ -1,37 +1,16 @@
-// function showProfesores() {
-//     let profesores = document.getElementById("profesores")
-//     let doctorado = document.getElementById("doctorado")
-//     let maestria = document.getElementById("maestria")
-//     doctorado.style.display = "none"
-//     maestria.style.display = "none"
-//     if (profesores.style.display === "none")
-//         profesores.style.display = "block"
-//
-// }
-//
-// function showDoctorado() {
-//     let profesores = document.getElementById("profesores")
-//     let doctorado = document.getElementById("doctorado")
-//     let maestria = document.getElementById("maestria")
-//     profesores.style.display = "none"
-//     maestria.style.display = "none"
-//     if (doctorado.style.display === "none")
-//         doctorado.style.display = "block"
-//     // profesores.style.display = "initial"
-// }
-
 const toggleActive = (e) => {
-  console.log(e.target.id);
   let buttonActiveClass = "plas-button active rounded-4 d-block w-100 my-1 p-2";
   let buttonClass = "plas-button rounded-4 d-block w-100 my-1 p-2"
+  
+  let profesores = document.getElementById("profesores");
+  let doctorado = document.getElementById("doctorado");
+  let maestria = document.getElementById("maestria");
+
   if (e.target.id === "btn-profesores") {
     document.getElementById(e.target.id).className = buttonActiveClass;
     document.getElementById("btn-doctorado").className = buttonClass;
     document.getElementById("btn-maestria").className = buttonClass;
 
-    let profesores = document.getElementById("profesores");
-    let doctorado = document.getElementById("doctorado");
-    let maestria = document.getElementById("maestria");
     if (profesores.style.display == "none") {
         profesores.style.display = "block";
         doctorado.style.display = "none";
@@ -44,25 +23,17 @@ const toggleActive = (e) => {
     document.getElementById("btn-profesores").className = buttonClass;
     document.getElementById("btn-maestria").className = buttonClass;
 
-    let profesores = document.getElementById("profesores");
-    let doctorado = document.getElementById("doctorado");
-    let maestria = document.getElementById("maestria");
     if (doctorado.style.display == "none") {
         doctorado.style.display = "block";
         profesores.style.display = "none";
         maestria.style.display = "none";
     }
 
-
-
   } else if (e.target.id === "btn-maestria") {
     document.getElementById(e.target.id).className = buttonActiveClass;
     document.getElementById("btn-profesores").className = buttonClass;
     document.getElementById("btn-doctorado").className = buttonClass;
-
-    let profesores = document.getElementById("profesores");
-    let doctorado = document.getElementById("doctorado");
-    let maestria = document.getElementById("maestria");
+    
     if (maestria.style.display == "none") {
         maestria.style.display = "block";
         doctorado.style.display = "none";

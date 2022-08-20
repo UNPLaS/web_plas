@@ -701,6 +701,7 @@
                   <form
           action="https://formsubmit.co/plas_fibog@unal.edu.co"
           method="post"
+          class="needs-validation" novalidate
         >
           <div class="mb-3 mt-3">
             <label for="email" class="form-label">Correo electrónico:</label>
@@ -709,7 +710,11 @@
               class="form-control"
               placeholder="Introduzca su correo electrónico"
               name="email"
+              required
             />
+            <div class="invalid-feedback">
+              Introduzca su correo electrónico
+            </div>
           </div>
           <div class="mb-3 mt-3">
             <label for="subject" class="form-label">Asunto:</label>
@@ -717,8 +722,12 @@
               type="text"
               class="form-control"
               placeholder="Introduzca el asunto"
-              name="_subject"
+              name="subject"
+              required
             />
+            <div class="invalid-feedback">
+              Introduzca el asunto
+            </div>
           </div>
           <div class="mb-3 mt-3">
             <label for="message" class="form-label">Mensaje:</label>
@@ -728,7 +737,11 @@
               id="message"
               placeholder="Introduzca el mensaje"
               name="message"
+              required
             ></textarea>
+            <div class="invalid-feedback">
+              Introduzca el mensaje
+            </div>
           </div>
           <input type="hidden" name="_template" value="table" />
           <button type="submit" class="plas-button d-block mx-auto w-100 rounded p-2" style="border: 1px #224B0C solid">
@@ -887,5 +900,7 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/unal.js"></script>
     <script src="js/accesibilidad.js"></script>
+    <script src="js/contactenos.js"></script>
+
   </body>
 </html>
