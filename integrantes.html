@@ -479,29 +479,26 @@
 <div id="main" class="hsidebar">
     <div class="openbtn" id="openbtnId" onclick="toggleNav() "></div>
 </div>
-<main class="detalle">
-
-    <div class="row w-100 px-4 mt-5">
-        <div class="col-lg-1 "></div>
-        <div class="col-lg-2">
+<main class="detalle container-fluid">
+    <div class="row mt-xl-5 mt-3">
+        <div class="col-lg-3 col-12">
             <div class="shadow-sm rounded-3">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item mx-3 my-2 breadcrumb-plas">Está en: <a href="index.html" target="_self"
-                                                                                      title="Inicio">Inicio</a><img
-                            src="images/arrow.png"/><span>Integrantes</span></li>
+                    <li class="mx-3 my-2 breadcrumb-plas">
+                        <span>Está en:</span>  
+                        <a href="index.html" target="_self" title="Inicio">Inicio</a><img
+src="images/arrow.png"/><span>Integrantes</span></li>
                 </ol>
             </div>
         </div>
     </div>
-
-    <div class="row w-100 px-lg-4">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10 col-12 d-flex flex-column justify-content-center">
-            <div class="shadow p-5 rounded-3">
-                <p style="font-weight: 900; color: #064e3b; font-size: 40px ; line-height: 80%">Integrantes PLaS </p>
+    <div class="row g-4 mb-5">
+        <div class="col-12 d-flex flex-column justify-content-center">
+            <div class="shadow p-sm-5 p-4 rounded-3">
+                <p style="font-weight: 900; color: #064e3b; line-height: 80%" class="content-title">Integrantes PLaS </p>
                 <br/>
-                <div class="row w-100 px-lg-3">
-                    <div class="col-lg-4 col-xl-6 col-sm-6 col-12 border rounded-3 d-flex p-2 gap-2">
+                <div class="row g-4 g-xl-1">
+                    <div class="col-xl-7 col-12 border rounded-3 d-flex p-2 gap-2">
                         <button class="plas-button active rounded-4 d-block w-100 my-1 p-2" id="btn-profesores">
                             Profesores
                         </button>
@@ -512,1788 +509,854 @@
                         </button>
                     </div>
                 </div>
-                <div class="row w-100 px-3 mt-4 " id="integrantes">
-                    <div class="col-12 border rounded-3 d-flex p-1 w-100">
-                        <div id="profesores" class="" data-bs-parent="#integrantes">
-                            <div class="row p-2 g-1">
-                                <div class="col-lg-6 col-xl-4 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="row g-0">
-                                            <div class="col-lg-3">
-                                                <img src="images/PLaS/frc_pic.jpg" alt="" class="img-fluid h-100">
-                                            </div>
-                                            <div class="col-lg-9">
-                                                <div class="card-body">
-                                                    <span class="fs-4 fw-bold"> Felipe Restrepo Calle</span>
-                                                    <br>
-                                                    <div>
-                                                        <span class="badge text-bg-light fw-light">Lenguajes de programación</span>
-                                                        <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
-                                                        <span class="badge text-bg-light fw-light">Sistemas embebidos confiables</span>
-                                                    </div>
-                                                    <hr>
-
-
-                                                    <div class="d-flex justify-content-center mt-4 gap-2 info-icons">
-                                                        <i class="fa-brands fa-linkedin fa-xl"
-                                                           onclick="window.open(`https://co.linkedin.com/in/felipe-restrepo-calle-74344063`)"></i>
-                                                        <i class="fa-brands fa-github fa-xl"
-                                                           onclick="window.open(`https://github.com/ferestrepoca`)"></i>
-                                                        <i class="fa-solid fa-earth-americas fa-xl"
-                                                           onclick="window.open(`https://dis.unal.edu.co/~ferestrepoca/`)"></i>
-                                                        <i tabindex="0" class="fa-solid fa-circle-info fa-xl"
-                                                           data-bs-toggle="popover" data-bs-trigger="focus"
-                                                           data-bs-html="true"
-                                                           title="Información de contacto"
-                                                           data-bs-content="<strong>Oficina:</strong> 114 Edificio 453 (Aulas de Ingeniería) <br/> <strong>Teléfono:</strong> +57 1 316 5000 ext. 14077/14011 <br/> <strong>Correo electrónico:</strong> ferestrepoca@unal.edu.co">
-                                                        </i>
-                                                    </div>
+                <div class="row mt-4 border rounded-3 mx-xl-1 py-2 ">
+                    <div id="profesores">
+                        <div class="row g-1">
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="row g-0">
+                                        <div class="col-4 col-sm-3 col-md-6 col-lg-4 col-xl-5 col-xxl-4">
+                                            <img src="images/PLaS/frc_pic.jpg" alt="" class="img-fluid h-100 w-100">
+                                        </div>
+                                        <div class="col-4 col-sm-3 col-md-6 col-lg-4 col-xl-5 col-xxl-4">
+                                            <div class="card-body">
+                                                <span class="card-title fw-bold lh-1"> Felipe Restrepo Calle</span>
+                                                <br>
+                                                <div class="badges">
+                                                    <span class="badge text-bg-light fw-light">Lenguajes de programación</span>
+                                                    <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
+                                                    <span class="badge text-bg-light fw-light">Sistemas embebidos confiables</span>
+                                                </div>
+                                                <hr>
+                                                <div class="d-flex justify-content-center mt-4 gap-2 info-icons">
+                                                    <i class="fa-brands fa-linkedin fa-xl"
+                                                       onclick="window.open(`https://co.linkedin.com/in/felipe-restrepo-calle-74344063`)"></i>
+                                                    <i class="fa-brands fa-github fa-xl"
+                                                       onclick="window.open(`https://github.com/ferestrepoca`)"></i>
+                                                    <i class="fa-solid fa-earth-americas fa-xl"
+                                                       onclick="window.open(`https://dis.unal.edu.co/~ferestrepoca/`)"></i>
+                                                    <i tabindex="0" class="fa-solid fa-circle-info fa-xl "
+                                                       data-bs-toggle="popover" data-bs-trigger="focus"
+                                                       data-bs-html="true"
+                                                       title="Información de contacto"
+                                                       data-bs-content="<div class='popover-info'><strong>Oficina:</strong> 114 Edificio 453 (Aulas de Ingeniería) <br/> <strong>Teléfono:</strong> +57 1 316 5000 ext. 14077/14011 <br/> <strong>Correo electrónico:</strong> ferestrepoca@unal.edu.co</div>">
+                                                    </i>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small class="text-muted">Profesor asociado <small style="font-size: 10px">·
-                                                Activo</small></small>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-7 col-xl-4 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="row g-0">
-                                            <div class="col-lg-3">
-                                                <img src="images/PLaS/cpb_pic.jpg" alt="" class="img-fluid h-100 w-100">
-                                            </div>
-                                            <div class="col-lg-9">
-                                                <div class="card-body">
-                                                    <span class="fs-4 fw-bold">César Pedraza Bonilla</span>
-                                                    <br>
-                                                    <div>
-                                                        <span class="badge text-bg-light fw-light">Sistemas inteligentes de transporte</span>
-                                                        <span class="badge text-bg-light fw-light">Agricultura de precisión</span>
-                                                        <span class="badge text-bg-light fw-light">Computación paralela</span>
-                                                    </div>
-                                                    <hr>
-
-
-                                                    <div class="d-flex justify-content-center mt-4 gap-2 info-icons">
-                                                        <i class="fa-brands fa-linkedin fa-xl"
-                                                           onclick="window.open(`https://co.linkedin.com/in/c%C3%A9sar-pedraza-bonilla-502b894a`)"></i>
-                                                        <i class="fa-brands fa-github fa-xl"
-                                                           onclick="window.open(`https://github.com/capedrazab`)"></i>
-                                                        <i class="fa-solid fa-earth-americas fa-xl"
-                                                           onclick="window.open(`https://dis.unal.edu.co/~capedrazab/`)"></i>
-                                                        <i tabindex="0" class="fa-solid fa-circle-info fa-xl"
-                                                           data-bs-toggle="popover" data-bs-trigger="focus"
-                                                           data-bs-html="true"
-                                                           title="Información de contacto"
-                                                           data-bs-content="<strong>Oficina:</strong> 112 Edificio 453 (Aulas de Ingeniería) <br/> <strong>Teléfono:</strong> +57 1 316 5000 ext. 14076  <br/> <strong>Correo electrónico:</strong> capedrazab@unal.edu.co"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small class="text-muted">Profesor asociado <small style="font-size: 10px">·
-                                                Activo</small></small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-xl-4 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="row g-0">
-                                            <div class="col-lg-4">
-                                                <img src="images/PLaS/fgo_pic.jpg" alt="" class="img-fluid h-100">
-                                            </div>
-                                            <div class="col-lg-8">
-                                                <div class="card-body">
-                                                    <span class="fs-4 fw-bold">Fabio González Osorio</span>
-                                                    <br>
-                                                    <div>
-                                                        <span class="badge text-bg-light fw-light">Lenguajes de programación</span>
-                                                        <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
-                                                    </div>
-                                                    <hr>
-
-
-                                                    <div class="d-flex justify-content-center mt-4 gap-2 info-icons">
-                                                        <i class="fa-brands fa-linkedin fa-xl"></i>
-                                                        <i class="fa-brands fa-github fa-xl"></i>
-                                                        <i class="fa-solid fa-earth-americas fa-xl"
-                                                           onclick="window.open(`https://dis.unal.edu.co/~fgonza/`)"></i>
-                                                        <i tabindex="0" class="fa-solid fa-circle-info fa-xl"
-                                                           data-bs-toggle="popover" data-bs-trigger="focus"
-                                                           data-bs-html="true"
-                                                           title="Información de contacto"
-                                                           data-bs-content="<strong>Oficina:</strong> 114 Edificio 453 (Aulas de Ingeniería) <br/> <strong>Teléfono:</strong> +57 1 316 5000 ext. 14077/11  <br/> <strong>Correo electrónico:</strong> fagonzalezo@unal.edu.co"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small class="text-muted">Profesor titular <small style="font-size: 10px">·
-                                                Activo</small></small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-xl-4 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="row g-0">
-                                            <div class="col-lg-4">
-                                                <img src="images/PLaS/jre_pic.jpg" alt="" class="img-fluid h-100">
-                                            </div>
-                                            <div class="col-lg-8">
-                                                <div class="card-body">
-                                                    <span class="fs-4 fw-bold">Jhon Ramírez Echeverry</span>
-                                                    <br>
-                                                    <div>
-                                                        <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
-                                                    </div>
-                                                    <hr>
-
-
-                                                    <div class="d-flex justify-content-center mt-4 gap-2 info-icons">
-                                                        <i class="fa-brands fa-linkedin fa-xl"
-                                                           onclick="window.open(`https://co.linkedin.com/in/jhon-jairo-ram%C3%ADrez-echeverry-8540a9107`)"></i>
-                                                        <i class="fa-brands fa-github fa-xl"></i>
-                                                        <i class="fa-solid fa-earth-americas fa-xl"
-                                                           onclick="window.open(`http://www.hermes.unal.edu.co/pages/Docentes/Docente.jsf;jsessionid=6F3CE1C2302701F9B3D5337FD6825C3A.tomcat5?u=jjramireze`)"></i>
-                                                        <i tabindex="0" class="fa-solid fa-circle-info fa-xl"
-                                                           data-bs-toggle="popover" data-bs-trigger="focus"
-                                                           data-bs-html="true"
-                                                           title="Información de contacto"
-                                                           data-bs-content="<strong>Oficina:</strong> 210 Edificio 453 (Aulas de Ingeniería) <br/> <strong>Teléfono:</strong> +57 1 316 5000 ext. 14086  <br/> <strong>Correo electrónico:</strong> jjramireze@unal.edu.co"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small class="text-muted">Profesor asociado <small style="font-size: 10px">·
-                                                Activo</small></small>
-                                        </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small class="text-muted">Profesor asociado <small style="font-size: 10px">·
+                                            Activo</small></small>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div id="doctorado" style="display: none;" data-bs-parent="#integrantes">
-                            <div class="row p-2 g-1">
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold">Jeisson Andrés Vergara</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Lenguajes de programación</span>
-                                            </div>
-                                            <hr>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="row g-0">
+                                        <div class="col-4 col-sm-3 col-md-6 col-lg-4 col-xl-5 col-xxl-4">
+                                            <img src="images/PLaS/cpb_pic.jpg" alt="" class="img-fluid h-100 w-100">
                                         </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="row g-0">
-                                            <div class="col-lg-4">
-                                                <img src="images/PLaS/estudiantes/edgar_criollo.jfif" alt=""
-                                                     class="img-fluid h-100">
-                                            </div>
-                                            <div class="col-lg-8">
-                                                <div class="card-body">
-                                                    <span class="fs-4 fw-bold"> Edgar Hernando Criollo</span>
-                                                    <br>
-                                                    <div>
-                                                        <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
-                                                    </div>
-                                                    <hr>
+                                        <div class="col-8 col-md-6 col-lg-8 col-xl-7 col-xxl-8">
+                                            <div class="card-body">
+                                                <span class="card-title fw-bold lh-1">César Pedraza Bonilla</span>
+                                                <br>
+                                                <div class="badges">
+                                                    <span class="badge text-bg-light fw-light">Sistemas inteligentes de transporte</span>
+                                                    <span class="badge text-bg-light fw-light">Agricultura de precisión</span>
+                                                    <span class="badge text-bg-light fw-light">Computación paralela</span>
+                                                </div>
+                                                <hr>
+
+
+                                                <div class="d-flex justify-content-center mt-4 gap-2 info-icons">
+                                                    <i class="fa-brands fa-linkedin fa-xl"
+                                                       onclick="window.open(`https://co.linkedin.com/in/c%C3%A9sar-pedraza-bonilla-502b894a`)"></i>
+                                                    <i class="fa-brands fa-github fa-xl"
+                                                       onclick="window.open(`https://github.com/capedrazab`)"></i>
+                                                    <i class="fa-solid fa-earth-americas fa-xl"
+                                                       onclick="window.open(`https://dis.unal.edu.co/~capedrazab/`)"></i>
+                                                    <i tabindex="0" class="fa-solid fa-circle-info fa-xl"
+                                                       data-bs-toggle="popover" data-bs-trigger="focus"
+                                                       data-bs-html="true"
+                                                       title="Información de contacto"
+                                                       data-bs-content="<strong>Oficina:</strong> 112 Edificio 453 (Aulas de Ingeniería) <br/> <strong>Teléfono:</strong> +57 1 316 5000 ext. 14076  <br/> <strong>Correo electrónico:</strong> capedrazab@unal.edu.co"></i>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="row g-0">
-                                            <div class="col-lg-3">
-                                                <img src="images/PLaS/estudiantes/giovanny_hidalgo.png" alt=""
-                                                     class="img-fluid h-100">
-                                            </div>
-                                            <div class="col-lg-9">
-                                                <div class="card-body">
-                                                    <span class="fs-4 fw-bold"> Giovanny Hidalgo</span>
-                                                    <br>
-                                                    <div>
-                                                        <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
-                                                    </div>
-                                                    <hr>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="row g-0">
-                                            <div class="col-lg-3">
-                                                <img src="images/PLaS/estudiantes/jose_llanos.jpg" alt=""
-                                                     class="img-fluid h-100">
-                                            </div>
-                                            <div class="col-lg-9">
-                                                <div class="card-body">
-                                                    <span class="fs-4 fw-bold"> José Miguel Llanos</span>
-                                                    <br>
-                                                    <div>
-                                                        <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
-                                                    </div>
-                                                    <hr>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold">Jhon Alexander Aponte</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Sistemas embebidos confiables</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold">Camilo Gutierrez</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Sistemas intelegentes de transporte</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold">Jose Alejandro Sánchez</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Sistemas intelegentes de transporte</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small class="text-muted">Profesor asociado <small style="font-size: 10px">·
+                                            Activo</small></small>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div id="maestria" style="display: none;" data-bs-parent="#integrantes">
-                            <div class="row p-2 g-1">
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold">Elkin Alejandro Cruz</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Lenguajes de programación</span>
-                                            </div>
-                                            <hr>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="row g-0">
+                                        <div class="col-4 col-sm-3 col-md-6 col-lg-4 col-xl-5 col-xxl-4">
+                                            <img src="images/PLaS/fgo_pic.jpg" alt="" class="img-fluid h-100">
                                         </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold">Ivan del Pozo</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Lenguajes de programación</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold">Jean Pierre Alonso</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Lenguajes de programación</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
+                                        <div class="col-8 col-md-6 col-lg-8 col-xl-7 col-xxl-8">
+                                            <div class="card-body">
+                                                <span class="card-title fw-bold lh-1"">Fabio González Osorio</span>
+                                                <br>
+                                                <div class="badges">
+                                                    <span class="badge text-bg-light fw-light">Lenguajes de programación</span>
+                                                    <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
+                                                </div>
+                                                <hr>
 
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold">Juan Felipe Baquero</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Lenguajes de programación</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold">Oscar Javier Garavito</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Lenguajes de programación</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold">Sofía Echavarría Florez</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Lenguajes de programación</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold">Andrés Francisco Corso</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="row g-0">
-                                            <div class="col-lg-4">
-                                                <img src="images/PLaS/estudiantes/edna_chaparro.png" alt=""
-                                                     class="img-fluid h-100">
-                                            </div>
-                                            <div class="col-lg-8">
-                                                <div class="card-body">
-                                                    <span class="fs-4 fw-bold"> Edna Johanna Chaparro</span>
-                                                    <br>
-                                                    <div>
-                                                        <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
-                                                    </div>
-                                                    <hr>
+                                                <div class="d-flex justify-content-center mt-4 gap-2 info-icons">
+                                                    <i class="fa-brands fa-linkedin fa-xl"></i>
+                                                    <i class="fa-brands fa-github fa-xl"></i>
+                                                    <i class="fa-solid fa-earth-americas fa-xl"
+                                                       onclick="window.open(`https://dis.unal.edu.co/~fgonza/`)"></i>
+                                                    <i tabindex="0" class="fa-solid fa-circle-info fa-xl"
+                                                       data-bs-toggle="popover" data-bs-trigger="focus"
+                                                       data-bs-html="true"
+                                                       title="Información de contacto"
+                                                       data-bs-content="<strong>Oficina:</strong> 114 Edificio 453 (Aulas de Ingeniería) <br/> <strong>Teléfono:</strong> +57 1 316 5000 ext. 14077/11  <br/> <strong>Correo electrónico:</strong> fagonzalezo@unal.edu.co"></i>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small class="text-muted">Profesor titular <small style="font-size: 10px">·
+                                            Activo</small></small>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold">Father Alexander R.</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
-                                            </div>
-                                            <hr>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="row g-0">
+                                        <div class="col-4 col-sm-3 col-md-6 col-lg-4 col-xl-5 col-xxl-4">
+                                            <img src="images/PLaS/jre_pic.jpg" alt="" class="img-fluid h-100">
                                         </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="row g-0">
-                                            <div class="col-lg-3">
-                                                <img src="images/PLaS/estudiantes/hernan_lozano.jpg" alt=""
-                                                     class="img-fluid h-100">
-                                            </div>
-                                            <div class="col-lg-9">
-                                                <div class="card-body">
-                                                    <span class="fs-4 fw-bold"> Hernán Darío Lozano</span>
-                                                    <br>
-                                                    <div>
-                                                        <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
-                                                    </div>
-                                                    <hr>
+                                        <div class="col-8 col-md-6 col-lg-8 col-xl-7 col-xxl-8">
+                                            <div class="card-body">
+                                                <span class="card-title fw-bold lh-1"">Jhon Ramírez Echeverry</span>
+                                                <br>
+                                                <div class="badges">
+                                                    <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
+                                                </div>
+                                                <hr>
+
+                                                <div class="d-flex justify-content-center mt-4 gap-2 info-icons">
+                                                    <i class="fa-brands fa-linkedin fa-xl"
+                                                       onclick="window.open(`https://co.linkedin.com/in/jhon-jairo-ram%C3%ADrez-echeverry-8540a9107`)"></i>
+                                                    <i class="fa-brands fa-github fa-xl"></i>
+                                                    <i class="fa-solid fa-earth-americas fa-xl"
+                                                       onclick="window.open(`http://www.hermes.unal.edu.co/pages/Docentes/Docente.jsf;jsessionid=6F3CE1C2302701F9B3D5337FD6825C3A.tomcat5?u=jjramireze`)"></i>
+                                                    <i tabindex="0" class="fa-solid fa-circle-info fa-xl"
+                                                       data-bs-toggle="popover" data-bs-trigger="focus"
+                                                       data-bs-html="true"
+                                                       title="Información de contacto"
+                                                       data-bs-content="<strong>Oficina:</strong> 210 Edificio 453 (Aulas de Ingeniería) <br/> <strong>Teléfono:</strong> +57 1 316 5000 ext. 14086  <br/> <strong>Correo electrónico:</strong> jjramireze@unal.edu.co"></i>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold">Hugo Castellanos</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="row g-0">
-                                            <div class="col-lg-3">
-                                                <img src="images/PLaS/estudiantes/jhon_mendez.jpeg" alt=""
-                                                     class="img-fluid h-100">
-                                            </div>
-                                            <div class="col-lg-9">
-                                                <div class="card-body">
-                                                    <span class="fs-4 fw-bold"> Jhon Alexis Mendez</span>
-                                                    <br>
-                                                    <div>
-                                                        <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
-                                                    </div>
-                                                    <hr>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="row g-0">
-                                            <div class="col-lg-3">
-                                                <img src="images/PLaS/estudiantes/karen_cuervo.jpg" alt=""
-                                                     class="img-fluid h-100">
-                                            </div>
-                                            <div class="col-lg-9">
-                                                <div class="card-body">
-                                                    <span class="fs-4 fw-bold"> Karen Cuervo</span>
-                                                    <br>
-                                                    <div>
-                                                        <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
-                                                    </div>
-                                                    <hr>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold"> Lina Fernanda Rosales</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="row g-0">
-                                            <div class="col-lg-3">
-                                                <img src="images/PLaS/estudiantes/rafael_diez.png" alt=""
-                                                     class="img-fluid h-100">
-                                            </div>
-                                            <div class="col-lg-9">
-                                                <div class="card-body">
-                                                    <span class="fs-4 fw-bold"> Rafael Díez</span>
-                                                    <br>
-                                                    <div>
-                                                        <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
-                                                    </div>
-                                                    <hr>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold"> Stephanie Torres</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold"> Alejandro Moncada</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Sistemas embebidos confiables</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold"> Edwin Javier Sanabria</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Sistemas embebidos confiables</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold"> Elvert Mora</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Sistemas embebidos confiables</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold"> Camilo Camacho</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Sistemas inteligentes de transporte</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold"> César Rodríguez</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Sistemas inteligentes de transporte</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold"> Daniel Silva</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Sistemas inteligentes de transporte</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold"> Juan Sebastián Navarro</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Sistemas inteligentes de transporte</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold"> Néstor Suat</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Sistemas inteligentes de transporte</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold"> Omar Roa</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Sistemas inteligentes de transporte</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold"> Santiago Morales</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Sistemas inteligentes de transporte</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold"> Yefersson Rojas</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Sistemas inteligentes de transporte</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold"> Anderson Osorio</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Sistemas inteligentes de transporte</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold"> Andrés Gómez</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Agricultura de precisión</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold"> Andrés Puerto</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Agricultura de precisión</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold"> Andrés Suárez</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Agricultura de precisión</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-xl-3 col-md-6 col-12 ">
-                                    <div class="card h-auto">
-                                        <div class="card-body">
-                                            <span class="fs-4 fw-bold">Óscar Urbano</span>
-                                            <br>
-                                            <div>
-                                                <span class="badge text-bg-light fw-light">Internet de las cosas</span>
-                                            </div>
-                                            <hr>
-                                        </div>
-                                        <div class="card-footer d-flex justify-content-center">
-                                            <small style="font-size: 10px">
-                                                Activo</small>
-                                        </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small class="text-muted">Profesor asociado <small style="font-size: 10px">·
+                                            Activo</small></small>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!--          <div class="breadcrumb-class d-print-none">-->
-                    <!--              Está en:<a href="index.html" target="_self" title="Inicio">Inicio</a><img src="images/arrow.png" />-->
-                    <!--              <span>Integrantes</span>-->
-                    <!--          </div>-->
-                    <!--          &nbsp;-->
-                    <!--        <h1 class="text-center">Integrantes PLaS</h1>-->
-                    <!--        &nbsp;-->
-                    <!--        <div class="container mb-3 estados">-->
-                    <!--            <span class="d-inline-block mx-2"><img src="images/PLaS/activo.svg"-->
-                    <!--                                                   title="Activo"/> | Integrante Activo</span>-->
-                    <!--            <span class="d-inline-block ms-3"><img src="images/PLaS/inactivo.svg" title="Inactivo"/> | Integrante Inactivo</span>-->
-                    <!--        </div>-->
-                    <div class="row">
-                        <div class="col-3">
-                            <!--                    <button class="btn d-block w-100 my-1 listado" data-bs-toggle="collapse" data-bs-target="#listado1">-->
-                            <!--                        Profesores-->
-                            <!--                    </button>-->
-                            <!--                    <button class="btn d-block w-100 my-1 listado" data-bs-toggle="collapse" data-bs-target="#listado2">-->
-                            <!--                        Estudiantes de doctorado-->
-                            <!--                    </button>-->
-                            <!--                    <button class="btn d-block w-100 my-1 listado" data-bs-toggle="collapse" data-bs-target="#listado3">-->
-                            <!--                        Estudiantes de maestría-->
-                            <!--                    </button>-->
-                        </div>
-                        <div class="col-9 d-inline-block align-top">
-                            <!--                    <div id="listado2" class="collapse" data-bs-parent="#integrantes">-->
-                            <!--                        <h4 class="fw-bold">Estudiantes de doctorado</h4>-->
-                            <!--                        <hr/>-->
-                            <!--                        <div class="row pb-5 mb-0 mx-2">-->
-                            <!--                            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">-->
-                            <!--                                <div class="card shadow-sm border-0 rounded">-->
-                            <!--                                    <div class="card-body p-0">-->
-                            <!--                                        <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">-->
-                            <!--                                        <div class="p-4">-->
-                            <!--                                            <h5 class="mb-0">Jeisson Andrés Vergara</h5>-->
-                            <!--                                            <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>-->
-                            <!--                                            <ul class="social mb-0 list-inline mt-3">-->
-                            <!--                                                <li class="list-inline-item m-0"><a href="#" class="social-link"-->
-                            <!--                                                                                    target="_blank"><img-->
-                            <!--                                                        src="images/linkedin.svg"/></a></li>-->
-                            <!--                                                <li class="list-inline-item m-0"><a href="#" class="social-link"-->
-                            <!--                                                                                    target="_blank"><img-->
-                            <!--                                                        src="images/github.svg"/></a></li>-->
-                            <!--                                                <li class="align-middle text-start"><p class="small text-dark"> - -->
-                            <!--                                                    Lenguajes de programación</p></li>-->
-                            <!--                                            </ul>-->
-                            <!--                                        </div>-->
-                            <!--                                    </div>-->
-                            <!--                                </div>-->
-                            <!--                            </div>-->
-
-                            <!--                            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">-->
-                            <!--                                <div class="card shadow-sm border-0 rounded">-->
-                            <!--                                    <div class="card-body p-0">-->
-                            <!--                                        <img src="images/PLaS/estudiantes/edgar_criollo.jfif" alt=""-->
-                            <!--                                             class="w-100 card-img-top">-->
-                            <!--                                        <div class="p-4">-->
-                            <!--                                            <h5 class="mb-0">Edgar Hernando Criollo</h5>-->
-                            <!--                                            <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>-->
-                            <!--                                            <ul class="social mb-0 list-inline mt-3">-->
-                            <!--                                                <li class="list-inline-item m-0"><a href="#" class="social-link"-->
-                            <!--                                                                                    target="_blank"><img-->
-                            <!--                                                        src="images/linkedin.svg"/></a></li>-->
-                            <!--                                                <li class="list-inline-item m-0"><a href="#" class="social-link"-->
-                            <!--                                                                                    target="_blank"><img-->
-                            <!--                                                        src="images/github.svg"/></a></li>-->
-                            <!--                                                <li class="align-middle text-start"><p class="small text-dark"> - -->
-                            <!--                                                    Educación en ingeniería</p></li>-->
-                            <!--                                            </ul>-->
-                            <!--                                        </div>-->
-                            <!--                                    </div>-->
-                            <!--                                </div>-->
-                            <!--                            </div>-->
-                            <!--                            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">-->
-                            <!--                                <div class="card shadow-sm border-0 rounded">-->
-                            <!--                                    <div class="card-body p-0">-->
-                            <!--                                        <img src="images/PLaS/estudiantes/giovanny_hidalgo.png" alt=""-->
-                            <!--                                             class="w-100 card-img-top">-->
-                            <!--                                        <div class="p-4">-->
-                            <!--                                            <h5 class="mb-0">Giovanny Hidalgo</h5>-->
-                            <!--                                            <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>-->
-                            <!--                                            <ul class="social mb-0 list-inline mt-3">-->
-                            <!--                                                <li class="list-inline-item m-0"><a-->
-                            <!--                                                        href="https://co.linkedin.com/in/giovanny-hidalgo-suarez-95711b1a5"-->
-                            <!--                                                        class="social-link" target="_blank"><img-->
-                            <!--                                                        src="images/linkedin.svg"/></a></li>-->
-                            <!--                                                <li class="list-inline-item m-0"><a href="#" class="social-link"-->
-                            <!--                                                                                    target="_blank"><img-->
-                            <!--                                                        src="images/github.svg"/></a></li>-->
-                            <!--                                                <li class="align-middle text-start"><p class="small text-dark"> - -->
-                            <!--                                                    Educación en ingeniería</p></li>-->
-                            <!--                                            </ul>-->
-                            <!--                                        </div>-->
-                            <!--                                    </div>-->
-                            <!--                                </div>-->
-                            <!--                            </div>-->
-                            <!--                            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">-->
-                            <!--                                <div class="card shadow-sm border-0 rounded">-->
-                            <!--                                    <div class="card-body p-0">-->
-                            <!--                                        <img src="images/PLaS/estudiantes/jose_llanos.jpg" alt=""-->
-                            <!--                                             class="w-100 card-img-top">-->
-                            <!--                                        <div class="p-4">-->
-                            <!--                                            <h5 class="mb-0">José Miguel Llanos</h5>-->
-                            <!--                                            <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>-->
-                            <!--                                            <ul class="social mb-0 list-inline mt-3">-->
-                            <!--                                                <li class="list-inline-item m-0"><a href="#" class="social-link"-->
-                            <!--                                                                                    target="_blank"><img-->
-                            <!--                                                        src="images/linkedin.svg"/></a></li>-->
-                            <!--                                                <li class="list-inline-item m-0"><a href="#" class="social-link"-->
-                            <!--                                                                                    target="_blank"><img-->
-                            <!--                                                        src="images/github.svg"/></a></li>-->
-                            <!--                                                <li class="align-middle text-start"><p class="small text-dark"> - -->
-                            <!--                                                    Educación en ingeniería</p></li>-->
-                            <!--                                            </ul>-->
-                            <!--                                        </div>-->
-                            <!--                                    </div>-->
-                            <!--                                </div>-->
-                            <!--                            </div>-->
-                            <!--                        </div>-->
-                            <!--                        <div class="row pb-5 mb-0 mx-2">-->
-                            <!--                            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">-->
-                            <!--                                <div class="card shadow-sm border-0 rounded">-->
-                            <!--                                    <div class="card-body p-0">-->
-                            <!--                                        <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">-->
-                            <!--                                        <div class="p-4">-->
-                            <!--                                            <h5 class="mb-0">Jhon Alexander Aponte</h5>-->
-                            <!--                                            <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>-->
-                            <!--                                            <ul class="social mb-0 list-inline mt-3">-->
-                            <!--                                                <li class="list-inline-item m-0"><a href="#" class="social-link"-->
-                            <!--                                                                                    target="_blank"><img-->
-                            <!--                                                        src="images/linkedin.svg"/></a></li>-->
-                            <!--                                                <li class="list-inline-item m-0"><a href="#" class="social-link"-->
-                            <!--                                                                                    target="_blank"><img-->
-                            <!--                                                        src="images/github.svg"/></a></li>-->
-                            <!--                                                <li class="align-middle text-start"><p class="small text-dark"> - -->
-                            <!--                                                    Sistemas embebidos confiables</p></li>-->
-                            <!--                                            </ul>-->
-                            <!--                                        </div>-->
-                            <!--                                    </div>-->
-                            <!--                                </div>-->
-                            <!--                            </div>-->
-
-                            <!--                            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">-->
-                            <!--                                <div class="card shadow-sm border-0 rounded">-->
-                            <!--                                    <div class="card-body p-0">-->
-                            <!--                                        <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">-->
-                            <!--                                        <div class="p-4">-->
-                            <!--                                            <h5 class="mb-0">Camilo Gutiérrez</h5>-->
-                            <!--                                            <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>-->
-                            <!--                                            <ul class="social mb-0 list-inline mt-3">-->
-                            <!--                                                <li class="list-inline-item m-0"><a href="#" class="social-link"-->
-                            <!--                                                                                    target="_blank"><img-->
-                            <!--                                                        src="images/linkedin.svg"/></a></li>-->
-                            <!--                                                <li class="list-inline-item m-0"><a href="#" class="social-link"-->
-                            <!--                                                                                    target="_blank"><img-->
-                            <!--                                                        src="images/github.svg"/></a></li>-->
-                            <!--                                                <li class="align-middle text-start"><p class="small text-dark"> - -->
-                            <!--                                                    Sistemas Inteligentes de Transporte</p></li>-->
-                            <!--                                            </ul>-->
-                            <!--                                        </div>-->
-                            <!--                                    </div>-->
-                            <!--                                </div>-->
-                            <!--                            </div>-->
-                            <!--                            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">-->
-                            <!--                                <div class="card shadow-sm border-0 rounded">-->
-                            <!--                                    <div class="card-body p-0">-->
-                            <!--                                        <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">-->
-                            <!--                                        <div class="p-4">-->
-                            <!--                                            <h5 class="mb-0">Jose Alejandro Sánchez</h5>-->
-                            <!--                                            <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>-->
-                            <!--                                            <ul class="social mb-0 list-inline mt-3">-->
-                            <!--                                                <li class="list-inline-item m-0"><a href="#" class="social-link"-->
-                            <!--                                                                                    target="_blank"><img-->
-                            <!--                                                        src="images/linkedin.svg"/></a></li>-->
-                            <!--                                                <li class="list-inline-item m-0"><a href="#" class="social-link"-->
-                            <!--                                                                                    target="_blank"><img-->
-                            <!--                                                        src="images/github.svg"/></a></li>-->
-                            <!--                                                <li class="align-middle text-start"><p class="small text-dark"> - -->
-                            <!--                                                    Sistemas Inteligentes de Transporte</p></li>-->
-                            <!--                                            </ul>-->
-                            <!--                                        </div>-->
-                            <!--                                    </div>-->
-                            <!--                                </div>-->
-                            <!--                            </div>-->
-                            <!--                            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">-->
-                            <!--                            </div>-->
-                            <!--                        </div>-->
-                        </div>
-                        <div id="listado3" class="collapse" data-bs-parent="#integrantes">
-                            <h4 class="fw-bold">Estudiantes de maestría</h4>
-                            <hr/>
-                            <div class="row pb-5 mb-0 mx-2">
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Elkin Alejandro Cruz</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Lenguajes de programación</p></li>
-                                                </ul>
-                                            </div>
+                    <div id="doctorado" style="display: none;">
+                        <div class="row g-1">
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold">Jeisson Andrés Vergara</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Lenguajes de programación</span>
                                         </div>
+                                        <hr>
                                     </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Ivan del Pozo</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Lenguajes de programación</p></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Jean Pierre Alonso</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Lenguajes de programación</p></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Juan Felipe Baquero</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Lenguajes de programación</p></li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row pb-5 mb-0 mx-2">
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Oscar Javier Garavito</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Lenguajes de programación</p></li>
-                                                </ul>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="row g-0">
+                                        <div class="col-4 col-sm-3 col-md-6 col-lg-4 col-xl-5 col-xxl-4">
+                                            <img src="images/PLaS/estudiantes/edgar_criollo.jfif" alt=""
+                                                 class="img-fluid h-100">
+                                        </div>
+                                        <div class="col-8 col-md-6 col-lg-8 col-xl-7 col-xxl-8">
+                                            <div class="card-body">
+                                                <span class="fs-4 fw-bold"> Edgar Hernando Criollo</span>
+                                                <br>
+                                                <div>
+                                                    <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
+                                                </div>
+                                                <hr>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Sofía Echavarría Florez</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Lenguajes de programación</p></li>
-                                                </ul>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="row g-0">
+                                        <div class="col-4 col-sm-3 col-md-6 col-lg-4 col-xl-5 col-xxl-4">
+                                            <img src="images/PLaS/estudiantes/giovanny_hidalgo.png" alt=""
+                                                 class="img-fluid h-100">
+                                        </div>
+                                        <div class="col-8 col-md-6 col-lg-8 col-xl-7 col-xxl-8">
+                                            <div class="card-body">
+                                                <span class="fs-4 fw-bold"> Giovanny Hidalgo</span>
+                                                <br>
+                                                <div>
+                                                    <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
+                                                </div>
+                                                <hr>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Andrés Francisco Corso</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a
-                                                            href="https://co.linkedin.com/in/andrescorso"
-                                                            class="social-link" target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Educación en ingeniería</p></li>
-                                                </ul>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="row g-0">
+                                        <div class="col-4 col-sm-3 col-md-6 col-lg-4 col-xl-5 col-xxl-4">
+                                            <img src="images/PLaS/estudiantes/jose_llanos.jpg" alt=""
+                                                 class="img-fluid h-100">
+                                        </div>
+                                        <div class="col-8 col-md-6 col-lg-8 col-xl-7 col-xxl-8">
+                                            <div class="card-body">
+                                                <span class="fs-4 fw-bold"> José Miguel Llanos</span>
+                                                <br>
+                                                <div>
+                                                    <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
+                                                </div>
+                                                <hr>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold">Jhon Alexander Aponte</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Sistemas embebidos confiables</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold">Camilo Gutierrez</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Sistemas intelegentes de transporte</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold">Jose Alejandro Sánchez</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Sistemas intelegentes de transporte</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="maestria" style="display: none;">
+                        <div class="row p-2 g-1">
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold">Elkin Alejandro Cruz</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Lenguajes de programación</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold">Ivan del Pozo</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Lenguajes de programación</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold">Jean Pierre Alonso</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Lenguajes de programación</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold">Juan Felipe Baquero</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Lenguajes de programación</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold">Oscar Javier Garavito</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Lenguajes de programación</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold">Sofía Echavarría Florez</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Lenguajes de programación</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold">Andrés Francisco Corso</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="row g-0">
+                                        <div class="col-4 col-sm-3 col-md-6 col-lg-4 col-xl-5 col-xxl-4">
                                             <img src="images/PLaS/estudiantes/edna_chaparro.png" alt=""
-                                                 class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Edna Johanna Chaparro</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a
-                                                            href="https://co.linkedin.com/in/edna-johanna-chaparro-amaya-4a1284126"
-                                                            class="social-link" target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Educación en ingeniería</p></li>
-                                                </ul>
+                                                 class="img-fluid h-100">
+                                        </div>
+                                        <div class="col-8 col-md-6 col-lg-8 col-xl-7 col-xxl-8">
+                                            <div class="card-body">
+                                                <span class="fs-4 fw-bold"> Edna Johanna Chaparro</span>
+                                                <br>
+                                                <div>
+                                                    <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
+                                                </div>
+                                                <hr>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row pb-5 mb-0 mx-2">
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Father Alexander R.</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Educación en ingeniería</p></li>
-                                                </ul>
-                                            </div>
-
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold">Father Alexander R.</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
                                         </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="row g-0">
+                                        <div class="col-4 col-sm-3 col-md-6 col-lg-4 col-xl-5 col-xxl-4">
                                             <img src="images/PLaS/estudiantes/hernan_lozano.jpg" alt=""
-                                                 class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Hernán Darío Lozano</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Educación en ingeniería</p></li>
-                                                </ul>
+                                                 class="img-fluid h-100">
+                                        </div>
+                                        <div class="col-4 col-sm-3 col-md-6 col-lg-4 col-xl-5 col-xxl-4">
+                                            <div class="card-body">
+                                                <span class="fs-4 fw-bold"> Hernán Darío Lozano</span>
+                                                <br>
+                                                <div>
+                                                    <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
+                                                </div>
+                                                <hr>
                                             </div>
-
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Hugo Castellanos</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Educación en ingeniería</p></li>
-                                                </ul>
-                                            </div>
-
-                                        </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold">Hugo Castellanos</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="row g-0">
+                                        <div class="col-4 col-sm-3 col-md-6 col-lg-4 col-xl-5 col-xxl-4">
                                             <img src="images/PLaS/estudiantes/jhon_mendez.jpeg" alt=""
-                                                 class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Jhon Alexis Mendez</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a
-                                                            href="https://github.com/jhonmendex"
-                                                            class="social-link" target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Educación en ingeniería</p></li>
-                                                </ul>
+                                                 class="img-fluid h-100">
+                                        </div>
+                                        <div class="col-4 col-sm-3 col-md-6 col-lg-4 col-xl-5 col-xxl-4">
+                                            <div class="card-body">
+                                                <span class="fs-4 fw-bold"> Jhon Alexis Mendez</span>
+                                                <br>
+                                                <div>
+                                                    <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
+                                                </div>
+                                                <hr>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row pb-5 mb-0 mx-2">
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="row g-0">
+                                        <div class="col-4 col-sm-3 col-md-6 col-lg-4 col-xl-5 col-xxl-4">
                                             <img src="images/PLaS/estudiantes/karen_cuervo.jpg" alt=""
-                                                 class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Karen Cuervo</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a
-                                                            href="https://co.linkedin.com/in/karen-daniela-cuervo-cely-a381a3163"
-                                                            class="social-link" target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Educación en ingeniería</p></li>
-                                                </ul>
+                                                 class="img-fluid h-100">
+                                        </div>
+                                        <div class="col-4 col-sm-3 col-md-6 col-lg-4 col-xl-5 col-xxl-4">
+                                            <div class="card-body">
+                                                <span class="fs-4 fw-bold"> Karen Cuervo</span>
+                                                <br>
+                                                <div>
+                                                    <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
+                                                </div>
+                                                <hr>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Lina Fernanda Rosales</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Educación en ingeniería</p></li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold"> Lina Fernanda Rosales</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="row g-0">
+                                        <div class="col-4 col-sm-3 col-md-6 col-lg-4 col-xl-5 col-xxl-4">
                                             <img src="images/PLaS/estudiantes/rafael_diez.png" alt=""
-                                                 class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Rafael Díez</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a
-                                                            href="https://github.com/Radiezca"
-                                                            class="social-link" target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Educación en Ingeniería</p></li>
-                                                </ul>
+                                                 class="img-fluid h-100">
+                                        </div>
+                                        <div class="col-4 col-sm-3 col-md-6 col-lg-4 col-xl-5 col-xxl-4">
+                                            <div class="card-body">
+                                                <span class="fs-4 fw-bold"> Rafael Díez</span>
+                                                <br>
+                                                <div>
+                                                    <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
+                                                </div>
+                                                <hr>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Stephanie Torres</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Educación en ingeniería</p></li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row pb-5 mb-0 mx-2">
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Alejandro Moncada</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Sistemas embebidos confiables</p></li>
-                                                </ul>
-                                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold"> Stephanie Torres</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Educación en ingeniería</span>
                                         </div>
+                                        <hr>
                                     </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Edwin Javier Sanabria</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Sistemas embebidos confiables</p></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Elvert Mora</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Sistemas embebidos confiables</p></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Camilo Camacho</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Sistemas Inteligentes de Transporte</p></li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row pb-5 mb-0 mx-2">
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">César Rodríguez</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Sistemas Inteligentes de Transporte</p></li>
-                                                </ul>
-                                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold"> Alejandro Moncada</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Sistemas embebidos confiables</span>
                                         </div>
+                                        <hr>
                                     </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Daniel Silva</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Sistemas Inteligentes de Transporte</p></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Juan Sebastián Navarro</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Sistemas Inteligentes de Transporte</p></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Néstor Suat</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Sistemas Inteligentes de Transporte</p></li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row pb-5 mb-0 mx-2">
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Omar Roa</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Sistemas Inteligentes de Transporte</p></li>
-                                                </ul>
-                                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold"> Edwin Javier Sanabria</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Sistemas embebidos confiables</span>
                                         </div>
+                                        <hr>
                                     </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Santiago Morales</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Sistemas Inteligentes de Transporte</p></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Yefersson Rojas</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Sistemas Inteligentes de Transporte</p></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Anderson Osorio</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Agricultura de precisión</p></li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row pb-5 mb-0 mx-2">
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Andrés Gómez</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Agricultura de precisión</p></li>
-                                                </ul>
-                                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold"> Elvert Mora</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Sistemas embebidos confiables</span>
                                         </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Andrés Puerto</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Agricultura de precisión</p></li>
-                                                </ul>
-                                            </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold"> Camilo Camacho</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Sistemas inteligentes de transporte</span>
                                         </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Andrés Suárez</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Agricultura de precisión</p></li>
-                                                </ul>
-                                            </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold"> César Rodríguez</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Sistemas inteligentes de transporte</span>
                                         </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 mx-auto">
-                                    <div class="card shadow-sm border-0 rounded">
-                                        <div class="card-body p-0">
-                                            <img src="images/PLaS/user.png" alt="" class="w-100 card-img-top">
-                                            <div class="p-4">
-                                                <h5 class="mb-0">Óscar Urbano</h5>
-                                                <a class="estado"><img src="images/PLaS/activo.svg" title="Activo"/></a>
-                                                <ul class="social mb-0 list-inline mt-3">
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/linkedin.svg"/></a></li>
-                                                    <li class="list-inline-item m-0"><a href="#" class="social-link"
-                                                                                        target="_blank"><img
-                                                            src="images/github.svg"/></a></li>
-                                                    <li class="align-middle text-start"><p class="small text-dark">
-                                                        -
-                                                        Internet de las cosas</p></li>
-                                                </ul>
-                                            </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold"> Daniel Silva</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Sistemas inteligentes de transporte</span>
                                         </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold"> Juan Sebastián Navarro</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Sistemas inteligentes de transporte</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold"> Néstor Suat</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Sistemas inteligentes de transporte</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold"> Omar Roa</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Sistemas inteligentes de transporte</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold"> Santiago Morales</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Sistemas inteligentes de transporte</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold"> Yefersson Rojas</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Sistemas inteligentes de transporte</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold"> Anderson Osorio</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Sistemas inteligentes de transporte</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold"> Andrés Gómez</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Agricultura de precisión</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold"> Andrés Puerto</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Agricultura de precisión</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold"> Andrés Suárez</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Agricultura de precisión</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 col-xxl-3">
+                                <div class="card h-auto">
+                                    <div class="card-body">
+                                        <span class="fs-4 fw-bold">Óscar Urbano</span>
+                                        <br>
+                                        <div>
+                                            <span class="badge text-bg-light fw-light">Internet de las cosas</span>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-center">
+                                        <small style="font-size: 10px">
+                                            Activo</small>
                                     </div>
                                 </div>
                             </div>
@@ -2397,6 +1460,7 @@
 <!-- JS -->
 <script type="module" src="js/popovers.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
 <script src="js/accesibilidad.js"></script>
 <script src="js/integrantes.js"></script>
 </body>

@@ -133,10 +133,23 @@ let btn_educacion = document.getElementById("btn-educacion");
 let btn_embebidos = document.getElementById("btn-embebidos");
 let btn_transporte = document.getElementById("btn-transporte");
 let btn_agricultura = document.getElementById("btn-agricultura");
-console.log(btn_lenguajes);
 
 btn_lenguajes.addEventListener("click", toggleActive, false);
 btn_educacion.addEventListener("click", toggleActive, false);
 btn_embebidos.addEventListener("click", toggleActive, false);
 btn_transporte.addEventListener("click", toggleActive, false);
 btn_agricultura.addEventListener("click", toggleActive, false);
+
+
+if(location.hash === "#educacion"){
+  btn_educacion.click();
+}
+else if (location.hash === "#transporte"){
+  btn_transporte.click();
+}
+else if (location.hash === "#agricultura"){
+  btn_agricultura.click();
+}
+else if (location.hash === "#embebidos"){
+  btn_embebidos.click();
+}

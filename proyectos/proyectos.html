@@ -1,761 +1,1194 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-   <head>
-      <!--Favicon-->
-      <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
-      <!-- meta tags -->
-      <meta charset="utf-8">
-      <meta name="revisit-after" content="1 hour">
-      <meta name="distribution" content="all">
-      <meta
-         name="viewport"
-         content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.5, user-scalable=yes">
-      <meta name="expires" content="1">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="robots" content="all">
-      <meta http-equiv="cache-control" content="no-cache" />
-      <!-- CSS -->
-      <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-      <link href="../css/frontend.css" rel="stylesheet">
-      <link href="../node_modules/open-iconic/font/css/open-iconic-bootstrap.min.css"  rel="stylesheet">
-      <link href="../css/accesibilidad.css" rel="stylesheet">
-      <title>Proyectos - PLaS</title>
-   </head>
-   <body>
-       <header>
-           <div class="logo">
-               <a href="https://unal.edu.co">
-                   <div class="svg">
-                       <img src="../images/escudoUnal.svg"
-                            class="d-print-none img-fluid"
-                            alt="Escudo de la Universidad Nacional de Colombia" />
-                   </div>
-               </a>
-               <div style="position: absolute; top :1px; width: 60px;" class="d-none d-print-block">
-                   <img src="../images/escudoUnal_black.png"
-                        class="d-none d-print-block"
-                        alt="Escudo de la Universidad Nacional de Colombia" />
-               </div>
-           </div>
-           <div id="pestania-accesibilidad-mobile" class="d-block d-md-none"></div>
-           <div class="seal">
-               <img class="d-print-none"
-                    alt="Escudo de la República de Colombia"
-                    src="../images/sealColombia.png"
-                    width="66"
-                    height="66" />
+  <head>
+    <!--Favicon-->
+    <link
+      rel="shortcut icon"
+      href="../images/favicon.ico"
+      type="image/x-icon"
+    />
+    <!-- meta tags -->
+    <meta charset="utf-8" />
+    <meta name="revisit-after" content="1 hour" />
+    <meta name="distribution" content="all" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.5, user-scalable=yes"
+    />
+    <meta name="expires" content="1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="robots" content="all" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <!-- CSS -->
+    <link
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="../css/frontend.css" rel="stylesheet" />
+    <link
+      href="../node_modules/open-iconic/font/css/open-iconic-bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="../css/accesibilidad.css" rel="stylesheet" />
+    <!-- JS -->
+    <script
+      src="https://kit.fontawesome.com/12f7911629.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Proyectos - PLaS</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="https://unal.edu.co">
+          <div class="svg">
+            <img
+              src="../images/escudoUnal.svg"
+              class="d-print-none img-fluid"
+              alt="Escudo de la Universidad Nacional de Colombia"
+            />
+          </div>
+        </a>
+        <div
+          style="position: absolute; top: 1px; width: 60px"
+          class="d-none d-print-block"
+        >
+          <img
+            src="../images/escudoUnal_black.png"
+            class="d-none d-print-block"
+            alt="Escudo de la Universidad Nacional de Colombia"
+          />
+        </div>
+      </div>
+      <div id="pestania-accesibilidad-mobile" class="d-block d-md-none"></div>
+      <div class="seal">
+        <img
+          class="d-print-none"
+          alt="Escudo de la República de Colombia"
+          src="../images/sealColombia.png"
+          width="66"
+          height="66"
+        />
+      </div>
+      <!--menú contextual-->
+      <div class="firstMenu">
+        <div class="content-fluid">
+          <!--prueba navbar-->
+          <!--fin de prueba navbar-->
+          <nav class="navbar nav navbar-toggler navbar-expand-md navbar-dark">
+            <!-- perfiles -->
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarScroll"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse navbar-default">
+              <nav id="profiles">
+                <ul class="me-auto nav justify-content-end">
+                  <li class="nav-item item_Aspirantes">
+                    <a href="http://aspirantes.unal.edu.co">Aspirantes</a>
+                  </li>
+                  <li class="nav-item item_Estudiantes">
+                    <a href="http://estudiantes.unal.edu.co">Estudiantes</a>
+                  </li>
+                  <li class="nav-item item_Egresados">
+                    <a href="http://egresados.unal.edu.co">Egresados</a>
+                  </li>
+                  <li class="nav-item item_Docentes">
+                    <a href="http://docentes.unal.edu.co">Docentes</a>
+                  </li>
+                  <li class="nav-item item_Administrativos">
+                    <a href="http://administrativos.unal.edu.co"
+                      >Administrativos</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <!-- redes sociales -->
+            <ul class="socialLinks d-none d-md-block">
+              <li>
+                <a
+                  href="https://www.facebook.com/UNALOficial"
+                  target="_blank"
+                  class="facebook"
+                  title="Página oficial en Facebook"
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://twitter.com/UNALOficial"
+                  target="_blank"
+                  class="twitter"
+                  title="Cuenta oficial en Twitter"
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/channel/UCnE6Zj2llVxcvL5I38B0Ceg"
+                  target="_blank"
+                  class="youtube"
+                  title="Canal oficial de Youtube"
+                ></a>
+              </li>
+            </ul>
+            <!-- idioma -->
+            <div class="btn-group d-print-none">
+              <button
+                type="button"
+                class="btn btn-secondary dropdown-toggle language-button"
+                data-bs-toggle="dropdown"
+                data-bs-display="static"
+                aria-expanded="false"
+              >
+                ES
+              </button>
+              <ul
+                class="dropdown-menu dropdown-menu-start dropdown-menu-lg-start language-dropdown"
+              >
+                <li>
+                  <a class="dropdown-item" href="#">EN - English</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">GUC - Wayuunaiki</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">PBB - Nasa yuwe</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <!-- Menú inferior -->
+      <div id="bs-navbar" class="navigation">
+        <!-- Título del sitio -->
+        <div class="container-fluid myb d-print-inline-block">
+          <div class="site-url row d-print-none" id="subdominio">
+            <span class="oi oi-map-marker me-0"></span>
+            <a href="https://ingenieria.bogota.unal.edu.co/" target="_blank"
+              >ingenieria.bogota.unal.edu.co</a
+            >
+          </div>
+          <!-- Buscador-->
+          <div class="buscador row" id="buscador"></div>
+        </div>
+        <!-- Main menu -->
+        <nav class="navbar navbar-expand-md navbar-dark menuPrincipal">
+          <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html">Inicio</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Líneas de Investigación
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="../investigaciones/lenguajes.html"
+                        >Lenguajes de programación</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="../investigaciones/educacion.html"
+                        >Educación en ingeniería</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="../investigaciones/embebidos.html"
+                        >Sistemas embebidos confiables</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="../investigaciones/transporte.html"
+                        >Sistemas Inteligentes de Transporte - ITS</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="../investigaciones/agricultura.html"
+                        >Agricultura de precisión</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../integrantes.html">Integrantes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="proyectos.html">Proyectos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../publicaciones.html"
+                    >Publicaciones</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../contactenos.html">Contáctenos</a>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="collapse navbar-collapse menuSedes"
+              id="navbarSupportedContent"
+            >
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Sedes
+                  </a>
+                  <ul class="dropdown-menu" id="sedes">
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="http://amazonia.unal.edu.co"
+                        target="_blank"
+                        >Amazonia</a
+                      >
+                      <span class="caret-right"></span>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="http://bogota.unal.edu.co"
+                        target="_blank"
+                        >Bogotá</a
+                      >
+                      <span class="caret-right"></span>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="http://caribe.unal.edu.co"
+                        target="_blank"
+                        >Caribe</a
+                      >
+                      <span class="caret-right"></span>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="http://delapaz.unal.edu.co"
+                        target="_blank"
+                        >De La Paz</a
+                      >
+                      <span class="caret-right"></span>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="http://www.manizales.unal.edu.co"
+                        target="_blank"
+                        >Manizales</a
+                      >
+                      <span class="caret-right"></span>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="http://medellin.unal.edu.co"
+                        target="_blank"
+                        >Medellín</a
+                      >
+                      <span class="caret-right"></span>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="http://orinoquia.unal.edu.co"
+                        target="_blank"
+                        >Orinoquia</a
+                      >
+                      <span class="caret-right"></span>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="http://www.palmira.unal.edu.co"
+                        target="_blank"
+                        >Palmira</a
+                      >
+                      <span class="caret-right"></span>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="http://tumaco-pacifico.unal.edu.co"
+                        target="_blank"
+                        >Tumaco</a
+                      >
+                      <span class="caret-right"></span>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <div
+                class="collapse navbar-collapse menuProfiles"
+                id="navbarSupportedContent"
+              >
+                <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Perfiles
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item item_Aspirantes">
+                        <a href="http://aspirantes.unal.edu.co">Aspirantes</a>
+                      </li>
+                      <li class="nav-item item_Estudiantes">
+                        <a href="http://estudiantes.unal.edu.co">Estudiantes</a>
+                      </li>
+                      <li class="nav-item item_Egresados">
+                        <a href="http://egresados.unal.edu.co">Egresados</a>
+                      </li>
+                      <li class="nav-item item_Docentes">
+                        <a href="http://docentes.unal.edu.co">Docentes</a>
+                      </li>
+                      <li class="nav-item item_Administrativos">
+                        <a href="http://administrativos.unal.edu.co"
+                          >Administrativos</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="collapse navbar-collapse menuServices"
+                id="navbarSupportedContent"
+              >
+                <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Servicios
+                    </a>
+                    <ul class="dropdown-menu" id="servicios">
+                      <li>
+                        <a href="http://correo.unal.edu.co" target="_blank">
+                          <img
+                            src="../images/icnServEmail.png"
+                            width="32"
+                            height="32"
+                            alt="Correo Electrónico"
+                          />Correo Electrónico
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://dninfoa.unal.edu.co" target="_blank">
+                          <img
+                            src="../images/icnServSia.png"
+                            width="32"
+                            height="32"
+                            alt="Dirección Nacional de Información Académica"
+                          />DNINFOA - SIA
+                        </a>
+                      </li>
+                      <li>
+                        <a href="http://bibliotecas.unal.edu.co" target="_blank"
+                          ><img
+                            src="../images/icnServLibrary.png"
+                            width="32"
+                            height="32"
+                            alt="Biblioteca"
+                          />Bibliotecas</a
+                        >
+                      </li>
+                      <li>
+                        <a href="http://personal.unal.edu.co" target="_blank"
+                          ><img
+                            src="../images/icnServCall.png"
+                            width="32"
+                            height="32"
+                            alt="Convocatorias"
+                          />Convocatorias</a
+                        >
+                      </li>
+                      <li>
+                        <a href="http://identidad.unal.edu.co">
+                          <img
+                            src="../images/icnServIdentidad.png"
+                            width="32"
+                            height="32"
+                            alt="Identidad UNAL"
+                          />Identidad UNAL
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- Panel de accesibilidad -->
+    <div class="tx-unal-accesibilidad d-print-none">
+      <!-- defaultpanel -->
+      <div
+        id="panel-accesibilidad"
+        style="display: none"
+        class="panel-content container-fluid"
+      >
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-3">
+                <h4>Tamaño letra</h4>
+                <button
+                  class="boton-panel"
+                  id="letra-disminuir"
+                  onclick="cambiarTamanioLetra('-')"
+                  type="submit"
+                  name="Disminuir letra"
+                  value=""
+                >
+                  A<sup>-</sup>
+                </button>
+                <button
+                  class="boton-panel"
+                  id="letra-aumentar"
+                  onclick="cambiarTamanioLetra('+')"
+                  type="submit"
+                  name="Aumentar Letra"
+                  value=""
+                >
+                  A<sup>+</sup>
+                </button>
+                <input
+                  disabled="1"
+                  class="letras-porcentaje"
+                  id="letter-percent"
+                  type="text"
+                  name="Porcentaje de letra"
+                  value="100%"
+                />
+              </div>
+              <div class="col-md-3">
+                <h4>Cambiar Contrastes</h4>
+                <button
+                  class="boton-panel"
+                  id="contraste-1"
+                  onclick="cambiarContrastes(1)"
+                  type="submit"
+                  name="Cambiar contraste 1"
+                  value=""
+                >
+                  1
+                </button>
+                <button
+                  class="boton-panel"
+                  id="contraste-2"
+                  onclick="cambiarContrastes(2)"
+                  type="submit"
+                  name="Cambiar contraste 2"
+                  value=""
+                >
+                  2
+                </button>
+                <button
+                  class="boton-panel"
+                  id="contrate-3"
+                  onclick="cambiarContrastes(3)"
+                  type="submit"
+                  name="Cambiar contraste 3"
+                  value=""
+                >
+                  3
+                </button>
+              </div>
+              <div class="col-md-3">
+                <h4>Invertir colores</h4>
+                <button
+                  class="boton-panel"
+                  id="inversor"
+                  onclick="invertirColores()"
+                  type="submit"
+                  name="Invertir colores"
+                  value=""
+                >
+                  Aplicar
+                </button>
+              </div>
+              <div class="col-md-3">
+                <h4>Restablecer ajustes</h4>
+                <button
+                  class="boton-panel"
+                  id="defaul-config"
+                  onclick="defaultConfig()"
+                  type="submit"
+                  name="Restablecer ajustes"
+                  value=""
+                >
+                  Aplicar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="pestania-accesibilidad" class="">Panel de Accesibilidad</div>
+    </div>
+    <!--Pestaña de servicios-->
+    <div id="mySidebar" class="sidebar hsidebar">
+      <div class="indicator d-none d-md-block"></div>
+      <ul id="services">
+        <li>
+          <a href="http://correo.unal.edu.co" target="_blank">
+            <img
+              src="../images/icnServEmail.png"
+              width="32"
+              height="32"
+              alt="Correo Electrónico"
+            />Correo Electrónico
+          </a>
+        </li>
+        <li>
+          <a href="https://dninfoa.unal.edu.co" target="_blank">
+            <img
+              src="../images/icnServSia.png"
+              width="32"
+              height="32"
+              alt="Dirección Nacional de Información Académica"
+            />DNINFOA - SIA
+          </a>
+        </li>
+        <li>
+          <a href="http://bibliotecas.unal.edu.co" target="_blank"
+            ><img
+              src="../images/icnServLibrary.png"
+              width="32"
+              height="32"
+              alt="Biblioteca"
+            />Bibliotecas</a
+          >
+        </li>
+        <li>
+          <a href="http://personal.unal.edu.co" target="_blank"
+            ><img
+              src="../images/icnServCall.png"
+              width="32"
+              height="32"
+              alt="Convocatorias"
+            />Convocatorias</a
+          >
+        </li>
+        <li>
+          <a href="http://identidad.unal.edu.co">
+            <img
+              src="../images/icnServIdentidad.png"
+              width="32"
+              height="32"
+              alt="Identidad UNAL"
+            />Identidad UNAL
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div id="main" class="hsidebar">
+      <div class="openbtn" id="openbtnId" onclick="toggleNav() "></div>
+    </div>
+    <main class="detalle container-fluid">
+      <div class="row mt-5">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3 col-xxl-2">
+          <div class="shadow-sm rounded-3">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item mx-3 my-2 breadcrumb-plas">
+                Está en:
+                <a href="index.html" target="_self" title="Inicio">Inicio</a
+                ><img src="../images/arrow.png" /><span>Proyectos</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class=" col-12 d-flex flex-column justify-content-center">
+          <div class="shadow p-4 p-lg-5 rounded-3 ">
+            <p
+              style="
+                font-weight: 900;
+                color: #064e3b;
+                line-height: 80%;
+              "
+              class="content-title"
+            >
+              Proyectos PlaS
+            </p>
+            <br />
+            <div class="row w-100">
+              <div
+                class="col-12 border rounded-3 d-flex p-2 gap-2 flex-lg-nowrap flex-md-nowrap flex-wrap justify-content-center"
+              >
+                <button
+                  class="plas-button active rounded-4 d-block w-75 my-1 p-2"
+                  id="btn-lenguajes"
+                >
+                  Lenguajes de programación
+                </button>
+                <button
+                  class="plas-button rounded-4 d-block w-75 my-1 p-2"
+                  id="btn-educacion"
+                >
+                  Educación en ingeniería
+                </button>
+                <button
+                  class="plas-button rounded-4 d-block w-75 my-1 p-2"
+                  id="btn-embebidos"
+                >
+                  Sistemas embebidos confiables
+                </button>
+                <button
+                  class="plas-button rounded-4 d-block w-100 my-1 p-2"
+                  id="btn-transporte"
+                >
+                  Sistemas inteligentes de transporte (ITS)
+                </button>
+                <button
+                  class="plas-button rounded-4 d-block w-75 my-1 p-2"
+                  id="btn-agricultura"
+                >
+                  Agricultura de precisión
+                </button>
+              </div>
+            </div>
 
-           </div>
-           <!--menú contextual-->
-           <div class="firstMenu ">
-               <div class="content-fluid">
-                   <!--prueba navbar-->
-                   <!--fin de prueba navbar-->
-                   <nav class="navbar nav navbar-toggler navbar-expand-md navbar-dark">
-                       <!-- perfiles -->
-                       <button class="navbar-toggler"
-                               type="button"
-                               data-bs-toggle="collapse"
-                               data-bs-target="#navbarSupportedContent"
-                               aria-controls="navbarScroll"
-                               aria-expanded="false"
-                               aria-label="Toggle navigation">
-                           <span class="navbar-toggler-icon"></span>
-                       </button>
-                       <div class=" collapse navbar-collapse navbar-default">
-                           <nav id="profiles">
-                               <ul class="me-auto nav justify-content-end">
-                                   <li class="nav-item item_Aspirantes ">
-                                       <a href="http://aspirantes.unal.edu.co">Aspirantes</a>
-                                   </li>
-                                   <li class="nav-item item_Estudiantes">
-                                       <a href="http://estudiantes.unal.edu.co">Estudiantes</a>
-                                   </li>
-                                   <li class="nav-item item_Egresados">
-                                       <a href="http://egresados.unal.edu.co">Egresados</a>
-                                   </li>
-                                   <li class="nav-item item_Docentes">
-                                       <a href="http://docentes.unal.edu.co">Docentes</a>
-                                   </li>
-                                   <li class="nav-item item_Administrativos">
-                                       <a href="http://administrativos.unal.edu.co">Administrativos</a>
-                                   </li>
-                               </ul>
-                           </nav>
-                       </div>
-                       <!-- redes sociales -->
-                       <ul class="socialLinks d-none d-md-block">
-                           <li>
-                               <a href="https://www.facebook.com/UNALOficial"
-                                  target="_blank"
-                                  class="facebook"
-                                  title="Página oficial en Facebook"></a>
-                           </li>
-                           <li>
-                               <a href="https://twitter.com/UNALOficial"
-                                  target="_blank"
-                                  class="twitter"
-                                  title="Cuenta oficial en Twitter"></a>
-                           </li>
-                           <li>
-                               <a href="https://www.youtube.com/channel/UCnE6Zj2llVxcvL5I38B0Ceg"
-                                  target="_blank"
-                                  class="youtube"
-                                  title="Canal oficial de Youtube"></a>
-                           </li>
-                       </ul>
-                       <!-- idioma -->
-                       <div class="btn-group d-print-none">
-                           <button type="button"
-                                   class="btn btn-secondary dropdown-toggle language-button"
-                                   data-bs-toggle="dropdown"
-                                   data-bs-display="static"
-                                   aria-expanded="false">
-                               ES
-                           </button>
-                           <ul class="dropdown-menu dropdown-menu-start dropdown-menu-lg-start language-dropdown">
-                               <li>
-                                   <a class="dropdown-item" href="#">EN - English</a>
-                               </li>
-                               <li>
-                                   <a class="dropdown-item" href="#">GUC - Wayuunaiki</a>
-                               </li>
-                               <li>
-                                   <a class="dropdown-item" href="#">PBB - Nasa yuwe</a>
-                               </li>
-                           </ul>
-                       </div>
-                   </nav>
-               </div>
-           </div>
-           <!-- Menú inferior -->
-           <div id="bs-navbar" class="navigation ">
-               <!-- Título del sitio -->
-               <div class="container-fluid myb d-print-inline-block">
-                   <div class="site-url row d-print-none" id="subdominio">
-                       <span class="oi oi-map-marker me-0"></span>
-                       <a href="https://ingenieria.bogota.unal.edu.co/" target="_blank">ingenieria.bogota.unal.edu.co</a>
-                   </div>
-                   <!-- Buscador-->
-                   <div class="buscador row" id="buscador"></div>
-               </div>
-               <!-- Main menu -->
-               <nav class="navbar navbar-expand-md navbar-dark menuPrincipal">
-                   <div class="container-fluid">
-                       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                           <ul class="navbar-nav">
-                               <li class="nav-item">
-                                   <a class="nav-link" href="../index.html">Inicio</a>
-                               </li>
-                               <li class="nav-item dropdown">
-                                   <a class="nav-link dropdown-toggle"
-                                      href="#"
-                                      role="button"
-                                      data-bs-toggle="dropdown"
-                                      aria-expanded="false">
-                                       Líneas de Investigación
-                                   </a>
-                                   <ul class="dropdown-menu">
-                                       <li>
-                                           <a class="dropdown-item" href="../investigaciones/lenguajes.html">Lenguajes de programación</a>
-                                       </li>
-                                       <li>
-                                           <a class="dropdown-item" href="../investigaciones/educacion.html">Educación en ingeniería</a>
-                                       </li>
-                                       <li>
-                                           <a class="dropdown-item" href="../investigaciones/embebidos.html">Sistemas embebidos confiables</a>
-                                       </li>
-                                       <li>
-                                           <a class="dropdown-item" href="../investigaciones/transporte.html">Sistemas Inteligentes de Transporte - ITS</a>
-                                       </li>
-                                       <li>
-                                           <a class="dropdown-item" href="../investigaciones/agricultura.html">Agricultura de precisión</a>
-                                       </li>
-                                   </ul>
-                               </li>
-                               <li class="nav-item">
-                                   <a class="nav-link" href="../integrantes.html">Integrantes</a>
-                               </li>
-                               <li class="nav-item">
-                                   <a class="nav-link" href="proyectos.html">Proyectos</a>
-                               </li>
-                               <li class="nav-item">
-                                   <a class="nav-link" href="../publicaciones.html">Publicaciones</a>
-                               </li>
-                               <li class="nav-item">
-                                   <a class="nav-link" href="../contactenos.html">Contáctenos</a>
-                               </li>
-                           </ul>
-                       </div>
-                       <div class="collapse navbar-collapse menuSedes" id="navbarSupportedContent">
-                           <ul class="navbar-nav">
-                               <li class="nav-item dropdown">
-                                   <a class="nav-link dropdown-toggle"
-                                      href="#"
-                                      role="button"
-                                      data-bs-toggle="dropdown"
-                                      aria-expanded="false">
-                                       Sedes
-                                   </a>
-                                   <ul class="dropdown-menu" id="sedes">
-                                       <li>
-                                           <a class="dropdown-item" href="http://amazonia.unal.edu.co" target="_blank">Amazonia</a>
-                                           <span class="caret-right"></span>
-                                       </li>
-                                       <li>
-                                           <a class="dropdown-item" href="http://bogota.unal.edu.co" target="_blank">Bogotá</a>
-                                           <span class="caret-right"></span>
-                                       </li>
-                                       <li>
-                                           <a class="dropdown-item" href="http://caribe.unal.edu.co" target="_blank">Caribe</a>
-                                           <span class="caret-right"></span>
-                                       </li>
-                                       <li>
-                                           <a class="dropdown-item" href="http://delapaz.unal.edu.co" target="_blank">De La Paz</a>
-                                           <span class="caret-right"></span>
-                                       </li>
-                                       <li>
-                                           <a class="dropdown-item"
-                                              href="http://www.manizales.unal.edu.co"
-                                              target="_blank">Manizales</a>
-                                           <span class="caret-right"></span>
-                                       </li>
-                                       <li>
-                                           <a class="dropdown-item" href="http://medellin.unal.edu.co" target="_blank">Medellín</a>
-                                           <span class="caret-right"></span>
-                                       </li>
-                                       <li>
-                                           <a class="dropdown-item" href="http://orinoquia.unal.edu.co" target="_blank">Orinoquia</a>
-                                           <span class="caret-right"></span>
-                                       </li>
-                                       <li>
-                                           <a class="dropdown-item" href="http://www.palmira.unal.edu.co" target="_blank">Palmira</a>
-                                           <span class="caret-right"></span>
-                                       </li>
-                                       <li>
-                                           <a class="dropdown-item"
-                                              href="http://tumaco-pacifico.unal.edu.co"
-                                              target="_blank">Tumaco</a>
-                                           <span class="caret-right"></span>
-                                       </li>
-                                   </ul>
-                               </li>
-                           </ul>
-                           <div class="collapse navbar-collapse menuProfiles" id="navbarSupportedContent">
-                               <ul class="navbar-nav">
-                                   <li class="nav-item dropdown">
-                                       <a class="nav-link dropdown-toggle"
-                                          href="#"
-                                          role="button"
-                                          data-bs-toggle="dropdown"
-                                          aria-expanded="false">
-                                           Perfiles
-                                       </a>
-                                       <ul class="dropdown-menu">
-                                           <li class="nav-item item_Aspirantes ">
-                                               <a href="http://aspirantes.unal.edu.co">Aspirantes</a>
-                                           </li>
-                                           <li class="nav-item item_Estudiantes">
-                                               <a href="http://estudiantes.unal.edu.co">Estudiantes</a>
-                                           </li>
-                                           <li class="nav-item item_Egresados">
-                                               <a href="http://egresados.unal.edu.co">Egresados</a>
-                                           </li>
-                                           <li class="nav-item item_Docentes">
-                                               <a href="http://docentes.unal.edu.co">Docentes</a>
-                                           </li>
-                                           <li class="nav-item item_Administrativos">
-                                               <a href="http://administrativos.unal.edu.co">Administrativos</a>
-                                           </li>
-                                       </ul>
-                                   </li>
-                               </ul>
-                           </div>
-                           <div class="collapse navbar-collapse menuServices" id="navbarSupportedContent">
-                               <ul class="navbar-nav">
-                                   <li class="nav-item dropdown">
-                                       <a class="nav-link dropdown-toggle"
-                                          href="#"
-                                          role="button"
-                                          data-bs-toggle="dropdown"
-                                          aria-expanded="false">
-                                           Servicios
-                                       </a>
-                                       <ul class="dropdown-menu" id="servicios">
-                                           <li>
-                                               <a href="http://correo.unal.edu.co" target="_blank">
-                                                   <img src="../images/icnServEmail.png"
-                                                        width="32"
-                                                        height="32"
-                                                        alt="Correo Electrónico">Correo Electrónico
-                                               </a>
-                                           </li>
-                                           <li>
-                                               <a href="https://dninfoa.unal.edu.co" target="_blank">
-                                                   <img src="../images/icnServSia.png"
-                                                        width="32"
-                                                        height="32"
-                                                        alt="Dirección Nacional de Información Académica">DNINFOA - SIA
-                                               </a>
-                                           </li>
-                                           <li>
-                                               <a href="http://bibliotecas.unal.edu.co" target="_blank"><img src="../images/icnServLibrary.png" width="32" height="32" alt="Biblioteca">Bibliotecas</a>
-                                           </li>
-                                           <li>
-                                               <a href="http://personal.unal.edu.co" target="_blank"><img src="../images/icnServCall.png" width="32" height="32" alt="Convocatorias">Convocatorias</a>
-                                           </li>
-                                           <li>
-                                               <a href="http://identidad.unal.edu.co">
-                                                   <img src="../images/icnServIdentidad.png"
-                                                        width="32"
-                                                        height="32"
-                                                        alt="Identidad UNAL">Identidad UNAL
-                                               </a>
-                                           </li>
-                                       </ul>
-                                   </li>
-                               </ul>
-                           </div>
-                       </div>
-                   </div>
-               </nav>
-           </div>
-       </header>
-       <!-- Panel de accesibilidad -->
-       <div class="tx-unal-accesibilidad d-print-none">
-           <!-- defaultpanel -->
-           <div id="panel-accesibilidad"
-                style="display:none"
-                class="panel-content container-fluid">
-               <div class="row">
-                   <div class="col-md-12">
-                       <div class="row">
-                           <div class="col-md-3 ">
-                               <h4>Tamaño letra</h4>
-                               <button class="boton-panel"
-                                       id="letra-disminuir"
-                                       onclick="cambiarTamanioLetra('-')"
-                                       type="submit"
-                                       name="Disminuir letra"
-                                       value="">
-                                   A<sup>-</sup>
-                               </button>
-                               <button class="boton-panel"
-                                       id="letra-aumentar"
-                                       onclick="cambiarTamanioLetra('+')"
-                                       type="submit"
-                                       name="Aumentar Letra"
-                                       value="">
-                                   A<sup>+</sup>
-                               </button>
-                               <input disabled="1"
-                                      class="letras-porcentaje"
-                                      id="letter-percent"
-                                      type="text"
-                                      name="Porcentaje de letra"
-                                      value="100%">
-                           </div>
-                           <div class="col-md-3 ">
-                               <h4>Cambiar Contrastes</h4>
-                               <button class="boton-panel"
-                                       id="contraste-1"
-                                       onclick="cambiarContrastes(1)"
-                                       type="submit"
-                                       name="Cambiar contraste 1"
-                                       value="">
-                                   1
-                               </button>
-                               <button class="boton-panel"
-                                       id="contraste-2"
-                                       onclick="cambiarContrastes(2)"
-                                       type="submit"
-                                       name="Cambiar contraste 2"
-                                       value="">
-                                   2
-                               </button>
-                               <button class="boton-panel"
-                                       id="contrate-3"
-                                       onclick="cambiarContrastes(3)"
-                                       type="submit"
-                                       name="Cambiar contraste 3"
-                                       value="">
-                                   3
-                               </button>
-                           </div>
-                           <div class="col-md-3 ">
-                               <h4>Invertir colores</h4>
-                               <button class="boton-panel"
-                                       id="inversor"
-                                       onclick="invertirColores()"
-                                       type="submit"
-                                       name="Invertir colores"
-                                       value="">
-                                   Aplicar
-                               </button>
-                           </div>
-                           <div class="col-md-3">
-                               <h4>Restablecer ajustes</h4>
-                               <button class="boton-panel"
-                                       id="defaul-config"
-                                       onclick="defaultConfig()"
-                                       type="submit"
-                                       name="Restablecer ajustes"
-                                       value="">
-                                   Aplicar
-                               </button>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-           <div id="pestania-accesibilidad" class="">Panel de Accesibilidad</div>
-       </div>
-       <!--Pestaña de servicios-->
-       <div id="mySidebar" class="sidebar hsidebar">
-           <div class="indicator d-none d-md-block"></div>
-           <ul id="services">
-               <li>
-                   <a href="http://correo.unal.edu.co" target="_blank">
-                       <img src="../images/icnServEmail.png"
-                            width="32"
-                            height="32"
-                            alt="Correo Electrónico">Correo Electrónico
-                   </a>
-               </li>
-               <li>
-                   <a href="https://dninfoa.unal.edu.co" target="_blank">
-                       <img src="../images/icnServSia.png"
-                            width="32"
-                            height="32"
-                            alt="Dirección Nacional de Información Académica">DNINFOA - SIA
-                   </a>
-               </li>
-               <li>
-                   <a href="http://bibliotecas.unal.edu.co" target="_blank"><img src="../images/icnServLibrary.png" width="32" height="32" alt="Biblioteca">Bibliotecas</a>
-               </li>
-               <li>
-                   <a href="http://personal.unal.edu.co" target="_blank"><img src="../images/icnServCall.png" width="32" height="32" alt="Convocatorias">Convocatorias</a>
-               </li>
-               <li>
-                   <a href="http://identidad.unal.edu.co">
-                       <img src="../images/icnServIdentidad.png"
-                            width="32"
-                            height="32"
-                            alt="Identidad UNAL">Identidad UNAL
-                   </a>
-               </li>
-           </ul>
-       </div>
-       <div id="main" class="hsidebar">
-           <div class="openbtn" id="openbtnId" onclick="toggleNav() "></div>
-       </div>
-       <main class="detalle">
-           <div class="breadcrumb-class d-print-none">
-               Está en:<a href="../index.html" target="_self" title="Inicio">Inicio</a><img src="../images/arrow.png" />
-               <span>Proyectos</span>
-           </div>
-           &nbsp;
-           <h1 class="text-center w-75 mx-auto">Proyectos PLaS</h1>
-           &nbsp;
-           <div id="proyectos" class="container p-5 border w-100 text-justify overflow-hidden">
-               <div class="row">
-                   <div class="col-3">
-                       <button class="btn d-block w-100 my-1 listado" data-bs-toggle="collapse" data-bs-target="#listado1">Lenguajes de programación</button>
-                       <button class="btn d-block w-100 my-1 listado" data-bs-toggle="collapse" data-bs-target="#listado2">Educación en ingeniería</button>
-                       <button class="btn d-block w-100 my-1 listado" data-bs-toggle="collapse" data-bs-target="#listado3">Sistemas embebidos confiables</button>
-                       <button class="btn d-block w-100 my-1 listado" data-bs-toggle="collapse" data-bs-target="#listado4">Sistemas Inteligentes de Transporte</button>
-                       <button class="btn d-block w-100 my-1 listado" data-bs-toggle="collapse" data-bs-target="#listado5">Agricultura de precisión</button>
-                   </div>
-                   <div class="col-9 d-inline-block align-top">
-                       <div id="listado1" class="collapse show" data-bs-parent="#proyectos">
-                           <h4 class="fw-bold">Lenguajes de programación:</h4>
-                           <hr />
-                           <div class="row proyectos">
-                               <div class="col p-4">
-                                   <div class="carousel-item active">
-                                       <a href="paradigmas.html">
-                                           <img src="../images/PLaS/proyectos/proyecto0.png" alt="Paradigmas de programación" title="Paradigmas de programación" />
-                                           <div class="carousel-caption">
-                                               <h5 title="Paradigmas de programación" class="text-dark">Paradigmas de programación</h5>
-                                           </div>
-                                       </a>
-                                   </div>
-                               </div>
-                               <div class="col p-4">
-                               </div>
-                           </div>
-                       </div>
-                       <div id="listado2" class="collapse" data-bs-parent="#proyectos">
-                           <h4 class="fw-bold">Educación en ingeniería:</h4>
-                           <hr />
-                           <div class="row proyectos">
-                               <div class="col p-4">
-                                   <div class="carousel-item active">
-                                       <a href="uncode.html">
-                                           <img src="../images/PLaS/proyectos/proyecto1.svg" alt="UN Code" title="UN Code" />
-                                           <div class="carousel-caption">
-                                               <h5 title="UN Code">UN Code</h5>
-                                           </div>
-                                       </a>
-                                   </div>
-                               </div>
-                               <div class="col p-4">
-                                   <div class="carousel-item active">
-                                       <a href="analytics.html">
-                                           <img src="../images/PLaS/proyectos/proyecto2.jpg" alt="Learning Analytics" title="Learning Analytics" />
-                                           <div class="carousel-caption">
-                                               <h5 title="Learning Analytics">Learning Analytics</h5>
-                                           </div>
-                                       </a>
-                                   </div>
-                               </div>
-                           </div>
-                           <div class="row proyectos">
-                               <div class="col p-4">
-                                   <div class="carousel-item active">
-                                       <a href="gamificacion.html">
-                                           <img src="../images/PLaS/proyectos/proyecto3.png" alt="Gamificación" title="Gamificación" />
-                                           <div class="carousel-caption">
-                                               <h5 title="Gamificación">Gamificación</h5>
-                                           </div>
-                                       </a>
-                                   </div>
-                               </div>
-                               <div class="col p-4">
-                                   <div class="carousel-item active">
-                                       <a href="vpl.html">
-                                           <img src="../images/PLaS/proyectos/proyecto4.jpg" alt="Evaluación Automática VPL" title="Evaluación Automática VPL" />
-                                           <div class="carousel-caption">
-                                               <h5 title="Evaluación Automática VPL">Evaluación Automática VPL</h5>
-                                           </div>
-                                       </a>
-                                   </div>
-                               </div>
-                           </div>
-                           <div class="row proyectos">
-                               <div class="col p-4">
-                                   <div class="carousel-item active">
-                                       <a href="estrategias.html">
-                                           <img src="../images/PLaS/proyectos/proyecto5.jpg" alt="Estrategias de aprendizaje" title="Estrategias de aprendizaje" />
-                                           <div class="carousel-caption">
-                                               <h5 title="Estrategias de aprendizaje">Estrategias de aprendizaje</h5>
-                                           </div>
-                                       </a>
-                                   </div>
-                               </div>
-                               <div class="col p-4">
-                                   <div class="carousel-item active">
-                                       <a href="escritura.html">
-                                           <img src="../images/PLaS/proyectos/proyecto6.jpg" alt="Escritura en ingeniería" title="Escritura en ingeniería" />
-                                           <div class="carousel-caption">
-                                               <h5 title="Escritura en ingeniería">Escritura en ingeniería</h5>
-                                           </div>
-                                       </a>
-                                   </div>
-                               </div>
-                           </div>
-                           <div class="row proyectos">
-                               <div class="col p-4">
-                                   <div class="carousel-item active">
-                                       <a href="colaboracion.html">
-                                           <img src="../images/PLaS/proyectos/proyecto8.jpg" alt="Colaboración PLaS y GUIA" title="Colaboración PLaS y GUIA" />
-                                           <div class="carousel-caption">
-                                               <h5 title="Colaboración PLaS y GUIA">Colaboración PLaS y GUIA</h5>
-                                           </div>
-                                       </a>
-                                   </div>
-                               </div>
-                               <div class="col p-4">
-                                   <div class="carousel-item active">
-                                       <a href="aprendizaje.html">
-                                           <img src="../images/PLaS/proyectos/proyecto9.jpg" alt="Aprendizaje colaborativo" title="Aprendizaje colaborativo" />
-                                           <div class="carousel-caption">
-                                               <h5 title="Aprendizaje colaborativo">Aprendizaje colaborativo</h5>
-                                           </div>
-                                       </a>
-                                   </div>
-                               </div>
-                           </div>
-                           <div class="row proyectos">
-                               <div class="col p-4">
-                                   <div class="carousel-item active">
-                                       <a href="videojuegos.html">
-                                           <img src="../images/PLaS/proyectos/proyecto10.png" alt="Videojuegos en el aprendizaje" title="Videojuegos en el aprendizaje" />
-                                           <div class="carousel-caption">
-                                               <h5 title="Videojuegos en el aprendizaje">Videojuegos en el aprendizaje</h5>
-                                           </div>
-                                       </a>
-                                   </div>
-                               </div>
-                               <div class="col p-4">
-                               </div>
-                           </div>
-                       </div>
-                       <div id="listado3" class="collapse" data-bs-parent="#proyectos">
-                           <h4 class="fw-bold">Sistemas embebidos confiables:</h4>
-                           <hr />
-                           <div class="row proyectos">
-                               <div class="col p-4">
-                                   <div class="carousel-item active">
-                                       <a href="she.html">
-                                           <img src="../images/PLaS/proyectos/proyecto11.jpg" alt="SHE: Software Hardening Environment" title="SHE: Software Hardening Environment" />
-                                           <div class="carousel-caption">
-                                               <h5 title="SHE: Software Hardening Environment">SHE: Software Hardening Environment</h5>
-                                           </div>
-                                       </a>
-                                   </div>
-                               </div>
-                               <div class="col p-4">
-                                   <div class="carousel-item active">
-                                       <a href="ftxac.html">
-                                           <img src="../images/PLaS/proyectos/proyecto12.jpg" alt="FTxAC" title="FTxAC" />
-                                           <div class="carousel-caption">
-                                               <h5 title="FTxAC">FTxAC</h5>
-                                           </div>
-                                       </a>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-                       <div id="listado4" class="collapse" data-bs-parent="#proyectos">
-                           <h4 class="fw-bold text-start">Sistemas de Transporte Inteligente:</h4>
-                           <hr />
-                           <div class="row proyectos">
-                               <div class="col p-4">
-                                   <div class="carousel-item active">
-                                       <a href="transito.html">
-                                           <img src="../images/PLaS/proyectos/proyecto13.png" alt="Modelo predictivo de accidentes de tránsito" title="Modelo predictivo de accidentes de tránsito" />
-                                           <div class="carousel-caption">
-                                               <h5 title="Modelo predictivo de accidentes de tránsito">Modelo predictivo de accidentes de tránsito</h5>
-                                           </div>
-                                       </a>
-                                   </div>
-                               </div>
-                               <div class="col p-4">
-                               </div>
-                           </div>
-                       </div>
-                       <div id="listado5" class="collapse" data-bs-parent="#proyectos">
-                           <h4 class="fw-bold">Agricultura de precisión:</h4>
-                           <hr />
-                           <div class="row proyectos">
-                               <div class="col p-4">
-                                   <div class="carousel-item active">
-                                       <a href="maleza.html">
-                                           <img src="../images/PLaS/proyectos/proyecto14.jpg" alt="Cuantificación de maleza en cultivos de hortalizas" title="Cuantificación de maleza en cultivos de hortalizas" />
-                                           <div class="carousel-caption">
-                                               <h5 title="Cuantificación de maleza en cultivos de hortalizas">Cuantificación de maleza en cultivos de hortalizas</h5>
-                                           </div>
-                                       </a>
-                                   </div>
-                               </div>
-                               <div class="col p-4">
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-           <button onclick="topFunction()" id="myBtn" title="Ir al inicio"><span class="oi oi-arrow-circle-top"></span></button>
-       </main>
-       <footer class="container-fluid d-print-table">
-           <div class="row">
-               <div class="col-sm-6 col-md-3 d-print-none">
-                   <nav class="gobiernoLinea">
-                       <a href="http://www.legal.unal.edu.co" target="_top">Régimen Legal</a>
-                       <a href="http://personal.unal.edu.co" target="_top">Talento humano</a>
-                       <a href="http://contratacion.unal.edu.co" target="_top">Contratación</a>
-                       <a href="http://personal.unal.edu.co" target="_top">Ofertas de empleo</a>
-                       <a href="http://launalcuenta.unal.edu.co/" target="_top">Rendición de cuentas</a>
-                       <a href="http://docentes.unal.edu.co/concurso-profesoral/" target="_top">Concurso docente</a>
-                       <a href="http://www.pagovirtual.unal.edu.co/" target="_top">Pago Virtual</a>
-                       <a href="http://controlinterno.unal.edu.co/" target="_top">Control interno</a>
-                       <a href="http://siga.unal.edu.co" target="_top">Calidad</a>
-                       <a href="http://unal.edu.co/buzon-de-notificaciones/" target="_self">Buzón de notificaciones</a>
-                   </nav>
-               </div>
-               <div class="col-sm-6 col-md-3 d-print-none">
-                   <nav class="gobiernoLinea">
-                       <a href="http://correo.unal.edu.co" target="_top">Correo institucional</a>
-                       <a href="../index.html#">Mapa del sitio</a>
-                       <a href="http://redessociales.unal.edu.co" target="_top">Redes Sociales</a>
-                       <a href="../index.html#">FAQ</a>
-                       <a href="http://unal.edu.co/quejas-y-reclamos/" target="_self">Quejas y reclamos</a>
-                       <a href="http://unal.edu.co/atencion-en-linea/" target="_self">Atención en línea</a>
-                       <a href="http://unal.edu.co/encuesta/" target="_self">Encuesta</a>
-                       <a href="../contactenos.html">Contáctenos</a>
-                       <a href="http://estadisticas.unal.edu.co/" target="_top">Estadísticas</a>
-                       <a href="../index.html#">Glosario</a>
-                   </nav>
-               </div>
-               <div class="col-sm-7 col-md-4 contder">
-                   <div class="col contacto">
-                       <b>Contacto página web:</b><br />
-                       Carrera 30 No 45A-03<br />
-                       Edif. Aulas de Ingeniería - 453<br />
-                       Bogotá D.C., Colombia<br />
-                       (+57 1) 316 5000 Ext. 14077
-                   </div>
-                   <div class="col derechos">
-                       <a href="https://unal.edu.co/fileadmin/user_upload/docs/legal.pdf"
-                          target="_blank">&copy; Copyright 2021</a><br />
-                       Algunos derechos reservados.<br />
-                       <a title="Comuníquese con el administrador de este sitio web"
-                          href="mailto:plas_fibog@unal.edu.co@unal.edu.co">plas_fibog@unal.edu.co</a><br />
-                       <a href="index.html#">Acerca de este sitio web</a><br />
-                       Actualización:22/11/21
-                   </div>
-               </div>
-               <div class="col-sm-5 col-md-2 asoc-img d-print-none">
-                   <div class="container ">
-                       <div class="row row-cols-2">
-                           <div class="col">
-                               <img class="img-fluid" alt="Orgullo UN" src="../images/log_orgullo.png" />
-                               <a href="http://orgullo.unal.edu.co/">
-                                   <img class="d-none d-print-block img-fluid"
-                                        alt="Orgullo UN"
-                                        src="../images/log_orgullo_black.png" />
-                               </a>
-                           </div>
-                           <div class="col">
-                               <a href="https://www.gov.co/">
-                                   <img class="img-fluid"
-                                        alt="Portal Único del Estado Colombiano"
-                                        src="../images/log_gobiern.png" />
-                               </a>
-                           </div>
-                           <div class="col">
-                               <a class="imgAgencia" href="http://agenciadenoticias.unal.edu.co">
-                                   <img class="img-fluid" alt="Agencia de Noticias" src="../images/log_agenc.png" />
-                                   <img class="d-none d-print-block"
-                                        alt="Agencia de Noticias"
-                                        src="../images/log_agenc_black.png" />
-                               </a>
-                           </div>
-                           <div class="col">
-                               <a href="http://www.contaduria.gov.co/">
-                                   <img class="img-fluid"
-                                        alt="Contaduría General de la República"
-                                        src="../images/log_contra.png" />
-                               </a>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </footer>
-       <!-- JS -->
-       <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-       <script src="../js/unal.js"></script>
-       <script src="../js/accesibilidad.js"></script>
-       <script>
-           if (location.hash !== "#listado1") {
-               var tabnum = location.hash.replace('#', '');
-               if (tabnum) {
-                   document.getElementById(tabnum).className = "collapse show";
-                   document.getElementById("listado1").className = "collapse";
-               }
-           }
-       </script>
-   </body>
+            <div class="row w-100 mt-4" id="proyectos1">
+              <div class="col-12 border rounded-3 p-3">
+                <div class="row">
+                  <div class="col-12 col-md-6 col-xl-4">
+                    <div
+                      class="w-auto border-1 rounded-3 d-flex shadow p-3 gap-3 align-items-center"
+                    >
+                      <img
+                        src="../images/PLaS/proyectos/lenguajes/lenguajes_0.jpg"
+                        class="h-25 w-25 rounded"
+                        alt="..."
+                      />
+                      <div class="d-flex flex-column justify-content-center w-100">
+                        <span class="card-title fw-bold lh-1"
+                          >Paradigmas de programación</span
+                        >
+                        <button class="plas-button p-2 m-2 rounded-3 shadow-sm" onclick="location.href='../proyectos/paradigmas.html'">
+                          Saber más
+                          <i
+                            class="fa-solid fa-arrow-up-right-from-square m-1 fa-sm"
+                          ></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row w-100 mt-4" id="proyectos2" style="display: none;">
+                <div class="col-12 border rounded-3 p-3">
+                  <div class="row g-3">
+                    <div class="col-12 col-md-6 col-xl-4">
+                      <div
+                        class="w-auto border-1 rounded-3 d-flex shadow p-3 gap-3 align-items-center"
+                      >
+                        <img
+                          src="../images/PLaS/proyectos/proyecto1.svg"
+                          class="h-25 w-50 rounded"
+                          alt="..."
+                        />
+                        <div class="d-flex flex-column justify-content-center w-100">
+                          <span class="card-title fw-bold  lh-1"
+                            >UnCode</span
+                          >
+                          <button class="plas-button p-2 m-2 rounded-3 shadow-sm" onclick="location.href='./uncode.html'">
+                            Saber más
+                            <i
+                              class="fa-solid fa-arrow-up-right-from-square m-1 fa-sm"
+                            ></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <div
+                          class="w-auto border-1 rounded-3 d-flex shadow p-3 gap-3 align-items-center"
+                        >
+                          <img
+                            src="../images/PLaS/proyectos/proyecto2.jpg"
+                            class="h-100 w-50 rounded"
+                            alt="..."
+                          />
+                          <div class="d-flex flex-column justify-content-center w-100">
+                            <span class="card-title fw-bold  lh-1"
+                              >Learning Analytics</span
+                            >
+                            <button class="plas-button p-2 m-2 rounded-3 shadow-sm" onclick="location.href='../proyectos/analytics.html'">
+                              Saber más
+                              <i
+                                class="fa-solid fa-arrow-up-right-from-square m-1 fa-sm"
+                              ></i>
+                            </button>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <div
+                          class="w-auto border-1 rounded-3 d-flex shadow p-3 gap-3 align-items-center"
+                        >
+                          <img
+                            src="../images/PLaS/proyectos/proyecto3.png"
+                            class="h-25 w-50 rounded"
+                            alt="..."
+                          />
+                          <div class="d-flex flex-column justify-content-center w-100">
+                            <span class="card-title fw-bold"
+                              >Gamificación</span
+                            >
+                            <button class="plas-button p-2 m-2 rounded-3 shadow-sm" onclick="location.href='./gamificacion.html'">
+                              Saber más
+                              <i
+                                class="fa-solid fa-arrow-up-right-from-square m-1 fa-sm"
+                              ></i>
+                            </button>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <div
+                          class="w-auto border-1 rounded-3 d-flex shadow p-3 gap-3 align-items-center"
+                        >
+                          <img
+                            src="../images/PLaS/proyectos/proyecto4.jpg"
+                            class="h-25 w-50 rounded"
+                            alt="..."
+                          />
+                          <div class="d-flex flex-column justify-content-center w-100">
+                            <span class="card-title fw-bold lh-1" 
+                              >Evaluación Automática VPL</span
+                            >
+                            <button class="plas-button p-2 m-2 rounded-3 shadow-sm" onclick="location.href='./vpl.html'">
+                              Saber más
+                              <i
+                                class="fa-solid fa-arrow-up-right-from-square m-1 fa-sm"
+                              ></i>
+                            </button>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <div
+                          class="w-auto border-1 rounded-3 d-flex shadow p-3 gap-3 align-items-center"
+                        >
+                          <img
+                            src="../images/PLaS/proyectos/proyecto5.jpg"
+                            class="h-25 w-50 rounded"
+                            alt="..."
+                          />
+                          <div class="d-flex flex-column justify-content-center w-100">
+                            <span class="card-title fw-bold  lh-1"
+                              >Estrategias de aprendizaje</span
+                            >
+                            <button class="plas-button p-2 m-2 rounded-3 shadow-sm" onclick="location.href='./estrategias.html'">
+                              Saber más
+                              <i
+                                class="fa-solid fa-arrow-up-right-from-square m-1 fa-sm"
+                              ></i>
+                            </button>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <div
+                          class="w-auto border-1 rounded-3 d-flex shadow p-3 gap-3 align-items-center"
+                        >
+                          <img
+                            src="../images/PLaS/proyectos/proyecto6.jpg"
+                            class="h-25 w-50 rounded"
+                            alt="..."
+                          />
+                          <div class="d-flex flex-column justify-content-center w-100">
+                            <span class="card-title fw-bold lh-1"
+                              >Escritura en ingenieria</span
+                            >
+                            <button class="plas-button p-2 m-2 rounded-3 shadow-sm" onclick="location.href='./escritura.html'">
+                              Saber más
+                              <i
+                                class="fa-solid fa-arrow-up-right-from-square m-1 fa-sm"
+                              ></i>
+                            </button>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <div
+                          class="w-auto border-1 rounded-3 d-flex shadow p-3 gap-3 align-items-center"
+                        >
+                          <img
+                            src="../images/PLaS/proyectos/proyecto8.jpg"
+                            class="h-25 w-50 rounded"
+                            alt="..."
+                          />
+                          <div class="d-flex flex-column justify-content-center w-100">
+                            <span class="card-title fw-bold lh-1"
+                              >Colaboración PlaS y GUIA</span
+                            >
+                            <button class="plas-button p-2 m-2 rounded-3 shadow-sm" onclick="location.href='./colaboracion.html'">
+                              Saber más
+                              <i
+                                class="fa-solid fa-arrow-up-right-from-square m-1 fa-sm"
+                              ></i>
+                            </button>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <div
+                          class="w-auto border-1 rounded-3 d-flex shadow p-3 gap-3 align-items-center"
+                        >
+                          <img
+                            src="../images/PLaS/proyectos/proyecto9.jpg"
+                            class="h-25 w-50 rounded"
+                            alt="..."
+                          />
+                          <div class="d-flex flex-column justify-content-center w-100">
+                            <span class="card-title fw-bold lh-1"
+                              >Aprendizaje colaborativo</span
+                            >
+                            <button class="plas-button p-2 m-2 rounded-3 shadow-sm" onclick="location.href='./aprendizaje.html'">
+                              Saber más
+                              <i
+                                class="fa-solid fa-arrow-up-right-from-square m-1 fa-sm"
+                              ></i>
+                            </button>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <div
+                          class="w-auto border-1 rounded-3 d-flex shadow p-3 gap-3 align-items-center"
+                        >
+                          <img
+                            src="../images/PLaS/proyectos/proyecto10.png"
+                            class="h-25 w-50 rounded"
+                            alt="..."
+                          />
+                          <div class="d-flex flex-column justify-content-center w-100">
+                            <span class="card-title fw-bold lh-1"
+                              >Videojuegos en el aprendizaje</span
+                            >
+                            <button class="plas-button p-2 m-2 rounded-3 shadow-sm" onclick="location.href='./videojuegos.html'">
+                              Saber más
+                              <i
+                                class="fa-solid fa-arrow-up-right-from-square m-1 fa-sm"
+                              ></i>
+                            </button>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="row w-100 mt-4" id="proyectos3" style="display: none;">
+                <div class="col-12 border rounded-3 p-3">
+                  <div class="row g-3">
+                    <div class="col-12 col-md-6 col-xl-4">
+                      <div
+                        class="w-auto border-1 rounded-3 d-flex shadow p-3 gap-3 align-items-center"
+                      >
+                        <img
+                          src="../images/PLaS/proyectos/proyecto11.jpg"
+                          class="h-100 w-50 rounded"
+                          alt="..."
+                        />
+                        <div class="d-flex flex-column justify-content-center w-100">
+                          <span class="card-title fw-bold lh-1"
+                            >SHE: Software Hardening Environment</span
+                          >
+                          <button class="plas-button p-2 m-2 rounded-3 shadow-sm" onclick="location.href='./she.html'">
+                            Saber más
+                            <i
+                              class="fa-solid fa-arrow-up-right-from-square m-1 fa-sm"
+                            ></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <div
+                          class="w-auto border-1 rounded-3 d-flex shadow p-3 gap-3 align-items-center"
+                        >
+                          <img
+                            src="../images/PLaS/proyectos/proyecto12.jpg"
+                            class="h-100 w-50 rounded"
+                            alt="..."
+                          />
+                          <div class="d-flex flex-column justify-content-center w-100">
+                            <span class="card-title fw-bold lh-1"
+                              >FTxAC</span
+                            >
+                            <button class="plas-button p-2 m-2 rounded-3 shadow-sm" onclick="location.href='./ftxac.html'">
+                              Saber más
+                              <i
+                                class="fa-solid fa-arrow-up-right-from-square m-1 fa-sm"
+                              ></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="row w-100 mt-4" id="proyectos4" style="display: none;">
+                <div class="col-12 border rounded-3 p-3">
+                  <div class="row">
+                    <div class="col-12 col-md-6 col-xl-4">
+                      <div
+                        class="w-auto border-1 rounded-3 d-flex shadow p-3 gap-3 align-items-center"
+                      >
+                        <img
+                          src="../images/PLaS/proyectos/proyecto13.png"
+                          class="h-25 w-50 rounded"
+                          alt="..."
+                        />
+                        <div class="d-flex flex-column justify-content-center w-100">
+                          <span class="card-title fw-bold lh-1"
+                            >Modelo predictivo de accidentes de tránsito</span
+                          >
+                          <button class="plas-button p-2 m-2 rounded-3 shadow-sm" onclick="location.href='./transito.html'">
+                            Saber más
+                            <i
+                              class="fa-solid fa-arrow-up-right-from-square m-1 fa-sm"
+                            ></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row w-100 mt-4" id="proyectos5" style="display: none;">
+                <div class="col-12 border rounded-3 p-3">
+                  <div class="row">
+                    <div class="col-12 col-md-6 col-xl-4">
+                      <div
+                        class="w-auto border-1 rounded-3 d-flex shadow p-3 gap-3 align-items-center"
+                      >
+                        <img
+                          src="../images/PLaS/proyectos/proyecto14.jpg"
+                          class="h-25 w-50 rounded"
+                          alt="..."
+                        />
+                        <div class="d-flex flex-column justify-content-center w-100">
+                          <span class="card-title fw-bold lh-1"
+                            >Cuantificación de maleza en cultivos de hortalizas</span
+                          >
+                          <button class="plas-button p-2 m-2 rounded-3 shadow-sm" onclick="location.href='./maleza.html'">
+                            Saber más
+                            <i
+                              class="fa-solid fa-arrow-up-right-from-square m-1 fa-sm"
+                            ></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+      <button onclick="topFunction()" class="plas-button rounded-2 shadow-lg ms-2" id="myBtn"title="Ir al inicio">
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
+    </main>
+    <footer class="container-fluid d-print-table">
+      <div class="row">
+        <div class="col-sm-6 col-md-3 d-print-none">
+          <nav class="gobiernoLinea">
+            <a href="http://www.legal.unal.edu.co" target="_top"
+              >Régimen Legal</a
+            >
+            <a href="http://personal.unal.edu.co" target="_top"
+              >Talento humano</a
+            >
+            <a href="http://contratacion.unal.edu.co" target="_top"
+              >Contratación</a
+            >
+            <a href="http://personal.unal.edu.co" target="_top"
+              >Ofertas de empleo</a
+            >
+            <a href="http://launalcuenta.unal.edu.co/" target="_top"
+              >Rendición de cuentas</a
+            >
+            <a
+              href="http://docentes.unal.edu.co/concurso-profesoral/"
+              target="_top"
+              >Concurso docente</a
+            >
+            <a href="http://www.pagovirtual.unal.edu.co/" target="_top"
+              >Pago Virtual</a
+            >
+            <a href="http://controlinterno.unal.edu.co/" target="_top"
+              >Control interno</a
+            >
+            <a href="http://siga.unal.edu.co" target="_top">Calidad</a>
+            <a href="http://unal.edu.co/buzon-de-notificaciones/" target="_self"
+              >Buzón de notificaciones</a
+            >
+          </nav>
+        </div>
+        <div class="col-sm-6 col-md-3 d-print-none">
+          <nav class="gobiernoLinea">
+            <a href="http://correo.unal.edu.co" target="_top"
+              >Correo institucional</a
+            >
+            <a href="../index.html#">Mapa del sitio</a>
+            <a href="http://redessociales.unal.edu.co" target="_top"
+              >Redes Sociales</a
+            >
+            <a href="../index.html#">FAQ</a>
+            <a href="http://unal.edu.co/quejas-y-reclamos/" target="_self"
+              >Quejas y reclamos</a
+            >
+            <a href="http://unal.edu.co/atencion-en-linea/" target="_self"
+              >Atención en línea</a
+            >
+            <a href="http://unal.edu.co/encuesta/" target="_self">Encuesta</a>
+            <a href="../contactenos.html">Contáctenos</a>
+            <a href="http://estadisticas.unal.edu.co/" target="_top"
+              >Estadísticas</a
+            >
+            <a href="../index.html#">Glosario</a>
+          </nav>
+        </div>
+        <div class="col-sm-7 col-md-4 contder">
+          <div class="col contacto">
+            <b>Contacto página web:</b><br />
+            Carrera 30 No 45A-03<br />
+            Edif. Aulas de Ingeniería - 453<br />
+            Bogotá D.C., Colombia<br />
+            (+57 1) 316 5000 Ext. 14077
+          </div>
+          <div class="col derechos">
+            <a
+              href="https://unal.edu.co/fileadmin/user_upload/docs/legal.pdf"
+              target="_blank"
+              >&copy; Copyright 2021</a
+            ><br />
+            Algunos derechos reservados.<br />
+            <a
+              title="Comuníquese con el administrador de este sitio web"
+              href="mailto:plas_fibog@unal.edu.co@unal.edu.co"
+              >plas_fibog@unal.edu.co</a
+            ><br />
+            <a href="index.html#">Acerca de este sitio web</a><br />
+            Actualización:22/11/21
+          </div>
+        </div>
+        <div class="col-sm-5 col-md-2 asoc-img d-print-none">
+          <div class="container">
+            <div class="row row-cols-2">
+              <div class="col">
+                <img
+                  class="img-fluid"
+                  alt="Orgullo UN"
+                  src="../images/log_orgullo.png"
+                />
+                <a href="http://orgullo.unal.edu.co/">
+                  <img
+                    class="d-none d-print-block img-fluid"
+                    alt="Orgullo UN"
+                    src="../images/log_orgullo_black.png"
+                  />
+                </a>
+              </div>
+              <div class="col">
+                <a href="https://www.gov.co/">
+                  <img
+                    class="img-fluid"
+                    alt="Portal Único del Estado Colombiano"
+                    src="../images/log_gobiern.png"
+                  />
+                </a>
+              </div>
+              <div class="col">
+                <a
+                  class="imgAgencia"
+                  href="http://agenciadenoticias.unal.edu.co"
+                >
+                  <img
+                    class="img-fluid"
+                    alt="Agencia de Noticias"
+                    src="../images/log_agenc.png"
+                  />
+                  <img
+                    class="d-none d-print-block"
+                    alt="Agencia de Noticias"
+                    src="../images/log_agenc_black.png"
+                  />
+                </a>
+              </div>
+              <div class="col">
+                <a href="http://www.contaduria.gov.co/">
+                  <img
+                    class="img-fluid"
+                    alt="Contaduría General de la República"
+                    src="../images/log_contra.png"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- JS -->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/unal.js"></script>
+    <script src="../js/accesibilidad.js"></script>
+    <script src="../js/proyectos.js"></script>
+  </body>
 </html>
