@@ -131,6 +131,16 @@ p.content-title {
     }
 }
 
+span.file-title{
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
+}
+
+
+span.section{
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+}
 .content-description > p,a,ul, span,i,label{
     font-size: .8rem
 }
@@ -3578,6 +3588,12 @@ iframe {
     color: black;
     cursor: pointer;
     text-decoration: 1px underline black;
+}
+
+.file-img{
+    width: 50px;
+    height: 50px;
+    background-color: #d5ffd9
 }
 
 footer {
