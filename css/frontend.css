@@ -3990,6 +3990,17 @@ iframe {
   background: #f4fcd9;
 }
 
+.file-card:hover{
+  cursor: pointer;
+  transition: .08s ease-out;
+  scale: 1.05;
+}
+
+.file-card:not( :hover ){
+  transition: .08s ease-in;
+  scale: 1;
+}
+
 footer {
   font-size: 13px;
   color: #333;
