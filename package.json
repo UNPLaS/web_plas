@@ -17,7 +17,7 @@
   "author": "Cristian Bogotá",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^5.0.1",
+    "bootstrap": "^5.2.0",
     "lite-server": "^2.6.1",
     "open-iconic": "^1.1.1"
   }
