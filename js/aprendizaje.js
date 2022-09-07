@@ -31,8 +31,6 @@ const toggleActive = (e) => {
     document.getElementById("btn-diapositivas_aprendizaje").className =
       buttonClass;
     document.getElementById("btn-diapositivas_uncolab").className = buttonClass;
-
-    console.log(espanol.style.display);
     if (espanol.style.display == "none") {
       espanol.style.display = "block";
       contenido.style.display = "none";
