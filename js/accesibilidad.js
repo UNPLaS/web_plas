@@ -172,7 +172,7 @@ function defaultConfig() {
     }
     head.appendChild(style);
 }
-    console.log("Configuracion por defecto");
+    //console.log("Configuracion por defecto");
 
 //Inicializar
 
