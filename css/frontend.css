@@ -146,18 +146,18 @@ h6,
 }
 
 p.content-title {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 @media (min-width: 600px) {
   p.content-title {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 }
 
 @media (min-width: 1200px) {
   p.content-title {
-    font-size: 2.7rem;
+    font-size: 2.3rem;
   }
 }
 
