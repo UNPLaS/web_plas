@@ -47,8 +47,7 @@ h1 {
 }
 
 section {
-  margin-top: 2rem;
-  padding: 1rem 0rem;
+  padding: 4rem 0rem;
 }
 
 .without-margin-padding {
@@ -84,4 +83,13 @@ section {
 .important{
   font-size: 2rem;
   padding: 0;
+}
+
+.paragraph-big {
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+.paragraph-big span {
+  font-size: 3rem;
+  color: var(--primaryColor)
 }
