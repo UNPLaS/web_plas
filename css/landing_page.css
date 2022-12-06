@@ -93,3 +93,11 @@ section {
   font-size: 3rem;
   color: var(--primaryColor)
 }
+
+.mod-img {
+  margin: 1rem;
+}
+
+.alert p {
+  margin: 0;
+}

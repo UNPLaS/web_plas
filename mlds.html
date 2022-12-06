@@ -387,27 +387,36 @@
         <div class="col-md-4">
           <div class="text-contenet secondary-text">
             <h2>Preinscríbete ya</h2>
-            <form>
+            <div class="alert alert-success" role="alert" id="succesAlertForm" hidden>
+              <p>¡Muchas Gracias! Nos estaremos poniendo en contacto</p>
+            </div>
+            <div class="alert alert-warning alert-dismissible" role="alert" id="errorAlertForm" hidden>
+              <p>Ha ocurrido un error</p>
+            </div>
+            <form id="contactForm">
               <div class="row">
-                <label for="exampleFormControlInput1">Nombre Completo</label>
+                <label for="nombre">Nombre Completo</label>
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="Nombre">
+                  <input id="nameForm" type="text" class="form-control" placeholder="Nombre" name="nombre">
                 </div>
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="Apellido">
+                  <input id="lastNameForm" type="text" class="form-control" placeholder="Apellido" name="apellidos">
                 </div>
               </div>
               <div class="form-group">
-                <label for="exampleFormControlInput1">Email</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                <label for="email">Email *</label>
+                <input type="email" class="form-control" id="emailForm" placeholder="name@example.com" name="email">
+                <div id="validationServer03Feedback" class="invalid-feedback">
+                  Ingrese un email válido
+                </div>
               </div>
               <div class="form-group">
-                <label for="exampleFormControlInput1">Elige el programa de tu preferencia</label>
-                <select class="form-control">
-                  <option disabled>Elige una opción</option>
-                  <option value="">Introducción a la Programación con Python</option>
-                  <option value="">MLDS - Línea Básica</option>
-                  <option value="">MLDS - Línea Avanzada</option>
+                <label for="interes">Elige el programa de tu preferencia</label>
+                <select class="form-control" name="interes" id="interestForm">
+                  <option selected disabled>Elige una opción</option>
+                  <option value="Introduccion programacion">Introducción a la Programación con Python</option>
+                  <option value="Linea basica">MLDS - Línea Básica</option>
+                  <option value="Linea avanzada">MLDS - Línea Avanzada</option>
                 </select>
 
                 <button type="submit" class="btn btn-primary mb-3">Enviar</button>
@@ -430,7 +439,9 @@
         <div class="module-item">
           <div class="row align-items-center">
             <div class="col-md-2">
-              <p>Imagen</p>
+              <div class="text-center mod-img">
+                <img src="images/mlds_landing_page/hex_0.png" class="img-fluid" alt="..." width="70%">
+              </div>
             </div>
             <div class="col-md-6">
               <i>
@@ -473,14 +484,16 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row" style="margin-top: 2rem;">
         <h2>Línea Básica</h2>
       </div>
       <div class="container">
         <div class="module-item">
           <div class="row align-items-center">
             <div class="col-md-2">
-              <p>Imagen</p>
+              <div class="text-center mod-img">
+                <img src="images/mlds_landing_page/hex_1.png" class="img-fluid" alt="..." width="70%">
+              </div>
             </div>
             <div class="col-md-6">
               <i>
@@ -525,7 +538,9 @@
         <div class="module-item">
           <div class="row align-items-center">
             <div class="col-md-2">
-              <p>Imagen</p>
+              <div class="text-center mod-img">
+                <img src="images/mlds_landing_page/hex_2.png" class="img-fluid" alt="..." width="70%">
+              </div>
             </div>
             <div class="col-md-6">
               <i>
@@ -570,7 +585,9 @@
         <div class="module-item">
           <div class="row align-items-center">
             <div class="col-md-2">
-              <p>Imagen</p>
+              <div class="text-center mod-img">
+                <img src="images/mlds_landing_page/hex_3.png" class="img-fluid" alt="..." width="70%">
+              </div>
             </div>
             <div class="col-md-6">
               <i>
@@ -614,14 +631,16 @@
         </div>
       </div>
 
-      <div class="row">
+      <div class="row" style="margin-top: 2rem;">
         <h2>Línea Avanzada</h2>
       </div>
       <div class="container">
         <div class="module-item">
           <div class="row align-items-center">
             <div class="col-md-2">
-              <p>Imagen</p>
+              <div class="text-center mod-img">
+                <img src="images/mlds_landing_page/hex_4.png" class="img-fluid" alt="..." width="70%">
+              </div>
             </div>
             <div class="col-md-6">
               <i>
@@ -666,7 +685,9 @@
         <div class="module-item">
           <div class="row align-items-center">
             <div class="col-md-2">
-              <p>Imagen</p>
+              <div class="text-center mod-img">
+                <img src="images/mlds_landing_page/hex_5.png" class="img-fluid" alt="..." width="70%">
+              </div>
             </div>
             <div class="col-md-6">
               <i>
@@ -711,7 +732,9 @@
         <div class="module-item">
           <div class="row align-items-center">
             <div class="col-md-2">
-              <p>Imagen</p>
+              <div class="text-center mod-img">
+                <img src="images/mlds_landing_page/hex_6.png" class="img-fluid" alt="..." width="70%">
+              </div>
             </div>
             <div class="col-md-6">
               <i>
@@ -777,7 +800,6 @@
       </div>
     </div>
   </section>
-
   <!-- footer-->
   <footer class="container-fluid d-print-table">
     <div class="row">
@@ -862,6 +884,7 @@
   <script src="js/unal.js"></script>
   <script src="js/accesibilidad.js"></script>
   <script src="js/contactenos.js"></script>
+  <script src="js/mlds_landing_page/landing_page.js"></script>
 </body>
 
 </html>
