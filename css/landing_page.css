@@ -135,3 +135,13 @@ section {
 .info-text-sub p{
   font-size: 0.9rem;
 }
+
+.card-img-top {
+  width: 80%;
+  height: 15vw;
+  object-fit: cover;
+}
+
+.card img {
+  margin-top: 0.5rem;
+}
