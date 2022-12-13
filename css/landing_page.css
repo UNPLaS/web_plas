@@ -43,7 +43,7 @@
 } 
 
 h1 {
-  font-size: 48px;
+  font-size: 3rem;
 }
 
 section {
@@ -61,11 +61,24 @@ section {
 
 .btn-primary{
   background-color: var(--primaryColor);
+  border-color: var(--primaryColor);
 }
 
 .btn-primary:hover {
   background-color: var(--primaryColorShadow);
+  border-color: var(--primaryColorShadow);
 }
+
+.btn-outline-primary {
+  color: var(--primaryColor);
+  border-color: var(--primaryColor);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primaryColorShadow);
+  border-color: var(--primaryColorShadow);
+}
+
 
 .module-item {
   border-bottom: 1px solid var(--primaryColorTr);
@@ -100,4 +113,25 @@ section {
 
 .alert p {
   margin: 0;
+}
+
+.info-text {
+  font-size: 1.3rem;
+}
+
+.info-text  hr{
+  height: 2px;
+  opacity: 1;
+}
+
+.info-text  p{
+  padding: 2rem 0;
+}
+
+.info-text-wh p{
+  padding: 1rem 0;
+}
+
+.info-text-sub p{
+  font-size: 0.9rem;
 }
