@@ -145,3 +145,11 @@ section {
 .card img {
   margin-top: 0.5rem;
 }
+
+.icons-img {
+  margin-top: 1rem;
+}
+
+.icons-img img {
+  margin-bottom: 1rem;
+}
