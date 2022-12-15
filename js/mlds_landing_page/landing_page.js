@@ -165,8 +165,13 @@ form.addEventListener('submit', e => {
     e.preventDefault()
     if (checkForm()) {
         fetch(formScriptURL, { method: 'POST', body: new FormData(form) })
-            .then(showSuccesFormAlert())
-            .catch(showErrorFormAlert())
+            .then(() => {
+                showSuccesFormAlert()
+            })
+            .catch(response => {
+                console.log(response)
+                showErrorFormAlert()
+            })
     }
 
 });
