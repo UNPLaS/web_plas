@@ -1,5 +1,6 @@
 const formScriptURL = 'https://script.google.com/macros/s/AKfycbxDJBq_op0k84MZsO6PSZYFGVj3KlqoWrUC0GawJLwG8VhOGbzEvS6QzleONSoCP_jV/exec';
 const datesScriptURL = 'https://script.google.com/macros/s/AKfycbxYeUL_ANUZrxqPQtT5ZhtoPQAT5OUgkJ6E6xPr_dgMyO1ovWr9I8Co6BammKm_cX4KJA/exec'
+const urlsScriptURL = 'https://script.google.com/macros/s/AKfycbwMMMAKzduC4EcXlA-CrjuWFND4wsibOR2-q_5nJ7IHNTU2AuE2ptCfS8tUl0FHwIB8/exec'
 const form = document.forms['contactForm'];
 const emailInputElement = document.getElementById('emailForm');
 const selectInputElement = document.getElementById('interestForm');
@@ -54,7 +55,17 @@ function getDates() {
             'Accept': 'application/json',
         },
     })
-        .then(response => {return response.json()}).then(dates => updateDate(dates.values))
+        .then(response => { return response.json() }).then(dates => updateDate(dates.values))
+        .catch(response => console.log(response))
+}
+
+function getURLs() {
+    fetch(urlsScriptURL, {
+        method: 'GET', headers: {
+            'Accept': 'application/json',
+        }
+    })
+        .then(response => { return response.json() }).then(urls => updateUrls(urls.urls))
         .catch(response => console.log(response))
 }
 
@@ -85,6 +96,33 @@ function getMonthName(monthNumber) {
     return date.toLocaleString('es', { month: 'long' });
 }
 
+function updateUrls(urls){
+    document.getElementById("mod-0-insc1").href = urls.insc_mod_0
+    document.getElementById("mod-0-insc2").href = urls.insc_mod_0
+    document.getElementById("mod-0-insc3").href = urls.insc_mod_0
+
+    document.getElementById("mod-1-insc1").href = urls.insc_mod_1
+    document.getElementById("mod-2-insc1").href = urls.insc_mod_2
+    document.getElementById("mod-3-insc1").href = urls.insc_mod_3
+    document.getElementById("mod-4-insc1").href = urls.insc_mod_4
+    document.getElementById("mod-5-insc1").href = urls.insc_mod_5
+    document.getElementById("mod-6-insc1").href = urls.insc_mod_6
+
+    document.getElementById("bas-insc1").href = urls.insc_bas
+    document.getElementById("bas-insc2").href = urls.insc_bas
+
+    document.getElementById("adv-insc1").href = urls.insc_adv
+    document.getElementById("adv-insc2").href = urls.insc_adv
+
+    document.getElementById("mod-0-brochure1").href = urls.brochure_c
+    document.getElementById("mod-0-brochure2").href = urls.brochure_c
+
+    document.getElementById("bas-brochure1").href = urls.brochure_a
+    document.getElementById("bas-brochure2").href = urls.brochure_a
+
+    document.getElementById("adv-brochure2").href = urls.brochure_b
+    document.getElementById("adv-brochure2").href = urls.brochure_b
+}
 
 
 emailInputElement.addEventListener('change', e => {
@@ -107,3 +145,4 @@ form.addEventListener('submit', e => {
 });
 
 getDates()
+getURLs()

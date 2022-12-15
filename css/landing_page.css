@@ -121,9 +121,6 @@ p {
   margin: 0;
 }
 
-.info-text {
-  font-size: 1.3rem;
-}
 
 .info-text hr {
   height: 2px;
@@ -132,6 +129,7 @@ p {
 
 .info-text p {
   padding: 2rem 0;
+  font-size: 1.3rem;
 }
 
 .info-text-wh p {
