@@ -1,6 +1,8 @@
 const formScriptURL = 'https://script.google.com/macros/s/AKfycbxDJBq_op0k84MZsO6PSZYFGVj3KlqoWrUC0GawJLwG8VhOGbzEvS6QzleONSoCP_jV/exec';
 const datesScriptURL = 'https://script.google.com/macros/s/AKfycbxYeUL_ANUZrxqPQtT5ZhtoPQAT5OUgkJ6E6xPr_dgMyO1ovWr9I8Co6BammKm_cX4KJA/exec'
 const urlsScriptURL = 'https://script.google.com/macros/s/AKfycbwMMMAKzduC4EcXlA-CrjuWFND4wsibOR2-q_5nJ7IHNTU2AuE2ptCfS8tUl0FHwIB8/exec'
+const textScriptURL = 'https://script.google.com/macros/s/AKfycbx3oJcb-WA2WND2cvP_o1c--9ElbHcuSaTeZ_K5fsxnOif6N1MQsbJqVOvs87crV5mmyA/exec'
+
 const form = document.forms['contactForm'];
 const emailInputElement = document.getElementById('emailForm');
 const selectInputElement = document.getElementById('interestForm');
@@ -69,6 +71,16 @@ function getURLs() {
         .catch(response => console.log(response))
 }
 
+function getText() {
+    fetch(textScriptURL, {
+        method: 'GET', headers: {
+            'Accept': 'application/json'
+        }
+    })
+        .then(response => { return response.json() }).then(text => updateText(text.text))
+        .catch(response => console.log(response))
+}
+
 function updateDate(dateInfo) {
     dateInfo.forEach(modInfo => {
         const modNumber = modInfo['module']
@@ -96,7 +108,7 @@ function getMonthName(monthNumber) {
     return date.toLocaleString('es', { month: 'long' });
 }
 
-function updateUrls(urls){
+function updateUrls(urls) {
     document.getElementById("mod-0-insc1").href = urls.insc_mod_0
     document.getElementById("mod-0-insc2").href = urls.insc_mod_0
     document.getElementById("mod-0-insc3").href = urls.insc_mod_0
@@ -124,6 +136,21 @@ function updateUrls(urls){
     document.getElementById("adv-brochure2").href = urls.brochure_b
 }
 
+function updateText(texts){
+    document.getElementById("mod-0-val1").innerHTML = `Inversión: $0.00 Primeras 3 unidades. $${texts.value_mod_0} Unidad 4 y 5 + Certificado`
+    document.getElementById("mod-0-val2").innerHTML = `Inversión: $0.00 Primeras 3 unidades. $${texts.value_mod_0} Unidad 4 y 5 + Certificado`
+    document.getElementById("mod-0-val3").innerHTML = `Inversión: $0.00 Primeras 3 unidades. <br>$${texts.value_mod_0} Unidad 4 y 5 + Certificado`
+    document.getElementById("mod-1-val1").innerHTML = `Inversión: $${texts.value_mod_1}`
+    document.getElementById("mod-2-val1").innerHTML = `Inversión: $${texts.value_mod_2}`
+    document.getElementById("mod-3-val1").innerHTML = `Inversión: $${texts.value_mod_3}`
+    document.getElementById("mod-4-val1").innerHTML = `Inversión: $${texts.value_mod_4}`
+    document.getElementById("mod-5-val1").innerHTML = `Inversión: $${texts.value_mod_5}`
+    document.getElementById("mod-6-val1").innerHTML = `Inversión: $${texts.value_mod_6}`
+    document.getElementById("bas-val1").innerHTML = `Inversión: ${texts.value_bas}. Aplican descuentos`
+    document.getElementById("bas-val2").innerHTML = `Inversión: ${texts.value_bas}`
+    document.getElementById("adv-val1").innerHTML = `Inversión: ${texts.value_adv}. Aplican descuentos`
+    document.getElementById("adv-val2").innerHTML = `Inversión: ${texts.value_adv}`
+}
 
 emailInputElement.addEventListener('change', e => {
     if (!validateEmail(emailInputElement.value)) {
@@ -146,3 +173,4 @@ form.addEventListener('submit', e => {
 
 getDates()
 getURLs()
+getText()
