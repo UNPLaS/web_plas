@@ -192,7 +192,6 @@ p {
     width: 107%;
     height: 18rem;
   }
- 
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -200,7 +199,11 @@ p {
     width: 105%;
     height: 25rem;
   }
- 
+
+  #video-adva {
+    width: 60%;
+    align-self: center;
+  }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -208,6 +211,11 @@ p {
     width: 113%;
     height: 10rem;
   }
+
+  #video-adva {
+    height: 10rem;
+  }
+
 
 }
 
@@ -217,5 +225,16 @@ p {
     height: 12rem;
   }
 
+  #video-adva {
+    height: 12rem;
+  }
+
+}
+
+@media only screen and (min-width: 1400px) {
+
+  #video-adva {
+    height: 14rem;
+  }
 
 }

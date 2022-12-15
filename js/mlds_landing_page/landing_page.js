@@ -136,7 +136,7 @@ function updateUrls(urls) {
     document.getElementById("adv-brochure2").href = urls.brochure_b
 }
 
-function updateText(texts){
+function updateText(texts) {
     document.getElementById("mod-0-val1").innerHTML = `Inversión: $0.00 Primeras 3 unidades. $${texts.value_mod_0} Unidad 4 y 5 + Certificado`
     document.getElementById("mod-0-val2").innerHTML = `Inversión: $0.00 Primeras 3 unidades. $${texts.value_mod_0} Unidad 4 y 5 + Certificado`
     document.getElementById("mod-0-val3").innerHTML = `Inversión: $0.00 Primeras 3 unidades. <br>$${texts.value_mod_0} Unidad 4 y 5 + Certificado`
