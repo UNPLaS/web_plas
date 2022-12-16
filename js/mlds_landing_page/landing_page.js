@@ -132,14 +132,15 @@ function updateUrls(urls) {
     document.getElementById("bas-brochure1").href = urls.brochure_a
     document.getElementById("bas-brochure2").href = urls.brochure_a
 
-    document.getElementById("adv-brochure2").href = urls.brochure_b
+    document.getElementById("adv-brochure1").href = urls.brochure_b
     document.getElementById("adv-brochure2").href = urls.brochure_b
 }
 
 function updateText(texts) {
-    document.getElementById("mod-0-val1").innerHTML = `Inversión: $0.00 Primeras 3 unidades. $${texts.value_mod_0} Unidad 4 y 5 + Certificado`
-    document.getElementById("mod-0-val2").innerHTML = `Inversión: $0.00 Primeras 3 unidades. $${texts.value_mod_0} Unidad 4 y 5 + Certificado`
-    document.getElementById("mod-0-val3").innerHTML = `Inversión: $0.00 Primeras 3 unidades. <br>$${texts.value_mod_0} Unidad 4 y 5 + Certificado`
+    document.getElementById("mod-0-val1").innerHTML = `Gratis Primeras 3 unidades. Inversión:  $${texts.value_mod_0} Unidad 4 y 5 + Certificado`
+    document.getElementById("mod-0-val2").innerHTML = `Gratis Primeras 3 unidades. Inversión:  
+$${texts.value_mod_0} Unidad 4 y 5 + Certificado`
+    document.getElementById("mod-0-val3").innerHTML = `Gratis Primeras 3 unidades. Inversión:  <br>$${texts.value_mod_0} Unidad 4 y 5 + Certificado`
     document.getElementById("mod-1-val1").innerHTML = `Inversión: $${texts.value_mod_1}`
     document.getElementById("mod-2-val1").innerHTML = `Inversión: $${texts.value_mod_2}`
     document.getElementById("mod-3-val1").innerHTML = `Inversión: $${texts.value_mod_3}`
