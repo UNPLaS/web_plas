@@ -187,6 +187,17 @@ p {
   margin-top: 6rem;
 }
 
+#myBtn {
+  color: var(--primaryColor);
+  border-color: var(--primaryColor);
+  border: solid 1px;
+}
+
+#myBtn:hover {
+  background-color: var(--primaryColorShadow);
+  border-color: var(--primaryColorShadow);
+}
+
 @media only screen and (min-width: 540px) and (max-width: 767px) {
   .formation-rout iframe {
     width: 107%;
