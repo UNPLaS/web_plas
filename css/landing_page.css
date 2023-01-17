@@ -198,6 +198,18 @@ p {
   border-color: var(--primaryColorShadow);
 }
 
+.btn-check:focus + .btn, .btn:focus {
+  background-color: var(--primaryColorShadow);
+  border-color: var(--primaryColorShadow);
+}
+
+.btn.disabled, .btn:disabled, fieldset:disabled .btn {
+  pointer-events: none;
+  background-color: var(--primaryColorShadow);
+  border-color: var(--primaryColorShadow);
+  opacity: var(--bs-btn-disabled-opacity);
+}
+
 @media only screen and (min-width: 540px) and (max-width: 767px) {
   .formation-rout iframe {
     width: 107%;
