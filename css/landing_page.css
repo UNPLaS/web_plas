@@ -198,6 +198,29 @@ p {
   border-color: var(--primaryColorShadow);
 }
 
+.btn-check:focus+.btn,
+.btn:focus {
+  background-color: var(--primaryColorShadow);
+  border-color: var(--primaryColorShadow);
+}
+
+.btn.disabled,
+.btn:disabled,
+fieldset:disabled .btn {
+  pointer-events: none;
+  background-color: var(--primaryColorShadow);
+  border-color: var(--primaryColorShadow);
+  opacity: var(--bs-btn-disabled-opacity);
+}
+
+.invertion-container {
+  margin-top: 8px;
+}
+
+.invertion-container-mod0 {
+  margin-top: 12px;
+}
+
 @media only screen and (min-width: 540px) and (max-width: 767px) {
   .formation-rout iframe {
     width: 107%;
@@ -227,7 +250,10 @@ p {
     height: 10rem;
   }
 
-
+  .invertion-container {
+    margin-top: 20px;
+  }
+  
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
@@ -238,6 +264,10 @@ p {
 
   #video-adva {
     height: 12rem;
+  }
+
+  .invertion-container {
+    margin-top: 55px;
   }
 
 }

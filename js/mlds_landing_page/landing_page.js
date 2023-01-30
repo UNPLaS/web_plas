@@ -163,11 +163,15 @@ emailInputElement.addEventListener('change', e => {
 
 
 form.addEventListener('submit', e => {
+    const btn = document.getElementById('formBtn')
     e.preventDefault()
     if (checkForm()) {
+        btn.disabled = true
         fetch(formScriptURL, { method: 'POST', body: new FormData(form) })
             .then(() => {
                 showSuccesFormAlert()
+            }).then(() => {
+                btn.disabled = false
             })
             .catch(response => {
                 console.log(response)
