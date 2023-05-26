@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <!--Favicon-->
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <!-- meta tags -->
+    <meta charset="utf-8">
+    <meta name="revisit-after" content="1 hour">
+    <meta name="distribution" content="all">
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.5, user-scalable=yes">
+    <meta name="expires" content="1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="all">
+    <meta http-equiv="cache-control" content="no-cache"/>
+    <!-- CSS -->
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/frontend.css" rel="stylesheet">
+    <link href="../node_modules/open-iconic/font/css/open-iconic-bootstrap.min.css" rel="stylesheet">
+    <link href="../css/accesibilidad.css" rel="stylesheet">
+    <!-- JS -->
+    <script src="https://kit.fontawesome.com/12f7911629.js" crossorigin="anonymous"></script>
+    <title>Semilleros - PLaS</title>
+</head>
+<body>
+    <header id="header"></header>
+    <!-- Panel de accesibilidad -->
+    <div id="panel-access" class="tx-unal-accesibilidad d-print-none"></div>
+    <!--Pestaña de servicios-->
+    <div id="panel-services"></div>
+    <main class="detalle container-fluid">
+        <div class="row mt-xl-5 mt-3">
+            <div class="col-lg-3 col-12">
+                <div class="shadow-sm rounded-3">
+                    <ol class="breadcrumb">
+                        <li class="mx-3 my-2 breadcrumb-plas">
+                            <span>Está en:</span>
+                            <a href="../index.html" target="_self" title="Inicio">Inicio</a><img
+                                src="../images/arrow.png"/><span>Semilleros</span></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mb-5">
+            <div class="col-12 d-flex flex-column justify-content-center">
+                <div class="shadow p-sm-5 p-4 rounded-3">
+                    <p class="content-title plas-title">Semilleros PLaS</p>
+                    <br/>
+                    <div class="row g-4 g-xl-1">
+                        <div class="w-100 col-xl-7 col-12 border rounded-3 d-flex p-2 gap-2">
+                            <button class="plas-button active rounded-4 d-block w-100 my-1 p-2" id="btn-turing">
+                                TuringBox
+                            </button>
+                            <button class="plas-button rounded-4 d-block w-100 my-1 p-2" id="btn-compilers">
+                                UN Compilers
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row mt-4 border rounded-3 mx-xl-1 py-2 ">
+                        <div id="turing">
+                                    <div class="card h-auto">
+                                        <div class="row g-0">
+                                            <div class="col-6 my-auto d-flex justify-content-center">
+                                                <img src="../images/PLaS/semilleros/logoTuringBox.png" alt="Turing Box" class="img-fluid">
+                                            </div>
+                                            <div class="col">
+                                                <div class="card-body">
+                                                    <span class="card-title fw-bold lh-1"> Turing Box </span>
+                                                    <br>
+                                                    <span class="fw-bold lh-1"> Proyectos de base tecnológica desarrollados por estudiantes</span>
+                                                    <hr>
+                                                    <span>
+                                                    Somos un Semillero de la Universidad Nacional de Colombia, en el cual brindamos un espacio de pruebas comúnmente llamado (Sandbox), donde tenemos como finalidad entrenar y desarrollar habilidades para la realización, ejecución y evaluación de proyectos y programas con un enfoque 4.0 (Cuarta revolución industrial), para nuestra nueva generación de emprendedores.
+                                                        Bajo la metodología de mejora continua, seremos el espacio (Sandbox) por excelencia en creación, formación y orientación de proyectos enfocados en la comunidad académica.
+                                                    </span>
+                                                    <div class="d-flex justify-content-center mt-4 gap-2 info-icons">
+                                                        <i class="fa-solid fa-earth-americas fa-xl"
+                                                           onclick="window.open(`https://turingbox.co/`)"></i>
+                                                        <i class="fa-brands fa-linkedin fa-xl"
+                                                           onclick="window.open(`https://co.linkedin.com/company/turingbox`)"></i>
+                                                        <i class="fa-brands fa-github fa-xl"
+                                                           onclick="window.open(`https://github.com/Turing-Core-Team`)"></i>
+                                                        <i tabindex="0" class="fa-brands fa-instagram fa-xl"
+                                                           onclick="window.open(`https://www.instagram.com/turingbox/`)"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        </div>
+                        <div id="compilers" style="display: none;">
+                            <div class="card h-auto">
+                                <div class="row g-0">
+                                    <div class="col-6 my-auto d-flex justify-content-center">
+                                        <img src="../images/PLaS/semilleros/compilersTemp.png" alt="UN Compilers" class="img-fluid">
+                                    </div>
+                                    <div class="col">
+                                        <div class="card-body">
+                                            <span class="card-title fw-bold lh-1"> UN Compilers </span>
+                                            <br>
+                                            <span class="fw-bold lh-1"> Desarrollo teórico y práctico de los lenguajes de programación </span>
+                                            <hr>
+                                            <span>
+                                                    El desarrollo de la tecnología en compiladores ha demostrado que existe
+                                                    la posibilidad de traer nuevas ideas y técnicas para solucionar problemas
+                                                    que surgen en las complejas industrias modernas, en el marco de paradigmas
+                                                    como lo podría ser la computación paralela, de la necesidad de construir
+                                                    sistemas de software seguros y confiables, o de la verificación automática de
+                                                    código como herramienta productiva. Es así que se establece un motivo para
+                                                    alentar la creación de un semillero en la Universidad Nacional de Colombia
+                                                    para estudiar en profundidad lo relacionado al desarrollo teórico y práctico
+                                                    de sistemas de procesamiento de lenguaje desde una visión científica y de
+                                                    industria.
+                                                    </span>
+
+                                            <div class="d-flex justify-content-center mt-4 gap-2 info-icons">
+                                                <b>Juan Carlos Sánchez</b>
+                                                <i class="fa-solid fa-envelope fa-xl lh-1"
+                                                   onclick='window.open("https://mail.google.com/mail/?view=cm&fs=1&to=jusanchez@unal.edu.co","_blank")'></i>
+                                            </div>
+                                            <div class="d-flex justify-content-center mt-4 gap-2 info-icons">
+                                                <b>Juan Ángel Giraldo</b>
+                                                <i class="fa-solid fa-envelope fa-xl lh-1"
+                                                   onclick='window.open("https://mail.google.com/mail/?view=cm&fs=1&to=jugiraldom@unal.edu.co","_blank")'></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button onclick="topFunction()" class="plas-button rounded-2 shadow-lg ms-2" id="myBtn" title="Ir al inicio">
+                <i class="fa-solid fa-arrow-up"></i>
+            </button>
+        </div>
+
+    </main>
+    <footer id="footer" class="container-fluid d-print-table pb-4"> </footer>
+    <!-- JS -->
+    <script type="module" src="../js/popovers.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+    <script src="../js/accesibilidad.js"></script>
+    <script src="../js/semilleros.js"></script>
+    <script src="../js/unal.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#header").load("../components/header.html");
+        });
+        $(function(){
+            $("#panel-access").load("../components/panel-access.html");
+        });
+        $(function(){
+            $("#panel-services").load("../components/panel-services.html");
+        });
+        $(function(){
+            $("#footer").load("../components/footer.html");
+        });
+    </script>
+</body>
+</html>

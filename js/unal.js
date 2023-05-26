@@ -39,7 +39,7 @@ function openNav() {
     document
         .getElementById("main")
         .style
-        .right = "200px";
+        .right = "260px";
     document
         .getElementById("openbtnId")
         .style
@@ -54,7 +54,7 @@ function closeNav() {
     document
         .getElementById("mySidebar")
         .style
-        .right = "-200px";
+        .right = "-260px";
     document
         .getElementById("main")
         .style
