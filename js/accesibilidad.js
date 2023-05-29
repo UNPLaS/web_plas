@@ -2,9 +2,32 @@
 	var newClass = 0;
 	var convalue = 0;
 
-function ammunition(estilo1,estilo2){
+function ammunition(estilo1,estilo2,number){
   	var estail = estilo1+' '+estilo2;
-	var frontPage = document.getElementsByTagName('body')[0].className = estail;  	
+	var frontPage = document.getElementsByTagName('body')[0].className = estail;
+    if (document.getElementsByClassName('plas-title').length > 0)
+        document.getElementsByClassName('plas-title')[0].className = 'content-title m-0 plas-title plas-title-' + number;
+    document.querySelectorAll('.card').forEach(elem => {
+        elem.className = 'card h-auto w-100 ' + estail;
+    })
+    document.querySelectorAll('.mlds-section').forEach(elem => {
+        elem.className = 'mlds-section ' + estail;
+    })
+    if (number !== 2) {
+        document.querySelectorAll('.info-hover-black').forEach(elem => {
+            elem.className = 'info-hover-white info-hover-mutable';
+        })
+        document.querySelectorAll('.text-dark').forEach(elem => {
+            elem.className = 'carousel-item-plas text-light';
+        })
+    } else {
+        document.querySelectorAll('.info-hover-mutable').forEach(elem => {
+            elem.className = 'info-hover-black';
+        })
+        document.querySelectorAll('.text-light').forEach(elem => {
+            elem.className = 'carousel-item-plas text-dark';
+        })
+    }
   	console.log(estail);
 }
 
@@ -143,12 +166,26 @@ function cambiarContrastes(number) {
       	convalue = "contraste-"+number;
 		}) ();  
 	//console.log(convalue);
-	varload();
+	varload(number);
 }
 
 function restaurarContraste(){
   var contra = document.getElementsByTagName('body')[0];
   contra.removeAttribute("class");
+  if (document.getElementsByClassName('plas-title').length > 0)
+    document.getElementsByClassName('plas-title')[0].className = 'content-title m-0 plas-title';
+  document.querySelectorAll('.card').forEach(elem => {
+      elem.className = 'card h-auto w-100';
+  })
+  document.querySelectorAll('.mlds-section').forEach(elem => {
+      elem.className = 'mlds-section bg-white';
+  })
+  document.querySelectorAll('.info-hover-mutable').forEach(elem => {
+      elem.className = 'info-hover-black';
+  })
+  document.querySelectorAll('.text-light').forEach(elem => {
+      elem.className = 'carousel-item-plas text-dark';
+  })
 }
 //Fin de cambiar contrastes
 
@@ -176,8 +213,8 @@ function defaultConfig() {
 
 //Inicializar
 
-function varload(){
-  	ammunition(newClass,convalue);
+function varload(number){
+  	ammunition(newClass,convalue,number);
   	//console.log(newClass+" "+convalue)
 }
 
