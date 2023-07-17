@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon" />
+    <!-- CSS -->
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/frontend.css" rel="stylesheet" />
+    <link href="../node_modules/open-iconic/font/css/open-iconic-bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/accesibilidad.css" rel="stylesheet" />
+    <link href="../css/landing_page.css" rel="stylesheet" />
+    <!-- JS -->
+    <script src="https://kit.fontawesome.com/12f7911629.js" crossorigin="anonymous"></script>
+    <title>Encuesta diagnóstico</title>
+</head>
+
+<body>
+    <header id="header"></header>
+    <!-- Panel de accesibilidad -->
+    <div id="panel-access" class="tx-unal-accesibilidad d-print-none"></div>
+    <!--Pestaña de servicios-->
+    <div id="panel-services"></div>
+
+    <!-- video background-->
+    <video autoplay muted loop id="myVideo">
+        <source src="../images/mlds_landing_page/file.mp4" type="video/mp4">
+    </video>
+
+    <!-- Contenido 1 info -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="bottom-position">
+                        <div class="bor">
+                            <h1 class="primary-text">Certifícate en</h1>
+                            <div class="secondary-text">
+                                <h1>Machine Learning and Data Science</h1>
+                                <p>Potencia tus conocimientos y proyéctate profesionalmente certificándote en algunas de
+                                    las áreas más
+                                    demandadas hoy en día con una de las mejores universidades en Latinoamérica.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-contenet secondary-text">
+                        <h2>Preinscríbete ya</h2>
+                        <div class="alert alert-success" role="alert" id="succesAlertForm" hidden>
+                            <p>¡Muchas Gracias! Nos estaremos poniendo en contacto</p>
+                        </div>
+                        <div class="alert alert-warning alert-dismissible" role="alert" id="errorAlertForm" hidden>
+                            <p>Ha ocurrido un error</p>
+                        </div>
+                        <form id="contactForm">
+                            <div class="row">
+                                <label for="nombre">Nombre Completo</label>
+                                <div class="col">
+                                    <input id="nameForm" type="text" class="form-control" placeholder="Nombre"
+                                        name="nombre">
+                                </div>
+                                <div class="col">
+                                    <input id="lastNameForm" type="text" class="form-control" placeholder="Apellido"
+                                        name="apellidos">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" class="form-control" id="emailForm" placeholder="name@example.com"
+                                    name="email">
+                                <div id="validationServer03Feedback" class="invalid-feedback">
+                                    Ingrese un email válido
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="interes">Elige el programa de tu preferencia</label>
+                                <select class="form-control" name="interes" id="interestForm">
+                                    <option selected disabled>Elige una opción</option>
+                                    <option value="Introduccion programacion">Introducción a la Programación con Python
+                                    </option>
+                                    <option value="Linea basica">MLDS - Línea Básica</option>
+                                    <option value="Linea avanzada">MLDS - Línea Avanzada</option>
+                                </select>
+
+                                <button type="submit" class="btn btn-primary mb-3" id="formBtn">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <button onclick="topFunction()" class="plas-button rounded-2 shadow-lg ms-2 myBtn" id="myBtn" title="Ir al inicio">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    <!-- footer-->
+    <footer id="footer" class="container-fluid d-print-table pb-4"> </footer>
+    <!-- JS -->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/unal.js"></script>
+    <script src="../js/accesibilidad.js"></script>
+    <script src="../js/contactenos.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("../components/header.html");
+        });
+        $(function () {
+            $("#panel-access").load("../components/panel-access.html");
+        });
+        $(function () {
+            $("#panel-services").load("../components/panel-services.html");
+        });
+        $(function () {
+            $("#footer").load("../components/footer.html");
+        });
+    </script>
+    <!-- Meta Pixel Code -->
+
+    <!-- End Meta Pixel Code -->
+</body>
+
+</html>
