@@ -73,6 +73,10 @@ p {
   border-color: var(--primaryColorShadow);
 }
 
+.btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem var(--primaryColorTr);
+}
+
 .btn-outline-primary {
   color: var(--primaryColor);
   border-color: var(--primaryColor);
