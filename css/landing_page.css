@@ -243,6 +243,15 @@ fieldset:disabled .btn {
   margin-right: 1rem;
 }
 
+.animation {
+  opacity: 1;
+  transition: opacity 0.2s linear;
+}
+
+.animation.hide {
+  opacity: 0;
+}
+
 .form-check-input[type="checkbox"]:focus {
   box-shadow: 0 0 0 0.2rem var(--primaryColorTr);
 }
