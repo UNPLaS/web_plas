@@ -252,6 +252,10 @@ fieldset:disabled .btn {
   opacity: 0;
 }
 
+.animation > p {
+  margin-bottom: 0;
+}
+
 .form-check-input[type="checkbox"]:focus {
   box-shadow: 0 0 0 0.2rem var(--primaryColorTr);
 }

@@ -5,7 +5,9 @@ const sendBtn = document.getElementById("surveySendBtb");
 
 let numPages = 0;
 let currentPage = 0;
-let knowdledgeList = {}
+let knowdledgeMods = {}
+
+/* Load data*/
 
 async function getknowledgeList() {
     const response = await fetch(knowdledgeListURL);
@@ -58,18 +60,18 @@ function loadMod0(module0Info) {
 
 async function loadLists() {
     try {
-        knowdledgeList = await getknowledgeList();
+        knowdledgeMods = await getknowledgeList();
         const modsRow = document.getElementById("modRequirements");
-        const numModules = Object.keys(knowdledgeList).length;
+        const numModules = Object.keys(knowdledgeMods).length;
         //Mod 0 is in first page, therefore subtract one
         numPages = parseInt((numModules - 1) / 3);
         currentPage = 1;
 
-        loadMod0(knowdledgeList["0"]);
+        loadMod0(knowdledgeMods["0"]);
 
         let htmlModContent = '';
         for (let i = 1; i < numModules; i++) {
-            htmlModContent += `<div class="col-md-4 animation" ${i > 3 ? "hidden" : ""} id="mod-${i}-list">${createModList(i, knowdledgeList[i])}</div>`;
+            htmlModContent += `<div class="col-md-4 animation" ${i > 3 ? "hidden" : ""} id="mod-${i}-list">${createModList(i, knowdledgeMods[i])}</div>`;
         }
 
         modsRow.innerHTML = htmlModContent;
@@ -78,6 +80,8 @@ async function loadLists() {
         console.log(error);
     }
 }
+
+/* change page */
 
 function updateSurvey() {
     toggleBtns();
@@ -91,7 +95,7 @@ function toggleBtns() {
         nextBtn.setAttribute('hidden', 'true');
     }
 
-    if (currentPage > 1) {
+    if (currentPage > 1 && currentPage <= numPages) {
         prevBtn.removeAttribute("hidden");
     } else {
         prevBtn.setAttribute('hidden', 'true');
@@ -107,38 +111,142 @@ function toggleBtns() {
 function toggleKnowledgeList() {
     const minMod = currentPage * 3 - 2
     const maxMod = currentPage * 3
-    const numModules = Object.keys(knowdledgeList).length;
+    const numModules = Object.keys(knowdledgeMods).length;
     const mod0div = document.getElementById("mod-0-list");
 
-    if (currentPage === 1) {
-        setTimeout(() => {mod0div.removeAttribute("hidden") }, 200);
-        setTimeout(() => {
-            mod0div.classList.remove("hide");
-        }, 100);
-    } else {
-        mod0div.classList.add("hide");
-        setTimeout(() => {
-            mod0div.setAttribute('hidden', 'true');
-        }, 200);
-
-    }
-
-
-
-    for (let i = 1; i < numModules; i++) {
-        let modeCol = document.getElementById(`mod-${i}-list`);
-        if (i >= minMod && i <= maxMod) {
-            setTimeout(() => {modeCol.removeAttribute("hidden") }, 200);
+    if (currentPage <= numPages) {
+        if (currentPage === 1) {
+            setTimeout(() => { mod0div.removeAttribute("hidden") }, 200);
             setTimeout(() => {
-                modeCol.classList.remove("hide");
+                mod0div.classList.remove("hide");
             }, 100);
         } else {
-            modeCol.classList.add("hide");
-            setTimeout(() => { modeCol.setAttribute('hidden', 'true'); }, 200);
+            mod0div.classList.add("hide");
+            setTimeout(() => {
+                mod0div.setAttribute('hidden', 'true');
+            }, 200);
         }
+
+
+
+        for (let i = 1; i < numModules; i++) {
+            let modeCol = document.getElementById(`mod-${i}-list`);
+            if (i >= minMod && i <= maxMod) {
+                setTimeout(() => { modeCol.removeAttribute("hidden") }, 200);
+                setTimeout(() => {
+                    modeCol.classList.remove("hide");
+                }, 100);
+            } else {
+                modeCol.classList.add("hide");
+                setTimeout(() => { modeCol.setAttribute('hidden', 'true'); }, 200);
+            }
+        }
+    } else {
+        hideAllKnowledgeList();
+    }
+}
+
+/** result */
+
+function getModResponses() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const responses = [];
+
+    checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+            responses.push(checkbox.value);
+        }
+    });
+
+    return responses;
+}
+
+function calcResult(responses) {
+    const numModules = Object.keys(knowdledgeMods).length;
+    const results = [];
+    for (let i = 0; i < numModules; i++) {
+        let resultMod = checkContent(responses, i);
+        results.push(resultMod);
+    }
+    return results;
+}
+
+function checkContent(responses, modNumber) {
+    const primaryKnowledge = knowdledgeMods[modNumber]['primary'];
+    const secondaryKnowledge = knowdledgeMods[modNumber]['secondary'];
+    let result = 0;
+    /**
+     * 0 Needs see module
+     * 1 Has secondary knowledge, but still needs see module
+     * 2 Has primary knowledge, can see next module, but see this module is good idea
+     * 3 Has all items, can see the next module
+     */
+
+    if (isContained(responses, secondaryKnowledge)) {
+        result += 1;
     }
 
+    if (isContained(responses, primaryKnowledge)) {
+        result += 2;
+    }
+
+    return result;
 }
+
+function isContained(arrayContainer, arrayContent) {
+    return arrayContent.every(item => arrayContainer.includes(item));
+}
+
+function createResultText(results) {
+    let htmlResponse = "";
+    const recommendedMods = [];
+    for (let i = 0; i < results.length; i++) {
+        let points = results[i];
+        if (points == 0) {
+            htmlResponse += `<p>Te recomendamos que inicies con el <strong>módulo ${i}: ${knowdledgeMods[i]["name"]}</strong> de la <strong>línea ${knowdledgeMods[i]["line"]}</strong>, ya que hay conocimientos fundamentales que son necesarios comprender</p>`;
+            recommendedMods.push(i);
+            break
+        }
+        if (points == 1) {
+            htmlResponse += `<p>Aunque ya posees algunos conocimientos relacionados, te recomendamos que inicies con el <strong>módulo ${i}: ${knowdledgeMods[i]["name"]}</strong> de la <strong>línea ${knowdledgeMods[i]["line"]}</strong></p>`;
+            recommendedMods.push(i);
+            break
+        }
+
+        if (points == 2) {
+            if (i + 1 < results.length) {
+                htmlResponse += `<p>Posees los conocimientos suficientes para ver el <strong>módulo ${i+1}: ${knowdledgeMods[i+1]["name"]}</strong> de la <strong>línea ${knowdledgeMods[i + 1]["line"]}</strong>, pero te recomendamos también ver  el <strong>módulo ${i}: ${knowdledgeMods[i]["name"]}</strong> de la <strong>línea ${knowdledgeMods[i]["line"]}</strong> para reforzar tus conocimientos, ya que puedes tener dificultades para ver ciertos temas</p>`;
+                recommendedMods.push(i + 1);
+            } else {
+                htmlResponse += `<p>Posees los conocimientos básicos del <strong>módulo ${i}: ${knowdledgeMods[i]["name"]}</strong> de la <strong>línea ${knowdledgeMods[i]["line"]}</strong>, pero te recomendamos ver su contenido para mejorar tu conocimiento</p>`;
+                recommendedMods.push(i);
+            }
+        }
+
+        if (i + 1 == results.length && recommendedMods.length == 0) {
+            htmlResponse += `<p>Posees los conocimientos necesarios en todos los cursos. Puedes ver el curso que más te interese para mejorar tus habilidades. Pronto estaremos añadinedo más cursos que serán de tu interés</p>`
+        }
+
+    }
+    return { htmlResponse: htmlResponse, recommendedMods: recommendedMods };
+}
+
+function hideAllKnowledgeList() {
+
+    document.getElementById("mod-0-list").setAttribute('hidden', 'true');
+    document.getElementById("modRequirements").setAttribute('hidden', 'true');
+}
+
+function showResults() {
+    const responses = getModResponses();
+    const results = createResultText(calcResult(responses));
+
+    document.getElementById("result").innerHTML = `${results["htmlResponse"]}`
+    document.getElementById("result").removeAttribute("hidden");
+
+}
+
+/** setup page */
 
 prevBtn.addEventListener("click", e => {
     currentPage -= 1;
@@ -149,5 +257,12 @@ nextBtn.addEventListener("click", e => {
     currentPage += 1;
     updateSurvey();
 });
+
+sendBtn.addEventListener("click", e => {
+    currentPage += 1
+    updateSurvey();
+    showResults();
+});
+
 
 loadLists();

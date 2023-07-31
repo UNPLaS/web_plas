@@ -34,142 +34,30 @@
         <div class="container">
             <div class="survey-container d-flex flex-column">
                 <h1>Encuesta diagnóstico</h1>
-                <p>En esta encuesta te ayudaremos a escoger desde qué línea deberías comenzar. Selecciona las afirmaciones que mejor describan tu caso</p>
+                <p>En esta encuesta te ayudaremos a escoger desde qué línea deberías comenzar. Selecciona las
+                    afirmaciones que mejor describan tu caso</p>
                 <div class="row">
+                    <div class="col-md-12 animation" id="result" hidden>
+                        <p>Te recomendamos que inicies con el módulo -- de la línea básica, ya que hay conocimientos fundamentales que son necesarios comprender</p>
+                    </div>
                     <div class="col-md-12 animation" id="mod-0-list">
                         <div class="survey-knowledge">
                             <div class="d-flex justify-content-start survey-knowledge-list">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="programPython">
-                                    <label class="form-check-label" for="check1">
-                                        Sé programar en Python
-                                    </label>
-                                </div>
+                                <!-- mod 0 list -->
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <div class="row" id="modRequirements">
-                    <div class="col-md-4">
-                        <div class="survey-knowledge">
-                            <h2>Módulo 1</h2>
-                            <div class="survey-knowledge-list">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="programPython">
-                                    <label class="form-check-label" for="check1">
-                                        Sé programar en Python
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="programPython">
-                                    <label class="form-check-label" for="check1">
-                                        Sé programar en Python
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="survey-knowledge">
-                            <h2>Módulo 2</h2>
-                            <div class="survey-knowledge-list">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="programPython">
-                                    <label class="form-check-label" for="check1">
-                                        Sé programar en Python
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="programPython">
-                                    <label class="form-check-label" for="check1">
-                                        Sé programar en Python
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="survey-knowledge">
-                            <h2>Módulo 3</h2>
-                            <div class="survey-knowledge-list">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="programPython">
-                                    <label class="form-check-label" for="check1">
-                                        Sé programar en Python
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="programPython">
-                                    <label class="form-check-label" for="check1">
-                                        Sé programar en Python
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4" hidden>
-                        <div class="survey-knowledge">
-                            <h2>Módulo 4</h2>
-                            <div class="survey-knowledge-list">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="programPython">
-                                    <label class="form-check-label" for="check1">
-                                        Sé programar en Python
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="programPython">
-                                    <label class="form-check-label" for="check1">
-                                        Sé programar en Python
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4" hidden>
-                        <div class="survey-knowledge">
-                            <h2>Módulo 5</h2>
-                            <div class="survey-knowledge-list">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="programPython">
-                                    <label class="form-check-label" for="check1">
-                                        Sé programar en Python
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="programPython">
-                                    <label class="form-check-label" for="check1">
-                                        Sé programar en Python
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4" hidden>
-                        <div class="survey-knowledge">
-                            <h2>Módulo 6</h2>
-                            <div class="survey-knowledge-list">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="programPython">
-                                    <label class="form-check-label" for="check1">
-                                        Sé programar en Python
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="programPython">
-                                    <label class="form-check-label" for="check1">
-                                        Sé programar en Python
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!--mods list-->
                 </div>
                 <div class="row mt-auto">
                     <div class="col d-flex justify-content-end">
                         <div class="survey-btn">
-                            <button type="submit" class="btn btn-primary mb-3" id="surveyPrevBtb" hidden>Anterior</button>
-                            <button type="submit" class="btn btn-primary mb-3" id="surveyNextBtb" >Siguiente</button>
+                            <button type="submit" class="btn btn-primary mb-3" id="surveyPrevBtb"
+                                hidden>Anterior</button>
+                            <button type="submit" class="btn btn-primary mb-3" id="surveyNextBtb">Siguiente</button>
                             <button type="submit" class="btn btn-primary mb-3" id="surveySendBtb" hidden>Enviar</button>
                         </div>
                     </div>
