@@ -1,7 +1,8 @@
 const knowdledgeListURL = 'https://raw.githubusercontent.com/Heldeg/test-knowdledge-list/main/knowledge-list.json';
-const prevBtn = document.getElementById("surveyPrevBtb");
-const nextBtn = document.getElementById("surveyNextBtb");
-const sendBtn = document.getElementById("surveySendBtb");
+const prevBtn = document.getElementById("surveyPrevBtn");
+const nextBtn = document.getElementById("surveyNextBtn");
+const sendBtn = document.getElementById("surveySendBtn");
+const backLPBtn = document.getElementById("backLPBtn");
 
 let numPages = 0;
 let currentPage = 0;
@@ -22,9 +23,7 @@ async function getknowledgeList() {
 function createknowledgeItem(knowledText, checkboxId) {
     const checkboxHtml = `<div class="form-check">
     <input class="form-check-input" type="checkbox" value="${knowledText}" id="${checkboxId}">
-    <label class="form-check-label" for="${checkboxId}">
-       ${knowledText}
-    </label>
+    <label class="form-check-label" for="${checkboxId}">${knowledText}</label>
 </div>`;
     return checkboxHtml;
 }
@@ -45,7 +44,7 @@ function createModList(modNumber, moduleInfo, knowledgeExtraClasses = "") {
         checkboxItems += item + "\n"
     }
     const moduleList = `<div class="survey-knowledge">
-    ${knowledgeExtraClasses ? "" : `<h2>Módulo ${modNumber}</h2>`}
+    ${knowledgeExtraClasses ? "" : `<h2>Módulo ${modNumber}: ${moduleInfo["name"]}</h2>`}
     <div class="survey-knowledge-list ${knowledgeExtraClasses}">
         ${checkboxItems}
     </div>
@@ -215,7 +214,7 @@ function createResultText(results) {
 
         if (points == 2) {
             if (i + 1 < results.length) {
-                htmlResponse += `<p>Posees los conocimientos suficientes para ver el <strong>módulo ${i+1}: ${knowdledgeMods[i+1]["name"]}</strong> de la <strong>línea ${knowdledgeMods[i + 1]["line"]}</strong>, pero te recomendamos también ver  el <strong>módulo ${i}: ${knowdledgeMods[i]["name"]}</strong> de la <strong>línea ${knowdledgeMods[i]["line"]}</strong> para reforzar tus conocimientos, ya que puedes tener dificultades para ver ciertos temas</p>`;
+                htmlResponse += `<p>Posees los conocimientos suficientes para ver el <strong>módulo ${i + 1}: ${knowdledgeMods[i + 1]["name"]}</strong> de la <strong>línea ${knowdledgeMods[i + 1]["line"]}</strong>, pero te recomendamos también ver  el <strong>módulo ${i}: ${knowdledgeMods[i]["name"]}</strong> de la <strong>línea ${knowdledgeMods[i]["line"]}</strong> para reforzar tus conocimientos, ya que puedes tener dificultades para ver ciertos temas</p>`;
                 recommendedMods.push(i + 1);
             } else {
                 htmlResponse += `<p>Posees los conocimientos básicos del <strong>módulo ${i}: ${knowdledgeMods[i]["name"]}</strong> de la <strong>línea ${knowdledgeMods[i]["line"]}</strong>, pero te recomendamos ver su contenido para mejorar tu conocimiento</p>`;
@@ -232,18 +231,42 @@ function createResultText(results) {
 }
 
 function hideAllKnowledgeList() {
+    const mod0div = document.getElementById("mod-0-list");
+    const modRequirements = document.getElementById("modRequirements");
+    mod0div.classList.add("hide");
+    modRequirements.classList.add("hide");
 
-    document.getElementById("mod-0-list").setAttribute('hidden', 'true');
-    document.getElementById("modRequirements").setAttribute('hidden', 'true');
+    setTimeout(() => {
+        mod0div.setAttribute('hidden', 'true');
+        modRequirements.setAttribute('hidden', 'true');
+    }, 200);
+
+}
+
+function preselectLine(recommendedMods) {
+    const interestForm = document.getElementById("interestForm");
+    const firstRecommendedMod = recommendedMods[0];
+    if (firstRecommendedMod > 3) {
+        interestForm.value = "Linea avanzada";
+    } else if (firstRecommendedMod > 0) {
+        interestForm.value = "Linea basica";
+    } else if (firstRecommendedMod === 0) {
+        interestForm.value = "Introduccion programacion";
+    } else {
+        // Do nothing
+    }
+
 }
 
 function showResults() {
     const responses = getModResponses();
     const results = createResultText(calcResult(responses));
-
-    document.getElementById("result").innerHTML = `${results["htmlResponse"]}`
-    document.getElementById("result").removeAttribute("hidden");
-
+    document.getElementById("result").innerHTML = `<h2>Resultado:</h2>${results["htmlResponse"]}`;
+    preselectLine(results["recommendedMods"]);
+    setTimeout(() => {
+        document.getElementById("result").removeAttribute("hidden");
+        document.getElementById("form").removeAttribute("hidden");
+    }, 200);
 }
 
 /** setup page */
