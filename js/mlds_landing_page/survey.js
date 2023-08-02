@@ -1,4 +1,4 @@
-const knowdledgeListURL = 'https://raw.githubusercontent.com/Heldeg/test-knowdledge-list/main/knowledge-list.json';
+const knowdledgeListURL = 'https://raw.githubusercontent.com/mindlab-unal/MLDS-knowledge-list/main/knowledge-list.json';
 const prevBtn = document.getElementById("surveyPrevBtn");
 const nextBtn = document.getElementById("surveyNextBtn");
 const sendBtn = document.getElementById("surveySendBtn");
