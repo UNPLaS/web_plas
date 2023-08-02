@@ -36,7 +36,7 @@
                 <h1>Encuesta diagnóstico</h1>
                 <p>En esta encuesta te ayudaremos a escoger desde qué línea deberías comenzar. Selecciona las
                     afirmaciones que mejor describan tu caso</p>
-                <div class="row">              
+                <div class="row">
                     <div class="col-md-12 animation" id="result" hidden>
                     </div>
                     <div class="col-md-12 animation" id="mod-0-list">
@@ -53,11 +53,14 @@
                 </div>
                 <!--form-->
                 <div class="row" id="form" hidden>
-                    <div class="col-md-5 mx-auto">
+                    <div class="col-md-6 mx-auto">
                         <div class="">
                             <h2>Preinscríbete ya</h2>
-                            <div class="alert alert-success" role="alert" id="succesAlertForm" hidden>
-                                <p>¡Muchas Gracias! Nos estaremos poniendo en contacto</p>
+                            <div class="d-grid" id="succesAlertForm" hidden>
+                                <h3>¡Muchas Gracias! Nos estaremos poniendo en contacto</h3>
+                                <a type="button" class="btn btn-primary btn-lg mb-3" id="backLPBtn" href="../mlds.html">Volver
+                                    página inicial</a>
+
                             </div>
                             <div class="alert alert-warning alert-dismissible" role="alert" id="errorAlertForm" hidden>
                                 <p>Ha ocurrido un error</p>
@@ -104,7 +107,6 @@
                                 hidden>Anterior</button>
                             <button type="button" class="btn btn-primary mb-3" id="surveyNextBtn">Siguiente</button>
                             <button type="button" class="btn btn-primary mb-3" id="surveySendBtn" hidden>Enviar</button>
-                            <a type="button" class="btn btn-primary mb-3" id="backLPBtn" href="../mlds.html" hidden>Volver página inicial</a>
                         </div>
                     </div>
 
@@ -136,9 +138,10 @@
     <!-- JS -->
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/unal.js"></script>
-    <script src="../js/accesibilidad.js"></script>
+    <script src="../js/accesibilidad.js">setTimeout(2000);</script>
     <script src="../js/contactenos.js"></script>
     <script src="../js/mlds_landing_page/survey.js"></script>
+    <script src="../js/mlds_landing_page/form.js"></script>
     <!-- Meta Pixel Code -->
 
     <!-- End Meta Pixel Code -->
