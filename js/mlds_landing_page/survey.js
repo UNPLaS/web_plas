@@ -202,7 +202,7 @@ function createResultText(results) {
     for (let i = 0; i < results.length; i++) {
         let points = results[i];
         if (points == 0) {
-            htmlResponse += `<p>Te recomendamos que inicies con el <strong>módulo ${i}: ${knowdledgeMods[i]["name"]}</strong> de la <strong>línea ${knowdledgeMods[i]["line"]}</strong>, ya que hay conocimientos fundamentales que son necesarios comprender</p>`;
+            htmlResponse += `<p>Te recomendamos que inicies con el <strong>módulo ${i}: ${knowdledgeMods[i]["name"]}</strong> de la <strong>línea ${knowdledgeMods[i]["line"]}</strong>, ya que hay conocimientos fundamentales que debes estudiar</p>`;
             recommendedMods.push(i);
             break
         }
