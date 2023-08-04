@@ -223,7 +223,7 @@ function createResultText(results) {
         }
 
         if (i + 1 == results.length && recommendedMods.length == 0) {
-            htmlResponse += `<p>Posees los conocimientos necesarios en todos los cursos. Puedes ver el curso que más te interese para mejorar tus habilidades. Pronto estaremos añadinedo más cursos que serán de tu interés</p>`
+            htmlResponse += `<p>Posees los conocimientos necesarios en todos los cursos. Puedes ver el curso que más te interese para mejorar tus habilidades. Pronto estaremos añadiendo más cursos que serán de tu interés</p>`
         }
 
     }
