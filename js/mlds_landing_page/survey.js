@@ -214,7 +214,7 @@ function createResultText(results) {
 
         if (points == 2) {
             if (i + 1 < results.length) {
-                htmlResponse += `<p>Posees los conocimientos suficientes para ver el <strong>módulo ${i + 1}: ${knowdledgeMods[i + 1]["name"]}</strong> de la <strong>línea ${knowdledgeMods[i + 1]["line"]}</strong>, pero te recomendamos también ver  el <strong>módulo ${i}: ${knowdledgeMods[i]["name"]}</strong> de la <strong>línea ${knowdledgeMods[i]["line"]}</strong> para reforzar tus conocimientos, ya que puedes tener dificultades para ver ciertos temas</p>`;
+                htmlResponse += `<p>Posees los conocimientos suficientes para ver el <strong>módulo ${i + 1}: ${knowdledgeMods[i + 1]["name"]}</strong> de la <strong>línea ${knowdledgeMods[i + 1]["line"]}</strong>, pero te recomendamos también ver el <strong>módulo ${i}: ${knowdledgeMods[i]["name"]}</strong> de la <strong>línea ${knowdledgeMods[i]["line"]}</strong> para reforzar tus conocimientos, ya que puedes tener dificultades en ciertos temas</p>`;
                 recommendedMods.push(i + 1);
             } else {
                 htmlResponse += `<p>Posees los conocimientos básicos del <strong>módulo ${i}: ${knowdledgeMods[i]["name"]}</strong> de la <strong>línea ${knowdledgeMods[i]["line"]}</strong>, pero te recomendamos ver su contenido para mejorar tu conocimiento</p>`;
