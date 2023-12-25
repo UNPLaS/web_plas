@@ -35,7 +35,9 @@
           <p>Redireccionando al nuevo dominio. Si la página no abre en 3 segundos, por favor haga clic en <a
               href="https://site.mlds.unal.edu.co/">https://site.mlds.unal.edu.co/</a></p>
           <img src="images/mlds_landing_page/mlds_301.png" alt="imagen 301" width="50%">
-          <p class="d-flex justify-content-end">Image by <a href="https://www.freepik.com/free-vector/hand-drawn-flat-design-npl-illustration_22896754.htm#query=codigo%20301%20Machine%20learning&position=5&from_view=search&track=ais&uuid=8cd7846a-a5fe-4bec-a202-1f4cc3204664"> Freepik</a></p>
+          <p class="d-flex justify-content-end">Image by <a
+              href="https://www.freepik.com/free-vector/hand-drawn-flat-design-npl-illustration_22896754.htm#query=codigo%20301%20Machine%20learning&position=5&from_view=search&track=ais&uuid=8cd7846a-a5fe-4bec-a202-1f4cc3204664">
+              Freepik</a></p>
         </div>
       </div>
     </div>
@@ -50,32 +52,14 @@
   <!-- JS -->
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/unal.js"></script>
-  <script src="js/accesibilidad.js"></script>
   <script src="js/contactenos.js"></script>
-  <script src="js/mlds_landing_page/landing_page.js"></script>
-  <!-- Meta Pixel Code -->
-  <script>
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-      };
-      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '886221709423615');
-    fbq('track', 'PageView');
-  </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
     $(function () {
-      $("#header").load("components/header.html");
+      $("#panel-access").load("components/panel-access.html");
     });
     $(function () {
-      $("#panel-access").load("components/panel-access.html");
+      $("#header").load("components/header.html");
     });
     $(function () {
       $("#panel-services").load("components/panel-services.html");
@@ -84,9 +68,7 @@
       $("#footer").load("components/footer.html");
     });
   </script>
-  <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=886221709423615&ev=PageView&noscript=1" /></noscript>
-  <!-- End Meta Pixel Code -->
+  <script src="js/accesibilidad.js"></script>
 </body>
 
 </html>
