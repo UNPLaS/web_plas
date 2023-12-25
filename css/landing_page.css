@@ -24,7 +24,8 @@
 }
 
 .primary-text {
-  color: var(--primaryColor)
+  color: var(--primaryColor);
+  font-size: 5rem;
 }
 
 .secondary-text {
@@ -32,7 +33,7 @@
   text-shadow: var(--darkColor);
 }
 
-.text-contenet {
+.text-content {
   background-color: #242323d7;
   padding: 1rem;
 }
