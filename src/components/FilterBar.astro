@@ -1,0 +1,53 @@
+---
+import PatternLabel from './PatternLabel.astro';
+
+interface Props {
+  typologies: string[];
+  years: string[];
+  resultCount: number;
+}
+
+const { typologies, years, resultCount } = Astro.props;
+---
+
+<form
+  class="flex flex-wrap items-end gap-x-3 gap-y-4"
+  role="search"
+  data-pattern="filter-bar"
+  onsubmit="return false"
+>
+  <PatternLabel id="filter-bar" name="Barra de búsqueda y filtros" />
+  <label class="flex w-full min-w-0 flex-col gap-1.5">
+    <span class="text-xs font-semibold uppercase tracking-wide text-[var(--muted)]">Buscar</span>
+    <input
+      type="search"
+      name="q"
+      placeholder="Título, autores, venue…"
+      autocomplete="off"
+      class="w-full border border-[var(--line)] bg-[var(--surface)] px-3 py-2 text-sm outline-none focus:border-[var(--accent)]"
+    />
+  </label>
+  <label class="flex min-w-0 flex-1 basis-[12rem] flex-col gap-1.5">
+    <span class="text-xs font-semibold uppercase tracking-wide text-[var(--muted)]">Tipo</span>
+    <select
+      name="typology"
+      class="w-full border border-[var(--line)] bg-[var(--surface)] px-3 py-2 text-sm outline-none focus:border-[var(--accent)]"
+    >
+      <option value="all">Todos</option>
+      {typologies.map((t) => <option value={t}>{t}</option>)}
+    </select>
+  </label>
+  <label class="flex min-w-0 flex-1 basis-[10rem] flex-col gap-1.5">
+    <span class="text-xs font-semibold uppercase tracking-wide text-[var(--muted)]">Año</span>
+    <select
+      name="year"
+      class="w-full border border-[var(--line)] bg-[var(--surface)] px-3 py-2 text-sm outline-none focus:border-[var(--accent)]"
+    >
+      <option value="all">Todos</option>
+      {years.map((y) => <option value={y}>{y}</option>)}
+    </select>
+  </label>
+  <p class="basis-full text-sm text-[var(--muted)]" aria-live="polite">
+    {resultCount} registros (filtro visual; sin lógica aún)
+  </p>
+</form>

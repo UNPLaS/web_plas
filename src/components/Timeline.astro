@@ -1,0 +1,32 @@
+---
+import PatternLabel from './PatternLabel.astro';
+
+interface Chapter {
+  year: string;
+  title: string;
+  body: string;
+}
+
+interface Props {
+  items: Chapter[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="growth-canvas" data-pattern="timeline">
+  <PatternLabel id="timeline" name="Timeline = tronco con capítulos" />
+  <ol class="space-y-8">
+    {
+      items.map((chapter) => (
+        <li class="branch-node">
+          <p class="text-xs font-semibold uppercase tracking-wide text-[var(--accent)]">
+            {chapter.year}
+          </p>
+          <h3 class="font-display mt-1 text-lg font-semibold">{chapter.title}</h3>
+          <p class="mt-1 text-sm text-[var(--muted)]">{chapter.body}</p>
+        </li>
+      ))
+    }
+  </ol>
+</section>

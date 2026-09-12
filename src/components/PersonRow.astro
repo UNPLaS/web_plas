@@ -1,0 +1,44 @@
+---
+import PatternLabel from './PatternLabel.astro';
+
+interface Person {
+  id: string;
+  name: string;
+  role: string;
+  meta: string;
+  hasPhoto: boolean;
+}
+
+interface Props {
+  items: Person[];
+  showLabel?: boolean;
+}
+
+const { items, showLabel = true } = Astro.props;
+---
+
+<div class="growth-canvas" data-pattern="person-row">
+  {showLabel && <PatternLabel id="person-row" name="Personas como nodos del árbol" />}
+  <ul class="space-y-8">
+    {
+      items.map((person) => (
+        <li class="branch-node grid gap-5 sm:grid-cols-[6.5rem_1fr] sm:items-center">
+          <div
+            class:list={[
+              'flex aspect-square items-center justify-center border-2 border-[var(--line)] bg-[var(--surface)] text-xs text-[var(--muted)]',
+              person.hasPhoto ? 'rounded-[40%_60%_55%_45%]' : 'rounded-sm opacity-70',
+            ]}
+            aria-hidden="true"
+          >
+            {person.hasPhoto ? 'Foto' : '—'}
+          </div>
+          <div>
+            <h3 class="font-display text-xl font-semibold">{person.name}</h3>
+            <p class="mt-1 text-sm font-medium text-[var(--accent)]">{person.role}</p>
+            <p class="mt-1 text-sm text-[var(--muted)]">{person.meta}</p>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</div>

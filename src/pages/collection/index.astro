@@ -1,0 +1,19 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import ItemGrid from '../../components/ItemGrid.astro';
+import SectionPanel from '../../components/SectionPanel.astro';
+import { collectionItems } from '../../data/placeholders';
+---
+
+<Layout title="Collection" pattern="card-index">
+  <SectionPanel>
+    <PageHeader
+      title="Collection"
+      lead="Índice de items. Cada rama lleva a /collection/[id]."
+    />
+  </SectionPanel>
+  <SectionPanel>
+    <ItemGrid items={[...collectionItems]} />
+  </SectionPanel>
+</Layout>

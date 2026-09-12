@@ -1,0 +1,50 @@
+---
+/** Conmutador PLaS ↔ Felipe para comparar skins sobre la misma estructura. */
+---
+
+<div class="theme-switch" role="group" aria-label="Tema visual" data-theme-switch>
+  <button type="button" data-theme-value="plas" aria-pressed="true">PLaS</button>
+  <button type="button" data-theme-value="felipe" aria-pressed="false">Felipe</button>
+</div>
+
+<script>
+  const KEY = 'front-plas-theme';
+
+  function applyTheme(theme) {
+    const next = theme === 'felipe' ? 'felipe' : 'plas';
+    document.documentElement.dataset.theme = next;
+    try {
+      localStorage.setItem(KEY, next);
+    } catch {}
+    document.querySelectorAll('[data-theme-switch]').forEach((group) => {
+      group.querySelectorAll('button[data-theme-value]').forEach((btn) => {
+        btn.setAttribute('aria-pressed', String(btn.dataset.themeValue === next));
+      });
+    });
+    document.querySelectorAll('[data-theme-sync]').forEach((el) => {
+      el.dataset.mode = next === 'felipe' ? 'person' : 'brand';
+    });
+  }
+
+  function readTheme() {
+    const params = new URLSearchParams(window.location.search);
+    const fromQuery = params.get('theme');
+    if (fromQuery === 'plas' || fromQuery === 'felipe') return fromQuery;
+    try {
+      const stored = localStorage.getItem(KEY);
+      if (stored === 'plas' || stored === 'felipe') return stored;
+    } catch {}
+    return 'plas';
+  }
+
+  applyTheme(readTheme());
+
+  document.querySelectorAll('[data-theme-switch]').forEach((group) => {
+    group.addEventListener('click', (event) => {
+      const target = event.target;
+      if (!(target instanceof HTMLElement)) return;
+      const value = target.dataset.themeValue;
+      if (value === 'plas' || value === 'felipe') applyTheme(value);
+    });
+  });
+</script>

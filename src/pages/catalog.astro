@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import FilterBar from '../components/FilterBar.astro';
+import ResultList from '../components/ResultList.astro';
+import SectionPanel from '../components/SectionPanel.astro';
+import { catalogItems } from '../data/placeholders';
+
+const typologies = [...new Set(catalogItems.map((i) => i.typology))];
+const years = [...new Set(catalogItems.map((i) => i.year))].sort((a, b) => b.localeCompare(a));
+---
+
+<Layout title="Catalog" pattern="filter-catalog">
+  <SectionPanel>
+    <PageHeader
+      title="Catalog"
+      lead="Barra de filtros + lista densa de resultados. Sin JS de filtrado aún."
+    />
+  </SectionPanel>
+  <SectionPanel>
+    <FilterBar typologies={typologies} years={years} resultCount={catalogItems.length} />
+    <ResultList items={[...catalogItems]} />
+  </SectionPanel>
+</Layout>

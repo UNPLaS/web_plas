@@ -1,0 +1,37 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DetailBody from '../../components/DetailBody.astro';
+import SectionPanel from '../../components/SectionPanel.astro';
+import { collectionItems, detailSections } from '../../data/placeholders';
+
+export function getStaticPaths() {
+  return collectionItems.map((item) => ({
+    params: { id: item.id },
+    props: { item },
+  }));
+}
+
+interface Props {
+  item: (typeof collectionItems)[number];
+}
+
+const { item } = Astro.props;
+---
+
+<Layout title={item.title} pattern="entity-detail">
+  <SectionPanel>
+    <p class="mb-4 text-sm">
+      <a href="/collection">← Volver a Collection</a>
+    </p>
+    <DetailBody
+      title={item.title}
+      meta={item.meta}
+      summary={item.summary}
+      sections={[...detailSections]}
+      links={[
+        { href: '/catalog', label: 'Ver catálogo relacionado' },
+        { href: '/contact', label: 'Contacto' },
+      ]}
+    />
+  </SectionPanel>
+</Layout>

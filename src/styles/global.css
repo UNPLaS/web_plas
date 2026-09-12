@@ -1,0 +1,401 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Sora", "Segoe UI", sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-plas: "Sora", "Segoe UI", sans-serif;
+  --font-plas-display: "Syne", "Sora", sans-serif;
+  --font-felipe: "Source Sans 3", "Segoe UI", sans-serif;
+  --font-felipe-display: "Fraunces", Georgia, serif;
+}
+
+/*
+ * Dos skins emparentados por educación en ingeniería.
+ * PLaS: menta/turquesa vibrantes, apertura.
+ * Felipe: misma familia oscurecida + beige/marrón, calidez y oficio docente.
+ */
+
+:root,
+[data-theme="plas"] {
+  --page: #ffffff;
+  --bg: #e8f8f3;
+  --bg-deep: #d4f3ea;
+  --ink: #123038;
+  --muted: #3d6670;
+  --line: color-mix(in srgb, #00c9b1 28%, #d0e5e0);
+  --accent: #0090d8;
+  --accent-2: #00c9b1;
+  --accent-3: #84f0b4;
+  --warm: #2a8f7a;
+  --surface: #eefaf6;
+  --panel: #f3fcf9;
+  --panel-border: color-mix(in srgb, #00c9b1 22%, #e2eeea);
+  --label: #0b6b5c;
+  --glow-a: color-mix(in srgb, #84f0b4 55%, transparent);
+  --glow-b: color-mix(in srgb, #0090d8 28%, transparent);
+  --branch: color-mix(in srgb, #00c9b1 55%, #123038);
+  --node: #00c9b1;
+  --font-body: var(--font-plas);
+  --font-title: var(--font-plas-display);
+  --radius-node: 0.15rem;
+  --radius-panel: 0.75rem;
+  --hero-weight: 700;
+  --motion-distance: 14px;
+}
+
+[data-theme="felipe"] {
+  --page: #ffffff;
+  --bg: #f3eee6;
+  --bg-deep: #e4d7c5;
+  --ink: #1f1a14;
+  --muted: #6a5a4a;
+  --line: color-mix(in srgb, #5c6e5a 22%, #e0d5c8);
+  --accent: #1f4d4a;
+  --accent-2: #3d5c56;
+  --accent-3: #7a8f7c;
+  --warm: #8b5e3c;
+  --surface: #f7f1e8;
+  --panel: #f8f3eb;
+  --panel-border: color-mix(in srgb, #c4a882 35%, #e8e0d4);
+  --label: #7a4e2d;
+  --glow-a: color-mix(in srgb, #c4a882 40%, transparent);
+  --glow-b: color-mix(in srgb, #1f4d4a 16%, transparent);
+  --branch: color-mix(in srgb, #5c6e5a 50%, #1f1a14);
+  --node: #8b5e3c;
+  --font-body: var(--font-felipe);
+  --font-title: var(--font-felipe-display);
+  --radius-node: 0.35rem;
+  --radius-panel: 0.85rem;
+  --hero-weight: 600;
+  --motion-distance: 10px;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.55;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-title);
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--warm);
+}
+
+/* Contenedor de sección sobre fondo blanco */
+.content-panel {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-panel);
+  padding: 1.5rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .content-panel {
+    padding: 1.75rem 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.content-panel--flush {
+  padding: 0;
+  overflow: hidden;
+}
+
+.content-panel.hero-bleed {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  min-height: min(70vh, 36rem);
+  isolation: isolate;
+}
+
+.growth-canvas {
+  position: relative;
+}
+
+.growth-canvas::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0.35rem;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--branch) 8%,
+    var(--branch) 92%,
+    transparent 100%
+  );
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  .growth-canvas::before {
+    left: 0.85rem;
+  }
+}
+
+.branch-node {
+  position: relative;
+  padding-left: 1.75rem;
+}
+
+@media (min-width: 640px) {
+  .branch-node {
+    padding-left: 2.5rem;
+  }
+}
+
+.branch-node::before {
+  content: "";
+  position: absolute;
+  left: 0.1rem;
+  top: 0.85rem;
+  width: 1.15rem;
+  height: 2px;
+  background: var(--branch);
+  opacity: 0.7;
+}
+
+@media (min-width: 640px) {
+  .branch-node::before {
+    left: 0.55rem;
+    width: 1.55rem;
+  }
+}
+
+.branch-node::after {
+  content: "";
+  position: absolute;
+  left: -0.05rem;
+  top: 0.65rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--node);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--node) 22%, transparent);
+}
+
+@media (min-width: 640px) {
+  .branch-node::after {
+    left: 0.4rem;
+  }
+}
+
+/* Bifurcaciones asimétricas (no grid de tarjetas) */
+.fork-layout {
+  display: grid;
+  gap: 1.75rem 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .fork-layout {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+
+  .fork-layout > :nth-child(3n + 2) {
+    margin-top: 2.5rem;
+  }
+
+  .fork-layout > :nth-child(3n) {
+    margin-top: -0.5rem;
+  }
+}
+
+.leaf-panel {
+  position: relative;
+  background: transparent;
+  border: none;
+  border-left: 3px solid var(--accent-2);
+  padding: 0.35rem 0 0.35rem 1rem;
+  clip-path: polygon(0 0, 100% 0, 96% 100%, 0 100%);
+}
+
+[data-theme="felipe"] .leaf-panel {
+  border-left-color: var(--warm);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 92%);
+}
+
+.geo-mark {
+  display: inline-block;
+  width: 0.65rem;
+  height: 0.65rem;
+  background: var(--accent-3);
+  transform: rotate(45deg);
+  margin-right: 0.55rem;
+  vertical-align: 0.1rem;
+}
+
+[data-theme="felipe"] .geo-mark {
+  background: var(--warm);
+  border-radius: 50% 0;
+  transform: none;
+}
+
+/* Hero: imagen de fondo + panel de contenido a la mitad */
+.hero-bleed__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bleed__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+[data-theme='plas'] .hero-bleed__img--plas,
+:root:not([data-theme]) .hero-bleed__img--plas {
+  opacity: 1;
+}
+
+[data-theme='felipe'] .hero-bleed__img--felipe {
+  opacity: 1;
+}
+
+.hero-bleed__panel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  padding: 2rem 1.5rem 2.5rem;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    color-mix(in srgb, var(--panel) 88%, transparent) 42%,
+    var(--panel) 100%
+  );
+}
+
+@media (min-width: 768px) {
+  .hero-bleed__panel {
+    width: 50%;
+    min-height: 100%;
+    justify-content: center;
+    padding: 2.5rem clamp(1.25rem, 3vw, 2.5rem);
+    background: color-mix(in srgb, var(--panel) 94%, transparent);
+    backdrop-filter: blur(6px);
+    border-right: 1px solid var(--panel-border);
+  }
+
+  [data-theme='felipe'] .hero-bleed__panel {
+    margin-left: auto;
+    border-right: 0;
+    border-left: 1px solid var(--panel-border);
+  }
+}
+
+/* Motion */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--motion-distance));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes draw-branch {
+  from {
+    stroke-dashoffset: 240;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.motion-rise {
+  animation: rise-in 0.7s ease both;
+}
+
+.motion-rise-delay-1 {
+  animation-delay: 0.08s;
+}
+.motion-rise-delay-2 {
+  animation-delay: 0.16s;
+}
+.motion-rise-delay-3 {
+  animation-delay: 0.24s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-rise,
+  .motion-rise-delay-1,
+  .motion-rise-delay-2,
+  .motion-rise-delay-3,
+  .hero-bleed__img {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* Theme switcher */
+.theme-switch {
+  display: inline-flex;
+  gap: 0.25rem;
+  padding: 0.2rem;
+  border: 1px solid var(--panel-border);
+  border-radius: calc(var(--radius-panel) - 0.15rem);
+  background: var(--panel);
+}
+
+.theme-switch button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.65rem;
+  cursor: pointer;
+}
+
+.theme-switch button[aria-pressed="true"] {
+  background: var(--accent);
+  color: #fff;
+  border-radius: calc(var(--radius-panel) - 0.35rem);
+}
+
+[data-theme="felipe"] .theme-switch button[aria-pressed="true"] {
+  background: var(--warm);
+}
+
+/* Etiquetas de auditoría — apagadas */
+.pattern-label {
+  display: none !important;
+}

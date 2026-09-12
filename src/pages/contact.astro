@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import ContactBlock from '../components/ContactBlock.astro';
+import SectionPanel from '../components/SectionPanel.astro';
+import { contactFields } from '../data/placeholders';
+---
+
+<Layout title="Contact" pattern="contact">
+  <SectionPanel>
+    <PageHeader title="Contact" lead="Campos etiquetados + placeholder de mapa." />
+  </SectionPanel>
+  <SectionPanel>
+    <ContactBlock fields={[...contactFields]} />
+  </SectionPanel>
+</Layout>

@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroIdentity from '../components/HeroIdentity.astro';
+import ClaimList from '../components/ClaimList.astro';
+import CtaGroup from '../components/CtaGroup.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ItemGrid from '../components/ItemGrid.astro';
+import SectionPanel from '../components/SectionPanel.astro';
+import { claims, collectionItems, ctas, chips, site } from '../data/placeholders';
+
+const preview = collectionItems.slice(0, 4);
+---
+
+<Layout title="Home" pattern="home">
+  <HeroIdentity
+    brand="Educación en ingeniería · prototipo"
+    title={site.name}
+    subtitle={site.tagline}
+    chips={[...chips]}
+    mode="brand"
+  />
+
+  <SectionPanel>
+    <ClaimList items={[...claims]} />
+  </SectionPanel>
+
+  <SectionPanel>
+    <CtaGroup items={[...ctas]} />
+  </SectionPanel>
+
+  <SectionPanel>
+    <SectionHeader
+      title="Obras que crecen del tronco"
+      lead="Índice asimétrico: ramas, no tarjetas."
+    />
+    <ItemGrid items={preview} showLabel={false} />
+  </SectionPanel>
+</Layout>

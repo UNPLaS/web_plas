@@ -1,0 +1,61 @@
+---
+import PatternLabel from './PatternLabel.astro';
+
+interface Section {
+  title: string;
+  body: string;
+}
+
+interface Props {
+  title: string;
+  meta?: string;
+  summary?: string;
+  sections: Section[];
+  links?: { href: string; label: string }[];
+}
+
+const { title, meta, summary, sections, links = [] } = Astro.props;
+---
+
+<article data-pattern="detail-body">
+  <PatternLabel id="detail-body" name="Detalle de entidad" />
+  <header class="border-b border-[var(--line)] pb-8">
+    {meta && (
+      <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-[var(--muted)]">{meta}</p>
+    )}
+    <h1 class="text-3xl font-semibold tracking-tight sm:text-4xl">{title}</h1>
+    {summary && <p class="mt-4 max-w-2xl text-[var(--muted)]">{summary}</p>}
+  </header>
+
+  {
+    sections.map((sec) => (
+      <section class="mt-10 border-t border-[var(--line)] pt-8">
+        <h2 class="text-xl font-semibold">{sec.title}</h2>
+        <p class="mt-3 max-w-2xl text-[var(--ink)]/90">{sec.body}</p>
+      </section>
+    ))
+  }
+
+  {
+    links.length > 0 && (
+      <section class="mt-10 border-t border-[var(--line)] pt-8">
+        <h2 class="text-xl font-semibold">Enlaces</h2>
+        <ul class="mt-4 space-y-2 text-sm">
+          {links.map((link) => (
+            <li>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  <div
+    class="mt-10 flex aspect-[16/7] items-center justify-center border border-[var(--line)] bg-[var(--surface)] text-sm text-[var(--muted)]"
+    aria-hidden="true"
+    data-pattern="detail-media"
+  >
+    [media / galería placeholder]
+  </div>
+</article>
