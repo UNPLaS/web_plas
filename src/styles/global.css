@@ -165,6 +165,22 @@ body {
   flex-direction: column;
 }
 
+/* Con chrome UNAL el área 4 ya flexiona; no forzar 100vh extra */
+body.unal-shell .page-shell {
+  flex: 1 1 auto;
+  min-height: 100%;
+}
+
+body.unal-shell #unal-site-content {
+  display: flex;
+  flex-direction: column;
+}
+
+body.unal-shell .page-foreground {
+  min-height: 0;
+  flex: 1;
+}
+
 .page-main {
   flex: 1;
 }
@@ -331,10 +347,14 @@ a.btn--soft:is(:hover, .is-touch-hover) {
 
 /* Ubicación bajo el nav — páginas interiores */
 .breadcrumb {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   width: 100%;
+  min-height: 3.5rem;
   background: var(--page);
   border-bottom: 1px solid var(--line);
-  padding-block: 0.75rem;
+  padding-block: 0.85rem 0.65rem;
 }
 
 .breadcrumb__trail {

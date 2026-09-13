@@ -2,13 +2,13 @@
 
 export const site = {
   name: 'PLaS',
+  nameFull: 'Programming Languages and Systems',
   tagline: 'Construimos software, herramientas y criterios para enseñar y hacer ingeniería.',
   subtitle:
     'Estudiantes y colaboradores exploran ideas con libertad y las llevan a producciones de calidad.',
 };
 
 export const nav = [
-  { href: '/', label: 'Inicio' },
   { href: '/about', label: 'Grupo' },
   { href: '/lines', label: 'Líneas' },
   { href: '/projects', label: 'Proyectos' },

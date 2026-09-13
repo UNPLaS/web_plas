@@ -1,7 +1,10 @@
 ---
 import '../styles/global.css';
-import SiteHeader from '../components/SiteHeader.astro';
-import SiteFooter from '../components/SiteFooter.astro';
+import '../styles/unal-chrome.css';
+import UnalHeader from '../components/unal/UnalHeader.astro';
+import UnalServices from '../components/unal/UnalServices.astro';
+import UnalAccessibility from '../components/unal/UnalAccessibility.astro';
+import UnalFooter from '../components/unal/UnalFooter.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import Spine from '../components/Spine.astro';
 import FloatGraphs from '../components/FloatGraphs.astro';
@@ -16,17 +19,21 @@ interface Props {
 
 const { title, description = site.tagline, spine = false } = Astro.props;
 const isHome = Astro.url.pathname.replace(/\/$/, '') === '' || Astro.url.pathname === '/';
+const pageTitle = title.includes('Universidad Nacional')
+  ? title
+  : `${title} | Universidad Nacional de Colombia`;
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
-    <title>{title} — {site.name}</title>
+    <title>{pageTitle}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -34,20 +41,28 @@ const isHome = Astro.url.pathname.replace(/\/$/, '') === '' || Astro.url.pathnam
       rel="stylesheet"
     />
   </head>
-  <body>
-    <div class:list={['page-shell', spine ? 'page-shell--split' : 'page-shell--interior']}>
-      {spine && <Spine />}
-      {spine && <FloatGraphs />}
-      {spine && <div class="page-bg-veil" aria-hidden="true" />}
-      <div class="page-foreground">
-        <SiteHeader />
-        {!isHome && <Breadcrumb currentLabel={title} />}
-        <main class="page-main">
-          <slot />
-        </main>
-        <SiteFooter />
+  <body class="unal-shell">
+    <!-- B3: cabezote, accesibilidad, servicios → contenido PLaS → pie -->
+    <UnalHeader />
+    <UnalAccessibility />
+    <UnalServices />
+
+    <main id="unal-site-content" class="plas-main">
+      <div class:list={['page-shell', spine ? 'page-shell--split' : 'page-shell--interior']}>
+        {spine && <Spine />}
+        {spine && <FloatGraphs />}
+        {spine && <div class="page-bg-veil" aria-hidden="true" />}
+        <div class="page-foreground">
+          {!isHome && <Breadcrumb currentLabel={title} />}
+          <div class="page-main">
+            <slot />
+          </div>
+        </div>
       </div>
-    </div>
+    </main>
+
+    <UnalFooter />
+    <script src="/unal/js/unal-chrome.js" defer></script>
     <script>
       import { startTouchHover } from '../scripts/touch-hover';
       startTouchHover();

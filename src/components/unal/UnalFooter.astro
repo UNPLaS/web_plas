@@ -1,0 +1,91 @@
+---
+/** Fecha de actualización del sitio (DD/MM/AA), como en la plantilla UNAL. */
+const updatedAt = '04/08/26';
+
+const govLeft = [
+  { label: 'Régimen Legal', href: 'http://www.legal.unal.edu.co' },
+  { label: 'Talento humano', href: 'http://personal.unal.edu.co' },
+  { label: 'Contratación', href: 'http://contratacion.unal.edu.co' },
+  { label: 'Ofertas de empleo', href: 'http://personal.unal.edu.co' },
+  { label: 'Rendición de cuentas', href: 'http://launalcuenta.unal.edu.co/' },
+  { label: 'Concurso docente', href: 'http://docentes.unal.edu.co/concurso-profesoral/' },
+  { label: 'Pago Virtual', href: 'http://www.pagovirtual.unal.edu.co/' },
+  { label: 'Control interno', href: 'http://controlinterno.unal.edu.co/' },
+  { label: 'Calidad', href: 'http://siga.unal.edu.co' },
+  { label: 'Buzón de notificaciones', href: 'http://unal.edu.co/buzon-de-notificaciones/' },
+];
+
+const govRight = [
+  {
+    label: 'Correo institucional',
+    href: 'https://smartkey.xertica.com/cloudkey/a/unal.edu.co/user/login',
+  },
+  { label: 'Mapa del sitio', href: '/' },
+  { label: 'Redes Sociales', href: 'http://redessociales.unal.edu.co' },
+  { label: 'FAQ', href: '/contact' },
+  { label: 'Quejas y reclamos', href: 'http://unal.edu.co/quejas-y-reclamos/' },
+  { label: 'Atención en línea', href: 'http://unal.edu.co/atencion-en-linea/' },
+  { label: 'Encuesta', href: 'http://unal.edu.co/encuesta/' },
+  { label: 'Contáctenos', href: '/contact' },
+  { label: 'Estadísticas', href: 'http://estadisticas.unal.edu.co/' },
+  { label: 'Glosario', href: '/' },
+];
+---
+
+<footer id="unal-footer" class="container-fluid" data-unal-chrome="footer">
+  <div class="unal-footer-grid">
+    <nav class="unal-gov-nav" aria-label="Gobierno en línea">
+      {govLeft.map((l) => <a href={l.href}>{l.label}</a>)}
+    </nav>
+    <nav class="unal-gov-nav" aria-label="Servicios de información">
+      {govRight.map((l) => <a href={l.href}>{l.label}</a>)}
+    </nav>
+    <div class="unal-footer-contact">
+      <div class="contacto">
+        <b>Contacto página web:</b><br />
+        Carrera 30 No 45A-03<br />
+        Edif. Aulas de Ingeniería — 453<br />
+        Bogotá D.C., Colombia<br />
+        (+57 1) 316 5000 Ext. 14077
+      </div>
+      <div class="derechos">
+        <a
+          href="https://unal.edu.co/fileadmin/user_upload/docs/legal.pdf"
+          target="_blank"
+          rel="noreferrer">&copy; Copyright 2021</a
+        ><br />
+        Algunos derechos reservados.<br />
+        <a
+          title="Comuníquese con el administrador de este sitio web"
+          href="mailto:plas@unal.edu.co">plas@unal.edu.co</a
+        ><br />
+        <a href="/contact">Acerca de este sitio web</a><br />
+        Actualización:{updatedAt}
+      </div>
+    </div>
+    <div class="unal-footer-logos">
+      <a href="http://orgullo.unal.edu.co/">
+        <img src="/unal/images/log_orgullo.png" alt="Orgullo UN" width="88" height="30" />
+      </a>
+      <a href="https://www.gov.co/">
+        <img
+          src="/unal/images/log_gobiern.png"
+          alt="Portal Único del Estado Colombiano"
+          width="88"
+          height="30"
+        />
+      </a>
+      <a href="http://agenciadenoticias.unal.edu.co">
+        <img src="/unal/images/log_agenc.png" alt="Agencia de Noticias" width="88" height="30" />
+      </a>
+      <a href="http://www.contaduria.gov.co/">
+        <img
+          src="/unal/images/log_contra.png"
+          alt="Contaduría General de la República"
+          width="88"
+          height="30"
+        />
+      </a>
+    </div>
+  </div>
+</footer>
