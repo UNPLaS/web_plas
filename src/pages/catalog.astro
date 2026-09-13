@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import TypeChip from '../components/TypeChip.astro';
 import { catalogItems } from '../data/placeholders';
 ---
 
@@ -22,29 +23,42 @@ import { catalogItems } from '../data/placeholders';
 
     <ul class="works-list">
       {
-        catalogItems.map((item) => (
-          <li>
-            {item.href ? (
-              <a class="works-card works-card--thumb" href={item.href} target="_blank" rel="noreferrer">
-                <div class="works-card__media" aria-hidden="true" />
-                <div class="works-card__body">
-                  <p class="works-card__meta">{item.meta}</p>
-                  <h2 class="works-card__title">{item.title}</h2>
-                  <p class="works-card__author">{item.author}</p>
-                </div>
-              </a>
-            ) : (
-              <article class="works-card works-card--thumb">
-                <div class="works-card__media" aria-hidden="true" />
-                <div class="works-card__body">
-                  <p class="works-card__meta">{item.meta}</p>
-                  <h2 class="works-card__title">{item.title}</h2>
-                  <p class="works-card__author">{item.author}</p>
-                </div>
-              </article>
-            )}
-          </li>
-        ))
+        catalogItems.map((item) => {
+          const body = (
+            <>
+              <div class="works-card__media" aria-hidden="true" />
+              <div class="works-card__body">
+                <p class="works-card__meta">{item.meta}</p>
+                <h2 class="works-card__title">{item.title}</h2>
+                {item.author ? <p class="works-card__author">{item.author}</p> : null}
+                {
+                  item.lineChip ? (
+                    <div class="works-card__foot">
+                      <TypeChip typology={item.lineChip} />
+                    </div>
+                  ) : null
+                }
+              </div>
+            </>
+          );
+
+          return (
+            <li>
+              {item.href ? (
+                <a
+                  class="works-card works-card--thumb"
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {body}
+                </a>
+              ) : (
+                <article class="works-card works-card--thumb">{body}</article>
+              )}
+            </li>
+          );
+        })
       }
     </ul>
   </section>

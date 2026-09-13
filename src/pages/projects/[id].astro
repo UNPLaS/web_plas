@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import TypeChip from '../../components/TypeChip.astro';
 import { projectItems } from '../../data/placeholders';
 
 export function getStaticPaths() {
@@ -26,10 +27,17 @@ const description =
     </p>
 
     <header class="page-head">
-      <p class="page-head__eyebrow">{item.meta}</p>
+      {
+        item.lineChip ? (
+          <div class="card-topline card-topline--page">
+            <TypeChip typology={item.lineChip} />
+          </div>
+        ) : (
+          <p class="page-head__eyebrow">Proyecto</p>
+        )
+      }
       <h1 class="page-head__title">{item.titleFull || item.title}</h1>
       <p class="page-head__lede">{item.summary}</p>
-      <p class="card-outcome">{item.outcome}</p>
     </header>
 
     {
@@ -72,20 +80,25 @@ const description =
           <a class="btn btn--soft" href="/projects">Ver todas</a>
         </div>
         <ul class="news-gallery">
-          {related.map((entry) => (
-            <li>
-              <a class="news-card" href={`/projects/${entry.id}`}>
-                <div class="news-card__media">
-                  {entry.image ? <img src={entry.image} alt="" loading="lazy" /> : null}
-                </div>
-                <div class="news-card__body">
-                  <p class="news-card__meta">{entry.meta}</p>
-                  <h3 class="news-card__title">{entry.title}</h3>
-                  <p class="card-outcome">{entry.outcome}</p>
-                </div>
-              </a>
-            </li>
-          ))}
+          {related.map((entry) => {
+            const title =
+              entry.title.length > 72 ? `${entry.title.slice(0, 72).trimEnd()}…` : entry.title;
+            return (
+              <li>
+                <a class="news-card" href={`/projects/${entry.id}`} title={entry.title}>
+                  <div class="news-card__media">
+                    {entry.image ? <img src={entry.image} alt="" loading="lazy" /> : null}
+                  </div>
+                  <div class="news-card__body">
+                    <h3 class="news-card__title">{title}</h3>
+                    <div class="news-card__foot">
+                      {entry.lineChip ? <TypeChip typology={entry.lineChip} /> : null}
+                    </div>
+                  </div>
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </section>
     )

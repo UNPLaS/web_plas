@@ -125,14 +125,17 @@ export function syncSpineAndHeroPanel(): void {
   let startY = 0;
 
   if (hero) {
-    startY = yRelativeToShell(hero, shell);
+    // Origen de la diagonal = borde superior del hero dentro del shell
+    startY = Math.max(0, yRelativeToShell(hero, shell));
     const heroH = hero.offsetHeight;
     const heroX = xRelativeToShell(hero, shell);
-    const heroW = hero.offsetWidth;
+    const heroW = hero.offsetWidth || W;
 
-    if (panel && window.matchMedia('(min-width: 768px)').matches) {
-      const topPct = ((startX - heroX) / heroW) * 100;
+    if (panel && window.matchMedia('(min-width: 768px)').matches && heroW > 0) {
+      // Misma pendiente que el spine: x = startX - (y - startY) * k
+      const topX = startX;
       const bottomX = startX - heroH * SPINE_DX_PER_DY;
+      const topPct = ((topX - heroX) / heroW) * 100;
       const bottomPct = ((bottomX - heroX) / heroW) * 100;
       panel.style.clipPath = `polygon(0% 0%, ${topPct}% 0%, ${bottomPct}% 100%, 0% 100%)`;
     } else if (panel) {

@@ -1,0 +1,12 @@
+---
+interface Props {
+  typology: { id: string; label: string; color?: string };
+}
+
+const { typology } = Astro.props;
+const style = typology.color
+  ? `--chip-color: ${typology.color}`
+  : undefined;
+---
+
+<span class={`type-chip type-chip--${typology.id}`} style={style}>{typology.label}</span>

@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import ProjectsCarousel from '../components/ProjectsCarousel.astro';
+import TypeChip from '../components/TypeChip.astro';
 import {
   facultyItems,
   homeQuote,
@@ -13,7 +14,7 @@ import {
 ---
 
 <Layout title={`${site.name} — ${site.nameFull}`} spine>
-  <Hero brand={site.name} title={site.tagline} subtitle={site.subtitle} />
+  <Hero />
 
   <section class="quote-section wrap" aria-label="Cita">
     <blockquote class="quote-block">
@@ -27,22 +28,28 @@ import {
   <section class="news-section wrap" aria-labelledby="news-heading">
     <div class="news-section__head">
       <h2 id="news-heading" class="news-section__title">Últimas novedades</h2>
-      <a class="btn btn--soft" href="/events">Ver todas</a>
+      <a class="btn btn--soft" href="/blog">Ver todas</a>
     </div>
     <ul class="news-gallery">
       {
-        newsItems.map((item) => (
-          <li>
-            <a class="news-card" href={item.href}>
-              <div class="news-card__media" aria-hidden="true" />
-              <div class="news-card__body">
-                <p class="news-card__meta">{item.meta}</p>
-                <h3 class="news-card__title">{item.title}</h3>
-                <p class="card-outcome">{item.outcome}</p>
-              </div>
-            </a>
-          </li>
-        ))
+        newsItems.map((item) => {
+          const title =
+            item.title.length > 72 ? `${item.title.slice(0, 72).trimEnd()}…` : item.title;
+          return (
+            <li>
+              <a class="news-card" href={item.href} title={item.title}>
+                <div class="news-card__media" aria-hidden="true" />
+                <div class="news-card__body">
+                  {item.meta ? <p class="news-card__meta">{item.meta}</p> : null}
+                  <h3 class="news-card__title">{title}</h3>
+                  <div class="news-card__foot">
+                    <TypeChip typology={item.typology} />
+                  </div>
+                </div>
+              </a>
+            </li>
+          );
+        })
       }
     </ul>
   </section>
@@ -56,13 +63,26 @@ import {
       {
         recentWorks.map((item) => (
           <li>
-            <a class="works-card" href={item.href}>
+            <a
+              class="works-card"
+              href={item.href}
+              {...(/^https?:\/\//i.test(item.href)
+                ? { target: '_blank', rel: 'noreferrer' }
+                : {})}
+            >
               <div class="works-card__media" aria-hidden="true" />
               <div class="works-card__body">
                 <p class="works-card__meta">{item.meta}</p>
                 <h3 class="works-card__title">{item.title}</h3>
-                <p class="works-card__author">{item.author}</p>
-                <p class="card-outcome">{item.outcome}</p>
+                {item.author ? <p class="works-card__author">{item.author}</p> : null}
+                {item.outcome ? <p class="card-outcome">{item.outcome}</p> : null}
+                {
+                  item.lineChip ? (
+                    <div class="works-card__foot">
+                      <TypeChip typology={item.lineChip} />
+                    </div>
+                  ) : null
+                }
               </div>
             </a>
           </li>
@@ -89,8 +109,10 @@ import {
                   {person.image ? <img src={person.image} alt="" loading="lazy" /> : null}
                 </div>
                 <div class="faculty-card__body">
+                  <div class="faculty-card__chips">
+                    <TypeChip typology={person.roleChip} />
+                  </div>
                   <h3 class="faculty-card__name">{person.name}</h3>
-                  <p class="faculty-card__role">{person.role}</p>
                 </div>
               </a>
             </li>
@@ -109,9 +131,13 @@ import {
       {
         researchLines.map((line) => (
           <li>
-            <a class="lines-card" href={line.href}>
+            <a
+              class="lines-card"
+              href={line.href}
+              style={line.color ? `--line-color: ${line.color}` : undefined}
+            >
               <h3 class="lines-card__title">{line.title}</h3>
-              <p class="lines-card__text">{line.text}</p>
+              <p class="lines-card__text">{line.summary}</p>
             </a>
           </li>
         ))

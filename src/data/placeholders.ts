@@ -3,6 +3,7 @@
 export {
   aboutBlocks,
   aboutIntro,
+  blogItems,
   catalogItems,
   contactFields,
   contactIntro,
@@ -24,7 +25,7 @@ export const nav = [
   { href: '/about', label: 'Grupo' },
   { href: '/lines', label: 'Líneas' },
   { href: '/projects', label: 'Proyectos' },
-  { href: '/events', label: 'Eventos' },
+  { href: '/blog', label: 'Blog' },
   { href: '/catalog', label: 'Catálogo' },
   { href: '/resources', label: 'Recursos' },
   { href: '/people', label: 'Equipo' },
@@ -51,6 +52,6 @@ export const claims = [
 export const links = [
   { href: '/about', label: 'Grupo' },
   { href: '/projects', label: 'Proyectos' },
-  { href: '/events', label: 'Eventos' },
+  { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contacto' },
 ];

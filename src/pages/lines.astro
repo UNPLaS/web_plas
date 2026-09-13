@@ -17,7 +17,10 @@ import { researchLines } from '../data/placeholders';
       {
         researchLines.map((line) => (
           <li>
-            <article class="lines-card">
+            <article
+              class="lines-card"
+              style={line.color ? `--line-color: ${line.color}` : undefined}
+            >
               <h2 class="lines-card__title">{line.title}</h2>
               <p class="lines-card__text">{line.text}</p>
               {line.topics.length > 0 && (

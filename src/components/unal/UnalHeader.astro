@@ -99,8 +99,6 @@ const services = [
         <a
           class="facebook"
           href="https://www.facebook.com/UNALOficial"
-          target="_blank"
-          rel="noreferrer"
           title="Facebook UNAL"
         ></a>
       </li>
@@ -108,8 +106,6 @@ const services = [
         <a
           class="twitter"
           href="https://twitter.com/UNALOficial"
-          target="_blank"
-          rel="noreferrer"
           title="X UNAL"
         ></a>
       </li>
@@ -117,8 +113,6 @@ const services = [
         <a
           class="youtube"
           href="https://www.youtube.com/channel/UCnE6Zj2llVxcvL5I38B0Ceg"
-          target="_blank"
-          rel="noreferrer"
           title="YouTube UNAL"
         ></a>
       </li>
@@ -146,7 +140,6 @@ const services = [
     <div class="unal-search" id="unal-buscador">
       <form
         accept-charset="utf-8"
-        target="_blank"
         action="https://unal.edu.co/resultados-de-la-busqueda/"
         role="search"
       >
@@ -196,9 +189,7 @@ const services = [
             {
               sedes.map((s) => (
                 <li>
-                  <a href={s.href} target="_blank" rel="noreferrer">
-                    {s.label}
-                  </a>
+                  <a href={s.href}>{s.label}</a>
                 </li>
               ))
             }
@@ -224,7 +215,7 @@ const services = [
             {
               services.map((s) => (
                 <li>
-                  <a href={s.href} target="_blank" rel="noreferrer">
+                  <a href={s.href}>
                     <img src={s.icon} width="24" height="24" alt="" /> {s.label}
                   </a>
                 </li>

@@ -24,6 +24,16 @@
   --media-square: 1 / 1;
   --media-rect: 16 / 10;
 
+  /* Tipologías — chips (tonos vivos) */
+  --type-evento-bg: #9af5df;
+  --type-evento-fg: #067a64;
+  --type-proyecto-bg: #ffe08a;
+  --type-proyecto-fg: #9a5b00;
+  --type-publicacion-bg: #9fd4ff;
+  --type-publicacion-fg: #0b5f9a;
+  --type-recurso-bg: #ffc4a8;
+  --type-recurso-fg: #a6441a;
+
   /* Tipografía — display Onest + cuerpo Source Sans */
   --font-display: "Onest", "Segoe UI", system-ui, sans-serif;
   --font-body: "Source Sans 3", "Source Sans Pro", "Segoe UI", system-ui, sans-serif;
@@ -205,8 +215,11 @@ a.blog-card:is(:hover, .is-touch-hover) {
 }
 
 .wrap {
-  width: min(100% - 2rem, 56rem);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 56rem;
   margin-inline: auto;
+  padding-inline: 1rem;
 }
 
 /* Botones — mismo sistema en home y puertas (sin heredar a:hover) */
@@ -278,6 +291,90 @@ a.btn--soft:is(:hover, .is-touch-hover) {
   background: var(--mid);
   color: var(--page);
   transform: scale(1.06);
+}
+
+/* Tipología — chip tipo botón */
+.type-chip {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  flex-shrink: 0;
+  padding: 0.22rem 0.55rem;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.type-chip--evento {
+  background: var(--type-evento-bg);
+  color: var(--type-evento-fg);
+}
+
+.type-chip--proyecto {
+  background: var(--type-proyecto-bg);
+  color: var(--type-proyecto-fg);
+}
+
+.type-chip--publicacion {
+  background: var(--type-publicacion-bg);
+  color: var(--type-publicacion-fg);
+}
+
+.type-chip--recurso {
+  background: var(--type-recurso-bg);
+  color: var(--type-recurso-fg);
+}
+
+/* Chips de catálogo / trabajos — tipología estudiante en azules */
+.type-chip--nivel {
+  background: color-mix(in srgb, var(--chip-color, #1a8cff) 28%, white);
+  color: color-mix(in srgb, var(--chip-color, #1a8cff) 78%, #0a1a2a);
+}
+
+.type-chip--linea {
+  background: color-mix(in srgb, var(--chip-color, #ff9f1a) 32%, white);
+  color: color-mix(in srgb, var(--chip-color, #ff9f1a) 72%, #1a1a1a);
+  max-width: 16rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Rol en el grupo — ámbar líder, mid integrantes */
+.type-chip--rol-amber {
+  background: var(--amber-soft);
+  color: #9a5b00;
+}
+
+.type-chip--rol-mid {
+  background: var(--mid-soft);
+  color: var(--mid-dark);
+}
+
+.card-topline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.65rem;
+}
+
+.card-topline--page {
+  margin-bottom: 0.35rem;
+}
+
+.card-topline--page .page-head__eyebrow {
+  margin: 0;
+}
+
+.news-card:is(:hover, .is-touch-hover) .type-chip,
+.blog-card:is(:hover, .is-touch-hover) .type-chip,
+.works-card:is(:hover, .is-touch-hover) .type-chip,
+.faculty-card:is(:hover, .is-touch-hover) .type-chip {
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, currentColor 18%, transparent);
 }
 
 /* Contenedor de grupos de tarjetas / listas */
@@ -416,7 +513,7 @@ a.btn--soft:is(:hover, .is-touch-hover) {
   left: 0;
   width: 100%;
   /* Fallback: origen a la derecha, diagonal plana hacia la izquierda */
-  clip-path: polygon(0% 0%, 90% 0%, 35% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 96% 0%, 42% 100%, 0% 100%);
   background: color-mix(in srgb, var(--page) 92%, transparent);
   pointer-events: none;
 }
@@ -434,42 +531,120 @@ a.btn--soft:is(:hover, .is-touch-hover) {
   }
 }
 
-.hero__inner {
+/* Contenido del hero (imagen + diagonal quedan arriba) */
+.hero__body {
   position: relative;
   z-index: 2;
   display: flex;
-  align-items: stretch;
+  justify-content: center;
   box-sizing: border-box;
-  min-height: min(72vh, 36rem);
-}
-
-.hero__content {
-  display: flex;
   width: 100%;
-  flex-direction: column;
-  justify-content: flex-end;
-  box-sizing: border-box;
-  min-height: 100%;
-  padding: 2rem 0 2.5rem;
+  min-height: min(72vh, 36rem);
+  padding: 2rem 1rem 2.5rem;
 }
 
 @media (min-width: 768px) {
-  .hero__content {
-    width: 62%;
-    justify-content: center;
-    padding: 3rem 1.75rem 3rem 0;
+  .hero__body {
+    align-items: center;
+    padding: 3rem 1rem;
   }
 }
 
-.hero__brand {
-  margin: 0 0 0.75rem;
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 700;
-  letter-spacing: -0.035em;
-  line-height: 1;
-  text-transform: none;
+.hero__rail {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 56rem;
+}
+
+.hero__eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   color: var(--deep);
+}
+
+.hero__brand {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 7.5rem;
+}
+
+.hero__logo {
+  flex: 0 0 auto;
+  margin: 0;
+  width: 13rem;
+}
+
+@media (min-width: 640px) {
+  .hero__logo {
+    width: 15.5rem;
+  }
+}
+
+.hero__logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero__badge {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 9rem;
+  min-height: 0;
+  height: auto;
+  padding: 0.55rem 0.5rem 0.65rem;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--amber-soft);
+  text-align: center;
+}
+
+.hero__badge-btn {
+  min-width: 3.25rem;
+  padding: 0.35rem 0.65rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  border-radius: calc(var(--radius) - 0.1rem);
+}
+
+.hero__badge-label {
+  margin: 0.4rem 0 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.hero__badge-meta {
+  margin: 0.25rem 0 0;
+  font-size: 0.68rem;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.hero__text {
+  margin-top: 1.35rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .hero__text {
+    width: 58%;
+    max-width: 34rem;
+  }
 }
 
 .hero__title {
@@ -483,9 +658,9 @@ a.btn--soft:is(:hover, .is-touch-hover) {
 }
 
 .hero__subtitle {
-  margin: 1rem 0 0;
-  max-width: 28rem;
+  margin: 0.85rem 0 0;
   font-size: 1.05rem;
+  line-height: 1.5;
   color: var(--muted);
 }
 
@@ -494,7 +669,7 @@ a.btn--soft:is(:hover, .is-touch-hover) {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.85rem 1.25rem;
-  margin: 1.25rem 0 0;
+  margin: 1.35rem 0 0;
 }
 
 /* Cita post-hero — énfasis tipográfico y de presencia */
@@ -646,6 +821,12 @@ a.btn--soft:is(:hover, .is-touch-hover) {
   margin: 0;
   padding: 1rem;
   list-style: none;
+  align-items: stretch;
+}
+
+.news-gallery > li {
+  display: flex;
+  min-height: 0;
 }
 
 @media (min-width: 640px) {
@@ -656,7 +837,10 @@ a.btn--soft:is(:hover, .is-touch-hover) {
 
 .news-card {
   display: flex;
+  flex: 1;
   flex-direction: column;
+  width: 100%;
+  min-height: 100%;
   border: none;
   background: var(--page);
   text-decoration: none;
@@ -684,9 +868,20 @@ a.btn--soft:is(:hover, .is-touch-hover) {
 }
 
 .news-card__media {
+  position: relative;
+  overflow: hidden;
   aspect-ratio: var(--media-rect);
   background: var(--media);
   border-bottom: none;
+}
+
+.news-card__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .news-card__body {
@@ -712,6 +907,18 @@ a.btn--soft:is(:hover, .is-touch-hover) {
   line-height: 1.3;
   color: var(--ink);
   transition: color 0.2s ease;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.news-card__foot {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: auto;
+  padding-top: 0.55rem;
 }
 
 .card-outcome {
@@ -820,11 +1027,29 @@ a.btn--soft:is(:hover, .is-touch-hover) {
   flex: 1;
   min-width: 0;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.25rem;
   padding: 0.85rem 1rem;
   background: var(--page);
   transition: background-color 0.2s ease;
+}
+
+.works-card__chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.2rem;
+}
+
+.works-card__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.35rem;
+  margin-top: auto;
+  padding-top: 0.55rem;
 }
 
 .works-card__meta {
@@ -955,10 +1180,20 @@ a.btn--soft:is(:hover, .is-touch-hover) {
   }
 }
 
-/* Rectangular en mobile; en desktop estira a la altura del texto */
+/* Rectangular en mobile; en desktop estira a la altura del texto y recorta la imagen */
 .project-slide__media {
+  position: relative;
+  overflow: hidden;
   aspect-ratio: var(--media-rect);
   background: var(--media);
+}
+
+.project-slide__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 @media (min-width: 640px) {
@@ -968,6 +1203,11 @@ a.btn--soft:is(:hover, .is-touch-hover) {
     min-height: 100%;
     aspect-ratio: auto;
     border-right: none;
+  }
+
+  .project-slide__media img {
+    position: absolute;
+    inset: 0;
   }
 }
 
@@ -981,8 +1221,19 @@ a.btn--soft:is(:hover, .is-touch-hover) {
   transition: background-color 0.2s ease;
 }
 
+.project-slide__chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+}
+
 .project-slide:is(:hover, .is-touch-hover) .project-slide__body {
   background: var(--mid);
+}
+
+.project-slide:is(:hover, .is-touch-hover) .type-chip {
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, currentColor 18%, transparent);
 }
 
 .project-slide__title {
@@ -1089,6 +1340,12 @@ a.btn--soft:is(:hover, .is-touch-hover) {
   margin: 0;
   padding: 1rem;
   list-style: none;
+  align-items: stretch;
+}
+
+.faculty-gallery > li {
+  display: flex;
+  min-height: 0;
 }
 
 @media (min-width: 640px) {
@@ -1105,7 +1362,10 @@ a.btn--soft:is(:hover, .is-touch-hover) {
 
 .faculty-card {
   display: flex;
+  flex: 1;
   flex-direction: column;
+  width: 100%;
+  min-height: 100%;
   border: none;
   background: var(--page);
   text-decoration: none;
@@ -1133,18 +1393,38 @@ a.btn--soft:is(:hover, .is-touch-hover) {
 }
 
 .faculty-card__media {
+  position: relative;
+  overflow: hidden;
   aspect-ratio: var(--media-square);
   background: var(--media);
   border-bottom: none;
 }
 
+.faculty-card__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .faculty-card__body {
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: 0.25rem;
   padding: 0.85rem 1rem 1rem;
   background: var(--page);
   transition: background-color 0.2s ease;
+}
+
+.faculty-card__chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.15rem;
 }
 
 .faculty-card__name {
@@ -1219,7 +1499,7 @@ a.btn--soft:is(:hover, .is-touch-hover) {
   padding: 1rem 1.15rem;
   text-decoration: none;
   color: inherit;
-  box-shadow: inset 3px 0 0 var(--mid);
+  box-shadow: inset 3px 0 0 var(--line-color, var(--mid));
   transition:
     background-color 0.2s ease,
     box-shadow 0.2s ease,
@@ -1227,9 +1507,9 @@ a.btn--soft:is(:hover, .is-touch-hover) {
 }
 
 .lines-card:is(:hover, .is-touch-hover) {
-  background: var(--mid);
+  background: color-mix(in srgb, var(--line-color, var(--mid)) 34%, white);
   color: #000;
-  box-shadow: inset 4px 0 0 var(--deep);
+  box-shadow: inset 4px 0 0 var(--line-color, var(--deep));
   transform: scale(1.02);
 }
 
@@ -1626,14 +1906,25 @@ a.contact-item__value:hover {
   color: #000;
 }
 
-/* Horizontal: media estira a la altura del texto */
+/* Horizontal: media estira a la altura del texto y recorta la imagen */
 .blog-card__media {
+  position: relative;
+  overflow: hidden;
   flex: 0 0 8.5rem;
   width: 8.5rem;
   align-self: stretch;
   min-height: calc(8.5rem * 10 / 16);
   background: var(--media);
   border-right: none;
+}
+
+.blog-card__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 @media (max-width: 639px) {
@@ -1807,8 +2098,16 @@ a.contact-item__value:hover {
   line-height: 1.3;
 }
 
+.student-row__chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+
 .student-row__meta {
-  margin: 0.25rem 0 0;
+  margin: 0.2rem 0 0;
   font-size: 0.875rem;
   color: var(--muted);
 }

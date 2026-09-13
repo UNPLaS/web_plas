@@ -1,0 +1,101 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TypeChip from '../../components/TypeChip.astro';
+import { blogItems } from '../../data/placeholders';
+
+export function getStaticPaths() {
+  return blogItems.map((item) => ({
+    params: { id: item.id },
+    props: { item },
+  }));
+}
+
+interface Props {
+  item: (typeof blogItems)[number];
+}
+
+const { item } = Astro.props;
+const related = blogItems.filter((entry) => entry.id !== item.id).slice(0, 3);
+const dateLabel =
+  item.dateFrom && item.dateTo && item.dateFrom !== item.dateTo
+    ? `${item.dateFrom} — ${item.dateTo}`
+    : item.dateFrom || item.year;
+---
+
+<Layout title={item.title}>
+  <article class="page-section page-section--tight wrap">
+    <p class="page-back">
+      <a href="/blog">← Volver al blog</a>
+    </p>
+
+    <header class="page-head">
+      <div class="card-topline card-topline--page">
+        <TypeChip typology={item.typology} />
+        <p class="page-head__eyebrow">{item.meta}</p>
+      </div>
+      <h1 class="page-head__title">{item.title}</h1>
+      <p class="page-head__lede">{item.summary}</p>
+    </header>
+
+    <div class="page-prose">
+      {
+        item.body ? (
+          <p>{item.body}</p>
+        ) : (
+          <>
+            {item.eventType && (
+              <p>
+                <strong>Detalle:</strong> {item.eventType}
+                {item.ambito ? ` · ${item.ambito}` : ''}
+              </p>
+            )}
+            <p>
+              <strong>Fechas:</strong> {dateLabel}
+            </p>
+            {item.place && item.place !== 'No informado' && (
+              <p>
+                <strong>Lugar:</strong> {item.place}
+              </p>
+            )}
+            {item.participation && (
+              <p>
+                <strong>Participación:</strong> {item.participation}
+              </p>
+            )}
+          </>
+        )
+      }
+    </div>
+  </article>
+
+  {
+    related.length > 0 && (
+      <section class="news-section wrap detail-related" aria-labelledby="related-heading">
+        <div class="news-section__head">
+          <h2 id="related-heading" class="news-section__title">Otras publicaciones</h2>
+          <a class="btn btn--soft" href="/blog">Ver todas</a>
+        </div>
+        <ul class="news-gallery">
+          {related.map((entry) => {
+            const title =
+              entry.title.length > 72 ? `${entry.title.slice(0, 72).trimEnd()}…` : entry.title;
+            return (
+              <li>
+                <a class="news-card" href={entry.href} title={entry.title}>
+                  <div class="news-card__media" aria-hidden="true" />
+                  <div class="news-card__body">
+                    {entry.meta ? <p class="news-card__meta">{entry.meta}</p> : null}
+                    <h3 class="news-card__title">{title}</h3>
+                    <div class="news-card__foot">
+                      <TypeChip typology={entry.typology} />
+                    </div>
+                  </div>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    )
+  }
+</Layout>

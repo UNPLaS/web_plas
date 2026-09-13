@@ -1,30 +1,45 @@
 ---
-/**
- * Hero: imagen full-bleed.
- * Panel visual (altura = imagen, ancho hasta el límite del texto).
- * Contenido tipográfico sin estilos de panel.
- */
+import { group, site } from '../data/placeholders';
+
 interface Props {
-  brand: string;
-  title: string;
-  subtitle?: string;
-  imageSrc?: string;
   ctaHref?: string;
   ctaLabel?: string;
   secondaryHref?: string;
   secondaryLabel?: string;
+  imageSrc?: string;
 }
 
 const {
-  brand,
-  title,
-  subtitle,
-  imageSrc = '/images/hero-plas-warm.png',
   ctaHref = '/contact',
   ctaLabel = 'Escríbenos',
   secondaryHref = '/about',
   secondaryLabel = 'Conoce el grupo',
+  imageSrc = '/images/hero-plas-warm.png',
 } = Astro.props;
+
+function formatResultsDate(iso: string) {
+  if (!iso || !/^\d{4}-\d{2}-\d{2}/.test(iso)) return iso;
+  const [y, m, d] = iso.split('-');
+  const months = [
+    'ene.',
+    'feb.',
+    'mar.',
+    'abr.',
+    'may.',
+    'jun.',
+    'jul.',
+    'ago.',
+    'sep.',
+    'oct.',
+    'nov.',
+    'dic.',
+  ];
+  return `${String(Number(d))} ${months[Number(m) - 1] || ''} ${y}`;
+}
+
+const resultsLabel = group.minciencias_results_published
+  ? formatResultsDate(group.minciencias_results_published)
+  : '';
 ---
 
 <section class="hero">
@@ -37,23 +52,62 @@ const {
     decoding="async"
     fetchpriority="high"
   />
-  {/* Panel ligado a la imagen: fondo/altura; no es el contenedor del texto */}
   <div class="hero__panel" aria-hidden="true"></div>
-  <div class="hero__inner wrap">
-    <div class="hero__content">
-      <p class="hero__brand">{brand}</p>
-      <h1 class="hero__title">{title}</h1>
-      {subtitle && <p class="hero__subtitle">{subtitle}</p>}
-      <p class="hero__cta">
-        <a class="btn btn--amber-sm" href={ctaHref}>{ctaLabel}</a>
-        {
-          secondaryHref && secondaryLabel && (
-            <a class="btn btn--ghost" href={secondaryHref}>
-              {secondaryLabel}
-            </a>
-          )
-        }
-      </p>
+
+  <div class="hero__body">
+    <div class="hero__rail">
+      <p class="hero__eyebrow">Grupo de investigación</p>
+
+      <div class="hero__brand">
+        <h1 class="hero__logo">
+          <img
+            src={site.logo}
+            alt={`${group.name} — ${group.name_full}`}
+            width="448"
+            height="448"
+            decoding="async"
+            data-hero-logo
+          />
+        </h1>
+
+        <aside class="hero__badge" aria-label="Clasificación Minciencias">
+          {
+            group.gruplac_url ? (
+              <a
+                class="btn btn--amber-sm hero__badge-btn"
+                href={group.gruplac_url}
+                target="_blank"
+                rel="noreferrer"
+                title="Ver en GrupLAC"
+              >
+                {group.minciencias_class}
+              </a>
+            ) : (
+              <span class="btn btn--amber-sm hero__badge-btn">{group.minciencias_class}</span>
+            )
+          }
+          <p class="hero__badge-label">Minciencias</p>
+          <p class="hero__badge-meta">
+            Conv. {group.minciencias_convocatoria}
+            {resultsLabel ? ` · ${resultsLabel}` : ''}
+          </p>
+        </aside>
+      </div>
+
+      <div class="hero__text">
+        <p class="hero__title">{site.tagline}</p>
+        <p class="hero__subtitle">{site.subtitle}</p>
+        <p class="hero__cta">
+          <a class="btn btn--amber-sm" href={ctaHref}>{ctaLabel}</a>
+          {
+            secondaryHref && secondaryLabel && (
+              <a class="btn btn--ghost" href={secondaryHref}>
+                {secondaryLabel}
+              </a>
+            )
+          }
+        </p>
+      </div>
     </div>
   </div>
 </section>

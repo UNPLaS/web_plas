@@ -1,0 +1,37 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TypeChip from '../../components/TypeChip.astro';
+import { blogItems } from '../../data/placeholders';
+---
+
+<Layout title="Blog">
+  <section class="page-section wrap" aria-labelledby="blog-heading">
+    <header class="page-head">
+      <p class="page-head__eyebrow">Blog</p>
+      <h1 id="blog-heading" class="page-head__title">Blog</h1>
+      <p class="page-head__lede">
+        Publicaciones del grupo: eventos, proyectos y otras tipologías.
+      </p>
+    </header>
+
+    <ul class="blog-list">
+      {
+        blogItems.map((item) => (
+          <li>
+            <a class="blog-card" href={item.href}>
+              <div class="blog-card__media" aria-hidden="true" />
+              <div class="blog-card__body">
+                <div class="card-topline">
+                  <TypeChip typology={item.typology} />
+                  <p class="blog-card__meta">{item.meta}</p>
+                </div>
+                <h2 class="blog-card__title">{item.title}</h2>
+                <p class="blog-card__excerpt">{item.summary}</p>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>

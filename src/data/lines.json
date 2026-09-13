@@ -5,6 +5,7 @@
     "slug": "lenguajes",
     "title_site": "Lenguajes de programación",
     "page_title": "Lenguajes de programación",
+    "summary": "Exploramos aspectos teóricos y prácticos de la creación de lenguajes de programación.",
     "description": "En PLaS se exploran los aspectos teóricos y prácticos de la creación de lenguajes de programación. Nuestros intereses incluyen: Lenguajes de programación de propósito general (GPLs) y de dominio específico (DSL) Lenguajes para soportar el ciclo de vida del desarrollo de software Análisis y manipulación automática de código fuente Análitica de software (Big Code)",
     "n_topics": "4",
     "n_images": "5",
@@ -25,7 +26,8 @@
         "sort_order": 4,
         "topic": "Análitica de software (Big Code)"
       }
-    ]
+    ],
+    "color": "#00c9a7"
   },
   {
     "id": "line:educacion",
@@ -33,6 +35,7 @@
     "slug": "educacion",
     "title_site": "Educación en ingeniería",
     "page_title": "Educación en ingeniería",
+    "summary": "Diseñamos entornos, evaluación y analítica para mejorar cómo se enseña y se aprende ingeniería.",
     "description": "La investigación en temas relacionados con la educación en ingeniería es de gran interés para el grupo PLaS. Se abarcan diferentes campos de acción, tales como: Diseño y desarrollo de entornos didácticos de programación de computadores y electrónica digital Sistemas de calificación automática de tareas de programación de computadores y ciencia de datos Realimentación automática a estudiantes Analítica de datos de aprendizaje (“Learning analytics”) Aprendizaje colaborativo Gamificación en la educación Motivación y estrategias de aprendizaje Competencias transversales en ingeniería Análisis de código fuente de soluciones a problemas de programación",
     "n_topics": "9",
     "n_images": "5",
@@ -73,7 +76,8 @@
         "sort_order": 9,
         "topic": "Análisis de código fuente de soluciones a problemas de programación"
       }
-    ]
+    ],
+    "color": "#ff9f1a"
   },
   {
     "id": "line:embebidos",
@@ -81,6 +85,7 @@
     "slug": "embebidos",
     "title_site": "Sistemas embebidos confiables",
     "page_title": "Sistemas embebidos confiables",
+    "summary": "Desarrollamos técnicas y herramientas para el diseño de sistemas hardware/software tolerantes a fallos.",
     "description": "Investigamos acerca de técnicas y herramientas para asistir el diseño de sistemas hardware/software tolerantes a fallos. En esta línea de investigación nuestros intereses incluyen: Técnicas y herramientas para el diseño de sistemas embebidos confiables Computación aproximada Métricas de criticidad de recursos en microprocesadores Exploración automática del espacio de diseño de soluciones confiables",
     "n_topics": "4",
     "n_images": "5",
@@ -101,7 +106,8 @@
         "sort_order": 4,
         "topic": "Exploración automática del espacio de diseño de soluciones confiables"
       }
-    ]
+    ],
+    "color": "#2f89ef"
   },
   {
     "id": "line:transporte",
@@ -109,10 +115,12 @@
     "slug": "transporte",
     "title_site": "Sistemas Inteligentes de Transporte - ITS",
     "page_title": "Sistemas Inteligentes de Transporte",
+    "summary": "Aplicamos tecnologías para enfrentar problemas de accidentalidad vial y tráfico en las ciudades.",
     "description": "En esta línea se trabajan diferentes estrategias para aplicar tecnologías para solucionar problemas relacionados con el transporte. Actualmente estamos trabajando para solucionar problemas relacionados con accidentalidad vial y tráfico en las ciudades.",
     "n_topics": "0",
     "n_images": "5",
-    "topics": []
+    "topics": [],
+    "color": "#ff6b4a"
   },
   {
     "id": "line:agricultura",
@@ -120,9 +128,11 @@
     "slug": "agricultura",
     "title_site": "Agricultura de precisión",
     "page_title": "Agricultura de precisión",
+    "summary": "Aplicamos procesamiento digital y comunicaciones a la agricultura para optimizar la producción.",
     "description": "Esta línea trabaja en la aplicación de técnicas de procesamiento digital, comunicaciones, entre otras, a la agricultura, con el fin de optimizar procesos de producción.",
     "n_topics": "0",
     "n_images": "5",
-    "topics": []
+    "topics": [],
+    "color": "#5ec22e"
   }
 ]
