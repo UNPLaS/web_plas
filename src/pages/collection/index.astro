@@ -1,19 +1,33 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import PageHeader from '../../components/PageHeader.astro';
-import ItemGrid from '../../components/ItemGrid.astro';
-import SectionPanel from '../../components/SectionPanel.astro';
 import { collectionItems } from '../../data/placeholders';
 ---
 
-<Layout title="Collection" pattern="card-index">
-  <SectionPanel>
-    <PageHeader
-      title="Collection"
-      lead="Índice de items. Cada rama lleva a /collection/[id]."
-    />
-  </SectionPanel>
-  <SectionPanel>
-    <ItemGrid items={[...collectionItems]} />
-  </SectionPanel>
+<Layout title="Novedades">
+  <section class="page-section wrap" aria-labelledby="collection-heading">
+    <header class="page-head">
+      <p class="page-head__eyebrow">Collection</p>
+      <h1 id="collection-heading" class="page-head__title">Novedades</h1>
+      <p class="page-head__lede">
+        Eventos, proyectos y publicaciones recientes del grupo.
+      </p>
+    </header>
+
+    <ul class="blog-list">
+      {
+        collectionItems.map((item) => (
+          <li>
+            <a class="blog-card" href={`/collection/${item.id}`}>
+              <div class="blog-card__media" aria-hidden="true" />
+              <div class="blog-card__body">
+                <p class="blog-card__meta">{item.meta}</p>
+                <h2 class="blog-card__title">{item.title}</h2>
+                <p class="blog-card__excerpt">{item.summary}</p>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </Layout>

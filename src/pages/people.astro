@@ -1,38 +1,50 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import PageHeader from '../components/PageHeader.astro';
-import PersonRow from '../components/PersonRow.astro';
-import SectionHeader from '../components/SectionHeader.astro';
-import SectionPanel from '../components/SectionPanel.astro';
-import { people } from '../data/placeholders';
-
-const featured = people.filter((p) => p.hasPhoto);
-const listed = people.filter((p) => !p.hasPhoto);
+import { people, students } from '../data/placeholders';
 ---
 
-<Layout title="People" pattern="directory">
-  <SectionPanel>
-    <PageHeader
-      title="People"
-      lead="Secciones agrupadas + filas persona (foto + nombre + rol + meta)."
-    />
-    <nav class="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold" aria-label="Secciones">
-      <a href="#featured">Destacados</a>
-      <a href="#listed">Listado</a>
-    </nav>
-  </SectionPanel>
+<Layout title="Equipo">
+  <section class="page-section wrap" aria-labelledby="people-heading">
+    <header class="page-head">
+      <p class="page-head__eyebrow">People</p>
+      <h1 id="people-heading" class="page-head__title">Equipo</h1>
+      <p class="page-head__lede">
+        Docentes e integrantes del grupo de investigación.
+      </p>
+    </header>
 
-  <SectionPanel>
-    <section id="featured" class="scroll-mt-24">
-      <SectionHeader title="Destacados" lead="Personas con placeholder de foto." />
-      <PersonRow items={featured} />
-    </section>
-  </SectionPanel>
+    <h2 class="people-section__title">Docentes</h2>
+    <ul class="faculty-list">
+      {
+        people.map((person) => (
+          <li>
+            <article class="faculty-card faculty-card--row">
+              <div class="faculty-card__media" aria-hidden="true" />
+              <div class="faculty-card__body">
+                <h3 class="faculty-card__name">{person.name}</h3>
+                <p class="faculty-card__role">{person.role}</p>
+                <p class="faculty-card__role">{person.meta}</p>
+              </div>
+            </article>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 
-  <SectionPanel>
-    <section id="listed" class="scroll-mt-24">
-      <SectionHeader title="Listado" lead="Misma fila, sin foto." />
-      <PersonRow items={listed} showLabel={false} />
-    </section>
-  </SectionPanel>
+  <section class="page-section wrap" aria-labelledby="students-heading">
+    <h2 id="students-heading" class="people-section__title">Estudiantes</h2>
+    <ul class="student-list">
+      {
+        students.map((person) => (
+          <li class="student-row">
+            <h3 class="student-row__name">{person.name}</h3>
+            <p class="student-row__meta">
+              {person.role} · {person.meta}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </Layout>

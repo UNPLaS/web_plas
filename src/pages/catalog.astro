@@ -1,24 +1,40 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import PageHeader from '../components/PageHeader.astro';
-import FilterBar from '../components/FilterBar.astro';
-import ResultList from '../components/ResultList.astro';
-import SectionPanel from '../components/SectionPanel.astro';
 import { catalogItems } from '../data/placeholders';
-
-const typologies = [...new Set(catalogItems.map((i) => i.typology))];
-const years = [...new Set(catalogItems.map((i) => i.year))].sort((a, b) => b.localeCompare(a));
 ---
 
-<Layout title="Catalog" pattern="filter-catalog">
-  <SectionPanel>
-    <PageHeader
-      title="Catalog"
-      lead="Barra de filtros + lista densa de resultados. Sin JS de filtrado aún."
-    />
-  </SectionPanel>
-  <SectionPanel>
-    <FilterBar typologies={typologies} years={years} resultCount={catalogItems.length} />
-    <ResultList items={[...catalogItems]} />
-  </SectionPanel>
+<Layout title="Catálogo">
+  <section class="page-section wrap" aria-labelledby="catalog-heading">
+    <header class="page-head">
+      <p class="page-head__eyebrow">Catalog</p>
+      <h1 id="catalog-heading" class="page-head__title">Catálogo</h1>
+      <p class="page-head__lede">
+        Publicaciones y tesis del grupo. Búsqueda simple (sin filtros aún).
+      </p>
+    </header>
+
+    <div class="catalog-search">
+      <label>
+        Buscar
+        <input type="search" name="q" placeholder="Título o autor…" />
+      </label>
+    </div>
+
+    <ul class="works-list">
+      {
+        catalogItems.map((item) => (
+          <li>
+            <article class="works-card">
+              <div class="works-card__media" aria-hidden="true" />
+              <div class="works-card__body">
+                <p class="works-card__meta">{item.meta}</p>
+                <h2 class="works-card__title">{item.title}</h2>
+                <p class="works-card__author">{item.author}</p>
+              </div>
+            </article>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </Layout>

@@ -1,16 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import PageHeader from '../components/PageHeader.astro';
-import ContactBlock from '../components/ContactBlock.astro';
-import SectionPanel from '../components/SectionPanel.astro';
 import { contactFields } from '../data/placeholders';
 ---
 
-<Layout title="Contact" pattern="contact">
-  <SectionPanel>
-    <PageHeader title="Contact" lead="Campos etiquetados + placeholder de mapa." />
-  </SectionPanel>
-  <SectionPanel>
-    <ContactBlock fields={[...contactFields]} />
-  </SectionPanel>
+<Layout title="Contacto">
+  <section class="page-section wrap" aria-labelledby="contact-heading">
+    <header class="page-head">
+      <p class="page-head__eyebrow">Contact</p>
+      <h1 id="contact-heading" class="page-head__title">Contacto</h1>
+      <p class="page-head__lede">
+        Si deseas más información sobre el grupo, no dudes en escribirnos.
+      </p>
+    </header>
+
+    <ul class="contact-list">
+      {
+        contactFields.map((field) => (
+          <li class="contact-card">
+            <p class="contact-card__label">{field.label}</p>
+            <p class="contact-card__value">{field.value}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </Layout>

@@ -1,20 +1,13 @@
 ---
-import ThemeSwitch from './ThemeSwitch.astro';
 import { nav, site } from '../data/placeholders';
 
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
 ---
 
-<header class="border-b border-[var(--panel-border)] bg-[var(--page)]" data-pattern="shell-header">
-  <div class="mx-auto flex max-w-5xl flex-col gap-4 px-6 py-4 lg:flex-row lg:items-center lg:justify-between">
-    <div class="flex flex-wrap items-center justify-between gap-3">
-      <a href="/" class="font-display text-lg font-semibold text-[var(--ink)] no-underline">
-        <span class="geo-mark" aria-hidden="true"></span>
-        {site.name}
-      </a>
-      <ThemeSwitch />
-    </div>
-    <nav aria-label="Principal" class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+<header class="site-header border-b py-4">
+  <div class="wrap flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+    <a href="/" class="font-semibold no-underline">{site.name}</a>
+    <nav class="flex flex-wrap gap-x-4 gap-y-2 text-sm" aria-label="Principal">
       {
         nav.map((item) => {
           const active =
@@ -24,12 +17,8 @@ const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
           return (
             <a
               href={item.href}
-              class:list={[
-                'no-underline hover:underline',
-                active ? 'font-semibold text-[var(--ink)]' : 'text-[var(--muted)]',
-              ]}
+              class="no-underline"
               aria-current={active ? 'page' : undefined}
-              title={`pattern: ${item.pattern}`}
             >
               {item.label}
             </a>

@@ -1,231 +1,294 @@
-/** Datos ficticios para validar estructura, no contenido real. */
+/** Placeholders mínimos — contenido de prueba. */
 
 export const site = {
   name: 'Front Plas Prototype',
-  tagline: 'Educación en ingeniería como raíz compartida — grupo vibrante, docente sereno',
+  tagline: 'Prototipo estructural — educación en ingeniería',
 };
 
 export const nav = [
-  { href: '/', label: 'Home', pattern: 'home' },
-  { href: '/about', label: 'About', pattern: 'sections' },
-  { href: '/collection', label: 'Collection', pattern: 'card-index' },
-  { href: '/catalog', label: 'Catalog', pattern: 'filter-catalog' },
-  { href: '/people', label: 'People', pattern: 'directory' },
-  { href: '/sections', label: 'Sections', pattern: 'grouped-blocks' },
-  { href: '/contact', label: 'Contact', pattern: 'contact' },
+  { href: '/', label: 'Inicio' },
+  { href: '/about', label: 'About' },
+  { href: '/lines', label: 'Lines' },
+  { href: '/collection', label: 'Collection' },
+  { href: '/catalog', label: 'Catalog' },
+  { href: '/people', label: 'People' },
+  { href: '/contact', label: 'Contact' },
 ] as const;
 
 export const claims = [
-  'La educación en ingeniería es el tronco: de ahí crecen las demás ramas.',
-  'Aprender no es lineal — bifurca, vuelve, profundiza.',
-  'Herramientas y mentoría: crecimiento que se puede tocar.',
+  'Frase clave uno.',
+  'Frase clave dos.',
+  'Frase clave tres.',
 ];
 
-export const ctas = [
+export const links = [
+  { href: '/about', label: 'About' },
+  { href: '/collection', label: 'Collection' },
+  { href: '/contact', label: 'Contact' },
+];
+
+/** Cita de apertura en home — sin título de sección. */
+export const homeQuote = {
+  text: 'Los programas deben escribirse para que los lean las personas, y solo de paso para que los ejecuten las máquinas.',
+  attribution: 'Harold Abelson y Gerald Jay Sussman, Structure and Interpretation of Computer Programs',
+};
+
+export const newsItems = [
   {
-    title: 'Estudiar',
-    text: 'Rama abierta: formación, mentoring, camino al laboratorio.',
-    primary: { href: '/about', label: 'Conocer el enfoque' },
-    secondary: { href: '/contact', label: 'Escribir' },
+    id: 'news-01',
+    title: 'Novedad uno',
+    meta: 'Evento · 2026',
+    href: '/collection/item-01',
   },
   {
-    title: 'Explorar obras',
-    text: 'Proyectos y evidencias como frutos del proceso educativo.',
-    primary: { href: '/collection', label: 'Colección' },
-    secondary: { href: '/catalog', label: 'Catálogo' },
+    id: 'news-02',
+    title: 'Novedad dos',
+    meta: 'Proyecto · 2026',
+    href: '/collection/item-02',
   },
   {
-    title: 'Gente',
-    text: 'Quién sostiene el árbol: docentes, estudiantes, trayectorias.',
-    primary: { href: '/people', label: 'Personas' },
-    secondary: { href: '/sections', label: 'Secciones' },
+    id: 'news-03',
+    title: 'Novedad tres',
+    meta: 'Publicación · 2025',
+    href: '/collection/item-03',
   },
 ];
 
-export const chips = [
-  'Educación en ingeniería',
-  'Mentoría',
-  'Herramientas',
-  'Crecimiento',
+export const recentWorks = [
+  {
+    id: 'work-01',
+    title: 'Título de publicación reciente',
+    author: 'Autores del trabajo',
+    meta: 'Publicación · 2026',
+    href: '/catalog',
+  },
+  {
+    id: 'work-02',
+    title: 'Título de tesis reciente',
+    author: 'Estudiante Uno',
+    meta: 'Tesis · Maestría · 2026',
+    href: '/catalog',
+  },
+  {
+    id: 'work-03',
+    title: 'Otro artículo o capítulo',
+    author: 'Autores del trabajo',
+    meta: 'Publicación · 2025',
+    href: '/catalog',
+  },
+];
+
+export const featuredProjects = [
+  {
+    id: 'proj-01',
+    title: 'UNCode',
+    text: 'Aprendizaje y evaluación automática de programación.',
+    href: '/collection/item-01',
+  },
+  {
+    id: 'proj-02',
+    title: 'SHE',
+    text: 'Herramientas para software tolerante a fallos.',
+    href: '/collection/item-02',
+  },
+  {
+    id: 'proj-03',
+    title: 'Paradigmas',
+    text: 'Contenidos vivos para enseñar lenguajes de programación.',
+    href: '/collection/item-03',
+  },
+  {
+    id: 'proj-04',
+    title: 'FTxAC',
+    text: 'Cómputo aproximado y confiabilidad en sistemas embebidos.',
+    href: '/collection',
+  },
+];
+
+export const facultyItems = [
+  {
+    id: 'doc-01',
+    name: 'Docente Uno',
+    role: 'Líder del grupo',
+    href: '/people',
+  },
+  {
+    id: 'doc-02',
+    name: 'Docente Dos',
+    role: 'Profesor titular',
+    href: '/people',
+  },
+  {
+    id: 'doc-03',
+    name: 'Docente Tres',
+    role: 'Profesor asociado',
+    href: '/people',
+  },
+  {
+    id: 'doc-04',
+    name: 'Docente Cuatro',
+    role: 'Profesor asociado',
+    href: '/people',
+  },
+];
+
+/** Orden deliberado: educación primero (constancia), mismo peso visual en todas. */
+export const researchLines = [
+  {
+    id: 'line-edu',
+    title: 'Educación en ingeniería',
+    text: 'Aprendizaje, evaluación y herramientas para enseñar a construir software.',
+    href: '/lines',
+  },
+  {
+    id: 'line-lang',
+    title: 'Lenguajes de programación',
+    text: 'Cómo se diseñan, analizan y enseñan los lenguajes.',
+    href: '/lines',
+  },
+  {
+    id: 'line-emb',
+    title: 'Sistemas embebidos confiables',
+    text: 'Tolerancia a fallos y sistemas que deben resistir el uso real.',
+    href: '/lines',
+  },
+  {
+    id: 'line-its',
+    title: 'Sistemas inteligentes de transporte',
+    text: 'Datos y modelos para movilidad y seguridad vial.',
+    href: '/lines',
+  },
+  {
+    id: 'line-agri',
+    title: 'Agricultura de precisión',
+    text: 'Tecnología aplicada a decisiones en el campo.',
+    href: '/lines',
+  },
+];
+
+export const contactFields = [
+  { label: 'Correo', value: 'prototype@example.edu' },
+  { label: 'Teléfono', value: '+00 000 000 0000' },
+  { label: 'Dirección', value: 'Edificio · Ciudad' },
 ];
 
 export const collectionItems = [
   {
     id: 'item-01',
-    title: 'Item de colección 01',
-    meta: 'Meta · 2024',
-    summary: 'Extracto corto del item. Sirve para probar título + meta + cuerpo.',
+    title: 'Novedad uno',
+    meta: 'Evento · 2026',
+    summary: 'Resumen corto del item para la colección de novedades.',
   },
   {
     id: 'item-02',
-    title: 'Item de colección 02',
-    meta: 'Meta · 2023',
-    summary: 'Segundo item de la grilla. Misma estructura de tarjeta.',
+    title: 'Novedad dos',
+    meta: 'Proyecto · 2026',
+    summary: 'Resumen corto del item para la colección de novedades.',
   },
   {
     id: 'item-03',
-    title: 'Item de colección 03',
-    meta: 'Meta · 2022',
-    summary: 'Tercer item. Validar densidad en grid de 2 columnas.',
-  },
-  {
-    id: 'item-04',
-    title: 'Item de colección 04',
-    meta: 'Meta · 2021',
-    summary: 'Cuarto item. Cierre del preview en home y del índice.',
+    title: 'Novedad tres',
+    meta: 'Publicación · 2025',
+    summary: 'Resumen corto del item para la colección de novedades.',
   },
 ];
 
 export const catalogItems = [
   {
     id: 'cat-01',
-    title: 'Registro de catálogo 01',
+    title: 'Registro 01',
+    author: 'Autores del trabajo',
     year: '2025',
-    typology: 'Tipo A',
-    authors: 'Autor Uno, Autor Dos',
-    venue: 'Venue de ejemplo',
+    meta: 'Publicación · 2025',
   },
   {
     id: 'cat-02',
-    title: 'Registro de catálogo 02',
+    title: 'Registro 02',
+    author: 'Estudiante Uno',
     year: '2024',
-    typology: 'Tipo B',
-    authors: 'Autor Tres',
-    venue: 'Otro venue',
+    meta: 'Tesis · Maestría · 2024',
   },
   {
     id: 'cat-03',
-    title: 'Registro de catálogo 03',
-    year: '2024',
-    typology: 'Tipo A',
-    authors: 'Autor Cuatro, Autor Cinco',
-    venue: 'Venue corto',
+    title: 'Registro 03',
+    author: 'Autores del trabajo',
+    year: '2023',
+    meta: 'Publicación · 2023',
   },
   {
     id: 'cat-04',
-    title: 'Registro de catálogo 04',
+    title: 'Registro 04',
+    author: 'Estudiante Dos',
     year: '2023',
-    typology: 'Tipo C',
-    authors: 'Autor Seis',
-    venue: 'Venue largo de prueba',
-  },
-  {
-    id: 'cat-05',
-    title: 'Registro de catálogo 05',
-    year: '2022',
-    typology: 'Tipo B',
-    authors: 'Autor Siete, Autor Ocho',
-    venue: 'Venue X',
+    meta: 'Tesis · Pregrado · 2023',
   },
 ];
 
 export const people = [
   {
     id: 'p-01',
-    name: 'Persona Ejemplo Uno',
-    role: 'Rol destacado',
-    meta: 'Afiliación · línea ficticia',
-    hasPhoto: true,
+    name: 'Docente Uno',
+    role: 'Líder del grupo',
+    meta: 'Líneas: educación, lenguajes',
   },
   {
     id: 'p-02',
-    name: 'Persona Ejemplo Dos',
-    role: 'Rol secundario',
-    meta: 'Afiliación · otra línea',
-    hasPhoto: true,
+    name: 'Docente Dos',
+    role: 'Profesor titular',
+    meta: 'Líneas: embebidos, confiabilidad',
   },
   {
     id: 'p-03',
-    name: 'Persona Ejemplo Tres',
-    role: 'Rol de lista',
-    meta: 'Estado · año',
-    hasPhoto: false,
+    name: 'Docente Tres',
+    role: 'Profesor asociado',
+    meta: 'Líneas: transporte, datos',
   },
   {
     id: 'p-04',
-    name: 'Persona Ejemplo Cuatro',
-    role: 'Rol de lista',
-    meta: 'Estado · año',
-    hasPhoto: false,
+    name: 'Docente Cuatro',
+    role: 'Profesor asociado',
+    meta: 'Líneas: agricultura de precisión',
   },
 ];
 
-export const aboutSections = [
+export const students = [
   {
-    id: 'block-a',
-    title: 'Bloque A',
-    body: 'Párrafo de sección apilada. Estructura: título + cuerpo. Sin narrativa real.',
+    id: 's-01',
+    name: 'Estudiante Uno',
+    role: 'Doctorado',
+    meta: 'Educación en ingeniería',
   },
   {
-    id: 'block-b',
-    title: 'Bloque B',
-    body: 'Segundo bloque. Misma forma, distinto id para anclas internas.',
+    id: 's-02',
+    name: 'Estudiante Dos',
+    role: 'Maestría',
+    meta: 'Lenguajes de programación',
   },
   {
-    id: 'block-c',
-    title: 'Bloque C',
-    body: 'Tercer bloque. Cierra la página de secciones simples.',
-  },
-];
-
-export const timeline = [
-  { year: 'Fase 1', title: 'Capítulo uno', body: 'Descripción corta del hito.' },
-  { year: 'Fase 2', title: 'Capítulo dos', body: 'Descripción corta del hito.' },
-  { year: 'Fase 3', title: 'Capítulo tres', body: 'Descripción corta del hito.' },
-  { year: 'Fase 4', title: 'Capítulo cuatro', body: 'Descripción corta del hito.' },
-];
-
-export const groupedSections = [
-  {
-    id: 'group-a',
-    title: 'Grupo A',
-    items: [
-      { title: 'Entrada A1', meta: 'Meta A1' },
-      { title: 'Entrada A2', meta: 'Meta A2' },
-      { title: 'Entrada A3', meta: 'Meta A3' },
-    ],
+    id: 's-03',
+    name: 'Estudiante Tres',
+    role: 'Maestría',
+    meta: 'Sistemas embebidos',
   },
   {
-    id: 'group-b',
-    title: 'Grupo B',
-    items: [
-      { title: 'Entrada B1', meta: 'Meta B1' },
-      { title: 'Entrada B2', meta: 'Meta B2' },
-    ],
-  },
-  {
-    id: 'group-c',
-    title: 'Grupo C',
-    items: [
-      { title: 'Entrada C1', meta: 'Meta C1' },
-      { title: 'Entrada C2', meta: 'Meta C2' },
-      { title: 'Entrada C3', meta: 'Meta C3' },
-      { title: 'Entrada C4', meta: 'Meta C4' },
-    ],
+    id: 's-04',
+    name: 'Estudiante Cuatro',
+    role: 'Pregrado',
+    meta: 'Educación en ingeniería',
   },
 ];
 
-export const tableRows = [
-  { year: '2025', colA: 'Valor A1', colB: 'Valor B1', colC: 'Valor C1' },
-  { year: '2024', colA: 'Valor A2', colB: 'Valor B2', colC: 'Valor C2' },
-  { year: '2023', colA: 'Valor A3', colB: 'Valor B3', colC: 'Valor C3' },
-  { year: '2022', colA: 'Valor A4', colB: 'Valor B4', colC: 'Valor C4' },
-];
-
-export const contactFields = [
-  { label: 'Correo', value: 'prototype@example.edu' },
-  { label: 'Teléfono', value: '+00 000 000 0000' },
-  { label: 'Dirección', value: 'Edificio · Ciudad · País' },
-  { label: 'Enlace externo', value: 'https://example.edu/group', href: '#' },
-];
-
-export const detailSections = [
+export const aboutBlocks = [
   {
-    title: 'Sección de detalle 1',
-    body: 'Cuerpo largo del detalle. Aquí iría descripción, contexto o método.',
+    title: 'Quiénes somos',
+    body: 'Grupo de investigación en software, lenguajes y educación en ingeniería.',
   },
   {
-    title: 'Sección de detalle 2',
-    body: 'Segunda sección apilada bajo el hero del item.',
+    title: 'Cómo trabajamos',
+    body: 'Proyectos, publicaciones y formación de estudiantes en un mismo hilo.',
+  },
+  {
+    title: 'Con quiénes',
+    body: 'Colaboraciones académicas e institucionales alrededor de problemas reales.',
   },
 ];

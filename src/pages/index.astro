@@ -1,38 +1,125 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import HeroIdentity from '../components/HeroIdentity.astro';
-import ClaimList from '../components/ClaimList.astro';
-import CtaGroup from '../components/CtaGroup.astro';
-import SectionHeader from '../components/SectionHeader.astro';
-import ItemGrid from '../components/ItemGrid.astro';
-import SectionPanel from '../components/SectionPanel.astro';
-import { claims, collectionItems, ctas, chips, site } from '../data/placeholders';
-
-const preview = collectionItems.slice(0, 4);
+import Hero from '../components/Hero.astro';
+import ProjectsCarousel from '../components/ProjectsCarousel.astro';
+import {
+  facultyItems,
+  homeQuote,
+  newsItems,
+  recentWorks,
+  researchLines,
+  site,
+} from '../data/placeholders';
 ---
 
-<Layout title="Home" pattern="home">
-  <HeroIdentity
-    brand="Educación en ingeniería · prototipo"
-    title={site.name}
-    subtitle={site.tagline}
-    chips={[...chips]}
-    mode="brand"
-  />
+<Layout title="Inicio">
+  <Hero brand={site.name} title={site.tagline} subtitle="Lienzo para formas: diagonal, grafo y educación." />
 
-  <SectionPanel>
-    <ClaimList items={[...claims]} />
-  </SectionPanel>
+  <section class="quote-section wrap" aria-label="Cita">
+    <blockquote class="quote-block">
+      <p class="quote-block__text">{homeQuote.text}</p>
+      <footer class="quote-block__attr">
+        <cite>{homeQuote.attribution}</cite>
+      </footer>
+    </blockquote>
+  </section>
 
-  <SectionPanel>
-    <CtaGroup items={[...ctas]} />
-  </SectionPanel>
+  <section class="news-section wrap" aria-labelledby="news-heading">
+    <div class="news-section__head">
+      <h2 id="news-heading" class="news-section__title">Últimas novedades</h2>
+      <a class="news-section__more" href="/collection">Explorar novedades</a>
+    </div>
+    <ul class="news-gallery">
+      {
+        newsItems.map((item) => (
+          <li>
+            <a class="news-card" href={item.href}>
+              <div class="news-card__media" aria-hidden="true" />
+              <div class="news-card__body">
+                <p class="news-card__meta">{item.meta}</p>
+                <h3 class="news-card__title">{item.title}</h3>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 
-  <SectionPanel>
-    <SectionHeader
-      title="Obras que crecen del tronco"
-      lead="Índice asimétrico: ramas, no tarjetas."
-    />
-    <ItemGrid items={preview} showLabel={false} />
-  </SectionPanel>
+  <section class="works-section wrap" aria-labelledby="works-heading">
+    <div class="works-section__head">
+      <h2 id="works-heading" class="works-section__title">Trabajos recientes</h2>
+      <a class="works-section__more" href="/catalog">Consultar el catálogo</a>
+    </div>
+    <ul class="works-list">
+      {
+        recentWorks.map((item) => (
+          <li>
+            <a class="works-card" href={item.href}>
+              <div class="works-card__media" aria-hidden="true" />
+              <div class="works-card__body">
+                <p class="works-card__meta">{item.meta}</p>
+                <h3 class="works-card__title">{item.title}</h3>
+                <p class="works-card__author">{item.author}</p>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <ProjectsCarousel />
+
+  <section class="faculty-section wrap" aria-labelledby="faculty-heading">
+    <div class="faculty-section__head">
+      <h2 id="faculty-heading" class="faculty-section__title">Nuestros docentes</h2>
+      <a class="faculty-section__more" href="/people">Conocer al equipo</a>
+    </div>
+    <ul class="faculty-gallery">
+      {
+        facultyItems.map((person) => (
+          <li>
+            <a class="faculty-card" href={person.href}>
+              <div class="faculty-card__media" aria-hidden="true" />
+              <div class="faculty-card__body">
+                <h3 class="faculty-card__name">{person.name}</h3>
+                <p class="faculty-card__role">{person.role}</p>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="lines-section wrap" aria-labelledby="lines-heading">
+    <div class="lines-section__head">
+      <h2 id="lines-heading" class="lines-section__title">Líneas de investigación</h2>
+      <a class="lines-section__more" href="/lines">Explorar las líneas</a>
+    </div>
+    <ul class="lines-list">
+      {
+        researchLines.map((line) => (
+          <li>
+            <a class="lines-card" href={line.href}>
+              <h3 class="lines-card__title">{line.title}</h3>
+              <p class="lines-card__text">{line.text}</p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="invite-section wrap" aria-labelledby="invite-heading">
+    <h2 id="invite-heading" class="invite-section__title">Conoce al grupo</h2>
+    <p class="invite-section__text">
+      Si esta historia te resuena —estudiar, colaborar o simplemente saber más—
+      escríbenos. Estamos abiertos a conversar.
+    </p>
+    <p class="invite-section__cta">
+      <a href="/contact">Escribir al grupo</a>
+    </p>
+  </section>
 </Layout>

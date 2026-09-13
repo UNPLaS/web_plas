@@ -7,47 +7,24 @@ import { site } from '../data/placeholders';
 interface Props {
   title: string;
   description?: string;
-  pattern?: string;
 }
 
-const {
-  title,
-  description = site.tagline,
-  pattern,
-} = Astro.props;
+const { title, description = site.tagline } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es" data-theme="plas">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
-    {pattern && <meta name="x-page-pattern" content={pattern} />}
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Sora:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
-      rel="stylesheet"
-    />
     <title>{title} — {site.name}</title>
-    <script is:inline>
-      (function () {
-        try {
-          var q = new URLSearchParams(location.search);
-          var t = q.get('theme');
-          var theme = t === 'felipe' || t === 'plas' ? t : localStorage.getItem('front-plas-theme');
-          if (theme === 'felipe' || theme === 'plas') document.documentElement.dataset.theme = theme;
-          if (q.get('audit') === '1') document.documentElement.dataset.audit = '';
-        } catch (e) {}
-      })();
-    </script>
   </head>
   <body class="flex min-h-screen flex-col">
     <SiteHeader />
-    <main class="mx-auto w-full max-w-5xl flex-1 px-4 py-8 sm:px-6" data-shell="main">
+    <main class="flex-1">
       <slot />
     </main>
     <SiteFooter />

@@ -1,0 +1,48 @@
+---
+/**
+ * Hero: imagen full-bleed.
+ * Panel visual (altura = imagen, ancho hasta el límite del texto).
+ * Contenido tipográfico sin estilos de panel.
+ */
+interface Props {
+  brand: string;
+  title: string;
+  subtitle?: string;
+  imageSrc?: string;
+  ctaHref?: string;
+  ctaLabel?: string;
+}
+
+const {
+  brand,
+  title,
+  subtitle,
+  imageSrc = '/images/hero-plas-warm.png',
+  ctaHref = '/about',
+  ctaLabel = 'Conoce el grupo',
+} = Astro.props;
+---
+
+<section class="hero">
+  <img
+    class="hero__media"
+    src={imageSrc}
+    alt=""
+    width="1920"
+    height="1080"
+    decoding="async"
+    fetchpriority="high"
+  />
+  {/* Panel ligado a la imagen: fondo/altura; no es el contenedor del texto */}
+  <div class="hero__panel" aria-hidden="true"></div>
+  <div class="hero__inner wrap">
+    <div class="hero__content">
+      <p class="hero__brand">{brand}</p>
+      <h1 class="hero__title">{title}</h1>
+      {subtitle && <p class="hero__subtitle">{subtitle}</p>}
+      <p class="hero__cta">
+        <a href={ctaHref}>{ctaLabel}</a>
+      </p>
+    </div>
+  </div>
+</section>

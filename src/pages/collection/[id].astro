@@ -1,8 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import DetailBody from '../../components/DetailBody.astro';
-import SectionPanel from '../../components/SectionPanel.astro';
-import { collectionItems, detailSections } from '../../data/placeholders';
+import { collectionItems } from '../../data/placeholders';
 
 export function getStaticPaths() {
   return collectionItems.map((item) => ({
@@ -16,22 +14,54 @@ interface Props {
 }
 
 const { item } = Astro.props;
+const related = collectionItems.filter((entry) => entry.id !== item.id);
 ---
 
-<Layout title={item.title} pattern="entity-detail">
-  <SectionPanel>
-    <p class="mb-4 text-sm">
-      <a href="/collection">← Volver a Collection</a>
+<Layout title={item.title}>
+  <article class="page-section page-section--tight wrap">
+    <p class="page-back">
+      <a href="/collection">← Volver a novedades</a>
     </p>
-    <DetailBody
-      title={item.title}
-      meta={item.meta}
-      summary={item.summary}
-      sections={[...detailSections]}
-      links={[
-        { href: '/catalog', label: 'Ver catálogo relacionado' },
-        { href: '/contact', label: 'Contacto' },
-      ]}
-    />
-  </SectionPanel>
+
+    <header class="page-head">
+      <p class="page-head__eyebrow">{item.meta}</p>
+      <h1 class="page-head__title">{item.title}</h1>
+      <p class="page-head__lede">{item.summary}</p>
+    </header>
+
+    <div class="page-prose">
+      <p>
+        Texto de detalle del item. Aquí irá el cuerpo completo de la novedad:
+        contexto, impacto y enlaces relacionados.
+      </p>
+      <p>
+        Placeholder para mantener la estructura tipográfica de una página de
+        lectura dentro del mismo sistema de secciones.
+      </p>
+    </div>
+  </article>
+
+  {
+    related.length > 0 && (
+      <section class="news-section wrap detail-related" aria-labelledby="related-heading">
+        <div class="news-section__head">
+          <h2 id="related-heading" class="news-section__title">También te puede interesar</h2>
+          <a class="news-section__more" href="/collection">Ver todas</a>
+        </div>
+        <ul class="news-gallery">
+          {related.map((entry) => (
+            <li>
+              <a class="news-card" href={`/collection/${entry.id}`}>
+                <div class="news-card__media" aria-hidden="true" />
+                <div class="news-card__body">
+                  <p class="news-card__meta">{entry.meta}</p>
+                  <h3 class="news-card__title">{entry.title}</h3>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
 </Layout>
