@@ -45,10 +45,10 @@ const {
       <h1 class="hero__title">{title}</h1>
       {subtitle && <p class="hero__subtitle">{subtitle}</p>}
       <p class="hero__cta">
-        <a class="hero__cta-primary" href={ctaHref}>{ctaLabel}</a>
+        <a class="btn btn--amber-sm" href={ctaHref}>{ctaLabel}</a>
         {
           secondaryHref && secondaryLabel && (
-            <a class="hero__cta-secondary" href={secondaryHref}>
+            <a class="btn btn--ghost" href={secondaryHref}>
               {secondaryLabel}
             </a>
           )

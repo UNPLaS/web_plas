@@ -1,7 +1,8 @@
 ---
 /**
  * Fase 3 — red flotante recortada al lado blanco del spine.
- * La malla y el clip se regeneran en spine-sync.ts.
+ * Disco a escala full-page; deriva por dirección del mouse;
+ * restore al superar umbral de deriva (fade → ancla → fade in).
  */
 ---
 
@@ -21,3 +22,10 @@
     <g class="float-graphs__mesh"></g>
   </g>
 </svg>
+
+<script>
+  import { startNetworkDrift } from '../scripts/network-drift';
+  startNetworkDrift();
+  requestAnimationFrame(startNetworkDrift);
+  window.addEventListener('load', startNetworkDrift);
+</script>

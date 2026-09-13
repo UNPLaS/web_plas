@@ -4,6 +4,7 @@ import {
   SPINE_START_X_FRAC,
 } from '../data/spine-geometry';
 import { renderNetworkMesh } from './network-mesh';
+import { syncNetworkDriftLayout } from './network-drift';
 
 function yRelativeToShell(el: HTMLElement, shell: HTMLElement): number {
   const s = shell.getBoundingClientRect();
@@ -100,6 +101,7 @@ function syncFloatNetwork(W: number, H: number, rightD: string): void {
   floatSvg.setAttribute('viewBox', `0 0 ${W} ${H}`);
   clip.setAttribute('d', rightD);
   renderNetworkMesh(mesh, W, H);
+  syncNetworkDriftLayout();
 }
 
 export function syncSpineAndHeroPanel(): void {

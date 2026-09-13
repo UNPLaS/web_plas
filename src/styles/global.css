@@ -10,6 +10,7 @@
   --deep: #0c4f48;
   --amber: #e09b1a;
   --amber-soft: #f6e2b8;
+  --amber-hover: color-mix(in srgb, var(--amber) 55%, #ffd24a);
 
   /* Superficie y texto */
   --page: #ffffff;
@@ -19,6 +20,9 @@
   --media: #eef1f0;
   --network: #5f8f88;
   --radius: 0.5rem;
+  /* Placeholders de media */
+  --media-square: 1 / 1;
+  --media-rect: 16 / 10;
 
   /* Tipografía — display Onest + cuerpo Source Sans */
   --font-display: "Onest", "Segoe UI", system-ui, sans-serif;
@@ -28,6 +32,8 @@
   --page-left: var(--mid-soft);
   --page-right: var(--page);
   --spine: color-mix(in srgb, var(--deep) 28%, var(--mid-soft));
+  /* Borde suave: mid-soft + velo blanco */
+  --edge-soft: #e4f8f4;
 }
 
 html {
@@ -106,9 +112,14 @@ body {
 }
 
 .float-graphs__mesh {
-  transform-origin: 70% 40%;
-  will-change: transform;
-  animation: network-drift 36s ease-in-out infinite;
+  transform-origin: 0 0;
+  will-change: transform, opacity;
+  opacity: 1;
+  transition: opacity 1.1s ease;
+}
+
+.float-graphs__mesh--fading {
+  opacity: 0;
 }
 
 .float-graphs__edges line {
@@ -124,19 +135,10 @@ body {
   opacity: 0.78;
 }
 
-@keyframes network-drift {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  50% {
-    transform: translate3d(8px, -10px, 0) scale(1.015);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .float-graphs__mesh {
-    animation: none;
+    transform: none !important;
+    transition: none;
   }
 }
 
@@ -171,14 +173,95 @@ a {
   color: var(--deep);
 }
 
-a:hover {
-  color: var(--mid);
-  opacity: 1;
+/* Solo enlaces de texto; los .btn definen su propio hover */
+a:hover:not(.btn) {
+  color: var(--mid-dark);
+}
+
+/* Tarjetas enlace: texto claro sobre fondo mid */
+a.news-card:is(:hover, .is-touch-hover),
+a.works-card:is(:hover, .is-touch-hover),
+a.project-slide:is(:hover, .is-touch-hover),
+a.faculty-card:is(:hover, .is-touch-hover),
+a.lines-card:is(:hover, .is-touch-hover),
+a.blog-card:is(:hover, .is-touch-hover) {
+  color: #000;
 }
 
 .wrap {
   width: min(100% - 2rem, 56rem);
   margin-inline: auto;
+}
+
+/* Botones — mismo sistema en home y puertas (sin heredar a:hover) */
+.btn {
+  position: relative;
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Área hit mayor que el scale, evita el “tick” al soltar */
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: -0.4em;
+}
+
+.btn--amber {
+  padding: 0.65rem 1.1rem;
+  background: var(--amber);
+  color: var(--page);
+  font-size: 0.9375rem;
+}
+
+a.btn--amber:is(:hover, .is-touch-hover) {
+  background: var(--amber-hover);
+  color: var(--page);
+  transform: scale(1.06);
+}
+
+.btn--amber-sm {
+  padding: 0.65rem 1.1rem;
+  background: var(--amber);
+  color: var(--page);
+  font-size: 0.875rem;
+}
+
+a.btn--amber-sm:is(:hover, .is-touch-hover) {
+  background: var(--amber-hover);
+  color: var(--page);
+  transform: scale(1.06);
+}
+
+.btn--ghost {
+  padding: 0.55rem 0.85rem;
+  background: color-mix(in srgb, var(--page) 70%, var(--mid-soft));
+  color: var(--deep);
+  font-size: 0.875rem;
+}
+
+a.btn--ghost:is(:hover, .is-touch-hover) {
+  background: var(--mid-soft);
+  color: var(--deep);
+  transform: scale(1.06);
+}
+
+.btn--soft {
+  padding: 0.45rem 0.85rem;
+  background: var(--mid-soft);
+  color: var(--deep);
+  font-size: 0.875rem;
+}
+
+a.btn--soft:is(:hover, .is-touch-hover) {
+  background: var(--mid);
+  color: var(--page);
+  transform: scale(1.06);
 }
 
 /* Contenedor de grupos de tarjetas / listas */
@@ -190,7 +273,7 @@ a:hover {
 .faculty-list,
 .student-list {
   box-sizing: border-box;
-  border: none;
+  border: 2px solid var(--edge-soft);
   background: var(--page);
   padding: 1rem;
   border-radius: var(--radius);
@@ -205,43 +288,22 @@ a:hover {
 .carousel__viewport,
 .project-slide,
 .project-slide__body,
-.hero__cta-primary,
-.hero__cta-secondary,
-.news-section__more,
-.works-section__more,
-.projects-section__more,
-.faculty-section__more,
-.lines-section__more,
-.invite-section__cta a,
-.door-cta a,
-.door-statement,
+.btn,
 .carousel__nav,
+.door-statement,
 .catalog-search input {
   border-radius: var(--radius);
 }
 
-.news-card__media,
-.works-card__media,
-.faculty-card__media,
-.blog-card__media,
-.project-slide__media {
-  border-radius: var(--radius) var(--radius) 0 0;
-}
-
-.works-card__media,
-.blog-card__media,
-.faculty-card--row .faculty-card__media {
-  border-radius: var(--radius) 0 0 var(--radius);
-}
-
-@media (min-width: 640px) {
-  .project-slide__media {
-    border-radius: var(--radius) 0 0 var(--radius);
-  }
-
-  .project-slide__body {
-    border-radius: 0 var(--radius) var(--radius) 0;
-  }
+.works-card__media img,
+.blog-card__media img,
+.faculty-card__media img,
+.news-card__media img,
+.project-slide__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .site-header,
@@ -415,46 +477,6 @@ a:hover {
   margin: 1.25rem 0 0;
 }
 
-.hero__cta-primary {
-  display: inline-block;
-  padding: 0.65rem 1.1rem;
-  background: var(--amber);
-  color: var(--page);
-  font-size: 0.875rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.hero__cta-primary:hover {
-  background: color-mix(in srgb, var(--amber) 82%, var(--deep));
-  color: var(--page);
-  transform: scale(1.06);
-}
-
-.hero__cta-secondary {
-  display: inline-block;
-  padding: 0.55rem 0.85rem;
-  background: color-mix(in srgb, var(--page) 70%, var(--mid-soft));
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--deep);
-  text-decoration: none;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.hero__cta-secondary:hover {
-  background: var(--mid-soft);
-  color: var(--deep);
-  transform: scale(1.06);
-}
-
 /* Cita post-hero — énfasis tipográfico y de presencia */
 .quote-section {
   padding-block: 3.5rem 2.5rem;
@@ -598,34 +620,6 @@ a:hover {
   letter-spacing: -0.025em;
 }
 
-.news-section__more,
-.works-section__more,
-.projects-section__more,
-.faculty-section__more,
-.lines-section__more {
-  display: inline-block;
-  padding: 0.45rem 0.85rem;
-  background: var(--mid-soft);
-  color: var(--deep);
-  font-size: 0.875rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.news-section__more:hover,
-.works-section__more:hover,
-.projects-section__more:hover,
-.faculty-section__more:hover,
-.lines-section__more:hover {
-  background: var(--mid);
-  color: var(--page);
-  transform: scale(1.06);
-}
-
 .news-gallery {
   display: grid;
   gap: 1.25rem;
@@ -648,18 +642,29 @@ a:hover {
   text-decoration: none;
   color: inherit;
   overflow: hidden;
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
-.news-card:hover {
-  background: var(--mid-soft);
+.news-card:is(:hover, .is-touch-hover) {
+  color: #000;
   transform: scale(1.03);
 }
 
+.news-card:is(:hover, .is-touch-hover) .news-card__body {
+  background: var(--mid);
+}
+
+.news-card:is(:hover, .is-touch-hover) .news-card__title {
+  color: #000;
+}
+
+.news-card:is(:hover, .is-touch-hover) .news-card__meta,
+.news-card:is(:hover, .is-touch-hover) .card-outcome {
+  color: #000;
+}
+
 .news-card__media {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: var(--media-rect);
   background: var(--media);
   border-bottom: none;
 }
@@ -670,6 +675,8 @@ a:hover {
   flex-direction: column;
   gap: 0.35rem;
   padding: 0.85rem 1rem 1rem;
+  background: var(--page);
+  transition: background-color 0.2s ease;
 }
 
 .news-card__meta {
@@ -683,6 +690,8 @@ a:hover {
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.3;
+  color: var(--ink);
+  transition: color 0.2s ease;
 }
 
 .card-outcome {
@@ -721,26 +730,68 @@ a:hover {
   text-decoration: none;
   color: inherit;
   overflow: hidden;
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
-.works-card:hover {
-  background: var(--mid-soft);
+.works-card:is(:hover, .is-touch-hover) {
+  color: #000;
   transform: scale(1.02);
 }
 
+.works-card:is(:hover, .is-touch-hover) .works-card__body {
+  background: var(--mid);
+}
+
+.works-card:is(:hover, .is-touch-hover) .works-card__title {
+  color: #000;
+}
+
+.works-card:is(:hover, .is-touch-hover) .works-card__meta,
+.works-card:is(:hover, .is-touch-hover) .works-card__author,
+.works-card:is(:hover, .is-touch-hover) .card-outcome {
+  color: #000;
+}
+
+/* Horizontal: media estira a la altura del texto (sin aspect-ratio fijo) */
 .works-card__media {
   flex: 0 0 5.5rem;
+  width: 5.5rem;
+  align-self: stretch;
   min-height: 5.5rem;
   background: var(--media);
   border-right: none;
 }
 
+@media (max-width: 639px) {
+  .works-card:not(.works-card--thumb) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .works-card:not(.works-card--thumb) .works-card__media {
+    flex: none;
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: var(--media-square);
+  }
+
+  .works-card--thumb {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .works-card--thumb .works-card__media {
+    flex: 0 0 4.75rem;
+    width: 4.75rem;
+    min-height: 4.75rem;
+  }
+}
+
 @media (min-width: 640px) {
   .works-card__media {
     flex-basis: 7.5rem;
+    width: 7.5rem;
+    min-height: 7.5rem;
   }
 }
 
@@ -752,6 +803,8 @@ a:hover {
   justify-content: center;
   gap: 0.25rem;
   padding: 0.85rem 1rem;
+  background: var(--page);
+  transition: background-color 0.2s ease;
 }
 
 .works-card__meta {
@@ -765,6 +818,8 @@ a:hover {
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.3;
+  color: var(--ink);
+  transition: color 0.2s ease;
 }
 
 .works-card__author {
@@ -797,7 +852,8 @@ a:hover {
 
 .carousel__viewport {
   overflow: hidden;
-  border: none;
+  box-sizing: border-box;
+  border: 2px solid var(--edge-soft);
   background: var(--page);
   min-width: 0;
   border-radius: var(--radius);
@@ -852,32 +908,45 @@ a:hover {
   display: grid;
   text-decoration: none;
   color: inherit;
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
+  overflow: hidden;
+  transition: transform 0.2s ease;
 }
 
-.project-slide:hover {
-  background: var(--mid-soft);
+.project-slide:is(:hover, .is-touch-hover) {
+  color: #000;
   transform: scale(1.015);
+}
+
+.project-slide:is(:hover, .is-touch-hover) .project-slide__title {
+  color: #000;
+}
+
+.project-slide:is(:hover, .is-touch-hover) .project-slide__text,
+.project-slide:is(:hover, .is-touch-hover) .card-outcome {
+  color: #000;
 }
 
 @media (min-width: 640px) {
   .project-slide {
     grid-template-columns: 1.1fr 1fr;
+    grid-template-rows: minmax(14rem, auto);
+    align-items: stretch;
     min-height: 14rem;
   }
 }
 
+/* Rectangular en mobile; en desktop estira a la altura del texto */
 .project-slide__media {
-  aspect-ratio: 16 / 10;
+  aspect-ratio: var(--media-rect);
   background: var(--media);
 }
 
 @media (min-width: 640px) {
   .project-slide__media {
-    aspect-ratio: auto;
+    width: 100%;
+    height: 100%;
     min-height: 100%;
+    aspect-ratio: auto;
     border-right: none;
   }
 }
@@ -889,6 +958,11 @@ a:hover {
   gap: 0.5rem;
   padding: 1.25rem 1.15rem;
   background: var(--page);
+  transition: background-color 0.2s ease;
+}
+
+.project-slide:is(:hover, .is-touch-hover) .project-slide__body {
+  background: var(--mid);
 }
 
 .project-slide__title {
@@ -896,6 +970,8 @@ a:hover {
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.25;
+  color: var(--ink);
+  transition: color 0.2s ease;
 }
 
 .project-slide__text {
@@ -942,24 +1018,16 @@ a:hover {
     transition: none;
   }
 
-  .news-section__more:hover,
-  .works-section__more:hover,
-  .projects-section__more:hover,
-  .faculty-section__more:hover,
-  .lines-section__more:hover,
-  .hero__cta-primary:hover,
-  .hero__cta-secondary:hover,
-  .news-card:hover,
-  .works-card:hover,
-  .project-slide:hover,
-  .faculty-card:hover,
-  .lines-card:hover,
-  .blog-card:hover,
+  .news-card:is(:hover, .is-touch-hover),
+  .works-card:is(:hover, .is-touch-hover),
+  .project-slide:is(:hover, .is-touch-hover),
+  .faculty-card:is(:hover, .is-touch-hover),
+  .lines-card:is(:hover, .is-touch-hover),
+  .blog-card:is(:hover, .is-touch-hover),
   .carousel__nav:hover,
   .carousel__dot:hover,
-  .invite-section__cta a:hover,
-  .door-link:hover,
-  .door-cta a:hover {
+  .btn:hover,
+  .door-link:is(:hover, .is-touch-hover) {
     transform: none;
   }
 }
@@ -1023,18 +1091,29 @@ a:hover {
   text-decoration: none;
   color: inherit;
   overflow: hidden;
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
-.faculty-card:hover {
-  background: var(--mid-soft);
-  transform: scale(1.04);
+.faculty-card:is(:hover, .is-touch-hover) {
+  color: #000;
+  transform: scale(1.02);
+}
+
+.faculty-card:is(:hover, .is-touch-hover) .faculty-card__body {
+  background: var(--mid);
+}
+
+.faculty-card:is(:hover, .is-touch-hover) .faculty-card__name {
+  color: #000;
+}
+
+.faculty-card:is(:hover, .is-touch-hover) .faculty-card__role,
+.faculty-card:is(:hover, .is-touch-hover) .faculty-card__meta {
+  color: #000;
 }
 
 .faculty-card__media {
-  aspect-ratio: 1;
+  aspect-ratio: var(--media-square);
   background: var(--media);
   border-bottom: none;
 }
@@ -1044,6 +1123,8 @@ a:hover {
   flex-direction: column;
   gap: 0.25rem;
   padding: 0.85rem 1rem 1rem;
+  background: var(--page);
+  transition: background-color 0.2s ease;
 }
 
 .faculty-card__name {
@@ -1051,12 +1132,21 @@ a:hover {
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.3;
+  color: var(--ink);
+  transition: color 0.2s ease;
 }
 
 .faculty-card__role {
   margin: 0;
   font-size: 0.875rem;
   color: var(--muted);
+}
+
+.faculty-card__meta {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  line-height: 1.4;
 }
 
 /* Cierre: conocer al grupo + contacto */
@@ -1080,26 +1170,6 @@ a:hover {
 
 .invite-section__cta {
   margin: 1.25rem 0 0;
-}
-
-.invite-section__cta a {
-  display: inline-block;
-  padding: 0.65rem 1.1rem;
-  background: var(--amber);
-  color: var(--page);
-  font-size: 0.9375rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.invite-section__cta a:hover {
-  background: color-mix(in srgb, var(--amber) 82%, var(--deep));
-  color: var(--page);
-  transform: scale(1.06);
 }
 
 /* Líneas de investigación */
@@ -1136,10 +1206,19 @@ a:hover {
     transform 0.2s ease;
 }
 
-.lines-card:hover {
-  background: var(--mid-soft);
+.lines-card:is(:hover, .is-touch-hover) {
+  background: var(--mid);
+  color: #000;
   box-shadow: inset 4px 0 0 var(--deep);
   transform: scale(1.02);
+}
+
+.lines-card:is(:hover, .is-touch-hover) .lines-card__title {
+  color: #000;
+}
+
+.lines-card:is(:hover, .is-touch-hover) .lines-card__text {
+  color: #000;
 }
 
 .lines-card__title {
@@ -1147,6 +1226,8 @@ a:hover {
   font-size: 1.05rem;
   font-weight: 600;
   line-height: 1.3;
+  color: var(--ink);
+  transition: color 0.2s ease;
 }
 
 .lines-card__text {
@@ -1230,16 +1311,11 @@ a:hover {
   padding: 1.25rem 1.35rem;
   border-left: 3px solid var(--amber);
   background: color-mix(in srgb, var(--amber-soft) 55%, var(--page));
+  text-align: left;
 }
 
-.door-statement__text {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
-  font-weight: 600;
-  line-height: 1.4;
-  letter-spacing: -0.015em;
-  color: var(--ink);
+.door-statement .quote-block__text {
+  text-align: left;
 }
 
 .about-identity {
@@ -1324,11 +1400,11 @@ a:hover {
   border-top: 1px solid var(--line);
 }
 
-.door-link:hover {
+.door-link:is(:hover, .is-touch-hover) {
   transform: translateX(0.25rem);
 }
 
-.door-link:hover .door-link__label {
+.door-link:is(:hover, .is-touch-hover) .door-link__label {
   color: var(--deep);
 }
 
@@ -1355,26 +1431,6 @@ a:hover {
 
 .door-cta--inline {
   margin-top: 1.35rem;
-}
-
-.door-cta a {
-  display: inline-block;
-  padding: 0.65rem 1.1rem;
-  background: var(--amber);
-  color: var(--page);
-  font-size: 0.9375rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.door-cta a:hover {
-  background: color-mix(in srgb, var(--amber) 82%, var(--deep));
-  color: var(--page);
-  transform: scale(1.06);
 }
 
 .contact-panel {
@@ -1501,27 +1557,57 @@ a.contact-item__value:hover {
   text-decoration: none;
   color: inherit;
   overflow: hidden;
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
-.blog-card:hover {
-  background: var(--mid-soft);
+.blog-card:is(:hover, .is-touch-hover) {
+  color: #000;
   transform: scale(1.02);
 }
 
+.blog-card:is(:hover, .is-touch-hover) .blog-card__body {
+  background: var(--mid);
+}
+
+.blog-card:is(:hover, .is-touch-hover) .blog-card__title {
+  color: #000;
+}
+
+.blog-card:is(:hover, .is-touch-hover) .blog-card__meta,
+.blog-card:is(:hover, .is-touch-hover) .blog-card__excerpt,
+.blog-card:is(:hover, .is-touch-hover) .card-outcome {
+  color: #000;
+}
+
+/* Horizontal: media estira a la altura del texto */
 .blog-card__media {
-  flex: 0 0 6.5rem;
-  min-height: 6.5rem;
+  flex: 0 0 8.5rem;
+  width: 8.5rem;
+  align-self: stretch;
+  min-height: calc(8.5rem * 10 / 16);
   background: var(--media);
   border-right: none;
 }
 
+@media (max-width: 639px) {
+  .blog-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .blog-card__media {
+    flex: none;
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: var(--media-rect);
+  }
+}
+
 @media (min-width: 640px) {
   .blog-card__media {
-    flex-basis: 10rem;
-    min-height: 7.5rem;
+    flex-basis: 12rem;
+    width: 12rem;
+    min-height: calc(12rem * 10 / 16);
   }
 }
 
@@ -1533,6 +1619,8 @@ a.contact-item__value:hover {
   justify-content: center;
   gap: 0.3rem;
   padding: 1rem 1.15rem;
+  background: var(--page);
+  transition: background-color 0.2s ease;
 }
 
 .blog-card__meta {
@@ -1546,6 +1634,8 @@ a.contact-item__value:hover {
   font-size: 1.1rem;
   font-weight: 600;
   line-height: 1.3;
+  color: var(--ink);
+  transition: color 0.2s ease;
 }
 
 .blog-card__excerpt {
@@ -1561,11 +1651,11 @@ a.contact-item__value:hover {
   font-size: clamp(1.35rem, 2.2vw, 1.6rem);
 }
 
-/* Docentes — lista de tarjetas horizontales */
+/* Docentes — filas con avatar fijo (siempre horizontal) */
 .faculty-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.75rem;
   margin: 0;
   padding: 1rem;
   list-style: none;
@@ -1578,21 +1668,33 @@ a.contact-item__value:hover {
 }
 
 .faculty-card--row .faculty-card__media {
-  flex: 0 0 5.5rem;
-  aspect-ratio: 1;
+  flex: 0 0 4.75rem;
+  width: 4.75rem;
+  align-self: stretch;
+  min-height: 4.75rem;
+  aspect-ratio: auto;
   border-bottom: none;
   border-right: none;
 }
 
 @media (min-width: 640px) {
   .faculty-card--row .faculty-card__media {
-    flex-basis: 7rem;
+    flex-basis: 6.5rem;
+    width: 6.5rem;
+    min-height: 6.5rem;
   }
 }
 
 .faculty-card--row .faculty-card__body {
+  flex: 1;
+  min-width: 0;
   justify-content: center;
-  padding: 1rem 1.15rem;
+  gap: 0.2rem;
+  padding: 0.85rem 1rem;
+}
+
+.faculty-card--row .faculty-card__name {
+  font-size: 1.05rem;
 }
 
 /* Estudiantes — lista sin foto */

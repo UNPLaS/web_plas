@@ -48,5 +48,9 @@ const isHome = Astro.url.pathname.replace(/\/$/, '') === '' || Astro.url.pathnam
         <SiteFooter />
       </div>
     </div>
+    <script>
+      import { startTouchHover } from '../scripts/touch-hover';
+      startTouchHover();
+    </script>
   </body>
 </html>
