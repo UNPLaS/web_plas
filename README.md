@@ -6,7 +6,8 @@ Astro 7 + Tailwind 4. Lienzo blanco, estructura básica.
 
 - `/` Inicio
 - `/about`
-- `/collection`, `/collection/[id]`
+- `/projects`, `/projects/[id]`
+- `/events`, `/events/[id]`
 - `/catalog`
 - `/people`
 - `/contact`

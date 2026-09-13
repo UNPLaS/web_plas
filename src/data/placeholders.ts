@@ -1,15 +1,18 @@
 /** Placeholders mínimos — contenido de prueba. */
 
 export const site = {
-  name: 'Front Plas Prototype',
-  tagline: 'Prototipo estructural — educación en ingeniería',
+  name: 'PLaS',
+  tagline: 'Construimos software, herramientas y criterios para enseñar y hacer ingeniería.',
+  subtitle:
+    'Estudiantes y colaboradores exploran ideas con libertad y las llevan a producciones de calidad.',
 };
 
 export const nav = [
   { href: '/', label: 'Inicio' },
   { href: '/about', label: 'About' },
   { href: '/lines', label: 'Lines' },
-  { href: '/collection', label: 'Collection' },
+  { href: '/projects', label: 'Proyectos' },
+  { href: '/events', label: 'Eventos' },
   { href: '/catalog', label: 'Catalog' },
   { href: '/people', label: 'People' },
   { href: '/contact', label: 'Contact' },
@@ -23,7 +26,8 @@ export const claims = [
 
 export const links = [
   { href: '/about', label: 'About' },
-  { href: '/collection', label: 'Collection' },
+  { href: '/projects', label: 'Proyectos' },
+  { href: '/events', label: 'Eventos' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -36,44 +40,50 @@ export const homeQuote = {
 export const newsItems = [
   {
     id: 'news-01',
-    title: 'Novedad uno',
+    title: 'Taller abierto de evaluación automática',
     meta: 'Evento · 2026',
-    href: '/collection/item-01',
+    outcome: 'Sesión práctica con UNCode y docentes invitados.',
+    href: '/events/evt-01',
   },
   {
     id: 'news-02',
-    title: 'Novedad dos',
+    title: 'Nuevo módulo de laboratorio en Paradigmas',
     meta: 'Proyecto · 2026',
-    href: '/collection/item-02',
+    outcome: 'Material usable en curso y reproducible fuera del aula.',
+    href: '/projects/proj-paradigmas',
   },
   {
     id: 'news-03',
-    title: 'Novedad tres',
+    title: 'Artículo aceptado sobre aprendizaje de programación',
     meta: 'Publicación · 2025',
-    href: '/collection/item-03',
+    outcome: 'Resultados de estudio en aula con evidencia empírica.',
+    href: '/events/evt-02',
   },
 ];
 
 export const recentWorks = [
   {
     id: 'work-01',
-    title: 'Título de publicación reciente',
-    author: 'Autores del trabajo',
+    title: 'Evaluación automática formativa en cursos de programación',
+    author: 'Autores del grupo',
     meta: 'Publicación · 2026',
+    outcome: 'Modelo validado en un curso real de pregrado.',
     href: '/catalog',
   },
   {
     id: 'work-02',
-    title: 'Título de tesis reciente',
+    title: 'Herramientas de apoyo para software tolerante a fallos',
     author: 'Estudiante Uno',
     meta: 'Tesis · Maestría · 2026',
+    outcome: 'Prototipo usable y evaluación experimental.',
     href: '/catalog',
   },
   {
     id: 'work-03',
-    title: 'Otro artículo o capítulo',
-    author: 'Autores del trabajo',
+    title: 'Diseño de lenguajes para enseñanza de paradigmas',
+    author: 'Autores del grupo',
     meta: 'Publicación · 2025',
+    outcome: 'Criterios de diseño aplicados a contenidos de curso.',
     href: '/catalog',
   },
 ];
@@ -83,25 +93,29 @@ export const featuredProjects = [
     id: 'proj-01',
     title: 'UNCode',
     text: 'Aprendizaje y evaluación automática de programación.',
-    href: '/collection/item-01',
+    outcome: 'Plataforma en uso para juzgar y formar en programación.',
+    href: '/projects/proj-uncode',
   },
   {
     id: 'proj-02',
     title: 'SHE',
     text: 'Herramientas para software tolerante a fallos.',
-    href: '/collection/item-02',
+    outcome: 'Suite de apoyo al diseño y análisis de resiliencia.',
+    href: '/projects/proj-she',
   },
   {
     id: 'proj-03',
     title: 'Paradigmas',
     text: 'Contenidos vivos para enseñar lenguajes de programación.',
-    href: '/collection/item-03',
+    outcome: 'Material de curso mantenido y abierto a iteración.',
+    href: '/projects/proj-paradigmas',
   },
   {
     id: 'proj-04',
     title: 'FTxAC',
     text: 'Cómputo aproximado y confiabilidad en sistemas embebidos.',
-    href: '/collection',
+    outcome: 'Métodos y prototipos para sistemas con margen de error.',
+    href: '/projects/proj-ftxac',
   },
 ];
 
@@ -172,24 +186,58 @@ export const contactFields = [
   { label: 'Dirección', value: 'Edificio · Ciudad' },
 ];
 
-export const collectionItems = [
+export const projectItems = [
   {
-    id: 'item-01',
-    title: 'Novedad uno',
+    id: 'proj-uncode',
+    title: 'UNCode',
+    meta: 'Proyecto · Activo',
+    summary: 'Plataforma de aprendizaje y evaluación automática de programación.',
+    outcome: 'En uso en cursos para juzgar y formar.',
+  },
+  {
+    id: 'proj-she',
+    title: 'SHE',
+    meta: 'Proyecto · Activo',
+    summary: 'Herramientas para diseñar y analizar software tolerante a fallos.',
+    outcome: 'Suite de apoyo a resiliencia de software.',
+  },
+  {
+    id: 'proj-paradigmas',
+    title: 'Paradigmas',
+    meta: 'Proyecto · Educación',
+    summary: 'Contenidos vivos para enseñar lenguajes y paradigmas de programación.',
+    outcome: 'Material de curso iterable y abierto.',
+  },
+  {
+    id: 'proj-ftxac',
+    title: 'FTxAC',
+    meta: 'Proyecto · Embebidos',
+    summary: 'Cómputo aproximado y confiabilidad en sistemas embebidos.',
+    outcome: 'Métodos y prototipos con margen de error controlado.',
+  },
+];
+
+export const eventItems = [
+  {
+    id: 'evt-01',
+    title: 'Taller abierto de evaluación automática',
     meta: 'Evento · 2026',
-    summary: 'Resumen corto del item para la colección de novedades.',
+    summary: 'Sesión práctica con UNCode y docentes invitados.',
+    outcome: 'Intercambio de prácticas de evaluación en aula.',
   },
   {
-    id: 'item-02',
-    title: 'Novedad dos',
-    meta: 'Proyecto · 2026',
-    summary: 'Resumen corto del item para la colección de novedades.',
+    id: 'evt-02',
+    title: 'Charla: resultados en aprendizaje de programación',
+    meta: 'Evento · 2025',
+    summary: 'Presentación de hallazgos de estudio en aula con evidencia empírica.',
+    outcome: 'Difusión de resultados ante la comunidad académica.',
   },
   {
-    id: 'item-03',
-    title: 'Novedad tres',
-    meta: 'Publicación · 2025',
-    summary: 'Resumen corto del item para la colección de novedades.',
+    id: 'evt-03',
+    title: 'Encuentro de estudiantes del grupo',
+    meta: 'Evento · 2025',
+    summary: 'Espacio para compartir avances de tesis y proyectos en curso.',
+    outcome: 'Retroalimentación cruzada entre líneas del grupo.',
   },
 ];
 

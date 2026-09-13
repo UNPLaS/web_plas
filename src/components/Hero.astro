@@ -11,6 +11,8 @@ interface Props {
   imageSrc?: string;
   ctaHref?: string;
   ctaLabel?: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
 }
 
 const {
@@ -18,8 +20,10 @@ const {
   title,
   subtitle,
   imageSrc = '/images/hero-plas-warm.png',
-  ctaHref = '/about',
-  ctaLabel = 'Conoce el grupo',
+  ctaHref = '/contact',
+  ctaLabel = 'Escríbenos',
+  secondaryHref = '/about',
+  secondaryLabel = 'Conoce el grupo',
 } = Astro.props;
 ---
 
@@ -41,7 +45,14 @@ const {
       <h1 class="hero__title">{title}</h1>
       {subtitle && <p class="hero__subtitle">{subtitle}</p>}
       <p class="hero__cta">
-        <a href={ctaHref}>{ctaLabel}</a>
+        <a class="hero__cta-primary" href={ctaHref}>{ctaLabel}</a>
+        {
+          secondaryHref && secondaryLabel && (
+            <a class="hero__cta-secondary" href={secondaryHref}>
+              {secondaryLabel}
+            </a>
+          )
+        }
       </p>
     </div>
   </div>

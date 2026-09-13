@@ -1,0 +1,75 @@
+---
+import { nav } from '../data/placeholders';
+
+interface Props {
+  currentLabel: string;
+}
+
+const { currentLabel } = Astro.props;
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+const sectionLabels: Record<string, string> = Object.fromEntries(
+  nav.filter((item) => item.href !== '/').map((item) => [item.href, item.label]),
+);
+
+/** Etiquetas en español para secciones (nav aún mezcla idiomas). */
+const spanishSection: Record<string, string> = {
+  '/about': 'Sobre el grupo',
+  '/lines': 'Líneas',
+  '/projects': 'Proyectos',
+  '/events': 'Eventos',
+  '/catalog': 'Catálogo',
+  '/people': 'Equipo',
+  '/contact': 'Contacto',
+};
+
+const segments = pathname.split('/').filter(Boolean);
+const crumbs: { href?: string; label: string }[] = [];
+
+if (segments.length === 0) {
+  // home — no se renderiza
+} else if (segments.length === 1) {
+  const href = `/${segments[0]}`;
+  crumbs.push({
+    label: spanishSection[href] ?? sectionLabels[href] ?? currentLabel,
+  });
+} else {
+  const sectionHref = `/${segments[0]}`;
+  crumbs.push({
+    href: sectionHref,
+    label: spanishSection[sectionHref] ?? sectionLabels[sectionHref] ?? segments[0],
+  });
+  crumbs.push({ label: currentLabel });
+}
+---
+
+{
+  crumbs.length > 0 && (
+    <nav class="breadcrumb" aria-label="Ubicación">
+      <div class="breadcrumb__inner wrap">
+        <p class="breadcrumb__trail">
+          <span class="breadcrumb__prefix">Está en:</span>
+          <a class="breadcrumb__link" href="/">
+            Inicio
+          </a>
+          {crumbs.map((crumb) => (
+            <span class="breadcrumb__crumb">
+              <span class="breadcrumb__sep" aria-hidden="true">
+                /
+              </span>
+              {crumb.href ? (
+                <a class="breadcrumb__link" href={crumb.href}>
+                  {crumb.label}
+                </a>
+              ) : (
+                <span class="breadcrumb__current" aria-current="page">
+                  {crumb.label}
+                </span>
+              )}
+            </span>
+          ))}
+        </p>
+      </div>
+    </nav>
+  )
+}

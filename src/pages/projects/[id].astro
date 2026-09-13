@@ -1,0 +1,69 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { projectItems } from '../../data/placeholders';
+
+export function getStaticPaths() {
+  return projectItems.map((item) => ({
+    params: { id: item.id },
+    props: { item },
+  }));
+}
+
+interface Props {
+  item: (typeof projectItems)[number];
+}
+
+const { item } = Astro.props;
+const related = projectItems.filter((entry) => entry.id !== item.id);
+---
+
+<Layout title={item.title}>
+  <article class="page-section page-section--tight wrap">
+    <p class="page-back">
+      <a href="/projects">← Volver a proyectos</a>
+    </p>
+
+    <header class="page-head">
+      <p class="page-head__eyebrow">{item.meta}</p>
+      <h1 class="page-head__title">{item.title}</h1>
+      <p class="page-head__lede">{item.summary}</p>
+      <p class="card-outcome">{item.outcome}</p>
+    </header>
+
+    <div class="page-prose">
+      <p>
+        Detalle del proyecto: contexto, componentes principales e impacto en
+        formación o uso real.
+      </p>
+      <p>
+        Placeholder para el cuerpo del proyecto dentro del mismo sistema de
+        secciones.
+      </p>
+    </div>
+  </article>
+
+  {
+    related.length > 0 && (
+      <section class="news-section wrap detail-related" aria-labelledby="related-heading">
+        <div class="news-section__head">
+          <h2 id="related-heading" class="news-section__title">Otros proyectos</h2>
+          <a class="news-section__more" href="/projects">Ver todas</a>
+        </div>
+        <ul class="news-gallery">
+          {related.map((entry) => (
+            <li>
+              <a class="news-card" href={`/projects/${entry.id}`}>
+                <div class="news-card__media" aria-hidden="true" />
+                <div class="news-card__body">
+                  <p class="news-card__meta">{entry.meta}</p>
+                  <h3 class="news-card__title">{entry.title}</h3>
+                  <p class="card-outcome">{entry.outcome}</p>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+</Layout>

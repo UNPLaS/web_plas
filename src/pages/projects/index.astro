@@ -1,28 +1,29 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { collectionItems } from '../../data/placeholders';
+import { projectItems } from '../../data/placeholders';
 ---
 
-<Layout title="Novedades">
-  <section class="page-section wrap" aria-labelledby="collection-heading">
+<Layout title="Proyectos">
+  <section class="page-section wrap" aria-labelledby="projects-heading">
     <header class="page-head">
-      <p class="page-head__eyebrow">Collection</p>
-      <h1 id="collection-heading" class="page-head__title">Novedades</h1>
+      <p class="page-head__eyebrow">Proyectos</p>
+      <h1 id="projects-heading" class="page-head__title">Proyectos</h1>
       <p class="page-head__lede">
-        Eventos, proyectos y publicaciones recientes del grupo.
+        Herramientas, plataformas y líneas de obra que el grupo construye y mantiene.
       </p>
     </header>
 
     <ul class="blog-list">
       {
-        collectionItems.map((item) => (
+        projectItems.map((item) => (
           <li>
-            <a class="blog-card" href={`/collection/${item.id}`}>
+            <a class="blog-card" href={`/projects/${item.id}`}>
               <div class="blog-card__media" aria-hidden="true" />
               <div class="blog-card__body">
                 <p class="blog-card__meta">{item.meta}</p>
                 <h2 class="blog-card__title">{item.title}</h2>
                 <p class="blog-card__excerpt">{item.summary}</p>
+                <p class="card-outcome">{item.outcome}</p>
               </div>
             </a>
           </li>
