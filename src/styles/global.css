@@ -7,6 +7,7 @@
   --ink: #111111;
   --muted: #666666;
   --line: #e5e5e5;
+  --spine: #c8c8c8;
 }
 
 html {
@@ -20,6 +21,43 @@ body {
   color: var(--ink);
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   line-height: 1.5;
+}
+
+/* Capas: espina de fondo + contenido */
+.page-shell {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+}
+
+.spine {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  color: var(--spine);
+}
+
+.spine__path {
+  stroke: currentColor;
+  stroke-width: 1.25px;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+
+.page-foreground {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.page-main {
+  flex: 1;
 }
 
 a {
@@ -65,18 +103,16 @@ a:hover {
   object-position: center;
 }
 
-/* Elemento visual ligado a la imagen: altura completa, del borde izq. al límite del texto */
+/* Elemento visual ligado a la imagen: corte diagonal alineado al spine (desktop) */
 .hero__panel {
   position: absolute;
   z-index: 1;
   top: 0;
   bottom: 0;
   left: 0;
-  /* margen izq. de .wrap + 62% del ancho de .wrap */
-  width: calc(
-    max(1rem, (100% - min(100% - 2rem, 56rem)) / 2)
-    + min(100% - 2rem, 56rem) * 0.62
-  );
+  width: 100%;
+  /* Fallback: origen a la derecha, diagonal plana hacia la izquierda */
+  clip-path: polygon(0% 0%, 90% 0%, 35% 100%, 0% 100%);
   background: rgba(255, 255, 255, 0.9);
   pointer-events: none;
 }
@@ -84,6 +120,7 @@ a:hover {
 @media (max-width: 767px) {
   .hero__panel {
     width: 100%;
+    clip-path: none;
     background: linear-gradient(
       180deg,
       transparent 0%,

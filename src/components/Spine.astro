@@ -1,0 +1,29 @@
+---
+/**
+ * Espina diagonal (solo home). La geometría real la calcula spine-sync.ts
+ * para coincidir con el corte del panel del hero.
+ */
+---
+
+<svg
+  class="spine"
+  viewBox="0 0 100 100"
+  preserveAspectRatio="none"
+  aria-hidden="true"
+  focusable="false"
+>
+  <polyline
+    class="spine__path"
+    fill="none"
+    points="90,7 0,28 100,45 0,65 100,88"
+    vector-effect="non-scaling-stroke"
+  />
+</svg>
+
+<script>
+  import { syncSpineAndHeroPanel } from '../scripts/spine-sync';
+  syncSpineAndHeroPanel();
+  requestAnimationFrame(syncSpineAndHeroPanel);
+  window.addEventListener('resize', syncSpineAndHeroPanel);
+  window.addEventListener('load', syncSpineAndHeroPanel);
+</script>
