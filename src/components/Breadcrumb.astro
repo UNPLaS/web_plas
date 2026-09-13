@@ -12,32 +12,19 @@ const sectionLabels: Record<string, string> = Object.fromEntries(
   nav.filter((item) => item.href !== '/').map((item) => [item.href, item.label]),
 );
 
-/** Etiquetas en español para secciones (nav aún mezcla idiomas). */
-const spanishSection: Record<string, string> = {
-  '/about': 'Sobre el grupo',
-  '/lines': 'Líneas',
-  '/projects': 'Proyectos',
-  '/events': 'Eventos',
-  '/catalog': 'Catálogo',
-  '/people': 'Equipo',
-  '/contact': 'Contacto',
-};
-
 const segments = pathname.split('/').filter(Boolean);
 const crumbs: { href?: string; label: string }[] = [];
 
-if (segments.length === 0) {
-  // home — no se renderiza
-} else if (segments.length === 1) {
+if (segments.length === 1) {
   const href = `/${segments[0]}`;
   crumbs.push({
-    label: spanishSection[href] ?? sectionLabels[href] ?? currentLabel,
+    label: sectionLabels[href] ?? currentLabel,
   });
-} else {
+} else if (segments.length > 1) {
   const sectionHref = `/${segments[0]}`;
   crumbs.push({
     href: sectionHref,
-    label: spanishSection[sectionHref] ?? sectionLabels[sectionHref] ?? segments[0],
+    label: sectionLabels[sectionHref] ?? segments[0],
   });
   crumbs.push({ label: currentLabel });
 }

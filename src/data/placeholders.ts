@@ -9,13 +9,13 @@ export const site = {
 
 export const nav = [
   { href: '/', label: 'Inicio' },
-  { href: '/about', label: 'About' },
-  { href: '/lines', label: 'Lines' },
+  { href: '/about', label: 'Grupo' },
+  { href: '/lines', label: 'Líneas' },
   { href: '/projects', label: 'Proyectos' },
   { href: '/events', label: 'Eventos' },
-  { href: '/catalog', label: 'Catalog' },
-  { href: '/people', label: 'People' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/catalog', label: 'Catálogo' },
+  { href: '/people', label: 'Equipo' },
+  { href: '/contact', label: 'Contacto' },
 ] as const;
 
 export const claims = [
@@ -25,10 +25,10 @@ export const claims = [
 ];
 
 export const links = [
-  { href: '/about', label: 'About' },
+  { href: '/about', label: 'Grupo' },
   { href: '/projects', label: 'Proyectos' },
   { href: '/events', label: 'Eventos' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/contact', label: 'Contacto' },
 ];
 
 /** Cita de apertura en home — sin título de sección. */
@@ -181,10 +181,28 @@ export const researchLines = [
 ];
 
 export const contactFields = [
-  { label: 'Correo', value: 'prototype@example.edu' },
-  { label: 'Teléfono', value: '+00 000 000 0000' },
-  { label: 'Dirección', value: 'Edificio · Ciudad' },
+  {
+    label: 'Correo',
+    value: 'plas@unal.edu.co',
+    href: 'mailto:plas@unal.edu.co',
+  },
+  {
+    label: 'Teléfono',
+    value: '+57 601 316 5000',
+    href: 'tel:+576013165000',
+  },
+  {
+    label: 'Ubicación',
+    value: 'Facultad de Ingeniería · Universidad Nacional de Colombia, Bogotá',
+  },
 ];
+
+export const contactIntro = {
+  title: 'Escríbenos',
+  lede: 'Ideas de tesis, colaboraciones o preguntas sobre el grupo: leemos con criterio y respondemos cuando hay un camino claro.',
+  ctaLabel: 'Enviar correo',
+  ctaHref: 'mailto:plas@unal.edu.co',
+};
 
 export const projectItems = [
   {
@@ -326,17 +344,30 @@ export const students = [
   },
 ];
 
+export const aboutIntro = {
+  title: 'Sobre el grupo',
+  lede: 'PLaS reúne investigación en software, lenguajes y educación en ingeniería. Construimos herramientas reales y formamos criterio en el camino.',
+  statement:
+    'No separamos el laboratorio del aula: lo que investigamos se prueba, se enseña y se lleva a producción con calidad.',
+};
+
 export const aboutBlocks = [
   {
     title: 'Quiénes somos',
-    body: 'Grupo de investigación en software, lenguajes y educación en ingeniería.',
+    body: 'Un grupo de la Universidad Nacional de Colombia enfocado en software, lenguajes de programación y educación en ingeniería de sistemas.',
   },
   {
     title: 'Cómo trabajamos',
-    body: 'Proyectos, publicaciones y formación de estudiantes en un mismo hilo.',
+    body: 'Proyectos, publicaciones y tesis en un mismo hilo: ideas exploradas con libertad y entregadas con rigor.',
   },
   {
     title: 'Con quiénes',
-    body: 'Colaboraciones académicas e institucionales alrededor de problemas reales.',
+    body: 'Estudiantes, docentes e instituciones que comparten problemas concretos de enseñanza, evaluación y sistemas confiables.',
   },
+];
+
+export const aboutDoors = [
+  { href: '/lines', label: 'Líneas de investigación', text: 'Dónde concentramos el trabajo.' },
+  { href: '/people', label: 'Equipo', text: 'Quiénes acompañan los proyectos.' },
+  { href: '/projects', label: 'Proyectos', text: 'Herramientas y obras en curso.' },
 ];

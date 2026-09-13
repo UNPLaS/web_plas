@@ -1,27 +1,44 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { contactFields } from '../data/placeholders';
+import { contactFields, contactIntro } from '../data/placeholders';
 ---
 
 <Layout title="Contacto">
   <section class="page-section wrap" aria-labelledby="contact-heading">
-    <header class="page-head">
-      <p class="page-head__eyebrow">Contact</p>
-      <h1 id="contact-heading" class="page-head__title">Contacto</h1>
-      <p class="page-head__lede">
-        Si deseas más información sobre el grupo, no dudes en escribirnos.
+    <header class="page-head page-head--door">
+      <p class="page-head__eyebrow">Contacto</p>
+      <h1 id="contact-heading" class="page-head__title">{contactIntro.title}</h1>
+      <p class="page-head__lede">{contactIntro.lede}</p>
+      <p class="door-cta door-cta--inline">
+        <a href={contactIntro.ctaHref}>{contactIntro.ctaLabel}</a>
       </p>
     </header>
+  </section>
 
-    <ul class="contact-list">
-      {
-        contactFields.map((field) => (
-          <li class="contact-card">
-            <p class="contact-card__label">{field.label}</p>
-            <p class="contact-card__value">{field.value}</p>
-          </li>
-        ))
-      }
-    </ul>
+  <section class="contact-panel section-bleed" aria-labelledby="contact-details-heading">
+    <div class="section-bleed__back" aria-hidden="true"></div>
+    <div class="section-bleed__inner wrap">
+      <h2 id="contact-details-heading" class="contact-panel__title">Datos del grupo</h2>
+      <ul class="contact-list">
+        {
+          contactFields.map((field) => (
+            <li class="contact-item">
+              <p class="contact-item__label">{field.label}</p>
+              {'href' in field && field.href ? (
+                <a class="contact-item__value" href={field.href}>
+                  {field.value}
+                </a>
+              ) : (
+                <p class="contact-item__value">{field.value}</p>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+      <p class="contact-panel__note">
+        Preferimos correo para propuestas de tesis o colaboración. Incluye contexto,
+        plazos y qué esperas del grupo.
+      </p>
+    </div>
   </section>
 </Layout>

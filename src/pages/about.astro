@@ -1,27 +1,66 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { aboutBlocks } from '../data/placeholders';
+import { aboutBlocks, aboutDoors, aboutIntro } from '../data/placeholders';
 ---
 
 <Layout title="Sobre el grupo">
   <section class="page-section wrap" aria-labelledby="about-heading">
-    <header class="page-head">
-      <p class="page-head__eyebrow">About</p>
-      <h1 id="about-heading" class="page-head__title">Sobre el grupo</h1>
-      <p class="page-head__lede">
-        Quiénes somos y cómo trabajamos.
-      </p>
+    <header class="page-head page-head--door">
+      <p class="page-head__eyebrow">Grupo</p>
+      <h1 id="about-heading" class="page-head__title">{aboutIntro.title}</h1>
+      <p class="page-head__lede">{aboutIntro.lede}</p>
     </header>
 
-    <ul class="about-blocks">
+    <blockquote class="door-statement">
+      <p class="door-statement__text">{aboutIntro.statement}</p>
+    </blockquote>
+  </section>
+
+  <section class="about-identity section-bleed" aria-labelledby="about-identity-heading">
+    <div class="section-bleed__back" aria-hidden="true"></div>
+    <div class="section-bleed__inner wrap">
+      <h2 id="about-identity-heading" class="about-identity__title">Identidad</h2>
+      <ol class="about-blocks">
+        {
+          aboutBlocks.map((block, index) => (
+            <li class="about-block">
+              <span class="about-block__index" aria-hidden="true">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <div class="about-block__body">
+                <h3 class="about-block__title">{block.title}</h3>
+                <p class="about-block__text">{block.body}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="page-section wrap" aria-labelledby="about-doors-heading">
+    <header class="page-head page-head--compact">
+      <h2 id="about-doors-heading" class="page-head__title page-head__title--section">
+        Sigue explorando
+      </h2>
+      <p class="page-head__lede">Tres puertas al trabajo del grupo.</p>
+    </header>
+
+    <ul class="door-links">
       {
-        aboutBlocks.map((block) => (
-          <li class="about-card">
-            <h2 class="about-card__title">{block.title}</h2>
-            <p class="about-card__text">{block.body}</p>
+        aboutDoors.map((door) => (
+          <li>
+            <a class="door-link" href={door.href}>
+              <span class="door-link__label">{door.label}</span>
+              <span class="door-link__text">{door.text}</span>
+            </a>
           </li>
         ))
       }
     </ul>
+
+    <p class="door-cta">
+      <a href="/contact">Escríbenos</a>
+    </p>
   </section>
 </Layout>
