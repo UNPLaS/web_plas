@@ -1257,6 +1257,33 @@ a.btn--soft:is(:hover, .is-touch-hover) {
   line-height: 1.45;
 }
 
+.lines-card__topics {
+  margin: 0.75rem 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.lines-card__topics li + li {
+  margin-top: 0.25rem;
+}
+
+.detail-media {
+  margin: 0 0 1.5rem;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--media);
+  aspect-ratio: var(--media-rect);
+}
+
+.detail-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* Páginas internas — cabecera + secciones */
 .page-section {
   padding-block: 3rem;
@@ -1669,6 +1696,39 @@ a.contact-item__value:hover {
 .people-section__title {
   margin: 0 0 1.25rem;
   font-size: clamp(1.35rem, 2.2vw, 1.6rem);
+}
+
+.resource-block + .resource-block {
+  margin-top: 2.5rem;
+}
+
+.resource-card {
+  align-items: stretch;
+}
+
+.resource-card .works-card__body {
+  padding: 1rem 1.15rem;
+}
+
+.resource-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.1rem;
+  margin: 0.55rem 0 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.resource-card__actions a {
+  text-decoration: none;
+}
+
+.resource-card__actions a:hover {
+  text-decoration: underline;
+}
+
+.resource-card:is(:hover, .is-touch-hover) .resource-card__actions a {
+  color: #000;
 }
 
 /* Docentes — filas con avatar fijo (siempre horizontal) */

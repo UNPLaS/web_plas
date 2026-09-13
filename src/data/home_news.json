@@ -1,0 +1,56 @@
+[
+  {
+    "kind": "event",
+    "id": "evento:gruplac:00000000018409:001",
+    "title": "European Conference on Software Architecture",
+    "href": "/eventos#evento%3Agruplac%3A00000000018409%3A001",
+    "meta": "Ponente · sep. 2023",
+    "label": "Evento",
+    "date": "2023-09-18"
+  },
+  {
+    "kind": "project",
+    "id": "project:uncode",
+    "title": "UnCode",
+    "href": "/proyectos/uncode",
+    "meta": "Proyecto · Educación en ingeniería",
+    "label": "Proyecto",
+    "date": ""
+  },
+  {
+    "kind": "event",
+    "id": "evento:gruplac:00000000018409:006",
+    "title": "Encuentro Internacional de Educación en Ingeniería, EIEI ACOFI 2022",
+    "href": "/eventos#evento%3Agruplac%3A00000000018409%3A006",
+    "meta": "Ponente · sep. 2022 · CARTAGENA DE INDIAS",
+    "label": "Evento",
+    "date": "2022-09-13"
+  },
+  {
+    "kind": "project",
+    "id": "project:ftxac",
+    "title": "FTxAC",
+    "href": "/proyectos/ftxac",
+    "meta": "Proyecto · Sistemas embebidos confiables",
+    "label": "Proyecto",
+    "date": ""
+  },
+  {
+    "kind": "event",
+    "id": "evento:gruplac:00000000018409:008",
+    "title": "2021 IEEE 22th Latin-American Test Symposium (LATS)",
+    "href": "/eventos#evento%3Agruplac%3A00000000018409%3A008",
+    "meta": "Ponente Magistral · oct. 2021 · Punta del Este",
+    "label": "Evento",
+    "date": "2021-10-27"
+  },
+  {
+    "kind": "project",
+    "id": "project:she",
+    "title": "SHE: Software Hardening Environment",
+    "href": "/proyectos/she",
+    "meta": "Proyecto · Sistemas embebidos confiables",
+    "label": "Proyecto",
+    "date": ""
+  }
+]

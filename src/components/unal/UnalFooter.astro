@@ -1,6 +1,9 @@
 ---
+import { group } from '../../data/content';
+
 /** Fecha de actualización del sitio (DD/MM/AA), como en la plantilla UNAL. */
 const updatedAt = '04/08/26';
+const contactEmail = group.email;
 
 const govLeft = [
   { label: 'Régimen Legal', href: 'http://www.legal.unal.edu.co' },
@@ -57,7 +60,7 @@ const govRight = [
         Algunos derechos reservados.<br />
         <a
           title="Comuníquese con el administrador de este sitio web"
-          href="mailto:plas@unal.edu.co">plas@unal.edu.co</a
+          href={`mailto:${contactEmail}`}>{contactEmail}</a
         ><br />
         <a href="/contact">Acerca de este sitio web</a><br />
         Actualización:{updatedAt}

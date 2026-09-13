@@ -25,7 +25,9 @@ import { featuredProjects } from '../data/placeholders';
             featuredProjects.map((project) => (
               <li class="carousel__slide">
                 <a class="project-slide" href={project.href}>
-                  <div class="project-slide__media" aria-hidden="true" />
+                  <div class="project-slide__media">
+                    {project.image ? <img src={project.image} alt="" loading="lazy" /> : null}
+                  </div>
                   <div class="project-slide__body">
                     <h3 class="project-slide__title">{project.title}</h3>
                     <p class="card-outcome">{project.outcome}</p>

@@ -1,0 +1,15 @@
+{
+  "exported_at": "2026-09-13",
+  "source": "data/sql → plas.sqlite",
+  "counts": {
+    "lines": 5,
+    "projects": 13,
+    "faculty": 4,
+    "students": 55,
+    "publications": 75,
+    "theses": 54,
+    "resources": 15,
+    "events": 59,
+    "home_news": 6
+  }
+}

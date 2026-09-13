@@ -14,7 +14,9 @@ interface Props {
 }
 
 const { item } = Astro.props;
-const related = projectItems.filter((entry) => entry.id !== item.id);
+const related = projectItems.filter((entry) => entry.id !== item.id).slice(0, 3);
+const description =
+  item.sections.find((s) => s.key === 'description')?.body ?? item.summary;
 ---
 
 <Layout title={item.title}>
@@ -25,20 +27,40 @@ const related = projectItems.filter((entry) => entry.id !== item.id);
 
     <header class="page-head">
       <p class="page-head__eyebrow">{item.meta}</p>
-      <h1 class="page-head__title">{item.title}</h1>
+      <h1 class="page-head__title">{item.titleFull || item.title}</h1>
       <p class="page-head__lede">{item.summary}</p>
       <p class="card-outcome">{item.outcome}</p>
     </header>
 
+    {
+      item.image && (
+        <div class="detail-media">
+          <img src={item.image} alt="" loading="lazy" />
+        </div>
+      )
+    }
+
     <div class="page-prose">
-      <p>
-        Detalle del proyecto: contexto, componentes principales e impacto en
-        formación o uso real.
-      </p>
-      <p>
-        Placeholder para el cuerpo del proyecto dentro del mismo sistema de
-        secciones.
-      </p>
+      {item.sections.map((section) => (
+        <section>
+          {section.key !== 'description' && <h2>{section.heading}</h2>}
+          <p>{section.body}</p>
+        </section>
+      ))}
+      {item.sections.length === 0 && <p>{description}</p>}
+      {
+        item.links.length > 0 && (
+          <ul>
+            {item.links.map((link) => (
+              <li>
+                <a href={link.url} target="_blank" rel="noreferrer">
+                  {link.context || link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )
+      }
     </div>
   </article>
 
@@ -53,7 +75,9 @@ const related = projectItems.filter((entry) => entry.id !== item.id);
           {related.map((entry) => (
             <li>
               <a class="news-card" href={`/projects/${entry.id}`}>
-                <div class="news-card__media" aria-hidden="true" />
+                <div class="news-card__media">
+                  {entry.image ? <img src={entry.image} alt="" loading="lazy" /> : null}
+                </div>
                 <div class="news-card__body">
                   <p class="news-card__meta">{entry.meta}</p>
                   <h3 class="news-card__title">{entry.title}</h3>

@@ -20,6 +20,16 @@ import { researchLines } from '../data/placeholders';
             <article class="lines-card">
               <h2 class="lines-card__title">{line.title}</h2>
               <p class="lines-card__text">{line.text}</p>
+              {line.topics.length > 0 && (
+                <ul class="lines-card__topics">
+                  {line.topics
+                    .slice()
+                    .sort((a, b) => a.sort_order - b.sort_order)
+                    .map((t) => (
+                      <li>{t.topic}</li>
+                    ))}
+                </ul>
+              )}
             </article>
           </li>
         ))

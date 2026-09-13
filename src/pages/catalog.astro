@@ -24,14 +24,25 @@ import { catalogItems } from '../data/placeholders';
       {
         catalogItems.map((item) => (
           <li>
-            <article class="works-card works-card--thumb">
-              <div class="works-card__media" aria-hidden="true" />
-              <div class="works-card__body">
-                <p class="works-card__meta">{item.meta}</p>
-                <h2 class="works-card__title">{item.title}</h2>
-                <p class="works-card__author">{item.author}</p>
-              </div>
-            </article>
+            {item.href ? (
+              <a class="works-card works-card--thumb" href={item.href} target="_blank" rel="noreferrer">
+                <div class="works-card__media" aria-hidden="true" />
+                <div class="works-card__body">
+                  <p class="works-card__meta">{item.meta}</p>
+                  <h2 class="works-card__title">{item.title}</h2>
+                  <p class="works-card__author">{item.author}</p>
+                </div>
+              </a>
+            ) : (
+              <article class="works-card works-card--thumb">
+                <div class="works-card__media" aria-hidden="true" />
+                <div class="works-card__body">
+                  <p class="works-card__meta">{item.meta}</p>
+                  <h2 class="works-card__title">{item.title}</h2>
+                  <p class="works-card__author">{item.author}</p>
+                </div>
+              </article>
+            )}
           </li>
         ))
       }

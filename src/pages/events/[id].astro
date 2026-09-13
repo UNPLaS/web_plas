@@ -14,7 +14,11 @@ interface Props {
 }
 
 const { item } = Astro.props;
-const related = eventItems.filter((entry) => entry.id !== item.id);
+const related = eventItems.filter((entry) => entry.id !== item.id).slice(0, 3);
+const dateLabel =
+  item.dateFrom && item.dateTo && item.dateFrom !== item.dateTo
+    ? `${item.dateFrom} — ${item.dateTo}`
+    : item.dateFrom || item.year;
 ---
 
 <Layout title={item.title}>
@@ -32,13 +36,26 @@ const related = eventItems.filter((entry) => entry.id !== item.id);
 
     <div class="page-prose">
       <p>
-        Detalle del evento: agenda, público y lo que quedó como resultado
-        compartible.
+        <strong>Tipo:</strong> {item.eventType}
+        {item.ambito ? ` · ${item.ambito}` : ''}
       </p>
       <p>
-        Placeholder para el cuerpo del evento dentro del mismo sistema de
-        secciones.
+        <strong>Fechas:</strong> {dateLabel}
       </p>
+      {
+        item.place && item.place !== 'No informado' && (
+          <p>
+            <strong>Lugar:</strong> {item.place}
+          </p>
+        )
+      }
+      {
+        item.participation && (
+          <p>
+            <strong>Participación:</strong> {item.participation}
+          </p>
+        )
+      }
     </div>
   </article>
 

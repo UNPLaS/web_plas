@@ -1,0 +1,866 @@
+[
+  {
+    "id": "tesis:unal/89947",
+    "handle": "unal/89947",
+    "title": "Detección de evasión por puerta de vagón en sistemas BRT a través del análisis automático de video mediante un método de inteligencia artificial",
+    "year": "2026",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/89947",
+    "line_id_primary": "line:transporte",
+    "authors": "Hernández Ortiz, Juan Camilo",
+    "line_ids": [
+      "line:transporte"
+    ],
+    "line_names": [
+      "Sistemas inteligentes de transporte"
+    ]
+  },
+  {
+    "id": "tesis:unal/90123",
+    "handle": "unal/90123",
+    "title": "Detección de la evasión en los puntos de validación de pago por torniquete del sistema de transporte Transmilenio",
+    "year": "2026",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/90123",
+    "line_id_primary": "line:transporte",
+    "authors": "Molina Borray, Laura Camila",
+    "line_ids": [
+      "line:transporte"
+    ],
+    "line_names": [
+      "Sistemas inteligentes de transporte"
+    ]
+  },
+  {
+    "id": "tesis:unal/89978",
+    "handle": "unal/89978",
+    "title": "Prototipo de asistente virtual como apoyo al proceso de aprendizaje en una asignatura de análisis y visualización de datos utilizando grandes modelos de lenguaje",
+    "year": "2026",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/89978",
+    "line_id_primary": "line:educacion",
+    "authors": "Olaya Castro, Hendrik Eugenio",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "line_names": [
+      "Educación en ingeniería"
+    ]
+  },
+  {
+    "id": "tesis:unal/89979",
+    "handle": "unal/89979",
+    "title": "Sistema de asistencia virtual basado en LLMs para el manejo del cultivo de papa",
+    "year": "2026",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/89979",
+    "line_id_primary": "line:agricultura",
+    "authors": "Cruz Chú, Mariana Beatriz",
+    "line_ids": [
+      "line:agricultura"
+    ],
+    "line_names": [
+      "Agricultura de precisión"
+    ]
+  },
+  {
+    "id": "tesis:unal/89150",
+    "handle": "unal/89150",
+    "title": "Análisis automatizado de comparación de productos con técnicas de procesamiento de lenguaje natural para artículos deportivos extraídos de canales de comercio electrónico",
+    "year": "2025",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/89150",
+    "line_id_primary": "line:lenguajes",
+    "authors": "Correa Lombana, Juan Manuel",
+    "line_ids": [
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Lenguajes de programación"
+    ]
+  },
+  {
+    "id": "tesis:unal/89550",
+    "handle": "unal/89550",
+    "title": "Detección y caracterización espectral individual de palmas aceiteras en imágenes aéreas mediante técnicas de visión artificial",
+    "year": "2025",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/89550",
+    "line_id_primary": "line:agricultura",
+    "authors": "Gómez Rivera, Andrés Felipe",
+    "line_ids": [
+      "line:agricultura"
+    ],
+    "line_names": [
+      "Agricultura de precisión"
+    ]
+  },
+  {
+    "id": "tesis:unal/89352",
+    "handle": "unal/89352",
+    "title": "Efectos de la implementación de una metodología de gestión de proyectos en la habilidad de los estudiantes para gestionar el tiempo",
+    "year": "2025",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/89352",
+    "line_id_primary": "line:educacion",
+    "authors": "Casas López, Laura Yulieth",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "line_names": [
+      "Educación en ingeniería"
+    ]
+  },
+  {
+    "id": "tesis:unal/88357",
+    "handle": "unal/88357",
+    "title": "Evaluación automática de casos de prueba de ejercicios de programación de computadores",
+    "year": "2025",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/88357",
+    "line_id_primary": "line:educacion",
+    "authors": "Rivera Cárdenas, David Leonardo",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "line_names": [
+      "Educación en ingeniería"
+    ]
+  },
+  {
+    "id": "tesis:unal/88492",
+    "handle": "unal/88492",
+    "title": "Generación de recomendaciones automáticas de inversión en la Bolsa de Valores de Colombia mediante agentes autónomos de inteligencia artificial",
+    "year": "2025",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/88492",
+    "line_id_primary": "line:lenguajes",
+    "authors": "Rodriguez Barreto, Julian Mauricio",
+    "line_ids": [
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Lenguajes de programación"
+    ]
+  },
+  {
+    "id": "tesis:unal/89211",
+    "handle": "unal/89211",
+    "title": "Modelo de predicción de abandono de clientes en un marketplace mediante técnicas de machine learning",
+    "year": "2025",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/89211",
+    "line_id_primary": "line:educacion",
+    "authors": "Baquero Pico, Cristian Adolfo",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "line_names": [
+      "Educación en ingeniería"
+    ]
+  },
+  {
+    "id": "tesis:unal/89227",
+    "handle": "unal/89227",
+    "title": "Prototipo de plataforma educativa basada en modelos de lenguaje para el apoyo en el aprendizaje de matemáticas básicas",
+    "year": "2025",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/89227",
+    "line_id_primary": "line:educacion",
+    "authors": "Pabón Correa, David Alejandro",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "line_names": [
+      "Educación en ingeniería"
+    ]
+  },
+  {
+    "id": "tesis:unal/87944",
+    "handle": "unal/87944",
+    "title": "Detección y conteo de evasores en el sistema de transporte Transmilenio",
+    "year": "2024",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/87944",
+    "line_id_primary": "line:transporte",
+    "authors": "Rodríguez Peraza, César Ivan",
+    "line_ids": [
+      "line:transporte"
+    ],
+    "line_names": [
+      "Sistemas inteligentes de transporte"
+    ]
+  },
+  {
+    "id": "tesis:unal/86045",
+    "handle": "unal/86045",
+    "title": "Diseño y evaluación de un modelo computacional basado en aprendizaje profundo para la predicción del tráfico vial en un segmento de vía de la ciudad de Bogotá",
+    "year": "2024",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/86045",
+    "line_id_primary": "line:transporte",
+    "authors": "Preciado Rojas, María Camila",
+    "line_ids": [
+      "line:transporte"
+    ],
+    "line_names": [
+      "Sistemas inteligentes de transporte"
+    ]
+  },
+  {
+    "id": "tesis:unal/86898",
+    "handle": "unal/86898",
+    "title": "Efecto de un entorno de aprendizaje de programación de computadores basado en el desarrollo de videojuegos sobre la motivación por aprender de los estudiantes",
+    "year": "2024",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/86898",
+    "line_id_primary": "line:educacion",
+    "authors": "Peña Vargas, Manuel Alejandro",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "line_names": [
+      "Educación en ingeniería"
+    ]
+  },
+  {
+    "id": "tesis:unal/86557",
+    "handle": "unal/86557",
+    "title": "Evaluación del efecto de un laboratorio híbrido en el aprendizaje de un Lenguaje de Descripción de Hardware (HDL)",
+    "year": "2024",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/86557",
+    "line_id_primary": "line:educacion",
+    "authors": "Rodriguez Pinto, Father Alexander",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "line_names": [
+      "Educación en ingeniería"
+    ]
+  },
+  {
+    "id": "tesis:unal/86734",
+    "handle": "unal/86734",
+    "title": "Método basado en visión artificial para la identificación del eje aplicado al proceso de inspección de frenos de vehículos livianos en centros de diagnóstico automotor",
+    "year": "2024",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/86734",
+    "line_id_primary": "line:transporte",
+    "authors": "Mongua López, Luis Alejandro",
+    "line_ids": [
+      "line:transporte"
+    ],
+    "line_names": [
+      "Sistemas inteligentes de transporte"
+    ]
+  },
+  {
+    "id": "tesis:unal/84828",
+    "handle": "unal/84828",
+    "title": "Análisis automático de código fuente aplicado en el software para comercio en línea: SAP Commerce Cloud",
+    "year": "2023",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/84828",
+    "line_id_primary": "line:lenguajes",
+    "authors": "Ramírez Espejo, Roger Steven",
+    "line_ids": [
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Lenguajes de programación"
+    ]
+  },
+  {
+    "id": "tesis:unal/85008",
+    "handle": "unal/85008",
+    "title": "Design of Fault Tolerant Embedded Systems using Approximate Computing Techniques.",
+    "year": "2023",
+    "degree": "doctorado",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/85008",
+    "line_id_primary": "line:embebidos",
+    "authors": "Aponte Moreno, John Alexander",
+    "line_ids": [
+      "line:embebidos"
+    ],
+    "line_names": [
+      "Sistemas embebidos confiables"
+    ]
+  },
+  {
+    "id": "tesis:unal/85634",
+    "handle": "unal/85634",
+    "title": "Development of a software method to assist in the thematic analysis of responses to open ended questions in Spanish-language surveys",
+    "year": "2023",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/85634",
+    "line_id_primary": "line:lenguajes",
+    "authors": "Cañas Palomino, Luis Alfonso",
+    "line_ids": [
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Lenguajes de programación"
+    ]
+  },
+  {
+    "id": "tesis:unal/84111",
+    "handle": "unal/84111",
+    "title": "Implementación del proceso de comunicación inalámbrica para el dispositivo de pruebas de desminado Humanitario MEDICI",
+    "year": "2023",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/84111",
+    "line_id_primary": "line:transporte",
+    "authors": "Ruiz Algarra, Eder Fabian",
+    "line_ids": [
+      "line:transporte"
+    ],
+    "line_names": [
+      "Sistemas inteligentes de transporte"
+    ]
+  },
+  {
+    "id": "tesis:unal/83931",
+    "handle": "unal/83931",
+    "title": "Prototipo de una herramienta de software de calificación automática con proceso de realimentación para el apoyo al aprendizaje de lenguajes de descripción de hardware",
+    "year": "2023",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/83931",
+    "line_id_primary": "line:educacion",
+    "authors": "Corso Pinzón, Andrés Francisco José",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "line_names": [
+      "Educación en ingeniería"
+    ]
+  },
+  {
+    "id": "tesis:unal/84616",
+    "handle": "unal/84616",
+    "title": "Road accident forecast by using predictive modeling techniques",
+    "year": "2023",
+    "degree": "doctorado",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/84616",
+    "line_id_primary": "line:transporte",
+    "authors": "Gutierrez Osorio, Camilo Albeiro",
+    "line_ids": [
+      "line:transporte"
+    ],
+    "line_names": [
+      "Sistemas inteligentes de transporte"
+    ]
+  },
+  {
+    "id": "tesis:unal/83049",
+    "handle": "unal/83049",
+    "title": "Analítica de aprendizaje en la asignatura Programación de Computadores: una investigación basada en métodos mixtos",
+    "year": "2022",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/83049",
+    "line_id_primary": "line:educacion",
+    "authors": "Chaparro Amaya, Edna Johanna",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "line_names": [
+      "Educación en ingeniería"
+    ]
+  },
+  {
+    "id": "tesis:unal/81571",
+    "handle": "unal/81571",
+    "title": "Análisis de datos de accidentalidad vial de la ciudad de Bogotá a partir de datos abiertos y datos obtenidos desde redes sociales",
+    "year": "2022",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/81571",
+    "line_id_primary": "line:transporte",
+    "authors": "Vargas Montero, Fernando",
+    "line_ids": [
+      "line:transporte"
+    ],
+    "line_names": [
+      "Sistemas inteligentes de transporte"
+    ]
+  },
+  {
+    "id": "tesis:unal/81981",
+    "handle": "unal/81981",
+    "title": "Evaluación de estrategia de localización de barcos, usando señales acústicas comprimidas",
+    "year": "2022",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/81981",
+    "line_id_primary": "line:transporte",
+    "authors": "Chaparro Arce, Daniel Felipe",
+    "line_ids": [
+      "line:transporte"
+    ],
+    "line_names": [
+      "Sistemas inteligentes de transporte"
+    ]
+  },
+  {
+    "id": "tesis:unal/82923",
+    "handle": "unal/82923",
+    "title": "Evaluación del impacto en la motivación en el aprendizaje de los estudiantes de programación de computadores mediante el uso de una herramienta de evaluación automática",
+    "year": "2022",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/82923",
+    "line_id_primary": "line:educacion",
+    "authors": "Lozano Rojas, Hernan Dario",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "line_names": [
+      "Educación en ingeniería"
+    ]
+  },
+  {
+    "id": "tesis:unal/81535",
+    "handle": "unal/81535",
+    "title": "Diseño de antenas monopulso para aplicaciones de RFID en sistemas ITS",
+    "year": "2021",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/81535",
+    "line_id_primary": "line:transporte",
+    "authors": "Alcaraz Rojas, Carolina",
+    "line_ids": [
+      "line:transporte"
+    ],
+    "line_names": [
+      "Sistemas inteligentes de transporte"
+    ]
+  },
+  {
+    "id": "tesis:unal/79877",
+    "handle": "unal/79877",
+    "title": "Diseño y validación interna de un instrumento de autoinforme para caracterizar las estrategias de aprendizaje de programación de computadores",
+    "year": "2021",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/79877",
+    "line_id_primary": "line:educacion",
+    "authors": "Torres Jiménez, Stephanie",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "line_names": [
+      "Educación en ingeniería"
+    ]
+  },
+  {
+    "id": "tesis:unal/79756",
+    "handle": "unal/79756",
+    "title": "Evaluación del efecto de la gamificación asistida por computador en la motivación de los estudiantes de programación de computadores",
+    "year": "2021",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/79756",
+    "line_id_primary": "line:educacion",
+    "authors": "Cuervo Cely, Karen Daniela",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "line_names": [
+      "Educación en ingeniería"
+    ]
+  },
+  {
+    "id": "tesis:unal/80927",
+    "handle": "unal/80927",
+    "title": "Extracción y análisis de información de accidentes de tránsito desde redes sociales",
+    "year": "2021",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/80927",
+    "line_id_primary": "line:transporte",
+    "authors": "Suat Rojas, Nestor Eduardo",
+    "line_ids": [
+      "line:transporte"
+    ],
+    "line_names": [
+      "Sistemas inteligentes de transporte"
+    ]
+  },
+  {
+    "id": "tesis:unal/80482",
+    "handle": "unal/80482",
+    "title": "Método para la estimación de maleza en cultivos de lechuga utilizando aprendizaje profundo e imágenes multiespectrales",
+    "year": "2021",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/80482",
+    "line_id_primary": "line:agricultura",
+    "authors": "Osorio Delgado, Anderson Kavir",
+    "line_ids": [
+      "line:agricultura"
+    ],
+    "line_names": [
+      "Agricultura de precisión"
+    ]
+  },
+  {
+    "id": "tesis:unal/80862",
+    "handle": "unal/80862",
+    "title": "Prototipo de herramienta computacional para el aprendizaje colaborativo de programación de computadores",
+    "year": "2021",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/80862",
+    "line_id_primary": "line:educacion",
+    "authors": "Mendez Lara, Jhon Alexis",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "line_names": [
+      "Educación en ingeniería"
+    ]
+  },
+  {
+    "id": "tesis:unal/77510",
+    "handle": "unal/77510",
+    "title": "Conteo de vehículos a partir de vídeos usando machine learning",
+    "year": "2020",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/77510",
+    "line_id_primary": "line:transporte",
+    "authors": "Navarro Ávila, Juan Sebastián",
+    "line_ids": [
+      "line:transporte"
+    ],
+    "line_names": [
+      "Sistemas inteligentes de transporte"
+    ]
+  },
+  {
+    "id": "tesis:unal/77441",
+    "handle": "unal/77441",
+    "title": "Métricas de legibilidad del software: una revisión sistemática de literatura",
+    "year": "2020",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/77441",
+    "line_id_primary": "line:lenguajes",
+    "authors": "Echavarría Flórez, Ingrid Sofía",
+    "line_ids": [
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Lenguajes de programación"
+    ]
+  },
+  {
+    "id": "tesis:unal/77501",
+    "handle": "unal/77501",
+    "title": "Relación entre los eventos públicos y los accidentes de tránsito a partir del análisis de datos en Bogotá",
+    "year": "2020",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/77501",
+    "line_id_primary": "line:transporte",
+    "authors": "Rojas Real, Yefersson Adrian",
+    "line_ids": [
+      "line:transporte"
+    ],
+    "line_names": [
+      "Sistemas inteligentes de transporte"
+    ]
+  },
+  {
+    "id": "tesis:unal/76556",
+    "handle": "unal/76556",
+    "title": "An information retrieval strategy for large multimodal data collections involving source code and natural language",
+    "year": "2019",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/76556",
+    "line_id_primary": "line:lenguajes",
+    "authors": "Baquero Vargas, Juan Felipe",
+    "line_ids": [
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Lenguajes de programación"
+    ]
+  },
+  {
+    "id": "tesis:unal/76364",
+    "handle": "unal/76364",
+    "title": "Análisis de la articulación del diseño curricular del programa de ingeniería electrónica, en relación con los objetivos de aprendizaje asociados a metrología",
+    "year": "2019",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/76364",
+    "line_id_primary": "line:educacion",
+    "authors": "Culma Caviedes, Jose Eduin",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "line_names": [
+      "Educación en ingeniería"
+    ]
+  },
+  {
+    "id": "tesis:unal/76549",
+    "handle": "unal/76549",
+    "title": "Automatic source code analysis forassessment of solutions toprogramming tasks",
+    "year": "2019",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/76549",
+    "line_id_primary": "line:educacion",
+    "authors": "Rosales Castro, Lina Fernanda",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "line_names": [
+      "Educación en ingeniería"
+    ]
+  },
+  {
+    "id": "tesis:unal/76553",
+    "handle": "unal/76553",
+    "title": "Building a Developer’s Reputation Model for Programming Contest Platforms based on Source Code Analysis",
+    "year": "2019",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/76553",
+    "line_id_primary": "line:lenguajes",
+    "authors": "Garavito Mendez, Oscar Javier",
+    "line_ids": [
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Lenguajes de programación"
+    ]
+  },
+  {
+    "id": "tesis:unal/76092",
+    "handle": "unal/76092",
+    "title": "Diseño y validación de un sistema de procesamiento de imágenes para el reconocimiento vehicular en intersecciones viales",
+    "year": "2019",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/76092",
+    "line_id_primary": "line:transporte",
+    "authors": "Morales Aguilar, Santiago",
+    "line_ids": [
+      "line:transporte"
+    ],
+    "line_names": [
+      "Sistemas inteligentes de transporte"
+    ]
+  },
+  {
+    "id": "tesis:unal/78469",
+    "handle": "unal/78469",
+    "title": "Dispositivo IoT para el control de identificación y movilidad pecuaria",
+    "year": "2019",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/78469",
+    "line_id_primary": "line:agricultura",
+    "authors": "Quintero Albornoz, Juan Sebastián",
+    "line_ids": [
+      "line:agricultura"
+    ],
+    "line_names": [
+      "Agricultura de precisión"
+    ]
+  },
+  {
+    "id": "tesis:unal/76352",
+    "handle": "unal/76352",
+    "title": "Sistema para la medición de velocidad media vehicular mediante tecnologías Bluetooth y Wifi",
+    "year": "2019",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/76352",
+    "line_id_primary": "line:transporte",
+    "authors": "Silva Parra, Daniel Arturo",
+    "line_ids": [
+      "line:transporte"
+    ],
+    "line_names": [
+      "Sistemas inteligentes de transporte"
+    ]
+  },
+  {
+    "id": "tesis:unal/76335",
+    "handle": "unal/76335",
+    "title": "Static Analysis of Python Programs using Abstract Interpretation: An Application to Tensor Shape Analysis",
+    "year": "2019",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/76335",
+    "line_id_primary": "line:lenguajes",
+    "authors": "Cruz Camacho, Elkin Alejandro",
+    "line_ids": [
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Lenguajes de programación"
+    ]
+  },
+  {
+    "id": "tesis:unal/62958",
+    "handle": "unal/62958",
+    "title": "Clasificación y cuantificación de maleza en cultivos de hortalizas por medio de  procesamiento de imágenes digitales multiespectrales",
+    "year": "2018",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/62958",
+    "line_id_primary": "line:agricultura",
+    "authors": "Puerto Lara, Andrés Esteban",
+    "line_ids": [
+      "line:agricultura"
+    ],
+    "line_names": [
+      "Agricultura de precisión"
+    ]
+  },
+  {
+    "id": "tesis:unal/64515",
+    "handle": "unal/64515",
+    "title": "Diseño y Validación de un framework para IoT basado en tecnología RFID",
+    "year": "2018",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/64515",
+    "line_id_primary": "line:transporte",
+    "authors": "Urbano Vallejo, Oscar Andrés",
+    "line_ids": [
+      "line:transporte"
+    ],
+    "line_names": [
+      "Sistemas inteligentes de transporte"
+    ]
+  },
+  {
+    "id": "tesis:unal/62959",
+    "handle": "unal/62959",
+    "title": "Sistema de monitoreo y clasificación de tráfico urbano en tiempo real a través de procesamiento digital de imágenes",
+    "year": "2018",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/62959",
+    "line_id_primary": "line:transporte",
+    "authors": "Camacho Poveda, Edgar Camilo",
+    "line_ids": [
+      "line:transporte"
+    ],
+    "line_names": [
+      "Sistemas inteligentes de transporte"
+    ]
+  },
+  {
+    "id": "tesis:unal/64771",
+    "handle": "unal/64771",
+    "title": "Social engineering: psychology applied to Information Security",
+    "year": "2018",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/64771",
+    "line_id_primary": "line:lenguajes",
+    "authors": "Del Pozo Falconí, Iván Mauricio",
+    "line_ids": [
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Lenguajes de programación"
+    ]
+  },
+  {
+    "id": "tesis:unal/60127",
+    "handle": "unal/60127",
+    "title": "Prototipado automático de sistemas de información transaccionales usando una especificación en lenguaje natural restringido",
+    "year": "2017",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/60127",
+    "line_id_primary": "line:lenguajes",
+    "authors": "Alfonso Hoyos, Jean Pierre",
+    "line_ids": [
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Lenguajes de programación"
+    ]
+  },
+  {
+    "id": "tesis:unal/60068",
+    "handle": "unal/60068",
+    "title": "Source code analysis on student assignments using machine learning techniques",
+    "year": "2017",
+    "degree": "maestria",
+    "item_url": "https://repositorio.unal.edu.co/handle/unal/60068",
+    "line_id_primary": "line:educacion",
+    "authors": "Castellanos Morales, Hugo Armando",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "line_names": [
+      "Educación en ingeniería"
+    ]
+  },
+  {
+    "id": "tesis:inventory/mora-escobar-elvert",
+    "handle": "inventory/mora-escobar-elvert",
+    "title": "Análisis y Optimización de código fuente para Computación Aproximada.",
+    "year": "",
+    "degree": "maestria",
+    "item_url": "",
+    "line_id_primary": "line:embebidos",
+    "authors": "Mora Escobar, Elvert",
+    "line_ids": [
+      "line:embebidos"
+    ],
+    "line_names": [
+      "Sistemas embebidos confiables"
+    ]
+  },
+  {
+    "id": "tesis:inventory/sanabria-mesa-edwin-javier",
+    "handle": "inventory/sanabria-mesa-edwin-javier",
+    "title": "Desarrollo de una técnica de tolerancia a fallos basada en software para la arquitectura de procesadores RISC-V.",
+    "year": "",
+    "degree": "maestria",
+    "item_url": "",
+    "line_id_primary": "line:embebidos",
+    "authors": "Sanabria Mesa, Edwin Javier",
+    "line_ids": [
+      "line:embebidos"
+    ],
+    "line_names": [
+      "Sistemas embebidos confiables"
+    ]
+  },
+  {
+    "id": "tesis:inventory/criollo-velazquez-edgar-hernando",
+    "handle": "inventory/criollo-velazquez-edgar-hernando",
+    "title": "La escritura como herramienta de aprendizaje en el aula de ingeniería.",
+    "year": "",
+    "degree": "doctorado",
+    "item_url": "proyectos/escritura.html",
+    "line_id_primary": "line:educacion",
+    "authors": "Criollo Velazquez, Edgar Hernando",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "line_names": [
+      "Educación en ingeniería"
+    ]
+  },
+  {
+    "id": "tesis:inventory/llanos-mosquera-jose-miguel",
+    "handle": "inventory/llanos-mosquera-jose-miguel",
+    "title": "Modelo de alerta temprana basado en la predicción del éxito académico de resultados de aprendizaje para disminuir la deserción en estudiantes de cursos de programación.",
+    "year": "",
+    "degree": "doctorado",
+    "item_url": "",
+    "line_id_primary": "line:educacion",
+    "authors": "Llanos Mosquera, José Miguel",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "line_names": [
+      "Educación en ingeniería"
+    ]
+  },
+  {
+    "id": "tesis:inventory/vergara-vargas-jeisson-andres",
+    "handle": "inventory/vergara-vargas-jeisson-andres",
+    "title": "Security Assurance in the Architectural Evolution of Large Software Systems with Web Front-Ends.",
+    "year": "",
+    "degree": "doctorado",
+    "item_url": "",
+    "line_id_primary": "line:lenguajes",
+    "authors": "Vergara Vargas, Jeisson Andrés",
+    "line_ids": [
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Lenguajes de programación"
+    ]
+  }
+]

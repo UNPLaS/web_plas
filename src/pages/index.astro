@@ -85,7 +85,9 @@ import {
           facultyItems.map((person) => (
             <li>
               <a class="faculty-card" href={person.href}>
-                <div class="faculty-card__media" aria-hidden="true" />
+                <div class="faculty-card__media">
+                  {person.image ? <img src={person.image} alt="" loading="lazy" /> : null}
+                </div>
                 <div class="faculty-card__body">
                   <h3 class="faculty-card__name">{person.name}</h3>
                   <p class="faculty-card__role">{person.role}</p>
