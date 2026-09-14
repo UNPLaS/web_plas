@@ -7,6 +7,7 @@ export {
   catalogItems,
   contactFields,
   contactIntro,
+  contactLinks,
   eventItems,
   facultyItems,
   featuredProjects,
@@ -19,6 +20,8 @@ export {
   resourceSections,
   site,
   students,
+  activeStudents,
+  historicalStudentSections,
 } from './content';
 
 export const nav = [

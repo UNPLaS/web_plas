@@ -1,21 +1,5 @@
 [
   {
-    "id": "estudiante:moncada-alejandro",
-    "name_display": "Alejandro Moncada",
-    "name_sort": "Moncada, Alejandro",
-    "degree_highest": "maestria",
-    "role_label": "Estudiante de maestría",
-    "status": "Activo",
-    "exit_year": "",
-    "active": true,
-    "thesis": null,
-    "lines": "Sistemas embebidos confiables",
-    "image_path": "",
-    "n_tesis": "0",
-    "email": "",
-    "links": []
-  },
-  {
     "id": "estudiante:cruz-chu-mariana-beatriz",
     "name_display": "Mariana Beatriz Cruz Chú",
     "name_sort": "Cruz Chú, Mariana Beatriz",

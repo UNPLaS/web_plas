@@ -75,6 +75,16 @@ function resolveLineColor(lineId?: string, lineName?: string) {
   return '';
 }
 
+/** Enlaces de perfiles académicos (ORCID, Scholar, etc.). */
+function profileLinks(profiles: { label: string; url: string }[] = []) {
+  return profiles
+    .filter((p) => p.label && p.url)
+    .map((p) => ({
+      label: p.label,
+      href: p.url,
+    }));
+}
+
 /** Azules por tipología de publicación / nivel de tesis / tipo de estudiante. */
 const NIVEL_BLUES: Record<string, string> = {
   journal_article: '#1a8cff',
@@ -194,6 +204,7 @@ export const facultyItems = facultyJson.map((f) => {
       id: isFelipe ? 'rol-amber' : 'rol-mid',
       label: groupRole,
     },
+    profileLinks: profileLinks(f.profiles ?? []),
   };
 });
 
@@ -205,25 +216,34 @@ export const people = facultyItems.map((f) => ({
   meta: f.meta,
   image: f.image,
   roleChip: f.roleChip,
+  profileLinks: f.profileLinks,
 }));
 
 export const students = [...studentsJson]
   .sort((a, b) => Number(b.active) - Number(a.active) || a.name_sort.localeCompare(b.name_sort))
   .map((s) => {
-    const typeLabel = s.role_label || degreeLabel[s.degree_highest] || s.degree_highest;
+    const degree = s.thesis?.degree || s.degree_highest;
+    const typeLabel = s.role_label || degreeLabel[degree] || degree;
     const lineName = s.lines || '';
+    const thesisUrl =
+      s.thesis?.url || s.links?.find((l) => /tesis/i.test(l.label))?.url || '';
     return {
       id: s.id,
       name: s.name_display,
       role: typeLabel,
       meta: s.status,
       image: s.image_path || '',
-      active: s.active,
+      active: Boolean(s.active),
+      degree,
+      exitYear: s.exit_year || s.thesis?.year || '',
+      thesisTitle: s.thesis?.title || '',
+      thesisYear: s.thesis?.year || s.exit_year || '',
+      thesisHref: thesisUrl,
       chips: [
         {
           id: 'nivel',
           label: typeLabel,
-          color: resolveNivelColor({ degree: s.degree_highest, levelLabel: typeLabel }),
+          color: resolveNivelColor({ degree, levelLabel: typeLabel }),
         },
         ...(lineName
           ? [{ id: 'linea', label: lineName, color: resolveLineColor(undefined, lineName) }]
@@ -231,6 +251,32 @@ export const students = [...studentsJson]
       ],
     };
   });
+
+export const activeStudents = students.filter((s) => s.active);
+
+export const historicalStudentSections = (
+  [
+    {
+      title: 'Doctorado',
+      items: students.filter(
+        (s) => !s.active && /doctorado/i.test(s.degree || s.role || ''),
+      ),
+    },
+    {
+      title: 'Maestría',
+      items: students.filter(
+        (s) => !s.active && /maestria|maestría/i.test(s.degree || s.role || ''),
+      ),
+    },
+  ] as const
+).map((sec) => ({
+  ...sec,
+  items: [...sec.items].sort(
+    (a, b) =>
+      String(b.thesisYear).localeCompare(String(a.thesisYear)) ||
+      a.name.localeCompare(b.name),
+  ),
+})).filter((sec) => sec.items.length > 0);
 
 export const researchLines = linesJson.map((line) => ({
   id: line.id,
@@ -318,6 +364,21 @@ export const contactFields = [
     value: `${groupJson.address} · ${groupJson.city}`,
   },
 ];
+
+export const contactLinks = [
+  groupJson.gruplac_url
+    ? {
+        label: `GrupLAC (Minciencias ${groupJson.minciencias_class})`,
+        href: groupJson.gruplac_url,
+      }
+    : null,
+  groupJson.hermes_url
+    ? {
+        label: 'HERMES',
+        href: groupJson.hermes_url,
+      }
+    : null,
+].filter(Boolean) as { label: string; href: string }[];
 
 export const contactIntro = {
   title: 'Escríbenos',

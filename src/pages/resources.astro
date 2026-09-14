@@ -36,7 +36,7 @@ import { resourceSections } from '../data/placeholders';
                       {actions.length > 0 && (
                         <p class="resource-card__actions">
                           {actions.map((link) => (
-                            <a href={link.url} target="_blank" rel="noreferrer">
+                            <a class="btn btn--soft" href={link.url} target="_blank" rel="noreferrer">
                               {link.label}
                             </a>
                           ))}

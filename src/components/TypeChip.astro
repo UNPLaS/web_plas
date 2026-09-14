@@ -1,12 +1,29 @@
 ---
 interface Props {
-  typology: { id: string; label: string; color?: string };
+  typology: { id: string; label: string; color?: string; href?: string };
 }
 
 const { typology } = Astro.props;
 const style = typology.color
   ? `--chip-color: ${typology.color}`
   : undefined;
+const className = `type-chip type-chip--${typology.id}`;
 ---
 
-<span class={`type-chip type-chip--${typology.id}`} style={style}>{typology.label}</span>
+{
+  typology.href ? (
+    <a
+      class={className}
+      style={style}
+      href={typology.href}
+      target="_blank"
+      rel="noreferrer"
+    >
+      {typology.label}
+    </a>
+  ) : (
+    <span class={className} style={style}>
+      {typology.label}
+    </span>
+  )
+}

@@ -23,7 +23,7 @@ const description =
 <Layout title={item.title}>
   <article class="page-section page-section--tight wrap">
     <p class="page-back">
-      <a href="/projects">← Volver a proyectos</a>
+      <a class="btn btn--soft" href="/projects">← Volver a proyectos</a>
     </p>
 
     <header class="page-head">
@@ -58,10 +58,10 @@ const description =
       {item.sections.length === 0 && <p>{description}</p>}
       {
         item.links.length > 0 && (
-          <ul>
+          <ul class="detail-links">
             {item.links.map((link) => (
               <li>
-                <a href={link.url} target="_blank" rel="noreferrer">
+                <a class="btn btn--soft" href={link.url} target="_blank" rel="noreferrer">
                   {link.context || link.label}
                 </a>
               </li>
