@@ -1,0 +1,622 @@
+[
+  {
+    "line_id": "line:educacion",
+    "keyword": "educacion",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "aprendizaje",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "learning analytics",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "learning",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "estudiante",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "estudiantes",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "student",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "students",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "enseñanza",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "ensenanza",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "pedagog",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "cs1",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "gamific",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "motivacion",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "motivation",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "calificacion automatica",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "calificación automática",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "automatic grading",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "automatic assessment",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "realimentacion",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "retroalimentacion",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "feedback",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "uncode",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "analitica de aprendizaje",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "analítica de aprendizaje",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "estrategias de aprendizaje",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "self-regulated",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "autorregul",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "aprendizaje colaborativo",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "collaborative learning",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "videojuego",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "serious game",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "engineering education",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "educacion en ingenieria",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "instrumento de autoinforme",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "aula de ingenieria",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "programming course",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "programacion de computadores",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "programación de computadores",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "computer programming",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "jupyter",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:educacion",
+    "keyword": "vpl",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "embebido",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "embedded system",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "embedded systems",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "soft error",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "soft-error",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "fault tolerant",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "fault-tolerant",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "fault tolerance",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "tolerancia a fallos",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "radiacion",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "radiation",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "fpga",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "microprocesador",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "microprocessor",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "approximate computing",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "computacion aproximada",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "computación aproximada",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "hardening",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "reliability",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "fiabilidad",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "bit flip",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "seu",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "set mitigation",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "hardware/software",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:embebidos",
+    "keyword": "cots microprocessor",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:lenguajes",
+    "keyword": "programming language",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:lenguajes",
+    "keyword": "lenguaje de programacion",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:lenguajes",
+    "keyword": "lenguajes de programacion",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:lenguajes",
+    "keyword": "compilador",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:lenguajes",
+    "keyword": "compiler",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:lenguajes",
+    "keyword": "static analysis",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:lenguajes",
+    "keyword": "analisis estatico",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:lenguajes",
+    "keyword": "análisis estático",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:lenguajes",
+    "keyword": "abstract interpretation",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:lenguajes",
+    "keyword": "type system",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:lenguajes",
+    "keyword": "sistema de tipos",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:lenguajes",
+    "keyword": "source code analysis",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:lenguajes",
+    "keyword": "analisis de codigo fuente",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:lenguajes",
+    "keyword": "análisis de código",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:lenguajes",
+    "keyword": "domain-specific language",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:lenguajes",
+    "keyword": "tensor shape",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:lenguajes",
+    "keyword": "semantic analysis",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:lenguajes",
+    "keyword": "program analysis",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:lenguajes",
+    "keyword": "code analysis",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:lenguajes",
+    "keyword": "interprete de",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:lenguajes",
+    "keyword": "parser",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:transporte",
+    "keyword": "transporte",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:transporte",
+    "keyword": "traffic",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:transporte",
+    "keyword": "trafico",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:transporte",
+    "keyword": "tráfico vehicular",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:transporte",
+    "keyword": "vehicular",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:transporte",
+    "keyword": "intelligent transportation",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:transporte",
+    "keyword": "sistemas inteligentes de transporte",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:transporte",
+    "keyword": "accident",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:transporte",
+    "keyword": "accidente de transito",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:transporte",
+    "keyword": "accidente de tránsito",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:transporte",
+    "keyword": "road accident",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:transporte",
+    "keyword": "conteo de vehiculos",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:transporte",
+    "keyword": "conteo de vehículos",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:transporte",
+    "keyword": "urban traffic",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:transporte",
+    "keyword": "interseccion vial",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:transporte",
+    "keyword": "intersección vial",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:transporte",
+    "keyword": "movilidad urbana",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:transporte",
+    "keyword": "desminado",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:transporte",
+    "keyword": "medici",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:transporte",
+    "keyword": "velocidad media vehicular",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:transporte",
+    "keyword": "monitoreo de trafico",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:transporte",
+    "keyword": "reconocimiento vehicular",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:transporte",
+    "keyword": "its ",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:agricultura",
+    "keyword": "agricultura",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:agricultura",
+    "keyword": "agriculture",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:agricultura",
+    "keyword": "cultivo",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:agricultura",
+    "keyword": "maleza",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:agricultura",
+    "keyword": "weed",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:agricultura",
+    "keyword": "hortaliza",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:agricultura",
+    "keyword": "precision agriculture",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:agricultura",
+    "keyword": "agricultura de precision",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:agricultura",
+    "keyword": "agricultura de precisión",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:agricultura",
+    "keyword": "multiespectral",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:agricultura",
+    "keyword": "multispectral",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:agricultura",
+    "keyword": "riego",
+    "lang": "es_en"
+  },
+  {
+    "line_id": "line:agricultura",
+    "keyword": "crop ",
+    "lang": "es_en"
+  }
+]

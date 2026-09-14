@@ -1,13 +1,13 @@
 {
-  "exported_at": "2026-09-13",
-  "source": "data/sql → plas.sqlite",
+  "exported_at": "2026-09-14",
+  "source": "data/harvest → src/data",
   "counts": {
     "lines": 5,
     "projects": 13,
     "faculty": 4,
-    "students": 49,
+    "students": 55,
     "publications": 75,
-    "theses": 49,
+    "theses": 54,
     "resources": 15,
     "blog": 59
   }

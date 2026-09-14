@@ -10,7 +10,11 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "node --test --experimental-strip-types src/scripts/*.test.ts"
+    "test": "node --test --experimental-strip-types src/scripts/*.test.ts scripts/harvest.test.mjs",
+    "harvest:publications": "node scripts/harvest-publications.mjs",
+    "harvest:theses": "node scripts/harvest-theses.mjs",
+    "harvest:project": "node scripts/project-site.mjs",
+    "harvest:bootstrap": "node scripts/bootstrap-harvest.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
