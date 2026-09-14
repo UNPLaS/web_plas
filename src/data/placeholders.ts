@@ -1,8 +1,6 @@
 /** Navegación y copy editorial del mockup. Datos de contenido: `content.ts` + JSON. */
 
 export {
-  aboutBlocks,
-  aboutIntro,
   blogItems,
   catalogItems,
   catalogYears,
@@ -26,6 +24,14 @@ export {
   activeStudents,
   historicalStudentSections,
 } from './content';
+
+export {
+  aboutAnchors,
+  aboutIntro,
+  aboutNucleos,
+  aboutPurpose,
+  aboutSignals,
+} from './about';
 
 export const nav = [
   { href: '/about', label: 'Grupo' },

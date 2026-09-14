@@ -485,28 +485,6 @@ export const contactIntro = {
   ctaHref: `mailto:${groupJson.email}`,
 };
 
-export const aboutIntro = {
-  title: 'Sobre el grupo',
-  lede: groupJson.description_short.split('\n\n')[0] ?? groupJson.description_short,
-  statement:
-    'No separamos el laboratorio del aula: lo que investigamos se prueba, se enseña y se lleva a producción con calidad.',
-};
-
-export const aboutBlocks = [
-  {
-    title: 'Quiénes somos',
-    body: `${groupJson.name} (${groupJson.name_full}) es un grupo de la ${groupJson.institution}, clasificación Minciencias ${groupJson.minciencias_class}.`,
-  },
-  {
-    title: 'Cómo trabajamos',
-    body: groupJson.description_short.split('\n\n')[1] ?? groupJson.description_short,
-  },
-  {
-    title: 'Con quiénes',
-    body: 'Estudiantes, docentes e instituciones que comparten problemas concretos de enseñanza, evaluación y sistemas confiables.',
-  },
-];
-
 const RESOURCE_SECTION_ORDER = ['group_presentation', 'templates', 'talks_recordings'];
 
 export const resourceSections = (() => {

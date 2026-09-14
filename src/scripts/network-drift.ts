@@ -1,16 +1,22 @@
 /**
- * Deriva continua a velocidad fija.
- * Dirección = última del mouse (sin dependender de su velocidad).
- * Restore por umbral de deriva: fade → ancla → fade in.
+ * Deriva del grupo: margen 140 en ancho y alto.
+ * Al umbral: fade → snap a semilla (corrige drift) → fade in.
+ * Cada N restores cicla a la siguiente semilla.
  */
 
-import { renderNetworkMesh, tickNodeDrift, type MeshLayout } from './network-mesh';
+import {
+  DRIFT_MARGIN,
+  readMeshLayout,
+  snapToSeed,
+  tickNodeDrift,
+  type MeshLayout,
+} from './network-mesh';
 
 const SPEED = 0.16;
-const MAX_DRIFT = 130;
-const RESTORE_AT = MAX_DRIFT * 0.92;
-const FADE_MS = 1100;
+const FADE_MS = 900;
 const MIN_DIR_DELTA = 0.5;
+/** Ciclar semilla cada N restores (el resto solo corrige drift). */
+const CYCLE_EVERY = 2;
 
 let offsetX = 0;
 let offsetY = 0;
@@ -24,6 +30,7 @@ let mesh: SVGGElement | null = null;
 let layout: MeshLayout | null = null;
 let running = false;
 let restoring = false;
+let restoreCount = 0;
 
 function reducedMotion(): boolean {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -40,56 +47,33 @@ function applyTransform(): void {
   mesh.style.transform = `translate3d(${offsetX.toFixed(2)}px, ${offsetY.toFixed(2)}px, 0)`;
 }
 
-function readLayoutFromMesh(): MeshLayout | null {
-  if (!mesh) return null;
-  const cx = Number(mesh.dataset.cx);
-  const cy = Number(mesh.dataset.cy);
-  const radius = Number(mesh.dataset.radius);
-  if (![cx, cy, radius].every((n) => Number.isFinite(n))) return null;
-  return { cx, cy, radius };
-}
-
-function pageSizeFromSvg(): { W: number; H: number } | null {
-  if (!mesh) return null;
-  const svg = mesh.ownerSVGElement;
-  if (!svg) return null;
-  const vb = svg.viewBox.baseVal;
-  if (!vb.width || !vb.height) return null;
-  return { W: vb.width, H: vb.height };
-}
-
-function reshuffleMesh(): void {
-  if (!mesh) return;
-  const size = pageSizeFromSvg();
-  if (!size) return;
-  const seed = (Math.random() * 0xffffffff) >>> 0;
-  layout = renderNetworkMesh(mesh, size.W, size.H, layout ?? undefined, seed || 1);
-}
-
-function driftDistance(): number {
-  return Math.hypot(offsetX, offsetY);
+function pastDriftMargin(): boolean {
+  return Math.abs(offsetX) >= DRIFT_MARGIN || Math.abs(offsetY) >= DRIFT_MARGIN;
 }
 
 function wait(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function restoreToAnchor(): Promise<void> {
+async function restoreToSeed(): Promise<void> {
   if (!mesh || restoring) return;
   restoring = true;
 
   mesh.classList.add('float-graphs__mesh--fading');
-  await wait(FADE_MS);
+  await wait(FADE_MS * 0.45);
 
   offsetX = 0;
   offsetY = 0;
   applyTransform();
-  reshuffleMesh();
   hasPoint = false;
-  await wait(48);
 
+  restoreCount += 1;
+  const cycle = restoreCount % CYCLE_EVERY === 0;
+  snapToSeed({ cycle });
+
+  await wait(48);
   mesh.classList.remove('float-graphs__mesh--fading');
-  await wait(FADE_MS);
+  await wait(FADE_MS * 0.35);
 
   restoring = false;
 }
@@ -105,8 +89,8 @@ function tick(): void {
       offsetY += dirY * SPEED;
       applyTransform();
 
-      if (driftDistance() >= RESTORE_AT) {
-        void restoreToAnchor();
+      if (pastDriftMargin()) {
+        void restoreToSeed();
       }
     }
   }
@@ -139,7 +123,7 @@ function onPointerMove(event: PointerEvent): void {
 
 export function syncNetworkDriftLayout(): void {
   mesh = document.querySelector<SVGGElement>('.float-graphs__mesh');
-  layout = readLayoutFromMesh();
+  layout = mesh ? readMeshLayout(mesh) : null;
 }
 
 export function startNetworkDrift(): void {
@@ -153,7 +137,7 @@ export function startNetworkDrift(): void {
   stopNetworkDrift();
 
   mesh = next;
-  layout = readLayoutFromMesh();
+  layout = readMeshLayout(mesh);
 
   if (reducedMotion()) {
     mesh.style.transform = '';

@@ -1,18 +1,23 @@
-/** Malla circular a escala de página (nodos + aristas) + deriva interna. */
+/** Malla vertical (~200 nodos) + 3 semillas correlacionadas; restore por snap. */
+
+import {
+  buildMeshPlan,
+  meshLayoutForPage as layoutForPage,
+  SEED_COUNT,
+  type MeshLayout,
+  type Point,
+} from './network-mesh-core';
+
+export type { MeshLayout } from './network-mesh-core';
+export { DRIFT_MARGIN } from './network-mesh-constants';
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
 
-/** Velocidad interna por nodo (px/frame) — lenta, un poco más viva. */
-const NODE_SPEED_MIN = 0.028;
-const NODE_SPEED_MAX = 0.07;
-/** Escribir al DOM cada N frames (la física corre en todos). */
+const NODE_SPEED_MIN = 0.022;
+const NODE_SPEED_MAX = 0.055;
 const DOM_EVERY_N_FRAMES = 4;
-
-export type MeshLayout = {
-  cx: number;
-  cy: number;
-  radius: number;
-};
+/** Subir al cambiar reglas de topología para forzar rebuild. */
+const MESH_REV = 6;
 
 type LiveNode = {
   x: number;
@@ -30,10 +35,15 @@ type LiveEdge = {
 
 let liveNodes: LiveNode[] = [];
 let liveEdges: LiveEdge[] = [];
-let liveCx = 0;
-let liveCy = 0;
-let liveR2 = 0;
+let liveLayout: MeshLayout | null = null;
 let driftFrame = 0;
+
+let seeds: Point[][] = [];
+let activeSeed = 0;
+
+let builtW = 0;
+let builtH = 0;
+let builtRev = 0;
 
 function seededRandom(seed: number): () => number {
   let s = seed >>> 0;
@@ -49,98 +59,96 @@ function clearGroup(group: SVGGElement): void {
   while (group.firstChild) group.removeChild(group.firstChild);
 }
 
-function dist2(a: [number, number], b: [number, number]): number {
-  const dx = a[0] - b[0];
-  const dy = a[1] - b[1];
-  return dx * dx + dy * dy;
-}
-
-/**
- * Disco a escala del lienzo completo (presencia ≈ malla full-page anterior).
- */
 export function meshLayoutForPage(W: number, H: number): MeshLayout {
-  const cx = W * 0.62;
-  const cy = H * 0.48;
-  const radius = Math.hypot(W, H) * 0.58;
-  return { cx, cy, radius };
+  const compact =
+    typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches;
+  return layoutForPage(W, H, compact);
+}
+
+function applyPositions(points: Point[]): void {
+  for (let i = 0; i < liveNodes.length; i += 1) {
+    const p = points[i];
+    if (!p) continue;
+    const node = liveNodes[i];
+    node.x = p[0];
+    node.y = p[1];
+    node.el.setAttribute('cx', p[0].toFixed(2));
+    node.el.setAttribute('cy', p[1].toFixed(2));
+  }
+  for (const edge of liveEdges) {
+    const a = liveNodes[edge.a];
+    const b = liveNodes[edge.b];
+    if (!a || !b) continue;
+    edge.el.setAttribute('x1', a.x.toFixed(2));
+    edge.el.setAttribute('y1', a.y.toFixed(2));
+    edge.el.setAttribute('x2', b.x.toFixed(2));
+    edge.el.setAttribute('y2', b.y.toFixed(2));
+  }
+}
+
+function writeLayoutDataset(mesh: SVGGElement, layout: MeshLayout): void {
+  mesh.dataset.cx = String(layout.cx);
+  mesh.dataset.cy = String(layout.cy);
+  mesh.dataset.halfW = String(layout.halfW);
+  mesh.dataset.halfH = String(layout.halfH);
 }
 
 /**
- * Red irregular en forma de círculo a escala de página.
- * Cada nodo recibe una dirección aleatoria de deriva lenta.
+ * Construye (o reutiliza) la malla: 3 semillas correlacionadas + DOM estable.
  */
 export function renderNetworkMesh(
   mesh: SVGGElement,
   W: number,
   H: number,
   layout?: MeshLayout,
-  seed = 42,
+  baseSeed = 42,
 ): MeshLayout {
+  const nextLayout = layout ?? meshLayoutForPage(W, H);
+
+  const sameSize = Math.abs(W - builtW) < 3 && Math.abs(H - builtH) < 3;
+  const sameShape =
+    liveLayout &&
+    Math.abs(liveLayout.halfW - nextLayout.halfW) < 2 &&
+    Math.abs(liveLayout.halfH - nextLayout.halfH) < 2;
+  if (
+    sameSize &&
+    sameShape &&
+    builtRev === MESH_REV &&
+    liveNodes.length > 0 &&
+    seeds.length === SEED_COUNT
+  ) {
+    liveLayout = nextLayout;
+    writeLayoutDataset(mesh, nextLayout);
+    return nextLayout;
+  }
+
   clearGroup(mesh);
   liveNodes = [];
   liveEdges = [];
   driftFrame = 0;
-
-  const { cx, cy, radius } = layout ?? meshLayoutForPage(W, H);
-  liveCx = cx;
-  liveCy = cy;
-  liveR2 = radius * radius;
+  liveLayout = nextLayout;
+  builtW = W;
+  builtH = H;
+  builtRev = MESH_REV;
 
   const compact = window.matchMedia('(max-width: 767px)').matches;
-  const rand = seededRandom(seed >>> 0 || 42);
-  const count = compact ? 360 : 650;
-  const radius2 = liveR2;
+  const count = compact ? 140 : 200;
+  const neighbors = compact ? 4 : 5;
 
-  const points: Array<[number, number]> = [];
-  let guard = 0;
-  while (points.length < count && guard < count * 10) {
-    guard += 1;
-    const t = rand() * Math.PI * 2;
-    const u = Math.sqrt(rand());
-    const r = radius * (0.08 + u * 0.92);
-    points.push([cx + Math.cos(t) * r, cy + Math.sin(t) * r]);
-  }
+  const rootSeed = (baseSeed >>> 0) || 42;
+  const plan = buildMeshPlan(nextLayout, count, rootSeed, neighbors);
+  seeds = plan.seeds;
+  activeSeed = 0;
 
-  const core = compact ? 5 : 8;
-  for (let i = 0; i < core; i++) {
-    const t = (i / core) * Math.PI * 2 + rand() * 0.35;
-    const r = radius * (0.04 + rand() * 0.1);
-    points.push([cx + Math.cos(t) * r, cy + Math.sin(t) * r]);
-  }
-
-  const cell = radius / Math.sqrt(count / Math.PI);
-  const maxLink = cell * (compact ? 2.2 : 2.4);
-  const maxLink2 = maxLink * maxLink;
-  const neighbors = compact ? 3 : 4;
-  const seen = new Set<string>();
-  const edgePairs: Array<[number, number]> = [];
+  const points = seeds[0];
+  const pairs = plan.pairs;
 
   const edgesG = document.createElementNS(SVG_NS, 'g');
   edgesG.setAttribute('class', 'float-graphs__edges');
   const nodesG = document.createElementNS(SVG_NS, 'g');
   nodesG.setAttribute('class', 'float-graphs__nodes');
 
-  for (let i = 0; i < points.length; i++) {
-    const scored: Array<{ j: number; d: number }> = [];
-    for (let j = 0; j < points.length; j++) {
-      if (i === j) continue;
-      const d = dist2(points[i], points[j]);
-      if (d > maxLink2 || d < 1) continue;
-      const midX = (points[i][0] + points[j][0]) / 2;
-      const midY = (points[i][1] + points[j][1]) / 2;
-      if ((midX - cx) ** 2 + (midY - cy) ** 2 > radius2 * 1.05) continue;
-      scored.push({ j, d });
-    }
-    scored.sort((a, b) => a.d - b.d);
-    for (const { j } of scored.slice(0, neighbors)) {
-      const key = i < j ? `${i}-${j}` : `${j}-${i}`;
-      if (seen.has(key)) continue;
-      seen.add(key);
-      edgePairs.push([i, j]);
-    }
-  }
-
-  for (const [i, j] of edgePairs) {
+  for (const [i, j] of pairs) {
     const [x1, y1] = points[i];
     const [x2, y2] = points[j];
     const line = document.createElementNS(SVG_NS, 'line');
@@ -152,7 +160,8 @@ export function renderNetworkMesh(
     liveEdges.push({ a: i, b: j, el: line });
   }
 
-  const nodeR = compact ? '4.5' : '5.5';
+  const nodeR = compact ? '4.2' : '5';
+  const rand = seededRandom(rootSeed ^ 0x9e3779b9);
   for (const [x, y] of points) {
     const el = document.createElementNS(SVG_NS, 'circle');
     el.setAttribute('cx', String(x));
@@ -173,42 +182,53 @@ export function renderNetworkMesh(
 
   mesh.appendChild(edgesG);
   mesh.appendChild(nodesG);
+  writeLayoutDataset(mesh, nextLayout);
 
-  mesh.dataset.cx = String(cx);
-  mesh.dataset.cy = String(cy);
-  mesh.dataset.radius = String(radius);
-
-  return { cx, cy, radius };
+  return nextLayout;
 }
 
-/** Avanza la deriva interna; el DOM se actualiza cada N frames. */
+/**
+ * Snap instantáneo a una semilla (corrige drift local).
+ * `cycle: true` avanza a la siguiente semilla; si no, restaura la activa.
+ */
+export function snapToSeed(opts?: { cycle?: boolean }): boolean {
+  if (seeds.length < SEED_COUNT || liveNodes.length === 0) return false;
+  const target = opts?.cycle ? (activeSeed + 1) % SEED_COUNT : activeSeed;
+  activeSeed = target;
+  applyPositions(seeds[activeSeed]);
+  return true;
+}
+
+function containInEllipse(node: LiveNode, layout: MeshLayout): void {
+  const { cx, cy, halfW, halfH } = layout;
+  const nx = (node.x - cx) / halfW;
+  const ny = (node.y - cy) / halfH;
+  const d2 = nx * nx + ny * ny;
+  if (d2 <= 1 || d2 < 1e-8) return;
+
+  const d = Math.sqrt(d2);
+  const ux = nx / d;
+  const uy = ny / d;
+  const wx = node.vx / halfW;
+  const wy = node.vy / halfH;
+  const radial = wx * ux + wy * uy;
+  if (radial > 0) {
+    node.vx -= 2 * radial * ux * halfW;
+    node.vy -= 2 * radial * uy * halfH;
+  }
+  node.x = cx + ux * halfW * 0.995;
+  node.y = cy + uy * halfH * 0.995;
+}
+
 export function tickNodeDrift(): void {
   if (liveNodes.length === 0) return;
-
-  const cx = liveCx;
-  const cy = liveCy;
-  const r2 = liveR2;
+  const layout = liveLayout;
+  if (!layout) return;
 
   for (const node of liveNodes) {
     node.x += node.vx;
     node.y += node.vy;
-
-    const dx = node.x - cx;
-    const dy = node.y - cy;
-    const d2 = dx * dx + dy * dy;
-    if (d2 > r2 && d2 > 1e-6) {
-      const d = Math.sqrt(d2);
-      const nx = dx / d;
-      const ny = dy / d;
-      const radial = node.vx * nx + node.vy * ny;
-      if (radial > 0) {
-        node.vx -= 2 * radial * nx;
-        node.vy -= 2 * radial * ny;
-      }
-      const r = Math.sqrt(r2) * 0.998;
-      node.x = cx + nx * r;
-      node.y = cy + ny * r;
-    }
+    containInEllipse(node, layout);
   }
 
   driftFrame += 1;
@@ -218,7 +238,6 @@ export function tickNodeDrift(): void {
     node.el.setAttribute('cx', node.x.toFixed(2));
     node.el.setAttribute('cy', node.y.toFixed(2));
   }
-
   for (const edge of liveEdges) {
     const a = liveNodes[edge.a];
     const b = liveNodes[edge.b];
@@ -228,4 +247,13 @@ export function tickNodeDrift(): void {
     edge.el.setAttribute('x2', b.x.toFixed(2));
     edge.el.setAttribute('y2', b.y.toFixed(2));
   }
+}
+
+export function readMeshLayout(mesh: SVGGElement): MeshLayout | null {
+  const cx = Number(mesh.dataset.cx);
+  const cy = Number(mesh.dataset.cy);
+  const halfW = Number(mesh.dataset.halfW);
+  const halfH = Number(mesh.dataset.halfH);
+  if (![cx, cy, halfW, halfH].every((n) => Number.isFinite(n) && n > 0)) return null;
+  return { cx, cy, halfW, halfH };
 }

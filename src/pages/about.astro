@@ -1,66 +1,107 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { aboutBlocks, aboutDoors, aboutIntro } from '../data/placeholders';
+import {
+  aboutAnchors,
+  aboutIntro,
+  aboutNucleos,
+  aboutPurpose,
+  aboutSignals,
+} from '../data/about';
 ---
 
-<Layout title="Sobre el grupo">
+<Layout title="Sobre PLaS" description={aboutIntro.lead}>
   <section class="page-section wrap" aria-labelledby="about-heading">
-    <header class="page-head page-head--door">
-      <p class="page-head__eyebrow">Grupo</p>
+    <header class="page-head">
+      <p class="page-head__eyebrow">{aboutIntro.eyebrow}</p>
       <h1 id="about-heading" class="page-head__title">{aboutIntro.title}</h1>
-      <p class="page-head__lede">{aboutIntro.lede}</p>
+      <p class="page-head__lede">{aboutIntro.lead}</p>
+      <ul class="about-meta" aria-label="Ficha del grupo">
+        {
+          aboutIntro.meta.map((item) => (
+            <li class="about-meta__item">{item}</li>
+          ))
+        }
+      </ul>
+      <p class="about-signals">
+        <a class="about-signals__link" href={aboutSignals.gruplac} target="_blank" rel="noreferrer">
+          GrupLAC
+        </a>
+        <span aria-hidden="true">·</span>
+        <a class="about-signals__link" href={aboutSignals.hermes} target="_blank" rel="noreferrer">
+          Hermes
+        </a>
+        <span aria-hidden="true">·</span>
+        <span>
+          Minciencias {aboutSignals.classLabel} · conv. {aboutSignals.convocatoria}
+        </span>
+      </p>
     </header>
 
-    <blockquote class="door-statement">
-      <p class="quote-block__text">{aboutIntro.statement}</p>
-    </blockquote>
-  </section>
-
-  <section class="about-identity section-bleed" aria-labelledby="about-identity-heading">
-    <div class="section-bleed__back" aria-hidden="true"></div>
-    <div class="section-bleed__inner wrap">
-      <h2 id="about-identity-heading" class="about-identity__title">Identidad</h2>
-      <ol class="about-blocks">
+    <section
+      class="about-block"
+      id={aboutPurpose.id}
+      aria-labelledby="proposito-heading"
+    >
+      <h2 id="proposito-heading" class="people-section__title about-block__title">
+        {aboutPurpose.title}
+      </h2>
+      <div class="line-block__panel about-block__panel">
         {
-          aboutBlocks.map((block, index) => (
-            <li class="about-block">
-              <span class="about-block__index" aria-hidden="true">
-                {String(index + 1).padStart(2, '0')}
-              </span>
-              <div class="about-block__body">
-                <h3 class="about-block__title">{block.title}</h3>
-                <p class="about-block__text">{block.body}</p>
-              </div>
+          aboutPurpose.paragraphs.map((p) => (
+            <p class="line-block__text about-block__text">{p}</p>
+          ))
+        }
+      </div>
+    </section>
+
+    <section
+      class="about-block about-nucleos"
+      id={aboutNucleos.id}
+      aria-labelledby="nucleos-heading"
+    >
+      <header class="about-anchors__head">
+        <h2 id="nucleos-heading" class="people-section__title about-block__title">
+          {aboutNucleos.title}
+        </h2>
+        <p class="about-anchors__lede">{aboutNucleos.lede}</p>
+      </header>
+      <ul class="about-nucleos__list">
+        {
+          aboutNucleos.items.map((item) => (
+            <li class="about-nucleo line-block__panel">
+              <h3 class="about-nucleo__title">{item.title}</h3>
+              <p class="about-nucleo__text">{item.text}</p>
             </li>
           ))
         }
-      </ol>
-    </div>
-  </section>
+      </ul>
+    </section>
 
-  <section class="page-section wrap" aria-labelledby="about-doors-heading">
-    <header class="page-head page-head--compact">
-      <h2 id="about-doors-heading" class="page-head__title page-head__title--section">
-        Sigue explorando
-      </h2>
-      <p class="page-head__lede">Tres puertas al trabajo del grupo.</p>
-    </header>
-
-    <ul class="door-links">
-      {
-        aboutDoors.map((door) => (
-          <li>
-            <a class="door-link" href={door.href}>
-              <span class="door-link__label">{door.label}</span>
-              <span class="door-link__text">{door.text}</span>
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-
-    <p class="door-cta">
-      <a class="btn btn--amber" href="/contact">Escríbenos</a>
-    </p>
+    <section class="about-anchors" aria-labelledby="anchors-heading">
+      <header class="about-anchors__head">
+        <h2 id="anchors-heading" class="people-section__title about-block__title">
+          {aboutAnchors.title}
+        </h2>
+        <p class="about-anchors__lede">{aboutAnchors.lede}</p>
+      </header>
+      <ul class="news-gallery about-anchors__gallery">
+        {
+          aboutAnchors.items.map((item) => (
+            <li>
+              <a class="news-card" href={item.href} title={item.label}>
+                <div class="news-card__media" aria-hidden="true">
+                  {item.image ? <img src={item.image} alt="" loading="lazy" /> : null}
+                </div>
+                <div class="news-card__body">
+                  {item.meta ? <p class="news-card__meta">{item.meta}</p> : null}
+                  <h3 class="news-card__title">{item.label}</h3>
+                  <p class="about-anchor__excerpt">{item.text}</p>
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
   </section>
 </Layout>
