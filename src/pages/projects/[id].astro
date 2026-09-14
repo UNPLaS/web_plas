@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import TypeChip from '../../components/TypeChip.astro';
+import MarkdownContent from '../../components/MarkdownContent.astro';
 import { projectItems } from '../../data/placeholders';
 
 export function getStaticPaths() {
@@ -16,8 +17,6 @@ interface Props {
 
 const { item } = Astro.props;
 const related = projectItems.filter((entry) => entry.id !== item.id).slice(0, 3);
-const description =
-  item.sections.find((s) => s.key === 'description')?.body ?? item.summary;
 ---
 
 <Layout title={item.title}>
@@ -26,36 +25,16 @@ const description =
       <a class="btn btn--soft" href="/projects">← Volver a proyectos</a>
     </p>
 
-    <header class="page-head">
-      {
-        item.lineChip ? (
-          <div class="card-topline card-topline--page">
-            <TypeChip typology={item.lineChip} />
-          </div>
-        ) : (
-          <p class="page-head__eyebrow">Proyecto</p>
-        )
-      }
-      <h1 class="page-head__title">{item.titleFull || item.title}</h1>
-      <p class="page-head__lede">{item.summary}</p>
-    </header>
-
     {
-      item.image && (
-        <div class="detail-media">
-          <img src={item.image} alt="" loading="lazy" />
+      item.lineChip ? (
+        <div class="card-topline card-topline--page">
+          <TypeChip typology={item.lineChip} />
         </div>
-      )
+      ) : null
     }
 
-    <div class="page-prose">
-      {item.sections.map((section) => (
-        <section>
-          {section.key !== 'description' && <h2>{section.heading}</h2>}
-          <p>{section.body}</p>
-        </section>
-      ))}
-      {item.sections.length === 0 && <p>{description}</p>}
+    <div class="detail-body detail-body--project">
+      {item.content?.trim() ? <MarkdownContent content={item.content} /> : null}
       {
         item.links.length > 0 && (
           <ul class="detail-links">

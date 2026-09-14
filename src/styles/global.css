@@ -1840,17 +1840,177 @@ a.btn--soft:is(:hover, .is-touch-hover) {
   margin: 0 0 1.25rem;
 }
 
+.detail-body {
+  width: 100%;
+  max-width: none;
+}
+
+.detail-body--project .page-prose {
+  max-width: none;
+  width: 100%;
+}
+
+.detail-body--project .page-prose > h1:first-child {
+  margin: 0.35rem 0 1rem;
+  font-family: var(--font-display, inherit);
+  font-size: clamp(1.75rem, 4vw, 2.45rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--deep);
+}
+
+.detail-body--project .page-prose > h1:first-child + p:has(> img:only-child),
+.detail-body--project .page-prose > h1:first-child + p > img:only-child {
+  margin: 0 0 1.5rem;
+}
+
+.detail-body--project .page-prose > h1:first-child + p:has(> img:only-child) {
+  margin: 0 0 1.5rem;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--media);
+  aspect-ratio: var(--media-rect, 16 / 9);
+}
+
+.detail-body--project .page-prose > h1:first-child + p:has(> img:only-child) img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  margin: 0;
+}
+
 .page-prose {
-  max-width: 40rem;
+  width: 100%;
+  max-width: none;
+  color: var(--ink);
+  line-height: 1.6;
 }
 
-.page-prose p {
-  margin: 0 0 1rem;
-  line-height: 1.55;
+.page-prose > :first-child {
+  margin-top: 0;
 }
 
-.page-prose p:last-child {
+.page-prose > :last-child {
   margin-bottom: 0;
+}
+
+.page-prose p,
+.page-prose ul,
+.page-prose ol,
+.page-prose blockquote,
+.page-prose pre,
+.page-prose table {
+  margin: 0 0 1rem;
+}
+
+.page-prose h2,
+.page-prose h3,
+.page-prose h4 {
+  margin: 1.5rem 0 0.65rem;
+  font-family: var(--font-display, inherit);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--deep);
+}
+
+.page-prose h1 {
+  margin: 0.35rem 0 1rem;
+  font-family: var(--font-display, inherit);
+  font-size: clamp(1.75rem, 4vw, 2.45rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--deep);
+}
+
+.page-prose h2 {
+  font-size: 1.25rem;
+}
+
+.page-prose h3 {
+  font-size: 1.1rem;
+}
+
+.page-prose h4 {
+  font-size: 1rem;
+}
+
+.page-prose a {
+  color: var(--mid);
+  text-underline-offset: 0.12em;
+}
+
+.page-prose a:hover {
+  color: var(--deep);
+}
+
+.page-prose ul,
+.page-prose ol {
+  padding-left: 1.35rem;
+}
+
+.page-prose ul {
+  list-style-type: disc;
+  list-style-position: outside;
+}
+
+.page-prose ol {
+  list-style-type: decimal;
+  list-style-position: outside;
+}
+
+.page-prose li {
+  display: list-item;
+}
+
+.page-prose li + li {
+  margin-top: 0.3rem;
+}
+
+.page-prose blockquote {
+  padding: 0.15rem 0 0.15rem 0.9rem;
+  border-left: 3px solid color-mix(in srgb, var(--mid) 55%, transparent);
+  color: color-mix(in srgb, var(--ink) 82%, var(--page));
+}
+
+.page-prose code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  padding: 0.1em 0.35em;
+  border-radius: 0.25rem;
+  background: color-mix(in srgb, var(--mid) 10%, var(--page));
+}
+
+.page-prose pre {
+  overflow-x: auto;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--deep) 92%, black);
+  color: #f4f4f5;
+}
+
+.page-prose pre code {
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 0.85rem;
+}
+
+.page-prose img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+.page-prose hr {
+  margin: 1.5rem 0;
+  border: 0;
+  border-top: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+}
+
+.page-prose strong {
+  font-weight: 700;
 }
 
 .detail-links {

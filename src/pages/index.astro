@@ -38,7 +38,9 @@ import {
           return (
             <li>
               <a class="news-card" href={item.href} title={item.title}>
-                <div class="news-card__media" aria-hidden="true" />
+                <div class="news-card__media" aria-hidden="true">
+                  {item.image ? <img src={item.image} alt="" loading="lazy" /> : null}
+                </div>
                 <div class="news-card__body">
                   {item.meta ? <p class="news-card__meta">{item.meta}</p> : null}
                   <h3 class="news-card__title">{title}</h3>

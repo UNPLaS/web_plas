@@ -120,6 +120,7 @@ export const projectItems = [...projectsJson]
     titleFull: p.title_full,
     meta: `Proyecto · ${p.line_name}`,
     summary: p.summary,
+    content: typeof p.content === 'string' ? p.content : '',
     outcome: p.line_name,
     href: `/projects/${p.slug}`,
     image: p.image_path || '',
@@ -162,10 +163,14 @@ export const blogItems = [...blogJson]
       title: post.title,
       meta,
       summary: summary || post.event_type || '',
+      content:
+        typeof post.content === 'string' && post.content.trim()
+          ? post.content
+          : post.body || '',
       body: post.body || '',
       outcome: post.participation || post.event_type || '',
       href: `/blog/${blogParam(post.id)}`,
-      image: '',
+      image: typeof post.image === 'string' ? post.image : '',
       year: post.year,
       place: post.place,
       dateFrom: post.date_from,

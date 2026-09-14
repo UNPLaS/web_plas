@@ -1,5 +1,21 @@
 [
   {
+    "id": "blog:plas:sitio-2026",
+    "typology": "recurso",
+    "title": "Nueva versión del sitio web del grupo PLaS",
+    "place": "Bogotá",
+    "date_from": "2026-09-13",
+    "date_to": "2026-09-13",
+    "year": "2026",
+    "ambito": "Nacional",
+    "participation": "Difusión",
+    "event_type": "actualización",
+    "summary": "El grupo PLaS publica una renovación de su sitio web: navegación más clara, catálogo filtrable, líneas con mapas de temas y páginas de detalle con contenido en markdown.",
+    "image": "/images/PLaS/proyectos/uncode0.png",
+    "body": "",
+    "content": "# Nueva versión del sitio web del grupo PLaS\n\n![Renovación del sitio web de PLaS](/images/PLaS/proyectos/uncode0.png)\n\nEl grupo de investigación **Programming Languages and Systems (PLaS)** de la Universidad Nacional de Colombia pone en línea una renovación de su sitio institucional. El objetivo es facilitar el acceso a líneas de investigación, proyectos, publicaciones y recursos formativos, con una estructura más legible en escritorio y en móvil.\n\n## Qué cambia\n\n- **Inicio y navegación** reorganizados alrededor de las secciones del grupo (Grupo, Líneas, Proyectos, Blog, Catálogo, Recursos, Equipo y Contacto).\n- **Líneas de investigación** con narrativa actualizada y mapas de temas interactivos.\n- **Proyectos** con páginas de detalle alimentadas por markdown (título, imagen y cuerpo editorial).\n- **Catálogo de publicaciones** con filtros por tipología, línea, año y búsqueda de texto.\n- **Blog / novedades** preparado para entradas con contenido enriquecido, no solo fichas de eventos.\n- **Equipo** separado entre integrantes activos e histórico de formación (maestría y doctorado).\n\n## Enfoque técnico\n\nLa nueva versión se construye como un sitio estático moderno, con énfasis en rendimiento, tipografía legible y un lenguaje visual alineado a la identidad del grupo y al chrome institucional de la UNAL. El contenido editorial de detalle (proyectos y blog) se gestiona en markdown asociado a cada entrada de datos, de modo que actualizar textos e imágenes no dependa de cambios en la plantilla.\n\n## Próximos pasos\n\nSeguiremos incorporando entradas al blog, completando fichas de proyectos y manteniendo el catálogo al día con las publicaciones del grupo. Si encuentras un enlace roto o tienes sugerencias sobre la información publicada, escríbenos a través de la [página de contacto](/contact).\n\n### Enlaces útiles\n\n- [Explorar proyectos](/projects)\n- [Ver líneas de investigación](/lines)\n- [Consultar el catálogo](/catalog)\n"
+  },
+  {
     "id": "blog:gruplac:00000000018409:001",
     "typology": "evento",
     "title": "European Conference on Software Architecture",
@@ -11,7 +27,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:002",
@@ -25,7 +42,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:003",
@@ -39,7 +57,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:004",
@@ -53,7 +72,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:005",
@@ -67,7 +87,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:006",
@@ -81,7 +102,8 @@
     "participation": "Ponente",
     "event_type": "encuentro",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:007",
@@ -95,7 +117,8 @@
     "participation": "Ponente",
     "event_type": "encuentro",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:008",
@@ -109,7 +132,8 @@
     "participation": "Ponente Magistral",
     "event_type": "simposio",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:009",
@@ -123,7 +147,8 @@
     "participation": "Ponente",
     "event_type": "simposio",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:010",
@@ -137,7 +162,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:011",
@@ -151,7 +177,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:012",
@@ -165,7 +192,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:013",
@@ -179,7 +207,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:014",
@@ -193,7 +222,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:015",
@@ -207,7 +237,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:016",
@@ -221,7 +252,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:017",
@@ -235,7 +267,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:018",
@@ -249,7 +282,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:019",
@@ -263,7 +297,8 @@
     "participation": "Ponente Magistral",
     "event_type": "simposio",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:020",
@@ -277,7 +312,8 @@
     "participation": "Ponente",
     "event_type": "simposio",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:021",
@@ -291,7 +327,8 @@
     "participation": "Ponente Magistral",
     "event_type": "simposio",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:022",
@@ -305,7 +342,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:023",
@@ -319,7 +357,8 @@
     "participation": "Ponente",
     "event_type": "encuentro",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:024",
@@ -333,7 +372,8 @@
     "participation": "Ponente",
     "event_type": "encuentro",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:025",
@@ -347,7 +387,8 @@
     "participation": "Ponente",
     "event_type": "encuentro",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:026",
@@ -361,7 +402,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:027",
@@ -375,7 +417,8 @@
     "participation": "Ponente Magistral",
     "event_type": "simposio",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:028",
@@ -389,7 +432,8 @@
     "participation": "Ponente Magistral",
     "event_type": "simposio",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:029",
@@ -403,7 +447,8 @@
     "participation": "Ponente",
     "event_type": "simposio",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:030",
@@ -417,7 +462,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:031",
@@ -431,7 +477,8 @@
     "participation": "Ponente",
     "event_type": "simposio",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:032",
@@ -445,7 +492,8 @@
     "participation": "Ponente",
     "event_type": "taller",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:033",
@@ -459,7 +507,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:034",
@@ -473,7 +522,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:035",
@@ -487,7 +537,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:036",
@@ -501,7 +552,8 @@
     "participation": "Ponente Magistral",
     "event_type": "simposio",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:037",
@@ -515,7 +567,8 @@
     "participation": "Ponente",
     "event_type": "simposio",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:038",
@@ -529,7 +582,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:039",
@@ -543,7 +597,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:040",
@@ -557,7 +612,8 @@
     "participation": "Asistente , Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:041",
@@ -571,7 +627,8 @@
     "participation": "Asistente , Ponente",
     "event_type": "simposio",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:042",
@@ -585,7 +642,8 @@
     "participation": "Ponente",
     "event_type": "encuentro",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:043",
@@ -599,7 +657,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:044",
@@ -613,7 +672,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:045",
@@ -627,7 +687,8 @@
     "participation": "Ponente",
     "event_type": "taller",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:046",
@@ -641,7 +702,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:047",
@@ -655,7 +717,8 @@
     "participation": "Ponente",
     "event_type": "simposio",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:048",
@@ -669,7 +732,8 @@
     "participation": "Ponente Magistral",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:049",
@@ -683,7 +747,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:050",
@@ -697,7 +762,8 @@
     "participation": "Asistente , Ponente",
     "event_type": "simposio",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:051",
@@ -711,7 +777,8 @@
     "participation": "Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:052",
@@ -725,7 +792,8 @@
     "participation": "Asistente , Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:053",
@@ -739,7 +807,8 @@
     "participation": "Asistente , Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:054",
@@ -753,7 +822,8 @@
     "participation": "Asistente , Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:055",
@@ -767,7 +837,8 @@
     "participation": "Asistente , Ponente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:056",
@@ -781,7 +852,8 @@
     "participation": "Asistente",
     "event_type": "congreso",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:057",
@@ -795,7 +867,8 @@
     "participation": "Asistente",
     "event_type": "simposio",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:058",
@@ -809,7 +882,8 @@
     "participation": "Asistente , Ponente",
     "event_type": "taller",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   },
   {
     "id": "blog:gruplac:00000000018409:059",
@@ -823,6 +897,7 @@
     "participation": "Asistente",
     "event_type": "taller",
     "summary": "",
-    "body": ""
+    "body": "",
+    "content": ""
   }
 ]
