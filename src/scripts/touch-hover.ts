@@ -43,8 +43,11 @@ function shouldEnable(): boolean {
   );
 }
 
+let touchHoverBound = false;
+
 export function startTouchHover(): void {
-  if (!shouldEnable()) return;
+  if (!shouldEnable() || touchHoverBound) return;
+  touchHoverBound = true;
 
   document.addEventListener('touchstart', onTouchUpdate, { passive: true });
   document.addEventListener('touchmove', onTouchUpdate, { passive: true });

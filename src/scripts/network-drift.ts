@@ -143,9 +143,17 @@ export function syncNetworkDriftLayout(): void {
 }
 
 export function startNetworkDrift(): void {
-  mesh = document.querySelector<SVGGElement>('.float-graphs__mesh');
+  const next = document.querySelector<SVGGElement>('.float-graphs__mesh');
+  if (!next) {
+    stopNetworkDrift();
+    return;
+  }
+
+  if (running && mesh === next) return;
+  stopNetworkDrift();
+
+  mesh = next;
   layout = readLayoutFromMesh();
-  if (!mesh || running) return;
 
   if (reducedMotion()) {
     mesh.style.transform = '';

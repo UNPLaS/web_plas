@@ -1,0 +1,111 @@
+---
+interface GraphNode {
+  id: string;
+  label: string;
+  weight: number;
+  x: number;
+  y: number;
+}
+
+interface GraphEdge {
+  source: string;
+  target: string;
+  weight: number;
+}
+
+interface Props {
+  nodes: GraphNode[];
+  edges: GraphEdge[];
+  color?: string;
+  title?: string;
+}
+
+const {
+  nodes,
+  edges,
+  color = 'var(--mid)',
+  title = 'Mapa de temas',
+} = Astro.props;
+
+/** Desktop defaults; layout script remaps for narrow viewports. */
+const vbW = 1100;
+const vbH = 460;
+const padX = 72;
+const padY = 48;
+
+const byId = Object.fromEntries(nodes.map((n) => [n.id, n]));
+
+function cx(n: GraphNode) {
+  return padX + n.x * (vbW - padX * 2);
+}
+
+function cy(n: GraphNode) {
+  return padY + n.y * (vbH - padY * 2);
+}
+
+function radius(weight: number) {
+  return 12 + Math.min(weight, 5) * 2.6;
+}
+
+const maxEdge = Math.max(...edges.map((e) => e.weight), 1);
+---
+
+<figure class="topic-graph" style={`--graph-color: ${color}`}>
+  <figcaption class="topic-graph__caption">{title}</figcaption>
+  <div class="topic-graph__frame">
+    <svg
+      class="topic-graph__svg"
+      viewBox={`0 0 ${vbW} ${vbH}`}
+      role="img"
+      aria-label={title}
+    >
+      <g class="topic-graph__edges">
+        {
+          edges.map((edge) => {
+            const a = byId[edge.source];
+            const b = byId[edge.target];
+            if (!a || !b) return null;
+            const opacity = 0.22 + (edge.weight / maxEdge) * 0.45;
+            const stroke = 1.4 + (edge.weight / maxEdge) * 2;
+            return (
+              <line
+                data-source={edge.source}
+                data-target={edge.target}
+                x1={cx(a)}
+                y1={cy(a)}
+                x2={cx(b)}
+                y2={cy(b)}
+                stroke-width={stroke}
+                stroke-opacity={opacity}
+              />
+            );
+          })
+        }
+      </g>
+      <g class="topic-graph__nodes">
+        {
+          nodes.map((node) => {
+            const r = radius(node.weight);
+            const x = cx(node);
+            const y = cy(node);
+            return (
+              <g
+                class="topic-graph__node"
+                data-node-id={node.id}
+                data-nx={node.x}
+                data-ny={node.y}
+                data-weight={node.weight}
+                transform={`translate(${x} ${y})`}
+              >
+                <circle r={r} />
+                <text y={r + 16} text-anchor="middle">
+                  {node.label}
+                </text>
+              </g>
+            );
+          })
+        }
+      </g>
+    </svg>
+  </div>
+</figure>

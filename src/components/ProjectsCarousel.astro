@@ -130,5 +130,12 @@ import { featuredProjects } from '../data/placeholders';
     play();
   }
 
-  document.querySelectorAll('[data-carousel]').forEach(initCarousel);
+  document.addEventListener('astro:page-load', () => {
+    document.querySelectorAll('[data-carousel]').forEach((root) => {
+      const el = root as HTMLElement;
+      if (el.dataset.carouselReady === '1') return;
+      el.dataset.carouselReady = '1';
+      initCarousel(el);
+    });
+  });
 </script>

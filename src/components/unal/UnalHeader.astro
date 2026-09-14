@@ -52,7 +52,7 @@ const services = [
 ];
 ---
 
-<header id="unal-header" data-unal-chrome="header">
+<header id="unal-header" data-unal-chrome="header" transition:persist="unal-header">
   <div class="unal-logo">
     <a href="https://unal.edu.co" title="Universidad Nacional de Colombia">
       <img
@@ -61,6 +61,8 @@ const services = [
         width="180"
         height="110"
         alt="Escudo de la Universidad Nacional de Colombia"
+        decoding="sync"
+        fetchpriority="high"
       />
     </a>
   </div>
@@ -71,6 +73,8 @@ const services = [
       width="66"
       height="66"
       alt="Escudo de la República de Colombia"
+      decoding="sync"
+      fetchpriority="high"
     />
   </div>
 

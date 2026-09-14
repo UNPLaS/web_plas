@@ -11,6 +11,8 @@ import publicationsJson from './publications.json';
 import resourcesJson from './resources.json';
 import studentsJson from './students.json';
 import thesesJson from './theses.json';
+import lineTopicGraphs from './line-topic-graphs.json';
+import { resolveCatalogSource } from './catalog-sources';
 import { resolveTypology } from './typologies';
 
 const degreeLabel: Record<string, string> = {
@@ -278,54 +280,107 @@ export const historicalStudentSections = (
   ),
 })).filter((sec) => sec.items.length > 0);
 
-export const researchLines = linesJson.map((line) => ({
-  id: line.id,
-  title: line.name,
-  summary: line.summary,
-  text: line.description,
-  href: '/lines',
-  slug: line.slug,
-  color: line.color,
-  topics: line.topics ?? [],
-}));
+export const researchLines = linesJson.map((line) => {
+  const graph = (lineTopicGraphs as Record<string, { nodes: unknown[]; edges: unknown[] }>)[
+    line.id
+  ];
+  return {
+    id: line.id,
+    title: line.name,
+    summary: line.summary,
+    text: line.description,
+    href: '/lines',
+    slug: line.slug,
+    color: line.color,
+    topics: line.topics ?? [],
+    topicGraph: graph
+      ? {
+          nodes: graph.nodes,
+          edges: graph.edges,
+        }
+      : null,
+  };
+});
+
+const TYPE_ORDER = [
+  'journal_article',
+  'conference_paper',
+  'book_chapter',
+  'book',
+  'thesis',
+  'preprint',
+  'software',
+  'report',
+  'unknown',
+];
 
 const pubItems = publicationsJson.map((p) => {
-  const lineId = p.line_ids?.[0] || '';
-  const line = p.line_names?.[0] || '';
-  const level = p.typology_label_es || 'Publicación';
+  const lineIds = p.line_ids || [];
+  const lineNames = p.line_names || [];
+  const lineId = lineIds[0] || '';
+  const line = lineNames[0] || '';
+  const typology = p.typology || 'unknown';
+  const typologyLabel = p.typology_label_es || typology || 'Publicación';
+  const href = p.url || (p.doi ? `https://doi.org/${p.doi}` : '');
+  const source = resolveCatalogSource({ doi: p.doi, url: href, kind: 'pub' });
   return {
     id: p.id,
     kind: 'pub' as const,
     title: p.title,
-    author: p.authors,
-    year: String(p.year),
-    level,
+    author: p.authors || '',
+    year: String(p.year || ''),
+    level: typologyLabel,
+    typology,
+    typologyLabel,
+    degreeLabel: '',
     lineId,
+    lineIds,
     line,
+    lineName: lineNames.join(', '),
     lineColor: resolveLineColor(lineId, line),
-    meta: `${level} · ${p.year}`,
-    href: p.url || p.doi ? `https://doi.org/${p.doi}` : '',
+    meta: `${typologyLabel} · ${p.year}`,
+    href,
     outcome: p.venue_title || '',
+    sourceId: source.id,
+    sourceLabel: source.label,
+    sourceLogo: source.logo,
   };
 });
 
 const thesisItems = thesesJson.map((t) => {
-  const lineId = t.line_ids?.[0] || t.line_id_primary || '';
-  const line = t.line_names?.[0] || '';
-  const level = degreeLabel[t.degree] ?? t.degree;
+  const lineIds =
+    t.line_ids?.length
+      ? t.line_ids
+      : t.line_id_primary
+        ? [t.line_id_primary]
+        : [];
+  const lineNames = t.line_names || [];
+  const lineId = lineIds[0] || t.line_id_primary || '';
+  const line = lineNames[0] || '';
+  const degree = degreeLabel[t.degree] ?? t.degree ?? '';
+  const href = t.item_url || '';
+  const source = resolveCatalogSource({ url: href, kind: 'thesis' });
   return {
     id: t.id,
     kind: 'thesis' as const,
     title: t.title,
-    author: t.authors,
-    year: String(t.year),
-    level,
+    author: t.authors || '',
+    year: String(t.year || ''),
+    level: degree,
+    typology: 'thesis',
+    typologyLabel: 'Tesis',
+    degreeLabel: degree,
     lineId,
+    lineIds,
     line,
+    lineName: lineNames.join(', ') || line,
     lineColor: resolveLineColor(lineId, line),
-    meta: `Tesis · ${level} · ${t.year}`,
-    href: t.item_url || '',
+    meta: `Tesis · ${degree} · ${t.year}`,
+    href,
     outcome: '',
+    sourceId: source.id,
+    sourceLabel: source.label,
+    sourceLogo: source.logo,
   };
 });
 
@@ -338,6 +393,43 @@ export const catalogItems = [...pubItems, ...thesisItems]
       : null,
   }));
 
+export const catalogYears = [
+  ...new Set(catalogItems.map((i) => i.year).filter(Boolean)),
+].sort((a, b) => b.localeCompare(a));
+
+export const catalogTypologies = [
+  ...new Map(
+    catalogItems
+      .filter((i) => i.typology)
+      .map((i) => [i.typology, i.typologyLabel] as const),
+  ).entries(),
+].sort((a, b) => {
+  const ia = TYPE_ORDER.indexOf(a[0]);
+  const ib = TYPE_ORDER.indexOf(b[0]);
+  const ra = ia === -1 ? 999 : ia;
+  const rb = ib === -1 ? 999 : ib;
+  return ra - rb || a[1].localeCompare(b[1], 'es');
+});
+
+/** Payload cliente para filtros del catálogo (sin campos de display extras). */
+export const catalogFilterData = catalogItems.map((item) => ({
+  id: item.id,
+  title: item.title,
+  author: item.author,
+  year: item.year,
+  meta: item.meta,
+  href: item.href,
+  outcome: item.outcome,
+  typology: item.typology,
+  typologyLabel: item.typologyLabel,
+  degreeLabel: item.degreeLabel,
+  lineIds: item.lineIds,
+  lineName: item.lineName,
+  lineChip: item.lineChip,
+  sourceLabel: item.sourceLabel,
+  sourceLogo: item.sourceLogo,
+}));
+
 export const recentWorks = catalogItems.slice(0, 3).map((item) => ({
   id: item.id,
   title: item.title,
@@ -345,7 +437,8 @@ export const recentWorks = catalogItems.slice(0, 3).map((item) => ({
   meta: item.meta,
   outcome: item.outcome,
   href: item.href || '/catalog',
-  image: '',
+  image: item.sourceLogo,
+  sourceLabel: item.sourceLabel,
   lineChip: item.lineChip,
 }));
 

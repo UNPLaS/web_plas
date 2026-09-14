@@ -35,7 +35,7 @@ const govRight = [
 ];
 ---
 
-<footer id="unal-footer" class="container-fluid" data-unal-chrome="footer">
+<footer id="unal-footer" class="container-fluid" data-unal-chrome="footer" transition:persist="unal-footer">
   <div class="unal-footer-grid">
     <nav class="unal-gov-nav" aria-label="Gobierno en línea">
       {govLeft.map((l) => <a href={l.href}>{l.label}</a>)}

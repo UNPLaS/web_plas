@@ -21,26 +21,3 @@
     vector-effect="non-scaling-stroke"
   />
 </svg>
-
-<script>
-  import { syncSpineAndHeroPanel } from '../scripts/spine-sync';
-
-  function bindHeroResync() {
-    const hero = document.querySelector('.hero');
-    const logo = document.querySelector('[data-hero-logo]');
-    if (!hero) return;
-
-    const ro = new ResizeObserver(() => syncSpineAndHeroPanel());
-    ro.observe(hero);
-
-    logo?.addEventListener('load', () => syncSpineAndHeroPanel());
-  }
-
-  syncSpineAndHeroPanel();
-  requestAnimationFrame(() => {
-    syncSpineAndHeroPanel();
-    bindHeroResync();
-  });
-  window.addEventListener('resize', syncSpineAndHeroPanel);
-  window.addEventListener('load', syncSpineAndHeroPanel);
-</script>

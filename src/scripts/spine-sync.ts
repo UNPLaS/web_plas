@@ -131,7 +131,7 @@ export function syncSpineAndHeroPanel(): void {
     const heroX = xRelativeToShell(hero, shell);
     const heroW = hero.offsetWidth || W;
 
-    if (panel && window.matchMedia('(min-width: 768px)').matches && heroW > 0) {
+    if (panel && window.matchMedia('(min-width: 1200px)').matches && heroW > 0) {
       // Misma pendiente que el spine: x = startX - (y - startY) * k
       const topX = startX;
       const bottomX = startX - heroH * SPINE_DX_PER_DY;

@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
 import '../styles/unal-chrome.css';
 import UnalHeader from '../components/unal/UnalHeader.astro';
@@ -40,6 +41,9 @@ const pageTitle = title.includes('Universidad Nacional')
       href="https://fonts.googleapis.com/css2?family=Onest:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
+    <link rel="preload" href="/unal/images/escudoUnal.svg" as="image" type="image/svg+xml" />
+    <link rel="preload" href="/unal/images/sealColombia.png" as="image" type="image/png" />
+    <ClientRouter />
   </head>
   <body class="unal-shell">
     <!-- B3: cabezote, accesibilidad, servicios → contenido PLaS → pie -->
@@ -53,8 +57,14 @@ const pageTitle = title.includes('Universidad Nacional')
         {spine && <FloatGraphs />}
         {spine && <div class="page-bg-veil" aria-hidden="true" />}
         <div class="page-foreground">
-          {!isHome && <Breadcrumb currentLabel={title} />}
-          <div class="page-main">
+          {
+            !isHome && (
+              <div class="plas-chrome-static">
+                <Breadcrumb currentLabel={title} />
+              </div>
+            )
+          }
+          <div class="page-main" data-plas-content>
             <slot />
           </div>
         </div>
@@ -66,8 +76,82 @@ const pageTitle = title.includes('Universidad Nacional')
     <script>
       import { startTouchHover } from '../scripts/touch-hover';
       import { markExternalLinks } from '../scripts/external-links';
-      startTouchHover();
-      markExternalLinks();
+      import { initTopicGraphMotion } from '../scripts/topic-graph-motion';
+      import { startNetworkDrift } from '../scripts/network-drift';
+      import { syncSpineAndHeroPanel } from '../scripts/spine-sync';
+      import { initCatalogFilters } from '../scripts/catalog-filters';
+
+      function syncPersistedNav() {
+        const path = window.location.pathname.replace(/\/$/, '') || '/';
+        document.querySelectorAll('#unal-main-nav a[href]').forEach((node) => {
+          const a = node as HTMLAnchorElement;
+          const href = a.getAttribute('href') || '';
+          if (!href.startsWith('/')) return;
+          const active =
+            href === '/'
+              ? path === '/'
+              : path === href || path.startsWith(`${href}/`);
+          if (active) a.setAttribute('aria-current', 'page');
+          else a.removeAttribute('aria-current');
+        });
+      }
+
+      let spineResizeBound = false;
+
+      document.addEventListener('astro:page-load', () => {
+        syncPersistedNav();
+        startTouchHover();
+        markExternalLinks();
+        initTopicGraphMotion();
+        syncSpineAndHeroPanel();
+        startNetworkDrift();
+        requestAnimationFrame(() => {
+          syncSpineAndHeroPanel();
+          startNetworkDrift();
+        });
+        initCatalogFilters();
+
+        const content = document.querySelector<HTMLElement>('[data-plas-content]');
+        if (content && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          content.classList.remove('plas-content-enter');
+          void content.offsetWidth;
+          content.classList.add('plas-content-enter');
+        }
+
+        if (!spineResizeBound) {
+          spineResizeBound = true;
+          window.addEventListener('resize', syncSpineAndHeroPanel);
+        }
+      });
     </script>
   </body>
 </html>
+
+<style is:global>
+  /* Soft-nav sin View Transition visual: el fade es solo CSS en el contenido */
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
+    mix-blend-mode: normal;
+    opacity: 1;
+  }
+
+  @keyframes plas-content-enter {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .page-main.plas-content-enter {
+    animation: plas-content-enter 0.35s ease both;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .page-main.plas-content-enter {
+      animation: none;
+    }
+  }
+</style>

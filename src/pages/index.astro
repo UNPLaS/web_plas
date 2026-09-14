@@ -70,7 +70,12 @@ import {
                 ? { target: '_blank', rel: 'noreferrer' }
                 : {})}
             >
-              <div class="works-card__media" aria-hidden="true" />
+              <div
+                class:list={['works-card__media', item.image && 'works-card__media--logo']}
+                aria-hidden="true"
+              >
+                {item.image ? <img src={item.image} alt="" loading="lazy" /> : null}
+              </div>
               <div class="works-card__body">
                 <p class="works-card__meta">{item.meta}</p>
                 <h3 class="works-card__title">{item.title}</h3>
