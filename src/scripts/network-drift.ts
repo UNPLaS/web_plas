@@ -138,6 +138,9 @@ export function startNetworkDrift(): void {
 
   mesh = next;
   layout = readMeshLayout(mesh);
+  offsetX = 0;
+  offsetY = 0;
+  restoreCount = 0;
 
   if (reducedMotion()) {
     mesh.style.transform = '';

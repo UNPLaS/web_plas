@@ -85,6 +85,7 @@ const unalChromeJs = withBase('/unal/js/unal-chrome.js');
       import { syncSpineAndHeroPanel } from '../scripts/spine-sync';
       import { initCatalogFilters } from '../scripts/catalog-filters';
       import { isActivePath } from '../lib/with-base';
+      import { pickHomeQuote } from '../scripts/home-quote';
 
       function syncPersistedNav() {
         const path = window.location.pathname;
@@ -106,6 +107,7 @@ const unalChromeJs = withBase('/unal/js/unal-chrome.js');
         initTopicGraphMotion();
         syncSpineAndHeroPanel();
         startNetworkDrift();
+        pickHomeQuote();
         requestAnimationFrame(() => {
           syncSpineAndHeroPanel();
           startNetworkDrift();

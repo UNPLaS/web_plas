@@ -44,6 +44,8 @@ let activeSeed = 0;
 let builtW = 0;
 let builtH = 0;
 let builtRev = 0;
+/** Host SVG group donde se montó la malla viva (View Transitions lo reemplazan). */
+let builtMesh: SVGGElement | null = null;
 
 function seededRandom(seed: number): () => number {
   let s = seed >>> 0;
@@ -105,12 +107,14 @@ export function renderNetworkMesh(
 ): MeshLayout {
   const nextLayout = layout ?? meshLayoutForPage(W, H);
 
+  const sameHost = builtMesh === mesh && liveNodes[0]?.el.isConnected === true;
   const sameSize = Math.abs(W - builtW) < 3 && Math.abs(H - builtH) < 3;
   const sameShape =
     liveLayout &&
     Math.abs(liveLayout.halfW - nextLayout.halfW) < 2 &&
     Math.abs(liveLayout.halfH - nextLayout.halfH) < 2;
   if (
+    sameHost &&
     sameSize &&
     sameShape &&
     builtRev === MESH_REV &&
@@ -130,6 +134,7 @@ export function renderNetworkMesh(
   builtW = W;
   builtH = H;
   builtRev = MESH_REV;
+  builtMesh = mesh;
 
   const compact = window.matchMedia('(max-width: 767px)').matches;
   const count = compact ? 140 : 200;

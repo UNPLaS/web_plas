@@ -27,7 +27,7 @@ Investigamos cómo se enseñan, construyen y confían los lenguajes y los sistem
 
 | Ruta | Contenido |
 |------|-----------|
-| `/` | Inicio (hero, novedades, proyectos, equipo, líneas) |
+| `/` | Inicio (hero, citas, novedades, proyectos, equipo, líneas) |
 | `/about` | Sobre el grupo |
 | `/lines` | Líneas de investigación |
 | `/projects`, `/projects/[id]` | Proyectos y detalle (markdown) |

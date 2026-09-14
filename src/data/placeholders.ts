@@ -1,6 +1,7 @@
 /** Navegación y copy editorial del mockup. Datos de contenido: `content.ts` + JSON. */
 
 import { withBase } from '../lib/with-base';
+import homeQuotesJson from './home-quotes.json';
 
 export {
   blogItems,
@@ -46,10 +47,9 @@ export const nav = [
   { href: withBase('/contact'), label: 'Contacto' },
 ] as const;
 
-export const homeQuote = {
-  text: 'Los programas deben escribirse para que los lean las personas, y solo de paso para que los ejecuten las máquinas.',
-  attribution: 'Harold Abelson y Gerald Jay Sussman, Structure and Interpretation of Computer Programs',
-};
+export const homeQuotes = homeQuotesJson;
+
+export const homeQuote = homeQuotes[0];
 
 export const aboutDoors = [
   { href: withBase('/lines'), label: 'Líneas de investigación', text: 'Dónde concentramos el trabajo.' },

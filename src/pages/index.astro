@@ -6,22 +6,28 @@ import ProjectsCarousel from '../components/ProjectsCarousel.astro';
 import TypeChip from '../components/TypeChip.astro';
 import {
   facultyItems,
-  homeQuote,
+  homeQuotes,
   newsItems,
   recentWorks,
   researchLines,
   site,
 } from '../data/placeholders';
+
+const quoteFallback = homeQuotes[0];
 ---
 
 <Layout title={`${site.name} — ${site.nameFull}`} spine>
   <Hero />
 
-  <section class="quote-section wrap" aria-label="Cita">
+  <section
+    class="quote-section wrap"
+    aria-label="Cita"
+    data-home-quotes={JSON.stringify(homeQuotes)}
+  >
     <blockquote class="quote-block">
-      <p class="quote-block__text">{homeQuote.text}</p>
+      <p class="quote-block__text" data-quote-text>{quoteFallback.text}</p>
       <footer class="quote-block__attr">
-        <cite>{homeQuote.attribution}</cite>
+        <cite data-quote-attr>{quoteFallback.attribution}</cite>
       </footer>
     </blockquote>
   </section>
