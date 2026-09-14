@@ -1,15 +1,16 @@
 ---
 import { nav } from '../data/placeholders';
+import { stripBase, withBase } from '../lib/with-base';
 
 interface Props {
   currentLabel: string;
 }
 
 const { currentLabel } = Astro.props;
-const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const pathname = stripBase(Astro.url.pathname);
 
 const sectionLabels: Record<string, string> = Object.fromEntries(
-  nav.filter((item) => item.href !== '/').map((item) => [item.href, item.label]),
+  nav.map((item) => [stripBase(item.href), item.label]),
 );
 
 const segments = pathname.split('/').filter(Boolean);
@@ -23,11 +24,13 @@ if (segments.length === 1) {
 } else if (segments.length > 1) {
   const sectionHref = `/${segments[0]}`;
   crumbs.push({
-    href: sectionHref,
+    href: withBase(sectionHref),
     label: sectionLabels[sectionHref] ?? segments[0],
   });
   crumbs.push({ label: currentLabel });
 }
+
+const homeHref = withBase('/');
 ---
 
 {
@@ -36,7 +39,7 @@ if (segments.length === 1) {
       <div class="breadcrumb__inner wrap">
         <p class="breadcrumb__trail">
           <span class="breadcrumb__prefix">Está en:</span>
-          <a class="breadcrumb__link" href="/">
+          <a class="breadcrumb__link" href={homeHref}>
             Inicio
           </a>
           {crumbs.map((crumb) => (

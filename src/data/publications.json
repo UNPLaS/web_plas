@@ -1,5 +1,93 @@
 [
   {
+    "id": "pub:doi:10.3390/electronics15030543",
+    "doi": "10.3390/electronics15030543",
+    "title": "A Predictive Approach for the Early Reliability Assessment in Embedded Systems Using Code and Trace Embeddings via Machine Learning",
+    "year": "2026",
+    "typology": "journal_article",
+    "typology_label_es": "Artículos de revista",
+    "venue_title": "Electronics",
+    "url": "https://doi.org/10.3390/electronics15030543",
+    "plas_catalog_source": "manual_confirmed",
+    "authors": "Felipe Restrepo Calle; Enrique Abma Romero; Sergio Cuenca-Asensi",
+    "line_ids": [
+      "line:educacion",
+      "line:embebidos",
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Educación en ingeniería",
+      "Sistemas embebidos confiables",
+      "Lenguajes de programación"
+    ]
+  },
+  {
+    "id": "pub:doi:10.21125/inted.2026.2311",
+    "doi": "10.21125/inted.2026.2311",
+    "title": "EXPLORING BIAS IN AI-GENERATED IMAGERY: A DESIGN-RESEARCH CASE STUDY IN UNIVERSITY VISUAL COMMUNICATION",
+    "year": "2026",
+    "typology": "conference_paper",
+    "typology_label_es": "Artículos en conferencia",
+    "venue_title": "INTED Proceedings",
+    "url": "https://doi.org/10.21125/inted.2026.2311",
+    "plas_catalog_source": "manual_confirmed",
+    "authors": "Kauan Henrick Silva; Felipe Restrepo Calle; Igor Roberto Michalski de Souza; Silvana Morita Melo; Jorge Marques Prates",
+    "line_ids": [
+      "line:educacion",
+      "line:embebidos",
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Educación en ingeniería",
+      "Sistemas embebidos confiables",
+      "Lenguajes de programación"
+    ]
+  },
+  {
+    "id": "pub:doi:10.2139/ssrn.6381013",
+    "doi": "10.2139/ssrn.6381013",
+    "title": "Knowledge Graph-Driven Identification of Security Weaknesses in Web-Based Software Architectures",
+    "year": "2026",
+    "typology": "preprint",
+    "typology_label_es": "Preprint / working paper",
+    "venue_title": "",
+    "url": "https://doi.org/10.2139/ssrn.6381013",
+    "plas_catalog_source": "manual_confirmed",
+    "authors": "Jeisson Vergara-Vargas; Chouki Tibermacine; Felipe Restrepo Calle; Salah Sadou",
+    "line_ids": [
+      "line:educacion",
+      "line:embebidos",
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Educación en ingeniería",
+      "Sistemas embebidos confiables",
+      "Lenguajes de programación"
+    ]
+  },
+  {
+    "id": "pub:doi:10.21125/inted.2026.1015",
+    "doi": "10.21125/inted.2026.1015",
+    "title": "OPEN-SOURCE SMALL LANGUAGE MODELS FOR CURRICULUM-ALIGNED MATH TUTORING IN LOW-RESOURCE SETTINGS",
+    "year": "2026",
+    "typology": "conference_paper",
+    "typology_label_es": "Artículos en conferencia",
+    "venue_title": "INTED Proceedings",
+    "url": "https://doi.org/10.21125/inted.2026.1015",
+    "plas_catalog_source": "manual_confirmed",
+    "authors": "David Pabon; Felipe Restrepo Calle",
+    "line_ids": [
+      "line:educacion",
+      "line:embebidos",
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Educación en ingeniería",
+      "Sistemas embebidos confiables",
+      "Lenguajes de programación"
+    ]
+  },
+  {
     "id": "pub:doi:10.24310/ijtei.112.2025.21281",
     "doi": "10.24310/ijtei.112.2025.21281",
     "title": "Efectos de un entorno de aprendizaje de programación de computadores basado en el desarrollo de videojuegos sobre la motivación por aprender de los estudiantes",
@@ -22,6 +110,26 @@
     ]
   },
   {
+    "id": "pub:doi:10.3390/bdcc9080200",
+    "doi": "10.3390/bdcc9080200",
+    "title": "PruneEnergyAnalyzer: An Open-Source Toolkit for Evaluating Energy Consumption in Pruned Deep Learning Models",
+    "year": "2025",
+    "typology": "journal_article",
+    "typology_label_es": "Artículos de revista",
+    "venue_title": "Big Data and Cognitive Computing",
+    "url": "https://doi.org/10.3390/bdcc9080200",
+    "plas_catalog_source": "manual_confirmed",
+    "authors": "Cesar Pachon; Cesar Pedraza; Dora Ballesteros",
+    "line_ids": [
+      "line:agricultura",
+      "line:transporte"
+    ],
+    "line_names": [
+      "Agricultura de precisión",
+      "Sistemas inteligentes de transporte"
+    ]
+  },
+  {
     "id": "pub:doi:10.1111/ejed.70052",
     "doi": "10.1111/ejed.70052",
     "title": "Self‐Regulated Learning Strategies in Computer Programming Education",
@@ -32,6 +140,70 @@
     "url": "https://doi.org/10.1111/ejed.70052",
     "plas_catalog_source": "coauthor_plas",
     "authors": "Jhon Jairo Ramírez-Echeverry; Felipe Restrepo Calle; Stephanie Torres Jiménez",
+    "line_ids": [
+      "line:educacion",
+      "line:embebidos",
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Educación en ingeniería",
+      "Sistemas embebidos confiables",
+      "Lenguajes de programación"
+    ]
+  },
+  {
+    "id": "pub:doi:10.3390/modelling6030071",
+    "doi": "10.3390/modelling6030071",
+    "title": "SpatioConvGRU-Net for Short-Term Traffic Crash Frequency Prediction in Bogotá: A Macroscopic Spatiotemporal Deep Learning Approach with Urban Factors",
+    "year": "2025",
+    "typology": "journal_article",
+    "typology_label_es": "Artículos de revista",
+    "venue_title": "Modelling",
+    "url": "https://doi.org/10.3390/modelling6030071",
+    "plas_catalog_source": "manual_confirmed",
+    "authors": "Alejandro Sandoval-Pineda; Cesar Pedraza",
+    "line_ids": [
+      "line:agricultura",
+      "line:transporte"
+    ],
+    "line_names": [
+      "Agricultura de precisión",
+      "Sistemas inteligentes de transporte"
+    ]
+  },
+  {
+    "id": "pub:doi:10.1109/tns.2024.3404055",
+    "doi": "10.1109/tns.2024.3404055",
+    "title": "Evaluation of Fault Mitigation Techniques Based on Approximate Computing Under Radiation",
+    "year": "2024",
+    "typology": "journal_article",
+    "typology_label_es": "Artículos de revista",
+    "venue_title": "IEEE Transactions on Nuclear Science",
+    "url": "https://doi.org/10.1109/tns.2024.3404055",
+    "plas_catalog_source": "manual_confirmed",
+    "authors": "A. Martínez-Álvarez; D. González-Montesoro; A. Serrano-Cases; A. Aponte-Moreno; Felipe Restrepo Calle; Y. Morilla; P. Martín-Holgado; Sergio Cuenca-Asensi",
+    "line_ids": [
+      "line:educacion",
+      "line:embebidos",
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Educación en ingeniería",
+      "Sistemas embebidos confiables",
+      "Lenguajes de programación"
+    ]
+  },
+  {
+    "id": "pub:doi:10.1007/978-3-031-66326-0_7",
+    "doi": "10.1007/978-3-031-66326-0_7",
+    "title": "Sarch-Knows: A Knowledge Graph for Modeling Security Scenarios at the Software Architecture Level",
+    "year": "2024",
+    "typology": "book_chapter",
+    "typology_label_es": "Capítulos de libros",
+    "venue_title": "Lecture Notes in Computer Science",
+    "url": "https://doi.org/10.1007/978-3-031-66326-0_7",
+    "plas_catalog_source": "manual_confirmed",
+    "authors": "Jeisson Vergara-Vargas; Felipe Restrepo Calle; Salah Sadou; Chouki Tibermacine",
     "line_ids": [
       "line:educacion",
       "line:embebidos",
@@ -131,6 +303,26 @@
       "Educación en ingeniería",
       "Sistemas embebidos confiables",
       "Lenguajes de programación"
+    ]
+  },
+  {
+    "id": "pub:doi:10.1007/978-3-031-46739-4_8",
+    "doi": "10.1007/978-3-031-46739-4_8",
+    "title": "Impact of Pruning Distribution in Compressed CNN Models: A Case Study",
+    "year": "2023",
+    "typology": "book_chapter",
+    "typology_label_es": "Capítulos de libros",
+    "venue_title": "Communications in Computer and Information Science",
+    "url": "https://doi.org/10.1007/978-3-031-46739-4_8",
+    "plas_catalog_source": "manual_confirmed",
+    "authors": "Cesar Pachon; Cesar Pedraza; Dora Ballesteros",
+    "line_ids": [
+      "line:agricultura",
+      "line:transporte"
+    ],
+    "line_names": [
+      "Agricultura de precisión",
+      "Sistemas inteligentes de transporte"
     ]
   },
   {
@@ -338,6 +530,24 @@
     ]
   },
   {
+    "id": "pub:doi:10.26507/paper.2212",
+    "doi": "10.26507/paper.2212",
+    "title": "Una nueva asignatura en posgrados de ingeniería: Investigación educativa en el aula de ingeniería",
+    "year": "2022",
+    "typology": "conference_paper",
+    "typology_label_es": "Artículos en conferencia",
+    "venue_title": "Encuentro Internacional de Educación en Ingeniería",
+    "url": "https://doi.org/10.26507/paper.2212",
+    "plas_catalog_source": "manual_confirmed",
+    "authors": "Jhon Jairo Ramírez-Echeverry; Felipe Restrepo-Calle",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "line_names": [
+      "Educación en ingeniería"
+    ]
+  },
+  {
     "id": "pub:doi:10.3390/su132112050",
     "doi": "10.3390/su132112050",
     "title": "Automatic Grading Tool for Jupyter Notebooks in Artificial Intelligence Courses",
@@ -473,6 +683,26 @@
       "Educación en ingeniería",
       "Sistemas embebidos confiables",
       "Lenguajes de programación"
+    ]
+  },
+  {
+    "id": "pub:doi:10.3390/agriengineering2030032",
+    "doi": "10.3390/agriengineering2030032",
+    "title": "A Deep Learning Approach for Weed Detection in Lettuce Crops Using Multispectral Images",
+    "year": "2020",
+    "typology": "journal_article",
+    "typology_label_es": "Artículos de revista",
+    "venue_title": "AgriEngineering",
+    "url": "https://doi.org/10.3390/agriengineering2030032",
+    "plas_catalog_source": "manual_confirmed",
+    "authors": "Kavir Osorio; Andrés Puerto; Cesar Pedraza; David Jamaica; Leonardo Rodríguez",
+    "line_ids": [
+      "line:agricultura",
+      "line:transporte"
+    ],
+    "line_names": [
+      "Agricultura de precisión",
+      "Sistemas inteligentes de transporte"
     ]
   },
   {
@@ -660,6 +890,26 @@
     ]
   },
   {
+    "id": "pub:doi:10.1007/978-3-030-31321-0_34",
+    "doi": "10.1007/978-3-030-31321-0_34",
+    "title": "An Artificial Vision Based Method for Vehicle Detection and Classification in Urban Traffic",
+    "year": "2019",
+    "typology": "book_chapter",
+    "typology_label_es": "Capítulos de libros",
+    "venue_title": "Lecture Notes in Computer Science",
+    "url": "https://doi.org/10.1007/978-3-030-31321-0_34",
+    "plas_catalog_source": "manual_confirmed",
+    "authors": "Camilo Camacho; Cesar Pedraza; Carolina Higuera",
+    "line_ids": [
+      "line:agricultura",
+      "line:transporte"
+    ],
+    "line_names": [
+      "Agricultura de precisión",
+      "Sistemas inteligentes de transporte"
+    ]
+  },
+  {
     "id": "pub:doi:10.3389/fpsyg.2019.02843",
     "doi": "10.3389/fpsyg.2019.02843",
     "title": "Evaluating Impact on Motivation and Academic Performance of a Game-Based Learning Experience Using Kahoot",
@@ -708,6 +958,28 @@
     "authors": "",
     "line_ids": [],
     "line_names": []
+  },
+  {
+    "id": "pub:doi:10.1109/latw.2019.8704586",
+    "doi": "10.1109/latw.2019.8704586",
+    "title": "Reducing Overheads in Software-based Fault Tolerant Systems using Approximate Computing",
+    "year": "2019",
+    "typology": "conference_paper",
+    "typology_label_es": "Artículos en conferencia",
+    "venue_title": "2019 IEEE Latin American Test Symposium (LATS)",
+    "url": "https://doi.org/10.1109/latw.2019.8704586",
+    "plas_catalog_source": "manual_confirmed",
+    "authors": "Alexander Aponte-Moreno; Cesar Pedraza; Felipe Restrepo-Calle",
+    "line_ids": [
+      "line:educacion",
+      "line:embebidos",
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Educación en ingeniería",
+      "Sistemas embebidos confiables",
+      "Lenguajes de programación"
+    ]
   },
   {
     "id": "pub:doi:10.1109/latw.2019.8704614",
@@ -990,6 +1262,24 @@
     ]
   },
   {
+    "id": "pub:doi:10.26507/rei.v12n23.740",
+    "doi": "10.26507/rei.v12n23.740",
+    "title": "¿Qué es una buena clase en ingeniería desde el punto de vista de los estudiantes?",
+    "year": "2017",
+    "typology": "journal_article",
+    "typology_label_es": "Artículos de revista",
+    "venue_title": "Revista Educación en Ingeniería",
+    "url": "https://doi.org/10.26507/rei.v12n23.740",
+    "plas_catalog_source": "manual_confirmed",
+    "authors": "Zadkiel Zuluaga Rendón; Javier Alejandro Corredor Aristizábal; Jesús Maria Quintero Quintero; Jhon Jairo Ramírez-Echeverry; Fredy Andrés Olarte Dussán",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "line_names": [
+      "Educación en ingeniería"
+    ]
+  },
+  {
     "id": "pub:doi:10.1109/latw.2017.7906744",
     "doi": "10.1109/latw.2017.7906744",
     "title": "An effective strategy for selective hardening of software",
@@ -1022,6 +1312,28 @@
     "url": "https://doi.org/10.5220/0006333901030113",
     "plas_catalog_source": "site_inventory",
     "authors": "Jean Pierre Alfonso Hoyos; Felipe Restrepo-Calle",
+    "line_ids": [
+      "line:educacion",
+      "line:embebidos",
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Educación en ingeniería",
+      "Sistemas embebidos confiables",
+      "Lenguajes de programación"
+    ]
+  },
+  {
+    "id": "pub:orcid:0000000342261324:44823443",
+    "doi": "",
+    "title": "Automatic source code generation forweb-based process-oriented information systems",
+    "year": "2017",
+    "typology": "conference_paper",
+    "typology_label_es": "Artículos en conferencia",
+    "venue_title": "",
+    "url": "",
+    "plas_catalog_source": "manual_confirmed",
+    "authors": "Felipe Restrepo Calle",
     "line_ids": [
       "line:educacion",
       "line:embebidos",
@@ -1376,6 +1688,28 @@
     ]
   },
   {
+    "id": "pub:doi:10.1109/radecs.2013.6937381",
+    "doi": "10.1109/radecs.2013.6937381",
+    "title": "Efficient mitigation of data and control flow errors in microprocessors",
+    "year": "2013",
+    "typology": "conference_paper",
+    "typology_label_es": "Artículos en conferencia",
+    "venue_title": "2013 14th European Conference on Radiation and Its Effects on Components and Systems (RADECS)",
+    "url": "https://doi.org/10.1109/radecs.2013.6937381",
+    "plas_catalog_source": "manual_confirmed",
+    "authors": "Luis Parra; Almudena Lindoso; Marta Portela; Luis Entrena; Felipe Restrepo-Calle; Sergio Cuenca-Asensi; Antonio Martinez-Alvarez",
+    "line_ids": [
+      "line:educacion",
+      "line:embebidos",
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Educación en ingeniería",
+      "Sistemas embebidos confiables",
+      "Lenguajes de programación"
+    ]
+  },
+  {
     "id": "pub:doi:10.1016/j.eswa.2013.06.060",
     "doi": "10.1016/j.eswa.2013.06.060",
     "title": "Fault tolerant embedded systems design by multi-objective optimization",
@@ -1430,6 +1764,28 @@
     "url": "https://doi.org/10.1109/tdsc.2011.54",
     "plas_catalog_source": "site_inventory",
     "authors": "A. Martínez-Álvarez; S. Cuenca-Asensi; F. Restrepo-Calle; F. R. P. Pinto; H. Guzman-Miranda; M. A. Aguirre",
+    "line_ids": [
+      "line:educacion",
+      "line:embebidos",
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Educación en ingeniería",
+      "Sistemas embebidos confiables",
+      "Lenguajes de programación"
+    ]
+  },
+  {
+    "id": "pub:doi:10.1109/radecs.2011.6131423",
+    "doi": "10.1109/radecs.2011.6131423",
+    "title": "A co-design approach for SET mitigation in embedded systems",
+    "year": "2011",
+    "typology": "conference_paper",
+    "typology_label_es": "Artículos en conferencia",
+    "venue_title": "2011 12th European Conference on Radiation and Its Effects on Components and Systems",
+    "url": "https://doi.org/10.1109/radecs.2011.6131423",
+    "plas_catalog_source": "manual_confirmed",
+    "authors": "A. Lindoso; L. Entrena; E. San Millan; S. Cuenca-Asensi; A. Martínez-Álvarez; F. Restrepo-Calle",
     "line_ids": [
       "line:educacion",
       "line:embebidos",
@@ -1552,6 +1908,28 @@
     ]
   },
   {
+    "id": "pub:orcid:0000000342261324:10417385",
+    "doi": "",
+    "title": "Application-Driven Co-design of Fault-Tolerant Industrial Systems",
+    "year": "2010",
+    "typology": "journal_article",
+    "typology_label_es": "Artículos de revista",
+    "venue_title": "",
+    "url": "",
+    "plas_catalog_source": "manual_confirmed",
+    "authors": "Felipe Restrepo Calle",
+    "line_ids": [
+      "line:educacion",
+      "line:embebidos",
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Educación en ingeniería",
+      "Sistemas embebidos confiables",
+      "Lenguajes de programación"
+    ]
+  },
+  {
     "id": "pub:doi:10.1109/fpl.2010.71",
     "doi": "10.1109/fpl.2010.71",
     "title": "Rapid Prototyping of Radiation-Tolerant Embedded Systems on FPGA",
@@ -1562,6 +1940,28 @@
     "url": "https://doi.org/10.1109/fpl.2010.71",
     "plas_catalog_source": "site_inventory",
     "authors": "F. Restrepo-Calle; A. Martínez-Álvarez; F. R. Palomo; H. Guzman-Miranda; M. A. Aguirre; S. Cuenca-Asensi",
+    "line_ids": [
+      "line:educacion",
+      "line:embebidos",
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Educación en ingeniería",
+      "Sistemas embebidos confiables",
+      "Lenguajes de programación"
+    ]
+  },
+  {
+    "id": "pub:orcid:0000000342261324:10417387",
+    "doi": "",
+    "title": "Platform for intelligent management of Industrial Machinery based on service-oriented architecture",
+    "year": "2008",
+    "typology": "journal_article",
+    "typology_label_es": "Artículos de revista",
+    "venue_title": "",
+    "url": "",
+    "plas_catalog_source": "manual_confirmed",
+    "authors": "Felipe Restrepo Calle",
     "line_ids": [
       "line:educacion",
       "line:embebidos",

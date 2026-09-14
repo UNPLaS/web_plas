@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/with-base';
 import Layout from '../../layouts/Layout.astro';
 import TypeChip from '../../components/TypeChip.astro';
 import MarkdownContent from '../../components/MarkdownContent.astro';
@@ -22,7 +23,7 @@ const related = projectItems.filter((entry) => entry.id !== item.id).slice(0, 3)
 <Layout title={item.title}>
   <article class="page-section page-section--tight wrap">
     <p class="page-back">
-      <a class="btn btn--soft" href="/projects">← Volver a proyectos</a>
+      <a class="btn btn--soft" href={withBase("/projects")}>← Volver a proyectos</a>
     </p>
 
     {
@@ -56,7 +57,7 @@ const related = projectItems.filter((entry) => entry.id !== item.id).slice(0, 3)
       <section class="news-section wrap detail-related" aria-labelledby="related-heading">
         <div class="news-section__head">
           <h2 id="related-heading" class="news-section__title">Otros proyectos</h2>
-          <a class="btn btn--soft" href="/projects">Ver todas</a>
+          <a class="btn btn--soft" href={withBase("/projects")}>Ver todas</a>
         </div>
         <ul class="news-gallery">
           {related.map((entry) => {
@@ -64,7 +65,7 @@ const related = projectItems.filter((entry) => entry.id !== item.id).slice(0, 3)
               entry.title.length > 72 ? `${entry.title.slice(0, 72).trimEnd()}…` : entry.title;
             return (
               <li>
-                <a class="news-card" href={`/projects/${entry.id}`} title={entry.title}>
+                <a class="news-card" href={withBase(`/projects/${entry.id}`)} title={entry.title}>
                   <div class="news-card__media">
                     {entry.image ? <img src={entry.image} alt="" loading="lazy" /> : null}
                   </div>

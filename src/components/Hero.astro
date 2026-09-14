@@ -1,5 +1,6 @@
 ---
 import { group, site } from '../data/placeholders';
+import { withBase } from '../lib/with-base';
 
 interface Props {
   ctaHref?: string;
@@ -10,11 +11,11 @@ interface Props {
 }
 
 const {
-  ctaHref = '/contact',
+  ctaHref = withBase('/contact'),
   ctaLabel = 'Escríbenos',
-  secondaryHref = '/about',
+  secondaryHref = withBase('/about'),
   secondaryLabel = 'Conoce el grupo',
-  imageSrc = '/images/hero-plas-warm.png',
+  imageSrc = withBase('/images/hero-plas-warm.png'),
 } = Astro.props;
 
 function formatResultsDate(iso: string) {
@@ -47,8 +48,8 @@ const resultsLabel = group.minciencias_results_published
     class="hero__media"
     src={imageSrc}
     alt=""
-    width="1920"
-    height="1080"
+    width="1280"
+    height="720"
     decoding="async"
     fetchpriority="high"
   />

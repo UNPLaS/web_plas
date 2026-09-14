@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/with-base';
 import Layout from '../../layouts/Layout.astro';
 import TypeChip from '../../components/TypeChip.astro';
 import { projectItems } from '../../data/placeholders';
@@ -18,7 +19,7 @@ import { projectItems } from '../../data/placeholders';
       {
         projectItems.map((item) => (
           <li>
-            <a class="blog-card" href={`/projects/${item.id}`}>
+            <a class="blog-card" href={withBase(`/projects/${item.id}`)}>
               <div class="blog-card__media">
                 {item.image ? <img src={item.image} alt="" loading="lazy" /> : null}
               </div>

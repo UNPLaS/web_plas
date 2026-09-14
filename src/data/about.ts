@@ -3,6 +3,7 @@
  */
 import groupJson from './group.json';
 import { projectItems } from './content';
+import { withBase } from '../lib/with-base';
 
 export const aboutIntro = {
   eyebrow: 'Sobre el grupo',
@@ -54,24 +55,24 @@ export const aboutAnchors = {
   lede: 'Tres puertas al trabajo vivo del grupo.',
   items: [
     {
-      href: uncode?.href ?? '/projects/uncode',
+      href: uncode?.href ?? withBase('/projects/uncode'),
       label: uncode?.title ?? 'UNCode',
       text: 'Aprendizaje y evaluación automática de programación: un artefacto que une aula e investigación.',
-      image: uncode?.image || '/images/PLaS/proyectos/uncode0.png',
+      image: uncode?.image || withBase('/images/PLaS/proyectos/uncode0.png'),
       meta: uncode?.lineName ?? 'Educación en ingeniería',
     },
     {
-      href: '/lines',
+      href: withBase('/lines'),
       label: 'Líneas de investigación',
       text: 'Cinco frentes que se refuerzan: del lenguaje y el aula a embebidos, ciudad y campo.',
-      image: '/images/PLaS/proyectos/lenguajes/lenguajes_0.jpg',
+      image: withBase('/images/PLaS/proyectos/lenguajes/lenguajes_0.jpg'),
       meta: 'Mapa del grupo',
     },
     {
-      href: '/people',
+      href: withBase('/people'),
       label: 'Equipo',
       text: 'Docentes y trayectoria de formación en maestría y doctorado.',
-      image: '/images/PLaS/profesores/frc_pic.jpg',
+      image: withBase('/images/PLaS/profesores/frc_pic.jpg'),
       meta: 'Comunidad',
     },
   ],

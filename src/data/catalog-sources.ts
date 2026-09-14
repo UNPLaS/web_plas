@@ -1,4 +1,5 @@
 /** Fuentes / editoriales del catálogo: logo por prefijo DOI o host. */
+import { withBase } from '../lib/with-base';
 
 export type CatalogSource = {
   id: string;
@@ -148,18 +149,18 @@ export function resolveCatalogSource(opts: {
   kind?: 'pub' | 'thesis';
 }): CatalogSource {
   const prefix = doiPrefix(opts.doi);
+  let source: CatalogSource;
   if (prefix && doiPrefixToSource[prefix]) {
-    return sources[doiPrefixToSource[prefix]];
+    source = sources[doiPrefixToSource[prefix]];
+  } else {
+    const host = hostFromUrl(opts.url);
+    if (host && hostToSource[host]) {
+      source = sources[hostToSource[host]];
+    } else if (opts.kind === 'thesis') {
+      source = sources['unal-repo'];
+    } else {
+      source = sources.document;
+    }
   }
-
-  const host = hostFromUrl(opts.url);
-  if (host && hostToSource[host]) {
-    return sources[hostToSource[host]];
-  }
-
-  if (opts.kind === 'thesis') {
-    return sources['unal-repo'];
-  }
-
-  return sources.document;
+  return { ...source, logo: withBase(source.logo) };
 }

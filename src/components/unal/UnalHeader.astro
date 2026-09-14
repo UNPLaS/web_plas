@@ -1,7 +1,9 @@
 ---
 import { nav } from '../../data/placeholders';
+import { isActivePath, withBase } from '../../lib/with-base';
 
-const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const pathname = Astro.url.pathname;
+const homeHref = withBase('/');
 
 const sedes = [
   { label: 'Amazonia', href: 'http://amazonia.unal.edu.co' },
@@ -27,27 +29,27 @@ const services = [
   {
     label: 'Correo Electrónico',
     href: 'https://smartkey.xertica.com/cloudkey/a/unal.edu.co/user/login',
-    icon: '/unal/images/icnServEmail.png',
+    icon: withBase('/unal/images/icnServEmail.png'),
   },
   {
     label: 'DNINFOA - SIA',
     href: 'https://dninfoa.unal.edu.co',
-    icon: '/unal/images/icnServSia.png',
+    icon: withBase('/unal/images/icnServSia.png'),
   },
   {
     label: 'Bibliotecas',
     href: 'http://bibliotecas.unal.edu.co',
-    icon: '/unal/images/icnServLibrary.png',
+    icon: withBase('/unal/images/icnServLibrary.png'),
   },
   {
     label: 'Convocatorias',
     href: 'http://personal.unal.edu.co',
-    icon: '/unal/images/icnServCall.png',
+    icon: withBase('/unal/images/icnServCall.png'),
   },
   {
     label: 'Identidad UNAL',
     href: 'http://identidad.unal.edu.co',
-    icon: '/unal/images/icnServIdentidad.png',
+    icon: withBase('/unal/images/icnServIdentidad.png'),
   },
 ];
 ---
@@ -57,7 +59,7 @@ const services = [
     <a href="https://unal.edu.co" title="Universidad Nacional de Colombia">
       <img
         class="unal-logo__img"
-        src="/unal/images/escudoUnal.svg"
+        src={withBase('/unal/images/escudoUnal.svg')}
         width="180"
         height="110"
         alt="Escudo de la Universidad Nacional de Colombia"
@@ -69,7 +71,7 @@ const services = [
 
   <div class="unal-seal">
     <img
-      src="/unal/images/sealColombia.png"
+      src={withBase('/unal/images/sealColombia.png')}
       width="66"
       height="66"
       alt="Escudo de la República de Colombia"
@@ -137,7 +139,7 @@ const services = [
   <div class="unal-nav-row">
     <div class="unal-subdomain-row">
       <div class="unal-subdomain">
-        <a href="/">plas.unal.edu.co</a>
+        <a href={homeHref}>plas.unal.edu.co</a>
       </div>
     </div>
 
@@ -171,10 +173,7 @@ const services = [
       <ul class="unal-main-links">
         {
           nav.map((item) => {
-            const active =
-              item.href === '/'
-                ? pathname === '/'
-                : pathname === item.href || pathname.startsWith(`${item.href}/`);
+            const active = isActivePath(pathname, item.href);
             return (
               <li>
                 <a href={item.href} aria-current={active ? 'page' : undefined}>

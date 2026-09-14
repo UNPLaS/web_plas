@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../../lib/with-base';
 import Layout from '../../layouts/Layout.astro';
 import TypeChip from '../../components/TypeChip.astro';
 import MarkdownContent from '../../components/MarkdownContent.astro';
@@ -27,7 +28,7 @@ const hasMarkdown = Boolean(item.content?.trim());
 <Layout title={item.title}>
   <article class="page-section page-section--tight wrap">
     <p class="page-back">
-      <a class="btn btn--soft" href="/blog">← Volver al blog</a>
+      <a class="btn btn--soft" href={withBase("/blog")}>← Volver al blog</a>
     </p>
 
     {
@@ -83,7 +84,7 @@ const hasMarkdown = Boolean(item.content?.trim());
       <section class="news-section wrap detail-related" aria-labelledby="related-heading">
         <div class="news-section__head">
           <h2 id="related-heading" class="news-section__title">Otras publicaciones</h2>
-          <a class="btn btn--soft" href="/blog">Ver todas</a>
+          <a class="btn btn--soft" href={withBase("/blog")}>Ver todas</a>
         </div>
         <ul class="news-gallery">
           {related.map((entry) => {

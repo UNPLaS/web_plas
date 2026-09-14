@@ -1,5 +1,6 @@
 ---
 import { group } from '../../data/content';
+import { withBase } from '../../lib/with-base';
 
 /** Fecha de actualización del sitio (DD/MM/AA), como en la plantilla UNAL. */
 const updatedAt = '04/08/26';
@@ -23,15 +24,15 @@ const govRight = [
     label: 'Correo institucional',
     href: 'https://smartkey.xertica.com/cloudkey/a/unal.edu.co/user/login',
   },
-  { label: 'Mapa del sitio', href: '/' },
+  { label: 'Mapa del sitio', href: withBase('/') },
   { label: 'Redes Sociales', href: 'http://redessociales.unal.edu.co' },
-  { label: 'FAQ', href: '/contact' },
+  { label: 'FAQ', href: withBase('/contact') },
   { label: 'Quejas y reclamos', href: 'http://unal.edu.co/quejas-y-reclamos/' },
   { label: 'Atención en línea', href: 'http://unal.edu.co/atencion-en-linea/' },
   { label: 'Encuesta', href: 'http://unal.edu.co/encuesta/' },
-  { label: 'Contáctenos', href: '/contact' },
+  { label: 'Contáctenos', href: withBase('/contact') },
   { label: 'Estadísticas', href: 'http://estadisticas.unal.edu.co/' },
-  { label: 'Glosario', href: '/' },
+  { label: 'Glosario', href: withBase('/') },
 ];
 ---
 
@@ -60,28 +61,28 @@ const govRight = [
           title="Comuníquese con el administrador de este sitio web"
           href={`mailto:${contactEmail}`}>{contactEmail}</a
         ><br />
-        <a href="/contact">Acerca de este sitio web</a><br />
+        <a href={withBase("/contact")}>Acerca de este sitio web</a><br />
         Actualización:{updatedAt}
       </div>
     </div>
     <div class="unal-footer-logos">
       <a href="http://orgullo.unal.edu.co/">
-        <img src="/unal/images/log_orgullo.png" alt="Orgullo UN" width="88" height="30" />
+        <img src={withBase("/unal/images/log_orgullo.png")} alt="Orgullo UN" width="88" height="30" />
       </a>
       <a href="https://www.gov.co/">
         <img
-          src="/unal/images/log_gobiern.png"
+          src={withBase("/unal/images/log_gobiern.png")}
           alt="Portal Único del Estado Colombiano"
           width="88"
           height="30"
         />
       </a>
       <a href="http://agenciadenoticias.unal.edu.co">
-        <img src="/unal/images/log_agenc.png" alt="Agencia de Noticias" width="88" height="30" />
+        <img src={withBase("/unal/images/log_agenc.png")} alt="Agencia de Noticias" width="88" height="30" />
       </a>
       <a href="http://www.contaduria.gov.co/">
         <img
-          src="/unal/images/log_contra.png"
+          src={withBase("/unal/images/log_contra.png")}
           alt="Contaduría General de la República"
           width="88"
           height="30"

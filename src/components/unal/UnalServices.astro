@@ -1,29 +1,31 @@
 ---
+import { withBase } from '../../lib/with-base';
+
 const services = [
   {
     label: 'Correo Electrónico',
     href: 'https://smartkey.xertica.com/cloudkey/a/unal.edu.co/user/login',
-    icon: '/unal/images/icnServEmail.png',
+    icon: withBase('/unal/images/icnServEmail.png'),
   },
   {
     label: 'DNINFOA - SIA',
     href: 'https://dninfoa.unal.edu.co',
-    icon: '/unal/images/icnServSia.png',
+    icon: withBase('/unal/images/icnServSia.png'),
   },
   {
     label: 'Bibliotecas',
     href: 'http://bibliotecas.unal.edu.co',
-    icon: '/unal/images/icnServLibrary.png',
+    icon: withBase('/unal/images/icnServLibrary.png'),
   },
   {
     label: 'Convocatorias',
     href: 'http://personal.unal.edu.co',
-    icon: '/unal/images/icnServCall.png',
+    icon: withBase('/unal/images/icnServCall.png'),
   },
   {
     label: 'Identidad UNAL',
     href: 'http://identidad.unal.edu.co',
-    icon: '/unal/images/icnServIdentidad.png',
+    icon: withBase('/unal/images/icnServIdentidad.png'),
   },
 ];
 ---

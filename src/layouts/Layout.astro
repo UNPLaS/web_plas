@@ -10,6 +10,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import Spine from '../components/Spine.astro';
 import FloatGraphs from '../components/FloatGraphs.astro';
 import { site } from '../data/placeholders';
+import { stripBase, withBase } from '../lib/with-base';
 
 interface Props {
   title: string;
@@ -19,18 +20,22 @@ interface Props {
 }
 
 const { title, description = site.tagline, spine = false } = Astro.props;
-const isHome = Astro.url.pathname.replace(/\/$/, '') === '' || Astro.url.pathname === '/';
+const isHome = stripBase(Astro.url.pathname) === '/';
 const pageTitle = title.includes('Universidad Nacional')
   ? title
   : `${title} | Universidad Nacional de Colombia`;
+const favicon = withBase('/favicon.ico');
+const escudoPreload = withBase('/unal/images/escudoUnal.svg');
+const sealPreload = withBase('/unal/images/sealColombia.png');
+const unalChromeJs = withBase('/unal/js/unal-chrome.js');
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href={favicon} type="image/x-icon" />
+    <link rel="icon" href={favicon} type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
@@ -41,12 +46,11 @@ const pageTitle = title.includes('Universidad Nacional')
       href="https://fonts.googleapis.com/css2?family=Onest:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="preload" href="/unal/images/escudoUnal.svg" as="image" type="image/svg+xml" />
-    <link rel="preload" href="/unal/images/sealColombia.png" as="image" type="image/png" />
+    <link rel="preload" href={escudoPreload} as="image" type="image/svg+xml" />
+    <link rel="preload" href={sealPreload} as="image" type="image/png" />
     <ClientRouter />
   </head>
   <body class="unal-shell">
-    <!-- B3: cabezote, accesibilidad, servicios → contenido PLaS → pie -->
     <UnalHeader />
     <UnalAccessibility />
     <UnalServices />
@@ -72,7 +76,7 @@ const pageTitle = title.includes('Universidad Nacional')
     </main>
 
     <UnalFooter />
-    <script src="/unal/js/unal-chrome.js" defer></script>
+    <script src={unalChromeJs} defer></script>
     <script>
       import { startTouchHover } from '../scripts/touch-hover';
       import { markExternalLinks } from '../scripts/external-links';
@@ -80,18 +84,15 @@ const pageTitle = title.includes('Universidad Nacional')
       import { startNetworkDrift } from '../scripts/network-drift';
       import { syncSpineAndHeroPanel } from '../scripts/spine-sync';
       import { initCatalogFilters } from '../scripts/catalog-filters';
+      import { isActivePath } from '../lib/with-base';
 
       function syncPersistedNav() {
-        const path = window.location.pathname.replace(/\/$/, '') || '/';
+        const path = window.location.pathname;
         document.querySelectorAll('#unal-main-nav a[href]').forEach((node) => {
           const a = node as HTMLAnchorElement;
           const href = a.getAttribute('href') || '';
           if (!href.startsWith('/')) return;
-          const active =
-            href === '/'
-              ? path === '/'
-              : path === href || path.startsWith(`${href}/`);
-          if (active) a.setAttribute('aria-current', 'page');
+          if (isActivePath(path, href)) a.setAttribute('aria-current', 'page');
           else a.removeAttribute('aria-current');
         });
       }
@@ -128,7 +129,6 @@ const pageTitle = title.includes('Universidad Nacional')
 </html>
 
 <style is:global>
-  /* Soft-nav sin View Transition visual: el fade es solo CSS en el contenido */
   ::view-transition-old(root),
   ::view-transition-new(root) {
     animation: none !important;

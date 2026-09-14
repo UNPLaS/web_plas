@@ -14,6 +14,7 @@ import thesesJson from './theses.json';
 import lineTopicGraphs from './line-topic-graphs.json';
 import { resolveCatalogSource } from './catalog-sources';
 import { resolveTypology } from './typologies';
+import { withBase } from '../lib/with-base';
 
 const degreeLabel: Record<string, string> = {
   pregrado: 'Pregrado',
@@ -21,9 +22,10 @@ const degreeLabel: Record<string, string> = {
   doctorado: 'Doctorado',
 };
 
-/** Reescribe hrefs de new_plas a rutas Front_plas. */
+/** Reescribe hrefs de new_plas a rutas Front_plas (+ base de GitHub Pages). */
 export function mapHref(href: string): string {
   if (!href) return href;
+  if (/^(https?:|mailto:|tel:)/i.test(href)) return href;
   const [path, hash] = href.split('#');
   let next = path
     .replace(/^\/proyectos(\/|$)/, '/projects$1')
@@ -38,9 +40,10 @@ export function mapHref(href: string): string {
 
   // /blog#id → /blog/<param>
   if (next === '/blog' && hash) {
-    return `/blog/${blogParam(decodeURIComponent(hash))}`;
+    return withBase(`/blog/${blogParam(decodeURIComponent(hash))}`);
   }
-  return hash ? `${next}#${hash}` : next;
+  const joined = hash ? `${next}#${hash}` : next;
+  return next.startsWith('/') ? withBase(joined) : joined;
 }
 
 export function blogParam(id: string): string {
@@ -63,8 +66,8 @@ export const site = {
   nameFull: groupJson.name_full,
   tagline: 'Investigamos construyendo herramientas, no solo publicando.',
   subtitle:
-    'En PLaS las líneas no son islas: lo que se prueba en el lab se enseña, se evalúa y se lleva a herramientas reales.',
-  logo: '/images/PLaS/Logo_PLaS.png',
+    'Lo que se prueba en el laboratorio se enseña, se evalúa y vuelve a la práctica: las líneas de PLaS se refuerzan entre sí.',
+  logo: withBase('/images/PLaS/Logo_PLaS.png'),
 };
 
 /** Color de chip por id o nombre de línea (desde lines.json). */
@@ -122,11 +125,14 @@ export const projectItems = [...projectsJson]
     summary: p.summary,
     content: typeof p.content === 'string' ? p.content : '',
     outcome: p.line_name,
-    href: `/projects/${p.slug}`,
-    image: p.image_path || '',
+    href: withBase(`/projects/${p.slug}`),
+    image: p.image_path ? withBase(p.image_path) : '',
     sections: p.sections ?? [],
     links: p.links ?? [],
-    assets: p.assets ?? [],
+    assets: (p.assets ?? []).map((a) => ({
+      ...a,
+      path: a.path ? withBase(a.path) : a.path,
+    })),
     lineId: p.line_id || '',
     lineName: p.line_name,
     lineColor: resolveLineColor(p.line_id, p.line_name),
@@ -169,8 +175,8 @@ export const blogItems = [...blogJson]
           : post.body || '',
       body: post.body || '',
       outcome: post.participation || post.event_type || '',
-      href: `/blog/${blogParam(post.id)}`,
-      image: typeof post.image === 'string' ? post.image : '',
+      href: withBase(`/blog/${blogParam(post.id)}`),
+      image: typeof post.image === 'string' && post.image ? withBase(post.image) : '',
       year: post.year,
       place: post.place,
       dateFrom: post.date_from,
@@ -202,8 +208,8 @@ export const facultyItems = facultyJson.map((f) => {
     name: f.name_display,
     role: groupRole,
     rank: f.rank,
-    href: '/people',
-    image: f.image_path || '',
+    href: withBase('/people'),
+    image: f.image_path ? withBase(f.image_path) : '',
     meta: f.line_names?.length ? `Líneas: ${f.line_names.join(', ')}` : '',
     email: f.email,
     profiles: f.profiles ?? [],
@@ -239,7 +245,7 @@ export const students = [...studentsJson]
       name: s.name_display,
       role: typeLabel,
       meta: s.status,
-      image: s.image_path || '',
+      image: s.image_path ? withBase(s.image_path) : '',
       active: Boolean(s.active),
       degree,
       exitYear: s.exit_year || s.thesis?.year || '',
@@ -294,7 +300,7 @@ export const researchLines = linesJson.map((line) => {
     title: line.name,
     summary: line.summary,
     text: line.description,
-    href: '/lines',
+    href: withBase('/lines'),
     slug: line.slug,
     color: line.color,
     topics: line.topics ?? [],
@@ -441,7 +447,7 @@ export const recentWorks = catalogItems.slice(0, 3).map((item) => ({
   author: item.author,
   meta: item.meta,
   outcome: item.outcome,
-  href: item.href || '/catalog',
+  href: item.href || withBase('/catalog'),
   image: item.sourceLogo,
   sourceLabel: item.sourceLabel,
   lineChip: item.lineChip,

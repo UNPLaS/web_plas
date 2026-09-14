@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../lib/with-base';
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import ProjectsCarousel from '../components/ProjectsCarousel.astro';
@@ -28,7 +29,7 @@ import {
   <section class="news-section wrap" aria-labelledby="news-heading">
     <div class="news-section__head">
       <h2 id="news-heading" class="news-section__title">Últimas novedades</h2>
-      <a class="btn btn--soft" href="/blog">Ver todas</a>
+      <a class="btn btn--soft" href={withBase("/blog")}>Ver todas</a>
     </div>
     <ul class="news-gallery">
       {
@@ -59,7 +60,7 @@ import {
   <section class="works-section wrap" aria-labelledby="works-heading">
     <div class="works-section__head">
       <h2 id="works-heading" class="works-section__title">Trabajos recientes</h2>
-      <a class="btn btn--soft" href="/catalog">Catálogo</a>
+      <a class="btn btn--soft" href={withBase("/catalog")}>Catálogo</a>
     </div>
     <ul class="works-list">
       {
@@ -105,7 +106,7 @@ import {
     <div class="section-bleed__inner wrap">
       <div class="faculty-section__head">
         <h2 id="faculty-heading" class="faculty-section__title">Nuestros docentes</h2>
-        <a class="btn btn--soft" href="/people">Equipo</a>
+        <a class="btn btn--soft" href={withBase("/people")}>Equipo</a>
       </div>
       <ul class="faculty-gallery">
         {
@@ -132,7 +133,7 @@ import {
   <section class="lines-section wrap" aria-labelledby="lines-heading">
     <div class="lines-section__head">
       <h2 id="lines-heading" class="lines-section__title">Líneas de investigación</h2>
-      <a class="btn btn--soft" href="/lines">Líneas</a>
+      <a class="btn btn--soft" href={withBase("/lines")}>Líneas</a>
     </div>
     <ul class="lines-list">
       {
@@ -161,7 +162,7 @@ import {
         propuestas con criterio y acompañamos el trabajo hasta un resultado sólido.
       </p>
       <p class="invite-section__cta">
-        <a class="btn btn--amber" href="/contact">Escribir al grupo</a>
+        <a class="btn btn--amber" href={withBase("/contact")}>Escribir al grupo</a>
       </p>
     </div>
   </section>
