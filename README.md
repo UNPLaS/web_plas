@@ -11,7 +11,8 @@ Universidad Nacional de Colombia · Sede Bogotá · Facultad de Ingeniería
 | **Sede** | Edificio Aulas de Ingeniería 453, Bogotá D.C. |
 | **GrupLAC** | [Perfil del grupo](https://scienti.minciencias.gov.co/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000018409) |
 | **HERMES** | [Consulta del grupo](http://www.hermes.unal.edu.co/pages/Consultas/Grupo.jsf?idGrupo=2343) |
-| **Sitio (GitHub Pages)** | https://vethariel.github.io/Front_plas/ |
+| **Sitio oficial** | https://plas.unal.edu.co |
+| **Espejo (GitHub Pages)** | https://vethariel.github.io/Front_plas/ |
 
 Investigamos cómo se enseñan, construyen y confían los lenguajes y los sistemas —en el aula, el laboratorio y problemas reales de movilidad y producción. Formamos en maestría y doctorado y preferimos dejar métodos y herramientas reutilizables, no solo papers.
 
@@ -51,7 +52,9 @@ Datos públicos aproximados (export actual): 5 líneas, 13 proyectos, 4 docentes
 ```bash
 npm install
 npm run dev          # servidor local
-npm run build        # salida en dist/
+npm run build        # UNAL: site plas.unal.edu.co, base /
+npm run build:unal   # explícito UNAL
+npm run build:pages  # GitHub Pages: base /Front_plas
 npm run preview      # previsualizar el build
 npm test             # pruebas (mesh + harvest)
 ```
@@ -79,7 +82,22 @@ Detalle: [`scripts/README.md`](scripts/README.md).
 
 Publicaciones nuevas entran como `plas_catalog=pending` hasta confirmarlas como producto del grupo (`yes`) y volver a proyectar.
 
-## Despliegue (GitHub Pages)
+## Despliegue
+
+`site` y `base` se configuran con variables de entorno (`PLAS_SITE`, `PLAS_BASE`). Por defecto: **https://plas.unal.edu.co** y `base: '/'`.
+
+### Apache (plas.unal.edu.co)
+
+DocumentRoot del vhost → `/var/www/html/plas` (raíz del dominio, no subpath).
+
+```bash
+npm run build:unal   # o npm run build
+sudo rsync -a --delete dist/ /var/www/html/plas/
+```
+
+Comprobar que CSS/JS carguen desde `/_astro/...` (no `/Front_plas/_astro/...`).
+
+### GitHub Pages
 
 URL: https://vethariel.github.io/Front_plas/
 
@@ -88,9 +106,9 @@ URL: https://vethariel.github.io/Front_plas/
 
 Configuración:
 
-- Workflow: `.github/workflows/deploy.yml`
-- `astro.config.mjs`: `site` + `base: '/Front_plas'`
-- Rutas y assets usan el helper `withBase` para el subpath de Pages
+- Workflow: `.github/workflows/deploy.yml` (define `PLAS_SITE` / `PLAS_BASE`)
+- Local: `npm run build:pages`
+- Rutas y assets usan `withBase` para el subpath de Pages
 
 ## Licencia y créditos
 

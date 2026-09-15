@@ -26,6 +26,9 @@ jobs:
         with:
           node-version: 22
           # package-manager detected from package-lock.json
+        env:
+          PLAS_SITE: https://vethariel.github.io
+          PLAS_BASE: /Front_plas
 
   deploy:
     needs: build
