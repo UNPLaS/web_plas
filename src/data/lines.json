@@ -27,7 +27,10 @@
         "topic": "Analítica de software / Big Code"
       }
     ],
-    "color": "#00c9a7"
+    "color": "#00c9a7",
+    "image_path": "/images/PLaS/lineas/lenguajes.jpg",
+    "image_credit": "Unsplash — Chris Ried",
+    "image_source": "https://unsplash.com/photos/black-screen-with-code-1515879218367-8466d910aaa4"
   },
   {
     "id": "line:educacion",
@@ -65,7 +68,10 @@
         "topic": "Currículo y competencias en ingeniería"
       }
     ],
-    "color": "#ff9f1a"
+    "color": "#ff9f1a",
+    "image_path": "/images/PLaS/lineas/educacion.jpg",
+    "image_credit": "Unsplash — Brooke Cagle",
+    "image_source": "https://unsplash.com/photos/three-people-sitting-in-front-of-table-laughing-together-g1Kr4Ozfoac"
   },
   {
     "id": "line:embebidos",
@@ -95,7 +101,10 @@
         "topic": "Exploración automática de diseños tolerantes a fallos"
       }
     ],
-    "color": "#2f89ef"
+    "color": "#2f89ef",
+    "image_path": "/images/PLaS/lineas/embebidos.jpg",
+    "image_credit": "Unsplash — Vishnu Mohanan",
+    "image_source": "https://unsplash.com/photos/macbook-pro-on-top-of-brown-table-1518770660439-4636190af475"
   },
   {
     "id": "line:transporte",
@@ -129,7 +138,10 @@
         "topic": "Operación y evasión en transporte masivo"
       }
     ],
-    "color": "#ff6b4a"
+    "color": "#ff6b4a",
+    "image_path": "/images/PLaS/lineas/transporte.jpg",
+    "image_credit": "Unsplash — Luca Bravo",
+    "image_source": "https://unsplash.com/photos/vehicles-on-road-between-high-rise-buildings-1449824913935-59a10b8d2000"
   },
   {
     "id": "line:agricultura",
@@ -163,6 +175,9 @@
         "topic": "Asistentes inteligentes para manejo de cultivos"
       }
     ],
-    "color": "#5ec22e"
+    "color": "#5ec22e",
+    "image_path": "/images/PLaS/lineas/agricultura.jpg",
+    "image_credit": "Unsplash — Steven Hylands",
+    "image_source": "https://unsplash.com/photos/green-corn-field-1625246333195-78d9c38ad449"
   }
 ]

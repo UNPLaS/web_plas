@@ -20,16 +20,19 @@ const quoteFallback = homeQuotes[0];
   <Hero />
 
   <section
-    class="quote-section wrap"
+    class="quote-section section-bleed"
     aria-label="Cita"
     data-home-quotes={JSON.stringify(homeQuotes)}
   >
-    <blockquote class="quote-block">
-      <p class="quote-block__text" data-quote-text>{quoteFallback.text}</p>
-      <footer class="quote-block__attr">
-        <cite data-quote-attr>{quoteFallback.attribution}</cite>
-      </footer>
-    </blockquote>
+    <div class="section-bleed__back" aria-hidden="true"></div>
+    <div class="section-bleed__inner wrap">
+      <blockquote class="quote-block">
+        <p class="quote-block__text" data-quote-text>{quoteFallback.text}</p>
+        <footer class="quote-block__attr">
+          <cite data-quote-attr>{quoteFallback.attribution}</cite>
+        </footer>
+      </blockquote>
+    </div>
   </section>
 
   <section class="news-section wrap" aria-labelledby="news-heading">
@@ -141,7 +144,7 @@ const quoteFallback = homeQuotes[0];
       <h2 id="lines-heading" class="lines-section__title">Líneas de investigación</h2>
       <a class="btn btn--soft" href={withBase("/lines")}>Líneas</a>
     </div>
-    <ul class="lines-list">
+    <ul class="lines-gallery">
       {
         researchLines.map((line) => (
           <li>
@@ -150,8 +153,15 @@ const quoteFallback = homeQuotes[0];
               href={line.href}
               style={line.color ? `--line-color: ${line.color}` : undefined}
             >
-              <h3 class="lines-card__title">{line.title}</h3>
-              <p class="lines-card__text">{line.summary}</p>
+              <div class="lines-card__media">
+                {line.image ? (
+                  <img src={line.image} alt="" loading="lazy" width="600" height="400" />
+                ) : null}
+              </div>
+              <div class="lines-card__body">
+                <h3 class="lines-card__title">{line.title}</h3>
+                <p class="lines-card__text">{line.summary}</p>
+              </div>
             </a>
           </li>
         ))

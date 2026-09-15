@@ -41,6 +41,13 @@ function formatResultsDate(iso: string) {
 const resultsLabel = group.minciencias_results_published
   ? formatResultsDate(group.minciencias_results_published)
   : '';
+const mincienciasTitle = [
+  `Clasificación Minciencias ${group.minciencias_class}`,
+  group.minciencias_convocatoria ? `Conv. ${group.minciencias_convocatoria}` : '',
+  resultsLabel ? `Resultados ${resultsLabel}` : '',
+]
+  .filter(Boolean)
+  .join(' · ');
 ---
 
 <section class="hero">
@@ -70,29 +77,6 @@ const resultsLabel = group.minciencias_results_published
             data-hero-logo
           />
         </h1>
-
-        <aside class="hero__badge" aria-label="Clasificación Minciencias">
-          {
-            group.gruplac_url ? (
-              <a
-                class="btn btn--amber-sm hero__badge-btn"
-                href={group.gruplac_url}
-                target="_blank"
-                rel="noreferrer"
-                title="Ver en GrupLAC"
-              >
-                {group.minciencias_class}
-              </a>
-            ) : (
-              <span class="btn btn--amber-sm hero__badge-btn">{group.minciencias_class}</span>
-            )
-          }
-          <p class="hero__badge-label">Minciencias</p>
-          <p class="hero__badge-meta">
-            Conv. {group.minciencias_convocatoria}
-            {resultsLabel ? ` · ${resultsLabel}` : ''}
-          </p>
-        </aside>
       </div>
 
       <div class="hero__text">
@@ -105,6 +89,23 @@ const resultsLabel = group.minciencias_results_published
               <a class="btn btn--ghost" href={secondaryHref}>
                 {secondaryLabel}
               </a>
+            )
+          }
+          {
+            group.gruplac_url ? (
+              <a
+                class="btn btn--soft"
+                href={group.gruplac_url}
+                target="_blank"
+                rel="noreferrer"
+                title={mincienciasTitle}
+              >
+                Minciencias {group.minciencias_class}
+              </a>
+            ) : (
+              <span class="btn btn--soft" title={mincienciasTitle}>
+                Minciencias {group.minciencias_class}
+              </span>
             )
           }
         </p>

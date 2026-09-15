@@ -77,6 +77,8 @@ import { featuredProjects } from '../data/placeholders';
 </section>
 
 <script>
+  import { refreshTouchHover } from '../scripts/touch-hover';
+
   function initCarousel(root) {
     const track = root.querySelector('.carousel__track');
     const slides = [...root.querySelectorAll('.carousel__slide')];
@@ -95,6 +97,8 @@ import { featuredProjects } from '../data/placeholders';
       dots.forEach((dot, i) => {
         dot.setAttribute('aria-selected', String(i === index));
       });
+      document.dispatchEvent(new CustomEvent('plas:gallery-update'));
+      refreshTouchHover();
     }
 
     function play() {

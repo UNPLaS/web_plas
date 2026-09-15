@@ -4,9 +4,13 @@ export function withBase(path: string): string {
   if (!path) return path;
   if (/^(https?:|mailto:|tel:|data:)/i.test(path)) return path;
   if (path.startsWith('#')) return path;
-  let base = import.meta.env.BASE_URL || '/';
+  let base = (import.meta as ImportMeta & { env?: { BASE_URL?: string } }).env?.BASE_URL || '/';
   if (!base.endsWith('/')) base += '/';
   const normalized = path.startsWith('/') ? path.slice(1) : path;
+  // Evitar doble prefijo si ya viene con base
+  if (base !== '/' && (path === base.slice(0, -1) || path.startsWith(base))) {
+    return path;
+  }
   return `${base}${normalized}`;
 }
 

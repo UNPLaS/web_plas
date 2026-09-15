@@ -295,14 +295,17 @@ export const researchLines = linesJson.map((line) => {
   const graph = (lineTopicGraphs as Record<string, { nodes: unknown[]; edges: unknown[] }>)[
     line.id
   ];
+  const imagePath = typeof line.image_path === 'string' ? line.image_path : '';
   return {
     id: line.id,
     title: line.name,
     summary: line.summary,
     text: line.description,
-    href: withBase('/lines'),
+    href: withBase(`/lines#${line.slug}`),
     slug: line.slug,
     color: line.color,
+    image: imagePath ? withBase(imagePath) : '',
+    imageCredit: typeof line.image_credit === 'string' ? line.image_credit : '',
     topics: line.topics ?? [],
     topicGraph: graph
       ? {
