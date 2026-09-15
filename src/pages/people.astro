@@ -61,17 +61,25 @@ import {
       <h3 class="people-section__subtitle">Activos</h3>
       {
         activeStudents.length > 0 ? (
-          <ul class="student-list student-list--active">
-            {activeStudents.map((person) => (
-              <li class="student-row">
-                <div class="student-row__chips">
-                  {person.chips.map((chip) => (
-                    <TypeChip typology={chip} />
-                  ))}
-                </div>
-                <h4 class="student-row__name">{person.name}</h4>
-              </li>
-            ))}
+          <ul class="works-list">
+            {activeStudents.map((person) => {
+              const nivelChip = person.chips.find((chip) => chip.id === 'nivel');
+              const lineChip = person.chips.find((chip) => chip.id === 'linea');
+              return (
+                <li>
+                  <article class="student-card">
+                    <div class="student-card__topline">
+                      <h4 class="student-card__name">{person.name}</h4>
+                      {nivelChip ? <TypeChip typology={nivelChip} /> : null}
+                      {lineChip ? <TypeChip typology={lineChip} /> : null}
+                    </div>
+                    {person.meta && person.meta !== 'Activo' ? (
+                      <p class="student-card__thesis">{person.meta}</p>
+                    ) : null}
+                  </article>
+                </li>
+              );
+            })}
           </ul>
         ) : (
           <p class="students-empty">No hay estudiantes activos registrados.</p>
