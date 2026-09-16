@@ -1,0 +1,115 @@
+---
+import { group, site } from '../data/placeholders';
+import { withBase } from '../lib/with-base';
+
+interface Props {
+  ctaHref?: string;
+  ctaLabel?: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+  imageSrc?: string;
+}
+
+const {
+  ctaHref = withBase('/contact'),
+  ctaLabel = 'Escríbenos',
+  secondaryHref = withBase('/about'),
+  secondaryLabel = 'Conoce el grupo',
+  imageSrc = withBase('/images/hero-plas-warm.png'),
+} = Astro.props;
+
+function formatResultsDate(iso: string) {
+  if (!iso || !/^\d{4}-\d{2}-\d{2}/.test(iso)) return iso;
+  const [y, m, d] = iso.split('-');
+  const months = [
+    'ene.',
+    'feb.',
+    'mar.',
+    'abr.',
+    'may.',
+    'jun.',
+    'jul.',
+    'ago.',
+    'sep.',
+    'oct.',
+    'nov.',
+    'dic.',
+  ];
+  return `${String(Number(d))} ${months[Number(m) - 1] || ''} ${y}`;
+}
+
+const resultsLabel = group.minciencias_results_published
+  ? formatResultsDate(group.minciencias_results_published)
+  : '';
+const mincienciasTitle = [
+  `Clasificación Minciencias ${group.minciencias_class}`,
+  group.minciencias_convocatoria ? `Conv. ${group.minciencias_convocatoria}` : '',
+  resultsLabel ? `Resultados ${resultsLabel}` : '',
+]
+  .filter(Boolean)
+  .join(' · ');
+---
+
+<section class="hero">
+  <img
+    class="hero__media"
+    src={imageSrc}
+    alt=""
+    width="1280"
+    height="720"
+    decoding="async"
+    fetchpriority="high"
+  />
+  <div class="hero__panel" aria-hidden="true"></div>
+
+  <div class="hero__body">
+    <div class="hero__rail">
+      <p class="hero__eyebrow">Grupo de investigación</p>
+
+      <div class="hero__brand">
+        <h1 class="hero__logo">
+          <img
+            src={site.logo}
+            alt={`${group.name} — ${group.name_full}`}
+            width="448"
+            height="448"
+            decoding="async"
+            data-hero-logo
+          />
+        </h1>
+      </div>
+
+      <div class="hero__text">
+        <p class="hero__title">{site.tagline}</p>
+        <p class="hero__subtitle">{site.subtitle}</p>
+        <p class="hero__cta">
+          <a class="btn btn--amber-sm" href={ctaHref}>{ctaLabel}</a>
+          {
+            secondaryHref && secondaryLabel && (
+              <a class="btn btn--ghost" href={secondaryHref}>
+                {secondaryLabel}
+              </a>
+            )
+          }
+          {
+            group.gruplac_url ? (
+              <a
+                class="btn btn--soft"
+                href={group.gruplac_url}
+                target="_blank"
+                rel="noreferrer"
+                title={mincienciasTitle}
+              >
+                Minciencias {group.minciencias_class}
+              </a>
+            ) : (
+              <span class="btn btn--soft" title={mincienciasTitle}>
+                Minciencias {group.minciencias_class}
+              </span>
+            )
+          }
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

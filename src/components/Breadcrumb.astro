@@ -1,0 +1,65 @@
+---
+import { nav } from '../data/placeholders';
+import { stripBase, withBase } from '../lib/with-base';
+
+interface Props {
+  currentLabel: string;
+}
+
+const { currentLabel } = Astro.props;
+const pathname = stripBase(Astro.url.pathname);
+
+const sectionLabels: Record<string, string> = Object.fromEntries(
+  nav.map((item) => [stripBase(item.href), item.label]),
+);
+
+const segments = pathname.split('/').filter(Boolean);
+const crumbs: { href?: string; label: string }[] = [];
+
+if (segments.length === 1) {
+  const href = `/${segments[0]}`;
+  crumbs.push({
+    label: sectionLabels[href] ?? currentLabel,
+  });
+} else if (segments.length > 1) {
+  const sectionHref = `/${segments[0]}`;
+  crumbs.push({
+    href: withBase(sectionHref),
+    label: sectionLabels[sectionHref] ?? segments[0],
+  });
+  crumbs.push({ label: currentLabel });
+}
+
+const homeHref = withBase('/');
+---
+
+{
+  crumbs.length > 0 && (
+    <nav class="breadcrumb" aria-label="Ubicación">
+      <div class="breadcrumb__inner wrap">
+        <p class="breadcrumb__trail">
+          <span class="breadcrumb__prefix">Está en:</span>
+          <a class="breadcrumb__link" href={homeHref}>
+            Inicio
+          </a>
+          {crumbs.map((crumb) => (
+            <span class="breadcrumb__crumb">
+              <span class="breadcrumb__sep" aria-hidden="true">
+                /
+              </span>
+              {crumb.href ? (
+                <a class="breadcrumb__link" href={crumb.href}>
+                  {crumb.label}
+                </a>
+              ) : (
+                <span class="breadcrumb__current" aria-current="page">
+                  {crumb.label}
+                </span>
+              )}
+            </span>
+          ))}
+        </p>
+      </div>
+    </nav>
+  )
+}

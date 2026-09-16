@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {
+  catalogFilterData,
+  catalogTypologies,
+  catalogYears,
+  researchLines,
+} from '../data/placeholders';
+
+const catalogJson = JSON.stringify(catalogFilterData).replace(/</g, '\\u003c');
+---
+
+<Layout title="Catálogo">
+  <section class="page-section wrap" aria-labelledby="catalog-heading">
+    <header class="page-head">
+      <p class="page-head__eyebrow">Catálogo</p>
+      <h1 id="catalog-heading" class="page-head__title">Catálogo</h1>
+      <p class="page-head__lede">
+        Publicaciones y tesis del grupo ({catalogFilterData.length} registros). Filtra por
+        tipo, línea, año o búsqueda.
+      </p>
+    </header>
+
+    <form class="catalog-filters" role="search" onsubmit="return false">
+      <label class="catalog-filters__search">
+        <span>Buscar</span>
+        <input
+          id="catalog-q"
+          type="search"
+          name="q"
+          placeholder="Título, autores, venue…"
+          autocomplete="off"
+        />
+      </label>
+
+      <label class="catalog-filters__field">
+        <span>Tipo</span>
+        <select id="catalog-typology">
+          <option value="all">Todos</option>
+          {
+            catalogTypologies.map(([value, label]) => (
+              <option value={value}>{label}</option>
+            ))
+          }
+        </select>
+      </label>
+
+      <label class="catalog-filters__field">
+        <span>Línea</span>
+        <select id="catalog-line">
+          <option value="all">Todas</option>
+          {researchLines.map((line) => <option value={line.id}>{line.title}</option>)}
+        </select>
+      </label>
+
+      <label class="catalog-filters__field catalog-filters__field--year">
+        <span>Año</span>
+        <select id="catalog-year">
+          <option value="all">Todos</option>
+          {catalogYears.map((year) => <option value={year}>{year}</option>)}
+        </select>
+      </label>
+
+      <div class="catalog-filters__clear">
+        <button type="button" id="catalog-clear" class="btn btn--ghost">
+          Limpiar filtros
+        </button>
+      </div>
+    </form>
+
+    <p id="catalog-meta" class="catalog-meta" aria-live="polite"></p>
+
+    <ul id="catalog-results" class="works-list"></ul>
+  </section>
+
+  <script id="catalog-data" type="application/json" set:html={catalogJson} />
+</Layout>

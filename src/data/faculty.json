@@ -1,0 +1,242 @@
+[
+  {
+    "id": "docente:ferestrepoca",
+    "name_display": "Felipe Restrepo Calle",
+    "name_sort": "Restrepo Calle, Felipe",
+    "email": "ferestrepoca@unal.edu.co",
+    "rank": "Profesor asociado",
+    "status": "Activo",
+    "office": "114 Edificio 453 (Aulas de Ingeniería)",
+    "phone": "+57 1 316 5000 ext. 14077/14011",
+    "image_path": "/images/PLaS/profesores/frc_pic.jpg",
+    "line_ids": [
+      "line:educacion",
+      "line:embebidos",
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Educación en ingeniería",
+      "Sistemas embebidos confiables",
+      "Lenguajes de programación"
+    ],
+    "profiles": [
+      {
+        "label": "ORCID",
+        "url": "https://orcid.org/0000-0003-4226-1324"
+      },
+      {
+        "label": "Google Scholar",
+        "url": "https://scholar.google.com/citations?user=gDt_gQ0AAAAJ"
+      },
+      {
+        "label": "Scopus",
+        "url": "https://www.scopus.com/authid/detail.uri?authorId=36195972000"
+      },
+      {
+        "label": "Web of Science",
+        "url": "https://www.webofscience.com/wos/author/rid/L-4549-2013"
+      },
+      {
+        "label": "OpenAlex",
+        "url": "https://openalex.org/A5014729135"
+      },
+      {
+        "label": "ResearchGate",
+        "url": "https://www.researchgate.net/profile/Felipe-Restrepo-Calle"
+      },
+      {
+        "label": "CvLAC",
+        "url": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000499625"
+      },
+      {
+        "label": "HERMES",
+        "url": "http://www.hermes.unal.edu.co/pages/Docentes/Docente.jsf?u=ferestrepoca"
+      },
+      {
+        "label": "Sitio web",
+        "url": "https://ferestrepoca.github.io/"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "https://co.linkedin.com/in/felipe-restrepo-calle-74344063"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/ferestrepoca"
+      }
+    ],
+    "is_leader": true,
+    "group_role": "Líder del grupo"
+  },
+  {
+    "id": "docente:fagonzalezo",
+    "name_display": "Fabio González Osorio",
+    "name_sort": "González Osorio, Fabio",
+    "email": "fagonzalezo@unal.edu.co",
+    "rank": "Profesor asociado",
+    "status": "Activo",
+    "office": "114 Edificio 453 (Aulas de Ingeniería)",
+    "phone": "+57 1 316 5000 ext. 14077/11",
+    "image_path": "/images/PLaS/profesores/fgo_pic.jpg",
+    "line_ids": [
+      "line:educacion",
+      "line:lenguajes"
+    ],
+    "line_names": [
+      "Educación en ingeniería",
+      "Lenguajes de programación"
+    ],
+    "profiles": [
+      {
+        "label": "ORCID",
+        "url": "https://orcid.org/0000-0001-9009-7288"
+      },
+      {
+        "label": "Google Scholar",
+        "url": "https://scholar.google.com/citations?user=IUB__IwAAAAJ"
+      },
+      {
+        "label": "Scopus",
+        "url": "https://www.scopus.com/authid/detail.uri?authorId=7401692221"
+      },
+      {
+        "label": "Web of Science",
+        "url": "https://www.webofscience.com/wos/author/rid/B-9502-2008"
+      },
+      {
+        "label": "OpenAlex",
+        "url": "https://openalex.org/A5080973347"
+      },
+      {
+        "label": "ResearchGate",
+        "url": "https://www.researchgate.net/profile/Fabio-Gonzalez-7"
+      },
+      {
+        "label": "CvLAC",
+        "url": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000343838"
+      },
+      {
+        "label": "HERMES",
+        "url": "http://www.hermes.unal.edu.co/pages/Docentes/Docente.jsf?u=fagonzalezo"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/fabio-gonzalez-16239a15/"
+      }
+    ],
+    "is_leader": false,
+    "group_role": ""
+  },
+  {
+    "id": "docente:capedrazab",
+    "name_display": "César Pedraza Bonilla",
+    "name_sort": "Pedraza Bonilla, César",
+    "email": "capedrazab@unal.edu.co",
+    "rank": "Profesor asociado",
+    "status": "Activo",
+    "office": "112 Edificio 453 (Aulas de Ingeniería)",
+    "phone": "+57 1 316 5000 ext. 14076",
+    "image_path": "/images/PLaS/profesores/cpb_pic.jpg",
+    "line_ids": [
+      "line:agricultura",
+      "line:transporte"
+    ],
+    "line_names": [
+      "Agricultura de precisión",
+      "Sistemas inteligentes de transporte"
+    ],
+    "profiles": [
+      {
+        "label": "ORCID",
+        "url": "https://orcid.org/0000-0002-6687-1429"
+      },
+      {
+        "label": "Google Scholar",
+        "url": "https://scholar.google.com/citations?user=uC420b0AAAAJ"
+      },
+      {
+        "label": "Scopus",
+        "url": "https://www.scopus.com/authid/detail.uri?authorId=59833626300"
+      },
+      {
+        "label": "OpenAlex",
+        "url": "https://openalex.org/A5010045391"
+      },
+      {
+        "label": "ResearchGate",
+        "url": "https://www.researchgate.net/scientific-contributions/Cesar-Pedraza-Bonilla-2186090023"
+      },
+      {
+        "label": "CvLAC",
+        "url": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000407984"
+      },
+      {
+        "label": "HERMES",
+        "url": "http://www.hermes.unal.edu.co/pages/Docentes/Docente.jsf?u=capedrazab"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "https://co.linkedin.com/in/c%C3%A9sar-pedraza-bonilla-502b894a"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/capedrazab"
+      }
+    ],
+    "is_leader": false,
+    "group_role": ""
+  },
+  {
+    "id": "docente:jjramireze",
+    "name_display": "Jhon Ramírez Echeverry",
+    "name_sort": "Ramírez Echeverry, Jhon",
+    "email": "jjramireze@unal.edu.co",
+    "rank": "Profesor asociado",
+    "status": "Activo",
+    "office": "210 Edificio 453 (Aulas de Ingeniería)",
+    "phone": "+57 1 316 5000 ext. 14086",
+    "image_path": "/images/PLaS/profesores/jre_pic.jpg",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "line_names": [
+      "Educación en ingeniería"
+    ],
+    "profiles": [
+      {
+        "label": "ORCID",
+        "url": "https://orcid.org/0000-0002-6499-1785"
+      },
+      {
+        "label": "Google Scholar",
+        "url": "https://scholar.google.com/citations?user=hMx-eqIAAAAJ"
+      },
+      {
+        "label": "Scopus",
+        "url": "https://www.scopus.com/authid/detail.uri?authorId=56237308500"
+      },
+      {
+        "label": "OpenAlex",
+        "url": "https://openalex.org/A5061368563"
+      },
+      {
+        "label": "ResearchGate",
+        "url": "https://www.researchgate.net/profile/Jj-Ramirez-Echeverry"
+      },
+      {
+        "label": "CvLAC",
+        "url": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000722383"
+      },
+      {
+        "label": "HERMES",
+        "url": "http://www.hermes.unal.edu.co/pages/Docentes/Docente.jsf?u=jjramireze"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "https://co.linkedin.com/in/jhon-jairo-ram%C3%ADrez-echeverry-8540a9107"
+      }
+    ],
+    "is_leader": false,
+    "group_role": ""
+  }
+]

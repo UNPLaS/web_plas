@@ -1,0 +1,803 @@
+[
+  {
+    "id": "project:paradigmas",
+    "slug": "paradigmas",
+    "title_short": "Paradigmas de programación",
+    "title_full": "Paradigmas de programación",
+    "line_id": "line:lenguajes",
+    "line_name_raw": "Lenguajes de programación",
+    "sort_order": "1",
+    "thesis_like": "no",
+    "line_name": "Lenguajes de programación",
+    "image_path": "/images/PLaS/proyectos/lenguajes/lenguajes_0.jpg",
+    "summary": "El sitio web de Paradigmas de Programación proporciona contenidos educativos acerca de este tema. Los contenidos han sido desarrollados colaborativamente por los estudiantes del curso Lenguajes de Programación de la U…",
+    "sections": [
+      {
+        "heading": "Descripción",
+        "key": "description",
+        "body": "El sitio web de Paradigmas de Programación proporciona contenidos educativos acerca de este tema. Los contenidos han sido desarrollados colaborativamente por los estudiantes del curso Lenguajes de Programación de la Universidad Nacional de Colombia que han ido aportando semestre tras semestre. En el sitio es posible encontrar información teórica y práctica acerca de los diferentes paradigmas: Programación Orientada a Objetos (POO) Programación Funcional Programación Lógica Programación Paralela Programación Concurrente Programación Orientada a Aspectos (POA) Dentro de sus contenidos principales se encuentran los conceptos básicos y la explicación de cada uno de ellos, además, posee tutoriales de diferentes lenguajes de programación más representativos de cada paradigma."
+      }
+    ],
+    "links": [
+      {
+        "label": "Ir al sitio",
+        "url": "http://ferestrepoca.github.io/paradigmas-de-programacion/",
+        "kind": "external",
+        "section": "Más información",
+        "context": "Más información Web: Ir al sitio"
+      }
+    ],
+    "assets": [
+      {
+        "type": "image",
+        "path": "/images/PLaS/proyectos/proyecto0.png",
+        "alt": "",
+        "decorative": false
+      }
+    ],
+    "related": [],
+    "content": "# Paradigmas de programación\n\n![Paradigmas de programación](/images/PLaS/proyectos/lenguajes/lenguajes_0.jpg)\n\n## Descripción\n\nEl sitio web de **Paradigmas de Programación** reúne contenidos educativos sobre este tema. Los materiales han sido desarrollados de forma colaborativa por estudiantes del curso *Lenguajes de Programación* de la Universidad Nacional de Colombia, que aportan semestre tras semestre.\n\nEn el sitio se encuentra información teórica y práctica sobre distintos paradigmas:\n\n- Programación Orientada a Objetos (POO)\n- Programación Funcional\n- Programación Lógica\n- Programación Paralela\n- Programación Concurrente\n- Programación Orientada a Aspectos (POA)\n\nAdemás de los conceptos básicos y su explicación, incluye tutoriales de lenguajes representativos de cada paradigma.\n"
+  },
+  {
+    "id": "project:uncode",
+    "slug": "uncode",
+    "title_short": "UnCode",
+    "title_full": "UNCode",
+    "line_id": "line:educacion",
+    "line_name_raw": "Educación en ingeniería",
+    "sort_order": "2",
+    "thesis_like": "no",
+    "line_name": "Educación en ingeniería",
+    "image_path": "/images/PLaS/proyectos/proyecto1.svg",
+    "summary": "Una herramienta para el aprendizaje automático y la calificación de ejercicios de programación. Puede trabajar en UNCode con múltiples lenguajes de programación como Python, Java, C y C ++. Además, puede utilizar leng…",
+    "sections": [
+      {
+        "heading": "Descripción",
+        "key": "description",
+        "body": "Una herramienta para el aprendizaje automático y la calificación de ejercicios de programación. Puede trabajar en UNCode con múltiples lenguajes de programación como Python, Java, C y C ++. Además, puede utilizar lenguajes de descripción de hardware como Verilog y VHDL. Además, puede interactuar y resolver tareas utilizando los cuadernos de Jupyter. UNCode cuenta con un sistema de clasificación de tareas de programación basado en INGInious, que se realiza de forma flexible, segura, escalable y configurable para tus objetivos. Además, UNCode devuelve una retroalimentación automática al estudiante cuando se realiza un envío. UNCode ayuda a los estudiantes en el proceso de aprendizaje a través de un sistema de calificación automático, así como retroalimentación automática; siendo ambos: sumativo y formativo. La parte de retroalimentación sumativa se le da a los estudiantes a través de una calificación numérica. La parte formativa se ocupa de los conceptos de programación relacionados con la sintaxis, la semántica, el mantenimiento del código y la realización de pruebas personalizadas. UNCode tiene un Linter para verificar el código del estudiante y hacer sugerencias relacionadas con las buenas prácticas de codificación. Además, UNCode tiene un visualizador de código en ejecución usando el tutor de Python, un entorno de prueba de entrada y salida personalizado, plantillas de código para tareas de programación, entre otros. UNCode tiene un generador de informes estadísticos interactivo para profesores y estudiantes. UNCode cuenta con un asistente para crear y configurar automáticamente las tareas, un módulo de banco de problemas, módulo de calificación manual, generador de informes de plagio, entre otras herramientas."
+      }
+    ],
+    "links": [
+      {
+        "label": "Ir al sitio",
+        "url": "https://juezun.github.io/",
+        "kind": "external",
+        "section": "Más información",
+        "context": "Web: Ir al sitio"
+      },
+      {
+        "label": "Ir al sitio",
+        "url": "https://uncode.unal.edu.co/courselist",
+        "kind": "unal",
+        "section": "Más información",
+        "context": "Software: Ir al sitio"
+      },
+      {
+        "label": "Ir al sitio",
+        "url": "https://github.com/JuezUN",
+        "kind": "github",
+        "section": "Más información",
+        "context": "Repositorio de código fuente: Ir al sitio"
+      },
+      {
+        "label": "Ir al sitio",
+        "url": "https://juezun.github.io/pages/publications.html",
+        "kind": "external",
+        "section": "Más información",
+        "context": "Artículos: Ir al sitio"
+      }
+    ],
+    "assets": [
+      {
+        "type": "image",
+        "path": "/images/PLaS/proyectos/uncode0.png",
+        "alt": "",
+        "decorative": false
+      },
+      {
+        "type": "image",
+        "path": "/images/PLaS/proyectos/uncode1.png",
+        "alt": "",
+        "decorative": false
+      },
+      {
+        "type": "image",
+        "path": "/images/PLaS/proyectos/uncode2.png",
+        "alt": "",
+        "decorative": false
+      },
+      {
+        "type": "image",
+        "path": "/images/PLaS/proyectos/uncode3.png",
+        "alt": "",
+        "decorative": false
+      },
+      {
+        "type": "image",
+        "path": "/images/PLaS/proyectos/uncode4.png",
+        "alt": "",
+        "decorative": false
+      },
+      {
+        "type": "image",
+        "path": "/images/PLaS/proyectos/uncode5.png",
+        "alt": "",
+        "decorative": false
+      },
+      {
+        "type": "image",
+        "path": "/images/PLaS/proyectos/uncode6.png",
+        "alt": "",
+        "decorative": false
+      },
+      {
+        "type": "image",
+        "path": "/images/PLaS/proyectos/uncode7.png",
+        "alt": "",
+        "decorative": false
+      }
+    ],
+    "related": [
+      {
+        "title": "UN Code",
+        "type": "Software",
+        "year": "",
+        "publication_id": "",
+        "thesis_id": "",
+        "kind": "site_card_to_project"
+      }
+    ],
+    "content": "# UNCode\n\n![UNCode](/images/PLaS/proyectos/proyecto1.svg)\n\n## Descripción\n\n**UNCode** es una herramienta para el aprendizaje y la calificación automática de ejercicios de programación. Soporta múltiples lenguajes como Python, Java, C y C++, lenguajes de descripción de hardware (Verilog y VHDL) y resolución de tareas con cuadernos Jupyter.\n\nLa plataforma usa un sistema de calificación basado en INGInious: flexible, seguro, escalable y configurable según los objetivos del curso. Tras cada envío, el estudiante recibe retroalimentación automática.\n\n### Retroalimentación\n\nLa ayuda al aprendizaje combina evaluación **sumativa** y **formativa**:\n\n- **Sumativa:** calificación numérica del envío.\n- **Formativa:** apoyo en sintaxis, semántica, mantenimiento del código y pruebas personalizadas.\n\n### Capacidad de la plataforma\n\n- Linter con sugerencias de buenas prácticas\n- Visualizador de ejecución (Python Tutor)\n- Entorno de pruebas de entrada/salida personalizado\n- Plantillas de código para tareas\n- Informes estadísticos interactivos para docentes y estudiantes\n- Asistente de creación de tareas, banco de problemas, calificación manual e informes de plagio\n"
+  },
+  {
+    "id": "project:analytics",
+    "slug": "analytics",
+    "title_short": "Learning Analytics",
+    "title_full": "Learning Analytics",
+    "line_id": "line:educacion",
+    "line_name_raw": "Educación en ingeniería",
+    "sort_order": "3",
+    "thesis_like": "yes",
+    "line_name": "Educación en ingeniería",
+    "image_path": "/images/PLaS/proyectos/proyecto2.jpg",
+    "summary": "La analítica del aprendizaje se ha aplicado bastante en los últimos años, debido a que aprovecha la gran cantidad de datos generados en contextos educativos para tomar decisiones que mejoren los procesos de enseñanza…",
+    "sections": [
+      {
+        "heading": "Contenido",
+        "key": "content",
+        "body": "La analítica del aprendizaje se ha aplicado bastante en los últimos años, debido a que aprovecha la gran cantidad de datos generados en contextos educativos para tomar decisiones que mejoren los procesos de enseñanza y aprendizaje. Específicamente en el contexto de cursos de programación las recientes aplicaciones de analítica del aprendizaje evidencian una alta efectividad al generar intervenciones adecuadas para fomentar mejores métodos de aprendizaje. Sin embargo, la mayoría de las investigaciones se han concentrado en utilizar exclusivamente datos cuantitativos desaprovechando el potencial de los datos cualitativos y métodos mixtos. El objetivo general de este trabajo es determinar las relaciones existentes entre las métricas calculadas del proceso de aprendizaje y el rendimiento académico de los estudiantes en la asignatura Programación de Computadores mediante una estrategia de analítica de aprendizaje fundamentada en métodos mixtos de investigación. Con este fin se propone una metodología de analítica de aprendizaje empleando un método mixto secuencial explicativo. La metodología inicia con la preparación de los datos junto con el diseño de métricas, seguido del análisis tanto cuantitativo como cualitativo de la información, y finalizando con la identificación de las relaciones entre las variables generadas y el rendimiento académico. Se obtuvieron 55 variables relacionadas con el proceso de aprendizaje, entre las cuales están la cantidad de entregas realizadas por estudiante, las tasas de veredictos obtenidos, métricas de software del análisis de los códigos entregados y las tasas de uso de herramientas de la plataforma.Los resultados obtenidos evidencian que la cantidad de entregas realizadas, la tasa de éxito, el número de respuestas correctas e incorrectas tienen una correlación positiva con el rendimiento académico del estudiante. Adicionalmente, los estudiantes que reprobaron la asignatura usan más la plataforma UNCode como herramienta de calificación automática en comparación con los alumnos que aprobaron, los cuales la utilizan para obtener retroalimentación. Palabras clave: Analítica del aprendizaje Programación de Computadores Métodos mixtos Análisis de correlaciones Rendimiento académico"
+      },
+      {
+        "heading": "Autoría",
+        "key": "authorship",
+        "body": "Edna Johanna Chaparro Amaya Estudiante Maestría en Ingeniería de Sistemas y Computación Universidad Nacional de Colombia Correo: edchaparroa@unal.edu.co"
+      }
+    ],
+    "links": [
+      {
+        "label": "edchaparroa@unal.edu.co",
+        "url": "mailto:edchaparroa@unal.edu.co",
+        "kind": "other",
+        "section": "Autoría",
+        "context": "Edna Johanna Chaparro Amaya Estudiante Maestría en Ingeniería de Sistemas y Computación Universidad Nacional de Colombia Correo: edchaparroa@unal.edu.co"
+      }
+    ],
+    "assets": [
+      {
+        "type": "image",
+        "path": "/images/PLaS/proyectos/analytics.png",
+        "alt": "",
+        "decorative": false
+      }
+    ],
+    "related": [
+      {
+        "title": "Tesis de maestría. Analítica de aprendizaje en la asignatura Programación de Computadores: una investigación basada en métodos mixtos.",
+        "type": "Tesis",
+        "year": "2022",
+        "publication_id": "",
+        "thesis_id": "tesis:unal/83049",
+        "kind": "site_card_to_project"
+      }
+    ],
+    "content": "# Learning Analytics\n\n![Learning Analytics](/images/PLaS/proyectos/proyecto2.jpg)\n\n## Descripción\n\nLa analítica del aprendizaje aprovecha los datos generados en contextos educativos para mejorar la enseñanza y el aprendizaje. En cursos de programación, estas aplicaciones suelen ser efectivas para orientar intervenciones; no obstante, muchas se limitan a datos cuantitativos y dejan de lado enfoques cualitativos y métodos mixtos.\n\n### Objetivo\n\nDeterminar las relaciones entre métricas del proceso de aprendizaje y el rendimiento académico en la asignatura *Programación de Computadores*, mediante una estrategia de analítica fundamentada en **métodos mixtos**.\n\n### Metodología\n\nSe empleó un método mixto secuencial explicativo:\n\n1. Preparación de datos y diseño de métricas\n2. Análisis cuantitativo y cualitativo\n3. Identificación de relaciones con el rendimiento académico\n\nSe obtuvieron **55 variables** del proceso de aprendizaje (entregas, tasas de veredictos, métricas de software sobre el código y uso de herramientas de la plataforma).\n\n### Resultados\n\n- La cantidad de entregas, la tasa de éxito y el número de respuestas correctas e incorrectas correlacionan positivamente con el rendimiento.\n- Quienes reprobaron usan más UNCode como herramienta de calificación automática; quienes aprobaron la usan más para obtener retroalimentación.\n\n### Palabras clave\n\nAnalítica del aprendizaje · Programación de Computadores · Métodos mixtos · Análisis de correlaciones · Rendimiento académico\n\n### Autoría\n\n**Edna Johanna Chaparro Amaya**  \nEstudiante de Maestría en Ingeniería de Sistemas y Computación  \nUniversidad Nacional de Colombia  \nCorreo: [edchaparroa@unal.edu.co](mailto:edchaparroa@unal.edu.co)\n"
+  },
+  {
+    "id": "project:gamificacion",
+    "slug": "gamificacion",
+    "title_short": "Gamificación",
+    "title_full": "Evaluación del efecto de la gamificación asistida por computador en la motivación de los estudiantes de programación de computadores",
+    "line_id": "line:educacion",
+    "line_name_raw": "Educación en ingeniería",
+    "sort_order": "4",
+    "thesis_like": "yes",
+    "line_name": "Educación en ingeniería",
+    "image_path": "/images/PLaS/proyectos/proyecto3.png",
+    "summary": "La enseñanza-aprendizaje de la Programación de Computadores conlleva desafíos que implican buscar nuevas metodologías de enseñanza en la que el estudiante se involucre activamente. Actualmente las metodologías relacio…",
+    "sections": [
+      {
+        "heading": "Contenido",
+        "key": "content",
+        "body": "La enseñanza-aprendizaje de la Programación de Computadores conlleva desafíos que implican buscar nuevas metodologías de enseñanza en la que el estudiante se involucre activamente. Actualmente las metodologías relacionadas con el juego son ampliamente utilizadas por los efectos que pueden generar en aspectos como la motivación, participación, rendimiento académico y compromiso en los estudiantes. La gamificación está inmersa en dichas metodologías haciendo referencia al uso de elementos relacionados con el juego en contextos ajenos al juego. En el área de la Programación de Computadores se han realizado estudios que integran la gamificación asistida por computador en contextos académicos, con el objetivo de evidenciar los efectos reales que genera el uso de elementos relacionados con el juego en procesos formativos. Generalmente los resultados cualitativos evidencian efectos destacables en los diferentes aspectos analizados, sin embargo distintos estudios donde realizan análisis cuantitativos contradicen dichos hallazgos y exponen que integrar la gamificación no genera efectos estadísticamente significativos en aspectos evaluados como la motivación, participación, rendimiento académico, entre otros. La revisión de literatura analizada evidencia la necesidad de realizar más estudios empíricos en los que se integre la gamificación con el propósito de comprender y demostrar los efectos reales que genera en los distintos aspectos formativos. Por lo cual, esta investigación tiene como propósito encontrar el efecto que la gamificación asistida por computador genera en la motivación por aprender de los estudiantes de Programación de Computadores. Para tal fin, se diseñó y llevó a cabo un estudio cuasi-experimental en el que se integró una herramienta gamificada en la metodología de un curso de Introducción a la Programación de Computadores. A través de una revisión de literatura y un análisis comparativo se realizó la selección de CodeGym como el ambiente gamificado asistido por computador apto para la integración dentro de la metodología de la clase. A continuación, se estableció el diseño del estudio cuasi-experimental en el que se planteó la metodología de la intervención educativa y la aplicación de los instrumentos para medir el constructo motivacional por medio del cuestionario de auto-informe MSLQ-Colombia y una encuesta de percepciones dirigida a los estudiantes que participaron en el estudio. En este estudio participaron 48 estudiantes distribuidos en dos grupos de control y uno experimental, quienes fueron seleccionados mediante la técnica de muestreo no probabilístico por conveniencia. La información recolectada permitió realizar un análisis estadístico de la variación de la motivación en cada uno de los grupos participantes. La información cuantitativa obtenida mediante el MSLQ-Colombia permitió evidenciar que los estudiantes del grupo experimental en el que se integró el ambiente gamificado en la metodología de la clase, incrementaron significativamente los niveles relacionados con valoración de la tarea, atribuyendo un mayor grado de importancia, utilidad, gusto o interés hacia las temáticas expuestas en la asignatura. Los resultados reportados en esta investigación permiten comprender mejor los efectos, beneficios, y desafíos que brinda la integración de la gamificación asistida por computador en los procesos de enseñanza-aprendizaje de la programación de computadores. Palabras clave: Gamificación Programación de Computadores Entornos gamificados asistidos por computador Motivación en el aprendizaje Publicaciones: K.D. Cuervo-Cely, J.J. Ramírez-Echeverry, F. Restrepo-Calle (2020). Computer-Assisted Gamification In A Computer Programming Course: An Experience Report, In 13th annual International Conference of Education, Research and Innovation - ICERI, pp. 6006-6015. 9-11 November, 2020."
+      },
+      {
+        "heading": "Autoría",
+        "key": "authorship",
+        "body": "Edna Johanna Chaparro Amaya Estudiante Maestría en Ingeniería de Sistemas y Computación Universidad Nacional de Colombia Correo: edchaparroa@unal.edu.co"
+      }
+    ],
+    "links": [
+      {
+        "label": "K.D. Cuervo-Cely, J.J. Ramírez-Echeverry, F. Restrepo-Calle (2020). Computer-Assisted Gamification In A Computer Programming Course: An Experience Report, In 13th annual International Conference of Education, Research and Innovation - ICERI, pp. 6006-6015. 9-11 November, 2020.",
+        "url": "https://library.iated.org/view/CUERVOCELY2020COM",
+        "kind": "external",
+        "section": "Contenido",
+        "context": "K.D. Cuervo-Cely, J.J. Ramírez-Echeverry, F. Restrepo-Calle (2020). Computer-Assisted Gamification In A Computer Programming Course: An Experience Report, In 13th annual International Conference of Ed"
+      },
+      {
+        "label": "edchaparroa@unal.edu.co",
+        "url": "mailto:edchaparroa@unal.edu.co",
+        "kind": "other",
+        "section": "Autoría",
+        "context": "Edna Johanna Chaparro Amaya Estudiante Maestría en Ingeniería de Sistemas y Computación Universidad Nacional de Colombia Correo: edchaparroa@unal.edu.co"
+      }
+    ],
+    "assets": [
+      {
+        "type": "image",
+        "path": "/images/box-arrow-up-right.svg",
+        "alt": "",
+        "decorative": true
+      }
+    ],
+    "related": [],
+    "content": "# Evaluación del efecto de la gamificación asistida por computador en la motivación de los estudiantes de programación de computadores\n\n![Evaluación del efecto de la gamificación asistida por computador en la motivación de los estudiantes de programación de computadores](/images/PLaS/proyectos/proyecto3.png)\n\n## Descripción\n\nLa enseñanza-aprendizaje de la Programación de Computadores plantea desafíos que invitan a metodologías donde el estudiante participe de forma activa. Las metodologías relacionadas con el juego —incluida la **gamificación** (uso de elementos de juego en contextos no lúdicos)— se estudian por su posible efecto en motivación, participación, rendimiento y compromiso.\n\nEn programación se han integrado entornos gamificados asistidos por computador; los hallazgos cualitativos suelen ser positivos, mientras que varios análisis cuantitativos no encuentran efectos estadísticamente significativos. Hace falta más evidencia empírica.\n\n### Objetivo\n\nEstudiar el efecto de la gamificación asistida por computador en la **motivación por aprender** de estudiantes de Programación de Computadores.\n\n### Método\n\n- Selección de **CodeGym** como ambiente gamificado (revisión de literatura y análisis comparativo)\n- Estudio **cuasi-experimental** con intervención educativa\n- Medición con el cuestionario **MSLQ-Colombia** y encuesta de percepciones\n- **48 estudiantes** en dos grupos de control y uno experimental (muestreo por conveniencia)\n\n### Resultados\n\nEn el grupo experimental aumentaron de forma significativa los niveles asociados a la *valoración de la tarea* (importancia, utilidad, gusto o interés por las temáticas del curso).\n\n### Palabras clave\n\nGamificación · Programación de Computadores · Entornos gamificados · Motivación en el aprendizaje\n\n### Publicación relacionada\n\nK.D. Cuervo-Cely, J.J. Ramírez-Echeverry, F. Restrepo-Calle (2020). *Computer-Assisted Gamification In A Computer Programming Course: An Experience Report*. ICERI 2020, pp. 6006–6015.\n\n### Autoría\n\n**Edna Johanna Chaparro Amaya**  \nEstudiante de Maestría en Ingeniería de Sistemas y Computación  \nUniversidad Nacional de Colombia  \nCorreo: [edchaparroa@unal.edu.co](mailto:edchaparroa@unal.edu.co)\n"
+  },
+  {
+    "id": "project:vpl",
+    "slug": "vpl",
+    "title_short": "Evaluación Automática VPL",
+    "title_full": "Evaluación del impacto en la motivación en el aprendizaje de los estudiantes de programación de computadores mediante el uso de una herramienta de evaluación automática",
+    "line_id": "line:educacion",
+    "line_name_raw": "Educación en ingeniería",
+    "sort_order": "5",
+    "thesis_like": "yes",
+    "line_name": "Educación en ingeniería",
+    "image_path": "/images/PLaS/proyectos/proyecto4.jpg",
+    "summary": "En el campo de la ingeniería, principalmente en los programas académicos relacionados a las ciencias de la computación, una de las competencias fundamentales a desarrollar es la programación de computadores y/o algori…",
+    "sections": [
+      {
+        "heading": "Contenido",
+        "key": "content",
+        "body": "En el campo de la ingeniería, principalmente en los programas académicos relacionados a las ciencias de la computación, una de las competencias fundamentales a desarrollar es la programación de computadores y/o algoritmos. Las asignaturas que trabajan dichas competencias por lo general reciben el mismo nombre. En ellas las habilidades lógicas y racionales juegan un factor indispensable a la hora de adquirir destrezas para resolver problemas en cualquier área de estudio, incluso en otras carreras del campo de la ingeniería tales como: electrónica, civil, mecatrónica, industrial, eléctrica, telecomunicaciones, telemática entre otras, convirtiéndose en la base para asignaturas de la misma línea en semestres superiores. En estas asignaturas los estudiantes adquieren competencias para: desarrollar programas simples que cumplan con tareas previas, comprendiendo sus funcionalidades y características; definir funciones simples comprendiendo sus parámetros y argumentos; realizar pruebas y depuraciones a programas; elegir las iteraciones y las construcciones condicionales apropiadas para alguna tarea específica. Mismas competencias que se demandan en el personal a contratar en el campo laboral, y que según varios reportes, representan unas de las habilidades más necesarias en los últimos años, por tanto se hace imperativo que los profesionales las apropien. Teniendo en cuenta lo anterior, esta investigación busca determinar el impacto de una herramienta de evaluación automática de código fuente en la motivación del aprendizaje de estudiantes de Programación de computadores en la universidad U Compensar. Para esto se realizó un diseño a través de un estudio cuasi-experimental en el cual se integró la herramienta de evaluación automática en la metodología de una asignatura de Algoritmos. Después de una revisión de literatura y un análisis se seleccionó la herramienta de evaluación automática VPL (Virtual Programming Lab). Posterior a esto se realizó el diseño de la intervención, aplicando en dos grupos, grupos de control y grupo experimental para lo cual a través de un cuestionario de MSLQ-Colombia. En esta intervención se tuvieron 42 estudiantes. Los datos recolectados a través de estas herramientas de análisis estadístico permiten comprender los aspectos de motivación para cada uno de los estudiantes. Por un lado la información adquirida mediante el MSQL permite comprender un aumento o disminución sobre la motivación en el proceso de aprendizaje a través de la integración de la herramienta de evaluación automática. Por otro lado la herramienta nos permite comprender la disminución en intentos a la hora de realizar ejercicios, las mejoras a nivel de desarrollo y codificación. Finalmente se busca con la investigación evidenciar las ventajas del uso de herramientas de evaluación automática en la motivación en el aprendizaje. Palabras clave: Evaluación automática Programación de Computadores Motivación en el aprendizaje"
+      },
+      {
+        "heading": "Autoría",
+        "key": "authorship",
+        "body": "Hernan Dario Lozano Rojas Estudiante Maestría en Ingeniería de Sistemas y Computación Universidad Nacional de Colombia Correo: hlozanor@unal.edu.co CvLAC"
+      }
+    ],
+    "links": [
+      {
+        "label": "hlozanor@unal.edu.co",
+        "url": "mailto:hlozanor@unal.edu.co",
+        "kind": "other",
+        "section": "Autoría",
+        "context": "Hernan Dario Lozano Rojas Estudiante Maestría en Ingeniería de Sistemas y Computación Universidad Nacional de Colombia Correo: hlozanor@unal.edu.co CvLAC"
+      },
+      {
+        "label": "CvLAC",
+        "url": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001691437",
+        "kind": "external",
+        "section": "Autoría",
+        "context": "Hernan Dario Lozano Rojas Estudiante Maestría en Ingeniería de Sistemas y Computación Universidad Nacional de Colombia Correo: hlozanor@unal.edu.co CvLAC"
+      }
+    ],
+    "assets": [
+      {
+        "type": "image",
+        "path": "/images/PLaS/proyectos/vpl.png",
+        "alt": "",
+        "decorative": false
+      }
+    ],
+    "related": [
+      {
+        "title": "Tesis de maestría. Evaluación del impacto en la motivación en el aprendizaje de los estudiantes de programación de computadores mediante el uso de una herramienta de evaluación automática.",
+        "type": "Tesis",
+        "year": "2022",
+        "publication_id": "",
+        "thesis_id": "tesis:unal/82923",
+        "kind": "site_card_to_project"
+      }
+    ],
+    "content": "# Evaluación del impacto en la motivación en el aprendizaje de los estudiantes de programación de computadores mediante el uso de una herramienta de evaluación automática\n\n![Evaluación del impacto en la motivación en el aprendizaje de los estudiantes de programación de computadores mediante el uso de una herramienta de evaluación automática](/images/PLaS/proyectos/proyecto4.jpg)\n\n## Descripción\n\nEn ingeniería —y en particular en ciencias de la computación— la programación es una competencia fundamental. En estas asignaturas se desarrollan habilidades para resolver problemas, escribir programas, definir funciones, depurar y elegir estructuras de control adecuadas; competencias también demandadas en el ámbito laboral.\n\n### Objetivo\n\nDeterminar el impacto de una herramienta de **evaluación automática de código fuente** en la motivación del aprendizaje de estudiantes de Programación de Computadores en la universidad U Compensar.\n\n### Método\n\n- Estudio **cuasi-experimental** con integración de evaluación automática en una asignatura de Algoritmos\n- Selección de **VPL** (*Virtual Programming Lab*) tras revisión de literatura\n- Grupos de control y experimental\n- Medición con **MSLQ-Colombia**\n- **42 estudiantes** participantes\n\n### Enfoque de análisis\n\nLa información del MSLQ permite observar variaciones en la motivación; los registros de la herramienta aportan indicios sobre intentos, desarrollo y codificación al resolver ejercicios.\n\n### Palabras clave\n\nEvaluación automática · Programación de Computadores · Motivación en el aprendizaje\n\n### Autoría\n\n**Hernan Dario Lozano Rojas**  \nEstudiante de Maestría en Ingeniería de Sistemas y Computación  \nUniversidad Nacional de Colombia  \nCorreo: [hlozanor@unal.edu.co](mailto:hlozanor@unal.edu.co)\n"
+  },
+  {
+    "id": "project:estrategias",
+    "slug": "estrategias",
+    "title_short": "Estrategias de aprendizaje",
+    "title_full": "Diseño y validación de contenido de un instrumento de autoinforme para caracterizar las estrategias de aprendizaje de programación de computadores",
+    "line_id": "line:educacion",
+    "line_name_raw": "Educación en ingeniería",
+    "sort_order": "6",
+    "thesis_like": "yes",
+    "line_name": "Educación en ingeniería",
+    "image_path": "/images/PLaS/proyectos/proyecto5.jpg",
+    "summary": "Diseño y validación de contenido de un instrumento de autoinforme para caracterizar las estrategias de aprendizaje de programación de computadores",
+    "sections": [
+      {
+        "heading": "Autoría",
+        "key": "authorship",
+        "body": "Stephanie Torres Jiménez Estudiante Maestría en Ingeniería de Sistemas y Computación Universidad Nacional de Colombia Correo: sttorresji@unal.edu.co"
+      }
+    ],
+    "links": [
+      {
+        "label": "sttorresji@unal.edu.co",
+        "url": "mailto:sttorresji@unal.edu.co",
+        "kind": "other",
+        "section": "Autoría",
+        "context": "Stephanie Torres Jiménez Estudiante Maestría en Ingeniería de Sistemas y Computación Universidad Nacional de Colombia Correo: sttorresji@unal.edu.co"
+      }
+    ],
+    "assets": [],
+    "related": [],
+    "content": "# Diseño y validación de contenido de un instrumento de autoinforme para caracterizar las estrategias de aprendizaje de programación de computadores\n\n![Diseño y validación de contenido de un instrumento de autoinforme para caracterizar las estrategias de aprendizaje de programación de computadores](/images/PLaS/proyectos/proyecto5.jpg)\n\n## Descripción\n\nDiseño y validación de contenido de un instrumento de autoinforme para caracterizar las **estrategias de aprendizaje** en contextos de formación en ingeniería.\n\n### Autoría\n\n**Stephanie Torres Jiménez**  \nEstudiante de Maestría en Ingeniería de Sistemas y Computación  \nUniversidad Nacional de Colombia  \nCorreo: [sttorresji@unal.edu.co](mailto:sttorresji@unal.edu.co)\n"
+  },
+  {
+    "id": "project:escritura",
+    "slug": "escritura",
+    "title_short": "Escritura en ingenieria",
+    "title_full": "La escritura como herramienta de aprendizaje en el aula de ingeniería",
+    "line_id": "line:educacion",
+    "line_name_raw": "Educación en ingeniería",
+    "sort_order": "7",
+    "thesis_like": "yes",
+    "line_name": "Educación en ingeniería",
+    "image_path": "/images/PLaS/proyectos/proyecto6.jpg",
+    "summary": "Resumen: El ejercicio de la escritura en ingeniería reconoce alta importancia al criterio de clasificación relacionado con la meta planteada a la hora de realizar esta actividad, generando dos estilos diferentes, acti…",
+    "sections": [
+      {
+        "heading": "Contenido",
+        "key": "content",
+        "body": "Resumen: El ejercicio de la escritura en ingeniería reconoce alta importancia al criterio de clasificación relacionado con la meta planteada a la hora de realizar esta actividad, generando dos estilos diferentes, actividades de escritura para aprender y actividades de escritura para reportar. El proyecto se desarrolla en el marco de una tesis doctoral que se encuentra en etapa de especificación de aspectos particulares relacionados con la metodología. En un contexto general, se pretende utilizar la escritura para aprender y su apoyo al desarrollo del pensamiento crítico, la reflexión, procesos cognitivos del aprendizaje, etc. La intervención está basada en actividades de escritura incidental en el ámbito del laboratorio en ingeniería, su impacto en el aprendizaje y las estrategias que permitan agrupar estas actividades en un documento formal. Palabras clave: Escritura en ingeniería Escritura para aprender Escritura incidental"
+      },
+      {
+        "heading": "Autoría",
+        "key": "authorship",
+        "body": "Edgar Hernando Criollo Velasquez Estudiante de Doctorado en Ingeniería Eléctrica Universidad Nacional de Colombia Correo: ecriollo@unal.edu.co CvLAC"
+      }
+    ],
+    "links": [
+      {
+        "label": "ecriollo@unal.edu.co",
+        "url": "mailto:ecriollo@unal.edu.co",
+        "kind": "other",
+        "section": "Autoría",
+        "context": "Edgar Hernando Criollo Velasquez Estudiante de Doctorado en Ingeniería Eléctrica Universidad Nacional de Colombia Correo: ecriollo@unal.edu.co CvLAC"
+      },
+      {
+        "label": "CvLAC",
+        "url": "http://scienti.colciencias.gov.co:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000053955",
+        "kind": "external",
+        "section": "Autoría",
+        "context": "Edgar Hernando Criollo Velasquez Estudiante de Doctorado en Ingeniería Eléctrica Universidad Nacional de Colombia Correo: ecriollo@unal.edu.co CvLAC"
+      }
+    ],
+    "assets": [
+      {
+        "type": "image",
+        "path": "/images/PLaS/proyectos/escritura.png",
+        "alt": "",
+        "decorative": false
+      }
+    ],
+    "related": [
+      {
+        "title": "Tesis doctoral. La escritura como herramienta de aprendizaje en el aula de ingeniería.",
+        "type": "Tesis",
+        "year": "",
+        "publication_id": "",
+        "thesis_id": "tesis:inventory/criollo-velazquez-edgar-hernando",
+        "kind": "site_card_to_project"
+      }
+    ],
+    "content": "# La escritura como herramienta de aprendizaje en el aula de ingeniería\n\n![La escritura como herramienta de aprendizaje en el aula de ingeniería](/images/PLaS/proyectos/proyecto6.jpg)\n\n## Descripción\n\nEl ejercicio de la escritura en ingeniería suele clasificarse según la meta de la actividad, con dos estilos principales:\n\n- **Escritura para aprender**\n- **Escritura para reportar**\n\nEl proyecto se desarrolla en el marco de una tesis doctoral (etapa de especificación metodológica). En un sentido general, busca aprovechar la escritura para aprender y su aporte al pensamiento crítico, la reflexión y los procesos cognitivos del aprendizaje.\n\nLa intervención se centra en actividades de **escritura incidental** en el laboratorio de ingeniería, su impacto en el aprendizaje y las estrategias para integrar esas actividades en un documento formal.\n\n### Palabras clave\n\nEscritura en ingeniería · Escritura para aprender · Escritura incidental\n\n### Autoría\n\n**Edgar Hernando Criollo Velasquez**  \nEstudiante de Doctorado en Ingeniería Eléctrica  \nUniversidad Nacional de Colombia  \nCorreo: [ecriollo@unal.edu.co](mailto:ecriollo@unal.edu.co)\n"
+  },
+  {
+    "id": "project:colaboracion",
+    "slug": "colaboracion",
+    "title_short": "Colaboración PlaS y GUIA",
+    "title_full": "Proyectos de intersección entre el grupo PLaS (Programming Languages and Systems) y GUIA (Grupo de Univalle en Inteligencia Artificial)",
+    "line_id": "line:educacion",
+    "line_name_raw": "Educación en ingeniería",
+    "sort_order": "8",
+    "thesis_like": "yes",
+    "line_name": "Educación en ingeniería",
+    "image_path": "/images/PLaS/proyectos/proyecto8.jpg",
+    "summary": "Resumen: Buscando apoyar la educación en ingeniería desde los enfoques a nivel macro-curricular, meso-curricular y micro-curricular, es necesario contar con la implementación de estrategias, modelos y metodologías que…",
+    "sections": [
+      {
+        "heading": "Contenido",
+        "key": "content",
+        "body": "Resumen: Buscando apoyar la educación en ingeniería desde los enfoques a nivel macro-curricular, meso-curricular y micro-curricular, es necesario contar con la implementación de estrategias, modelos y metodologías que permita apoyar y mejorar la adquisición de competencias de aprendizaje y la realimentación de los estudiantes, con el fin de mitigar problemas en el proceso formativo y evaluativo del estudiante. Así, la integración entre el grupo PLaS y GUIA, buscan relacionar al estudiante y profesor mediante estrategias tecnológicas que analicen las interacciones a nivel micro, con el propósito de entender cómo emerge el aprendizaje y cuál es el camino correcto en el aprendizaje de la ingeniería. Proyectos: Modelo de predicción para evaluar indicadores de logros que permitan mejorar el abandono del programador Modelo de Integración para realimentación personalizada en cursos de programación basada en inteligencia artificial Innovación tecnológica para el apoyo de la gestión curricular de la reforma en los programas y cursos de la Facultad de Ingeniería de la Universidad del Valle Modelo basado en aprendizaje colaborativo asistido por computador (cscl) y análiticas (la) para alcanzar competencias en un curso de introducción a la programación Palabras clave: Sociedad 5.0 Aprendizaje colaborativo Aprendizaje personalizado Inteligencia colectiva Programación de computadores Gestión curricular Artículos/conferencias colaborativos: C. G. Hidalgo Suarez, V. A. Bucheli, F. Restrepo-Calle, y F. A. Gonzalez, «A strategy based on technological maps for the identification of the state-of-the-art techniques in software development projects: Virtual judge projects as a case study», en Communications in Computer and Information Science , 2018, vol. 885, pp. 338-354, doi: 10.1007/978-3-319-98998-3_27. C. G. H. Suarez, V. A. B. Guerrero, F. R. Calle, y F. A. G. Osorio, «Estrategia de enseñanza basada en la colaboración y la evaluación automática de código fuente en un curso de programación CS1», Investig. E Innov. En Ing. , vol. 9, n.o 1, Art. n.o 1, 2021, doi: 10.17081/invinno.9.1.4185."
+      },
+      {
+        "heading": "Autoría",
+        "key": "authorship",
+        "body": "Estudiantes de doctorado en ingeniería: Jose M. Llanos Correo: jose.llanos@correounivalle.edu.co Ginna Leytón Correo: ginna.leyton@correounivalle.edu.co Leidy Carvajal O. Correo: leidy.carvajal.o@correounivalle.edu.co Carlos G. Hidalgo S. Correo: carlos.hidalgo@correounivalle.edu.co Profesor univalle (colaborador): Victor A. Bucheli Correo: victor.bucheli@correounivalle.edu.co Google Scholar: Ir al sitio"
+      }
+    ],
+    "links": [
+      {
+        "label": ", 2018, vol. 885, pp. 338-354, doi: 10.1007/978-3-319-98998-3_27.",
+        "url": "https://link.springer.com/chapter/10.1007/978-3-319-98998-3_27",
+        "kind": "doi",
+        "section": "Contenido",
+        "context": "C. G. Hidalgo Suarez, V. A. Bucheli, F. Restrepo-Calle, y F. A. Gonzalez, «A strategy based on technological maps for the identification of the state-of-the-art techniques in software development proj"
+      },
+      {
+        "label": ", vol. 9, n.o 1, Art. n.o 1, 2021, doi: 10.17081/invinno.9.1.4185.",
+        "url": "http://revistas.unisimon.edu.co/index.php/innovacioning/article/view/4185",
+        "kind": "external",
+        "section": "Contenido",
+        "context": "C. G. H. Suarez, V. A. B. Guerrero, F. R. Calle, y F. A. G. Osorio, «Estrategia de enseñanza basada en la colaboración y la evaluación automática de código fuente en un curso de programación CS1», Inv"
+      },
+      {
+        "label": "jose.llanos@correounivalle.edu.co",
+        "url": "mailto:jose.llanos@correounivalle.edu.co",
+        "kind": "other",
+        "section": "Autoría",
+        "context": "Jose M. Llanos Correo: jose.llanos@correounivalle.edu.co"
+      },
+      {
+        "label": "ginna.leyton@correounivalle.edu.co",
+        "url": "mailto:ginna.leyton@correounivalle.edu.co",
+        "kind": "other",
+        "section": "Autoría",
+        "context": "Ginna Leytón Correo: ginna.leyton@correounivalle.edu.co"
+      },
+      {
+        "label": "leidy.carvajal.o@correounivalle.edu.co",
+        "url": "mailto:leidy.carvajal.o@correounivalle.edu.co",
+        "kind": "other",
+        "section": "Autoría",
+        "context": "Leidy Carvajal O. Correo: leidy.carvajal.o@correounivalle.edu.co"
+      },
+      {
+        "label": "carlos.hidalgo@correounivalle.edu.co",
+        "url": "mailto:carlos.hidalgo@correounivalle.edu.co",
+        "kind": "other",
+        "section": "Autoría",
+        "context": "Carlos G. Hidalgo S. Correo: carlos.hidalgo@correounivalle.edu.co"
+      },
+      {
+        "label": "victor.bucheli@correounivalle.edu.co",
+        "url": "mailto:victor.bucheli@correounivalle.edu.co",
+        "kind": "other",
+        "section": "Autoría",
+        "context": "Victor A. Bucheli Correo: victor.bucheli@correounivalle.edu.co Google Scholar: Ir al sitio"
+      },
+      {
+        "label": "Ir al sitio",
+        "url": "https://scholar.google.com/citations?user=hRsekx0AAAAJ&hl=es",
+        "kind": "external",
+        "section": "Autoría",
+        "context": "Victor A. Bucheli Correo: victor.bucheli@correounivalle.edu.co Google Scholar: Ir al sitio"
+      }
+    ],
+    "assets": [
+      {
+        "type": "image",
+        "path": "/images/box-arrow-up-right.svg",
+        "alt": "",
+        "decorative": true
+      }
+    ],
+    "related": [],
+    "content": "# Proyectos de intersección entre el grupo PLaS (Programming Languages and Systems) y GUIA (Grupo de Univalle en Inteligencia Artificial)\n\n![Proyectos de intersección entre el grupo PLaS (Programming Languages and Systems) y GUIA (Grupo de Univalle en Inteligencia Artificial)](/images/PLaS/proyectos/proyecto8.jpg)\n\n## Descripción\n\nPara apoyar la educación en ingeniería en los niveles macro-, meso- y micro-curricular hacen falta estrategias, modelos y metodologías que fortalezcan competencias y realimentación, y que mitiguen problemas formativos y evaluativos.\n\nLa colaboración entre los grupos **PLaS** y **GUIA** busca relacionar estudiante y docente mediante estrategias tecnológicas que analicen interacciones a nivel micro, para comprender cómo emerge el aprendizaje en ingeniería.\n\n### Proyectos asociados\n\n- Modelo de predicción de indicadores de logro para reducir el abandono en programación\n- Modelo de integración para realimentación personalizada en cursos de programación con inteligencia artificial\n- Innovación tecnológica para la gestión curricular de la reforma en la Facultad de Ingeniería (Universidad del Valle)\n- Modelo basado en aprendizaje colaborativo asistido por computador (CSCL) y analíticas (LA) para competencias en un curso introductorio de programación\n\n### Palabras clave\n\nSociedad 5.0 · Aprendizaje colaborativo · Aprendizaje personalizado · Inteligencia colectiva · Programación de computadores · Gestión curricular\n\n### Publicaciones colaborativas\n\n- C. G. Hidalgo Suarez, V. A. Bucheli, F. Restrepo-Calle y F. A. Gonzalez. *A strategy based on technological maps…* Communications in Computer and Information Science, vol. 885, 2018. doi: [10.1007/978-3-319-98998-3_27](https://doi.org/10.1007/978-3-319-98998-3_27)\n- C. G. H. Suarez et al. *Estrategia de enseñanza basada en la colaboración y la evaluación automática…* Investigación e Innovación en Ingeniería, vol. 9, n.º 1, 2021. doi: [10.17081/invinno.9.1.4185](https://doi.org/10.17081/invinno.9.1.4185)\n\n### Autoría\n\n**Estudiantes de doctorado (Universidad del Valle)**\n\n- Jose M. Llanos — [jose.llanos@correounivalle.edu.co](mailto:jose.llanos@correounivalle.edu.co)\n- Ginna Leytón — [ginna.leyton@correounivalle.edu.co](mailto:ginna.leyton@correounivalle.edu.co)\n- Leidy Carvajal O. — [leidy.carvajal.o@correounivalle.edu.co](mailto:leidy.carvajal.o@correounivalle.edu.co)\n- Carlos G. Hidalgo S. — [carlos.hidalgo@correounivalle.edu.co](mailto:carlos.hidalgo@correounivalle.edu.co)\n\n**Profesor colaborador (Univalle)**\n\n- Victor A. Bucheli — [victor.bucheli@correounivalle.edu.co](mailto:victor.bucheli@correounivalle.edu.co)\n"
+  },
+  {
+    "id": "project:aprendizaje",
+    "slug": "aprendizaje",
+    "title_short": "Aprendizaje colaborativo",
+    "title_full": "Prototipo de herramienta computacional para el aprendizaje colaborativo de programación de computadores",
+    "line_id": "line:educacion",
+    "line_name_raw": "Educación en ingeniería",
+    "sort_order": "9",
+    "thesis_like": "yes",
+    "line_name": "Educación en ingeniería",
+    "image_path": "/images/PLaS/proyectos/proyecto9.jpg",
+    "summary": "Resumen: Este proyecto está enfocado en el estudio de los efectos del aprendizaje colaborativo asistido por computador en los cursos introductorios de programación de computadores. Para ello se desarrolló un prototipo…",
+    "sections": [
+      {
+        "heading": "Contenido",
+        "key": "content",
+        "body": "Resumen: Este proyecto está enfocado en el estudio de los efectos del aprendizaje colaborativo asistido por computador en los cursos introductorios de programación de computadores. Para ello se desarrolló un prototipo de herramienta computacional denominada UNColab la cual sirvió como elemento mediador de interacción entre los participantes del estudio al momento de resolver problemas de programación. Este prototipo se desarrolló con base en un guión de aprendizaje colaborativo asistido por computador, una técnica de formación de grupos y una metodología de desarrollo de software orientada a prototipos. Palabras clave: Aprendizaje colaborativo Aprendizaje colaborativo asistido por computador Aprendizaje colaborativo en programación de computadores Repositorio: UN Colab: Ir al sitio"
+      },
+      {
+        "heading": "Autoría",
+        "key": "authorship",
+        "body": "Jhon Méndez Estudiante Maestría en Ingeniería de Sistemas y Computación Universidad Nacional de Colombia Correo: jmendezl@unal.edu.co CvLAC"
+      }
+    ],
+    "links": [
+      {
+        "label": "Ir al sitio",
+        "url": "https://github.com/jhonmendex/un_colab.git",
+        "kind": "github",
+        "section": "Contenido",
+        "context": "UN Colab: Ir al sitio"
+      },
+      {
+        "label": "jmendezl@unal.edu.co",
+        "url": "mailto:jmendezl@unal.edu.co",
+        "kind": "other",
+        "section": "Autoría",
+        "context": "Jhon Méndez Estudiante Maestría en Ingeniería de Sistemas y Computación Universidad Nacional de Colombia Correo: jmendezl@unal.edu.co CvLAC"
+      },
+      {
+        "label": "CvLAC",
+        "url": "https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000078562",
+        "kind": "external",
+        "section": "Autoría",
+        "context": "Jhon Méndez Estudiante Maestría en Ingeniería de Sistemas y Computación Universidad Nacional de Colombia Correo: jmendezl@unal.edu.co CvLAC"
+      }
+    ],
+    "assets": [
+      {
+        "type": "image",
+        "path": "/images/PLaS/proyectos/aprendizaje.png",
+        "alt": "",
+        "decorative": false
+      }
+    ],
+    "related": [
+      {
+        "title": "Tesis de maestría. Prototipo de herramienta computacional para el aprendizaje colaborativo de programación de computadores.",
+        "type": "Tesis",
+        "year": "2021",
+        "publication_id": "",
+        "thesis_id": "tesis:unal/80862",
+        "kind": "site_card_to_project"
+      }
+    ],
+    "content": "# Prototipo de herramienta computacional para el aprendizaje colaborativo de programación de computadores\n\n![Prototipo de herramienta computacional para el aprendizaje colaborativo de programación de computadores](/images/PLaS/proyectos/proyecto9.jpg)\n\n## Descripción\n\nEste proyecto estudia los efectos del **aprendizaje colaborativo asistido por computador** en cursos introductorios de programación.\n\nSe desarrolló el prototipo **UNColab**, mediador de la interacción entre participantes al resolver problemas de programación. El prototipo se basó en:\n\n- Un guión de aprendizaje colaborativo asistido por computador\n- Una técnica de formación de grupos\n- Una metodología de desarrollo orientada a prototipos\n\n### Palabras clave\n\nAprendizaje colaborativo · CSCL · Programación de computadores\n\n### Autoría\n\n**Jhon Méndez**  \nEstudiante de Maestría en Ingeniería de Sistemas y Computación  \nUniversidad Nacional de Colombia  \nCorreo: [jmendezl@unal.edu.co](mailto:jmendezl@unal.edu.co)\n"
+  },
+  {
+    "id": "project:she",
+    "slug": "she",
+    "title_short": "SHE: Software Hardening Environment",
+    "title_full": "SHE: Software Hardening Environment",
+    "line_id": "line:embebidos",
+    "line_name_raw": "Sistemas embebidos confiables",
+    "sort_order": "11",
+    "thesis_like": "no",
+    "line_name": "Sistemas embebidos confiables",
+    "image_path": "/images/PLaS/proyectos/proyecto11.jpg",
+    "summary": "SHE: Software Hardening Environment",
+    "sections": [
+      {
+        "heading": "SHE: Software Hardening Environment (Entorno de \"Endurecimiento\" de Software)",
+        "key": "she_software_hardening_environment_entorno_de_endurecimiento_de_software",
+        "body": "Es una herramienta para el desarrollo de software tolerante a fallos. Permite el diseño e implementación de técnicas de tolerancia a fallos basadas en software, las cuales pueden ser aplicadas a los programas de forma automática. La estrategia de \"endurecimiento\" (protección) está basada en reglas de transformación del código a bajo nivel, es decir, lenguaje ensamblador. Permite aplicar las técnicas software de tolerancia a fallos de forma selectiva, protegiendo sólo las partes críticas del programa. Así, se reducen los overheads y se ofrece mayor flexibilidad al diseñador para alcanzar la mejor solución de compromiso entre todos los requerimientos del sistema. Multiplataforma (probado en GNU/Linux y Windows)."
+      },
+      {
+        "heading": "Microprocesadores soportados",
+        "key": "microprocesadores_soportados",
+        "body": "Xilinx PicoBlaze 8-bit KCPSM3 Xilinx PicoBlaze 8-bit KCPSM6 Texas Instruments MSP430 16-bit Próximamente: ARM y RISC-V"
+      },
+      {
+        "heading": "Prueba SHE online",
+        "key": "prueba_she_online",
+        "body": "Disponible en el Fault Tolerance Lab (de la Universidad de Alicante - España)."
+      }
+    ],
+    "links": [
+      {
+        "label": "Fault Tolerance Lab",
+        "url": "https://www.iuii.ua.es/experimenter/",
+        "kind": "external",
+        "section": "Prueba SHE online",
+        "context": "Disponible en el Fault Tolerance Lab (de la Universidad de Alicante - España)."
+      },
+      {
+        "label": "Felipe Restrepo-Calle, Antonio Martínez-Álvarez, Sergio Cuenca-Asensi, Antonio Jimeno. \"Selective SWIFT-R: A flexible software-based technique for soft error mitigation in low-cost embedded systems\". Journal of Electronic Testing: Theory and Applications, vol. 29, no. 6, pp. 825-838, Dec., 2013. DOI:10.1007/s10836-013-5416-6.",
+        "url": "https://dx.doi.org/10.1007/s10836-013-5416-6",
+        "kind": "doi",
+        "section": "Más información",
+        "context": "Felipe Restrepo-Calle, Antonio Martínez-Álvarez, Sergio Cuenca-Asensi, Antonio Jimeno. \"Selective SWIFT-R: A flexible software-based technique for soft error mitigation in low-cost embedded systems\". "
+      },
+      {
+        "label": "Antonio Martínez-Álvarez, Sergio Cuenca-Asensi, Felipe Restrepo-Calle, Francisco R. Palomo, Hipólito Guzmán-Miranda, and Miguel A. Aguirre. \"Compiler-Directed Soft Error Mitigation for Embedded Systems,\" IEEE Transactions on Dependable and Secure Computing, vol.9, no.2, pp.159-172, March-April 2012. ISSN:1545-5971. DOI=10.1109/TDSC.2011.54.",
+        "url": "https://dx.doi.org/10.1109/TDSC.2011.54",
+        "kind": "doi",
+        "section": "Más información",
+        "context": "Antonio Martínez-Álvarez, Sergio Cuenca-Asensi, Felipe Restrepo-Calle, Francisco R. Palomo, Hipólito Guzmán-Miranda, and Miguel A. Aguirre. \"Compiler-Directed Soft Error Mitigation for Embedded System"
+      },
+      {
+        "label": "Sergio Cuenca-Asensi, Antonio Martínez-Álvarez, Felipe Restrepo-Calle, Francisco R. Palomo, Hipólito Guzmán-Miranda, and Miguel A. Aguirre. \"A novel co-design approach for soft errors mitigation in embedded systems\". IEEE Transactions on Nuclear Science, vol. 58, no. 3, pp.1059-1065, June 2011. ISSN:0018-9499. DOI:10.1109/TNS.2011.2112379.",
+        "url": "https://dx.doi.org/10.1109/TNS.2011.2112379",
+        "kind": "doi",
+        "section": "Más información",
+        "context": "Sergio Cuenca-Asensi, Antonio Martínez-Álvarez, Felipe Restrepo-Calle, Francisco R. Palomo, Hipólito Guzmán-Miranda, and Miguel A. Aguirre. \"A novel co-design approach for soft errors mitigation in em"
+      }
+    ],
+    "assets": [
+      {
+        "type": "image",
+        "path": "/images/box-arrow-up-right.svg",
+        "alt": "",
+        "decorative": true
+      },
+      {
+        "type": "image",
+        "path": "/images/PLaS/proyectos/she.png",
+        "alt": "",
+        "decorative": false
+      }
+    ],
+    "related": [],
+    "content": "# SHE: Software Hardening Environment\n\n![SHE: Software Hardening Environment](/images/PLaS/proyectos/proyecto11.jpg)\n\n## Descripción\n\n**SHE** (*Software Hardening Environment*) es una herramienta para el desarrollo de software tolerante a fallos. Permite diseñar e implementar técnicas de tolerancia a fallos basadas en software y aplicarlas a los programas de forma automática.\n\nLa estrategia de *endurecimiento* (protección) se basa en reglas de transformación del código a bajo nivel (ensamblador). Las técnicas pueden aplicarse de forma **selectiva**, protegiendo solo las partes críticas del programa: se reducen los *overheads* y el diseñador gana flexibilidad para equilibrar los requisitos del sistema.\n\nEs multiplataforma (probado en GNU/Linux y Windows).\n\n### Microprocesadores soportados\n\n- Xilinx PicoBlaze 8-bit (KCPSM3)\n- Xilinx PicoBlaze 8-bit (KCPSM6)\n- Texas Instruments MSP430 16-bit\n- *Próximamente:* ARM y RISC-V\n\n### Prueba en línea\n\nDisponible en el Fault Tolerance Lab de la Universidad de Alicante (España).\n"
+  },
+  {
+    "id": "project:ftxac",
+    "slug": "ftxac",
+    "title_short": "FTxAC",
+    "title_full": "FTxAC",
+    "line_id": "line:embebidos",
+    "line_name_raw": "Sistemas embebidos confiables",
+    "sort_order": "12",
+    "thesis_like": "no",
+    "line_name": "Sistemas embebidos confiables",
+    "image_path": "/images/PLaS/proyectos/proyecto12.jpg",
+    "summary": "Los avances tecnológicos en el nivel de integración de dispositivos semiconductores han aumentado la susceptibilidad de los circuitos integrados a fallos inducidos por radiación. Aunque se han propuesto diferentes téc…",
+    "sections": [
+      {
+        "heading": "Descripción",
+        "key": "description",
+        "body": "Los avances tecnológicos en el nivel de integración de dispositivos semiconductores han aumentado la susceptibilidad de los circuitos integrados a fallos inducidos por radiación. Aunque se han propuesto diferentes técnicas a nivel de software, hardware e híbridos para la mitigación de este tipo de fallos, todas ellas causan sobrecostos computacionales que no son insignificantes en términos de área, consumo de energía y rendimiento. Recientemente, el uso de la Computación Aproximada ha tomado relevancia para minimizar los sobrecostos asociados con la redundancia que conllevan las técnicas tradicionales de mitigación de fallos. Por lo tanto pretendemos explorar técnicas de computación aproximada para proponer una estrategia de diseño sistemática de sistemas embebidos tolerantes a fallos inducidos por radiación, reduciendo los sobrecostos computacionales."
+      },
+      {
+        "heading": "Resultados",
+        "key": "results",
+        "body": "A. Aponte-Moreno, F. Restrepo-Calle and C. Pedraza, \"FTxAC: Leveraging the Approximate Computing Paradigm in the Design of Fault-Tolerant Embedded Systems to Reduce Overheads,\" in IEEE Transactions on Emerging Topics in Computing, vol. 9, no. 2, pp. 797-810, 1 April-June 2021, doi: 10.1109/TETC.2020.2986235. A. Aponte-Moreno, F. Restrepo-Calle, C. Pedraza. \"Using Approximate Computing and Selective Hardening for the Reduction of Overheads in the Design of Radiation-Induced Fault-Tolerant Systems,\" in Electronics, vol 8 (issue 12), 1539, 18 pages, 13 December 2019. Alexander Aponte-Moreno, Felipe Restrepo-Calle, and Cesar Pedraza. \"A Low-Overhead Radiation Hardening Approach using Approximate Computing and Selective Fault Tolerance Techniques at the Software Level\". In Proceedings of the 2019 IEEE European Conference on Radiation and its Effects on Components and Systems (RADECS). Montpellier, France. September 16-20th, 2019. Alexander Aponte-Moreno, Cesar Pedraza, and Felipe Restrepo-Calle. \"Reducing Overheads in Software-based Fault Tolerant Systems using Approximate Computing\". In Proceedings of the 2019 IEEE 20th Latin-American Test Symposium (LATS). Santiago, Chile, 11th - 13th March, pp. 1-5. doi: 10.1109/LATW.2019.8704586. 2019. A. Aponte-Moreno, A. Moncada, F. Restrepo-Calle and C. Pedraza. \"A review of approximate computing techniques towards fault mitigation in HW/SW systems\". In Proceedings of the 2018 IEEE 19th Latin-American Test Symposium (LATS). Sao Paulo, Brazil, 2018, pp. 1-6. doi: 10.1109/LATW.2018.8347241."
+      }
+    ],
+    "links": [
+      {
+        "label": "A. Aponte-Moreno, F. Restrepo-Calle and C. Pedraza, \"FTxAC: Leveraging the Approximate Computing Paradigm in the Design of Fault-Tolerant Embedded Systems to Reduce Overheads,\" in IEEE Transactions on Emerging Topics in Computing, vol. 9, no. 2, pp. 797-810, 1 April-June 2021, doi: 10.1109/TETC.2020.2986235.",
+        "url": "https://ieeexplore.ieee.org/abstract/document/9060916",
+        "kind": "external",
+        "section": "Resultados",
+        "context": "A. Aponte-Moreno, F. Restrepo-Calle and C. Pedraza, \"FTxAC: Leveraging the Approximate Computing Paradigm in the Design of Fault-Tolerant Embedded Systems to Reduce Overheads,\" in IEEE Transactions on"
+      },
+      {
+        "label": "A. Aponte-Moreno, F. Restrepo-Calle, C. Pedraza. \"Using Approximate Computing and Selective Hardening for the Reduction of Overheads in the Design of Radiation-Induced Fault-Tolerant Systems,\" in Electronics, vol 8 (issue 12), 1539, 18 pages, 13 December 2019.",
+        "url": "https://www.mdpi.com/2079-9292/8/12/1539",
+        "kind": "external",
+        "section": "Resultados",
+        "context": "A. Aponte-Moreno, F. Restrepo-Calle, C. Pedraza. \"Using Approximate Computing and Selective Hardening for the Reduction of Overheads in the Design of Radiation-Induced Fault-Tolerant Systems,\" in Elec"
+      },
+      {
+        "label": "Alexander Aponte-Moreno, Felipe Restrepo-Calle, and Cesar Pedraza. \"A Low-Overhead Radiation Hardening Approach using Approximate Computing and Selective Fault Tolerance Techniques at the Software Level\". In Proceedings of the 2019 IEEE European Conference on Radiation and its Effects on Components and Systems (RADECS). Montpellier, France. September 16-20th, 2019.",
+        "url": "https://dis.unal.edu.co/~ferestrepoca/investigacion.html#",
+        "kind": "unal",
+        "section": "Resultados",
+        "context": "Alexander Aponte-Moreno, Felipe Restrepo-Calle, and Cesar Pedraza. \"A Low-Overhead Radiation Hardening Approach using Approximate Computing and Selective Fault Tolerance Techniques at the Software Lev"
+      },
+      {
+        "label": "Alexander Aponte-Moreno, Cesar Pedraza, and Felipe Restrepo-Calle. \"Reducing Overheads in Software-based Fault Tolerant Systems using Approximate Computing\". In Proceedings of the 2019 IEEE 20th Latin-American Test Symposium (LATS). Santiago, Chile, 11th - 13th March, pp. 1-5. doi: 10.1109/LATW.2019.8704586. 2019.",
+        "url": "https://ieeexplore.ieee.org/document/8704586",
+        "kind": "external",
+        "section": "Resultados",
+        "context": "Alexander Aponte-Moreno, Cesar Pedraza, and Felipe Restrepo-Calle. \"Reducing Overheads in Software-based Fault Tolerant Systems using Approximate Computing\". In Proceedings of the 2019 IEEE 20th Latin"
+      },
+      {
+        "label": "A. Aponte-Moreno, A. Moncada, F. Restrepo-Calle and C. Pedraza. \"A review of approximate computing techniques towards fault mitigation in HW/SW systems\". In Proceedings of the 2018 IEEE 19th Latin-American Test Symposium (LATS). Sao Paulo, Brazil, 2018, pp. 1-6. doi: 10.1109/LATW.2018.8347241.",
+        "url": "http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8347241&isnumber=8347228",
+        "kind": "external",
+        "section": "Resultados",
+        "context": "A. Aponte-Moreno, A. Moncada, F. Restrepo-Calle and C. Pedraza. \"A review of approximate computing techniques towards fault mitigation in HW/SW systems\". In Proceedings of the 2018 IEEE 19th Latin-Ame"
+      }
+    ],
+    "assets": [
+      {
+        "type": "image",
+        "path": "/images/PLaS/proyectos/ftxac.png",
+        "alt": "",
+        "decorative": false
+      },
+      {
+        "type": "image",
+        "path": "/images/box-arrow-up-right.svg",
+        "alt": "",
+        "decorative": true
+      }
+    ],
+    "related": [],
+    "content": "# FTxAC\n\n![FTxAC](/images/PLaS/proyectos/proyecto12.jpg)\n\n## Descripción\n\nEl aumento en el nivel de integración de semiconductores ha hecho más susceptibles los circuitos a **fallos inducidos por radiación**. Las técnicas de mitigación en software, hardware o híbridas suelen imponer sobrecostos relevantes en área, energía y rendimiento.\n\n**FTxAC** explora el paradigma de **computación aproximada** para proponer una estrategia sistemática de diseño de sistemas embebidos tolerantes a fallos por radiación, reduciendo esos sobrecostos frente a la redundancia de enfoques tradicionales.\n\n### Resultados / publicaciones\n\n- A. Aponte-Moreno, F. Restrepo-Calle y C. Pedraza. *FTxAC: Leveraging the Approximate Computing Paradigm…* IEEE Transactions on Emerging Topics in Computing, 2021. doi: [10.1109/TETC.2020.2986235](https://doi.org/10.1109/TETC.2020.2986235)\n- A. Aponte-Moreno, F. Restrepo-Calle, C. Pedraza. *Using Approximate Computing and Selective Hardening…* Electronics, 2019.\n- A. Aponte-Moreno, F. Restrepo-Calle y C. Pedraza. *A Low-Overhead Radiation Hardening Approach…* RADECS 2019.\n- A. Aponte-Moreno, C. Pedraza y F. Restrepo-Calle. *Reducing Overheads in Software-based Fault Tolerant Systems…* LATS 2019. doi: [10.1109/LATW.2019.8704586](https://doi.org/10.1109/LATW.2019.8704586)\n- A. Aponte-Moreno et al. *A review of approximate computing techniques towards fault mitigation…* LATS 2018. doi: [10.1109/LATW.2018.8347241](https://doi.org/10.1109/LATW.2018.8347241)\n"
+  },
+  {
+    "id": "project:transito",
+    "slug": "transito",
+    "title_short": "Modelo predictivo de accidentes de tránsito",
+    "title_full": "Modelo predictivo de accidentes de tránsito",
+    "line_id": "line:transporte",
+    "line_name_raw": "Sistemas inteligentes de transporte (ITS)",
+    "sort_order": "13",
+    "thesis_like": "no",
+    "line_name": "Sistemas inteligentes de transporte",
+    "image_path": "/images/PLaS/proyectos/proyecto13.png",
+    "summary": "La incorporación de variables relacionadas con eventos de accidentes viales y problemas de infraestructura vial procedentes de redes sociales y aplicaciones de movilidad, permite mejorar la estimación de la ocurrencia…",
+    "sections": [
+      {
+        "heading": "Descripción",
+        "key": "description",
+        "body": "La incorporación de variables relacionadas con eventos de accidentes viales y problemas de infraestructura vial procedentes de redes sociales y aplicaciones de movilidad, permite mejorar la estimación de la ocurrencia de accidentes viales, comparada con una estimación realizada sólo con información procedente de los datos de accidentalidad reportados por las entidades oficiales. Este proyecto pretende identificar las variables que pueden contribuir a elaborar un modelo más completo que permita determinar la probabilidad de ocurrencia de accidentes en una ciudad como Bogotá."
+      },
+      {
+        "heading": "Resultados",
+        "key": "results",
+        "body": "Camilo Gutierrez-Osorio ; Cesar Augusto Pedraza. Characterizing road accidents in urban areas of Bogota (Colombia): A data science approach 2019 2nd Latin American Conference on Intelligent Transportation Systems (ITS LATAM) Año: 2019 | Conference Paper | Publisher: IEEE"
+      }
+    ],
+    "links": [
+      {
+        "label": "Camilo Gutierrez-Osorio ; Cesar Augusto Pedraza. Characterizing road accidents in urban areas of Bogota (Colombia): A data science approach 2019 2nd Latin American Conference on Intelligent Transportation Systems (ITS LATAM) Año: 2019 | Conference Paper | Publisher: IEEE",
+        "url": "https://ieeexplore.ieee.org/document/8721334",
+        "kind": "external",
+        "section": "Resultados",
+        "context": "Camilo Gutierrez-Osorio ; Cesar Augusto Pedraza. Characterizing road accidents in urban areas of Bogota (Colombia): A data science approach 2019 2nd Latin American Conference on Intelligent Transporta"
+      }
+    ],
+    "assets": [
+      {
+        "type": "image",
+        "path": "/images/PLaS/proyectos/proyecto13.png",
+        "alt": "",
+        "decorative": false
+      },
+      {
+        "type": "image",
+        "path": "/images/box-arrow-up-right.svg",
+        "alt": "",
+        "decorative": true
+      }
+    ],
+    "related": [],
+    "content": "# Modelo predictivo de accidentes de tránsito\n\n![Modelo predictivo de accidentes de tránsito](/images/PLaS/proyectos/proyecto13.png)\n\n## Descripción\n\nIncorporar variables sobre accidentes e infraestructura vial provenientes de **redes sociales** y aplicaciones de movilidad puede mejorar la estimación de ocurrencia de accidentes, frente a modelos que solo usan datos oficiales de accidentalidad.\n\nEl proyecto busca identificar variables que contribuyan a un modelo más completo de la probabilidad de accidentes en una ciudad como **Bogotá**.\n\n### Resultados / publicaciones\n\nCamilo Gutierrez-Osorio; Cesar Augusto Pedraza. *Characterizing road accidents in urban areas of Bogota (Colombia): A data science approach*. 2019 2nd Latin American Conference on Intelligent Transportation Systems (ITS LATAM). IEEE.\n"
+  },
+  {
+    "id": "project:maleza",
+    "slug": "maleza",
+    "title_short": "Cuantificación de maleza en cultivos de hortalizas",
+    "title_full": "Cuantificación de maleza en cultivos de hortalizas",
+    "line_id": "line:agricultura",
+    "line_name_raw": "Agricultura de precisión",
+    "sort_order": "14",
+    "thesis_like": "no",
+    "line_name": "Agricultura de precisión",
+    "image_path": "/images/PLaS/proyectos/proyecto14.jpg",
+    "summary": "El objetivo de este proyecto es desarrollar un software que permita cuantificar la maleza de cultivos de hortalizas en zonas agrícolas colombianas, a partir de imágenes multi espectrales del cultivo. Se espera que con…",
+    "sections": [
+      {
+        "heading": "Descripción",
+        "key": "description",
+        "body": "El objetivo de este proyecto es desarrollar un software que permita cuantificar la maleza de cultivos de hortalizas en zonas agrícolas colombianas, a partir de imágenes multi espectrales del cultivo. Se espera que con esta tecnología sea posible determinar de manera más precisa los lugares en los que se deben aplicar herbicidas incrementando la eficiencia económica además de los beneficios medioambientales y de salubridad que esto conlleva."
+      }
+    ],
+    "links": [],
+    "assets": [
+      {
+        "type": "image",
+        "path": "/images/PLaS/proyectos/proyecto14.jpg",
+        "alt": "",
+        "decorative": false
+      }
+    ],
+    "related": [],
+    "content": "# Cuantificación de maleza en cultivos de hortalizas\n\n![Cuantificación de maleza en cultivos de hortalizas](/images/PLaS/proyectos/proyecto14.jpg)\n\n## Descripción\n\nEl objetivo es desarrollar un software que **cuantifique la maleza** en cultivos de hortalizas de zonas agrícolas colombianas a partir de **imágenes multiespectrales**.\n\nCon esta tecnología se espera localizar con mayor precisión dónde aplicar herbicidas, mejorando la eficiencia económica y aportando beneficios ambientales y de salubridad.\n"
+  }
+]

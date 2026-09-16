@@ -1,0 +1,185 @@
+---
+import { withBase } from '../lib/with-base';
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import ProjectsCarousel from '../components/ProjectsCarousel.astro';
+import TypeChip from '../components/TypeChip.astro';
+import {
+  facultyItems,
+  homeQuotes,
+  newsItems,
+  recentWorks,
+  researchLines,
+  site,
+} from '../data/placeholders';
+
+const quoteFallback = homeQuotes[0];
+---
+
+<Layout title={`${site.name} — ${site.nameFull}`} spine>
+  <Hero />
+
+  <section
+    class="quote-section section-bleed"
+    aria-label="Cita"
+    data-home-quotes={JSON.stringify(homeQuotes)}
+  >
+    <div class="section-bleed__back" aria-hidden="true"></div>
+    <div class="section-bleed__inner wrap">
+      <blockquote class="quote-block">
+        <p class="quote-block__text" data-quote-text>{quoteFallback.text}</p>
+        <footer class="quote-block__attr">
+          <cite data-quote-attr>{quoteFallback.attribution}</cite>
+        </footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="news-section wrap" aria-labelledby="news-heading">
+    <div class="news-section__head">
+      <h2 id="news-heading" class="news-section__title">Últimas novedades</h2>
+      <a class="btn btn--soft" href={withBase("/blog")}>Ver todas</a>
+    </div>
+    <ul class="news-gallery">
+      {
+        newsItems.map((item) => {
+          const title =
+            item.title.length > 72 ? `${item.title.slice(0, 72).trimEnd()}…` : item.title;
+          return (
+            <li>
+              <a class="news-card" href={item.href} title={item.title}>
+                <div class="news-card__media" aria-hidden="true">
+                  {item.image ? <img src={item.image} alt="" loading="lazy" /> : null}
+                </div>
+                <div class="news-card__body">
+                  {item.meta ? <p class="news-card__meta">{item.meta}</p> : null}
+                  <h3 class="news-card__title">{title}</h3>
+                  <div class="news-card__foot">
+                    <TypeChip typology={item.typology} />
+                  </div>
+                </div>
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </section>
+
+  <section class="works-section wrap" aria-labelledby="works-heading">
+    <div class="works-section__head">
+      <h2 id="works-heading" class="works-section__title">Trabajos recientes</h2>
+      <a class="btn btn--soft" href={withBase("/catalog")}>Catálogo</a>
+    </div>
+    <ul class="works-list">
+      {
+        recentWorks.map((item) => (
+          <li>
+            <a
+              class="works-card"
+              href={item.href}
+              {...(/^https?:\/\//i.test(item.href)
+                ? { target: '_blank', rel: 'noreferrer' }
+                : {})}
+            >
+              <div
+                class:list={['works-card__media', item.image && 'works-card__media--logo']}
+                aria-hidden="true"
+              >
+                {item.image ? <img src={item.image} alt="" loading="lazy" /> : null}
+              </div>
+              <div class="works-card__body">
+                <p class="works-card__meta">{item.meta}</p>
+                <h3 class="works-card__title">{item.title}</h3>
+                {item.author ? <p class="works-card__author">{item.author}</p> : null}
+                {item.outcome ? <p class="card-outcome">{item.outcome}</p> : null}
+                {
+                  item.lineChip ? (
+                    <div class="works-card__foot">
+                      <TypeChip typology={item.lineChip} />
+                    </div>
+                  ) : null
+                }
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <ProjectsCarousel />
+
+  <section class="faculty-section section-bleed" aria-labelledby="faculty-heading">
+    <div class="section-bleed__back" aria-hidden="true"></div>
+    <div class="section-bleed__inner wrap">
+      <div class="faculty-section__head">
+        <h2 id="faculty-heading" class="faculty-section__title">Nuestros docentes</h2>
+        <a class="btn btn--soft" href={withBase("/people")}>Equipo</a>
+      </div>
+      <ul class="faculty-gallery">
+        {
+          facultyItems.map((person) => (
+            <li>
+              <a class="faculty-card" href={person.href}>
+                <div class="faculty-card__media">
+                  {person.image ? <img src={person.image} alt="" loading="lazy" /> : null}
+                </div>
+                <div class="faculty-card__body">
+                  <div class="faculty-card__chips">
+                    <TypeChip typology={person.roleChip} />
+                  </div>
+                  <h3 class="faculty-card__name">{person.name}</h3>
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="lines-section wrap" aria-labelledby="lines-heading">
+    <div class="lines-section__head">
+      <h2 id="lines-heading" class="lines-section__title">Líneas de investigación</h2>
+      <a class="btn btn--soft" href={withBase("/lines")}>Líneas</a>
+    </div>
+    <ul class="lines-gallery">
+      {
+        researchLines.map((line) => (
+          <li>
+            <a
+              class="lines-card"
+              href={line.href}
+              style={line.color ? `--line-color: ${line.color}` : undefined}
+            >
+              <div class="lines-card__media">
+                {line.image ? (
+                  <img src={line.image} alt="" loading="lazy" width="600" height="400" />
+                ) : null}
+              </div>
+              <div class="lines-card__body">
+                <h3 class="lines-card__title">{line.title}</h3>
+                <p class="lines-card__text">{line.summary}</p>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="invite-section section-bleed" aria-labelledby="invite-heading">
+    <div class="section-bleed__back" aria-hidden="true"></div>
+    <div class="section-bleed__inner wrap">
+      <h2 id="invite-heading" class="invite-section__title">¿Quieres construir con nosotros?</h2>
+      <p class="invite-section__text">
+        Si traes una idea, buscas tesis o quieres colaborar, escríbenos. Revisamos
+        propuestas con criterio y acompañamos el trabajo hasta un resultado sólido.
+      </p>
+      <p class="invite-section__cta">
+        <a class="btn btn--amber" href={withBase("/contact")}>Escribir al grupo</a>
+      </p>
+    </div>
+  </section>
+</Layout>

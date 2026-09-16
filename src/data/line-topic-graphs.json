@@ -1,0 +1,140 @@
+{
+  "line:lenguajes": {
+    "nodes": [
+      { "id": "codigo", "label": "Análisis de código", "weight": 5, "x": 0.42, "y": 0.48 },
+      { "id": "legibilidad", "label": "Legibilidad", "weight": 3, "x": 0.18, "y": 0.28 },
+      { "id": "ir", "label": "IR multimodal", "weight": 3, "x": 0.68, "y": 0.28 },
+      { "id": "estatico", "label": "Análisis estático", "weight": 3, "x": 0.22, "y": 0.68 },
+      { "id": "reputacion", "label": "Reputación", "weight": 2, "x": 0.12, "y": 0.48 },
+      { "id": "prototipado", "label": "Prototipado NL", "weight": 3, "x": 0.78, "y": 0.52 },
+      { "id": "pln", "label": "PLN / NLP", "weight": 4, "x": 0.58, "y": 0.72 },
+      { "id": "agentes", "label": "Agentes e IA", "weight": 2, "x": 0.88, "y": 0.28 },
+      { "id": "seguridad", "label": "Seguridad", "weight": 2, "x": 0.38, "y": 0.18 }
+    ],
+    "edges": [
+      { "source": "codigo", "target": "legibilidad", "weight": 3 },
+      { "source": "codigo", "target": "ir", "weight": 3 },
+      { "source": "codigo", "target": "estatico", "weight": 4 },
+      { "source": "codigo", "target": "reputacion", "weight": 3 },
+      { "source": "ir", "target": "pln", "weight": 3 },
+      { "source": "pln", "target": "prototipado", "weight": 4 },
+      { "source": "pln", "target": "agentes", "weight": 2 },
+      { "source": "prototipado", "target": "agentes", "weight": 2 },
+      { "source": "estatico", "target": "legibilidad", "weight": 2 },
+      { "source": "seguridad", "target": "codigo", "weight": 1 }
+    ]
+  },
+  "line:educacion": {
+    "nodes": [
+      { "id": "evaluacion", "label": "Evaluación auto.", "weight": 5, "x": 0.48, "y": 0.42 },
+      { "id": "realimentacion", "label": "Realimentación", "weight": 4, "x": 0.68, "y": 0.28 },
+      { "id": "motivacion", "label": "Motivación", "weight": 4, "x": 0.28, "y": 0.22 },
+      { "id": "gamificacion", "label": "Gamificación", "weight": 3, "x": 0.12, "y": 0.38 },
+      { "id": "autorregulacion", "label": "Autorregulación", "weight": 3, "x": 0.22, "y": 0.58 },
+      { "id": "analytics", "label": "Learning analytics", "weight": 4, "x": 0.42, "y": 0.72 },
+      { "id": "colaborativo", "label": "Colaborativo", "weight": 3, "x": 0.72, "y": 0.58 },
+      { "id": "tel", "label": "TEL / videojuegos", "weight": 3, "x": 0.08, "y": 0.18 },
+      { "id": "hdl", "label": "HDL / digital", "weight": 3, "x": 0.88, "y": 0.42 },
+      { "id": "llm", "label": "Tutores LLM", "weight": 3, "x": 0.82, "y": 0.18 },
+      { "id": "codigoEst", "label": "Código estudiantil", "weight": 3, "x": 0.62, "y": 0.78 },
+      { "id": "curriculo", "label": "Currículo", "weight": 2, "x": 0.28, "y": 0.88 }
+    ],
+    "edges": [
+      { "source": "evaluacion", "target": "realimentacion", "weight": 5 },
+      { "source": "evaluacion", "target": "motivacion", "weight": 4 },
+      { "source": "motivacion", "target": "gamificacion", "weight": 4 },
+      { "source": "gamificacion", "target": "tel", "weight": 3 },
+      { "source": "motivacion", "target": "tel", "weight": 3 },
+      { "source": "evaluacion", "target": "autorregulacion", "weight": 3 },
+      { "source": "autorregulacion", "target": "analytics", "weight": 4 },
+      { "source": "analytics", "target": "codigoEst", "weight": 3 },
+      { "source": "evaluacion", "target": "codigoEst", "weight": 4 },
+      { "source": "evaluacion", "target": "colaborativo", "weight": 3 },
+      { "source": "evaluacion", "target": "hdl", "weight": 3 },
+      { "source": "realimentacion", "target": "hdl", "weight": 2 },
+      { "source": "llm", "target": "realimentacion", "weight": 3 },
+      { "source": "llm", "target": "evaluacion", "weight": 2 },
+      { "source": "analytics", "target": "curriculo", "weight": 2 }
+    ]
+  },
+  "line:embebidos": {
+    "nodes": [
+      { "id": "softErrors", "label": "Soft errors", "weight": 5, "x": 0.45, "y": 0.35 },
+      { "id": "tolerancia", "label": "Tolerancia a fallos", "weight": 5, "x": 0.48, "y": 0.58 },
+      { "id": "aproximada", "label": "Comp. aproximada", "weight": 4, "x": 0.72, "y": 0.48 },
+      { "id": "hardening", "label": "Selective hardening", "weight": 4, "x": 0.28, "y": 0.48 },
+      { "id": "injection", "label": "Fault injection", "weight": 4, "x": 0.18, "y": 0.22 },
+      { "id": "criticidad", "label": "Criticidad", "weight": 3, "x": 0.12, "y": 0.62 },
+      { "id": "codesign", "label": "Co-diseño HW/SW", "weight": 4, "x": 0.62, "y": 0.78 },
+      { "id": "fpga", "label": "Soft-cores / FPGA", "weight": 3, "x": 0.85, "y": 0.28 },
+      { "id": "compilador", "label": "Compilador", "weight": 3, "x": 0.78, "y": 0.68 },
+      { "id": "cots", "label": "Microprocs. COTS", "weight": 3, "x": 0.32, "y": 0.18 }
+    ],
+    "edges": [
+      { "source": "softErrors", "target": "tolerancia", "weight": 5 },
+      { "source": "softErrors", "target": "hardening", "weight": 5 },
+      { "source": "hardening", "target": "tolerancia", "weight": 4 },
+      { "source": "aproximada", "target": "tolerancia", "weight": 4 },
+      { "source": "aproximada", "target": "hardening", "weight": 3 },
+      { "source": "injection", "target": "softErrors", "weight": 4 },
+      { "source": "injection", "target": "cots", "weight": 3 },
+      { "source": "cots", "target": "softErrors", "weight": 3 },
+      { "source": "criticidad", "target": "hardening", "weight": 4 },
+      { "source": "criticidad", "target": "tolerancia", "weight": 2 },
+      { "source": "codesign", "target": "tolerancia", "weight": 4 },
+      { "source": "codesign", "target": "compilador", "weight": 3 },
+      { "source": "compilador", "target": "softErrors", "weight": 3 },
+      { "source": "fpga", "target": "codesign", "weight": 2 },
+      { "source": "fpga", "target": "softErrors", "weight": 2 }
+    ]
+  },
+  "line:transporte": {
+    "nodes": [
+      { "id": "accidentes", "label": "Accidentalidad", "weight": 5, "x": 0.35, "y": 0.32 },
+      { "id": "social", "label": "Redes / abiertos", "weight": 4, "x": 0.15, "y": 0.22 },
+      { "id": "trafico", "label": "Predicción tráfico", "weight": 4, "x": 0.55, "y": 0.22 },
+      { "id": "vision", "label": "Visión vehicular", "weight": 5, "x": 0.58, "y": 0.52 },
+      { "id": "conteo", "label": "Conteo vehicular", "weight": 3, "x": 0.78, "y": 0.38 },
+      { "id": "evasion", "label": "Evasión BRT", "weight": 4, "x": 0.72, "y": 0.72 },
+      { "id": "rfid", "label": "RFID / IoT", "weight": 4, "x": 0.22, "y": 0.62 },
+      { "id": "velocidad", "label": "Velocidad BT/WiFi", "weight": 2, "x": 0.38, "y": 0.82 },
+      { "id": "inspeccion", "label": "Inspección", "weight": 2, "x": 0.88, "y": 0.58 },
+      { "id": "acustica", "label": "Sensado acústico", "weight": 2, "x": 0.08, "y": 0.48 }
+    ],
+    "edges": [
+      { "source": "social", "target": "accidentes", "weight": 5 },
+      { "source": "accidentes", "target": "trafico", "weight": 3 },
+      { "source": "vision", "target": "conteo", "weight": 4 },
+      { "source": "conteo", "target": "trafico", "weight": 3 },
+      { "source": "vision", "target": "evasion", "weight": 4 },
+      { "source": "vision", "target": "inspeccion", "weight": 2 },
+      { "source": "rfid", "target": "velocidad", "weight": 2 },
+      { "source": "rfid", "target": "trafico", "weight": 2 },
+      { "source": "vision", "target": "accidentes", "weight": 2 },
+      { "source": "acustica", "target": "rfid", "weight": 1 },
+      { "source": "velocidad", "target": "trafico", "weight": 2 }
+    ]
+  },
+  "line:agricultura": {
+    "nodes": [
+      { "id": "maleza", "label": "Maleza", "weight": 4, "x": 0.35, "y": 0.35 },
+      { "id": "multiespectral", "label": "Multiespectral", "weight": 4, "x": 0.55, "y": 0.22 },
+      { "id": "visionAerea", "label": "Visión aérea", "weight": 3, "x": 0.78, "y": 0.38 },
+      { "id": "dl", "label": "Deep learning", "weight": 4, "x": 0.58, "y": 0.55 },
+      { "id": "llm", "label": "Asistentes LLM", "weight": 2, "x": 0.22, "y": 0.68 },
+      { "id": "iot", "label": "IoT pecuario", "weight": 2, "x": 0.78, "y": 0.72 },
+      { "id": "cobertura", "label": "Cuantificación", "weight": 3, "x": 0.42, "y": 0.78 }
+    ],
+    "edges": [
+      { "source": "maleza", "target": "multiespectral", "weight": 5 },
+      { "source": "multiespectral", "target": "dl", "weight": 4 },
+      { "source": "maleza", "target": "dl", "weight": 4 },
+      { "source": "visionAerea", "target": "dl", "weight": 3 },
+      { "source": "visionAerea", "target": "multiespectral", "weight": 3 },
+      { "source": "maleza", "target": "cobertura", "weight": 3 },
+      { "source": "dl", "target": "cobertura", "weight": 2 },
+      { "source": "llm", "target": "maleza", "weight": 1 },
+      { "source": "iot", "target": "cobertura", "weight": 1 }
+    ]
+  }
+}

@@ -1,0 +1,1109 @@
+/**
+ * Chrome institucional UNAL — aislado del contenido PLaS.
+ * Métricas alineadas a web_plas/css/frontend.css (compilado), no al SCSS viejo.
+ * Selectores anclados a #unal-header | #unal-services | #unal-access | #unal-footer.
+ */
+
+@font-face {
+  font-family: "Ancizar sans";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/unal/fonts/ancizarsans_regular-webfont.woff") format("woff");
+}
+@font-face {
+  font-family: "Ancizar sans";
+  font-weight: 400;
+  font-style: italic;
+  src: url("/unal/fonts/ancizarsans_italic-webfont.woff") format("woff");
+}
+@font-face {
+  font-family: "Ancizar sans";
+  font-weight: 700;
+  font-style: normal;
+  src: url("/unal/fonts/ancizarsans_bold-webfont.woff") format("woff");
+}
+@font-face {
+  font-family: "Ancizar sans";
+  font-weight: 700;
+  font-style: italic;
+  src: url("/unal/fonts/ancizarsans_bold_italic-webfont.woff") format("woff");
+}
+@font-face {
+  font-family: "Ancizar serif";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/unal/fonts/ancizarserif_regular-webfont.woff") format("woff");
+}
+@font-face {
+  font-family: "Ancizar serif";
+  font-weight: 700;
+  font-style: normal;
+  src: url("/unal/fonts/ancizarserif_bold-webfont.woff") format("woff");
+}
+
+:root {
+  --unal-gris-text: #ddd;
+  --unal-gris: #999;
+  --unal-gris-context: #666;
+  /* Compilado web_plas: #606060 (no el SCSS #484444e7) */
+  --unal-gris-header: #606060;
+  --unal-blanco: #fff;
+  --unal-aspirantes: #2a044a;
+  --unal-estudiantes: #0b2e59;
+  --unal-egresados: #0d6759;
+  --unal-docentes: #7ab317;
+  --unal-administrativos: #5e9281;
+  --unal-black: #303030;
+  --unal-verde: #94b43b;
+  --unal-verde-dark: #667c29;
+  --unal-negro: #333;
+}
+
+body.unal-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* ——— Área 1: cabezote (métricas = flujo web_plas, no absolute-bottom) ——— */
+#unal-header {
+  position: relative;
+  z-index: 40;
+  display: block;
+  background: var(--unal-gris-header);
+  font-family: "Ancizar sans", Tahoma, Geneva, sans-serif;
+  color: var(--unal-blanco);
+  /* flex item: no crecer por min-height:auto del contenido abs */
+  flex: 0 0 auto;
+  align-self: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#unal-header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#unal-header .unal-logo {
+  z-index: 10;
+  position: absolute;
+  margin-left: 10px;
+  top: 0;
+  width: 234px;
+  height: 135px;
+  padding-top: 0.05rem;
+  background: no-repeat url("/unal/images/sealBck.png");
+  background-size: cover;
+}
+
+#unal-header .unal-logo__img {
+  width: 95%;
+  position: relative;
+  bottom: -5px;
+  left: 8px;
+  display: block;
+}
+
+#unal-header .unal-seal {
+  position: absolute;
+  right: 14px;
+  top: 35px;
+  z-index: 1;
+}
+
+#unal-header .unal-first-menu {
+  background: var(--unal-gris-context);
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  top: 0;
+  left: 0;
+  display: flex !important;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  z-index: 1;
+  overflow: hidden;
+  box-sizing: border-box;
+  /* Desplaza perfiles / redes / idioma a la izquierda (buscador y Sedes no se tocan) */
+  padding-right: 14px;
+}
+
+#unal-header .unal-profiles {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  align-items: center;
+  height: 30px;
+}
+
+#unal-header .unal-profiles li {
+  border-left: 1px solid #3d3d3d;
+  padding: 0 10px;
+  height: 30px;
+  line-height: 30px;
+  transition: background-color 0.5s ease;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+#unal-header .unal-profiles a {
+  line-height: 1;
+  display: inline-block;
+}
+
+#unal-header .unal-profiles .item-aspirantes:hover {
+  background-color: var(--unal-aspirantes);
+}
+#unal-header .unal-profiles .item-estudiantes:hover {
+  background-color: var(--unal-estudiantes);
+}
+#unal-header .unal-profiles .item-egresados:hover {
+  background-color: var(--unal-egresados);
+}
+#unal-header .unal-profiles .item-docentes:hover {
+  background-color: var(--unal-docentes);
+}
+#unal-header .unal-profiles .item-administrativos:hover {
+  background-color: var(--unal-administrativos);
+}
+
+#unal-header .unal-social {
+  display: flex;
+  list-style: none;
+  margin: 0 0 0 13px;
+  padding: 0 10px;
+  gap: 0;
+  align-items: center;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+#unal-header .unal-social li {
+  display: inline-block;
+  padding: 0;
+  margin: 0 2px;
+  line-height: 0;
+}
+
+#unal-header .unal-social a {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: no-repeat url("/unal/images/icnSocial.png");
+}
+
+#unal-header .unal-social a.facebook {
+  background-position: -21px 0;
+}
+#unal-header .unal-social a.facebook:hover {
+  background-position: -21px -21px;
+}
+#unal-header .unal-social a.twitter {
+  background-position: 0 0;
+}
+#unal-header .unal-social a.twitter:hover {
+  background-position: 0 -21px;
+}
+#unal-header .unal-social a.youtube {
+  background-position: -84px 0;
+}
+#unal-header .unal-social a.youtube:hover {
+  background-position: -84px -21px;
+}
+
+#unal-header .unal-lang {
+  background-color: #666;
+  border: none;
+  color: var(--unal-blanco);
+  padding: 0 5px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  cursor: default;
+  box-sizing: border-box;
+}
+
+#unal-header .unal-nav-row {
+  /* Logo 234 + margen 10 → contenido más a la derecha que 240px */
+  position: relative;
+  width: auto;
+  margin: 0 0 0 260px;
+  padding: 0 0 8px 0;
+  box-sizing: border-box;
+}
+
+/*
+ * web_plas: .myb { top: 37px } + .menuPrincipal { margin-top: 40px }
+ * → dominio/búsqueda y menú se solapan; Sedes vive en la fila del menú, derecha.
+ */
+#unal-header .unal-subdomain-row {
+  position: relative;
+  top: 37px;
+  display: block;
+  height: 30px;
+  margin: 0;
+}
+
+#unal-header .unal-subdomain {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--unal-blanco);
+  background: no-repeat 0 5px url("/unal/images/locDot.png");
+  padding: 1px;
+  margin-left: 0;
+  line-height: 1.2;
+}
+
+#unal-header .unal-subdomain a,
+#unal-header a.unal-subdomain {
+  color: var(--unal-blanco);
+  text-decoration: none;
+  padding: 1px;
+  margin-left: 20px;
+  display: inline-block;
+}
+
+#unal-header a.unal-subdomain:hover,
+#unal-header .unal-subdomain a:hover {
+  text-decoration: underline;
+}
+
+/* Buscador: misma banda que el subdominio (fila .myb) */
+#unal-header .unal-search {
+  border-radius: 5px;
+  background: none;
+  color: white;
+  margin: 0;
+  overflow: hidden;
+  width: 200px;
+  position: absolute;
+  right: 85px;
+  top: 37px;
+  height: 30px;
+  z-index: 2;
+}
+
+#unal-header .unal-search form {
+  display: flex;
+  height: 30px;
+  margin: 0;
+  position: relative;
+  width: 100%;
+}
+
+#unal-header .unal-search .unal-search-input-wrap {
+  background-color: #777;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+#unal-header .unal-search input {
+  background: none;
+  color: #ddd;
+  display: inline;
+  font-size: 14px;
+  width: 150px;
+  max-width: 100%;
+  border: none;
+  outline: none;
+  margin-left: 10px;
+  font-family: inherit;
+}
+
+#unal-header .unal-search input::placeholder {
+  color: #ddd;
+}
+
+#unal-header .unal-search button {
+  border-radius: 0;
+  background-color: #94b43b;
+  border: 0 none;
+  box-shadow: none;
+  cursor: pointer;
+  height: 30px;
+  padding: 0;
+  width: 30px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#unal-header .unal-search button svg {
+  width: 16px;
+  height: 16px;
+  fill: white;
+}
+
+/* Fila de menú (menuPrincipal): solapa con .myb; Sedes a la derecha */
+#unal-header .unal-main-nav {
+  position: relative;
+  left: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0;
+  color: var(--unal-blanco);
+  z-index: 3;
+  /* Baja el texto sin crecer el contenedor del header */
+  transform: translateY(5px);
+}
+
+#unal-header .unal-main-links,
+#unal-header .unal-side-links {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* menuSedes: borde derecho alineado con el del buscador (right: 85px) */
+#unal-header .unal-side-links {
+  margin-right: 85px;
+  margin-left: auto;
+  justify-content: flex-end;
+}
+
+#unal-header .unal-main-links > li > a,
+#unal-header .unal-side-links > li > button,
+#unal-header .unal-dropdown__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0 0.5rem;
+  color: var(--unal-blanco);
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 1px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 1;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+#unal-header .unal-main-links > li > a[aria-current='page'] {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+#unal-header .unal-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#unal-header .unal-dropdown__menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 14rem;
+  background: var(--unal-gris-context);
+  list-style: none;
+  margin: 0;
+  padding: 0.35rem 0;
+  z-index: 50;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+#unal-header .unal-dropdown.is-open > .unal-dropdown__menu {
+  display: block;
+}
+
+#unal-header .unal-dropdown__menu a {
+  display: block;
+  padding: 0.4rem 0.85rem;
+  color: var(--unal-blanco);
+  text-transform: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+#unal-header .unal-dropdown__menu a:hover {
+  background: var(--unal-black);
+}
+
+/* Triángulo ópticamente centrado con el texto (borde solo se ve bajo) */
+#unal-header .unal-dropdown__btn::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  flex-shrink: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid var(--unal-verde);
+  margin-left: 0.2rem;
+  transform: translateY(-1px);
+}
+
+/* Estilo Bootstrap navbar-toggler — tamaño intermedio */
+#unal-header .unal-burger {
+  display: none;
+  padding: 0.2rem 0.55rem;
+  font-size: 1.1rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin: 0 10px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  transition: box-shadow 0.15s ease-in-out;
+}
+
+#unal-header .unal-burger:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem;
+}
+
+#unal-header .unal-burger:hover {
+  text-decoration: none;
+}
+
+#unal-header .unal-burger__icon {
+  display: inline-block;
+  width: 1.3em;
+  height: 1.3em;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+#unal-header .unal-mobile-extra {
+  display: none;
+}
+
+#unal-header .unal-access-tab-mobile {
+  display: none;
+  position: absolute;
+  top: 8px;
+  right: 170px;
+  width: 25px;
+  height: 25px;
+  background: url("/unal/images/access-icon.png") no-repeat center / contain;
+  border: none;
+  cursor: pointer;
+  z-index: 12;
+  padding: 0;
+}
+
+@media (max-width: 767.98px) {
+  /* Barra fija; top de sello/access en px de la barra (no 50% del header) */
+  #unal-header {
+    --unal-mobile-bar: 44px;
+    height: auto;
+    min-height: 0;
+    background: var(--unal-gris-context);
+    overflow: visible;
+  }
+
+  #unal-header::before {
+    content: "";
+    display: block;
+    height: var(--unal-mobile-bar);
+  }
+
+  #unal-header .unal-logo {
+    background: none;
+    left: 0;
+    margin-left: 6px;
+    top: 0;
+    width: auto;
+    height: var(--unal-mobile-bar);
+    display: flex;
+    align-items: center;
+    z-index: 8;
+  }
+
+  #unal-header .unal-logo__img {
+    height: var(--unal-mobile-bar);
+    width: auto;
+    max-width: none;
+    bottom: 0 !important;
+    left: 0;
+  }
+
+  /* Anclado a la barra superior — no se mueve al abrir el menú */
+  #unal-header .unal-seal {
+    right: 92px;
+    top: calc(var(--unal-mobile-bar) / 2);
+    transform: translateY(-50%);
+    transform-origin: center center;
+    z-index: 8;
+    width: 28px;
+    height: 28px;
+    line-height: 0;
+    pointer-events: none;
+  }
+
+  #unal-header .unal-seal img {
+    display: block;
+    width: 28px;
+    height: 28px;
+    max-width: none;
+  }
+
+  #unal-header .unal-access-tab-mobile {
+    display: block;
+    right: 128px;
+    top: calc(var(--unal-mobile-bar) / 2);
+    transform: translateY(-50%);
+    width: 26px;
+    height: 26px;
+    z-index: 9;
+  }
+
+  #unal-header .unal-first-menu {
+    top: 0;
+    height: var(--unal-mobile-bar);
+    background: transparent;
+    z-index: 5;
+    overflow: visible;
+    align-items: center;
+    padding-right: 6px;
+    gap: 0;
+  }
+
+  #unal-header .unal-profiles,
+  #unal-header .unal-social,
+  #unal-header .unal-search {
+    display: none;
+  }
+
+  #unal-header .unal-subdomain-row {
+    display: none;
+  }
+
+  #unal-header .unal-burger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: static;
+    margin: 0 8px;
+  }
+
+  #unal-header .unal-lang {
+    height: auto;
+    line-height: 1;
+    padding: 0 8px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* El ::before reserva la barra; el menú abre debajo */
+  #unal-header .unal-nav-row {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    min-height: 0;
+    background: transparent;
+    overflow: visible;
+  }
+
+  #unal-header .unal-main-nav {
+    position: relative;
+    z-index: 6;
+    display: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+    left: 0;
+    margin-top: 0;
+    transform: none;
+    background: var(--unal-gris-header);
+    padding: 0.5rem;
+  }
+
+  #unal-header.is-nav-open .unal-main-nav {
+    display: flex;
+  }
+
+  #unal-header .unal-main-links,
+  #unal-header .unal-side-links {
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+
+  #unal-header .unal-side-links {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  #unal-header .unal-dropdown__menu {
+    position: static;
+    box-shadow: none;
+    background-color: transparent;
+    border: none;
+  }
+
+  #unal-header .unal-dropdown__menu a {
+    padding: 2px 10px;
+  }
+
+  #unal-header .unal-mobile-extra {
+    display: block;
+  }
+
+  /* Evita franja blanca del bloque de accesibilidad cerrado */
+  #unal-access:not(.is-open) {
+    height: 0;
+    min-height: 0;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  #unal-access.is-open {
+    height: auto;
+    overflow: visible;
+    line-height: normal;
+  }
+}
+
+/* ——— Área 3: servicios (pestaña lateral) ——— */
+#unal-services {
+  font-family: "Ancizar sans", Tahoma, Geneva, sans-serif;
+}
+
+#unal-services .unal-services-panel {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 60;
+  top: 0;
+  right: -200px;
+  background: var(--unal-negro);
+  overflow-x: hidden;
+  transition: right 0.45s ease;
+  font-size: 0.9em;
+}
+
+#unal-services.is-open .unal-services-panel {
+  right: 0;
+}
+
+#unal-services .unal-services-panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0 0 0.35rem;
+}
+
+#unal-services .unal-services-panel a {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.55rem 0.5rem;
+  color: var(--unal-blanco);
+  text-decoration: none;
+  border-bottom: 1px solid #222;
+  border-top: 1px solid #444;
+  font-size: 0.9em;
+}
+
+#unal-services .unal-services-panel a:hover {
+  color: var(--unal-verde);
+}
+
+#unal-services .unal-services-panel img {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+/* Renombrado: no usar #main */
+#unal-services-tab {
+  position: fixed;
+  top: 190px;
+  right: 0;
+  z-index: 55;
+  transition: right 0.45s ease;
+}
+
+#unal-services.is-open #unal-services-tab {
+  right: 200px;
+}
+
+#unal-services .unal-services-openbtn {
+  width: 34px;
+  height: 126px;
+  background-image: url("/unal/images/backServices.png");
+  background-position: 0 0;
+  background-color: var(--unal-verde);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: block;
+}
+
+#unal-services.is-open .unal-services-openbtn {
+  background-position: 35px 0;
+}
+
+#unal-services .unal-services-openbtn:hover {
+  background-color: var(--unal-verde-dark);
+}
+
+@media (max-width: 767.98px) {
+  #unal-services .unal-services-panel,
+  #unal-services-tab {
+    display: none;
+  }
+}
+
+/* ——— Área 2: accesibilidad ——— */
+#unal-access {
+  position: relative;
+  z-index: 35;
+  width: 100%;
+  font-family: "Ancizar sans", Tahoma, Geneva, sans-serif;
+  min-height: 0;
+  line-height: 0;
+  background: transparent;
+  flex: 0 0 auto;
+}
+
+/*
+ * Escritorio: la pestaña (35px) vive en el flujo y deja una franja entre header y
+ * contenido. En el skin UNAL se anula con margin-top: -35px en main (ver abajo).
+ * Cerrado: colapsar altura del contenedor y sacar la pestaña del flujo para que
+ * flote sobre el borde header/contenido sin reservar banda.
+ */
+@media (min-width: 768px) {
+  #unal-access:not(.is-open) {
+    height: 0;
+    min-height: 0;
+    overflow: visible;
+    line-height: 0;
+  }
+
+  #unal-access:not(.is-open)::after {
+    display: none;
+  }
+
+  #unal-access:not(.is-open) .unal-access-tab {
+    position: absolute;
+    float: none;
+    right: 40px;
+    top: 0;
+    margin-right: 0;
+    z-index: 36;
+  }
+
+  #unal-access.is-open {
+    height: auto;
+    overflow: visible;
+    line-height: normal;
+  }
+
+  #unal-access.is-open .unal-access-tab {
+    position: relative;
+    float: right;
+    margin-right: 40px;
+  }
+}
+
+#unal-access .unal-access-tab {
+  float: right;
+  cursor: pointer;
+  background-color: rgba(41, 41, 41, 0.8);
+  color: #fff;
+  height: 35px;
+  line-height: 35px;
+  margin-right: 40px;
+  font-weight: bold;
+  padding: 0 10px;
+  position: relative;
+  border: none;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+#unal-access .unal-access-tab::before {
+  position: absolute;
+  left: -35px;
+  top: 0;
+  content: "";
+  background-image: url("/unal/images/access-icon.jpg");
+  width: 35px;
+  height: 35px;
+  background-size: cover;
+}
+
+#unal-access .unal-access-panel {
+  width: 100%;
+  padding: 2rem 3rem;
+  background: #fff;
+  border-bottom: 3px solid #292929;
+  clear: both;
+}
+
+#unal-access::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#unal-access .unal-access-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+#unal-access .unal-access-panel h4 {
+  color: #292929;
+  font-weight: normal;
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+#unal-access .unal-access-btn {
+  padding: 10px;
+  background-color: #292929;
+  border: none;
+  color: #fff;
+  margin-right: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#unal-access .unal-access-btn:hover,
+#unal-access .unal-access-btn:focus {
+  background-color: #0763c8;
+}
+
+#unal-access .unal-letter-percent {
+  height: 35px;
+  line-height: 35px;
+  border: none;
+  background-color: rgba(41, 41, 41, 0.2);
+  font-weight: bold;
+  padding: 0 10px;
+  width: 4.5rem;
+  text-align: center;
+}
+
+@media (max-width: 767.98px) {
+  #unal-access .unal-access-tab {
+    display: none;
+  }
+
+  #unal-header .unal-access-tab-mobile {
+    display: block;
+  }
+
+  #unal-access .unal-access-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  #unal-access .unal-access-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Accesibilidad abierta: el panel ya empuja el flujo; no hace falta padding extra.
+ * (En el skin original el panel era overlay absoluto y pedía ~200px.) */
+#unal-site-content.accesibility-on {
+  padding-top: 0;
+}
+
+html.unal-font-110 #unal-site-content {
+  font-size: 110%;
+}
+html.unal-font-120 #unal-site-content {
+  font-size: 120%;
+}
+html.unal-font-130 #unal-site-content {
+  font-size: 130%;
+}
+html.unal-font-140 #unal-site-content {
+  font-size: 140%;
+}
+html.unal-font-150 #unal-site-content {
+  font-size: 150%;
+}
+html.unal-font-160 #unal-site-content {
+  font-size: 160%;
+}
+html.unal-font-170 #unal-site-content {
+  font-size: 170%;
+}
+html.unal-font-180 #unal-site-content {
+  font-size: 180%;
+}
+html.unal-font-190 #unal-site-content {
+  font-size: 190%;
+}
+html.unal-font-200 #unal-site-content {
+  font-size: 200%;
+}
+
+body.unal-contrast-1 {
+  background-color: #000 !important;
+  color: greenyellow !important;
+}
+body.unal-contrast-1 #unal-site-content {
+  background-color: #000;
+  color: greenyellow;
+}
+
+body.unal-contrast-2 {
+  background-color: #ff0 !important;
+  color: #1b14fa !important;
+}
+body.unal-contrast-2 #unal-site-content {
+  background-color: #ff0;
+  color: #1b14fa;
+}
+
+body.unal-contrast-3 {
+  background-color: #000 !important;
+  color: #fd00ff !important;
+}
+body.unal-contrast-3 #unal-site-content {
+  background-color: #000;
+  color: #fd00ff;
+}
+
+/* ——— Área 4: contenido del sitio ——— */
+#unal-site-content {
+  flex: 1 0 auto;
+  min-height: 30em;
+  width: 100%;
+}
+
+/* ——— Área 5: pie ——— */
+#unal-footer {
+  flex-shrink: 0;
+  background: var(--unal-gris-context);
+  color: var(--unal-blanco);
+  font-size: 0.8em;
+  padding: 15px;
+  font-family: "Ancizar sans", Tahoma, Geneva, sans-serif;
+}
+
+#unal-footer a {
+  color: var(--unal-blanco);
+  text-decoration: none;
+}
+
+#unal-footer .unal-footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.4fr 0.8fr;
+  gap: 1rem;
+  line-height: 1.05em;
+}
+
+#unal-footer .unal-gov-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  row-gap: 0;
+  column-gap: 0;
+  line-height: 1.05em;
+}
+
+#unal-footer .unal-gov-nav a {
+  display: inline-block;
+  width: 49%;
+  padding: 0;
+  margin: 0;
+  line-height: 1.15em;
+}
+
+#unal-footer .unal-footer-contact {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--unal-gris-text);
+  border-left: 1px solid #999;
+  border-right: 1px solid #999;
+  padding: 0 0.75rem;
+  line-height: 1.2em;
+}
+
+#unal-footer .unal-footer-contact .derechos {
+  text-align: right;
+}
+
+#unal-footer .unal-footer-logos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.25rem 0.4rem;
+  align-items: center;
+  justify-items: center;
+}
+
+#unal-footer .unal-footer-logos a {
+  display: block;
+  line-height: 0;
+}
+
+#unal-footer .unal-footer-logos img {
+  max-width: 88px;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 991px) {
+  #unal-footer .unal-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #unal-footer .unal-footer-contact {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid var(--unal-gris);
+    border-bottom: 1px solid var(--unal-gris);
+    padding: 15px 0;
+    margin: 15px 0;
+    grid-column: 1 / -1;
+  }
+
+  #unal-footer .unal-footer-logos {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 575px) {
+  #unal-footer .unal-footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  #unal-services,
+  #unal-access,
+  #unal-header .unal-first-menu,
+  #unal-header .unal-search {
+    display: none !important;
+  }
+}
