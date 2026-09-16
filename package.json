@@ -9,7 +9,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "build:unal": "PLAS_SITE=https://plas.unal.edu.co PLAS_BASE=/ astro build",
-    "build:pages": "PLAS_SITE=https://vethariel.github.io PLAS_BASE=/Front_plas astro build",
+    "build:pages": "PLAS_SITE=https://unplas.github.io PLAS_BASE=/web_plas astro build",
     "preview": "astro preview",
     "astro": "astro",
     "test": "node --test --experimental-strip-types src/scripts/*.test.ts scripts/harvest.test.mjs",
