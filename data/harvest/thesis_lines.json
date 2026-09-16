@@ -1,0 +1,488 @@
+[
+  {
+    "tesis_id": "tesis:unal/60068",
+    "line_id": "line:educacion",
+    "method": "keywords",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "scores={'line:lenguajes': 2, 'line:educacion': 16} via advisor_intersection"
+  },
+  {
+    "tesis_id": "tesis:unal/60127",
+    "line_id": "line:lenguajes",
+    "method": "manual_common_sense",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "asignación sentido común 2026-07-31: Prototipado desde lenguaje natural / ingeniería de software"
+  },
+  {
+    "tesis_id": "tesis:unal/62958",
+    "line_id": "line:agricultura",
+    "method": "keywords",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "scores={'line:agricultura': 5} via advisor_union"
+  },
+  {
+    "tesis_id": "tesis:unal/62959",
+    "line_id": "line:transporte",
+    "method": "keywords",
+    "confidence": "medium",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "scores={'line:transporte': 2} via advisor_union"
+  },
+  {
+    "tesis_id": "tesis:unal/64515",
+    "line_id": "line:transporte",
+    "method": "manual_common_sense",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "asignación sentido común 2026-07-31: Framework IoT/RFID (infra de captura; línea Pedraza ITS)"
+  },
+  {
+    "tesis_id": "tesis:unal/64771",
+    "line_id": "line:lenguajes",
+    "method": "manual_common_sense",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "asignación sentido común 2026-07-31: Seguridad informática / ingeniería social en software"
+  },
+  {
+    "tesis_id": "tesis:unal/76092",
+    "line_id": "line:transporte",
+    "method": "keywords",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "scores={'line:transporte': 5} via advisor_union"
+  },
+  {
+    "tesis_id": "tesis:unal/76335",
+    "line_id": "line:lenguajes",
+    "method": "keywords",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "scores={'line:lenguajes': 3, 'line:educacion': 2} via advisor_intersection"
+  },
+  {
+    "tesis_id": "tesis:unal/76352",
+    "line_id": "line:transporte",
+    "method": "keywords",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "scores={'line:transporte': 8} via advisor_union"
+  },
+  {
+    "tesis_id": "tesis:unal/76364",
+    "line_id": "line:educacion",
+    "method": "advisor",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": ""
+  },
+  {
+    "tesis_id": "tesis:unal/76549",
+    "line_id": "line:educacion",
+    "method": "keywords",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "scores={'line:lenguajes': 2, 'line:educacion': 6} via advisor_union"
+  },
+  {
+    "tesis_id": "tesis:unal/76553",
+    "line_id": "line:lenguajes",
+    "method": "keywords",
+    "confidence": "medium",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "scores={'line:lenguajes': 2} via advisor_union"
+  },
+  {
+    "tesis_id": "tesis:unal/76556",
+    "line_id": "line:lenguajes",
+    "method": "keywords",
+    "confidence": "medium",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "scores={'line:lenguajes': 2} via advisor_intersection"
+  },
+  {
+    "tesis_id": "tesis:unal/77441",
+    "line_id": "line:lenguajes",
+    "method": "manual_common_sense",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "asignación sentido común 2026-07-31: Métricas/calidad de software (no embebidos); corrección keywords"
+  },
+  {
+    "tesis_id": "tesis:unal/77501",
+    "line_id": "line:transporte",
+    "method": "keywords",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "scores={'line:transporte': 3} via advisor_union"
+  },
+  {
+    "tesis_id": "tesis:unal/77510",
+    "line_id": "line:transporte",
+    "method": "keywords",
+    "confidence": "medium",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "scores={'line:transporte': 2} via advisor_union"
+  },
+  {
+    "tesis_id": "tesis:unal/78469",
+    "line_id": "line:agricultura",
+    "method": "manual_common_sense",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "asignación sentido común 2026-07-31: IoT/RFID para identificación y movilidad pecuaria"
+  },
+  {
+    "tesis_id": "tesis:unal/79756",
+    "line_id": "line:educacion",
+    "method": "advisor_intersection",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": ""
+  },
+  {
+    "tesis_id": "tesis:unal/79877",
+    "line_id": "line:educacion",
+    "method": "advisor_intersection",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": ""
+  },
+  {
+    "tesis_id": "tesis:unal/80482",
+    "line_id": "line:agricultura",
+    "method": "research_area",
+    "confidence": "medium",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "research_area among ['line:agricultura', 'line:transporte']"
+  },
+  {
+    "tesis_id": "tesis:unal/80862",
+    "line_id": "line:educacion",
+    "method": "advisor_intersection",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": ""
+  },
+  {
+    "tesis_id": "tesis:unal/80927",
+    "line_id": "line:transporte",
+    "method": "keywords",
+    "confidence": "medium",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "scores={'line:transporte': 2} via advisor_union"
+  },
+  {
+    "tesis_id": "tesis:unal/81535",
+    "line_id": "line:transporte",
+    "method": "keywords",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "scores={'line:transporte': 3} via advisor_union"
+  },
+  {
+    "tesis_id": "tesis:unal/81571",
+    "line_id": "line:transporte",
+    "method": "keywords",
+    "confidence": "medium",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "scores={'line:transporte': 2} via advisor_union"
+  },
+  {
+    "tesis_id": "tesis:unal/81981",
+    "line_id": "line:transporte",
+    "method": "manual_common_sense",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "asignación sentido común 2026-07-31: Localización de barcos / señales; movilidad"
+  },
+  {
+    "tesis_id": "tesis:unal/82923",
+    "line_id": "line:educacion",
+    "method": "advisor_intersection",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": ""
+  },
+  {
+    "tesis_id": "tesis:unal/83049",
+    "line_id": "line:educacion",
+    "method": "research_area",
+    "confidence": "medium",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "research_area among ['line:educacion', 'line:embebidos', 'line:lenguajes']"
+  },
+  {
+    "tesis_id": "tesis:unal/83931",
+    "line_id": "line:educacion",
+    "method": "advisor_intersection",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": ""
+  },
+  {
+    "tesis_id": "tesis:unal/84111",
+    "line_id": "line:transporte",
+    "method": "keywords",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "scores={'line:transporte': 3} via advisor_union"
+  },
+  {
+    "tesis_id": "tesis:unal/84616",
+    "line_id": "line:transporte",
+    "method": "research_area",
+    "confidence": "medium",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "research_area among ['line:agricultura', 'line:educacion', 'line:lenguajes', 'line:transporte']"
+  },
+  {
+    "tesis_id": "tesis:unal/84828",
+    "line_id": "line:lenguajes",
+    "method": "keywords",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "scores={'line:lenguajes': 4} via advisor_union"
+  },
+  {
+    "tesis_id": "tesis:unal/85008",
+    "line_id": "line:embebidos",
+    "method": "keywords",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "scores={'line:embebidos': 10} via advisor_union"
+  },
+  {
+    "tesis_id": "tesis:unal/85634",
+    "line_id": "line:lenguajes",
+    "method": "manual_common_sense",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "asignación sentido común 2026-07-31: Método de software / NLP para análisis temático"
+  },
+  {
+    "tesis_id": "tesis:unal/86045",
+    "line_id": "line:transporte",
+    "method": "keywords",
+    "confidence": "medium",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "scores={'line:transporte': 2} via advisor_union"
+  },
+  {
+    "tesis_id": "tesis:unal/86557",
+    "line_id": "line:educacion",
+    "method": "advisor_intersection",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": ""
+  },
+  {
+    "tesis_id": "tesis:unal/86734",
+    "line_id": "line:transporte",
+    "method": "keywords",
+    "confidence": "medium",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "scores={'line:transporte': 2} via advisor_union"
+  },
+  {
+    "tesis_id": "tesis:unal/86898",
+    "line_id": "line:educacion",
+    "method": "advisor_intersection",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": ""
+  },
+  {
+    "tesis_id": "tesis:unal/87944",
+    "line_id": "line:transporte",
+    "method": "keywords",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "scores={'line:transporte': 3} via advisor_union"
+  },
+  {
+    "tesis_id": "tesis:unal/88357",
+    "line_id": "line:educacion",
+    "method": "research_area",
+    "confidence": "medium",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "research_area among ['line:educacion', 'line:lenguajes']"
+  },
+  {
+    "tesis_id": "tesis:unal/88492",
+    "line_id": "line:lenguajes",
+    "method": "manual_common_sense",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "asignación sentido común 2026-07-31: Agentes de software / IA aplicada (mejor ajuste PLaS)"
+  },
+  {
+    "tesis_id": "tesis:unal/89150",
+    "line_id": "line:lenguajes",
+    "method": "manual_common_sense",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "asignación sentido común 2026-07-31: NLP e-commerce (no educación); corrección keywords"
+  },
+  {
+    "tesis_id": "tesis:unal/89211",
+    "line_id": "line:educacion",
+    "method": "keywords",
+    "confidence": "medium",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "scores={'line:educacion': 2} via advisor_union"
+  },
+  {
+    "tesis_id": "tesis:unal/89227",
+    "line_id": "line:educacion",
+    "method": "keywords",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "scores={'line:educacion': 4} via advisor_union"
+  },
+  {
+    "tesis_id": "tesis:unal/89352",
+    "line_id": "line:educacion",
+    "method": "advisor",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": ""
+  },
+  {
+    "tesis_id": "tesis:unal/89550",
+    "line_id": "line:agricultura",
+    "method": "keywords",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "scores={'line:agricultura': 4} via advisor_union"
+  },
+  {
+    "tesis_id": "tesis:unal/89947",
+    "line_id": "line:transporte",
+    "method": "manual_common_sense",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "asignación sentido común 2026-07-31: Evasión TransMilenio / visión; confirma keywords"
+  },
+  {
+    "tesis_id": "tesis:unal/89979",
+    "line_id": "line:agricultura",
+    "method": "manual_common_sense",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "asignación sentido común 2026-07-31: Asistente LLM para manejo de cultivo de papa"
+  },
+  {
+    "tesis_id": "tesis:unal/90123",
+    "line_id": "line:transporte",
+    "method": "manual_common_sense",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "asignación sentido común 2026-07-31: Evasión torniquetes TransMilenio; confirma keywords"
+  },
+  {
+    "tesis_id": "tesis:unal/89978",
+    "line_id": "line:educacion",
+    "method": "keywords",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "scores={\"line:lenguajes\":0,\"line:educacion\":4,\"line:embebidos\":0}"
+  },
+  {
+    "tesis_id": "tesis:inventory/llanos-mosquera-jose-miguel",
+    "line_id": "line:educacion",
+    "method": "site_inventory",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "from publications.csv; member=José Miguel Llanos"
+  },
+  {
+    "tesis_id": "tesis:inventory/criollo-velazquez-edgar-hernando",
+    "line_id": "line:educacion",
+    "method": "site_inventory",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "from publications.csv; member=Edgar Hernando Criollo"
+  },
+  {
+    "tesis_id": "tesis:inventory/vergara-vargas-jeisson-andres",
+    "line_id": "line:lenguajes",
+    "method": "site_inventory",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "from publications.csv; member=Jeisson Andrés Vergara"
+  },
+  {
+    "tesis_id": "tesis:inventory/sanabria-mesa-edwin-javier",
+    "line_id": "line:embebidos",
+    "method": "site_inventory",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "from publications.csv; member=Edwin Javier Sanabria"
+  },
+  {
+    "tesis_id": "tesis:inventory/mora-escobar-elvert",
+    "line_id": "line:embebidos",
+    "method": "site_inventory",
+    "confidence": "high",
+    "is_primary": "yes",
+    "needs_review": "no",
+    "notes": "from publications.csv; member=Elvert Mora"
+  }
+]

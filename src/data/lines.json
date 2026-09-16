@@ -1,0 +1,183 @@
+[
+  {
+    "id": "line:lenguajes",
+    "name": "Lenguajes de programación",
+    "slug": "lenguajes",
+    "title_site": "Lenguajes de programación",
+    "page_title": "Lenguajes de programación",
+    "summary": "Exploramos aspectos teóricos y prácticos de la creación de lenguajes de programación.",
+    "description": "Estudiamos cómo se diseñan, analizan y transforman los lenguajes y el código que los programas usan a lo largo de su ciclo de vida. Nos interesa tanto la creación de lenguajes de propósito general y de dominio específico como la extracción automática de conocimiento a partir de grandes colecciones de software. El trabajo combina fundamentos de lenguajes con herramientas prácticas de análisis, generación y prototipado.",
+    "n_topics": "4",
+    "n_images": "5",
+    "topics": [
+      {
+        "sort_order": 1,
+        "topic": "Lenguajes de propósito general y de dominio específico (DSL)"
+      },
+      {
+        "sort_order": 2,
+        "topic": "Lenguajes para el ciclo de vida del software"
+      },
+      {
+        "sort_order": 3,
+        "topic": "Análisis y manipulación automática de código"
+      },
+      {
+        "sort_order": 4,
+        "topic": "Analítica de software / Big Code"
+      }
+    ],
+    "color": "#00c9a7",
+    "image_path": "/images/PLaS/lineas/lenguajes.jpg",
+    "image_credit": "Unsplash — Chris Ried",
+    "image_source": "https://unsplash.com/photos/black-screen-with-code-1515879218367-8466d910aaa4"
+  },
+  {
+    "id": "line:educacion",
+    "name": "Educación en ingeniería",
+    "slug": "educacion",
+    "title_site": "Educación en ingeniería",
+    "page_title": "Educación en ingeniería",
+    "summary": "Diseñamos entornos, evaluación y analítica para mejorar cómo se enseña y se aprende ingeniería.",
+    "description": "Diseñamos entornos y herramientas para enseñar programación y electrónica digital con evaluación y realimentación automáticas. Estudiamos motivación, gamificación, aprendizaje colaborativo y analítica para entender cómo aprenden los estudiantes y cómo mejorar los cursos. El trabajo conecta software educativo con evidencia empírica en el aula y con el análisis del código que producen los estudiantes.",
+    "n_topics": "6",
+    "n_images": "5",
+    "topics": [
+      {
+        "sort_order": 1,
+        "topic": "Entornos didácticos de programación y electrónica digital"
+      },
+      {
+        "sort_order": 2,
+        "topic": "Evaluación y realimentación automáticas"
+      },
+      {
+        "sort_order": 3,
+        "topic": "Learning analytics y métodos mixtos"
+      },
+      {
+        "sort_order": 4,
+        "topic": "Motivación, gamificación y aprendizaje colaborativo"
+      },
+      {
+        "sort_order": 5,
+        "topic": "Análisis de código de soluciones estudiantiles"
+      },
+      {
+        "sort_order": 6,
+        "topic": "Currículo y competencias en ingeniería"
+      }
+    ],
+    "color": "#ff9f1a",
+    "image_path": "/images/PLaS/lineas/educacion.jpg",
+    "image_credit": "Unsplash — Brooke Cagle",
+    "image_source": "https://unsplash.com/photos/three-people-sitting-in-front-of-table-laughing-together-g1Kr4Ozfoac"
+  },
+  {
+    "id": "line:embebidos",
+    "name": "Sistemas embebidos confiables",
+    "slug": "embebidos",
+    "title_site": "Sistemas embebidos confiables",
+    "page_title": "Sistemas embebidos confiables",
+    "summary": "Desarrollamos técnicas y herramientas para el diseño de sistemas hardware/software tolerantes a fallos.",
+    "description": "Investigamos cómo hacer más confiables los sistemas embebidos frente a fallos inducidos por radiación y otros eventos transitorios, sin inflar de más el costo en área, energía o desempeño. Desarrollamos métricas, técnicas de protección selectiva, computación aproximada y co-diseño hardware/software, junto con herramientas para evaluar y explorar soluciones tolerantes a fallos.",
+    "n_topics": "4",
+    "n_images": "5",
+    "topics": [
+      {
+        "sort_order": 1,
+        "topic": "Mitigación de soft errors y fallos transitorios"
+      },
+      {
+        "sort_order": 2,
+        "topic": "Computación aproximada para sistemas confiables"
+      },
+      {
+        "sort_order": 3,
+        "topic": "Criticidad de recursos en microprocesadores"
+      },
+      {
+        "sort_order": 4,
+        "topic": "Exploración automática de diseños tolerantes a fallos"
+      }
+    ],
+    "color": "#2f89ef",
+    "image_path": "/images/PLaS/lineas/embebidos.jpg",
+    "image_credit": "Unsplash — Vishnu Mohanan",
+    "image_source": "https://unsplash.com/photos/macbook-pro-on-top-of-brown-table-1518770660439-4636190af475"
+  },
+  {
+    "id": "line:transporte",
+    "name": "Sistemas inteligentes de transporte",
+    "slug": "transporte",
+    "title_site": "Sistemas Inteligentes de Transporte - ITS",
+    "page_title": "Sistemas Inteligentes de Transporte",
+    "summary": "Aplicamos tecnologías para enfrentar problemas de accidentalidad vial y tráfico en las ciudades.",
+    "description": "Abordamos problemas urbanos de accidentalidad, congestión y operación del transporte con datos, visión por computador e IoT. Construimos modelos para anticipar tráfico y accidentes, detectar evasión en sistemas masivos y monitorear vehículos con sensores, RFID y análisis de video. El foco está en métodos aplicables a ciudades y a sistemas como Transmilenio.",
+    "n_topics": "5",
+    "n_images": "5",
+    "topics": [
+      {
+        "sort_order": 1,
+        "topic": "Accidentalidad vial y datos urbanos"
+      },
+      {
+        "sort_order": 2,
+        "topic": "Predicción y monitoreo de tráfico"
+      },
+      {
+        "sort_order": 3,
+        "topic": "Visión por computador en vías y terminales"
+      },
+      {
+        "sort_order": 4,
+        "topic": "IoT y RFID para monitoreo vehicular"
+      },
+      {
+        "sort_order": 5,
+        "topic": "Operación y evasión en transporte masivo"
+      }
+    ],
+    "color": "#ff6b4a",
+    "image_path": "/images/PLaS/lineas/transporte.jpg",
+    "image_credit": "Unsplash — Luca Bravo",
+    "image_source": "https://unsplash.com/photos/vehicles-on-road-between-high-rise-buildings-1449824913935-59a10b8d2000"
+  },
+  {
+    "id": "line:agricultura",
+    "name": "Agricultura de precisión",
+    "slug": "agricultura",
+    "title_site": "Agricultura de precisión",
+    "page_title": "Agricultura de precisión",
+    "summary": "Aplicamos procesamiento digital y comunicaciones a la agricultura para optimizar la producción.",
+    "description": "Llevamos visión por computador, aprendizaje profundo e IoT al campo para apoyar el monitoreo de cultivos y la producción agropecuaria. Trabajamos en detección de maleza con imágenes multiespectrales, caracterización de cultivos desde el aire y dispositivos de identificación animal, además de asistentes basados en modelos de lenguaje para el manejo agronómico.",
+    "n_topics": "5",
+    "n_images": "5",
+    "topics": [
+      {
+        "sort_order": 1,
+        "topic": "Detección de maleza con imágenes multiespectrales"
+      },
+      {
+        "sort_order": 2,
+        "topic": "Visión aérea y caracterización de cultivos"
+      },
+      {
+        "sort_order": 3,
+        "topic": "Aprendizaje profundo para monitoreo agrícola"
+      },
+      {
+        "sort_order": 4,
+        "topic": "IoT para identificación y movilidad pecuaria"
+      },
+      {
+        "sort_order": 5,
+        "topic": "Asistentes inteligentes para manejo de cultivos"
+      }
+    ],
+    "color": "#5ec22e",
+    "image_path": "/images/PLaS/lineas/agricultura.jpg",
+    "image_credit": "Unsplash — Steven Hylands",
+    "image_source": "https://unsplash.com/photos/green-corn-field-1625246333195-78d9c38ad449"
+  }
+]

@@ -1,0 +1,434 @@
+[
+  {
+    "tesis_id": "tesis:unal/60068",
+    "estudiante_id": "estudiante:castellanos-morales-hugo-armando",
+    "name_form_raw": "Castellanos Morales, Hugo Armando",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/60127",
+    "estudiante_id": "estudiante:alfonso-hoyos-jean-pierre",
+    "name_form_raw": "Alfonso Hoyos, Jean Pierre",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/62958",
+    "estudiante_id": "estudiante:puerto-lara-andres-esteban",
+    "name_form_raw": "Puerto Lara, Andrés Esteban",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/62959",
+    "estudiante_id": "estudiante:camacho-poveda-edgar-camilo",
+    "name_form_raw": "Camacho Poveda, Edgar Camilo",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/64515",
+    "estudiante_id": "estudiante:urbano-vallejo-oscar-andres",
+    "name_form_raw": "Urbano Vallejo, Oscar Andrés",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/64771",
+    "estudiante_id": "estudiante:del-pozo-falconi-ivan-mauricio",
+    "name_form_raw": "Del Pozo Falconí, Iván Mauricio",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/76092",
+    "estudiante_id": "estudiante:morales-aguilar-santiago",
+    "name_form_raw": "Morales Aguilar, Santiago",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/76335",
+    "estudiante_id": "estudiante:cruz-camacho-elkin-alejandro",
+    "name_form_raw": "Cruz Camacho, Elkin Alejandro",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/76352",
+    "estudiante_id": "estudiante:silva-parra-daniel-arturo",
+    "name_form_raw": "Silva Parra, Daniel Arturo",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/76364",
+    "estudiante_id": "estudiante:culma-caviedes-jose-eduin",
+    "name_form_raw": "Culma Caviedes, Jose Eduin",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/76549",
+    "estudiante_id": "estudiante:rosales-castro-lina-fernanda",
+    "name_form_raw": "Rosales Castro, Lina Fernanda",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/76553",
+    "estudiante_id": "estudiante:garavito-mendez-oscar-javier",
+    "name_form_raw": "Garavito Mendez, Oscar Javier",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/76556",
+    "estudiante_id": "estudiante:baquero-vargas-juan-felipe",
+    "name_form_raw": "Baquero Vargas, Juan Felipe",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/77441",
+    "estudiante_id": "estudiante:echavarria-florez-ingrid-sofia",
+    "name_form_raw": "Echavarría Flórez, Ingrid Sofía",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/77501",
+    "estudiante_id": "estudiante:rojas-real-yefersson-adrian",
+    "name_form_raw": "Rojas Real, Yefersson Adrian",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/77510",
+    "estudiante_id": "estudiante:navarro-avila-juan-sebastian",
+    "name_form_raw": "Navarro Ávila, Juan Sebastián",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/78469",
+    "estudiante_id": "estudiante:quintero-albornoz-juan-sebastian",
+    "name_form_raw": "Quintero Albornoz, Juan Sebastián",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/79756",
+    "estudiante_id": "estudiante:cuervo-cely-karen-daniela",
+    "name_form_raw": "Cuervo Cely, Karen Daniela",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/79877",
+    "estudiante_id": "estudiante:torres-jimenez-stephanie",
+    "name_form_raw": "Torres Jiménez, Stephanie",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/80482",
+    "estudiante_id": "estudiante:osorio-delgado-anderson-kavir",
+    "name_form_raw": "Osorio Delgado, Anderson Kavir",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/80862",
+    "estudiante_id": "estudiante:mendez-lara-jhon-alexis",
+    "name_form_raw": "Mendez Lara, Jhon Alexis",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/80927",
+    "estudiante_id": "estudiante:suat-rojas-nestor-eduardo",
+    "name_form_raw": "Suat Rojas, Nestor Eduardo",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/81535",
+    "estudiante_id": "estudiante:alcaraz-rojas-carolina",
+    "name_form_raw": "Alcaraz Rojas, Carolina",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/81571",
+    "estudiante_id": "estudiante:vargas-montero-fernando",
+    "name_form_raw": "Vargas Montero, Fernando",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/81981",
+    "estudiante_id": "estudiante:chaparro-arce-daniel-felipe",
+    "name_form_raw": "Chaparro Arce, Daniel Felipe",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/82923",
+    "estudiante_id": "estudiante:lozano-rojas-hernan-dario",
+    "name_form_raw": "Lozano Rojas, Hernan Dario",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/83049",
+    "estudiante_id": "estudiante:chaparro-amaya-edna-johanna",
+    "name_form_raw": "Chaparro Amaya, Edna Johanna",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/83931",
+    "estudiante_id": "estudiante:corso-pinzon-andres-francisco-jose",
+    "name_form_raw": "Corso Pinzón, Andrés Francisco José",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/84111",
+    "estudiante_id": "estudiante:ruiz-algarra-eder-fabian",
+    "name_form_raw": "Ruiz Algarra, Eder Fabian",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/84616",
+    "estudiante_id": "estudiante:gutierrez-osorio-camilo-albeiro",
+    "name_form_raw": "Gutierrez Osorio, Camilo Albeiro",
+    "author_position": "1",
+    "degree_of_tesis": "doctorado",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/84828",
+    "estudiante_id": "estudiante:ramirez-espejo-roger-steven",
+    "name_form_raw": "Ramírez Espejo, Roger Steven",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/85008",
+    "estudiante_id": "estudiante:aponte-moreno-john-alexander",
+    "name_form_raw": "Aponte Moreno, John Alexander",
+    "author_position": "1",
+    "degree_of_tesis": "doctorado",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/85634",
+    "estudiante_id": "estudiante:canas-palomino-luis-alfonso",
+    "name_form_raw": "Cañas Palomino, Luis Alfonso",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/86045",
+    "estudiante_id": "estudiante:preciado-rojas-maria-camila",
+    "name_form_raw": "Preciado Rojas, María Camila",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/86557",
+    "estudiante_id": "estudiante:rodriguez-pinto-father-alexander",
+    "name_form_raw": "Rodriguez Pinto, Father Alexander",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/86734",
+    "estudiante_id": "estudiante:mongua-lopez-luis-alejandro",
+    "name_form_raw": "Mongua López, Luis Alejandro",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/86898",
+    "estudiante_id": "estudiante:pena-vargas-manuel-alejandro",
+    "name_form_raw": "Peña Vargas, Manuel Alejandro",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/87944",
+    "estudiante_id": "estudiante:rodriguez-peraza-cesar-ivan",
+    "name_form_raw": "Rodríguez Peraza, César Ivan",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/88357",
+    "estudiante_id": "estudiante:rivera-cardenas-david-leonardo",
+    "name_form_raw": "Rivera Cárdenas, David Leonardo",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/88492",
+    "estudiante_id": "estudiante:rodriguez-barreto-julian-mauricio",
+    "name_form_raw": "Rodriguez Barreto, Julian Mauricio",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/89150",
+    "estudiante_id": "estudiante:correa-lombana-juan-manuel",
+    "name_form_raw": "Correa Lombana, Juan Manuel",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/89211",
+    "estudiante_id": "estudiante:baquero-pico-cristian-adolfo",
+    "name_form_raw": "Baquero Pico, Cristian Adolfo",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/89227",
+    "estudiante_id": "estudiante:pabon-correa-david-alejandro",
+    "name_form_raw": "Pabón Correa, David Alejandro",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/89352",
+    "estudiante_id": "estudiante:casas-lopez-laura-yulieth",
+    "name_form_raw": "Casas López, Laura Yulieth",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/89550",
+    "estudiante_id": "estudiante:gomez-rivera-andres-felipe",
+    "name_form_raw": "Gómez Rivera, Andrés Felipe",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/89947",
+    "estudiante_id": "estudiante:hernandez-ortiz-juan-camilo",
+    "name_form_raw": "Hernández Ortiz, Juan Camilo",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/89979",
+    "estudiante_id": "estudiante:cruz-chu-mariana-beatriz",
+    "name_form_raw": "Cruz Chú, Mariana Beatriz",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/90123",
+    "estudiante_id": "estudiante:molina-borray-laura-camila",
+    "name_form_raw": "Molina Borray, Laura Camila",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:unal/89978",
+    "estudiante_id": "estudiante:olaya-castro-hendrik-eugenio",
+    "name_form_raw": "Olaya Castro, Hendrik Eugenio",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:inventory/llanos-mosquera-jose-miguel",
+    "estudiante_id": "estudiante:llanos-mosquera-jose-miguel",
+    "name_form_raw": "José Miguel Llanos Mosquera",
+    "author_position": "1",
+    "degree_of_tesis": "doctorado",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:inventory/criollo-velazquez-edgar-hernando",
+    "estudiante_id": "estudiante:criollo-velazquez-edgar-hernando",
+    "name_form_raw": "Edgar Hernando Criollo Velazquez",
+    "author_position": "1",
+    "degree_of_tesis": "doctorado",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:inventory/vergara-vargas-jeisson-andres",
+    "estudiante_id": "estudiante:vergara-vargas-jeisson-andres",
+    "name_form_raw": "Jeisson Andrés Vergara Vargas",
+    "author_position": "1",
+    "degree_of_tesis": "doctorado",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:inventory/sanabria-mesa-edwin-javier",
+    "estudiante_id": "estudiante:sanabria-mesa-edwin-javier",
+    "name_form_raw": "Edwin Javier Sanabria Mesa",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  },
+  {
+    "tesis_id": "tesis:inventory/mora-escobar-elvert",
+    "estudiante_id": "estudiante:mora-escobar-elvert",
+    "name_form_raw": "Elvert Mora Escobar",
+    "author_position": "1",
+    "degree_of_tesis": "maestria",
+    "is_highest_degree_tesis": "yes"
+  }
+]

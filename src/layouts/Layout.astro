@@ -1,0 +1,159 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import '../styles/global.css';
+import '../styles/unal-chrome.css';
+import UnalHeader from '../components/unal/UnalHeader.astro';
+import UnalServices from '../components/unal/UnalServices.astro';
+import UnalAccessibility from '../components/unal/UnalAccessibility.astro';
+import UnalFooter from '../components/unal/UnalFooter.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import Spine from '../components/Spine.astro';
+import FloatGraphs from '../components/FloatGraphs.astro';
+import { site } from '../data/placeholders';
+import { stripBase, withBase } from '../lib/with-base';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Espina diagonal de fondo — solo home por ahora. */
+  spine?: boolean;
+}
+
+const { title, description = site.tagline, spine = false } = Astro.props;
+const isHome = stripBase(Astro.url.pathname) === '/';
+const pageTitle = title.includes('Universidad Nacional')
+  ? title
+  : `${title} | Universidad Nacional de Colombia`;
+const favicon = withBase('/favicon.ico');
+const escudoPreload = withBase('/unal/images/escudoUnal.svg');
+const sealPreload = withBase('/unal/images/sealColombia.png');
+const unalChromeJs = withBase('/unal/js/unal-chrome.js');
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href={favicon} type="image/x-icon" />
+    <link rel="icon" href={favicon} type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{pageTitle}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Onest:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" href={escudoPreload} as="image" type="image/svg+xml" />
+    <link rel="preload" href={sealPreload} as="image" type="image/png" />
+    <ClientRouter />
+  </head>
+  <body class="unal-shell">
+    <UnalHeader />
+    <UnalAccessibility />
+    <UnalServices />
+
+    <main id="unal-site-content" class="plas-main">
+      <div class:list={['page-shell', spine ? 'page-shell--split' : 'page-shell--interior']}>
+        {spine && <Spine />}
+        {spine && <FloatGraphs />}
+        {spine && <div class="page-bg-veil" aria-hidden="true" />}
+        <div class="page-foreground">
+          {
+            !isHome && (
+              <div class="plas-chrome-static">
+                <Breadcrumb currentLabel={title} />
+              </div>
+            )
+          }
+          <div class="page-main" data-plas-content>
+            <slot />
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <UnalFooter />
+    <script src={unalChromeJs} defer></script>
+    <script>
+      import { startTouchHover } from '../scripts/touch-hover';
+      import { markExternalLinks } from '../scripts/external-links';
+      import { initTopicGraphMotion } from '../scripts/topic-graph-motion';
+      import { startNetworkDrift } from '../scripts/network-drift';
+      import { syncSpineAndHeroPanel } from '../scripts/spine-sync';
+      import { initCatalogFilters } from '../scripts/catalog-filters';
+      import { isActivePath } from '../lib/with-base';
+      import { pickHomeQuote } from '../scripts/home-quote';
+
+      function syncPersistedNav() {
+        const path = window.location.pathname;
+        document.querySelectorAll('#unal-main-nav a[href]').forEach((node) => {
+          const a = node as HTMLAnchorElement;
+          const href = a.getAttribute('href') || '';
+          if (!href.startsWith('/')) return;
+          if (isActivePath(path, href)) a.setAttribute('aria-current', 'page');
+          else a.removeAttribute('aria-current');
+        });
+      }
+
+      let spineResizeBound = false;
+
+      document.addEventListener('astro:page-load', () => {
+        syncPersistedNav();
+        startTouchHover();
+        markExternalLinks();
+        initTopicGraphMotion();
+        syncSpineAndHeroPanel();
+        startNetworkDrift();
+        pickHomeQuote();
+        requestAnimationFrame(() => {
+          syncSpineAndHeroPanel();
+          startNetworkDrift();
+        });
+        initCatalogFilters();
+
+        const content = document.querySelector<HTMLElement>('[data-plas-content]');
+        if (content && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          content.classList.remove('plas-content-enter');
+          void content.offsetWidth;
+          content.classList.add('plas-content-enter');
+        }
+
+        if (!spineResizeBound) {
+          spineResizeBound = true;
+          window.addEventListener('resize', syncSpineAndHeroPanel);
+        }
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
+    mix-blend-mode: normal;
+    opacity: 1;
+  }
+
+  @keyframes plas-content-enter {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .page-main.plas-content-enter {
+    animation: plas-content-enter 0.35s ease both;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .page-main.plas-content-enter {
+      animation: none;
+    }
+  }
+</style>

@@ -1,0 +1,56 @@
+[
+  {
+    "docente_id": "docente:ferestrepoca",
+    "line_id": "line:lenguajes",
+    "label_raw": "Lenguajes de programación",
+    "is_official_line": "yes"
+  },
+  {
+    "docente_id": "docente:ferestrepoca",
+    "line_id": "line:educacion",
+    "label_raw": "Educación en ingeniería",
+    "is_official_line": "yes"
+  },
+  {
+    "docente_id": "docente:ferestrepoca",
+    "line_id": "line:embebidos",
+    "label_raw": "Sistemas embebidos confiables",
+    "is_official_line": "yes"
+  },
+  {
+    "docente_id": "docente:capedrazab",
+    "line_id": "line:transporte",
+    "label_raw": "Sistemas inteligentes de transporte",
+    "is_official_line": "yes"
+  },
+  {
+    "docente_id": "docente:capedrazab",
+    "line_id": "line:agricultura",
+    "label_raw": "Agricultura de precisión",
+    "is_official_line": "yes"
+  },
+  {
+    "docente_id": "docente:capedrazab",
+    "line_id": "",
+    "label_raw": "Computación paralela",
+    "is_official_line": "no"
+  },
+  {
+    "docente_id": "docente:fagonzalezo",
+    "line_id": "line:lenguajes",
+    "label_raw": "Lenguajes de programación",
+    "is_official_line": "yes"
+  },
+  {
+    "docente_id": "docente:fagonzalezo",
+    "line_id": "line:educacion",
+    "label_raw": "Educación en ingeniería",
+    "is_official_line": "yes"
+  },
+  {
+    "docente_id": "docente:jjramireze",
+    "line_id": "line:educacion",
+    "label_raw": "Educación en ingeniería",
+    "is_official_line": "yes"
+  }
+]

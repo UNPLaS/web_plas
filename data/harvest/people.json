@@ -1,0 +1,3232 @@
+[
+  {
+    "id": "persona:name:abma-romero-enrique",
+    "name_display": "Enrique Abma Romero",
+    "name_family": "Abma Romero",
+    "name_given": "Enrique",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:aguirre-m-a",
+    "name_display": "M. A. Aguirre",
+    "name_family": "Aguirre",
+    "name_given": "M. A.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:aguirre-miguel-a",
+    "name_display": "Miguel A. Aguirre",
+    "name_family": "Aguirre",
+    "name_given": "Miguel A.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:alfonso-hoyos-jean-pierre",
+    "name_display": "Jean Pierre Alfonso Hoyos",
+    "name_family": "Alfonso Hoyos",
+    "name_given": "Jean Pierre",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:aponte-jairo",
+    "name_display": "Jairo Aponte",
+    "name_family": "Aponte",
+    "name_given": "Jairo",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:aponte-jairo-h",
+    "name_display": "Jairo H. Aponte",
+    "name_family": "Aponte",
+    "name_given": "Jairo H.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:aponte-moreno-alexander",
+    "name_display": "Alexander Aponte-Moreno",
+    "name_family": "Aponte-Moreno",
+    "name_given": "Alexander",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:ardila-garcia-juan-e",
+    "name_display": "Juan E Ardila-García",
+    "name_family": "Ardila-García",
+    "name_given": "Juan E",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:arevalo-john",
+    "name_display": "John Arevalo",
+    "name_family": "Arevalo",
+    "name_given": "John",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:arevalo-john-e",
+    "name_display": "John E. Arevalo",
+    "name_family": "Arevalo",
+    "name_given": "John E.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:arevalo-ovalle-john-edison",
+    "name_display": "John Edison Arevalo Ovalle",
+    "name_family": "Arevalo Ovalle",
+    "name_given": "John Edison",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:arias-viviana",
+    "name_display": "Viviana Arias",
+    "name_family": "Arias",
+    "name_given": "Viviana",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:arkoumani-evdokia",
+    "name_display": "Evdokia Arkoumani",
+    "name_family": "Arkoumani",
+    "name_given": "Evdokia",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:baquero-juan-f",
+    "name_display": "Juan F. Baquero",
+    "name_family": "Baquero",
+    "name_given": "Juan F.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:basavanhally-ajay",
+    "name_display": "Ajay Basavanhally",
+    "name_family": "Basavanhally",
+    "name_given": "Ajay",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:becerra-claudia",
+    "name_display": "Claudia Becerra",
+    "name_family": "Becerra",
+    "name_given": "Claudia",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:beltran-viviana",
+    "name_display": "Viviana Beltrán",
+    "name_family": "Beltrán",
+    "name_given": "Viviana",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:ben-abdallah-jaafar",
+    "name_display": "Jaafar Ben-Abdallah",
+    "name_family": "Ben-Abdallah",
+    "name_given": "Jaafar",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:benabdallah-jaafar",
+    "name_display": "Jaafar BenAbdallah",
+    "name_family": "BenAbdallah",
+    "name_given": "Jaafar",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:bermeo-david",
+    "name_display": "David Bermeo",
+    "name_family": "Bermeo",
+    "name_given": "David",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:bernal-andres",
+    "name_display": "Andrés Bernal",
+    "name_family": "Bernal",
+    "name_given": "Andrés",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:bonilla-luis",
+    "name_display": "Luis Bonilla",
+    "name_family": "Bonilla",
+    "name_given": "Luis",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:caicedo-juan-c",
+    "name_display": "Juan C. Caicedo",
+    "name_family": "Caicedo",
+    "name_given": "Juan C.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:camargo-jorge",
+    "name_display": "Jorge Camargo",
+    "name_family": "Camargo",
+    "name_given": "Jorge",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:camargo-jorge-e",
+    "name_display": "Jorge E. Camargo",
+    "name_family": "Camargo",
+    "name_given": "Jorge E.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:castellanos-hugo",
+    "name_display": "Hugo Castellanos",
+    "name_family": "Castellanos",
+    "name_given": "Hugo",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:castillo-andres-m",
+    "name_display": "Andrés M. Castillo",
+    "name_family": "Castillo",
+    "name_given": "Andrés M.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:cerwinske-jeff",
+    "name_display": "Jeff Cerwinske",
+    "name_family": "Cerwinske",
+    "name_given": "Jeff",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:chaparro-gutierrez-laura-a",
+    "name_display": "Laura A. Chaparro-Gutiérrez",
+    "name_family": "Chaparro-Gutiérrez",
+    "name_given": "Laura A.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:chavarro-anyela",
+    "name_display": "Anyela Chavarro",
+    "name_family": "Chavarro",
+    "name_given": "Anyela",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:chavarro-anyela-m",
+    "name_display": "Anyela M. Chavarro",
+    "name_family": "Chavarro",
+    "name_given": "Anyela M.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:chielle-e",
+    "name_display": "E. Chielle",
+    "name_family": "Chielle",
+    "name_given": "E.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:chielle-eduardo",
+    "name_display": "Eduardo Chielle",
+    "name_family": "Chielle",
+    "name_given": "Eduardo",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:ciresan-dan-c",
+    "name_display": "Dan C. Cireşan",
+    "name_family": "Cireşan",
+    "name_given": "Dan C.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:cruz-angel",
+    "name_display": "Angel Cruz",
+    "name_family": "Cruz",
+    "name_given": "Angel",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:cruz-roa-angel",
+    "name_display": "Angel Cruz-Roa",
+    "name_family": "Cruz-Roa",
+    "name_given": "Angel",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:cruz-roa-angel-alfonso",
+    "name_display": "Angel Alfonso Cruz-Roa",
+    "name_family": "Cruz-Roa",
+    "name_given": "Angel Alfonso",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:cruz-salinas-andres-f",
+    "name_display": "Andrés F. Cruz-Salinas",
+    "name_family": "Cruz-Salinas",
+    "name_given": "Andrés F.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:cuenca-as-s",
+    "name_display": "S. Cuenca-As",
+    "name_family": "Cuenca-As",
+    "name_given": "S.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:cuenca-asensi-s",
+    "name_display": "S. Cuenca-Asensi",
+    "name_family": "Cuenca-Asensi",
+    "name_given": "S.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:cuenca-asensi-sergio",
+    "name_display": "Sergio Cuenca-Asensi",
+    "name_family": "Cuenca-Asensi",
+    "name_given": "Sergio",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:cuervo-cely-karen-d",
+    "name_display": "Karen D. Cuervo-Cely",
+    "name_family": "Cuervo-Cely",
+    "name_given": "Karen D.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:d-cuervo-cely-karen",
+    "name_display": "Karen D Cuervo-Cely",
+    "name_family": "D Cuervo-Cely",
+    "name_given": "Karen",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:dahl-anders-b",
+    "name_display": "Anders B. Dahl",
+    "name_family": "Dahl",
+    "name_given": "Anders B.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:darghan-aquiles-e",
+    "name_display": "Aquiles E. Darghan",
+    "name_family": "Darghan",
+    "name_given": "Aquiles E.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:dasgupta-d",
+    "name_display": "D. Dasgupta",
+    "name_family": "Dasgupta",
+    "name_given": "D.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:dasgupta-dipankar",
+    "name_display": "Dipankar Dasgupta",
+    "name_family": "Dasgupta",
+    "name_given": "Dipankar",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:david-bermeo-jose",
+    "name_display": "Jose David Bermeo",
+    "name_family": "David Bermeo",
+    "name_given": "Jose",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:de-campos-teofilo-e",
+    "name_display": "Teofilo E. de Campos",
+    "name_family": "de Campos",
+    "name_given": "Teofilo E.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:diaz-gloria",
+    "name_display": "Gloria Diaz",
+    "name_family": "Diaz",
+    "name_given": "Gloria",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:diaz-morales-hernando",
+    "name_display": "Hernando Díaz-Morales",
+    "name_family": "Díaz-Morales",
+    "name_given": "Hernando",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:dubois-mathieu",
+    "name_display": "Mathieu Dubois",
+    "name_family": "Dubois",
+    "name_given": "Mathieu",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:durak-nurcan",
+    "name_display": "Nurcan Durak",
+    "name_family": "Durak",
+    "name_given": "Nurcan",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:echeverry-jhon-jairo-ramirez",
+    "name_display": "Jhon Jairo Ramirez Echeverry",
+    "name_family": "Echeverry",
+    "name_given": "Jhon Jairo Ramirez",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:elgazzar-heba",
+    "name_display": "Heba Elgazzar",
+    "name_family": "Elgazzar",
+    "name_given": "Heba",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:entrena-l",
+    "name_display": "L. Entrena",
+    "name_family": "Entrena",
+    "name_given": "L.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:entrena-luis",
+    "name_display": "Luis Entrena",
+    "name_family": "Entrena",
+    "name_given": "Luis",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:escalante-hugo-jair",
+    "name_display": "Hugo Jair Escalante",
+    "name_family": "Escalante",
+    "name_given": "Hugo Jair",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:esparza-carlos",
+    "name_display": "Carlos Esparza",
+    "name_family": "Esparza",
+    "name_given": "Carlos",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:esseiva-pierre",
+    "name_display": "Pierre Esseiva",
+    "name_family": "Esseiva",
+    "name_given": "Pierre",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:feldman-michael",
+    "name_display": "Michael Feldman",
+    "name_family": "Feldman",
+    "name_given": "Michael",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:feldman-mike",
+    "name_display": "Mike Feldman",
+    "name_family": "Feldman",
+    "name_given": "Mike",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:filliat-david",
+    "name_display": "David Filliat",
+    "name_family": "Filliat",
+    "name_given": "David",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:galeano-juan-carlos",
+    "name_display": "Juan Carlos Galeano",
+    "name_family": "Galeano",
+    "name_given": "Juan Carlos",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:gallego-alejandro",
+    "name_display": "Alejandro Gallego",
+    "name_family": "Gallego",
+    "name_given": "Alejandro",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:gallego-luis-e",
+    "name_display": "Luis E. Gallego",
+    "name_family": "Gallego",
+    "name_given": "Luis E.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:gambardella-luca-m",
+    "name_display": "Luca M. Gambardella",
+    "name_family": "Gambardella",
+    "name_given": "Luca M.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:ganesan-shridar",
+    "name_display": "Shridar Ganesan",
+    "name_family": "Ganesan",
+    "name_given": "Shridar",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:gelbukh-alexander",
+    "name_display": "Alexander Gelbukh",
+    "name_family": "Gelbukh",
+    "name_given": "Alexander",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:gepperth-alexander",
+    "name_display": "Alexander Gepperth",
+    "name_family": "Gepperth",
+    "name_given": "Alexander",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:gilmore-hannah",
+    "name_display": "Hannah Gilmore",
+    "name_family": "Gilmore",
+    "name_given": "Hannah",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:giraldo-carvajal-andres",
+    "name_display": "Andres Giraldo-Carvajal",
+    "name_family": "Giraldo-Carvajal",
+    "name_given": "Andres",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:giusti-alessandro",
+    "name_display": "Alessandro Giusti",
+    "name_family": "Giusti",
+    "name_given": "Alessandro",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:gomez-j",
+    "name_display": "J. Gomez",
+    "name_family": "Gomez",
+    "name_given": "J.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:gomez-jonatan",
+    "name_display": "Jonatan Gomez",
+    "name_family": "Gomez",
+    "name_given": "Jonatan",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:gomez-martin",
+    "name_display": "Martín Gómez",
+    "name_family": "Gómez",
+    "name_given": "Martín",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:gonzalez-f",
+    "name_display": "F. Gonzalez",
+    "name_family": "Gonzalez",
+    "name_given": "F.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:gonzalez-fabio",
+    "name_display": "Fabio González",
+    "name_family": "González",
+    "name_given": "Fabio",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:gonzalez-fabio-a",
+    "name_display": "Fabio A. González",
+    "name_family": "González",
+    "name_given": "Fabio A.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:gonzalez-montesoro-d",
+    "name_display": "D. González-Montesoro",
+    "name_family": "González-Montesoro",
+    "name_given": "D.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:gonzalez-o-fabio-a",
+    "name_display": "O. Fabio A. Gonzalez",
+    "name_family": "Gonzalez",
+    "name_given": "O. Fabio A.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:gonzalez-osorio-fabio-augusto",
+    "name_display": "Fabio Augusto González Osorio",
+    "name_family": "González Osorio",
+    "name_given": "Fabio Augusto",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:gutierrez-sergio",
+    "name_display": "Sergio Gutierrez",
+    "name_family": "Gutierrez",
+    "name_given": "Sergio",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:guzman-miranda-h",
+    "name_display": "H. Guzman-Miranda",
+    "name_family": "Guzman-Miranda",
+    "name_given": "H.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:guzman-miranda-hipolito",
+    "name_display": "Hipólito Guzman-Miranda",
+    "name_family": "Guzman-Miranda",
+    "name_given": "Hipólito",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:guzman-miranday-h",
+    "name_display": "H. Guzman-Miranday",
+    "name_family": "Guzman-Miranday",
+    "name_given": "H.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:hernandez-losada-diego-fernando",
+    "name_display": "Diego Fernando Hernández Losada",
+    "name_family": "Hernández Losada",
+    "name_given": "Diego Fernando",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:isaza-gonzalez-j",
+    "name_display": "J. Isaza-González",
+    "name_family": "Isaza-González",
+    "name_given": "J.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:isaza-gonzalez-jose",
+    "name_display": "Jose Isaza-Gonzalez",
+    "name_family": "Isaza-Gonzalez",
+    "name_given": "Jose",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:j-ramirez-echeverry-jhon",
+    "name_display": "Jhon J Ramírez-Echeverry",
+    "name_family": "J Ramírez-Echeverry",
+    "name_given": "Jhon",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:jamaica-david",
+    "name_display": "David Jamaica",
+    "name_family": "Jamaica",
+    "name_given": "David",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:ji-z",
+    "name_display": "Z. Ji",
+    "name_family": "Ji",
+    "name_given": "Z.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:jimenez-sergio",
+    "name_display": "Sergio Jimenez",
+    "name_family": "Jimenez",
+    "name_given": "Sergio",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:jimeno-morenilla-antonio",
+    "name_display": "Antonio Jimeno-Morenilla",
+    "name_family": "Jimeno-Morenilla",
+    "name_given": "Antonio",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:johanna-chaparro-amaya-edna",
+    "name_display": "Edna Johanna Chaparro Amaya",
+    "name_family": "Johanna Chaparro Amaya",
+    "name_given": "Edna",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:kastensmidt-f",
+    "name_display": "F. Kastensmidt",
+    "name_family": "Kastensmidt",
+    "name_given": "F.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:kastensmidt-fernanda-lima",
+    "name_display": "Fernanda Lima Kastensmidt",
+    "name_family": "Kastensmidt",
+    "name_given": "Fernanda Lima",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:khan-adnan-m",
+    "name_display": "Adnan M. Khan",
+    "name_family": "Khan",
+    "name_given": "Adnan M.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:kittler-josef",
+    "name_display": "Josef Kittler",
+    "name_family": "Kittler",
+    "name_given": "Josef",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:kondo-satoshi",
+    "name_display": "Satoshi Kondo",
+    "name_family": "Kondo",
+    "name_given": "Satoshi",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:kozma-r",
+    "name_display": "R. Kozma",
+    "name_family": "Kozma",
+    "name_given": "R.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:lacle-miangela-m",
+    "name_display": "Miangela M. Lacle",
+    "name_family": "Lacle",
+    "name_given": "Miangela M.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:larsen-anders-b-l",
+    "name_display": "Anders B.L. Larsen",
+    "name_family": "Larsen",
+    "name_given": "Anders B.L.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:lindoso-a",
+    "name_display": "A. Lindoso",
+    "name_family": "Lindoso",
+    "name_given": "A.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:lindoso-almudena",
+    "name_display": "Almudena Lindoso",
+    "name_family": "Lindoso",
+    "name_given": "Almudena",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:lopez-monroy-a-pastor",
+    "name_display": "A. Pastor López-Monroy",
+    "name_family": "López-Monroy",
+    "name_given": "A. Pastor",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:lozano-rojas-hernan-dario",
+    "name_display": "Hernán Darío Lozano Rojas",
+    "name_family": "Lozano Rojas",
+    "name_given": "Hernán Darío",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:madabhushi-anant",
+    "name_display": "Anant Madabhushi",
+    "name_family": "Madabhushi",
+    "name_given": "Anant",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:manana-gabriel",
+    "name_display": "Gabriel Manana",
+    "name_family": "Manana",
+    "name_given": "Gabriel",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:martinez-alvarez-a",
+    "name_display": "A. Martínez-Álvarez",
+    "name_family": "Martínez-Álvarez",
+    "name_given": "A.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:martinez-alvarez-antonio",
+    "name_display": "Antonio Martinez-Alvarez",
+    "name_family": "Martinez-Alvarez",
+    "name_given": "Antonio",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:martinez-carlos",
+    "name_display": "Carlos Martínez",
+    "name_family": "Martínez",
+    "name_given": "Carlos",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:matuszewski-bogdan-j",
+    "name_display": "Bogdan J. Matuszewski",
+    "name_family": "Matuszewski",
+    "name_given": "Bogdan J.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:mercado-ricardo",
+    "name_display": "Ricardo Mercado",
+    "name_family": "Mercado",
+    "name_given": "Ricardo",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:millan-enrique-san",
+    "name_display": "Enrique San Millan",
+    "name_family": "Millan",
+    "name_given": "Enrique San",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:mojica-j-a",
+    "name_display": "J.A. Mojica",
+    "name_family": "Mojica",
+    "name_given": "J.A.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:moncada-alejandro",
+    "name_display": "Alejandro Moncada",
+    "name_family": "Moncada",
+    "name_given": "Alejandro",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "estudiante:moncada-alejandro",
+    "notes": "name-key; may collide; site student; coauthor pub:doi:10.1109/latw.2018.8347241 (IEEE 8347241)"
+  },
+  {
+    "id": "persona:name:montes-y-gomez-manuel",
+    "name_display": "Manuel Montes-y-Gómez",
+    "name_family": "Montes-y-Gómez",
+    "name_given": "Manuel",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:moreno-jose-g",
+    "name_display": "Jose G. Moreno",
+    "name_family": "Moreno",
+    "name_given": "Jose G.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:muller-henning",
+    "name_display": "Henning Müller",
+    "name_family": "Müller",
+    "name_given": "Henning",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:nasraoui-kaouther",
+    "name_display": "Kaouther Nasraoui",
+    "name_family": "Nasraoui",
+    "name_given": "Kaouther",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:nasraoui-olfa",
+    "name_display": "Olfa Nasraoui",
+    "name_family": "Nasraoui",
+    "name_given": "Olfa",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:nino-edwin-a",
+    "name_display": "Edwin A. Niño",
+    "name_family": "Niño",
+    "name_given": "Edwin A.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:nunez-rafael",
+    "name_display": "Rafael Núñez",
+    "name_family": "Núñez",
+    "name_given": "Rafael",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:ortola-maria-dolores",
+    "name_display": "María Dolores Ortola",
+    "name_family": "Ortola",
+    "name_given": "María Dolores",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:otalora-juan-sebastian",
+    "name_display": "Juan Sebastian Otalora",
+    "name_family": "Otalora",
+    "name_given": "Juan Sebastian",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:otalora-montenegro-sebastian",
+    "name_display": "Sebastian Otálora-Montenegro",
+    "name_family": "Otálora-Montenegro",
+    "name_given": "Sebastian",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:paez-fabian",
+    "name_display": "Fabian Páez",
+    "name_family": "Páez",
+    "name_given": "Fabian",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:palomo-f-r",
+    "name_display": "F. R. Palomo",
+    "name_family": "Palomo",
+    "name_given": "F. R.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:palomo-francisco-r",
+    "name_display": "Francisco R. Palomo",
+    "name_family": "Palomo",
+    "name_given": "Francisco R.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:palomoy-f-r",
+    "name_display": "F. R. Palomoy",
+    "name_family": "Palomoy",
+    "name_given": "F. R.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:parra-luis",
+    "name_display": "Luis Parra",
+    "name_family": "Parra",
+    "name_given": "Luis",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:paruma-pabon-oscar-hernan",
+    "name_display": "Oscar Hernán Paruma-Pabón",
+    "name_family": "Paruma-Pabón",
+    "name_given": "Oscar Hernán",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:patiny-luc",
+    "name_display": "Luc Patiny",
+    "name_family": "Patiny",
+    "name_given": "Luc",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:pedraza-cesar",
+    "name_display": "Cesar Pedraza",
+    "name_family": "Pedraza",
+    "name_given": "Cesar",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:perez-rubiano-santiago-a",
+    "name_display": "Santiago A. Pérez-Rubiano",
+    "name_family": "Pérez-Rubiano",
+    "name_given": "Santiago A.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:perez-santiago-a",
+    "name_display": "Santiago A. Perez",
+    "name_family": "Perez",
+    "name_given": "Santiago A.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:pimiento-arias-jean-michael",
+    "name_display": "Jean Michael Pimiento Arias",
+    "name_family": "Pimiento Arias",
+    "name_given": "Jean Michael",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:pinto-f-r-p",
+    "name_display": "F. R. P. Pinto",
+    "name_family": "Pinto",
+    "name_given": "F. R. P.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:pluim-josien-p-w",
+    "name_display": "Josien P.W. Pluim",
+    "name_family": "Pluim",
+    "name_given": "Josien P.W.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:portela-marta",
+    "name_display": "Marta Portela",
+    "name_family": "Portela",
+    "name_given": "Marta",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:precioso-frederic",
+    "name_display": "Frederic Precioso",
+    "name_family": "Precioso",
+    "name_given": "Frederic",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:rajpoot-nasir-m",
+    "name_display": "Nasir M. Rajpoot",
+    "name_family": "Rajpoot",
+    "name_given": "Nasir M.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:ramirez-echeverry-jhon-j",
+    "name_display": "Jhon J. Ramírez Echeverry",
+    "name_family": "Ramírez Echeverry",
+    "name_given": "Jhon J.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:ramirez-echeverry-jhon-jairo",
+    "name_display": "Jhon Jairo Ramírez-Echeverry",
+    "name_family": "Ramírez-Echeverry",
+    "name_given": "Jhon Jairo",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:ramos-laura",
+    "name_display": "Laura Ramos",
+    "name_family": "Ramos",
+    "name_given": "Laura",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:ramos-pollan-raul",
+    "name_display": "Raul Ramos-Pollan",
+    "name_family": "Ramos-Pollan",
+    "name_given": "Raul",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:restrepo-calle-f",
+    "name_display": "F. Restrepo-Calle",
+    "name_family": "Restrepo-Calle",
+    "name_given": "F.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:restrepo-calle-felipe",
+    "name_display": "Felipe Restrepo-Calle",
+    "name_family": "Restrepo-Calle",
+    "name_given": "Felipe",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:reyneri-leonardo-m",
+    "name_display": "Leonardo M. Reyneri",
+    "name_family": "Reyneri",
+    "name_given": "Leonardo M.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:rios-hernan",
+    "name_display": "Hernán Rios",
+    "name_family": "Rios",
+    "name_given": "Hernán",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:roames-jennifer",
+    "name_display": "Jennifer Roames",
+    "name_family": "Roames",
+    "name_given": "Jennifer",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:rodriguez-leonardo",
+    "name_display": "Leonardo Rodríguez",
+    "name_family": "Rodríguez",
+    "name_given": "Leonardo",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:rojas-carlos",
+    "name_display": "Carlos Rojas",
+    "name_family": "Rojas",
+    "name_given": "Carlos",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:rojas-d-a",
+    "name_display": "D.A. Rojas",
+    "name_family": "Rojas",
+    "name_given": "D.A.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:rojas-diego-alexander",
+    "name_display": "Diego Alexander Rojas",
+    "name_family": "Rojas",
+    "name_given": "Diego Alexander",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:romero-eduardo",
+    "name_display": "Eduardo Romero",
+    "name_family": "Romero",
+    "name_given": "Eduardo",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:romero-juan",
+    "name_display": "Juan Romero",
+    "name_family": "Romero",
+    "name_given": "Juan",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:romo-david",
+    "name_display": "David Romo",
+    "name_family": "Romo",
+    "name_given": "David",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:rosales-castro-lina-f",
+    "name_display": "Lina F. Rosales-Castro",
+    "name_family": "Rosales-Castro",
+    "name_given": "Lina F.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:rosso-mateus-andres",
+    "name_display": "Andrés Rosso-Mateus",
+    "name_family": "Rosso-Mateus",
+    "name_given": "Andrés",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:rozo-paola-k",
+    "name_display": "Paola K. Rozo",
+    "name_family": "Rozo",
+    "name_given": "Paola K.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:rueda-andrea",
+    "name_display": "Andrea Rueda",
+    "name_family": "Rueda",
+    "name_given": "Andrea",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:rueda-bernardo",
+    "name_display": "Bernardo Rueda",
+    "name_family": "Rueda",
+    "name_given": "Bernardo",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:ruiz-janneth",
+    "name_display": "Janneth Ruiz",
+    "name_family": "Ruiz",
+    "name_given": "Janneth",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:san-millan-e",
+    "name_display": "E. San Millan",
+    "name_family": "San Millan",
+    "name_given": "E.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:schmelz-joan",
+    "name_display": "Joan Schmelz",
+    "name_family": "Schmelz",
+    "name_given": "Joan",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:schmidhuber-jurgen",
+    "name_display": "Jürgen Schmidhuber",
+    "name_family": "Schmidhuber",
+    "name_given": "Jürgen",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:sellah-sofiane",
+    "name_display": "Sofiane Sellah",
+    "name_family": "Sellah",
+    "name_given": "Sofiane",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:serrano-cases-alejandro",
+    "name_display": "Alejandro Serrano-Cases",
+    "name_family": "Serrano-Cases",
+    "name_given": "Alejandro",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:shih-natalie",
+    "name_display": "Natalie Shih",
+    "name_family": "Shih",
+    "name_given": "Natalie",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:snell-violet",
+    "name_display": "Violet Snell",
+    "name_family": "Snell",
+    "name_given": "Violet",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:sofrony-jorge",
+    "name_display": "Jorge Sofrony",
+    "name_family": "Sofrony",
+    "name_given": "Jorge",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:solorio-thamar",
+    "name_display": "Thamar Solorio",
+    "name_family": "Solorio",
+    "name_given": "Thamar",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:sosa-german-d",
+    "name_display": "Germán D. Sosa",
+    "name_family": "Sosa",
+    "name_given": "Germán D.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:tek-f-boray",
+    "name_display": "F. Boray Tek",
+    "name_family": "Tek",
+    "name_given": "F. Boray",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:toledo-cortes-santiago",
+    "name_display": "Santiago Toledo-Cortés",
+    "name_family": "Toledo-Cortés",
+    "name_given": "Santiago",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:tomaszewski-john",
+    "name_display": "John Tomaszewski",
+    "name_family": "Tomaszewski",
+    "name_given": "John",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:torres-jimenez-stephanie",
+    "name_display": "Stephanie Torres Jiménez",
+    "name_family": "Torres Jiménez",
+    "name_given": "Stephanie",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:trejos-juan",
+    "name_display": "Juan Trejos",
+    "name_family": "Trejos",
+    "name_given": "Juan",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:urbano-oscar",
+    "name_display": "Oscar Urbano",
+    "name_family": "Urbano",
+    "name_given": "Oscar",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:useche-diego-h",
+    "name_display": "Diego H. Useche",
+    "name_family": "Useche",
+    "name_given": "Diego H.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:van-diest-paul-j",
+    "name_display": "Paul J. van Diest",
+    "name_family": "van Diest",
+    "name_given": "Paul J.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:vanegas-jorge-a",
+    "name_display": "Jorge A. Vanegas",
+    "name_family": "Vanegas",
+    "name_given": "Jorge A.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:vargas-calderon-vladimir",
+    "name_display": "Vladimir Vargas-Calderón",
+    "name_family": "Vargas-Calderón",
+    "name_given": "Vladimir",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:vargas-whilmar",
+    "name_display": "Whilmar Vargas",
+    "name_family": "Vargas",
+    "name_given": "Whilmar",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:vargas-wilmar",
+    "name_display": "Wilmar Vargas",
+    "name_family": "Vargas",
+    "name_given": "Wilmar",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:vasquez-mario-linares",
+    "name_display": "Mario Linares Vásquez",
+    "name_family": "Vásquez",
+    "name_given": "Mario Linares",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:vega-felix",
+    "name_display": "Felix Vega",
+    "name_family": "Vega",
+    "name_given": "Felix",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:veloza-suan-angelica",
+    "name_display": "Angélica Veloza-Suan",
+    "name_family": "Veloza-Suan",
+    "name_given": "Angélica",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:vera-felipe",
+    "name_display": "Felipe Vera",
+    "name_family": "Vera",
+    "name_given": "Felipe",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:vestergaard-jacob-s",
+    "name_display": "Jacob S. Vestergaard",
+    "name_family": "Vestergaard",
+    "name_given": "Jacob S.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:veta-mitko",
+    "name_display": "Mitko Veta",
+    "name_family": "Veta",
+    "name_given": "Mitko",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:viergever-max-a",
+    "name_display": "Max A. Viergever",
+    "name_family": "Viergever",
+    "name_given": "Max A.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:vivas-tejuelo-luis-alberto",
+    "name_display": "Luis Alberto Vivas Tejuelo",
+    "name_family": "Vivas Tejuelo",
+    "name_given": "Luis Alberto",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:walter-thomas",
+    "name_display": "Thomas Walter",
+    "name_family": "Walter",
+    "name_given": "Thomas",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:wang-ching-wei",
+    "name_display": "Ching-Wei Wang",
+    "name_family": "Wang",
+    "name_given": "Ching-Wei",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:wang-haibo",
+    "name_display": "Haibo Wang",
+    "name_family": "Wang",
+    "name_given": "Haibo",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:willems-stefan-m",
+    "name_display": "Stefan M. Willems",
+    "name_family": "Willems",
+    "name_given": "Stefan M.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:wist-julien",
+    "name_display": "Julien Wist",
+    "name_family": "Wist",
+    "name_given": "Julien",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:yallapu-k",
+    "name_display": "K. Yallapu",
+    "name_family": "Yallapu",
+    "name_given": "K.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:yarramsettii-r",
+    "name_display": "R. Yarramsettii",
+    "name_family": "Yarramsettii",
+    "name_given": "R.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:name:zuluaga-bucheli-hernan-m",
+    "name_display": "Hernan M. Zuluaga-Bucheli",
+    "name_family": "Zuluaga-Bucheli",
+    "name_given": "Hernan M.",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "name-key; may collide"
+  },
+  {
+    "id": "persona:orcid:0000-0001-5141-0817",
+    "name_display": "Carolina Higuera",
+    "name_family": "Higuera",
+    "name_given": "Carolina",
+    "orcid": "0000-0001-5141-0817",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-5410-4938",
+    "name_display": "Andrés D. Pérez",
+    "name_family": "Pérez",
+    "name_given": "Andrés D.",
+    "orcid": "0000-0001-5410-4938",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-5476-3300",
+    "name_display": "Vladimir Vargas-Calderón",
+    "name_family": "Vargas-Calderón",
+    "name_given": "Vladimir",
+    "orcid": "0000-0001-5476-3300",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-5498-6619",
+    "name_display": "Jeisson Vergara-Vargas",
+    "name_family": "Vergara-Vargas",
+    "name_given": "Jeisson",
+    "orcid": "0000-0001-5498-6619",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-5934-2564",
+    "name_display": "Silvana Morita Melo",
+    "name_family": "Morita Melo",
+    "name_given": "Silvana",
+    "orcid": "0000-0001-5934-2564",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-5985-7066",
+    "name_display": "Diego H Useche",
+    "name_family": "Useche",
+    "name_given": "Diego H",
+    "orcid": "0000-0001-5985-7066",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-6195-3612",
+    "name_display": "Raul Ramos-Pollan",
+    "name_family": "Ramos-Pollan",
+    "name_given": "Raul",
+    "orcid": "0000-0001-6195-3612",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-6800-9878",
+    "name_display": "Henning Müller",
+    "name_family": "Müller",
+    "name_given": "Henning",
+    "orcid": "0000-0001-6800-9878",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-6854-2971",
+    "name_display": "Felix Vega",
+    "name_family": "Vega",
+    "name_given": "Felix",
+    "orcid": "0000-0001-6854-2971",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-7357-1080",
+    "name_display": "Melissa De-la-Pava-Rodríguez",
+    "name_family": "De-la-Pava-Rodríguez",
+    "name_given": "Melissa",
+    "orcid": "0000-0001-7357-1080",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-7774-3564",
+    "name_display": "Jorge A. Vanegas",
+    "name_family": "Vanegas",
+    "name_given": "Jorge A.",
+    "orcid": "0000-0001-7774-3564",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-7783-0844",
+    "name_display": "Alonso de Jesús Retamoso Llamas",
+    "name_family": "Retamoso Llamas",
+    "name_given": "Alonso de Jesús",
+    "orcid": "0000-0001-7783-0844",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-7943-0000",
+    "name_display": "John A. Guerra‐Gomez",
+    "name_family": "Guerra‐Gomez",
+    "name_given": "John A.",
+    "orcid": "0000-0001-7943-0000",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-7983-9199",
+    "name_display": "Juan F. Osorio",
+    "name_family": "Osorio",
+    "name_given": "Juan F.",
+    "orcid": "0000-0001-7983-9199",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-8450-0691",
+    "name_display": "Fredy Andrés Olarte Dussán",
+    "name_family": "Olarte Dussán",
+    "name_given": "Fredy Andrés",
+    "orcid": "0000-0001-8450-0691",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-8899-8298",
+    "name_display": "Cesar Pachon",
+    "name_family": "Pachon",
+    "name_given": "Cesar",
+    "orcid": "0000-0001-8899-8298",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-8958-6789",
+    "name_display": "Francesc Pozo",
+    "name_family": "Pozo",
+    "name_given": "Francesc",
+    "orcid": "0000-0001-8958-6789",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-8961-3142",
+    "name_display": "Salah Sadou",
+    "name_family": "Sadou",
+    "name_given": "Salah",
+    "orcid": "0000-0001-8961-3142",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-8971-4998",
+    "name_display": "Joseph Gallego",
+    "name_family": "Gallego",
+    "name_given": "Joseph",
+    "orcid": "0000-0001-8971-4998",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-9009-7288",
+    "name_display": "Fabio A. González",
+    "name_family": "González",
+    "name_given": "Fabio A.",
+    "orcid": "0000-0001-9009-7288",
+    "docente_id": "docente:fagonzalezo",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-9412-2794",
+    "name_display": "Ingrid Sofía Echavarría-Flórez",
+    "name_family": "Echavarría-Flórez",
+    "name_given": "Ingrid Sofía",
+    "orcid": "0000-0001-9412-2794",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-9493-2324",
+    "name_display": "Oscar Julián Perdomo-Charry",
+    "name_family": "Perdomo-Charry",
+    "name_given": "Oscar Julián",
+    "orcid": "0000-0001-9493-2324",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-9684-140X",
+    "name_display": "Stephanie Torres Jiménez",
+    "name_family": "Jiménez",
+    "name_given": "Stephanie Torres",
+    "orcid": "0000-0001-9684-140X",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-9778-1031",
+    "name_display": "Diana L. Giraldo",
+    "name_family": "Giraldo",
+    "name_given": "Diana L.",
+    "orcid": "0000-0001-9778-1031",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-9794-8495",
+    "name_display": "A. Serrano-Cases",
+    "name_family": "Serrano-Cases",
+    "name_given": "A.",
+    "orcid": "0000-0001-9794-8495",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0001-9941-6206",
+    "name_display": "Raúl E. Gutiérrez",
+    "name_family": "Gutiérrez",
+    "name_given": "Raúl E.",
+    "orcid": "0000-0001-9941-6206",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-0132-1143",
+    "name_display": "Alejandro Sandoval-Pineda",
+    "name_family": "Sandoval-Pineda",
+    "name_given": "Alejandro",
+    "orcid": "0000-0002-0132-1143",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-0885-8699",
+    "name_display": "Víctor Andrés Bucheli Guerrero",
+    "name_family": "Bucheli Guerrero",
+    "name_given": "Víctor Andrés",
+    "orcid": "0000-0002-0885-8699",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-1038-201X",
+    "name_display": "Alvaro Zambrano",
+    "name_family": "Zambrano",
+    "name_given": "Alvaro",
+    "orcid": "0000-0002-1038-201X",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-1500-857X",
+    "name_display": "A. Martínez-Álvarez",
+    "name_family": "Martínez-Álvarez",
+    "name_given": "A.",
+    "orcid": "0000-0002-1500-857X",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-1639-7992",
+    "name_display": "Diego F. Godoy-Rojas",
+    "name_family": "Godoy-Rojas",
+    "name_given": "Diego F.",
+    "orcid": "0000-0002-1639-7992",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-1728-3444",
+    "name_display": "Francisco José Rodríguez-Alvira",
+    "name_family": "Rodríguez-Alvira",
+    "name_given": "Francisco José",
+    "orcid": "0000-0002-1728-3444",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-1829-4399",
+    "name_display": "Nicolas Parra-A.",
+    "name_family": "Parra-A.",
+    "name_given": "Nicolas",
+    "orcid": "0000-0002-1829-4399",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-2007-0108",
+    "name_display": "Julián Esteban Salomón",
+    "name_family": "Salomón",
+    "name_given": "Julián Esteban",
+    "orcid": "0000-0002-2007-0108",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-2007-3202",
+    "name_display": "Andrés Daniel Pérez-Pérez",
+    "name_family": "Pérez-Pérez",
+    "name_given": "Andrés Daniel",
+    "orcid": "0000-0002-2007-3202",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-2063-0291",
+    "name_display": "Chouki Tibermacine",
+    "name_family": "Tibermacine",
+    "name_given": "Chouki",
+    "orcid": "0000-0002-2063-0291",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-2358-5908",
+    "name_display": "Víctor Alfonso Arias-Vanegas",
+    "name_family": "Arias-Vanegas",
+    "name_given": "Víctor Alfonso",
+    "orcid": "0000-0002-2358-5908",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-2377-6544",
+    "name_display": "Martín Alonso Gómez Zuleta",
+    "name_family": "Gómez Zuleta",
+    "name_given": "Martín Alonso",
+    "orcid": "0000-0002-2377-6544",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-2398-1636",
+    "name_display": "Horacio Jarquín-Vásquez",
+    "name_family": "Jarquín-Vásquez",
+    "name_given": "Horacio",
+    "orcid": "0000-0002-2398-1636",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-3053-0673",
+    "name_display": "Jesús Maria Quintero Quintero",
+    "name_family": "Quintero Quintero",
+    "name_given": "Jesús Maria",
+    "orcid": "0000-0002-3053-0673",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-3444-4203",
+    "name_display": "Jaiber Camacho‐Olarte",
+    "name_family": "Camacho‐Olarte",
+    "name_given": "Jaiber",
+    "orcid": "0000-0002-3444-4203",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-3562-4441",
+    "name_display": "Jorge Eliecer Camargo-Mendoza",
+    "name_family": "Camargo-Mendoza",
+    "name_given": "Jorge Eliecer",
+    "orcid": "0000-0002-3562-4441",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-3818-5667",
+    "name_display": "Andrés Puerto",
+    "name_family": "Puerto",
+    "name_given": "Andrés",
+    "orcid": "0000-0002-3818-5667",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-3879-3320",
+    "name_display": "Jefferson A. Peña-Torres",
+    "name_family": "Peña-Torres",
+    "name_given": "Jefferson A.",
+    "orcid": "0000-0002-3879-3320",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-4154-0519",
+    "name_display": "Sebastian Medina",
+    "name_family": "Medina",
+    "name_given": "Sebastian",
+    "orcid": "0000-0002-4154-0519",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-4498-596X",
+    "name_display": "Diego A. Tibaduiza",
+    "name_family": "Tibaduiza",
+    "name_given": "Diego A.",
+    "orcid": "0000-0002-4498-596X",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-4569-0733",
+    "name_display": "A. Aponte-Moreno",
+    "name_family": "Aponte-Moreno",
+    "name_given": "A.",
+    "orcid": "0000-0002-4569-0733",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-4710-8807",
+    "name_display": "Cristian D. González-Carrillo",
+    "name_family": "González-Carrillo",
+    "name_given": "Cristian D.",
+    "orcid": "0000-0002-4710-8807",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-4771-1526",
+    "name_display": "Herbert Vinck-Posada",
+    "name_family": "Vinck-Posada",
+    "name_given": "Herbert",
+    "orcid": "0000-0002-4771-1526",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-4889-1792",
+    "name_display": "María Luisa Castelló",
+    "name_family": "Castelló",
+    "name_given": "María Luisa",
+    "orcid": "0000-0002-4889-1792",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-5043-0952",
+    "name_display": "María Jaramillo González",
+    "name_family": "Jaramillo González",
+    "name_given": "María",
+    "orcid": "0000-0002-5043-0952",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-5274-789X",
+    "name_display": "Carlos Gutierrez",
+    "name_family": "Gutierrez",
+    "name_given": "Carlos",
+    "orcid": "0000-0002-5274-789X",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-5339-896X",
+    "name_display": "Jairo Hernán Aponte Melo",
+    "name_family": "Aponte Melo",
+    "name_given": "Jairo Hernán",
+    "orcid": "0000-0002-5339-896X",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-5772-2966",
+    "name_display": "José Isaza-González",
+    "name_family": "Isaza-González",
+    "name_given": "José",
+    "orcid": "0000-0002-5772-2966",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-5782-4284",
+    "name_display": "Angel Perles",
+    "name_family": "Perles",
+    "name_given": "Angel",
+    "orcid": "0000-0002-5782-4284",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-5830-6104",
+    "name_display": "Sergio Cuenca-Asensi",
+    "name_family": "Cuenca-Asensi",
+    "name_given": "Sergio",
+    "orcid": "0000-0002-5830-6104",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-5852-5788",
+    "name_display": "Andres Gallego",
+    "name_family": "Gallego",
+    "name_given": "Andres",
+    "orcid": "0000-0002-5852-5788",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-6021-3820",
+    "name_display": "Susana Rubio-Arraez",
+    "name_family": "Rubio-Arraez",
+    "name_given": "Susana",
+    "orcid": "0000-0002-6021-3820",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-6084-2512",
+    "name_display": "Camilo Camacho",
+    "name_family": "Camacho",
+    "name_given": "Camilo",
+    "orcid": "0000-0002-6084-2512",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-6283-9624",
+    "name_display": "Jhon Mendez-Lara",
+    "name_family": "Mendez-Lara",
+    "name_given": "Jhon",
+    "orcid": "0000-0002-6283-9624",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-6499-1785",
+    "name_display": "Jhon Jairo Ramírez-Echeverry",
+    "name_family": "Ramírez-Echeverry",
+    "name_given": "Jhon Jairo",
+    "orcid": "0000-0002-6499-1785",
+    "docente_id": "docente:jjramireze",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-6687-1429",
+    "name_display": "Cesar Pedraza",
+    "name_family": "Pedraza",
+    "name_given": "Cesar",
+    "orcid": "0000-0002-6687-1429",
+    "docente_id": "docente:capedrazab",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-6798-7263",
+    "name_display": "Jorge Marques Prates",
+    "name_family": "Marques Prates",
+    "name_given": "Jorge",
+    "orcid": "0000-0002-6798-7263",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-7283-6902",
+    "name_display": "David Agis",
+    "name_family": "Agis",
+    "name_given": "David",
+    "orcid": "0000-0002-7283-6902",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-7601-501X",
+    "name_display": "Manuel Montes-y-Gómez",
+    "name_family": "Montes-y-Gómez",
+    "name_given": "Manuel",
+    "orcid": "0000-0002-7601-501X",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-7688-7600",
+    "name_display": "Hugo Franco",
+    "name_family": "Franco",
+    "name_given": "Hugo",
+    "orcid": "0000-0002-7688-7600",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-7773-6839",
+    "name_display": "Sergio Gutierrez",
+    "name_family": "Gutierrez",
+    "name_given": "Sergio",
+    "orcid": "0000-0002-7773-6839",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-8588-1382",
+    "name_display": "Jurgen Sachs",
+    "name_family": "Sachs",
+    "name_given": "Jurgen",
+    "orcid": "0000-0002-8588-1382",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-8656-9913",
+    "name_display": "Fabrice Meriaudeau",
+    "name_family": "Meriaudeau",
+    "name_given": "Fabrice",
+    "orcid": "0000-0002-8656-9913",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-9113-1369",
+    "name_display": "Camilo Gutierrez-Osorio",
+    "name_family": "Gutierrez-Osorio",
+    "name_given": "Camilo",
+    "orcid": "0000-0002-9113-1369",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-9198-1996",
+    "name_display": "Jersson X. Leon‐Medina",
+    "name_family": "Leon‐Medina",
+    "name_given": "Jersson X.",
+    "orcid": "0000-0002-9198-1996",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0002-9422-7112",
+    "name_display": "Hernán Andrés Ríos-Calixto",
+    "name_family": "Ríos-Calixto",
+    "name_given": "Hernán Andrés",
+    "orcid": "0000-0002-9422-7112",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-0261-2265",
+    "name_display": "Y. Morilla",
+    "name_family": "Morilla",
+    "name_given": "Y.",
+    "orcid": "0000-0003-0261-2265",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-0262-2922",
+    "name_display": "Christoph Baer",
+    "name_family": "Baer",
+    "name_given": "Christoph",
+    "orcid": "0000-0003-0262-2922",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-0436-3039",
+    "name_display": "Jose A. Jaramillo-Villegas",
+    "name_family": "Jaramillo-Villegas",
+    "name_given": "Jose A.",
+    "orcid": "0000-0003-0436-3039",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-0681-4243",
+    "name_display": "Zadkiel Zuluaga Rendón",
+    "name_family": "Zuluaga Rendón",
+    "name_given": "Zadkiel",
+    "orcid": "0000-0003-0681-4243",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-0704-9117",
+    "name_display": "Oscar A. Bustos-Brinez",
+    "name_family": "Bustos-Brinez",
+    "name_given": "Oscar A.",
+    "orcid": "0000-0003-0704-9117",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-0893-6332",
+    "name_display": "Javier Alejandro Corredor Aristizábal",
+    "name_family": "Corredor Aristizábal",
+    "name_given": "Javier Alejandro",
+    "orcid": "0000-0003-0893-6332",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-1957-1615",
+    "name_display": "Diego Bravo",
+    "name_family": "Bravo",
+    "name_given": "Diego",
+    "orcid": "0000-0003-1957-1615",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-2088-2509",
+    "name_display": "Eduardo Romero",
+    "name_family": "Romero",
+    "name_given": "Eduardo",
+    "orcid": "0000-0003-2088-2509",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-2125-8476",
+    "name_display": "Sebastián Otálora",
+    "name_family": "Otálora",
+    "name_given": "Sebastián",
+    "orcid": "0000-0003-2125-8476",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-2296-8648",
+    "name_display": "Ricardo C. Gomez Vargas",
+    "name_family": "Gomez Vargas",
+    "name_given": "Ricardo C.",
+    "orcid": "0000-0003-2296-8648",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-2306-6451",
+    "name_display": "Sebastian L Molina",
+    "name_family": "Molina",
+    "name_given": "Sebastian L",
+    "orcid": "0000-0003-2306-6451",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-2308-0720",
+    "name_display": "Carlos Giovanny Hidalgo Suarez",
+    "name_family": "Hidalgo Suarez",
+    "name_given": "Carlos Giovanny",
+    "orcid": "0000-0003-2308-0720",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "site_alias:Giovanny Hidalgo (integrantes); coauthor not student; ORCID pubs"
+  },
+  {
+    "id": "persona:orcid:0000-0003-2628-1173",
+    "name_display": "Nestor Suat-Rojas",
+    "name_family": "Suat-Rojas",
+    "name_given": "Nestor",
+    "orcid": "0000-0003-2628-1173",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-2690-4772",
+    "name_display": "Javier Rosero Garcia",
+    "name_family": "Rosero Garcia",
+    "name_given": "Javier",
+    "orcid": "0000-0003-2690-4772",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-2735-2922",
+    "name_display": "Juan Frias",
+    "name_family": "Frias",
+    "name_given": "Juan",
+    "orcid": "0000-0003-2735-2922",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-2952-5014",
+    "name_display": "Ingrid Johanna Moreno Celis",
+    "name_family": "Moreno Celis",
+    "name_given": "Ingrid Johanna",
+    "orcid": "0000-0003-2952-5014",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-2993-3528",
+    "name_display": "Kavir Osorio",
+    "name_family": "Osorio",
+    "name_given": "Kavir",
+    "orcid": "0000-0003-2993-3528",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-3159-1280",
+    "name_display": "Jorge Sofrony",
+    "name_family": "Sofrony",
+    "name_given": "Jorge",
+    "orcid": "0000-0003-3159-1280",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-3408-003X",
+    "name_display": "Juan Sebastián Lara",
+    "name_family": "Lara",
+    "name_given": "Juan Sebastián",
+    "orcid": "0000-0003-3408-003X",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-3672-8282",
+    "name_display": "Daniel Chaparro-Arce",
+    "name_family": "Chaparro-Arce",
+    "name_given": "Daniel",
+    "orcid": "0000-0003-3672-8282",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-3800-1757",
+    "name_display": "P. Martín-Holgado",
+    "name_family": "Martín-Holgado",
+    "name_given": "P.",
+    "orcid": "0000-0003-3800-1757",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-3864-818X",
+    "name_display": "Dora Ballesteros",
+    "name_family": "Ballesteros",
+    "name_given": "Dora",
+    "orcid": "0000-0003-3864-818X",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-3943-9849",
+    "name_display": "Daniela Martin-Vega",
+    "name_family": "Martin-Vega",
+    "name_given": "Daniela",
+    "orcid": "0000-0003-3943-9849",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-4172-9263",
+    "name_display": "Santiago Toledo-Cortés",
+    "name_family": "Toledo-Cortés",
+    "name_given": "Santiago",
+    "orcid": "0000-0003-4172-9263",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-4226-1324",
+    "name_display": "Felipe Restrepo Calle",
+    "name_family": "Restrepo Calle",
+    "name_given": "Felipe",
+    "orcid": "0000-0003-4226-1324",
+    "docente_id": "docente:ferestrepoca",
+    "estudiante_id": "",
+    "notes": "seed from docentes.csv"
+  },
+  {
+    "id": "persona:orcid:0000-0003-4603-3513",
+    "name_display": "Hugo Jair Escalante",
+    "name_family": "Escalante",
+    "name_given": "Hugo Jair",
+    "orcid": "0000-0003-4603-3513",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0000-0003-4801-8229",
+    "name_display": "Josué Ruano-Balseca",
+    "name_family": "Ruano-Balseca",
+    "name_given": "Josué",
+    "orcid": "0000-0003-4801-8229",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0009-0001-0105-6861",
+    "name_display": "Sergio Quiroga-Sandoval",
+    "name_family": "Quiroga-Sandoval",
+    "name_given": "Sergio",
+    "orcid": "0009-0001-0105-6861",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0009-0001-5366-2716",
+    "name_display": "Franky Yoan Cely Quesada",
+    "name_family": "Cely Quesada",
+    "name_given": "Franky Yoan",
+    "orcid": "0009-0001-5366-2716",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0009-0001-6420-9933",
+    "name_display": "Alber Montenegro",
+    "name_family": "Montenegro",
+    "name_given": "Alber",
+    "orcid": "0009-0001-6420-9933",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0009-0002-0026-1342",
+    "name_display": "Igor Roberto Michalski de Souza",
+    "name_family": "Roberto Michalski de Souza",
+    "name_given": "Igor",
+    "orcid": "0009-0002-0026-1342",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0009-0003-0971-5563",
+    "name_display": "Edgar Efrain Niño Velandia",
+    "name_family": "Niño Velandia",
+    "name_given": "Edgar Efrain",
+    "orcid": "0009-0003-0971-5563",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0009-0004-9736-6435",
+    "name_display": "Nicolas Hernan Castillo García",
+    "name_family": "Castillo García",
+    "name_given": "Nicolas Hernan",
+    "orcid": "0009-0004-9736-6435",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0009-0006-3652-0958",
+    "name_display": "Luis Alejandro Mongua López",
+    "name_family": "Mongua López",
+    "name_given": "Luis Alejandro",
+    "orcid": "0009-0006-3652-0958",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0009-0008-1229-3900",
+    "name_display": "Kauan Henrick Silva",
+    "name_family": "Henrick Silva",
+    "name_given": "Kauan",
+    "orcid": "0009-0008-1229-3900",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0009-0008-2419-4336",
+    "name_display": "David Pabon",
+    "name_family": "Pabon",
+    "name_given": "David",
+    "orcid": "0009-0008-2419-4336",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:orcid:0009-0009-4961-4605",
+    "name_display": "Manuel Alejandro Peña Vargas",
+    "name_family": "Peña Vargas",
+    "name_given": "Manuel Alejandro",
+    "orcid": "0009-0009-4961-4605",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:name:culma-caviedes-jose-eduin",
+    "name_display": "José Eduin Culma Caviedes",
+    "name_family": "Culma Caviedes",
+    "name_given": "José Eduin",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "manual_gruplac_closure"
+  },
+  {
+    "id": "persona:name:duarte-velasco-oscar-german",
+    "name_display": "Oscar Germán Duarte Velasco",
+    "name_family": "Duarte Velasco",
+    "name_given": "Oscar Germán",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "manual_gruplac_closure"
+  },
+  {
+    "id": "persona:name:neira-ernesto",
+    "name_display": "Ernesto Neira",
+    "name_family": "Neira",
+    "name_given": "Ernesto",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "manual_gruplac_closure"
+  },
+  {
+    "id": "persona:name:pantoja-john-jairo",
+    "name_display": "John Jairo Pantoja",
+    "name_family": "Pantoja",
+    "name_given": "John Jairo",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "manual_gruplac_closure"
+  },
+  {
+    "id": "persona:name:figueroa-natalie",
+    "name_display": "Natalie Figueroa",
+    "name_family": "Figueroa",
+    "name_given": "Natalie",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "manual_gruplac_closure"
+  },
+  {
+    "id": "persona:name:manana-guichon-gabriel",
+    "name_display": "Gabriel Mañana Guichón",
+    "name_family": "Mañana Guichón",
+    "name_given": "Gabriel",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "manual_gruplac_closure"
+  },
+  {
+    "id": "persona:name:ordonez-paola",
+    "name_display": "Paola Ordoñez",
+    "name_family": "Ordoñez",
+    "name_given": "Paola",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "manual_gruplac_closure"
+  },
+  {
+    "id": "persona:name:del-pozo-ivan",
+    "name_display": "Ivan Del Pozo",
+    "name_family": "Del Pozo",
+    "name_given": "Ivan",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "estudiante:del-pozo-falconi-ivan-mauricio",
+    "notes": "site/conference name; thesis tesis:unal/64771"
+  },
+  {
+    "id": "persona:name:iturralde-mauricio",
+    "name_display": "Mauricio Iturralde",
+    "name_family": "Iturralde",
+    "name_given": "Mauricio",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": "coauthor social engineering FiCloudW 2018"
+  },
+  {
+    "id": "persona:name:palomo-francisco-rogelio",
+    "name_display": "Francisco Rogelio Palomo",
+    "name_family": "Palomo",
+    "name_given": "Francisco Rogelio",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  },
+  {
+    "id": "persona:name:aguirre-miguel",
+    "name_display": "Miguel Aguirre",
+    "name_family": "Aguirre",
+    "name_given": "Miguel",
+    "orcid": "",
+    "docente_id": "",
+    "estudiante_id": "",
+    "notes": ""
+  }
+]

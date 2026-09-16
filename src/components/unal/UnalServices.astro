@@ -1,0 +1,59 @@
+---
+import { withBase } from '../../lib/with-base';
+
+const services = [
+  {
+    label: 'Correo Electrónico',
+    href: 'https://smartkey.xertica.com/cloudkey/a/unal.edu.co/user/login',
+    icon: withBase('/unal/images/icnServEmail.png'),
+  },
+  {
+    label: 'DNINFOA - SIA',
+    href: 'https://dninfoa.unal.edu.co',
+    icon: withBase('/unal/images/icnServSia.png'),
+  },
+  {
+    label: 'Bibliotecas',
+    href: 'http://bibliotecas.unal.edu.co',
+    icon: withBase('/unal/images/icnServLibrary.png'),
+  },
+  {
+    label: 'Convocatorias',
+    href: 'http://personal.unal.edu.co',
+    icon: withBase('/unal/images/icnServCall.png'),
+  },
+  {
+    label: 'Identidad UNAL',
+    href: 'http://identidad.unal.edu.co',
+    icon: withBase('/unal/images/icnServIdentidad.png'),
+  },
+];
+---
+
+<div id="unal-services" data-unal-chrome="services" transition:persist="unal-services">
+  <div class="unal-services-panel" id="unal-services-panel" aria-hidden="true">
+    <ul>
+      {
+        services.map((s) => (
+          <li>
+            <a href={s.href}>
+              <img src={s.icon} width="32" height="32" alt="" />
+              {s.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <div id="unal-services-tab">
+    <button
+      type="button"
+      class="unal-services-openbtn"
+      id="unal-services-toggle"
+      aria-expanded="false"
+      aria-controls="unal-services-panel"
+      title="Servicios"
+      aria-label="Abrir servicios institucionales"
+    ></button>
+  </div>
+</div>

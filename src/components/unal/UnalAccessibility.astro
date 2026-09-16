@@ -1,0 +1,46 @@
+---
+---
+
+<div id="unal-access" class="tx-unal-accesibilidad" data-unal-chrome="access" transition:persist="unal-access">
+  <div id="unal-access-panel" class="unal-access-panel" hidden>
+    <div class="unal-access-grid">
+      <div>
+        <h4>Tamaño letra</h4>
+        <button type="button" class="unal-access-btn" data-unal-font="-">A<sup>-</sup></button>
+        <button type="button" class="unal-access-btn" data-unal-font="+">A<sup>+</sup></button>
+        <input
+          class="unal-letter-percent"
+          id="unal-letter-percent"
+          type="text"
+          value="100%"
+          readonly
+          aria-label="Porcentaje de letra"
+        />
+      </div>
+      <div>
+        <h4>Cambiar contrastes</h4>
+        <button type="button" class="unal-access-btn" data-unal-contrast="1">1</button>
+        <button type="button" class="unal-access-btn" data-unal-contrast="2">2</button>
+        <button type="button" class="unal-access-btn" data-unal-contrast="3">3</button>
+      </div>
+      <div>
+        <h4>Invertir colores</h4>
+        <button type="button" class="unal-access-btn" id="unal-invert">Aplicar</button>
+      </div>
+      <div>
+        <h4>Restablecer ajustes</h4>
+        <button type="button" class="unal-access-btn" id="unal-access-reset">Aplicar</button>
+      </div>
+    </div>
+  </div>
+
+  <button
+    type="button"
+    class="unal-access-tab"
+    id="unal-access-toggle"
+    aria-expanded="false"
+    aria-controls="unal-access-panel"
+  >
+    Panel de Accesibilidad
+  </button>
+</div>

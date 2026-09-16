@@ -1,24 +1,30 @@
 {
-  "name": "unal_skin_default",
-  "version": "1.0.0",
-  "description": "plantilla unal en bootstrap 5",
-  "main": "index.html",
+  "name": "front-plas",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
-    "dev": "lite-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "build": "astro build",
+    "build:unal": "PLAS_SITE=https://plas.unal.edu.co PLAS_BASE=/ astro build",
+    "build:pages": "PLAS_SITE=https://vethariel.github.io PLAS_BASE=/Front_plas astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "test": "node --test --experimental-strip-types src/scripts/*.test.ts scripts/harvest.test.mjs",
+    "harvest:publications": "node scripts/harvest-publications.mjs",
+    "harvest:theses": "node scripts/harvest-theses.mjs",
+    "harvest:project": "node scripts/project-site.mjs",
+    "harvest:bootstrap": "node scripts/bootstrap-harvest.mjs"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://bitbucket.org/cobogotar/unal_skin_default/src/master/"
-  },
-  "keywords": [
-    "unal"
-  ],
-  "author": "Cristian Bogotá",
-  "license": "ISC",
   "dependencies": {
-    "bootstrap": "^5.2.0",
-    "lite-server": "^2.6.1",
-    "open-iconic": "^1.1.1"
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.2",
+    "marked": "^18.0.13",
+    "tailwindcss": "^4.3.3"
+  },
+  "allowScripts": {
+    "esbuild": true
   }
 }

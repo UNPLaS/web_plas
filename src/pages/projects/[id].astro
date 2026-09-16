@@ -1,0 +1,86 @@
+---
+import { withBase } from '../../lib/with-base';
+import Layout from '../../layouts/Layout.astro';
+import TypeChip from '../../components/TypeChip.astro';
+import MarkdownContent from '../../components/MarkdownContent.astro';
+import { projectItems } from '../../data/placeholders';
+
+export function getStaticPaths() {
+  return projectItems.map((item) => ({
+    params: { id: item.id },
+    props: { item },
+  }));
+}
+
+interface Props {
+  item: (typeof projectItems)[number];
+}
+
+const { item } = Astro.props;
+const related = projectItems.filter((entry) => entry.id !== item.id).slice(0, 3);
+---
+
+<Layout title={item.title}>
+  <article class="page-section page-section--tight wrap">
+    <p class="page-back">
+      <a class="btn btn--soft" href={withBase("/projects")}>← Volver a proyectos</a>
+    </p>
+
+    {
+      item.lineChip ? (
+        <div class="card-topline card-topline--page">
+          <TypeChip typology={item.lineChip} />
+        </div>
+      ) : null
+    }
+
+    <div class="detail-body detail-body--project">
+      {item.content?.trim() ? <MarkdownContent content={item.content} /> : null}
+      {
+        item.links.length > 0 && (
+          <ul class="detail-links">
+            {item.links.map((link) => (
+              <li>
+                <a class="btn btn--soft" href={link.url} target="_blank" rel="noreferrer">
+                  {link.context || link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </div>
+  </article>
+
+  {
+    related.length > 0 && (
+      <section class="news-section wrap detail-related" aria-labelledby="related-heading">
+        <div class="news-section__head">
+          <h2 id="related-heading" class="news-section__title">Otros proyectos</h2>
+          <a class="btn btn--soft" href={withBase("/projects")}>Ver todas</a>
+        </div>
+        <ul class="news-gallery">
+          {related.map((entry) => {
+            const title =
+              entry.title.length > 72 ? `${entry.title.slice(0, 72).trimEnd()}…` : entry.title;
+            return (
+              <li>
+                <a class="news-card" href={withBase(`/projects/${entry.id}`)} title={entry.title}>
+                  <div class="news-card__media">
+                    {entry.image ? <img src={entry.image} alt="" loading="lazy" /> : null}
+                  </div>
+                  <div class="news-card__body">
+                    <h3 class="news-card__title">{title}</h3>
+                    <div class="news-card__foot">
+                      {entry.lineChip ? <TypeChip typology={entry.lineChip} /> : null}
+                    </div>
+                  </div>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    )
+  }
+</Layout>

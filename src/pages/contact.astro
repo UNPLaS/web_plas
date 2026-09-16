@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { contactFields, contactIntro, contactLinks, group } from '../data/placeholders';
+---
+
+<Layout title="Contacto">
+  <section class="page-section wrap" aria-labelledby="contact-heading">
+    <header class="page-head page-head--door">
+      <p class="page-head__eyebrow">Contacto</p>
+      <h1 id="contact-heading" class="page-head__title">{contactIntro.title}</h1>
+      <p class="page-head__lede">{contactIntro.lede}</p>
+      <p class="door-cta door-cta--inline">
+        <a class="btn btn--amber" href={contactIntro.ctaHref}>{contactIntro.ctaLabel}</a>
+      </p>
+    </header>
+  </section>
+
+  <section class="contact-panel section-bleed" aria-labelledby="contact-details-heading">
+    <div class="section-bleed__back" aria-hidden="true"></div>
+    <div class="section-bleed__inner wrap">
+      <div class="contact-layout">
+        <div class="contact-layout__info">
+          <h2 id="contact-details-heading" class="contact-panel__title">Datos del grupo</h2>
+          <ul class="contact-list">
+            {
+              contactFields.map((field) => (
+                <li class="contact-item">
+                  <p class="contact-item__label">{field.label}</p>
+                  {'href' in field && field.href ? (
+                    <a class="btn btn--soft" href={field.href}>
+                      {field.value}
+                    </a>
+                  ) : (
+                    <p class="contact-item__value">{field.value}</p>
+                  )}
+                </li>
+              ))
+            }
+            {
+              contactLinks.length > 0 && (
+                <li class="contact-item">
+                  <p class="contact-item__label">Enlaces</p>
+                  <ul class="contact-links">
+                    {contactLinks.map((link) => (
+                      <li>
+                        <a class="btn btn--soft" href={link.href}>
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              )
+            }
+          </ul>
+          <p class="contact-panel__note">
+            Preferimos correo para propuestas de tesis o colaboración. Incluye contexto,
+            plazos y qué esperas del grupo.
+          </p>
+        </div>
+
+        {
+          group.map_embed_url && (
+            <div class="contact-layout__map">
+              <h2 class="contact-panel__title">Ubicación</h2>
+              <div class="contact-map">
+                <iframe
+                  title="Mapa — Aulas de Ingeniería, Universidad Nacional de Colombia"
+                  src={group.map_embed_url}
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allowfullscreen
+                />
+              </div>
+              <p class="contact-map__caption">
+                Edificio Aulas de Ingeniería, campus Bogotá — Universidad Nacional de Colombia.
+              </p>
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </section>
+</Layout>

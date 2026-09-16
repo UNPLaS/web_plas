@@ -1,0 +1,134 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TypeChip from '../components/TypeChip.astro';
+import {
+  people,
+  activeStudents,
+  historicalStudentSections,
+} from '../data/placeholders';
+---
+
+<Layout title="Equipo">
+  <section class="page-section wrap" aria-labelledby="people-heading">
+    <header class="page-head">
+      <p class="page-head__eyebrow">Equipo</p>
+      <h1 id="people-heading" class="page-head__title">Equipo</h1>
+      <p class="page-head__lede">
+        Docentes e integrantes del grupo de investigación.
+      </p>
+    </header>
+
+    <h2 class="people-section__title">Docentes</h2>
+    <ul class="faculty-list">
+      {
+        people.map((person) => (
+          <li>
+            <article class="faculty-card faculty-card--stack">
+              <div class="faculty-card__media">
+                {person.image ? <img src={person.image} alt="" loading="lazy" /> : null}
+              </div>
+              <div class="faculty-card__body">
+                <div class="faculty-card__chips">
+                  <TypeChip typology={person.roleChip} />
+                </div>
+                <h3 class="faculty-card__name">{person.name}</h3>
+                {person.meta ? <p class="faculty-card__meta">{person.meta}</p> : null}
+                {
+                  person.profileLinks.length > 0 && (
+                    <ul class="faculty-card__profiles">
+                      {person.profileLinks.map((link) => (
+                        <li>
+                          <a class="btn btn--soft" href={link.href} target="_blank" rel="noreferrer">
+                            {link.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )
+                }
+              </div>
+            </article>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="page-section wrap" aria-labelledby="students-heading">
+    <h2 id="students-heading" class="people-section__title">Estudiantes</h2>
+
+    <div class="students-block">
+      <h3 class="people-section__subtitle">Activos</h3>
+      {
+        activeStudents.length > 0 ? (
+          <ul class="works-list">
+            {activeStudents.map((person) => {
+              const nivelChip = person.chips.find((chip) => chip.id === 'nivel');
+              const lineChip = person.chips.find((chip) => chip.id === 'linea');
+              return (
+                <li>
+                  <article class="student-card">
+                    <div class="student-card__topline">
+                      <h4 class="student-card__name">{person.name}</h4>
+                      {nivelChip ? <TypeChip typology={nivelChip} /> : null}
+                      {lineChip ? <TypeChip typology={lineChip} /> : null}
+                    </div>
+                    {person.meta && person.meta !== 'Activo' ? (
+                      <p class="student-card__thesis">{person.meta}</p>
+                    ) : null}
+                  </article>
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <p class="students-empty">No hay estudiantes activos registrados.</p>
+        )
+      }
+    </div>
+
+    <div class="students-block">
+      <h3 class="people-section__subtitle">Histórico</h3>
+      {
+        historicalStudentSections.map((sec) => (
+          <div class="students-degree">
+            <h4 class="students-degree__title">{sec.title}</h4>
+            <ul class="works-list">
+              {sec.items.map((person) => {
+                const lineChip = person.chips.find((chip) => chip.id === 'linea');
+                return (
+                  <li>
+                    <article class="student-card">
+                      <div class="student-card__topline">
+                        <h5 class="student-card__name">{person.name}</h5>
+                        {person.thesisYear ? (
+                          <p class="student-card__year">{person.thesisYear}</p>
+                        ) : null}
+                        {lineChip ? <TypeChip typology={lineChip} /> : null}
+                      </div>
+                      {person.thesisTitle ? (
+                        <p class="student-card__thesis">{person.thesisTitle}</p>
+                      ) : null}
+                      {person.thesisHref ? (
+                        <p class="student-card__action">
+                          <a
+                            class="btn btn--soft"
+                            href={person.thesisHref}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Ver tesis
+                          </a>
+                        </p>
+                      ) : null}
+                    </article>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

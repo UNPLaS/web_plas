@@ -1,0 +1,246 @@
+---
+import { nav } from '../../data/placeholders';
+import { isActivePath, withBase } from '../../lib/with-base';
+
+const pathname = Astro.url.pathname;
+const homeHref = withBase('/');
+
+const sedes = [
+  { label: 'Amazonia', href: 'http://amazonia.unal.edu.co' },
+  { label: 'Bogotá', href: 'http://bogota.unal.edu.co' },
+  { label: 'Caribe', href: 'http://caribe.unal.edu.co' },
+  { label: 'De La Paz', href: 'http://delapaz.unal.edu.co' },
+  { label: 'Manizales', href: 'http://www.manizales.unal.edu.co' },
+  { label: 'Medellín', href: 'http://medellin.unal.edu.co' },
+  { label: 'Orinoquia', href: 'http://orinoquia.unal.edu.co' },
+  { label: 'Palmira', href: 'http://www.palmira.unal.edu.co' },
+  { label: 'Tumaco', href: 'http://tumaco-pacifico.unal.edu.co' },
+];
+
+const profiles = [
+  { label: 'Aspirantes', href: 'http://aspirantes.unal.edu.co', className: 'item-aspirantes' },
+  { label: 'Estudiantes', href: 'http://estudiantes.unal.edu.co', className: 'item-estudiantes' },
+  { label: 'Egresados', href: 'http://egresados.unal.edu.co', className: 'item-egresados' },
+  { label: 'Docentes', href: 'http://docentes.unal.edu.co', className: 'item-docentes' },
+  { label: 'Administrativos', href: 'http://administrativos.unal.edu.co', className: 'item-administrativos' },
+];
+
+const services = [
+  {
+    label: 'Correo Electrónico',
+    href: 'https://smartkey.xertica.com/cloudkey/a/unal.edu.co/user/login',
+    icon: withBase('/unal/images/icnServEmail.png'),
+  },
+  {
+    label: 'DNINFOA - SIA',
+    href: 'https://dninfoa.unal.edu.co',
+    icon: withBase('/unal/images/icnServSia.png'),
+  },
+  {
+    label: 'Bibliotecas',
+    href: 'http://bibliotecas.unal.edu.co',
+    icon: withBase('/unal/images/icnServLibrary.png'),
+  },
+  {
+    label: 'Convocatorias',
+    href: 'http://personal.unal.edu.co',
+    icon: withBase('/unal/images/icnServCall.png'),
+  },
+  {
+    label: 'Identidad UNAL',
+    href: 'http://identidad.unal.edu.co',
+    icon: withBase('/unal/images/icnServIdentidad.png'),
+  },
+];
+---
+
+<header id="unal-header" data-unal-chrome="header" transition:persist="unal-header">
+  <div class="unal-logo">
+    <a href="https://unal.edu.co" title="Universidad Nacional de Colombia">
+      <img
+        class="unal-logo__img"
+        src={withBase('/unal/images/escudoUnal.svg')}
+        width="180"
+        height="110"
+        alt="Escudo de la Universidad Nacional de Colombia"
+        decoding="sync"
+        fetchpriority="high"
+      />
+    </a>
+  </div>
+
+  <div class="unal-seal">
+    <img
+      src={withBase('/unal/images/sealColombia.png')}
+      width="66"
+      height="66"
+      alt="Escudo de la República de Colombia"
+      decoding="sync"
+      fetchpriority="high"
+    />
+  </div>
+
+  <button
+    type="button"
+    class="unal-access-tab-mobile"
+    id="unal-access-toggle-mobile"
+    aria-expanded="false"
+    aria-controls="unal-access-panel"
+    title="Panel de accesibilidad"
+    aria-label="Abrir panel de accesibilidad"
+  ></button>
+
+  <div class="unal-first-menu">
+    <ul class="unal-profiles" aria-label="Perfiles">
+      {
+        profiles.map((p) => (
+          <li class={p.className}>
+            <a href={p.href}>{p.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <ul class="unal-social" aria-label="Redes sociales">
+      <li>
+        <a
+          class="facebook"
+          href="https://www.facebook.com/UNALOficial"
+          title="Facebook UNAL"
+        ></a>
+      </li>
+      <li>
+        <a
+          class="twitter"
+          href="https://twitter.com/UNALOficial"
+          title="X UNAL"
+        ></a>
+      </li>
+      <li>
+        <a
+          class="youtube"
+          href="https://www.youtube.com/channel/UCnE6Zj2llVxcvL5I38B0Ceg"
+          title="YouTube UNAL"
+        ></a>
+      </li>
+    </ul>
+    <button
+      type="button"
+      class="unal-burger"
+      id="unal-burger"
+      aria-expanded="false"
+      aria-controls="unal-main-nav"
+      aria-label="Abrir menú"
+    >
+      <span class="unal-burger__icon" aria-hidden="true"></span>
+    </button>
+    <button type="button" class="unal-lang" aria-label="Idioma">ES</button>
+  </div>
+
+  <div class="unal-nav-row">
+    <div class="unal-subdomain-row">
+      <div class="unal-subdomain">
+        <a href={homeHref}>plas.unal.edu.co</a>
+      </div>
+    </div>
+
+    <div class="unal-search" id="unal-buscador">
+      <form
+        accept-charset="utf-8"
+        action="https://unal.edu.co/resultados-de-la-busqueda/"
+        role="search"
+      >
+        <label class="sr-only" for="unal-search-q">Buscar en la Universidad</label>
+        <div class="unal-search-input-wrap">
+          <input
+            id="unal-search-q"
+            type="search"
+            name="q"
+            placeholder="Buscar en la Universidad"
+            autocomplete="off"
+          />
+        </div>
+        <button type="submit" aria-label="Buscar">
+          <svg width="16" height="16" viewBox="0 0 13 13" aria-hidden="true">
+            <path
+              d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"
+            ></path>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <nav id="unal-main-nav" class="unal-main-nav" aria-label="Navegación del sitio">
+      <ul class="unal-main-links">
+        {
+          nav.map((item) => {
+            const active = isActivePath(pathname, item.href);
+            return (
+              <li>
+                <a href={item.href} aria-current={active ? 'page' : undefined}>
+                  {item.label}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+
+      <ul class="unal-side-links">
+        <li class="unal-dropdown" data-unal-dropdown>
+          <button type="button" class="unal-dropdown__btn" aria-expanded="false">Sedes</button>
+          <ul class="unal-dropdown__menu">
+            {
+              sedes.map((s) => (
+                <li>
+                  <a href={s.href}>{s.label}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </li>
+
+        <li class="unal-dropdown unal-mobile-extra" data-unal-dropdown>
+          <button type="button" class="unal-dropdown__btn" aria-expanded="false">Perfiles</button>
+          <ul class="unal-dropdown__menu">
+            {
+              profiles.map((p) => (
+                <li>
+                  <a href={p.href}>{p.label}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </li>
+
+        <li class="unal-dropdown unal-mobile-extra" data-unal-dropdown>
+          <button type="button" class="unal-dropdown__btn" aria-expanded="false">Servicios</button>
+          <ul class="unal-dropdown__menu">
+            {
+              services.map((s) => (
+                <li>
+                  <a href={s.href}>
+                    <img src={s.icon} width="24" height="24" alt="" /> {s.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>

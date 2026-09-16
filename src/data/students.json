@@ -1,0 +1,1456 @@
+[
+  {
+    "id": "estudiante:moncada-alejandro",
+    "name_display": "Alejandro Moncada",
+    "name_sort": "Moncada, Alejandro",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Activo",
+    "exit_year": "",
+    "active": true,
+    "thesis": null,
+    "lines": "Sistemas embebidos confiables",
+    "image_path": "",
+    "n_tesis": "0",
+    "email": "",
+    "links": []
+  },
+  {
+    "id": "estudiante:cruz-chu-mariana-beatriz",
+    "name_display": "Mariana Beatriz Cruz Chú",
+    "name_sort": "Cruz Chú, Mariana Beatriz",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2026",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/89979",
+      "title": "Sistema de asistencia virtual basado en LLMs para el manejo del cultivo de papa",
+      "year": "2026",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/89979"
+    },
+    "lines": "",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/89979"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:hernandez-ortiz-juan-camilo",
+    "name_display": "Juan Camilo Hernández Ortiz",
+    "name_sort": "Hernández Ortiz, Juan Camilo",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2026",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/89947",
+      "title": "Detección de evasión por puerta de vagón en sistemas BRT a través del análisis automático de video mediante un método de inteligencia artificial",
+      "year": "2026",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/89947"
+    },
+    "lines": "",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/89947"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:molina-borray-laura-camila",
+    "name_display": "Laura Camila Molina Borray",
+    "name_sort": "Molina Borray, Laura Camila",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2026",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/90123",
+      "title": "Detección de la evasión en los puntos de validación de pago por torniquete del sistema de transporte Transmilenio",
+      "year": "2026",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/90123"
+    },
+    "lines": "",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/90123"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:olaya-castro-hendrik-eugenio",
+    "name_display": "Hendrik Eugenio Olaya Castro",
+    "name_sort": "Olaya Castro, Hendrik Eugenio",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2026",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/89978",
+      "title": "Prototipo de asistente virtual como apoyo al proceso de aprendizaje en una asignatura de análisis y visualización de datos utilizando grandes modelos de lenguaje",
+      "year": "2026",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/89978"
+    },
+    "lines": "",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/89978"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:baquero-pico-cristian-adolfo",
+    "name_display": "Cristian Adolfo Baquero Pico",
+    "name_sort": "Baquero Pico, Cristian Adolfo",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2025",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/89211",
+      "title": "Modelo de predicción de abandono de clientes en un marketplace mediante técnicas de machine learning",
+      "year": "2025",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/89211"
+    },
+    "lines": "",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/89211"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:casas-lopez-laura-yulieth",
+    "name_display": "Laura Yulieth Casas López",
+    "name_sort": "Casas López, Laura Yulieth",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2025",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/89352",
+      "title": "Efectos de la implementación de una metodología de gestión de proyectos en la habilidad de los estudiantes para gestionar el tiempo",
+      "year": "2025",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/89352"
+    },
+    "lines": "",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/89352"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:correa-lombana-juan-manuel",
+    "name_display": "Juan Manuel Correa Lombana",
+    "name_sort": "Correa Lombana, Juan Manuel",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2025",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/89150",
+      "title": "Análisis automatizado de comparación de productos con técnicas de procesamiento de lenguaje natural para artículos deportivos extraídos de canales de comercio electrónico",
+      "year": "2025",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/89150"
+    },
+    "lines": "",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/89150"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:gomez-rivera-andres-felipe",
+    "name_display": "Andrés Gómez",
+    "name_sort": "Gómez Rivera, Andrés Felipe",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2025",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/89550",
+      "title": "Detección y caracterización espectral individual de palmas aceiteras en imágenes aéreas mediante técnicas de visión artificial",
+      "year": "2025",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/89550"
+    },
+    "lines": "Agricultura de precisión",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/89550"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:pabon-correa-david-alejandro",
+    "name_display": "David Alejandro Pabón Correa",
+    "name_sort": "Pabón Correa, David Alejandro",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2025",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/89227",
+      "title": "Prototipo de plataforma educativa basada en modelos de lenguaje para el apoyo en el aprendizaje de matemáticas básicas",
+      "year": "2025",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/89227"
+    },
+    "lines": "",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/89227"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:rivera-cardenas-david-leonardo",
+    "name_display": "David Leonardo Rivera Cárdenas",
+    "name_sort": "Rivera Cárdenas, David Leonardo",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2025",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/88357",
+      "title": "Evaluación automática de casos de prueba de ejercicios de programación de computadores",
+      "year": "2025",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/88357"
+    },
+    "lines": "",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/88357"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:rodriguez-barreto-julian-mauricio",
+    "name_display": "Julian Mauricio Rodriguez Barreto",
+    "name_sort": "Rodriguez Barreto, Julian Mauricio",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2025",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/88492",
+      "title": "Generación de recomendaciones automáticas de inversión en la Bolsa de Valores de Colombia mediante agentes autónomos de inteligencia artificial",
+      "year": "2025",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/88492"
+    },
+    "lines": "",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/88492"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:mongua-lopez-luis-alejandro",
+    "name_display": "Luis Alejandro Mongua López",
+    "name_sort": "Mongua López, Luis Alejandro",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2024",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/86734",
+      "title": "Método basado en visión artificial para la identificación del eje aplicado al proceso de inspección de frenos de vehículos livianos en centros de diagnóstico automotor",
+      "year": "2024",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/86734"
+    },
+    "lines": "",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/86734"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:pena-vargas-manuel-alejandro",
+    "name_display": "Manuel Alejandro Peña Vargas",
+    "name_sort": "Peña Vargas, Manuel Alejandro",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2024",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/86898",
+      "title": "Efecto de un entorno de aprendizaje de programación de computadores basado en el desarrollo de videojuegos sobre la motivación por aprender de los estudiantes",
+      "year": "2024",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/86898"
+    },
+    "lines": "",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/86898"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:preciado-rojas-maria-camila",
+    "name_display": "María Camila Preciado Rojas",
+    "name_sort": "Preciado Rojas, María Camila",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2024",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/86045",
+      "title": "Diseño y evaluación de un modelo computacional basado en aprendizaje profundo para la predicción del tráfico vial en un segmento de vía de la ciudad de Bogotá",
+      "year": "2024",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/86045"
+    },
+    "lines": "",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/86045"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:rodriguez-peraza-cesar-ivan",
+    "name_display": "César Rodríguez",
+    "name_sort": "Rodríguez Peraza, César Ivan",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2024",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/87944",
+      "title": "Detección y conteo de evasores en el sistema de transporte Transmilenio",
+      "year": "2024",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/87944"
+    },
+    "lines": "Sistemas inteligentes de transporte",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/87944"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:rodriguez-pinto-father-alexander",
+    "name_display": "Father Alexander R.",
+    "name_sort": "Rodriguez Pinto, Father Alexander",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2024",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/86557",
+      "title": "Evaluación del efecto de un laboratorio híbrido en el aprendizaje de un Lenguaje de Descripción de Hardware (HDL)",
+      "year": "2024",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/86557"
+    },
+    "lines": "Educación en ingeniería",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/86557"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:aponte-moreno-john-alexander",
+    "name_display": "Jhon Alexander Aponte",
+    "name_sort": "Aponte Moreno, John Alexander",
+    "degree_highest": "doctorado",
+    "role_label": "Estudiante de doctorado",
+    "status": "Inactivo",
+    "exit_year": "2023",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/85008",
+      "title": "Design of Fault Tolerant Embedded Systems using Approximate Computing Techniques.",
+      "year": "2023",
+      "degree": "doctorado",
+      "url": "https://repositorio.unal.edu.co/handle/unal/85008"
+    },
+    "lines": "Sistemas embebidos confiables",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/85008"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:canas-palomino-luis-alfonso",
+    "name_display": "Luis Alfonso Cañas Palomino",
+    "name_sort": "Cañas Palomino, Luis Alfonso",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2023",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/85634",
+      "title": "Development of a software method to assist in the thematic analysis of responses to open ended questions in Spanish-language surveys",
+      "year": "2023",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/85634"
+    },
+    "lines": "",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/85634"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:corso-pinzon-andres-francisco-jose",
+    "name_display": "Andrés Francisco Corso",
+    "name_sort": "Corso Pinzón, Andrés Francisco José",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2023",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/83931",
+      "title": "Prototipo de una herramienta de software de calificación automática con proceso de realimentación para el apoyo al aprendizaje de lenguajes de descripción de hardware",
+      "year": "2023",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/83931"
+    },
+    "lines": "Educación en ingeniería",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/83931"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:gutierrez-osorio-camilo-albeiro",
+    "name_display": "Camilo Gutierrez",
+    "name_sort": "Gutierrez Osorio, Camilo Albeiro",
+    "degree_highest": "doctorado",
+    "role_label": "Estudiante de doctorado",
+    "status": "Inactivo",
+    "exit_year": "2023",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/84616",
+      "title": "Road accident forecast by using predictive modeling techniques",
+      "year": "2023",
+      "degree": "doctorado",
+      "url": "https://repositorio.unal.edu.co/handle/unal/84616"
+    },
+    "lines": "Sistemas inteligentes de transporte",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/84616"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:ramirez-espejo-roger-steven",
+    "name_display": "Roger Steven Ramírez Espejo",
+    "name_sort": "Ramírez Espejo, Roger Steven",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2023",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/84828",
+      "title": "Análisis automático de código fuente aplicado en el software para comercio en línea: SAP Commerce Cloud",
+      "year": "2023",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/84828"
+    },
+    "lines": "",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/84828"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:ruiz-algarra-eder-fabian",
+    "name_display": "Eder Fabian Ruiz Algarra",
+    "name_sort": "Ruiz Algarra, Eder Fabian",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2023",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/84111",
+      "title": "Implementación del proceso de comunicación inalámbrica para el dispositivo de pruebas de desminado Humanitario MEDICI",
+      "year": "2023",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/84111"
+    },
+    "lines": "",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/84111"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:chaparro-amaya-edna-johanna",
+    "name_display": "Edna Johanna Chaparro",
+    "name_sort": "Chaparro Amaya, Edna Johanna",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2022",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/83049",
+      "title": "Analítica de aprendizaje en la asignatura Programación de Computadores: una investigación basada en métodos mixtos",
+      "year": "2022",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/83049"
+    },
+    "lines": "Educación en ingeniería",
+    "image_path": "/images/PLaS/estudiantes/new/edna_chaparro.jpg",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/83049"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:chaparro-arce-daniel-felipe",
+    "name_display": "Daniel Felipe Chaparro Arce",
+    "name_sort": "Chaparro Arce, Daniel Felipe",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2022",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/81981",
+      "title": "Evaluación de estrategia de localización de barcos, usando señales acústicas comprimidas",
+      "year": "2022",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/81981"
+    },
+    "lines": "",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/81981"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:lozano-rojas-hernan-dario",
+    "name_display": "Hernán Darío Lozano",
+    "name_sort": "Lozano Rojas, Hernan Dario",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2022",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/82923",
+      "title": "Evaluación del impacto en la motivación en el aprendizaje de los estudiantes de programación de computadores mediante el uso de una herramienta de evaluación automática",
+      "year": "2022",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/82923"
+    },
+    "lines": "Educación en ingeniería",
+    "image_path": "/images/PLaS/estudiantes/new/hernan_lozano.jpg",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/82923"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:vargas-montero-fernando",
+    "name_display": "Fernando Vargas Montero",
+    "name_sort": "Vargas Montero, Fernando",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2022",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/81571",
+      "title": "Análisis de datos de accidentalidad vial de la ciudad de Bogotá a partir de datos abiertos y datos obtenidos desde redes sociales",
+      "year": "2022",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/81571"
+    },
+    "lines": "",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/81571"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:alcaraz-rojas-carolina",
+    "name_display": "Carolina Alcaraz Rojas",
+    "name_sort": "Alcaraz Rojas, Carolina",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2021",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/81535",
+      "title": "Diseño de antenas monopulso para aplicaciones de RFID en sistemas ITS",
+      "year": "2021",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/81535"
+    },
+    "lines": "",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/81535"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:cuervo-cely-karen-daniela",
+    "name_display": "Karen Cuervo",
+    "name_sort": "Cuervo Cely, Karen Daniela",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2021",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/79756",
+      "title": "Evaluación del efecto de la gamificación asistida por computador en la motivación de los estudiantes de programación de computadores",
+      "year": "2021",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/79756"
+    },
+    "lines": "Educación en ingeniería",
+    "image_path": "/images/PLaS/estudiantes/new/karen_cuervo.jpg",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/79756"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:mendez-lara-jhon-alexis",
+    "name_display": "Jhon Alexis Mendez",
+    "name_sort": "Mendez Lara, Jhon Alexis",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2021",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/80862",
+      "title": "Prototipo de herramienta computacional para el aprendizaje colaborativo de programación de computadores",
+      "year": "2021",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/80862"
+    },
+    "lines": "Educación en ingeniería",
+    "image_path": "/images/PLaS/estudiantes/new/jhon_mendez.jpg",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/80862"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:osorio-delgado-anderson-kavir",
+    "name_display": "Anderson Osorio",
+    "name_sort": "Osorio Delgado, Anderson Kavir",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2021",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/80482",
+      "title": "Método para la estimación de maleza en cultivos de lechuga utilizando aprendizaje profundo e imágenes multiespectrales",
+      "year": "2021",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/80482"
+    },
+    "lines": "Sistemas inteligentes de transporte",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/80482"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:suat-rojas-nestor-eduardo",
+    "name_display": "Néstor Suat",
+    "name_sort": "Suat Rojas, Nestor Eduardo",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2021",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/80927",
+      "title": "Extracción y análisis de información de accidentes de tránsito desde redes sociales",
+      "year": "2021",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/80927"
+    },
+    "lines": "Sistemas inteligentes de transporte",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/80927"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:torres-jimenez-stephanie",
+    "name_display": "Stephanie Torres",
+    "name_sort": "Torres Jiménez, Stephanie",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2021",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/79877",
+      "title": "Diseño y validación interna de un instrumento de autoinforme para caracterizar las estrategias de aprendizaje de programación de computadores",
+      "year": "2021",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/79877"
+    },
+    "lines": "Educación en ingeniería",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/79877"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:echavarria-florez-ingrid-sofia",
+    "name_display": "Sofía Echavarría Florez",
+    "name_sort": "Echavarría Flórez, Ingrid Sofía",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2020",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/77441",
+      "title": "Métricas de legibilidad del software: una revisión sistemática de literatura",
+      "year": "2020",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/77441"
+    },
+    "lines": "Lenguajes de programación",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/77441"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:navarro-avila-juan-sebastian",
+    "name_display": "Juan Sebastián Navarro",
+    "name_sort": "Navarro Ávila, Juan Sebastián",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2020",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/77510",
+      "title": "Conteo de vehículos a partir de vídeos usando machine learning",
+      "year": "2020",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/77510"
+    },
+    "lines": "Sistemas inteligentes de transporte",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/77510"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:rojas-real-yefersson-adrian",
+    "name_display": "Yefersson Rojas",
+    "name_sort": "Rojas Real, Yefersson Adrian",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2020",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/77501",
+      "title": "Relación entre los eventos públicos y los accidentes de tránsito a partir del análisis de datos en Bogotá",
+      "year": "2020",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/77501"
+    },
+    "lines": "Sistemas inteligentes de transporte",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/77501"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:baquero-vargas-juan-felipe",
+    "name_display": "Juan Felipe Baquero",
+    "name_sort": "Baquero Vargas, Juan Felipe",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2019",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/76556",
+      "title": "An information retrieval strategy for large multimodal data collections involving source code and natural language",
+      "year": "2019",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/76556"
+    },
+    "lines": "Lenguajes de programación",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/76556"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:cruz-camacho-elkin-alejandro",
+    "name_display": "Elkin Alejandro Cruz",
+    "name_sort": "Cruz Camacho, Elkin Alejandro",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2019",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/76335",
+      "title": "Static Analysis of Python Programs using Abstract Interpretation: An Application to Tensor Shape Analysis",
+      "year": "2019",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/76335"
+    },
+    "lines": "Lenguajes de programación",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/76335"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:culma-caviedes-jose-eduin",
+    "name_display": "Jose Eduin Culma Caviedes",
+    "name_sort": "Culma Caviedes, Jose Eduin",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2019",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/76364",
+      "title": "Análisis de la articulación del diseño curricular del programa de ingeniería electrónica, en relación con los objetivos de aprendizaje asociados a metrología",
+      "year": "2019",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/76364"
+    },
+    "lines": "",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/76364"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:garavito-mendez-oscar-javier",
+    "name_display": "Oscar Javier Garavito",
+    "name_sort": "Garavito Mendez, Oscar Javier",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2019",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/76553",
+      "title": "Building a Developer’s Reputation Model for Programming Contest Platforms based on Source Code Analysis",
+      "year": "2019",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/76553"
+    },
+    "lines": "Lenguajes de programación",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/76553"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:morales-aguilar-santiago",
+    "name_display": "Santiago Morales",
+    "name_sort": "Morales Aguilar, Santiago",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2019",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/76092",
+      "title": "Diseño y validación de un sistema de procesamiento de imágenes para el reconocimiento vehicular en intersecciones viales",
+      "year": "2019",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/76092"
+    },
+    "lines": "Sistemas inteligentes de transporte",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/76092"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:quintero-albornoz-juan-sebastian",
+    "name_display": "Juan Sebastián Quintero Albornoz",
+    "name_sort": "Quintero Albornoz, Juan Sebastián",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2019",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/78469",
+      "title": "Dispositivo IoT para el control de identificación y movilidad pecuaria",
+      "year": "2019",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/78469"
+    },
+    "lines": "",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/78469"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:rosales-castro-lina-fernanda",
+    "name_display": "Lina Fernanda Rosales",
+    "name_sort": "Rosales Castro, Lina Fernanda",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2019",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/76549",
+      "title": "Automatic source code analysis forassessment of solutions toprogramming tasks",
+      "year": "2019",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/76549"
+    },
+    "lines": "Educación en ingeniería",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/76549"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:silva-parra-daniel-arturo",
+    "name_display": "Daniel Silva",
+    "name_sort": "Silva Parra, Daniel Arturo",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2019",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/76352",
+      "title": "Sistema para la medición de velocidad media vehicular mediante tecnologías Bluetooth y Wifi",
+      "year": "2019",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/76352"
+    },
+    "lines": "Sistemas inteligentes de transporte",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/76352"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:camacho-poveda-edgar-camilo",
+    "name_display": "Camilo Camacho",
+    "name_sort": "Camacho Poveda, Edgar Camilo",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2018",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/62959",
+      "title": "Sistema de monitoreo y clasificación de tráfico urbano en tiempo real a través de procesamiento digital de imágenes",
+      "year": "2018",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/62959"
+    },
+    "lines": "Sistemas inteligentes de transporte",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/62959"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:del-pozo-falconi-ivan-mauricio",
+    "name_display": "Ivan del Pozo",
+    "name_sort": "Del Pozo Falconí, Iván Mauricio",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2018",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/64771",
+      "title": "Social engineering: psychology applied to Information Security",
+      "year": "2018",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/64771"
+    },
+    "lines": "Lenguajes de programación",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/64771"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:puerto-lara-andres-esteban",
+    "name_display": "Andrés Puerto",
+    "name_sort": "Puerto Lara, Andrés Esteban",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2018",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/62958",
+      "title": "Clasificación y cuantificación de maleza en cultivos de hortalizas por medio de  procesamiento de imágenes digitales multiespectrales",
+      "year": "2018",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/62958"
+    },
+    "lines": "Agricultura de precisión",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/62958"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:urbano-vallejo-oscar-andres",
+    "name_display": "Óscar Urbano",
+    "name_sort": "Urbano Vallejo, Oscar Andrés",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2018",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/64515",
+      "title": "Diseño y Validación de un framework para IoT basado en tecnología RFID",
+      "year": "2018",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/64515"
+    },
+    "lines": "Internet de las cosas",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/64515"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:alfonso-hoyos-jean-pierre",
+    "name_display": "Jean Pierre Alonso",
+    "name_sort": "Alfonso Hoyos, Jean Pierre",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2017",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/60127",
+      "title": "Prototipado automático de sistemas de información transaccionales usando una especificación en lenguaje natural restringido",
+      "year": "2017",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/60127"
+    },
+    "lines": "Lenguajes de programación",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/60127"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:castellanos-morales-hugo-armando",
+    "name_display": "Hugo Castellanos",
+    "name_sort": "Castellanos Morales, Hugo Armando",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "2017",
+    "active": false,
+    "thesis": {
+      "id": "tesis:unal/60068",
+      "title": "Source code analysis on student assignments using machine learning techniques",
+      "year": "2017",
+      "degree": "maestria",
+      "url": "https://repositorio.unal.edu.co/handle/unal/60068"
+    },
+    "lines": "Educación en ingeniería",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "https://repositorio.unal.edu.co/handle/unal/60068"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:criollo-velazquez-edgar-hernando",
+    "name_display": "Edgar Hernando Criollo",
+    "name_sort": "Criollo Velazquez, Edgar Hernando",
+    "degree_highest": "doctorado",
+    "role_label": "Estudiante de doctorado",
+    "status": "Inactivo",
+    "exit_year": "",
+    "active": false,
+    "thesis": {
+      "id": "tesis:inventory/criollo-velazquez-edgar-hernando",
+      "title": "La escritura como herramienta de aprendizaje en el aula de ingeniería.",
+      "year": "",
+      "degree": "doctorado",
+      "url": "/proyectos/escritura.html"
+    },
+    "lines": "Educación en ingeniería",
+    "image_path": "/images/PLaS/estudiantes/new/edgar_criollo.jpg",
+    "n_tesis": "1",
+    "email": "",
+    "links": [
+      {
+        "label": "Tesis",
+        "url": "/proyectos/escritura.html"
+      }
+    ]
+  },
+  {
+    "id": "estudiante:llanos-mosquera-jose-miguel",
+    "name_display": "José Miguel Llanos",
+    "name_sort": "Llanos Mosquera, José Miguel",
+    "degree_highest": "doctorado",
+    "role_label": "Estudiante de doctorado",
+    "status": "Inactivo",
+    "exit_year": "",
+    "active": false,
+    "thesis": {
+      "id": "tesis:inventory/llanos-mosquera-jose-miguel",
+      "title": "Modelo de alerta temprana basado en la predicción del éxito académico de resultados de aprendizaje para disminuir la deserción en estudiantes de cursos de programación.",
+      "year": "",
+      "degree": "doctorado",
+      "url": ""
+    },
+    "lines": "Educación en ingeniería",
+    "image_path": "/images/PLaS/estudiantes/new/jose_llanos.jpg",
+    "n_tesis": "1",
+    "email": "",
+    "links": []
+  },
+  {
+    "id": "estudiante:mora-escobar-elvert",
+    "name_display": "Elvert Mora",
+    "name_sort": "Mora Escobar, Elvert",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "",
+    "active": false,
+    "thesis": {
+      "id": "tesis:inventory/mora-escobar-elvert",
+      "title": "Análisis y Optimización de código fuente para Computación Aproximada.",
+      "year": "",
+      "degree": "maestria",
+      "url": ""
+    },
+    "lines": "Sistemas embebidos confiables",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": []
+  },
+  {
+    "id": "estudiante:sanabria-mesa-edwin-javier",
+    "name_display": "Edwin Javier Sanabria",
+    "name_sort": "Sanabria Mesa, Edwin Javier",
+    "degree_highest": "maestria",
+    "role_label": "Estudiante de maestría",
+    "status": "Inactivo",
+    "exit_year": "",
+    "active": false,
+    "thesis": {
+      "id": "tesis:inventory/sanabria-mesa-edwin-javier",
+      "title": "Desarrollo de una técnica de tolerancia a fallos basada en software para la arquitectura de procesadores RISC-V.",
+      "year": "",
+      "degree": "maestria",
+      "url": ""
+    },
+    "lines": "Sistemas embebidos confiables",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": []
+  },
+  {
+    "id": "estudiante:vergara-vargas-jeisson-andres",
+    "name_display": "Jeisson Andrés Vergara",
+    "name_sort": "Vergara Vargas, Jeisson Andrés",
+    "degree_highest": "doctorado",
+    "role_label": "Estudiante de doctorado",
+    "status": "Inactivo",
+    "exit_year": "",
+    "active": false,
+    "thesis": {
+      "id": "tesis:inventory/vergara-vargas-jeisson-andres",
+      "title": "Security Assurance in the Architectural Evolution of Large Software Systems with Web Front-Ends.",
+      "year": "",
+      "degree": "doctorado",
+      "url": ""
+    },
+    "lines": "Lenguajes de programación",
+    "image_path": "",
+    "n_tesis": "1",
+    "email": "",
+    "links": []
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "exported_at": "2026-09-14",
+  "source": "data/harvest → src/data",
+  "counts": {
+    "lines": 5,
+    "projects": 13,
+    "faculty": 4,
+    "students": 55,
+    "publications": 94,
+    "theses": 54,
+    "resources": 15,
+    "blog": 1
+  }
+}

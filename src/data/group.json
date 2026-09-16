@@ -1,0 +1,18 @@
+{
+  "id": "group:plas",
+  "name": "PLaS",
+  "name_full": "Programming Languages and Systems",
+  "institution": "Universidad Nacional de Colombia",
+  "minciencias_class": "A1",
+  "minciencias_convocatoria": "957/2024",
+  "minciencias_results_published": "2025-12-05",
+  "gruplac_url": "https://scienti.minciencias.gov.co/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000018409",
+  "hermes_url": "http://www.hermes.unal.edu.co/pages/Consultas/Grupo.jsf?idGrupo=2343",
+  "email": "plas_fibog@unal.edu.co",
+  "phone": "+57 1 3165000 ext. 14077",
+  "address": "Universidad Nacional de Colombia - Edificio Aulas de Ingeniería 453",
+  "city": "Bogotá D.C.",
+  "country": "Colombia",
+  "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7509677721923!2d-74.08591778523792!3d4.638456396630495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9bce6c245595%3A0x75fa7a690e8f12b0!2sAulas%20de%20Ingenier%C3%ADa!5e0!3m2!1ses-419!2sco!4v1636158696038!5m2!1ses-419!2sco",
+  "description_short": "¿Cómo se enseña a construir software de verdad? ¿Cómo se hace un sistema que aguante fallos? ¿Cómo ayuda la tecnología cuando el tráfico se congestiona o cuando un cultivo necesita decisiones a tiempo?\n\nEsas preguntas —educación en ingeniería, lenguajes, embebidos confiables, transporte inteligente y agricultura de precisión— son el mapa de PLaS. No las tratamos como islas: formamos investigadores en el día a día del laboratorio y dejamos herramientas que se puedan usar, evaluar y mejorar fuera del paper."
+}
