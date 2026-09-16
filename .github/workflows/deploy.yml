@@ -27,8 +27,8 @@ jobs:
           node-version: 22
           # package-manager detected from package-lock.json
         env:
-          PLAS_SITE: https://vethariel.github.io
-          PLAS_BASE: /Front_plas
+          PLAS_SITE: https://unplas.github.io
+          PLAS_BASE: /web_plas
 
   deploy:
     needs: build
