@@ -12,7 +12,7 @@ Universidad Nacional de Colombia · Sede Bogotá · Facultad de Ingeniería
 | **GrupLAC** | [Perfil del grupo](https://scienti.minciencias.gov.co/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000018409) |
 | **HERMES** | [Consulta del grupo](http://www.hermes.unal.edu.co/pages/Consultas/Grupo.jsf?idGrupo=2343) |
 | **Sitio oficial** | https://plas.unal.edu.co |
-| **Espejo (GitHub Pages)** | https://vethariel.github.io/Front_plas/ |
+| **Espejo (GitHub Pages)** | https://unplas.github.io/web_plas/ |
 
 Investigamos cómo se enseñan, construyen y confían los lenguajes y los sistemas —en el aula, el laboratorio y problemas reales de movilidad y producción. Formamos en maestría y doctorado y preferimos dejar métodos y herramientas reutilizables, no solo papers.
 
@@ -54,7 +54,7 @@ npm install
 npm run dev          # servidor local
 npm run build        # UNAL: site plas.unal.edu.co, base /
 npm run build:unal   # explícito UNAL
-npm run build:pages  # GitHub Pages: base /Front_plas
+npm run build:pages  # GitHub Pages: base /web_plas
 npm run preview      # previsualizar el build
 npm test             # pruebas (mesh + harvest)
 ```
@@ -95,11 +95,11 @@ npm run build:unal   # o npm run build
 sudo rsync -a --delete dist/ /var/www/html/plas/
 ```
 
-Comprobar que CSS/JS carguen desde `/_astro/...` (no `/Front_plas/_astro/...`).
+Comprobar que CSS/JS carguen desde `/_astro/...` (no `/web_plas/_astro/...`).
 
 ### GitHub Pages
 
-URL: https://vethariel.github.io/Front_plas/
+URL: https://unplas.github.io/web_plas/
 
 1. En el repo: **Settings → Pages → Source = GitHub Actions**
 2. Push a `main`, o **Actions → Deploy to GitHub Pages → Run workflow**
