@@ -1,0 +1,52 @@
+name: Package UNAL site
+
+# Build estático para plas.unal.edu.co y publícalo como release rolling
+# (tag unal-deploy → dist-unal.tar.gz). El servidor lo descarga por cron.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: package-unal
+  cancel-in-progress: true
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install and build
+        run: |
+          npm ci
+          npm run build:unal
+
+      - name: Pack dist/
+        run: tar -czf dist-unal.tar.gz -C dist .
+
+      - name: Publish rolling release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: unal-deploy
+          name: UNAL deploy package
+          body: |
+            Paquete estático para `/var/www/html/plas` (plas.unal.edu.co).
+            Generado automáticamente desde `main`.
+          files: dist-unal.tar.gz
+          fail_on_unmatched_files: true
+          overwrite_files: true
+          make_latest: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
