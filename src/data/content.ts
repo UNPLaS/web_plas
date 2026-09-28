@@ -1,6 +1,6 @@
 /**
  * View-models desde JSON exportado de new_plas.
- * Rutas internas: convención Front_plas (/projects, /blog, …).
+ * Rutas internas: convención web_plas (/projects, /blog, …).
  */
 import blogJson from './blog.json';
 import facultyJson from './faculty.json';
@@ -22,7 +22,7 @@ const degreeLabel: Record<string, string> = {
   doctorado: 'Doctorado',
 };
 
-/** Reescribe hrefs de new_plas a rutas Front_plas (+ base de GitHub Pages). */
+/** Reescribe hrefs de new_plas a rutas web_plas (+ base de GitHub Pages). */
 export function mapHref(href: string): string {
   if (!href) return href;
   if (/^(https?:|mailto:|tel:)/i.test(href)) return href;

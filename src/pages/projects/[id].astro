@@ -3,7 +3,7 @@ import { withBase } from '../../lib/with-base';
 import Layout from '../../layouts/Layout.astro';
 import TypeChip from '../../components/TypeChip.astro';
 import MarkdownContent from '../../components/MarkdownContent.astro';
-import { projectItems } from '../../data/placeholders';
+import { projectItems } from '../../data/site';
 
 export function getStaticPaths() {
   return projectItems.map((item) => ({
