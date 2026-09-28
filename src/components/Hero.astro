@@ -64,10 +64,10 @@ const mincienciasTitle = [
 
   <div class="hero__body">
     <div class="hero__rail">
-      <p class="hero__eyebrow">Grupo de investigación</p>
+      <p class="hero__eyebrow" data-hero-clear>Grupo de investigación</p>
 
       <div class="hero__brand">
-        <h1 class="hero__logo">
+        <h1 class="hero__logo" data-hero-clear>
           <img
             src={site.logo}
             alt={`${group.name} — ${group.name_full}`}
@@ -80,9 +80,9 @@ const mincienciasTitle = [
       </div>
 
       <div class="hero__text">
-        <p class="hero__title">{site.tagline}</p>
-        <p class="hero__subtitle">{site.subtitle}</p>
-        <p class="hero__cta">
+        <p class="hero__title" data-hero-clear>{site.tagline}</p>
+        <p class="hero__subtitle" data-hero-clear>{site.subtitle}</p>
+        <p class="hero__cta" data-hero-clear>
           <a class="btn btn--amber-sm" href={ctaHref}>{ctaLabel}</a>
           {
             secondaryHref && secondaryLabel && (

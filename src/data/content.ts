@@ -91,6 +91,13 @@ export const site = {
 /** Color de chip por id o nombre de línea (desde lines.json). */
 const lineColorById = Object.fromEntries(linesJson.map((l) => [l.id, l.color]));
 const lineColorByName = Object.fromEntries(linesJson.map((l) => [l.name, l.color]));
+const lineNameById: Record<string, string> = Object.fromEntries(
+  linesJson.map((l) => [l.id, l.name]),
+);
+
+function lineNamesFor(ids: string[] = []) {
+  return ids.map((id) => lineNameById[id]).filter(Boolean);
+}
 
 function resolveLineColor(lineId?: string, lineName?: string) {
   if (lineId && lineColorById[lineId]) return lineColorById[lineId];
@@ -221,6 +228,7 @@ export const eventItems = blogItems;
 export const facultyItems = facultyJson.map((f) => {
   const isFelipe = f.id === 'docente:ferestrepoca';
   const groupRole = f.group_role || (isFelipe ? 'Líder del grupo' : f.rank || 'Profesor asociado');
+  const lineNames = lineNamesFor(f.line_ids);
   return {
     id: f.id,
     name: f.name_display,
@@ -228,7 +236,7 @@ export const facultyItems = facultyJson.map((f) => {
     rank: f.rank,
     href: withBase('/people'),
     image: f.image_path ? withBase(f.image_path) : '',
-    meta: f.line_names?.length ? `Líneas: ${f.line_names.join(', ')}` : '',
+    meta: lineNames.length ? `Líneas: ${lineNames.join(', ')}` : '',
     email: f.email,
     profiles: f.profiles ?? [],
     roleChip: {
@@ -250,14 +258,58 @@ export const people = facultyItems.map((f) => ({
   profileLinks: f.profileLinks,
 }));
 
-export const students = [...studentsJson]
+/** `plas_catalog_source: "rejected"` oculta la tesis (y el harvest no la re-agrega). */
+const visibleTheses = thesesJson.filter((t) => t.plas_catalog_source !== 'rejected');
+
+const DEGREE_RANK: Record<string, number> = { doctorado: 3, maestria: 2, pregrado: 1 };
+const DEGREE_BY_ROLE_GROUP: Record<string, string> = {
+  estudiante_doctorado: 'doctorado',
+  estudiante_maestria: 'maestria',
+  estudiante_pregrado: 'pregrado',
+};
+const ROLE_LABEL_BY_DEGREE: Record<string, string> = {
+  doctorado: 'Estudiante de doctorado',
+  maestria: 'Estudiante de maestría',
+  pregrado: 'Estudiante de pregrado',
+};
+
+function thesisUrl(itemUrl: string) {
+  if (!itemUrl) return '';
+  return /^https?:\/\//i.test(itemUrl) ? itemUrl : `/${itemUrl.replace(/^\//, '')}`;
+}
+
+/** Tesis de mayor grado (y más reciente) del estudiante; con tesis pasa a Inactivo. */
+const resolvedStudents = studentsJson.map((s) => {
+  const thesis = visibleTheses
+    .filter((t) => t.student_ids.includes(s.id))
+    .sort(
+      (a, b) =>
+        (DEGREE_RANK[b.degree] ?? 0) - (DEGREE_RANK[a.degree] ?? 0) ||
+        String(b.year).localeCompare(String(a.year)),
+    )[0];
+  const status = thesis ? 'Inactivo' : s.status;
+  const roleDegree = DEGREE_BY_ROLE_GROUP[s.role_group] ?? '';
+  return {
+    ...s,
+    status,
+    active: !thesis && status === 'Activo',
+    exit_year: thesis?.year ?? '',
+    degree_highest: thesis?.degree || roleDegree,
+    role_label: ROLE_LABEL_BY_DEGREE[roleDegree || thesis?.degree || ''] ?? '',
+    thesis: thesis
+      ? { title: thesis.title, year: thesis.year, degree: thesis.degree, url: thesisUrl(thesis.item_url) }
+      : null,
+  };
+});
+
+export const students = resolvedStudents
   .sort((a, b) => Number(b.active) - Number(a.active) || a.name_sort.localeCompare(b.name_sort))
   .map((s) => {
     const degree = s.thesis?.degree || s.degree_highest;
     const typeLabel = s.role_label || degreeLabel[degree] || degree;
-    const lineName = s.lines || '';
-    const thesisUrl =
-      s.thesis?.url || s.links?.find((l) => /tesis/i.test(l.label))?.url || '';
+    const lineId = s.line_ids[0] || '';
+    const lineName = lineNamesFor(s.line_ids).join(', ');
+    const thesisUrl = s.thesis?.url || '';
     return {
       id: s.id,
       name: s.name_display,
@@ -277,7 +329,7 @@ export const students = [...studentsJson]
           color: resolveNivelColor({ degree, levelLabel: typeLabel }),
         },
         ...(lineName
-          ? [{ id: 'linea', label: lineName, color: resolveLineColor(undefined, lineName) }]
+          ? [{ id: 'linea', label: lineName, color: resolveLineColor(lineId, lineName) }]
           : []),
       ],
     };
@@ -360,9 +412,12 @@ const TYPE_ORDER = [
   'unknown',
 ];
 
-const pubItems = publicationsJson.map((p) => {
+/** `plas_catalog_source: "rejected"` oculta la publicación (y el harvest no la re-agrega). */
+const visiblePublications = publicationsJson.filter((p) => p.plas_catalog_source !== 'rejected');
+
+const pubItems = visiblePublications.map((p) => {
   const lineIds = p.line_ids || [];
-  const lineNames = p.line_names || [];
+  const lineNames = lineNamesFor(lineIds);
   const lineId = lineIds[0] || '';
   const line = lineNames[0] || '';
   const typology = p.typology || 'unknown';
@@ -393,15 +448,10 @@ const pubItems = publicationsJson.map((p) => {
   };
 });
 
-const thesisItems = thesesJson.map((t) => {
-  const lineIds =
-    t.line_ids?.length
-      ? t.line_ids
-      : t.line_id_primary
-        ? [t.line_id_primary]
-        : [];
-  const lineNames = t.line_names || [];
-  const lineId = lineIds[0] || t.line_id_primary || '';
+const thesisItems = visibleTheses.map((t) => {
+  const lineIds = t.line_ids;
+  const lineNames = lineNamesFor(lineIds);
+  const lineId = lineIds[0] || '';
   const line = lineNames[0] || '';
   const degree = degreeLabel[t.degree] ?? t.degree ?? '';
   const href = t.item_url || '';

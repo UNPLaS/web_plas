@@ -1,14 +1,21 @@
 /**
- * Pure helpers for publication harvest merge (testable without ORCID/Crossref).
+ * Pure helpers for the publication harvest (testable without ORCID/Crossref).
+ * The catalog of record is src/data/publications.json: existing rows are never
+ * modified, new ORCID works are appended in site format.
  */
 import { typologyFromCrossref, typologyFromOrcid } from "./typology.mjs";
 import {
   identityConfidence,
+  nameMatchesAuthor,
   normalizeDoi,
-  slugName,
+  stripAccents,
   yearFromCrossref,
-  dateIssuedFromCrossref,
 } from "./orcid-crossref.mjs";
+
+export const FABIO = "docente:fagonzalezo";
+/** Manual marker: hidden from the site and never re-harvested. */
+export const REJECTED = "rejected";
+export const HARVEST_SOURCE = "orcid_harvest";
 
 export const MATCH = {
   "docente:ferestrepoca": {
@@ -33,14 +40,6 @@ export const MATCH = {
   },
 };
 
-export function personaIdFromOrcid(orcid) {
-  return `persona:orcid:${orcid}`;
-}
-
-export function personaIdFromName(family, given) {
-  return `persona:name:${slugName(`${family}-${given}`)}`;
-}
-
 export function pubIdFromDoi(doi) {
   return `pub:doi:${normalizeDoi(doi)}`;
 }
@@ -49,197 +48,140 @@ export function pubIdFromOrcid(orcid, putCode) {
   return `pub:orcid:${orcid.replace(/-/g, "")}:${putCode}`;
 }
 
-export function ensurePersona(map, row) {
-  if (!map.has(row.id)) map.set(row.id, row);
-  else {
-    const cur = map.get(row.id);
-    if (!cur.docente_id && row.docente_id) cur.docente_id = row.docente_id;
-    if (!cur.orcid && row.orcid) cur.orcid = row.orcid;
-    if (!cur.name_display && row.name_display) cur.name_display = row.name_display;
+export function normTitle(s) {
+  return stripAccents(String(s || "").replace(/<[^>]+>/g, " "))
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+/** ORCID iD from the faculty "ORCID" profile link. */
+export function orcidFromFaculty(f) {
+  const url = (f.profiles || []).find((p) => /orcid/i.test(p.label || ""))?.url || "";
+  return url.match(/\d{4}-\d{4}-\d{4}-\d{3}[\dX]/i)?.[0] || "";
+}
+
+export function matchOptsFor(doc) {
+  return (
+    MATCH[doc.id] || {
+      familyParts: [(doc.name_sort || "").split(",")[0].trim()].filter(Boolean),
+      givenNames: [],
+      givenInitials: [],
+    }
+  );
+}
+
+/** Index of every known publication (accepted or rejected) for dedupe. */
+export function buildKnownIndex(pubs) {
+  const index = { ids: new Set(), dois: new Set(), titles: new Set() };
+  for (const p of pubs) addToKnownIndex(index, p);
+  return index;
+}
+
+export function addToKnownIndex(index, p) {
+  if (p.id) index.ids.add(p.id);
+  if (p.doi) index.dois.add(normalizeDoi(p.doi));
+  const t = normTitle(p.title);
+  if (t) index.titles.add(t);
+}
+
+function isKnown(index, { id, doi, title }) {
+  if (index.ids.has(id)) return true;
+  if (doi && index.dois.has(normalizeDoi(doi))) return true;
+  const t = normTitle(title);
+  return Boolean(t) && index.titles.has(t);
+}
+
+function authorOrcid(a) {
+  return (a.ORCID || "").replace(/https?:\/\/orcid\.org\//i, "").toUpperCase();
+}
+
+/** PLaS docentes among Crossref authors, by ORCID or by name. */
+export function plasDocentesInAuthors(authors, faculty) {
+  const found = new Set();
+  for (const a of authors) {
+    const o = authorOrcid(a);
+    for (const f of faculty) {
+      if ((o && o === (f.orcid || "").toUpperCase()) || nameMatchesAuthor(a, matchOptsFor(f))) {
+        found.add(f.id);
+      }
+    }
   }
-  return row.id;
+  return found;
 }
 
-export function mergeSeeds(a, b) {
-  const s = new Set([...(a || "").split("|"), ...(b || "").split("|")].filter(Boolean));
-  return [...s].sort().join("|");
+/** Student full names → token sets, for coauthor detection. */
+export function buildStudentMatchers(names) {
+  return names
+    .map((n) => new Set(normTitle(n).split(" ").filter(Boolean)))
+    .filter((tokens) => tokens.size >= 2);
 }
 
-export function mergePutCodes(a, b) {
-  const s = new Set([...(a || "").split("|"), ...(b || "").split("|")].filter(Boolean));
-  return [...s].sort().join("|");
-}
-
-export function autorKey(a) {
-  return `${a.publicacion_id}|${a.persona_id}|${a.author_position}`;
+/** A student matches when the author's first given name and first surname are in the student's name. */
+export function hasStudentAuthor(authors, studentMatchers) {
+  return authors.some((a) => {
+    const given = normTitle(a.given).split(" ")[0] || "";
+    const family = normTitle(a.family).split(" ")[0] || "";
+    if (given.length < 2 || family.length < 2) return false;
+    return studentMatchers.some((tokens) => tokens.has(given) && tokens.has(family));
+  });
 }
 
 /**
- * Merge one ORCID work (+ optional Crossref message) into pubs/personas/autores maps.
- * @returns {{ accepted: boolean, quarantined: boolean, pubId?: string }}
+ * Evaluate one ORCID work (+ optional Crossref message) for the catalog.
+ * @returns {{ status: "quarantined" | "known" | "fabio_independent" | "added", pub?: object }}
  */
-export function mergeOrcidWork({
-  work,
-  msg,
-  doc,
-  matchOpts,
-  docentes,
-  pubs,
-  personas,
-  autorMap,
-  harvestedAt,
-}) {
-  let pubId;
-  let conf;
-  let title = work.title;
-  let year = work.year;
-  let dateIssued = "";
-  let venue = "";
-  let publisher = "";
-  let url = work.doi ? `https://doi.org/${work.doi}` : "";
-  let language = "";
-  let abstract = "";
-  let typ;
+export function evaluateOrcidWork({ work, msg, doc, faculty, studentMatchers, known }) {
+  const doi = normalizeDoi(work.doi);
+  const id = doi ? pubIdFromDoi(doi) : pubIdFromOrcid(doc.orcid, work.putCode);
 
-  if (work.doi) {
-    conf = identityConfidence(msg, doc.orcid, matchOpts);
-    if (conf === "E") {
-      return { accepted: false, quarantined: true };
-    }
-    if (msg) {
-      title = (msg.title && msg.title[0]) || title;
-      year = yearFromCrossref(msg) || year;
-      dateIssued = dateIssuedFromCrossref(msg);
-      venue = (msg["container-title"] && msg["container-title"][0]) || "";
-      publisher = msg.publisher || "";
-      language = msg.language || "";
-      if (msg.abstract) {
-        abstract = String(msg.abstract).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim().slice(0, 2000);
-      }
-      typ = typologyFromCrossref(msg.type);
-      url = msg.URL || url;
-      pubId = pubIdFromDoi(work.doi);
-      conf = identityConfidence(msg, doc.orcid, matchOpts);
-      if (conf === "E") return { accepted: false, quarantined: true };
-      if (conf === "C") conf = "B";
-    } else {
-      typ = typologyFromOrcid(work.type);
-      pubId = pubIdFromDoi(work.doi);
-      conf = "C";
-    }
-  } else {
-    conf = "D";
-    typ = typologyFromOrcid(work.type);
-    pubId = pubIdFromOrcid(doc.orcid, work.putCode);
+  if (doi && msg && identityConfidence(msg, doc.orcid, matchOptsFor(doc)) === "E") {
+    return { status: "quarantined" };
   }
 
-  if (!typ) typ = typologyFromOrcid(work.type);
+  const crossrefTitle = String(msg?.title?.[0] || "").replace(/<[^>]+>/g, "").trim();
+  const title = crossrefTitle || work.title || "";
+  if (isKnown(known, { id, doi, title })) return { status: "known" };
 
-  const existing = pubs.get(pubId);
-  const row = existing || {
-    id: pubId,
-    doi: work.doi || "",
-    title: title || "",
-    year: year || "",
-    date_issued: dateIssued || "",
-    ...typ,
-    venue_title: venue,
-    publisher_name: publisher,
-    url,
-    language,
-    abstract,
-    openalex_id: "",
-    orcid_put_codes: String(work.putCode || ""),
-    identity_confidence: conf,
-    harvest_sources: work.doi && msg ? "orcid+crossref" : work.doi ? "orcid+crossref_miss" : "orcid",
-    seed_docente_ids: doc.id,
-    plas_catalog: "pending",
-    plas_catalog_source: "pending",
-    plas_catalog_notes: "",
-    inventory_match: "",
-    harvested_at: harvestedAt,
-    notes: conf === "C" ? "crossref_unresolved" : "",
+  const authors = msg?.author?.length ? msg.author : [];
+  const docentes = plasDocentesInAuthors(authors, faculty);
+  docentes.add(doc.id);
+
+  if (doc.id === FABIO && docentes.size === 1 && !hasStudentAuthor(authors, studentMatchers)) {
+    return { status: "fabio_independent" };
+  }
+
+  const typ = msg ? typologyFromCrossref(msg.type) : typologyFromOrcid(work.type);
+  const lineIds = new Set();
+  for (const f of faculty) {
+    if (docentes.has(f.id)) for (const l of f.line_ids || []) lineIds.add(l);
+  }
+  const authorNames = authors
+    .map((a) => `${a.given || ""} ${a.family || ""}`.trim())
+    .filter(Boolean);
+
+  const pub = {
+    id,
+    doi,
+    title,
+    year: (msg && yearFromCrossref(msg)) || String(work.year || ""),
+    typology: typ.typology,
+    typology_label_es: typ.typology_label_es,
+    venue_title: msg?.["container-title"]?.[0] || "",
+    url: doi ? `https://doi.org/${doi}` : "",
+    plas_catalog_source: HARVEST_SOURCE,
+    authors: (authorNames.length ? authorNames : [doc.name_display]).join("; "),
+    line_ids: [...lineIds].sort(),
   };
+  addToKnownIndex(known, pub);
+  return { status: "added", pub };
+}
 
-  if (existing) {
-    row.seed_docente_ids = mergeSeeds(existing.seed_docente_ids, doc.id);
-    row.orcid_put_codes = mergePutCodes(existing.orcid_put_codes, String(work.putCode || ""));
-    const rank = { A: 4, B: 3, D: 2, C: 1, E: 0 };
-    if ((rank[conf] || 0) > (rank[existing.identity_confidence] || 0)) {
-      row.identity_confidence = conf;
-    }
-    if (!row.title && title) row.title = title;
-    if (!row.year && year) row.year = year;
-    if (!row.publisher_name && publisher) row.publisher_name = publisher;
-    if (!row.venue_title && venue) row.venue_title = venue;
-    if (msg && row.harvest_sources === "orcid") row.harvest_sources = "orcid+crossref";
-    row.harvested_at = harvestedAt;
-  }
+export function sortPublications(pubs) {
+  return [...pubs].sort(
+    (a, b) => String(b.year).localeCompare(String(a.year)) || a.title.localeCompare(b.title),
+  );
+}
 
-  pubs.set(pubId, row);
-
-  const authors = msg?.author?.length
-    ? msg.author.map((a, idx) => ({
-        family: a.family || "",
-        given: a.given || "",
-        orcid: (a.ORCID || "").replace(/https?:\/\/orcid\.org\//i, ""),
-        affiliation: (a.affiliation || []).map((x) => x.name).filter(Boolean).join(" | "),
-        position: idx + 1,
-      }))
-    : [{
-        family: matchOpts.familyParts.join(" "),
-        given: matchOpts.givenNames[0] || "",
-        orcid: doc.orcid,
-        affiliation: "",
-        position: 1,
-      }];
-
-  for (const a of authors) {
-    let pid;
-    if (a.orcid) {
-      pid = personaIdFromOrcid(a.orcid);
-      const linked = docentes.find((d) => d.orcid === a.orcid);
-      ensurePersona(personas, {
-        id: pid,
-        name_display: `${a.given} ${a.family}`.trim(),
-        name_family: a.family,
-        name_given: a.given,
-        orcid: a.orcid,
-        docente_id: linked?.id || "",
-        estudiante_id: "",
-        notes: "",
-      });
-    } else {
-      pid = personaIdFromName(a.family, a.given);
-      ensurePersona(personas, {
-        id: pid,
-        name_display: `${a.given} ${a.family}`.trim(),
-        name_family: a.family,
-        name_given: a.given,
-        orcid: "",
-        docente_id: "",
-        estudiante_id: "",
-        notes: "name-key; may collide",
-      });
-    }
-
-    const linkedDoc = docentes.find((d) => d.orcid && d.orcid === a.orcid);
-    const isPlas = linkedDoc ? "yes" : "no";
-    const key = autorKey({
-      publicacion_id: pubId,
-      persona_id: pid,
-      author_position: String(a.position),
-    });
-    autorMap.set(key, {
-      publicacion_id: pubId,
-      persona_id: pid,
-      author_position: String(a.position),
-      author_role: "author",
-      affiliation_raw: a.affiliation || "",
-      is_plas_docente: isPlas,
-      evidence: msg ? "crossref" : "orcid",
-    });
-  }
-
-  return { accepted: true, quarantined: false, pubId };
+export function isVisiblePublication(p) {
+  return p.plas_catalog_source !== REJECTED;
 }

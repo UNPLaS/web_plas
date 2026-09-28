@@ -1,20 +1,15 @@
 #!/usr/bin/env node
 /**
- * RI UNAL → data/harvest/{theses,thesis_*,students}.json
- * Then projects visible rows into src/data/{theses,students}.json
+ * RI UNAL → new rows appended to src/data/{theses,students}.json.
+ * Existing theses and students are never modified; known handles (including
+ * plas_catalog_source "rejected") are skipped.
  */
 import path from "node:path";
-import { mkdir, writeFile } from "node:fs/promises";
 import { sleep } from "./lib/normalize.mjs";
 import { discoverSearch, fetchOwningCollectionName, summarizeItem } from "./lib/ri.mjs";
+import { readJson, writeJson, SITE_DATA_DIR } from "./lib/json-store.mjs";
 import {
-  ensureHarvestDir,
-  readTable,
-  writeTables,
-  PIPELINE_TEST_DIR,
-} from "./lib/json-store.mjs";
-import { projectSiteData } from "./lib/project-site.mjs";
-import {
+  aliasesFromFaculty,
   buildAliasIndex,
   matchAdvisors,
   buildDocenteLineasMap,
@@ -23,9 +18,8 @@ import {
   normText,
 } from "./lib/theses-core.mjs";
 
-function today() {
-  return new Date().toISOString().slice(0, 10);
-}
+const THESES = path.join(SITE_DATA_DIR, "theses.json");
+const STUDENTS = path.join(SITE_DATA_DIR, "students.json");
 
 function parseArgs(argv) {
   const args = {
@@ -33,7 +27,6 @@ function parseArgs(argv) {
     testHoldout: null,
     maxPages: 30,
     queryDelayMs: 120,
-    skipProject: false,
     help: false,
   };
   for (let i = 0; i < argv.length; i++) {
@@ -41,23 +34,9 @@ function parseArgs(argv) {
     if (a === "--dry-run") args.dryRun = true;
     else if (a === "--test-holdout") args.testHoldout = argv[++i];
     else if (a === "--max-pages") args.maxPages = Number(argv[++i]);
-    else if (a === "--skip-project") args.skipProject = true;
     else if (a === "--help" || a === "-h") args.help = true;
   }
   return args;
-}
-
-async function loadCanonical() {
-  return {
-    aliases: await readTable("faculty_aliases"),
-    tesis: await readTable("theses"),
-    directores: await readTable("thesis_advisors"),
-    autores: await readTable("thesis_authors"),
-    estudiantes: await readTable("students"),
-    tesisLineas: await readTable("thesis_lines"),
-    docenteLineas: await readTable("faculty_lines"),
-    lineasKeywords: await readTable("research_line_keywords"),
-  };
 }
 
 async function harvestFromRi({ queries, matchAliases, maxPages, delayMs, onlyDocentes = null }) {
@@ -98,105 +77,45 @@ async function harvestFromRi({ queries, matchAliases, maxPages, delayMs, onlyDoc
 }
 
 async function enrichProgram(sum) {
-  let degreeName = sum.degreeName;
-  if (!degreeName) {
-    degreeName = await fetchOwningCollectionName(sum.uuid);
-  }
-  return degreeName || "";
+  return sum.degreeName || (await fetchOwningCollectionName(sum.uuid)) || "";
 }
 
-async function holdoutPrepare(handle, data) {
-  const dir = PIPELINE_TEST_DIR;
-  await mkdir(dir, { recursive: true });
-  const tid = handle.startsWith("tesis:") ? handle : `tesis:${handle}`;
-  const h = tid.replace(/^tesis:/, "");
-
-  const tesisRow = data.tesis.find((t) => t.id === tid || t.handle === h);
-  if (!tesisRow) throw new Error(`Holdout no encontrado: ${handle}`);
-
-  const dirs = data.directores.filter((d) => d.tesis_id === tid);
-  const auts = data.autores.filter((a) => a.tesis_id === tid);
-  const lines = data.tesisLineas.filter((l) => l.tesis_id === tid);
-  const estIds = new Set(auts.map((a) => a.estudiante_id));
-  const estRows = data.estudiantes.filter((e) => estIds.has(e.id));
-
-  const bundle = {
-    tesis: tesisRow,
-    directores: dirs,
-    autores: auts,
-    tesis_lineas: lines,
-    estudiantes: estRows,
-  };
-  await writeFile(path.join(dir, "holdout.json"), JSON.stringify(bundle, null, 2), "utf8");
-
-  data.tesis = data.tesis.filter((t) => t.id !== tid);
-  data.directores = data.directores.filter((d) => d.tesis_id !== tid);
-  data.autores = data.autores.filter((a) => a.tesis_id !== tid);
-  data.tesisLineas = data.tesisLineas.filter((l) => l.tesis_id !== tid);
-
-  for (const eid of estIds) {
-    const still = data.autores.some((a) => a.estudiante_id === eid);
-    if (!still) data.estudiantes = data.estudiantes.filter((e) => e.id !== eid);
-    else {
-      const e = data.estudiantes.find((x) => x.id === eid);
-      if (e) e.n_tesis = String(Math.max(0, Number(e.n_tesis || 1) - 1));
-    }
-  }
-
-  console.log(`Holdout apartado: ${tid} → data/pipeline_test/holdout.json`);
-  return { tid, handle: h, bundle, directorIds: [...new Set(dirs.map((d) => d.docente_id))] };
+/** Remove one thesis (and students left without theses) from in-memory data only. */
+function holdoutPrepare(handle, data) {
+  const h = handle.replace(/^tesis:/, "");
+  const thesis = data.theses.find((t) => t.handle === h);
+  if (!thesis) throw new Error(`Holdout no encontrado: ${handle}`);
+  data.theses = data.theses.filter((t) => t !== thesis);
+  const studentIds = new Set(thesis.student_ids);
+  const students = data.students.filter((s) => studentIds.has(s.id));
+  data.students = data.students.filter(
+    (s) => !studentIds.has(s.id) || data.theses.some((t) => t.student_ids.includes(s.id)),
+  );
+  console.log(`Holdout apartado en memoria: ${thesis.id}`);
+  return { thesis, students, directorIds: new Set(thesis.advisor_ids) };
 }
 
-function compareHoldout(bundle, data) {
-  const tid = bundle.tesis.id;
-  const got = data.tesis.find((t) => t.id === tid);
+function compareHoldout({ thesis, students }, data) {
+  const got = data.theses.find((t) => t.id === thesis.id);
   const report = { ok: true, checks: [] };
   const check = (name, pass, detail = "") => {
     report.checks.push({ name, pass, detail });
     if (!pass) report.ok = false;
   };
+  const sameSet = (a, b) => [...a].sort().join("|") === [...b].sort().join("|");
 
   check("tesis_recreada", !!got, got ? got.title : "missing");
   if (got) {
-    check("title", normText(got.title) === normText(bundle.tesis.title), `${got.title}`);
-    check("degree", got.degree === bundle.tesis.degree, `${got.degree} vs ${bundle.tesis.degree}`);
-    check("visible", got.visible === "yes", got.visible);
-    check("line_nonempty", !!(got.line_id_primary || "").trim(), got.line_id_primary);
-    check(
-      "directores",
-      normText(got.director_docente_ids) === normText(bundle.tesis.director_docente_ids) ||
-        got.director_docente_ids.split("|").map((s) => s.trim()).sort().join("|") ===
-          bundle.tesis.director_docente_ids.split("|").map((s) => s.trim()).sort().join("|"),
-      `${got.director_docente_ids}`,
-    );
+    check("title", normText(got.title) === normText(thesis.title), got.title);
+    check("degree", got.degree === thesis.degree, `${got.degree} vs ${thesis.degree}`);
+    check("line", sameSet(got.line_ids, thesis.line_ids), `${got.line_ids} vs ${thesis.line_ids}`);
+    check("directores", sameSet(got.advisor_ids, thesis.advisor_ids), `${got.advisor_ids}`);
+    check("estudiantes", sameSet(got.student_ids, thesis.student_ids), `${got.student_ids}`);
   }
-
-  for (const a of bundle.autores) {
-    const ga = data.autores.find((x) => x.tesis_id === tid && x.estudiante_id === a.estudiante_id);
-    check(`autor:${a.estudiante_id}`, !!ga, ga ? "ok" : "missing");
-    const ge = data.estudiantes.find((x) => x.id === a.estudiante_id);
-    check(`estudiante:${a.estudiante_id}`, !!ge, ge ? ge.name_display : "missing");
+  for (const s of students) {
+    check(`estudiante:${s.id}`, data.students.some((x) => x.id === s.id));
   }
-
-  const gl = data.tesisLineas.find((l) => l.tesis_id === tid && l.is_primary === "yes");
-  check("tesis_lineas_primary", !!gl && !!(gl.line_id || "").trim(), gl?.line_id || "");
-
   return report;
-}
-
-async function persist(data, { dryRun }) {
-  if (dryRun) {
-    console.log("Dry-run: no se escribe JSON.");
-    return;
-  }
-  await writeTables({
-    theses: data.tesis,
-    thesis_advisors: data.directores,
-    thesis_authors: data.autores,
-    students: data.estudiantes,
-    thesis_lines: data.tesisLineas,
-  });
-  console.log("data/harvest theses/students actualizados.");
 }
 
 async function main() {
@@ -205,27 +124,25 @@ async function main() {
     console.log(`Uso:
   node scripts/harvest-theses.mjs [--dry-run] [--test-holdout unal/HANDLE] [--max-pages N]
 
-Escribe JSON en data/harvest/ y proyecta a src/data/ (salvo --skip-project).
+Agrega tesis y estudiantes nuevos a src/data/. --test-holdout nunca escribe.
 `);
     return;
   }
 
-  await ensureHarvestDir();
-  const data = await loadCanonical();
-  const { queries, matchAliases } = buildAliasIndex(data.aliases);
-  const docenteLineas = buildDocenteLineasMap(data.docenteLineas);
-  const keywordsByLine = buildKeywordsMap(data.lineasKeywords);
+  const faculty = await readJson(path.join(SITE_DATA_DIR, "faculty.json"));
+  const lines = await readJson(path.join(SITE_DATA_DIR, "lines.json"));
+  const data = {
+    theses: await readJson(THESES),
+    students: await readJson(STUDENTS),
+  };
+  const { queries, matchAliases } = buildAliasIndex(aliasesFromFaculty(faculty));
+  const docenteLineas = buildDocenteLineasMap(faculty);
+  const keywordsByLine = buildKeywordsMap(lines);
 
   let holdout = null;
-  let onlyDocentes = null;
   if (args.testHoldout) {
-    holdout = await holdoutPrepare(args.testHoldout, data);
-    onlyDocentes = new Set(holdout.directorIds);
-    console.log(`Modo test: solo aliases de ${[...onlyDocentes].join(", ")}`);
-  }
-
-  if (holdout && !args.dryRun) {
-    await persist(data, { dryRun: false });
+    holdout = holdoutPrepare(args.testHoldout, data);
+    console.log(`Modo test: solo aliases de ${[...holdout.directorIds].join(", ")}`);
   }
 
   const harvested = await harvestFromRi({
@@ -233,81 +150,66 @@ Escribe JSON en data/harvest/ y proyecta a src/data/ (salvo --skip-project).
     matchAliases,
     maxPages: args.maxPages,
     delayMs: args.queryDelayMs,
-    onlyDocentes,
+    onlyDocentes: holdout?.directorIds ?? null,
   });
 
   console.log(`Handles únicos con match PLaS en advisors: ${harvested.length}`);
 
-  const stats = { examined: 0, new: 0, skipped: {}, added: [] };
+  const stats = { examined: 0, new: 0, newStudents: 0, skipped: {} };
 
   for (const sum of harvested) {
     stats.examined++;
+    if (data.theses.some((t) => t.handle === sum.handle)) continue;
     sum.degreeName = await enrichProgram(sum);
 
     const forceDirectors =
-      holdout && sum.handle === holdout.handle
-        ? holdout.bundle.directores.map((d) => ({
-            docente_id: d.docente_id,
-            name_form_raw: d.name_form_raw,
-          }))
+      holdout && sum.handle === holdout.thesis.handle
+        ? holdout.thesis.advisor_ids.map((docente_id) => ({ docente_id, name_form_raw: "" }))
         : null;
 
     const result = registerThesis(data, sum, {
       matchAliases,
       docenteLineas,
       keywordsByLine,
-      harvestedAt: today(),
       forceDirectors,
     });
 
     if (!result.ok) {
-      if (result.reason !== "already_present") {
-        stats.skipped[result.reason] = (stats.skipped[result.reason] || 0) + 1;
-      }
+      stats.skipped[result.reason] = (stats.skipped[result.reason] || 0) + 1;
       continue;
     }
 
     stats.new++;
-    stats.added.push({
-      handle: sum.handle,
-      title: sum.title,
-      line: result.line.lineId,
-      method: result.line.method,
-    });
+    stats.newStudents += result.newStudents.length;
     console.log(
       `+ ${sum.handle} · ${result.line.lineId} (${result.line.method}) · ${sum.title.slice(0, 60)}`,
     );
+    for (const s of result.newStudents) console.log(`    estudiante nuevo: ${s.id}`);
     await sleep(80);
   }
 
-  console.log(
-    "\nResumen:",
-    JSON.stringify({ examined: stats.examined, new: stats.new, skipped: stats.skipped }, null, 2),
-  );
-
-  await persist(data, { dryRun: args.dryRun });
-
-  if (!args.dryRun && !args.skipProject) {
-    await projectSiteData();
-  }
+  console.log("\nResumen:", JSON.stringify(stats, null, 2));
 
   if (holdout) {
-    const report = compareHoldout(holdout.bundle, data);
-    await mkdir(PIPELINE_TEST_DIR, { recursive: true });
-    await writeFile(
-      path.join(PIPELINE_TEST_DIR, "compare_report.json"),
-      JSON.stringify(report, null, 2),
-      "utf8",
-    );
+    const report = compareHoldout(holdout, data);
     console.log("\n=== HOLD OUT COMPARE ===");
     for (const c of report.checks) {
       console.log(`${c.pass ? "PASS" : "FAIL"} ${c.name}${c.detail ? " — " + c.detail : ""}`);
     }
-    console.log(
-      report.ok ? "\nPipeline OK: recreó el registro apartado." : "\nPipeline FALLÓ la comparación.",
-    );
+    console.log(report.ok ? "\nPipeline OK: recreó el registro apartado." : "\nPipeline FALLÓ la comparación.");
     process.exitCode = report.ok ? 0 : 1;
+    return;
   }
+
+  if (args.dryRun || !stats.new) {
+    console.log(args.dryRun ? "Dry-run: no se escribe JSON." : "Sin tesis nuevas.");
+    return;
+  }
+
+  data.theses.sort((a, b) => String(b.year).localeCompare(String(a.year)));
+  await writeJson(THESES, data.theses);
+  await writeJson(STUDENTS, data.students);
+  console.log(`Escritas ${stats.new} tesis nuevas en src/data/theses.json`);
 }
 
 main().catch((e) => {

@@ -10,14 +10,14 @@
     "phone": "+57 1 316 5000 ext. 14077/14011",
     "image_path": "/images/PLaS/profesores/frc_pic.jpg",
     "line_ids": [
+      "line:lenguajes",
       "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
+    "aliases": [
+      "Restrepo Calle, Felipe",
+      "Restrepo-Calle, Felipe",
+      "Restrepo Calle, Felipe (Thesis advisor)"
     ],
     "profiles": [
       {
@@ -79,12 +79,21 @@
     "phone": "+57 1 316 5000 ext. 14077/11",
     "image_path": "/images/PLaS/profesores/fgo_pic.jpg",
     "line_ids": [
-      "line:educacion",
-      "line:lenguajes"
+      "line:lenguajes",
+      "line:educacion"
     ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Lenguajes de programación"
+    "aliases": [
+      "González Osorio, Fabio Augusto",
+      "Gonzalez Osorio, Fabio Augusto",
+      "Gonzalez Osorio, Fabio Augusto (Thesis advisor)",
+      "González Osorio, Fabio Augusto (Thesis advisor)",
+      "González, Fabio Augusto",
+      "Fabio Augusto, Gonzaléz Osorio",
+      "González Osorio,, Fabio Augusto",
+      "Gonzalez Osorio, Fabio A.",
+      "Augusto González, Fabio",
+      "Gonzalez, Fabio",
+      "González, Fabio A."
     ],
     "profiles": [
       {
@@ -138,12 +147,14 @@
     "phone": "+57 1 316 5000 ext. 14076",
     "image_path": "/images/PLaS/profesores/cpb_pic.jpg",
     "line_ids": [
-      "line:agricultura",
-      "line:transporte"
+      "line:transporte",
+      "line:agricultura"
     ],
-    "line_names": [
-      "Agricultura de precisión",
-      "Sistemas inteligentes de transporte"
+    "aliases": [
+      "Pedraza Bonilla, César Augusto",
+      "Pedraza Bonilla, Cesar Augusto",
+      "Pedraza Bonilla, Cesar",
+      "Pedraza Bonilla, César"
     ],
     "profiles": [
       {
@@ -199,8 +210,9 @@
     "line_ids": [
       "line:educacion"
     ],
-    "line_names": [
-      "Educación en ingeniería"
+    "aliases": [
+      "Ramírez Echeverry, Jhon Jairo",
+      "Ramírez Echeverry, Jhon jairo"
     ],
     "profiles": [
       {

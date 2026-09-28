@@ -635,6 +635,7 @@ a.btn--soft:is(:hover, .is-touch-hover) {
 }
 
 .hero__text {
+  container-type: inline-size;
   margin-top: 1.35rem;
   width: 100%;
 }
@@ -667,7 +668,8 @@ a.btn--soft:is(:hover, .is-touch-hover) {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.85rem 1.25rem;
+  /* Espaciado y relleno se encogen con el ancho del texto para mantener los botones en una fila */
+  gap: 0.85rem clamp(0.4rem, 7cqi - 0.93rem, 1.25rem);
   margin: 1.35rem 0 0;
 }
 
@@ -677,8 +679,8 @@ a.btn--soft:is(:hover, .is-touch-hover) {
   justify-content: center;
   box-sizing: border-box;
   min-height: 2.625rem;
-  padding: 0.65rem 1.1rem;
-  font-size: 0.875rem;
+  padding: 0.65rem clamp(0.5rem, 4.4cqi - 0.28rem, 1.1rem);
+  font-size: clamp(0.8125rem, 2.1cqi + 0.4rem, 0.875rem);
   line-height: 1.2;
 }
 

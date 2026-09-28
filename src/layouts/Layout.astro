@@ -112,6 +112,7 @@ const unalChromeJs = withBase('/unal/js/unal-chrome.js');
           syncSpineAndHeroPanel();
           startNetworkDrift();
         });
+        document.fonts?.ready.then(() => syncSpineAndHeroPanel());
         initCatalogFilters();
 
         const content = document.querySelector<HTMLElement>('[data-plas-content]');

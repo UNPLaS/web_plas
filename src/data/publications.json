@@ -14,11 +14,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -36,11 +31,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -58,11 +48,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -80,11 +65,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -102,11 +82,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -123,10 +98,6 @@
     "line_ids": [
       "line:agricultura",
       "line:transporte"
-    ],
-    "line_names": [
-      "Agricultura de precisión",
-      "Sistemas inteligentes de transporte"
     ]
   },
   {
@@ -144,11 +115,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -165,10 +131,6 @@
     "line_ids": [
       "line:agricultura",
       "line:transporte"
-    ],
-    "line_names": [
-      "Agricultura de precisión",
-      "Sistemas inteligentes de transporte"
     ]
   },
   {
@@ -186,11 +148,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -208,11 +165,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -226,8 +178,7 @@
     "url": "https://doi.org/10.58459/rptel.2024.19015",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "",
-    "line_ids": [],
-    "line_names": []
+    "line_ids": []
   },
   {
     "id": "pub:doi:10.15446/ing.investig.100218",
@@ -242,9 +193,6 @@
     "authors": "Luis E. Gallego; Diego A. Tibaduiza; Jhon Jairo Ramírez-Echeverry; Hernando Díaz-Morales",
     "line_ids": [
       "line:educacion"
-    ],
-    "line_names": [
-      "Educación en ingeniería"
     ]
   },
   {
@@ -262,11 +210,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -280,8 +223,7 @@
     "url": "https://doi.org/10.7717/peerj-cs.1655",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "",
-    "line_ids": [],
-    "line_names": []
+    "line_ids": []
   },
   {
     "id": "pub:doi:10.1016/j.micpro.2022.104723",
@@ -298,11 +240,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -319,10 +256,6 @@
     "line_ids": [
       "line:agricultura",
       "line:transporte"
-    ],
-    "line_names": [
-      "Agricultura de precisión",
-      "Sistemas inteligentes de transporte"
     ]
   },
   {
@@ -340,11 +273,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -362,11 +290,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -380,8 +303,7 @@
     "url": "https://doi.org/10.29292/jics.v16i3.539",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "",
-    "line_ids": [],
-    "line_names": []
+    "line_ids": []
   },
   {
     "id": "pub:unal:83381:analisis-objetivos-formacion",
@@ -396,9 +318,6 @@
     "authors": "José Eduin Culma Caviedes; Jhon Jairo Ramírez-Echeverry; Oscar Germán Duarte Velasco",
     "line_ids": [
       "line:educacion"
-    ],
-    "line_names": [
-      "Educación en ingeniería"
     ]
   },
   {
@@ -415,10 +334,6 @@
     "line_ids": [
       "line:agricultura",
       "line:transporte"
-    ],
-    "line_names": [
-      "Agricultura de precisión",
-      "Sistemas inteligentes de transporte"
     ]
   },
   {
@@ -437,12 +352,6 @@
       "line:educacion",
       "line:lenguajes",
       "line:transporte"
-    ],
-    "line_names": [
-      "Agricultura de precisión",
-      "Educación en ingeniería",
-      "Lenguajes de programación",
-      "Sistemas inteligentes de transporte"
     ]
   },
   {
@@ -460,11 +369,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -482,11 +386,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -503,10 +402,6 @@
     "line_ids": [
       "line:agricultura",
       "line:transporte"
-    ],
-    "line_names": [
-      "Agricultura de precisión",
-      "Sistemas inteligentes de transporte"
     ]
   },
   {
@@ -523,10 +418,6 @@
     "line_ids": [
       "line:agricultura",
       "line:transporte"
-    ],
-    "line_names": [
-      "Agricultura de precisión",
-      "Sistemas inteligentes de transporte"
     ]
   },
   {
@@ -542,9 +433,6 @@
     "authors": "Jhon Jairo Ramírez-Echeverry; Felipe Restrepo-Calle",
     "line_ids": [
       "line:educacion"
-    ],
-    "line_names": [
-      "Educación en ingeniería"
     ]
   },
   {
@@ -562,11 +450,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -586,13 +469,6 @@
       "line:embebidos",
       "line:lenguajes",
       "line:transporte"
-    ],
-    "line_names": [
-      "Agricultura de precisión",
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación",
-      "Sistemas inteligentes de transporte"
     ]
   },
   {
@@ -609,10 +485,6 @@
     "line_ids": [
       "line:agricultura",
       "line:transporte"
-    ],
-    "line_names": [
-      "Agricultura de precisión",
-      "Sistemas inteligentes de transporte"
     ]
   },
   {
@@ -630,11 +502,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -654,13 +521,6 @@
       "line:embebidos",
       "line:lenguajes",
       "line:transporte"
-    ],
-    "line_names": [
-      "Agricultura de precisión",
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación",
-      "Sistemas inteligentes de transporte"
     ]
   },
   {
@@ -678,11 +538,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -699,10 +554,6 @@
     "line_ids": [
       "line:agricultura",
       "line:transporte"
-    ],
-    "line_names": [
-      "Agricultura de precisión",
-      "Sistemas inteligentes de transporte"
     ]
   },
   {
@@ -720,11 +571,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -741,10 +587,6 @@
     "line_ids": [
       "line:agricultura",
       "line:transporte"
-    ],
-    "line_names": [
-      "Agricultura de precisión",
-      "Sistemas inteligentes de transporte"
     ]
   },
   {
@@ -761,10 +603,6 @@
     "line_ids": [
       "line:agricultura",
       "line:transporte"
-    ],
-    "line_names": [
-      "Agricultura de precisión",
-      "Sistemas inteligentes de transporte"
     ]
   },
   {
@@ -782,11 +620,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -804,11 +637,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -825,10 +653,6 @@
     "line_ids": [
       "line:agricultura",
       "line:transporte"
-    ],
-    "line_names": [
-      "Agricultura de precisión",
-      "Sistemas inteligentes de transporte"
     ]
   },
   {
@@ -842,8 +666,7 @@
     "url": "https://doi.org/10.1504/ijitst.2020.107076",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "",
-    "line_ids": [],
-    "line_names": []
+    "line_ids": []
   },
   {
     "id": "pub:gjee:2020:interactive-software-tool-cs1",
@@ -860,11 +683,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -882,11 +700,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -903,10 +716,6 @@
     "line_ids": [
       "line:agricultura",
       "line:transporte"
-    ],
-    "line_names": [
-      "Agricultura de precisión",
-      "Sistemas inteligentes de transporte"
     ]
   },
   {
@@ -920,8 +729,7 @@
     "url": "https://doi.org/10.3389/fpsyg.2019.02843",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "",
-    "line_ids": [],
-    "line_names": []
+    "line_ids": []
   },
   {
     "id": "pub:doi:10.1109/latw.2019.8704578",
@@ -938,11 +746,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -956,8 +759,7 @@
     "url": "https://doi.org/10.1007/s10836-019-05846-4",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "",
-    "line_ids": [],
-    "line_names": []
+    "line_ids": []
   },
   {
     "id": "pub:doi:10.1109/latw.2019.8704586",
@@ -974,11 +776,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -996,11 +793,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1020,13 +812,6 @@
       "line:embebidos",
       "line:lenguajes",
       "line:transporte"
-    ],
-    "line_names": [
-      "Agricultura de precisión",
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación",
-      "Sistemas inteligentes de transporte"
     ]
   },
   {
@@ -1044,11 +829,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1066,11 +846,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1084,8 +859,7 @@
     "url": "https://doi.org/10.14482/inde.36.2.10037",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "",
-    "line_ids": [],
-    "line_names": []
+    "line_ids": []
   },
   {
     "id": "pub:doi:10.1002/cae.22058",
@@ -1102,11 +876,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1124,11 +893,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1145,10 +909,6 @@
     "line_ids": [
       "line:agricultura",
       "line:transporte"
-    ],
-    "line_names": [
-      "Agricultura de precisión",
-      "Sistemas inteligentes de transporte"
     ]
   },
   {
@@ -1166,11 +926,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1188,11 +943,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1201,7 +951,7 @@
     "title": "Social Engineering: Application of Psychology to Information Security",
     "year": "2018",
     "typology": "conference_paper",
-    "typology_label_es": "Artículos en conferencia internacional",
+    "typology_label_es": "Artículos en conferencia",
     "venue_title": "2018 6th International Conference on Future Internet of Things and Cloud Workshops (FiCloudW)",
     "url": "https://doi.org/10.1109/w-ficloud.2018.00023",
     "plas_catalog_source": "site_inventory|manual_ieee_8488183",
@@ -1210,11 +960,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1232,11 +977,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1245,7 +985,7 @@
     "title": "UNCODE: INTERACTIVE SYSTEM FOR LEARNING AND AUTOMATIC EVALUATION OF COMPUTER PROGRAMMING SKILLS",
     "year": "2018",
     "typology": "conference_paper",
-    "typology_label_es": "Artículos en conferencia internacional",
+    "typology_label_es": "Artículos en conferencia",
     "venue_title": "EDULEARN Proceedings",
     "url": "https://doi.org/10.21125/edulearn.2018.1632",
     "plas_catalog_source": "minciencias_gruplac|site_inventory",
@@ -1254,11 +994,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1274,9 +1009,6 @@
     "authors": "Zadkiel Zuluaga Rendón; Javier Alejandro Corredor Aristizábal; Jesús Maria Quintero Quintero; Jhon Jairo Ramírez-Echeverry; Fredy Andrés Olarte Dussán",
     "line_ids": [
       "line:educacion"
-    ],
-    "line_names": [
-      "Educación en ingeniería"
     ]
   },
   {
@@ -1294,11 +1026,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1316,11 +1043,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1338,11 +1060,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1360,11 +1077,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1382,11 +1094,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1404,11 +1111,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1426,11 +1128,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1448,11 +1145,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1470,11 +1162,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1488,8 +1175,7 @@
     "url": "https://doi.org/10.21754/tecnia.v26i1.5",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "",
-    "line_ids": [],
-    "line_names": []
+    "line_ids": []
   },
   {
     "id": "pub:doi:10.1145/2897586.2897611",
@@ -1506,11 +1192,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1528,11 +1209,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1550,11 +1226,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1572,11 +1243,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1594,11 +1260,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1616,11 +1277,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1637,10 +1293,6 @@
     "line_ids": [
       "line:agricultura",
       "line:transporte"
-    ],
-    "line_names": [
-      "Agricultura de precisión",
-      "Sistemas inteligentes de transporte"
     ]
   },
   {
@@ -1658,11 +1310,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1680,11 +1327,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1702,11 +1344,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1724,11 +1361,23 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
+    ]
+  },
+  {
+    "id": "pub:doi:10.1007/s10836-013-5416-6",
+    "doi": "10.1007/s10836-013-5416-6",
+    "title": "Selective SWIFT-R",
+    "year": "2013",
+    "typology": "journal_article",
+    "typology_label_es": "Artículos de revista",
+    "venue_title": "Journal of Electronic Testing",
+    "url": "https://doi.org/10.1007/s10836-013-5416-6",
+    "plas_catalog_source": "personal_pre_plas",
+    "authors": "Felipe Restrepo-Calle; Antonio Martinez-Alvarez; Sergio Cuenca-Asensi; Antonio Jimeno-Morenilla",
+    "line_ids": [
+      "line:educacion",
+      "line:embebidos",
+      "line:lenguajes"
     ]
   },
   {
@@ -1746,11 +1395,23 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
+    ]
+  },
+  {
+    "id": "pub:manual:2012:actas-jcra-xii",
+    "doi": "",
+    "title": "Actas de las XII Jornadas de Computación Reconfigurable y Aplicaciones 2012",
+    "year": "2012",
+    "typology": "book",
+    "typology_label_es": "Libros",
+    "venue_title": "Jornadas de Computación Reconfigurable y Aplicaciones",
+    "url": "",
+    "plas_catalog_source": "personal_pre_plas",
+    "authors": "Sergio Cuenca-Asensi; Antonio Jimeno-Morenilla; A. Martínez-Álvarez; Felipe Restrepo Calle",
+    "line_ids": [
+      "line:educacion",
+      "line:embebidos",
+      "line:lenguajes"
     ]
   },
   {
@@ -1768,11 +1429,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1790,11 +1446,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1812,11 +1463,23 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
+    ]
+  },
+  {
+    "id": "pub:manual:2011:codiseno-hw-sw-radiacion",
+    "doi": "",
+    "title": "Co-diseño de sistemas hardware/software tolerantes a fallos inducidos por radiación",
+    "year": "2011",
+    "typology": "book",
+    "typology_label_es": "Libros",
+    "venue_title": "Universidad de Alicante / RUA",
+    "url": "http://rua.ua.es/dspace/handle/10045/23522",
+    "plas_catalog_source": "personal_pre_plas",
+    "authors": "Felipe Restrepo Calle",
+    "line_ids": [
+      "line:educacion",
+      "line:embebidos",
+      "line:lenguajes"
     ]
   },
   {
@@ -1834,11 +1497,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1856,11 +1514,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1878,11 +1531,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1900,11 +1548,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1922,11 +1565,23 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
+    ]
+  },
+  {
+    "id": "pub:manual:2010:hardening-development-environment",
+    "doi": "",
+    "title": "Hardening Development Environment for Embedded Systems",
+    "year": "2010",
+    "typology": "conference_paper",
+    "typology_label_es": "Artículos en conferencia",
+    "venue_title": "",
+    "url": "http://rua.ua.es/dspace/handle/10045/14177",
+    "plas_catalog_source": "personal_pre_plas",
+    "authors": "Felipe Restrepo Calle; A. Martínez-Álvarez; Sergio Cuenca-Asensi; Francisco Rogelio Palomo; Miguel Aguirre",
+    "line_ids": [
+      "line:educacion",
+      "line:embebidos",
+      "line:lenguajes"
     ]
   },
   {
@@ -1944,11 +1599,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   },
   {
@@ -1966,11 +1616,6 @@
       "line:educacion",
       "line:embebidos",
       "line:lenguajes"
-    ],
-    "line_names": [
-      "Educación en ingeniería",
-      "Sistemas embebidos confiables",
-      "Lenguajes de programación"
     ]
   }
 ]

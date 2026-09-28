@@ -242,14 +242,7 @@
         "context": "Edna Johanna Chaparro Amaya Estudiante Maestría en Ingeniería de Sistemas y Computación Universidad Nacional de Colombia Correo: edchaparroa@unal.edu.co"
       }
     ],
-    "assets": [
-      {
-        "type": "image",
-        "path": "/images/box-arrow-up-right.svg",
-        "alt": "",
-        "decorative": true
-      }
-    ],
+    "assets": [],
     "related": [],
     "content": "# Evaluación del efecto de la gamificación asistida por computador en la motivación de los estudiantes de programación de computadores\n\n![Evaluación del efecto de la gamificación asistida por computador en la motivación de los estudiantes de programación de computadores](/images/PLaS/proyectos/proyecto3.png)\n\n## Descripción\n\nLa enseñanza-aprendizaje de la Programación de Computadores plantea desafíos que invitan a metodologías donde el estudiante participe de forma activa. Las metodologías relacionadas con el juego —incluida la **gamificación** (uso de elementos de juego en contextos no lúdicos)— se estudian por su posible efecto en motivación, participación, rendimiento y compromiso.\n\nEn programación se han integrado entornos gamificados asistidos por computador; los hallazgos cualitativos suelen ser positivos, mientras que varios análisis cuantitativos no encuentran efectos estadísticamente significativos. Hace falta más evidencia empírica.\n\n### Objetivo\n\nEstudiar el efecto de la gamificación asistida por computador en la **motivación por aprender** de estudiantes de Programación de Computadores.\n\n### Método\n\n- Selección de **CodeGym** como ambiente gamificado (revisión de literatura y análisis comparativo)\n- Estudio **cuasi-experimental** con intervención educativa\n- Medición con el cuestionario **MSLQ-Colombia** y encuesta de percepciones\n- **48 estudiantes** en dos grupos de control y uno experimental (muestreo por conveniencia)\n\n### Resultados\n\nEn el grupo experimental aumentaron de forma significativa los niveles asociados a la *valoración de la tarea* (importancia, utilidad, gusto o interés por las temáticas del curso).\n\n### Palabras clave\n\nGamificación · Programación de Computadores · Entornos gamificados · Motivación en el aprendizaje\n\n### Publicación relacionada\n\nK.D. Cuervo-Cely, J.J. Ramírez-Echeverry, F. Restrepo-Calle (2020). *Computer-Assisted Gamification In A Computer Programming Course: An Experience Report*. ICERI 2020, pp. 6006–6015.\n\n### Autoría\n\n**Edna Johanna Chaparro Amaya**  \nEstudiante de Maestría en Ingeniería de Sistemas y Computación  \nUniversidad Nacional de Colombia  \nCorreo: [edchaparroa@unal.edu.co](mailto:edchaparroa@unal.edu.co)\n"
   },
@@ -344,159 +337,6 @@
     "assets": [],
     "related": [],
     "content": "# Diseño y validación de contenido de un instrumento de autoinforme para caracterizar las estrategias de aprendizaje de programación de computadores\n\n![Diseño y validación de contenido de un instrumento de autoinforme para caracterizar las estrategias de aprendizaje de programación de computadores](/images/PLaS/proyectos/proyecto5.jpg)\n\n## Descripción\n\nDiseño y validación de contenido de un instrumento de autoinforme para caracterizar las **estrategias de aprendizaje** en contextos de formación en ingeniería.\n\n### Autoría\n\n**Stephanie Torres Jiménez**  \nEstudiante de Maestría en Ingeniería de Sistemas y Computación  \nUniversidad Nacional de Colombia  \nCorreo: [sttorresji@unal.edu.co](mailto:sttorresji@unal.edu.co)\n"
-  },
-  {
-    "id": "project:escritura",
-    "slug": "escritura",
-    "title_short": "Escritura en ingenieria",
-    "title_full": "La escritura como herramienta de aprendizaje en el aula de ingeniería",
-    "line_id": "line:educacion",
-    "line_name_raw": "Educación en ingeniería",
-    "sort_order": "7",
-    "thesis_like": "yes",
-    "line_name": "Educación en ingeniería",
-    "image_path": "/images/PLaS/proyectos/proyecto6.jpg",
-    "summary": "Resumen: El ejercicio de la escritura en ingeniería reconoce alta importancia al criterio de clasificación relacionado con la meta planteada a la hora de realizar esta actividad, generando dos estilos diferentes, acti…",
-    "sections": [
-      {
-        "heading": "Contenido",
-        "key": "content",
-        "body": "Resumen: El ejercicio de la escritura en ingeniería reconoce alta importancia al criterio de clasificación relacionado con la meta planteada a la hora de realizar esta actividad, generando dos estilos diferentes, actividades de escritura para aprender y actividades de escritura para reportar. El proyecto se desarrolla en el marco de una tesis doctoral que se encuentra en etapa de especificación de aspectos particulares relacionados con la metodología. En un contexto general, se pretende utilizar la escritura para aprender y su apoyo al desarrollo del pensamiento crítico, la reflexión, procesos cognitivos del aprendizaje, etc. La intervención está basada en actividades de escritura incidental en el ámbito del laboratorio en ingeniería, su impacto en el aprendizaje y las estrategias que permitan agrupar estas actividades en un documento formal. Palabras clave: Escritura en ingeniería Escritura para aprender Escritura incidental"
-      },
-      {
-        "heading": "Autoría",
-        "key": "authorship",
-        "body": "Edgar Hernando Criollo Velasquez Estudiante de Doctorado en Ingeniería Eléctrica Universidad Nacional de Colombia Correo: ecriollo@unal.edu.co CvLAC"
-      }
-    ],
-    "links": [
-      {
-        "label": "ecriollo@unal.edu.co",
-        "url": "mailto:ecriollo@unal.edu.co",
-        "kind": "other",
-        "section": "Autoría",
-        "context": "Edgar Hernando Criollo Velasquez Estudiante de Doctorado en Ingeniería Eléctrica Universidad Nacional de Colombia Correo: ecriollo@unal.edu.co CvLAC"
-      },
-      {
-        "label": "CvLAC",
-        "url": "http://scienti.colciencias.gov.co:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000053955",
-        "kind": "external",
-        "section": "Autoría",
-        "context": "Edgar Hernando Criollo Velasquez Estudiante de Doctorado en Ingeniería Eléctrica Universidad Nacional de Colombia Correo: ecriollo@unal.edu.co CvLAC"
-      }
-    ],
-    "assets": [
-      {
-        "type": "image",
-        "path": "/images/PLaS/proyectos/escritura.png",
-        "alt": "",
-        "decorative": false
-      }
-    ],
-    "related": [
-      {
-        "title": "Tesis doctoral. La escritura como herramienta de aprendizaje en el aula de ingeniería.",
-        "type": "Tesis",
-        "year": "",
-        "publication_id": "",
-        "thesis_id": "tesis:inventory/criollo-velazquez-edgar-hernando",
-        "kind": "site_card_to_project"
-      }
-    ],
-    "content": "# La escritura como herramienta de aprendizaje en el aula de ingeniería\n\n![La escritura como herramienta de aprendizaje en el aula de ingeniería](/images/PLaS/proyectos/proyecto6.jpg)\n\n## Descripción\n\nEl ejercicio de la escritura en ingeniería suele clasificarse según la meta de la actividad, con dos estilos principales:\n\n- **Escritura para aprender**\n- **Escritura para reportar**\n\nEl proyecto se desarrolla en el marco de una tesis doctoral (etapa de especificación metodológica). En un sentido general, busca aprovechar la escritura para aprender y su aporte al pensamiento crítico, la reflexión y los procesos cognitivos del aprendizaje.\n\nLa intervención se centra en actividades de **escritura incidental** en el laboratorio de ingeniería, su impacto en el aprendizaje y las estrategias para integrar esas actividades en un documento formal.\n\n### Palabras clave\n\nEscritura en ingeniería · Escritura para aprender · Escritura incidental\n\n### Autoría\n\n**Edgar Hernando Criollo Velasquez**  \nEstudiante de Doctorado en Ingeniería Eléctrica  \nUniversidad Nacional de Colombia  \nCorreo: [ecriollo@unal.edu.co](mailto:ecriollo@unal.edu.co)\n"
-  },
-  {
-    "id": "project:colaboracion",
-    "slug": "colaboracion",
-    "title_short": "Colaboración PlaS y GUIA",
-    "title_full": "Proyectos de intersección entre el grupo PLaS (Programming Languages and Systems) y GUIA (Grupo de Univalle en Inteligencia Artificial)",
-    "line_id": "line:educacion",
-    "line_name_raw": "Educación en ingeniería",
-    "sort_order": "8",
-    "thesis_like": "yes",
-    "line_name": "Educación en ingeniería",
-    "image_path": "/images/PLaS/proyectos/proyecto8.jpg",
-    "summary": "Resumen: Buscando apoyar la educación en ingeniería desde los enfoques a nivel macro-curricular, meso-curricular y micro-curricular, es necesario contar con la implementación de estrategias, modelos y metodologías que…",
-    "sections": [
-      {
-        "heading": "Contenido",
-        "key": "content",
-        "body": "Resumen: Buscando apoyar la educación en ingeniería desde los enfoques a nivel macro-curricular, meso-curricular y micro-curricular, es necesario contar con la implementación de estrategias, modelos y metodologías que permita apoyar y mejorar la adquisición de competencias de aprendizaje y la realimentación de los estudiantes, con el fin de mitigar problemas en el proceso formativo y evaluativo del estudiante. Así, la integración entre el grupo PLaS y GUIA, buscan relacionar al estudiante y profesor mediante estrategias tecnológicas que analicen las interacciones a nivel micro, con el propósito de entender cómo emerge el aprendizaje y cuál es el camino correcto en el aprendizaje de la ingeniería. Proyectos: Modelo de predicción para evaluar indicadores de logros que permitan mejorar el abandono del programador Modelo de Integración para realimentación personalizada en cursos de programación basada en inteligencia artificial Innovación tecnológica para el apoyo de la gestión curricular de la reforma en los programas y cursos de la Facultad de Ingeniería de la Universidad del Valle Modelo basado en aprendizaje colaborativo asistido por computador (cscl) y análiticas (la) para alcanzar competencias en un curso de introducción a la programación Palabras clave: Sociedad 5.0 Aprendizaje colaborativo Aprendizaje personalizado Inteligencia colectiva Programación de computadores Gestión curricular Artículos/conferencias colaborativos: C. G. Hidalgo Suarez, V. A. Bucheli, F. Restrepo-Calle, y F. A. Gonzalez, «A strategy based on technological maps for the identification of the state-of-the-art techniques in software development projects: Virtual judge projects as a case study», en Communications in Computer and Information Science , 2018, vol. 885, pp. 338-354, doi: 10.1007/978-3-319-98998-3_27. C. G. H. Suarez, V. A. B. Guerrero, F. R. Calle, y F. A. G. Osorio, «Estrategia de enseñanza basada en la colaboración y la evaluación automática de código fuente en un curso de programación CS1», Investig. E Innov. En Ing. , vol. 9, n.o 1, Art. n.o 1, 2021, doi: 10.17081/invinno.9.1.4185."
-      },
-      {
-        "heading": "Autoría",
-        "key": "authorship",
-        "body": "Estudiantes de doctorado en ingeniería: Jose M. Llanos Correo: jose.llanos@correounivalle.edu.co Ginna Leytón Correo: ginna.leyton@correounivalle.edu.co Leidy Carvajal O. Correo: leidy.carvajal.o@correounivalle.edu.co Carlos G. Hidalgo S. Correo: carlos.hidalgo@correounivalle.edu.co Profesor univalle (colaborador): Victor A. Bucheli Correo: victor.bucheli@correounivalle.edu.co Google Scholar: Ir al sitio"
-      }
-    ],
-    "links": [
-      {
-        "label": ", 2018, vol. 885, pp. 338-354, doi: 10.1007/978-3-319-98998-3_27.",
-        "url": "https://link.springer.com/chapter/10.1007/978-3-319-98998-3_27",
-        "kind": "doi",
-        "section": "Contenido",
-        "context": "C. G. Hidalgo Suarez, V. A. Bucheli, F. Restrepo-Calle, y F. A. Gonzalez, «A strategy based on technological maps for the identification of the state-of-the-art techniques in software development proj"
-      },
-      {
-        "label": ", vol. 9, n.o 1, Art. n.o 1, 2021, doi: 10.17081/invinno.9.1.4185.",
-        "url": "http://revistas.unisimon.edu.co/index.php/innovacioning/article/view/4185",
-        "kind": "external",
-        "section": "Contenido",
-        "context": "C. G. H. Suarez, V. A. B. Guerrero, F. R. Calle, y F. A. G. Osorio, «Estrategia de enseñanza basada en la colaboración y la evaluación automática de código fuente en un curso de programación CS1», Inv"
-      },
-      {
-        "label": "jose.llanos@correounivalle.edu.co",
-        "url": "mailto:jose.llanos@correounivalle.edu.co",
-        "kind": "other",
-        "section": "Autoría",
-        "context": "Jose M. Llanos Correo: jose.llanos@correounivalle.edu.co"
-      },
-      {
-        "label": "ginna.leyton@correounivalle.edu.co",
-        "url": "mailto:ginna.leyton@correounivalle.edu.co",
-        "kind": "other",
-        "section": "Autoría",
-        "context": "Ginna Leytón Correo: ginna.leyton@correounivalle.edu.co"
-      },
-      {
-        "label": "leidy.carvajal.o@correounivalle.edu.co",
-        "url": "mailto:leidy.carvajal.o@correounivalle.edu.co",
-        "kind": "other",
-        "section": "Autoría",
-        "context": "Leidy Carvajal O. Correo: leidy.carvajal.o@correounivalle.edu.co"
-      },
-      {
-        "label": "carlos.hidalgo@correounivalle.edu.co",
-        "url": "mailto:carlos.hidalgo@correounivalle.edu.co",
-        "kind": "other",
-        "section": "Autoría",
-        "context": "Carlos G. Hidalgo S. Correo: carlos.hidalgo@correounivalle.edu.co"
-      },
-      {
-        "label": "victor.bucheli@correounivalle.edu.co",
-        "url": "mailto:victor.bucheli@correounivalle.edu.co",
-        "kind": "other",
-        "section": "Autoría",
-        "context": "Victor A. Bucheli Correo: victor.bucheli@correounivalle.edu.co Google Scholar: Ir al sitio"
-      },
-      {
-        "label": "Ir al sitio",
-        "url": "https://scholar.google.com/citations?user=hRsekx0AAAAJ&hl=es",
-        "kind": "external",
-        "section": "Autoría",
-        "context": "Victor A. Bucheli Correo: victor.bucheli@correounivalle.edu.co Google Scholar: Ir al sitio"
-      }
-    ],
-    "assets": [
-      {
-        "type": "image",
-        "path": "/images/box-arrow-up-right.svg",
-        "alt": "",
-        "decorative": true
-      }
-    ],
-    "related": [],
-    "content": "# Proyectos de intersección entre el grupo PLaS (Programming Languages and Systems) y GUIA (Grupo de Univalle en Inteligencia Artificial)\n\n![Proyectos de intersección entre el grupo PLaS (Programming Languages and Systems) y GUIA (Grupo de Univalle en Inteligencia Artificial)](/images/PLaS/proyectos/proyecto8.jpg)\n\n## Descripción\n\nPara apoyar la educación en ingeniería en los niveles macro-, meso- y micro-curricular hacen falta estrategias, modelos y metodologías que fortalezcan competencias y realimentación, y que mitiguen problemas formativos y evaluativos.\n\nLa colaboración entre los grupos **PLaS** y **GUIA** busca relacionar estudiante y docente mediante estrategias tecnológicas que analicen interacciones a nivel micro, para comprender cómo emerge el aprendizaje en ingeniería.\n\n### Proyectos asociados\n\n- Modelo de predicción de indicadores de logro para reducir el abandono en programación\n- Modelo de integración para realimentación personalizada en cursos de programación con inteligencia artificial\n- Innovación tecnológica para la gestión curricular de la reforma en la Facultad de Ingeniería (Universidad del Valle)\n- Modelo basado en aprendizaje colaborativo asistido por computador (CSCL) y analíticas (LA) para competencias en un curso introductorio de programación\n\n### Palabras clave\n\nSociedad 5.0 · Aprendizaje colaborativo · Aprendizaje personalizado · Inteligencia colectiva · Programación de computadores · Gestión curricular\n\n### Publicaciones colaborativas\n\n- C. G. Hidalgo Suarez, V. A. Bucheli, F. Restrepo-Calle y F. A. Gonzalez. *A strategy based on technological maps…* Communications in Computer and Information Science, vol. 885, 2018. doi: [10.1007/978-3-319-98998-3_27](https://doi.org/10.1007/978-3-319-98998-3_27)\n- C. G. H. Suarez et al. *Estrategia de enseñanza basada en la colaboración y la evaluación automática…* Investigación e Innovación en Ingeniería, vol. 9, n.º 1, 2021. doi: [10.17081/invinno.9.1.4185](https://doi.org/10.17081/invinno.9.1.4185)\n\n### Autoría\n\n**Estudiantes de doctorado (Universidad del Valle)**\n\n- Jose M. Llanos — [jose.llanos@correounivalle.edu.co](mailto:jose.llanos@correounivalle.edu.co)\n- Ginna Leytón — [ginna.leyton@correounivalle.edu.co](mailto:ginna.leyton@correounivalle.edu.co)\n- Leidy Carvajal O. — [leidy.carvajal.o@correounivalle.edu.co](mailto:leidy.carvajal.o@correounivalle.edu.co)\n- Carlos G. Hidalgo S. — [carlos.hidalgo@correounivalle.edu.co](mailto:carlos.hidalgo@correounivalle.edu.co)\n\n**Profesor colaborador (Univalle)**\n\n- Victor A. Bucheli — [victor.bucheli@correounivalle.edu.co](mailto:victor.bucheli@correounivalle.edu.co)\n"
   },
   {
     "id": "project:aprendizaje",
@@ -627,12 +467,6 @@
     "assets": [
       {
         "type": "image",
-        "path": "/images/box-arrow-up-right.svg",
-        "alt": "",
-        "decorative": true
-      },
-      {
-        "type": "image",
         "path": "/images/PLaS/proyectos/she.png",
         "alt": "",
         "decorative": false
@@ -708,12 +542,6 @@
         "path": "/images/PLaS/proyectos/ftxac.png",
         "alt": "",
         "decorative": false
-      },
-      {
-        "type": "image",
-        "path": "/images/box-arrow-up-right.svg",
-        "alt": "",
-        "decorative": true
       }
     ],
     "related": [],
@@ -758,12 +586,6 @@
         "path": "/images/PLaS/proyectos/proyecto13.png",
         "alt": "",
         "decorative": false
-      },
-      {
-        "type": "image",
-        "path": "/images/box-arrow-up-right.svg",
-        "alt": "",
-        "decorative": true
       }
     ],
     "related": [],
