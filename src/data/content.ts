@@ -234,16 +234,21 @@ export const newsItems = blogItems.slice(0, 3).map((item) => ({
 
 /** @deprecated usar blogItems */
 export const eventItems = blogItems;
+function facultyAnchor(id: string) {
+  return id.replace('docente:', '');
+}
+
 export const facultyItems = facultyJson.map((f) => {
   const isFelipe = f.id === 'docente:ferestrepoca';
   const groupRole = f.group_role || (isFelipe ? 'Líder del grupo' : f.rank || 'Profesor asociado');
   const lineNames = lineNamesFor(f.line_ids);
   return {
     id: f.id,
+    anchor: facultyAnchor(f.id),
     name: f.name_display,
     role: groupRole,
     rank: f.rank,
-    href: withBase('/people'),
+    href: withBase(`/people#${facultyAnchor(f.id)}`),
     image: f.image_path ? withBase(f.image_path) : '',
     meta: lineNames.length ? `Líneas: ${lineNames.join(', ')}` : '',
     email: f.email,
@@ -258,6 +263,7 @@ export const facultyItems = facultyJson.map((f) => {
 
 export const people = facultyItems.map((f) => ({
   id: f.id,
+  anchor: f.anchor,
   name: f.name,
   role: f.role,
   rank: f.rank,
@@ -397,11 +403,12 @@ export const researchLines = linesJson.map((line) => {
     shortTitle: line.short_name,
     summary: line.summary,
     paragraphs: line.description,
-    href: withBase(`/lines#${line.slug}`),
+    href: withBase(`/lines/${line.slug}`),
     slug: line.slug,
     color: line.color,
     image: imagePath ? withBase(imagePath) : '',
     imageCredit: typeof line.image_credit === 'string' ? line.image_credit : '',
+    imageSource: typeof line.image_source === 'string' ? line.image_source : '',
     topics: line.topics ?? [],
     topicGraph: graph
       ? {
@@ -427,6 +434,34 @@ const TYPE_ORDER = [
 /** `plas_catalog_source: "rejected"` oculta la publicación (y el harvest no la re-agrega). */
 const visiblePublications = publicationsJson.filter((p) => p.plas_catalog_source !== 'rejected');
 
+function normName(s: string) {
+  return String(s || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/\p{M}/gu, '')
+    .replace(/[^a-z ]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+const facultyMatchers = facultyJson.map((f) => {
+  const [surname = '', given = ''] = f.name_sort.split(',').map(normName);
+  return { id: f.id, surname: surname.split(' ')[0], given: given.split(' ')[0] };
+});
+
+/** Docentes entre los autores: primer apellido más primer nombre o su inicial en la misma entrada. */
+function facultyIdsInAuthors(authors: string) {
+  const found = new Set<string>();
+  for (const author of String(authors || '').split(/[;|]/)) {
+    const n = ` ${normName(author)} `;
+    for (const f of facultyMatchers) {
+      if (!f.surname || !n.includes(` ${f.surname} `)) continue;
+      if (n.includes(` ${f.given} `) || n.includes(` ${f.given.charAt(0)} `)) found.add(f.id);
+    }
+  }
+  return [...found];
+}
+
 const pubItems = visiblePublications.map((p) => {
   const lineIds = p.line_ids || [];
   const lineNames = lineNamesFor(lineIds);
@@ -448,6 +483,8 @@ const pubItems = visiblePublications.map((p) => {
     degreeLabel: '',
     lineId,
     lineIds,
+    topicIds: p.topic_ids ?? [],
+    facultyIds: facultyIdsInAuthors(p.authors),
     line,
     lineName: lineNames.join(', '),
     lineColor: resolveLineColor(lineId, line),
@@ -480,6 +517,8 @@ const thesisItems = visibleTheses.map((t) => {
     degreeLabel: degree,
     lineId,
     lineIds,
+    topicIds: t.topic_ids ?? [],
+    facultyIds: t.advisor_ids,
     line,
     lineName: lineNames.join(', ') || line,
     lineColor: resolveLineColor(lineId, line),
@@ -500,6 +539,63 @@ export const catalogItems = [...pubItems, ...thesisItems]
       ? { id: 'linea' as const, label: item.line, color: item.lineColor }
       : null,
   }));
+
+/** Trabajos "activos" en la página de línea: año actual y los dos anteriores. */
+const ACTIVE_SINCE = new Date().getFullYear() - 2;
+const facultyById = new Map(facultyItems.map((f) => [f.id, f]));
+
+export const lineDetails = researchLines.map((line) => {
+  const topicById = new Map(line.topics.map((t) => [t.id, t]));
+  const works = catalogItems
+    .filter((w) => w.lineIds.includes(line.id))
+    .map((w) => ({
+      id: w.id,
+      title: w.title,
+      author: w.author,
+      year: w.year,
+      meta: w.meta,
+      outcome: w.outcome,
+      href: w.href,
+      topicIds: w.topicIds.filter((id) => topicById.has(id)),
+      topics: w.topicIds
+        .map((id) => topicById.get(id))
+        .filter((t): t is NonNullable<typeof t> => Boolean(t))
+        .map((t) => ({ slug: t.slug, name: t.name })),
+    }));
+
+  const topics = line.topics.map((t) => {
+    const topicWorks = catalogItems.filter((w) => w.topicIds.includes(t.id));
+    const workCountByFaculty = new Map<string, number>();
+    for (const w of topicWorks) {
+      for (const id of w.facultyIds) workCountByFaculty.set(id, (workCountByFaculty.get(id) ?? 0) + 1);
+    }
+    const people = [...workCountByFaculty.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .map(([id]) => facultyById.get(id))
+      .filter((f): f is NonNullable<typeof f> => Boolean(f))
+      .map((f) => ({ id: f.id, name: f.name, image: f.image, href: f.href }));
+    return {
+      id: t.id,
+      slug: t.slug,
+      name: t.name,
+      description: t.description,
+      total: topicWorks.length,
+      people,
+      activeWorks: works.filter((w) => w.topicIds.includes(t.id) && Number(w.year) >= ACTIVE_SINCE),
+    };
+  });
+
+  const years = [...new Set(works.map((w) => w.year).filter(Boolean))].sort((a, b) =>
+    b.localeCompare(a),
+  );
+  return {
+    ...line,
+    topics,
+    activeSince: ACTIVE_SINCE,
+    workCount: works.length,
+    timeline: years.map((year) => ({ year, works: works.filter((w) => w.year === year) })),
+  };
+});
 
 export const catalogYears = [
   ...new Set(catalogItems.map((i) => i.year).filter(Boolean)),

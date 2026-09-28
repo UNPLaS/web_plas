@@ -22,7 +22,7 @@ import {
     <ul class="faculty-list">
       {
         people.map((person) => (
-          <li>
+          <li id={person.anchor} class="people-anchor">
             <article class="faculty-card faculty-card--stack">
               <div class="faculty-card__media">
                 {person.image ? <img src={person.image} alt="" loading="lazy" /> : null}

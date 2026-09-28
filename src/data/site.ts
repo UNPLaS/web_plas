@@ -16,6 +16,7 @@ export {
   facultyItems,
   featuredProjects,
   group,
+  lineDetails,
   newsItems,
   people,
   projectItems,

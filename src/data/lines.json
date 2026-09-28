@@ -625,10 +625,10 @@
     "description": [
       "Desarrollamos técnicas de sensado, procesamiento de señales e inteligencia artificial para observar, caracterizar e interpretar entornos complejos. Integramos imágenes, sensores IoT, plataformas aéreas y tecnologías de radar para aplicaciones que van desde la agricultura de precisión hasta la detección de objetos enterrados y el desminado humanitario."
     ],
-    "color": "#5ec22e",
-    "image_path": "/images/PLaS/lineas/agricultura.jpg",
-    "image_credit": "Unsplash — Steven Hylands",
-    "image_source": "https://unsplash.com/photos/green-corn-field-1625246333195-78d9c38ad449",
+    "color": "#b14fd8",
+    "image_path": "/images/PLaS/lineas/sensado.jpg",
+    "image_credit": "Unsplash",
+    "image_source": "https://unsplash.com/photos/a-large-satellite-dish-sitting-on-top-of-a-field-zf_p1DWTjGs",
     "keywords": [
       "agricultura",
       "agriculture",

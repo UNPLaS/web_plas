@@ -17,9 +17,11 @@ interface Props {
   description?: string;
   /** Espina diagonal de fondo — solo home por ahora. */
   spine?: boolean;
+  /** Slug de línea: reemplaza la familia mid del sitio por la de esa línea (ver global.css). */
+  lineTheme?: string;
 }
 
-const { title, description = site.tagline, spine = false } = Astro.props;
+const { title, description = site.tagline, spine = false, lineTheme } = Astro.props;
 const isHome = stripBase(Astro.url.pathname) === '/';
 const pageTitle = title.includes('Universidad Nacional')
   ? title
@@ -50,7 +52,7 @@ const unalChromeJs = withBase('/unal/js/unal-chrome.js');
     <link rel="preload" href={sealPreload} as="image" type="image/png" />
     <ClientRouter />
   </head>
-  <body class="unal-shell">
+  <body class="unal-shell" data-line-theme={lineTheme}>
     <UnalHeader />
     <UnalAccessibility />
     <UnalServices />
@@ -84,6 +86,7 @@ const unalChromeJs = withBase('/unal/js/unal-chrome.js');
       import { startNetworkDrift } from '../scripts/network-drift';
       import { syncSpineAndHeroPanel } from '../scripts/spine-sync';
       import { initCatalogFilters } from '../scripts/catalog-filters';
+      import { initTopicAnchors } from '../scripts/topic-anchors';
       import { isActivePath } from '../lib/with-base';
       import { pickHomeQuote } from '../scripts/home-quote';
 
@@ -114,6 +117,7 @@ const unalChromeJs = withBase('/unal/js/unal-chrome.js');
         });
         document.fonts?.ready.then(() => syncSpineAndHeroPanel());
         initCatalogFilters();
+        initTopicAnchors();
 
         const content = document.querySelector<HTMLElement>('[data-plas-content]');
         if (content && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
