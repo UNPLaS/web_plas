@@ -1,17 +1,5 @@
 ---
-interface GraphNode {
-  id: string;
-  label: string;
-  weight: number;
-  x: number;
-  y: number;
-}
-
-interface GraphEdge {
-  source: string;
-  target: string;
-  weight: number;
-}
+import type { GraphEdge, GraphNode } from '../data/content';
 
 interface Props {
   nodes: GraphNode[];

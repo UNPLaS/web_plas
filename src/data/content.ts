@@ -61,12 +61,30 @@ export const eventIdFromParam = blogIdFromParam;
 
 export const group = groupJson;
 
+const numberWords = [
+  'cero', 'un', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho', 'nueve',
+  'diez', 'once', 'doce', 'trece', 'catorce', 'quince', 'dieciséis', 'diecisiete',
+  'dieciocho', 'diecinueve', 'veinte',
+];
+
+/** Años cumplidos a la fecha del build (el sitio es estático). */
+function groupAgeYears(founded: string, now = new Date()): number {
+  const [y, m, d] = founded.split('-').map(Number);
+  let years = now.getUTCFullYear() - y;
+  const beforeAnniversary =
+    now.getUTCMonth() + 1 < m || (now.getUTCMonth() + 1 === m && now.getUTCDate() < d);
+  if (beforeAnniversary) years -= 1;
+  return years;
+}
+
+const groupAge = groupAgeYears(groupJson.founded);
+const groupAgeLabel = `${numberWords[groupAge] ?? groupAge} ${groupAge === 1 ? 'año' : 'años'}`;
+
 export const site = {
   name: groupJson.name,
   nameFull: groupJson.name_full,
-  tagline: 'Investigamos construyendo herramientas, no solo publicando.',
-  subtitle:
-    'Lo que se prueba en el laboratorio se enseña, se evalúa y vuelve a la práctica: las líneas de PLaS se refuerzan entre sí.',
+  tagline: 'Investigamos construyendo, y construimos en equipo.',
+  subtitle: `Llevamos ${groupAgeLabel} creando herramientas que otros pueden usar, y con gusto compartimos el camino con quien quiera sumarse.`,
   logo: withBase('/images/PLaS/Logo_PLaS.png'),
 };
 
@@ -291,8 +309,22 @@ export const historicalStudentSections = (
   ),
 })).filter((sec) => sec.items.length > 0);
 
+export interface GraphNode {
+  id: string;
+  label: string;
+  weight: number;
+  x: number;
+  y: number;
+}
+
+export interface GraphEdge {
+  source: string;
+  target: string;
+  weight: number;
+}
+
 export const researchLines = linesJson.map((line) => {
-  const graph = (lineTopicGraphs as Record<string, { nodes: unknown[]; edges: unknown[] }>)[
+  const graph = (lineTopicGraphs as Record<string, { nodes: GraphNode[]; edges: GraphEdge[] }>)[
     line.id
   ];
   const imagePath = typeof line.image_path === 'string' ? line.image_path : '';

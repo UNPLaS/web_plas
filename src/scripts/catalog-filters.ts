@@ -122,7 +122,7 @@ export function initCatalogFilters() {
     return `<li><article class="works-card works-card--thumb">${body}</article></li>`;
   }
 
-  function render() {
+  const render = () => {
     const list = filtered();
 
     meta.textContent =
@@ -133,7 +133,7 @@ export function initCatalogFilters() {
     results.innerHTML = list.length
       ? list.map(renderItem).join('')
       : `<li class="catalog-empty">Prueba otra búsqueda o limpia los filtros.</li>`;
-  }
+  };
 
   qInput?.addEventListener('input', () => {
     window.clearTimeout(debounceTimer);

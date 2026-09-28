@@ -12,6 +12,7 @@
     "build:pages": "PLAS_SITE=https://unplas.github.io PLAS_BASE=/web_plas astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "check": "astro check",
     "test": "node --test --experimental-strip-types src/scripts/*.test.ts scripts/harvest.test.mjs",
     "harvest:publications": "node scripts/harvest-publications.mjs",
     "harvest:theses": "node scripts/harvest-theses.mjs",
@@ -26,5 +27,10 @@
   },
   "allowScripts": {
     "esbuild": true
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@types/node": "^22.20.4",
+    "typescript": "^5.9.3"
   }
 }
