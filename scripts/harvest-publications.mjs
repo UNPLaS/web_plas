@@ -37,6 +37,7 @@ async function main() {
     .map((f) => ({ ...f, orcid: orcidFromFaculty(f) }));
   const students = await readJson(path.join(SITE_DATA_DIR, "students.json"), []);
   const pubs = await readJson(PUBLICATIONS);
+  const lines = await readJson(path.join(SITE_DATA_DIR, "lines.json"));
 
   let targets = faculty.filter((d) => d.orcid);
   if (opts.only) {
@@ -66,7 +67,7 @@ async function main() {
         msg = await fetchCrossrefWork(work.doi);
         await sleepMs(150);
       }
-      const result = evaluateOrcidWork({ work, msg, doc, faculty, studentMatchers, known });
+      const result = evaluateOrcidWork({ work, msg, doc, faculty, studentMatchers, known, lines });
       stats[result.status]++;
       if (result.status === "quarantined") {
         console.log(`  QUARANTINE  ${work.doi || work.putCode}  ${(work.title || "").slice(0, 60)}`);

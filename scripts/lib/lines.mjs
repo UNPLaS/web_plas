@@ -3,7 +3,7 @@ import { normText } from "./normalize.mjs";
 const FABIO = "docente:fagonzalezo";
 
 /** Score keyword hits for a line against haystack text */
-function keywordScore(haystack, keywords) {
+export function keywordScore(haystack, keywords) {
   let score = 0;
   const h = normText(haystack);
   for (const kw of keywords) {
@@ -70,7 +70,7 @@ export function assignLine({
   // candidate lines = union of advisor official lines
   let candidates = [...new Set(perDir.flat())];
   if (!candidates.length) {
-    candidates = ["line:lenguajes", "line:educacion", "line:transporte", "line:agricultura", "line:embebidos"];
+    candidates = ["line:lenguajes", "line:educacion", "line:transporte", "line:sensado", "line:embebidos"];
   }
 
   const hay = [title, abstractEs, abstractEn, researchArea].filter(Boolean).join("\n");
@@ -80,7 +80,7 @@ export function assignLine({
   const areaMap = [
     [/educacion|aprendizaje|learning/, "line:educacion"],
     [/transporte|traffic|trafico|vehicular|its/, "line:transporte"],
-    [/agricultur|cultivo|maleza|precision/, "line:agricultura"],
+    [/agricultur|cultivo|maleza|precision|radar|sensado|remote sensing|espectral|spectral/, "line:sensado"],
     [/embebido|embedded|soft\s*error|fault/, "line:embebidos"],
     [/lenguaje|programming|compil|codigo|source code/, "line:lenguajes"],
   ];
@@ -118,7 +118,7 @@ export function assignLine({
   const t = normText(title);
   const titleRules = [
     [/transmilenio|trafico|vehicul|accidente|brt|torniquete/, "line:transporte"],
-    [/cultivo|maleza|agricultur|palma|pecuaria|papa/, "line:agricultura"],
+    [/cultivo|maleza|agricultur|palma|pecuaria|papa|radar|gpr|hiperespectral|multiespectral|hyperspectral|multispectral/, "line:sensado"],
     [/estudiante|aprendizaje|gamific|programacion de computador|cs1|educativ/, "line:educacion"],
     [/embebido|embedded|soft error|fault tolerant|risc-v/, "line:embebidos"],
     [/compil|lenguaje|codigo fuente|source code|nlp|llm|software/, "line:lenguajes"],

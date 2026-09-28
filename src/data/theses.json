@@ -7,6 +7,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/89947",
     "authors": "Hernández Ortiz, Juan Camilo",
+    "topic_ids": [
+      "topic:transporte-masivo"
+    ],
     "line_ids": [
       "line:transporte"
     ],
@@ -26,6 +29,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/90123",
     "authors": "Molina Borray, Laura Camila",
+    "topic_ids": [
+      "topic:transporte-masivo"
+    ],
     "line_ids": [
       "line:transporte"
     ],
@@ -45,6 +51,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/89978",
     "authors": "Olaya Castro, Hendrik Eugenio",
+    "topic_ids": [
+      "topic:agentes-conversacionales"
+    ],
     "line_ids": [
       "line:educacion"
     ],
@@ -64,8 +73,11 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/89979",
     "authors": "Cruz Chú, Mariana Beatriz",
+    "topic_ids": [
+      "topic:agricultura-precision"
+    ],
     "line_ids": [
-      "line:agricultura"
+      "line:sensado"
     ],
     "advisor_ids": [
       "docente:ferestrepoca"
@@ -83,6 +95,9 @@
     "degree": "doctorado",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/90619",
     "authors": "Vergara Vargas, Jeisson Andrés",
+    "topic_ids": [
+      "topic:ciclo-vida-software"
+    ],
     "line_ids": [
       "line:lenguajes"
     ],
@@ -102,6 +117,7 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/89150",
     "authors": "Correa Lombana, Juan Manuel",
+    "topic_ids": [],
     "line_ids": [
       "line:lenguajes"
     ],
@@ -121,8 +137,12 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/89550",
     "authors": "Gómez Rivera, Andrés Felipe",
+    "topic_ids": [
+      "topic:imagenes-espectrales",
+      "topic:agricultura-precision"
+    ],
     "line_ids": [
-      "line:agricultura"
+      "line:sensado"
     ],
     "advisor_ids": [
       "docente:capedrazab"
@@ -140,6 +160,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/89352",
     "authors": "Casas López, Laura Yulieth",
+    "topic_ids": [
+      "topic:competencias-transversales"
+    ],
     "line_ids": [
       "line:educacion"
     ],
@@ -159,6 +182,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/88357",
     "authors": "Rivera Cárdenas, David Leonardo",
+    "topic_ids": [
+      "topic:evaluacion-automatica"
+    ],
     "line_ids": [
       "line:educacion"
     ],
@@ -179,6 +205,7 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/88492",
     "authors": "Rodriguez Barreto, Julian Mauricio",
+    "topic_ids": [],
     "line_ids": [
       "line:lenguajes"
     ],
@@ -198,6 +225,7 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/89211",
     "authors": "Baquero Pico, Cristian Adolfo",
+    "topic_ids": [],
     "line_ids": [
       "line:educacion"
     ],
@@ -217,6 +245,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/89227",
     "authors": "Pabón Correa, David Alejandro",
+    "topic_ids": [
+      "topic:agentes-conversacionales"
+    ],
     "line_ids": [
       "line:educacion"
     ],
@@ -236,6 +267,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/87944",
     "authors": "Rodríguez Peraza, César Ivan",
+    "topic_ids": [
+      "topic:transporte-masivo"
+    ],
     "line_ids": [
       "line:transporte"
     ],
@@ -255,6 +289,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/86045",
     "authors": "Preciado Rojas, María Camila",
+    "topic_ids": [
+      "topic:monitoreo-trafico"
+    ],
     "line_ids": [
       "line:transporte"
     ],
@@ -274,6 +311,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/86898",
     "authors": "Peña Vargas, Manuel Alejandro",
+    "topic_ids": [
+      "topic:autorregulacion"
+    ],
     "line_ids": [
       "line:educacion"
     ],
@@ -294,6 +334,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/86557",
     "authors": "Rodriguez Pinto, Father Alexander",
+    "topic_ids": [
+      "topic:autorregulacion"
+    ],
     "line_ids": [
       "line:educacion"
     ],
@@ -314,6 +357,7 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/86734",
     "authors": "Mongua López, Luis Alejandro",
+    "topic_ids": [],
     "line_ids": [
       "line:transporte"
     ],
@@ -333,6 +377,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/84828",
     "authors": "Ramírez Espejo, Roger Steven",
+    "topic_ids": [
+      "topic:analisis-codigo"
+    ],
     "line_ids": [
       "line:lenguajes"
     ],
@@ -352,6 +399,9 @@
     "degree": "doctorado",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/85008",
     "authors": "Aponte Moreno, John Alexander",
+    "topic_ids": [
+      "topic:computacion-aproximada"
+    ],
     "line_ids": [
       "line:embebidos"
     ],
@@ -372,6 +422,7 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/85634",
     "authors": "Cañas Palomino, Luis Alfonso",
+    "topic_ids": [],
     "line_ids": [
       "line:lenguajes"
     ],
@@ -391,8 +442,11 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/84111",
     "authors": "Ruiz Algarra, Eder Fabian",
+    "topic_ids": [
+      "topic:radar-sensado"
+    ],
     "line_ids": [
-      "line:transporte"
+      "line:sensado"
     ],
     "advisor_ids": [
       "docente:capedrazab"
@@ -410,6 +464,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/83931",
     "authors": "Corso Pinzón, Andrés Francisco José",
+    "topic_ids": [
+      "topic:evaluacion-automatica"
+    ],
     "line_ids": [
       "line:educacion"
     ],
@@ -430,6 +487,9 @@
     "degree": "doctorado",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/84616",
     "authors": "Gutierrez Osorio, Camilo Albeiro",
+    "topic_ids": [
+      "topic:accidentalidad-vial"
+    ],
     "line_ids": [
       "line:transporte"
     ],
@@ -450,6 +510,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/83049",
     "authors": "Chaparro Amaya, Edna Johanna",
+    "topic_ids": [
+      "topic:analitica-aprendizaje"
+    ],
     "line_ids": [
       "line:educacion"
     ],
@@ -469,6 +532,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/81571",
     "authors": "Vargas Montero, Fernando",
+    "topic_ids": [
+      "topic:accidentalidad-vial"
+    ],
     "line_ids": [
       "line:transporte"
     ],
@@ -488,8 +554,11 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/81981",
     "authors": "Chaparro Arce, Daniel Felipe",
+    "topic_ids": [
+      "topic:radar-sensado"
+    ],
     "line_ids": [
-      "line:transporte"
+      "line:sensado"
     ],
     "advisor_ids": [
       "docente:capedrazab"
@@ -507,6 +576,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/82923",
     "authors": "Lozano Rojas, Hernan Dario",
+    "topic_ids": [
+      "topic:autorregulacion"
+    ],
     "line_ids": [
       "line:educacion"
     ],
@@ -527,6 +599,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/81535",
     "authors": "Alcaraz Rojas, Carolina",
+    "topic_ids": [
+      "topic:iot-rfid-vehicular"
+    ],
     "line_ids": [
       "line:transporte"
     ],
@@ -546,6 +621,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/79877",
     "authors": "Torres Jiménez, Stephanie",
+    "topic_ids": [
+      "topic:autorregulacion"
+    ],
     "line_ids": [
       "line:educacion"
     ],
@@ -566,6 +644,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/79756",
     "authors": "Cuervo Cely, Karen Daniela",
+    "topic_ids": [
+      "topic:autorregulacion"
+    ],
     "line_ids": [
       "line:educacion"
     ],
@@ -586,6 +667,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/80927",
     "authors": "Suat Rojas, Nestor Eduardo",
+    "topic_ids": [
+      "topic:accidentalidad-vial"
+    ],
     "line_ids": [
       "line:transporte"
     ],
@@ -605,8 +689,12 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/80482",
     "authors": "Osorio Delgado, Anderson Kavir",
+    "topic_ids": [
+      "topic:imagenes-espectrales",
+      "topic:agricultura-precision"
+    ],
     "line_ids": [
-      "line:agricultura"
+      "line:sensado"
     ],
     "advisor_ids": [
       "docente:capedrazab"
@@ -624,6 +712,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/80862",
     "authors": "Mendez Lara, Jhon Alexis",
+    "topic_ids": [
+      "topic:autorregulacion"
+    ],
     "line_ids": [
       "line:educacion"
     ],
@@ -644,6 +735,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/77510",
     "authors": "Navarro Ávila, Juan Sebastián",
+    "topic_ids": [
+      "topic:monitoreo-trafico"
+    ],
     "line_ids": [
       "line:transporte"
     ],
@@ -663,6 +757,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/77441",
     "authors": "Echavarría Flórez, Ingrid Sofía",
+    "topic_ids": [
+      "topic:analisis-codigo"
+    ],
     "line_ids": [
       "line:lenguajes"
     ],
@@ -682,6 +779,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/77501",
     "authors": "Rojas Real, Yefersson Adrian",
+    "topic_ids": [
+      "topic:accidentalidad-vial"
+    ],
     "line_ids": [
       "line:transporte"
     ],
@@ -701,6 +801,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/76556",
     "authors": "Baquero Vargas, Juan Felipe",
+    "topic_ids": [
+      "topic:analitica-software"
+    ],
     "line_ids": [
       "line:lenguajes"
     ],
@@ -721,6 +824,7 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/76364",
     "authors": "Culma Caviedes, Jose Eduin",
+    "topic_ids": [],
     "line_ids": [
       "line:educacion"
     ],
@@ -740,6 +844,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/76549",
     "authors": "Rosales Castro, Lina Fernanda",
+    "topic_ids": [
+      "topic:evaluacion-automatica"
+    ],
     "line_ids": [
       "line:educacion"
     ],
@@ -759,6 +866,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/76553",
     "authors": "Garavito Mendez, Oscar Javier",
+    "topic_ids": [
+      "topic:analitica-software"
+    ],
     "line_ids": [
       "line:lenguajes"
     ],
@@ -778,6 +888,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/76092",
     "authors": "Morales Aguilar, Santiago",
+    "topic_ids": [
+      "topic:monitoreo-trafico"
+    ],
     "line_ids": [
       "line:transporte"
     ],
@@ -797,8 +910,11 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/78469",
     "authors": "Quintero Albornoz, Juan Sebastián",
+    "topic_ids": [
+      "topic:agricultura-precision"
+    ],
     "line_ids": [
-      "line:agricultura"
+      "line:sensado"
     ],
     "advisor_ids": [
       "docente:capedrazab"
@@ -816,6 +932,10 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/76352",
     "authors": "Silva Parra, Daniel Arturo",
+    "topic_ids": [
+      "topic:monitoreo-trafico",
+      "topic:iot-rfid-vehicular"
+    ],
     "line_ids": [
       "line:transporte"
     ],
@@ -835,6 +955,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/76335",
     "authors": "Cruz Camacho, Elkin Alejandro",
+    "topic_ids": [
+      "topic:analisis-codigo"
+    ],
     "line_ids": [
       "line:lenguajes"
     ],
@@ -855,8 +978,12 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/62958",
     "authors": "Puerto Lara, Andrés Esteban",
+    "topic_ids": [
+      "topic:imagenes-espectrales",
+      "topic:agricultura-precision"
+    ],
     "line_ids": [
-      "line:agricultura"
+      "line:sensado"
     ],
     "advisor_ids": [
       "docente:capedrazab"
@@ -874,6 +1001,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/64515",
     "authors": "Urbano Vallejo, Oscar Andrés",
+    "topic_ids": [
+      "topic:iot-rfid-vehicular"
+    ],
     "line_ids": [
       "line:transporte"
     ],
@@ -893,6 +1023,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/62959",
     "authors": "Camacho Poveda, Edgar Camilo",
+    "topic_ids": [
+      "topic:monitoreo-trafico"
+    ],
     "line_ids": [
       "line:transporte"
     ],
@@ -912,6 +1045,7 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/64771",
     "authors": "Del Pozo Falconí, Iván Mauricio",
+    "topic_ids": [],
     "line_ids": [
       "line:lenguajes"
     ],
@@ -931,6 +1065,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/60127",
     "authors": "Alfonso Hoyos, Jean Pierre",
+    "topic_ids": [
+      "topic:ciclo-vida-software"
+    ],
     "line_ids": [
       "line:lenguajes"
     ],
@@ -950,6 +1087,9 @@
     "degree": "maestria",
     "item_url": "https://repositorio.unal.edu.co/handle/unal/60068",
     "authors": "Castellanos Morales, Hugo Armando",
+    "topic_ids": [
+      "topic:evaluacion-automatica"
+    ],
     "line_ids": [
       "line:educacion"
     ],

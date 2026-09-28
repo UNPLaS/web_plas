@@ -9,6 +9,7 @@ import {
   normText,
 } from "./normalize.mjs";
 import { assignLine, FABIO } from "./lines.mjs";
+import { classifyTopics } from "./topics.mjs";
 
 export { FABIO, classifyDegree, isEngineeringProgram, splitAuthors, normText };
 
@@ -83,7 +84,12 @@ export function buildDocenteLineasMap(faculty) {
 
 /** line id → keywords, from src/data/lines.json. */
 export function buildKeywordsMap(lines) {
-  return Object.fromEntries(lines.map((l) => [l.id, [...(l.keywords || [])]]));
+  return Object.fromEntries(
+    lines.map((l) => [
+      l.id,
+      [...new Set([...(l.keywords || []), ...(l.topics || []).flatMap((t) => t.keywords || [])])],
+    ]),
+  );
 }
 
 /** "Apellido, Nombre" (RI form) → "Nombre Apellido". */
@@ -127,6 +133,7 @@ export function registerThesis(data, sum, {
   matchAliases,
   docenteLineas,
   keywordsByLine,
+  lines = [],
   forceDirectors = null,
 }) {
   if (data.theses.some((t) => t.handle === sum.handle)) {
@@ -169,6 +176,11 @@ export function registerThesis(data, sum, {
     degree,
     item_url: sum.itemUrl || "",
     authors: sum.authors || authorNames.join(" | "),
+    topic_ids: classifyTopics(
+      [sum.title, sum.abstractEs, sum.abstractEn].filter(Boolean).join("\n"),
+      lines,
+      [line.lineId],
+    ),
     line_ids: [line.lineId],
     advisor_ids: plasDirectors.map((d) => d.docente_id),
     student_ids: studentIds,

@@ -68,9 +68,7 @@
     "name_sort": "Gómez Rivera, Andrés Felipe",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:agricultura"
-    ],
+    "line_ids": [],
     "image_path": ""
   },
   {
@@ -133,9 +131,7 @@
     "name_sort": "Rodríguez Peraza, César Ivan",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:transporte"
-    ],
+    "line_ids": [],
     "image_path": ""
   },
   {
@@ -144,9 +140,7 @@
     "name_sort": "Rodriguez Pinto, Father Alexander",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:educacion"
-    ],
+    "line_ids": [],
     "image_path": ""
   },
   {
@@ -155,9 +149,7 @@
     "name_sort": "Aponte Moreno, John Alexander",
     "role_group": "estudiante_doctorado",
     "status": "Activo",
-    "line_ids": [
-      "line:embebidos"
-    ],
+    "line_ids": [],
     "image_path": ""
   },
   {
@@ -175,9 +167,7 @@
     "name_sort": "Corso Pinzón, Andrés Francisco José",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:educacion"
-    ],
+    "line_ids": [],
     "image_path": ""
   },
   {
@@ -186,9 +176,7 @@
     "name_sort": "Gutierrez Osorio, Camilo Albeiro",
     "role_group": "estudiante_doctorado",
     "status": "Activo",
-    "line_ids": [
-      "line:transporte"
-    ],
+    "line_ids": [],
     "image_path": ""
   },
   {
@@ -215,9 +203,7 @@
     "name_sort": "Chaparro Amaya, Edna Johanna",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:educacion"
-    ],
+    "line_ids": [],
     "image_path": "/images/PLaS/estudiantes/new/edna_chaparro.jpg"
   },
   {
@@ -235,9 +221,7 @@
     "name_sort": "Lozano Rojas, Hernan Dario",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:educacion"
-    ],
+    "line_ids": [],
     "image_path": "/images/PLaS/estudiantes/new/hernan_lozano.jpg"
   },
   {
@@ -264,9 +248,7 @@
     "name_sort": "Cuervo Cely, Karen Daniela",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:educacion"
-    ],
+    "line_ids": [],
     "image_path": "/images/PLaS/estudiantes/new/karen_cuervo.jpg"
   },
   {
@@ -275,9 +257,7 @@
     "name_sort": "Mendez Lara, Jhon Alexis",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:educacion"
-    ],
+    "line_ids": [],
     "image_path": "/images/PLaS/estudiantes/new/jhon_mendez.jpg"
   },
   {
@@ -286,9 +266,7 @@
     "name_sort": "Osorio Delgado, Anderson Kavir",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:transporte"
-    ],
+    "line_ids": [],
     "image_path": ""
   },
   {
@@ -297,9 +275,7 @@
     "name_sort": "Suat Rojas, Nestor Eduardo",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:transporte"
-    ],
+    "line_ids": [],
     "image_path": ""
   },
   {
@@ -308,9 +284,7 @@
     "name_sort": "Torres Jiménez, Stephanie",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:educacion"
-    ],
+    "line_ids": [],
     "image_path": ""
   },
   {
@@ -319,9 +293,7 @@
     "name_sort": "Echavarría Flórez, Ingrid Sofía",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:lenguajes"
-    ],
+    "line_ids": [],
     "image_path": ""
   },
   {
@@ -330,9 +302,7 @@
     "name_sort": "Navarro Ávila, Juan Sebastián",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:transporte"
-    ],
+    "line_ids": [],
     "image_path": ""
   },
   {
@@ -341,9 +311,7 @@
     "name_sort": "Rojas Real, Yefersson Adrian",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:transporte"
-    ],
+    "line_ids": [],
     "image_path": ""
   },
   {
@@ -352,9 +320,7 @@
     "name_sort": "Baquero Vargas, Juan Felipe",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:lenguajes"
-    ],
+    "line_ids": [],
     "image_path": ""
   },
   {
@@ -363,9 +329,7 @@
     "name_sort": "Cruz Camacho, Elkin Alejandro",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:lenguajes"
-    ],
+    "line_ids": [],
     "image_path": ""
   },
   {
@@ -383,9 +347,7 @@
     "name_sort": "Garavito Mendez, Oscar Javier",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:lenguajes"
-    ],
+    "line_ids": [],
     "image_path": ""
   },
   {
@@ -394,9 +356,7 @@
     "name_sort": "Morales Aguilar, Santiago",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:transporte"
-    ],
+    "line_ids": [],
     "image_path": ""
   },
   {
@@ -414,9 +374,7 @@
     "name_sort": "Rosales Castro, Lina Fernanda",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:educacion"
-    ],
+    "line_ids": [],
     "image_path": ""
   },
   {
@@ -425,9 +383,7 @@
     "name_sort": "Silva Parra, Daniel Arturo",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:transporte"
-    ],
+    "line_ids": [],
     "image_path": ""
   },
   {
@@ -436,9 +392,7 @@
     "name_sort": "Camacho Poveda, Edgar Camilo",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:transporte"
-    ],
+    "line_ids": [],
     "image_path": ""
   },
   {
@@ -447,9 +401,7 @@
     "name_sort": "Del Pozo Falconí, Iván Mauricio",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:lenguajes"
-    ],
+    "line_ids": [],
     "image_path": ""
   },
   {
@@ -458,9 +410,7 @@
     "name_sort": "Puerto Lara, Andrés Esteban",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:agricultura"
-    ],
+    "line_ids": [],
     "image_path": ""
   },
   {
@@ -469,9 +419,7 @@
     "name_sort": "Urbano Vallejo, Oscar Andrés",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:transporte"
-    ],
+    "line_ids": [],
     "image_path": ""
   },
   {
@@ -480,9 +428,7 @@
     "name_sort": "Alfonso Hoyos, Jean Pierre",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:lenguajes"
-    ],
+    "line_ids": [],
     "image_path": ""
   },
   {
@@ -491,9 +437,7 @@
     "name_sort": "Castellanos Morales, Hugo Armando",
     "role_group": "estudiante_maestria",
     "status": "Activo",
-    "line_ids": [
-      "line:educacion"
-    ],
+    "line_ids": [],
     "image_path": ""
   },
   {
@@ -502,9 +446,7 @@
     "name_sort": "Vergara Vargas, Jeisson Andrés",
     "role_group": "estudiante_doctorado",
     "status": "Activo",
-    "line_ids": [
-      "line:lenguajes"
-    ],
+    "line_ids": [],
     "image_path": ""
   }
 ]

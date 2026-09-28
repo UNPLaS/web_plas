@@ -171,6 +171,7 @@ Agrega tesis y estudiantes nuevos a src/data/. --test-holdout nunca escribe.
       matchAliases,
       docenteLineas,
       keywordsByLine,
+      lines,
       forceDirectors,
     });
 

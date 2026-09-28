@@ -22,7 +22,7 @@ export const aboutPurpose = {
   title: 'Cómo entendemos el trabajo',
   paragraphs: [
     'Contribuimos a que los sistemas computacionales —y quienes los diseñan, los programan y los enseñan— ganen en comprensión, en formación con evidencia y en confianza: entender con más claridad lo que se construye; investigar con rigor cómo se aprende a construirlo; y sostener lo construido cuando el entorno exige fiabilidad o decisiones a tiempo.',
-    'Ese propósito se recorre por las líneas del grupo —lenguajes, educación en ingeniería, embebidos confiables, transporte inteligente y agricultura de precisión—, como caminos distintos hacia la misma pregunta. Formamos investigadores e investigadoras y preferimos dejar métodos y herramientas que otros puedan usar, evaluar y mejorar fuera del paper.',
+    'Ese propósito se recorre por las líneas del grupo —lenguajes, educación en ingeniería, embebidos confiables, transporte inteligente y sensado del entorno—, como caminos distintos hacia la misma pregunta. Formamos investigadores e investigadoras y preferimos dejar métodos y herramientas que otros puedan usar, evaluar y mejorar fuera del paper.',
     'Investigar aquí es un oficio: preguntas precisas, evidencia revisable y acompañamiento en posgrado. El rigor se pone a prueba cuando el aula, el dispositivo y el entorno se hablan; el avance se nota en lo publicado, lo reutilizable y la comunidad que sostiene ese modo de trabajar.',
   ],
 };

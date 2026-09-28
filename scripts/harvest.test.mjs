@@ -32,9 +32,32 @@ import {
   REJECTED,
 } from "./lib/publications-core.mjs";
 import { summarizeItem } from "./lib/ri.mjs";
+import { classifyTopics, linesForTopics } from "./lib/topics.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE_DATA = path.join(ROOT, "src", "data");
+
+const TEST_LINES = [
+  { id: "line:embebidos", topics: [{ id: "topic:tolerancia-fallos", keywords: ["soft error", "fault tolerant"] }] },
+  { id: "line:educacion", topics: [{ id: "topic:evaluacion-automatica", keywords: ["grading", "automatic assessment"] }] },
+  { id: "line:lenguajes", topics: [{ id: "topic:analisis-codigo", keywords: ["static analysis"] }] },
+  { id: "line:transporte", topics: [{ id: "topic:accidentalidad-vial", keywords: ["traffic accidents", "crash"] }] },
+];
+
+describe("topics", () => {
+  it("classifies by keywords, optionally restricted to candidate lines", () => {
+    assert.deepEqual(classifyTopics("Automatic grading of notebooks", TEST_LINES), ["topic:evaluacion-automatica"]);
+    assert.deepEqual(classifyTopics("Static analysis of Python", TEST_LINES, ["line:embebidos"]), []);
+    assert.deepEqual(classifyTopics("Nothing relevant", TEST_LINES), []);
+  });
+
+  it("maps topics back to their lines", () => {
+    assert.deepEqual(
+      linesForTopics(["topic:accidentalidad-vial", "topic:tolerancia-fallos"], TEST_LINES),
+      ["line:embebidos", "line:transporte"],
+    );
+  });
+});
 
 describe("typology + identity", () => {
   it("maps crossref journal-article", () => {
@@ -112,6 +135,7 @@ describe("publications harvest", () => {
       faculty,
       studentMatchers: buildStudentMatchers(students),
       known: buildKnownIndex(pubs),
+      lines: TEST_LINES,
     });
   }
 
@@ -146,8 +170,35 @@ describe("publications harvest", () => {
       url: "https://doi.org/10.1234/test.pub",
       plas_catalog_source: "orcid_harvest",
       authors: "Felipe Restrepo; Jane Doe",
+      topic_ids: [],
       line_ids: ["line:embebidos"],
     });
+  });
+
+  it("derives lines from topics within the coauthors' lines", () => {
+    const crash = evaluate({
+      work: work("10.5/crash"),
+      msg: {
+        title: ["Deep learning for traffic accidents"],
+        type: "journal-article",
+        author: [fabioAuthor, { family: "Pedraza Bonilla", given: "César" }],
+      },
+      doc: fabio,
+    });
+    assert.deepEqual(crash.pub.topic_ids, ["topic:accidentalidad-vial"]);
+    assert.deepEqual(crash.pub.line_ids, ["line:transporte"]);
+
+    const outside = evaluate({
+      work: work("10.5/static"),
+      msg: {
+        title: ["Static analysis of embedded firmware"],
+        type: "journal-article",
+        author: [{ family: "Restrepo Calle", given: "Felipe", ORCID: `https://orcid.org/${felipe.orcid}` }],
+      },
+      doc: felipe,
+    });
+    assert.deepEqual(outside.pub.topic_ids, []);
+    assert.deepEqual(outside.pub.line_ids, ["line:embebidos"]);
   });
 
   it("quarantines identity E", () => {
@@ -210,7 +261,7 @@ describe("publications harvest", () => {
       doc: fabio,
     });
     assert.equal(result.status, "added");
-    assert.deepEqual(result.pub.line_ids, ["line:educacion", "line:lenguajes", "line:transporte"]);
+    assert.deepEqual(result.pub.line_ids, ["line:educacion"]);
   });
 
   it("keeps Fabio works with a PLaS student coauthor", () => {
@@ -354,10 +405,16 @@ describe("theses gates + register", () => {
 
   it("line maps come from faculty and lines, keeping primary line first", () => {
     const docenteLineas = buildDocenteLineasMap([
-      { id: "docente:capedrazab", line_ids: ["line:transporte", "line:agricultura"] },
+      { id: "docente:capedrazab", line_ids: ["line:transporte", "line:sensado"] },
     ]);
-    const keywordsByLine = buildKeywordsMap([{ id: "line:transporte", keywords: ["movilidad"] }]);
-    assert.deepEqual(keywordsByLine, { "line:transporte": ["movilidad"] });
+    const keywordsByLine = buildKeywordsMap([
+      {
+        id: "line:transporte",
+        keywords: ["movilidad"],
+        topics: [{ keywords: ["rfid", "movilidad"] }],
+      },
+    ]);
+    assert.deepEqual(keywordsByLine, { "line:transporte": ["movilidad", "rfid"] });
     const line = assignLine({
       directorIds: ["docente:capedrazab"],
       docenteLineas,
@@ -403,6 +460,7 @@ describe("theses gates + register", () => {
     matchAliases: buildAliasIndex(aliases).matchAliases,
     docenteLineas: { "docente:ferestrepoca": ["line:embebidos", "line:educacion"] },
     keywordsByLine: { "line:embebidos": ["embebido", "fault", "soft error"] },
+    lines: TEST_LINES,
   });
 
   it("registerThesis appends thesis and new student in site format", () => {
@@ -417,6 +475,7 @@ describe("theses gates + register", () => {
       degree: "maestria",
       item_url: "https://repositorio.unal.edu.co/handle/unal/99999",
       authors: "Lovelace, Ada",
+      topic_ids: ["topic:tolerancia-fallos"],
       line_ids: ["line:embebidos"],
       advisor_ids: ["docente:ferestrepoca"],
       student_ids: ["estudiante:lovelace-ada"],
@@ -512,6 +571,23 @@ describe("harvest data present", () => {
     assert.ok(lines.every((l) => l.keywords?.length));
   });
 
+  it("lines have slug, short name, paragraphs and unique topics", async () => {
+    const lines = await readSite("lines.json");
+    const topicIds = new Set();
+    for (const l of lines) {
+      assert.equal(l.slug, l.id.replace("line:", ""), l.id);
+      assert.ok(l.name && l.short_name && l.summary, l.id);
+      assert.ok(Array.isArray(l.description) && l.description.length, l.id);
+      assert.ok(l.topics.length, l.id);
+      for (const t of l.topics) {
+        assert.equal(t.id, `topic:${t.slug}`, t.id);
+        assert.ok(t.name && t.description && t.keywords?.length, t.id);
+        assert.ok(!topicIds.has(t.id), `tema repetido ${t.id}`);
+        topicIds.add(t.id);
+      }
+    }
+  });
+
   it("publications reference known lines and have unique ids", async () => {
     const pubs = await readSite("publications.json");
     const lineIds = new Set((await readSite("lines.json")).map((l) => l.id));
@@ -539,6 +615,19 @@ describe("harvest data present", () => {
     }
     for (const s of students) {
       for (const id of s.line_ids) assert.ok(lineIds.has(id), `${s.id} → ${id}`);
+    }
+  });
+
+  it("works with topics carry exactly the lines of those topics", async () => {
+    const lines = await readSite("lines.json");
+    const topicIds = new Set(lines.flatMap((l) => l.topics.map((t) => t.id)));
+    const works = [...(await readSite("publications.json")), ...(await readSite("theses.json"))];
+    for (const w of works) {
+      assert.ok(Array.isArray(w.topic_ids), `${w.id} sin topic_ids`);
+      for (const id of w.topic_ids) assert.ok(topicIds.has(id), `${w.id} → ${id}`);
+      if (w.topic_ids.length) {
+        assert.deepEqual([...w.line_ids].sort(), linesForTopics(w.topic_ids, lines), w.id);
+      }
     }
   });
 });

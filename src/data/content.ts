@@ -90,9 +90,15 @@ export const site = {
 
 /** Color de chip por id o nombre de línea (desde lines.json). */
 const lineColorById = Object.fromEntries(linesJson.map((l) => [l.id, l.color]));
-const lineColorByName = Object.fromEntries(linesJson.map((l) => [l.name, l.color]));
+const lineColorByName = Object.fromEntries(
+  linesJson.flatMap((l) => [
+    [l.name, l.color],
+    [l.short_name, l.color],
+  ]),
+);
+/** Nombre corto (chips, filtros, metadatos); el nombre completo va en /lines. */
 const lineNameById: Record<string, string> = Object.fromEntries(
-  linesJson.map((l) => [l.id, l.name]),
+  linesJson.map((l) => [l.id, l.short_name]),
 );
 
 function lineNamesFor(ids: string[] = []) {
@@ -141,15 +147,17 @@ function resolveNivelColor(opts: {
 
 export const projectItems = [...projectsJson]
   .sort((a, b) => Number(a.sort_order) - Number(b.sort_order))
-  .map((p) => ({
+  .map((p) => {
+    const lineName = lineNameById[p.line_id] ?? '';
+    return {
     id: p.slug,
     rawId: p.id,
     title: p.title_short || p.title_full,
     titleFull: p.title_full,
-    meta: `Proyecto · ${p.line_name}`,
+    meta: `Proyecto · ${lineName}`,
     summary: p.summary,
     content: typeof p.content === 'string' ? p.content : '',
-    outcome: p.line_name,
+    outcome: lineName,
     href: withBase(`/projects/${p.slug}`),
     image: p.image_path ? withBase(p.image_path) : '',
     sections: p.sections ?? [],
@@ -159,12 +167,13 @@ export const projectItems = [...projectsJson]
       path: a.path ? withBase(a.path) : a.path,
     })),
     lineId: p.line_id || '',
-    lineName: p.line_name,
-    lineColor: resolveLineColor(p.line_id, p.line_name),
-    lineChip: p.line_name
-      ? { id: 'linea' as const, label: p.line_name, color: resolveLineColor(p.line_id, p.line_name) }
+    lineName,
+    lineColor: resolveLineColor(p.line_id, lineName),
+    lineChip: lineName
+      ? { id: 'linea' as const, label: lineName, color: resolveLineColor(p.line_id, lineName) }
       : null,
-  }));
+    };
+  });
 
 export const featuredProjects = projectItems.slice(0, 6).map((p) => ({
   id: p.id,
@@ -291,6 +300,8 @@ const resolvedStudents = studentsJson.map((s) => {
   const roleDegree = DEGREE_BY_ROLE_GROUP[s.role_group] ?? '';
   return {
     ...s,
+    line_ids: thesis ? thesis.line_ids : s.line_ids,
+    topic_ids: thesis ? thesis.topic_ids : [],
     status,
     active: !thesis && status === 'Activo',
     exit_year: thesis?.year ?? '',
@@ -383,8 +394,9 @@ export const researchLines = linesJson.map((line) => {
   return {
     id: line.id,
     title: line.name,
+    shortTitle: line.short_name,
     summary: line.summary,
-    text: line.description,
+    paragraphs: line.description,
     href: withBase(`/lines#${line.slug}`),
     slug: line.slug,
     color: line.color,

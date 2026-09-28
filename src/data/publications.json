@@ -10,10 +10,11 @@
     "url": "https://doi.org/10.3390/electronics15030543",
     "plas_catalog_source": "manual_confirmed",
     "authors": "Felipe Restrepo Calle; Enrique Abma Romero; Sergio Cuenca-Asensi",
+    "topic_ids": [
+      "topic:evaluacion-confiabilidad"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -27,10 +28,9 @@
     "url": "https://doi.org/10.21125/inted.2026.2311",
     "plas_catalog_source": "manual_confirmed",
     "authors": "Kauan Henrick Silva; Felipe Restrepo Calle; Igor Roberto Michalski de Souza; Silvana Morita Melo; Jorge Marques Prates",
+    "topic_ids": [],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:educacion"
     ]
   },
   {
@@ -44,9 +44,10 @@
     "url": "https://doi.org/10.2139/ssrn.6381013",
     "plas_catalog_source": "manual_confirmed",
     "authors": "Jeisson Vergara-Vargas; Chouki Tibermacine; Felipe Restrepo Calle; Salah Sadou",
+    "topic_ids": [
+      "topic:ciclo-vida-software"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
       "line:lenguajes"
     ]
   },
@@ -61,10 +62,11 @@
     "url": "https://doi.org/10.21125/inted.2026.1015",
     "plas_catalog_source": "manual_confirmed",
     "authors": "David Pabon; Felipe Restrepo Calle",
+    "topic_ids": [
+      "topic:agentes-conversacionales"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:educacion"
     ]
   },
   {
@@ -78,10 +80,11 @@
     "url": "https://doi.org/10.24310/ijtei.112.2025.21281",
     "plas_catalog_source": "coauthor_plas",
     "authors": "Manuel Alejandro Peña Vargas; Luis Alejandro Mongua López; Jhon Jairo Ramírez-Echeverry; Felipe Restrepo Calle; Jairo Hernán Aponte Melo",
+    "topic_ids": [
+      "topic:autorregulacion"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:educacion"
     ]
   },
   {
@@ -95,9 +98,11 @@
     "url": "https://doi.org/10.3390/bdcc9080200",
     "plas_catalog_source": "manual_confirmed",
     "authors": "Cesar Pachon; Cesar Pedraza; Dora Ballesteros",
+    "topic_ids": [
+      "topic:radar-sensado"
+    ],
     "line_ids": [
-      "line:agricultura",
-      "line:transporte"
+      "line:sensado"
     ]
   },
   {
@@ -111,10 +116,11 @@
     "url": "https://doi.org/10.1111/ejed.70052",
     "plas_catalog_source": "coauthor_plas",
     "authors": "Jhon Jairo Ramírez-Echeverry; Felipe Restrepo Calle; Stephanie Torres Jiménez",
+    "topic_ids": [
+      "topic:autorregulacion"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:educacion"
     ]
   },
   {
@@ -128,8 +134,10 @@
     "url": "https://doi.org/10.3390/modelling6030071",
     "plas_catalog_source": "manual_confirmed",
     "authors": "Alejandro Sandoval-Pineda; Cesar Pedraza",
+    "topic_ids": [
+      "topic:accidentalidad-vial"
+    ],
     "line_ids": [
-      "line:agricultura",
       "line:transporte"
     ]
   },
@@ -144,10 +152,11 @@
     "url": "https://doi.org/10.1109/tns.2024.3404055",
     "plas_catalog_source": "manual_confirmed",
     "authors": "A. Martínez-Álvarez; D. González-Montesoro; A. Serrano-Cases; A. Aponte-Moreno; Felipe Restrepo Calle; Y. Morilla; P. Martín-Holgado; Sergio Cuenca-Asensi",
+    "topic_ids": [
+      "topic:computacion-aproximada"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -161,9 +170,10 @@
     "url": "https://doi.org/10.1007/978-3-031-66326-0_7",
     "plas_catalog_source": "manual_confirmed",
     "authors": "Jeisson Vergara-Vargas; Felipe Restrepo Calle; Salah Sadou; Chouki Tibermacine",
+    "topic_ids": [
+      "topic:ciclo-vida-software"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
       "line:lenguajes"
     ]
   },
@@ -178,7 +188,12 @@
     "url": "https://doi.org/10.58459/rptel.2024.19015",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "",
-    "line_ids": []
+    "topic_ids": [
+      "topic:evaluacion-automatica"
+    ],
+    "line_ids": [
+      "line:educacion"
+    ]
   },
   {
     "id": "pub:doi:10.15446/ing.investig.100218",
@@ -191,6 +206,7 @@
     "url": "https://doi.org/10.15446/ing.investig.100218",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Luis E. Gallego; Diego A. Tibaduiza; Jhon Jairo Ramírez-Echeverry; Hernando Díaz-Morales",
+    "topic_ids": [],
     "line_ids": [
       "line:educacion"
     ]
@@ -206,10 +222,11 @@
     "url": "https://doi.org/10.28945/5182",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Edna Johanna Chaparro Amaya; Felipe Restrepo Calle; Jhon J Ramírez-Echeverry",
+    "topic_ids": [
+      "topic:analitica-aprendizaje"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:educacion"
     ]
   },
   {
@@ -223,7 +240,12 @@
     "url": "https://doi.org/10.7717/peerj-cs.1655",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "",
-    "line_ids": []
+    "topic_ids": [
+      "topic:analitica-aprendizaje"
+    ],
+    "line_ids": [
+      "line:educacion"
+    ]
   },
   {
     "id": "pub:doi:10.1016/j.micpro.2022.104723",
@@ -236,10 +258,11 @@
     "url": "https://doi.org/10.1016/j.micpro.2022.104723",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "A. Aponte-Moreno; José Isaza-González; A. Serrano-Cases; A. Martínez-Álvarez; Sergio Cuenca-Asensi; Felipe Restrepo Calle",
+    "topic_ids": [
+      "topic:evaluacion-confiabilidad"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -253,9 +276,11 @@
     "url": "https://doi.org/10.1007/978-3-031-46739-4_8",
     "plas_catalog_source": "manual_confirmed",
     "authors": "Cesar Pachon; Cesar Pedraza; Dora Ballesteros",
+    "topic_ids": [
+      "topic:radar-sensado"
+    ],
     "line_ids": [
-      "line:agricultura",
-      "line:transporte"
+      "line:sensado"
     ]
   },
   {
@@ -269,10 +294,11 @@
     "url": "https://doi.org/10.1177/07356331231183450",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Stephanie Torres Jiménez; Jhon Jairo Ramírez-Echeverry; Felipe Restrepo Calle",
+    "topic_ids": [
+      "topic:autorregulacion"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:educacion"
     ]
   },
   {
@@ -286,10 +312,11 @@
     "url": "https://www.wiete.com.au/journals/GJEE/Publish/vol24no1/10-Restrepo-Calle-F.pdf",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Jhon Jairo Ramírez-Echeverry; Felipe Restrepo Calle; Fabio A. González",
+    "topic_ids": [
+      "topic:autorregulacion"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:educacion"
     ]
   },
   {
@@ -303,7 +330,12 @@
     "url": "https://doi.org/10.29292/jics.v16i3.539",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "",
-    "line_ids": []
+    "topic_ids": [
+      "topic:computacion-aproximada"
+    ],
+    "line_ids": [
+      "line:embebidos"
+    ]
   },
   {
     "id": "pub:unal:83381:analisis-objetivos-formacion",
@@ -316,6 +348,7 @@
     "url": "https://repositorio.unal.edu.co/items/78e00ab8-9443-47dd-9118-ad0ee8a2fe67",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "José Eduin Culma Caviedes; Jhon Jairo Ramírez-Echeverry; Oscar Germán Duarte Velasco",
+    "topic_ids": [],
     "line_ids": [
       "line:educacion"
     ]
@@ -331,9 +364,11 @@
     "url": "https://doi.org/10.3390/s22041418",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Diego F. Godoy-Rojas; Jersson X. Leon‐Medina; Bernardo Rueda; Whilmar Vargas; Juan Romero; Cesar Pedraza; Francesc Pozo; Diego A. Tibaduiza",
+    "topic_ids": [
+      "topic:radar-sensado"
+    ],
     "line_ids": [
-      "line:agricultura",
-      "line:transporte"
+      "line:sensado"
     ]
   },
   {
@@ -347,10 +382,10 @@
     "url": "https://doi.org/10.3390/computers11090126",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Camilo Gutierrez-Osorio; Fabio A. González; Cesar Pedraza",
+    "topic_ids": [
+      "topic:accidentalidad-vial"
+    ],
     "line_ids": [
-      "line:agricultura",
-      "line:educacion",
-      "line:lenguajes",
       "line:transporte"
     ]
   },
@@ -365,10 +400,11 @@
     "url": "https://doi.org/10.28945/4917",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Karen D Cuervo-Cely; Felipe Restrepo Calle; Jhon J Ramírez-Echeverry",
+    "topic_ids": [
+      "topic:autorregulacion"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:educacion"
     ]
   },
   {
@@ -382,10 +418,12 @@
     "url": "https://doi.org/10.21125/iceri.2022.2083",
     "plas_catalog_source": "coauthor_plas",
     "authors": "Hernán Darío Lozano Rojas; Felipe Restrepo Calle; Jhon Jairo Ramírez-Echeverry",
+    "topic_ids": [
+      "topic:evaluacion-automatica",
+      "topic:autorregulacion"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:educacion"
     ]
   },
   {
@@ -399,8 +437,10 @@
     "url": "https://doi.org/10.3390/info13010026",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Nestor Suat-Rojas; Camilo Gutierrez-Osorio; Cesar Pedraza",
+    "topic_ids": [
+      "topic:accidentalidad-vial"
+    ],
     "line_ids": [
-      "line:agricultura",
       "line:transporte"
     ]
   },
@@ -415,8 +455,10 @@
     "url": "https://doi.org/10.3390/computers11120180",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Alejandro Sandoval-Pineda; Cesar Pedraza; Aquiles E. Darghan",
+    "topic_ids": [
+      "topic:accidentalidad-vial"
+    ],
     "line_ids": [
-      "line:agricultura",
       "line:transporte"
     ]
   },
@@ -431,6 +473,7 @@
     "url": "https://doi.org/10.26507/paper.2212",
     "plas_catalog_source": "manual_confirmed",
     "authors": "Jhon Jairo Ramírez-Echeverry; Felipe Restrepo-Calle",
+    "topic_ids": [],
     "line_ids": [
       "line:educacion"
     ]
@@ -446,10 +489,11 @@
     "url": "https://doi.org/10.3390/su132112050",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Cristian D. González-Carrillo; Felipe Restrepo Calle; Jhon Jairo Ramírez-Echeverry; Fabio A. González",
+    "topic_ids": [
+      "topic:evaluacion-automatica"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:educacion"
     ]
   },
   {
@@ -463,12 +507,11 @@
     "url": "https://doi.org/10.1109/tetc.2020.2986235",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "A. Aponte-Moreno; Felipe Restrepo Calle; Cesar Pedraza",
+    "topic_ids": [
+      "topic:computacion-aproximada"
+    ],
     "line_ids": [
-      "line:agricultura",
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes",
-      "line:transporte"
+      "line:embebidos"
     ]
   },
   {
@@ -482,9 +525,11 @@
     "url": "https://doi.org/10.3390/s21155065",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Daniel Chaparro-Arce; Sergio Gutierrez; Andres Gallego; Cesar Pedraza; Felix Vega; Carlos Gutierrez",
+    "topic_ids": [
+      "topic:radar-sensado"
+    ],
     "line_ids": [
-      "line:agricultura",
-      "line:transporte"
+      "line:sensado"
     ]
   },
   {
@@ -498,10 +543,11 @@
     "url": "https://doi.org/10.1002/stc.2885",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Jersson X. Leon‐Medina; Jaiber Camacho‐Olarte; Bernardo Rueda; Wilmar Vargas; Luis Bonilla; Janneth Ruiz; Jorge Sofrony; John A. Guerra‐Gomez; Felipe Restrepo Calle; Diego A. Tibaduiza",
+    "topic_ids": [
+      "topic:radar-sensado"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:sensado"
     ]
   },
   {
@@ -515,12 +561,11 @@
     "url": "https://doi.org/10.3390/s21206894",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Jersson X. Leon‐Medina; Jaiber Camacho‐Olarte; Camilo Gutierrez-Osorio; Julián Esteban Salomón; Bernardo Rueda; Whilmar Vargas; Jorge Sofrony; Felipe Restrepo Calle; Cesar Pedraza; Diego A. Tibaduiza",
+    "topic_ids": [
+      "topic:radar-sensado"
+    ],
     "line_ids": [
-      "line:agricultura",
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes",
-      "line:transporte"
+      "line:sensado"
     ]
   },
   {
@@ -534,10 +579,11 @@
     "url": "https://doi.org/10.21125/edulearn.2021.1925",
     "plas_catalog_source": "site_inventory",
     "authors": "Jhon Mendez-Lara; Jhon Jairo Ramírez-Echeverry; Felipe Restrepo Calle",
+    "topic_ids": [
+      "topic:autorregulacion"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:educacion"
     ]
   },
   {
@@ -551,9 +597,12 @@
     "url": "https://doi.org/10.3390/agriengineering2030032",
     "plas_catalog_source": "manual_confirmed",
     "authors": "Kavir Osorio; Andrés Puerto; Cesar Pedraza; David Jamaica; Leonardo Rodríguez",
+    "topic_ids": [
+      "topic:imagenes-espectrales",
+      "topic:agricultura-precision"
+    ],
     "line_ids": [
-      "line:agricultura",
-      "line:transporte"
+      "line:sensado"
     ]
   },
   {
@@ -567,10 +616,11 @@
     "url": "https://doi.org/10.21125/iceri.2020.1291",
     "plas_catalog_source": "site_inventory",
     "authors": "Karen D. Cuervo-Cely; Jhon Jairo Ramírez-Echeverry; Felipe Restrepo Calle",
+    "topic_ids": [
+      "topic:autorregulacion"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:educacion"
     ]
   },
   {
@@ -584,9 +634,9 @@
     "url": "https://doi.org/10.3390/s20041163",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Oscar Urbano; Angel Perles; Cesar Pedraza; Susana Rubio-Arraez; María Luisa Castelló; María Dolores Ortola; Ricardo Mercado",
+    "topic_ids": [],
     "line_ids": [
-      "line:agricultura",
-      "line:transporte"
+      "line:sensado"
     ]
   },
   {
@@ -600,9 +650,11 @@
     "url": "https://doi.org/10.3390/s20030733",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Diego A. Tibaduiza; Ricardo C. Gomez Vargas; Cesar Pedraza; David Agis; Francesc Pozo",
+    "topic_ids": [
+      "topic:radar-sensado"
+    ],
     "line_ids": [
-      "line:agricultura",
-      "line:transporte"
+      "line:sensado"
     ]
   },
   {
@@ -616,10 +668,12 @@
     "url": "https://doi.org/10.17081/invinno.9.1.4185",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Carlos Giovanny Hidalgo Suarez; Víctor Andrés Bucheli Guerrero; Felipe Restrepo Calle; Fabio A. González",
+    "topic_ids": [
+      "topic:evaluacion-automatica",
+      "topic:autorregulacion"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:educacion"
     ]
   },
   {
@@ -633,9 +687,10 @@
     "url": "https://doi.org/10.19053/01211129.v29.n54.2020.11756",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Ingrid Sofía Echavarría-Flórez; Felipe Restrepo Calle",
+    "topic_ids": [
+      "topic:analisis-codigo"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
       "line:lenguajes"
     ]
   },
@@ -650,8 +705,10 @@
     "url": "https://doi.org/10.1016/j.jtte.2020.05.002",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Camilo Gutierrez-Osorio; Cesar Pedraza",
+    "topic_ids": [
+      "topic:accidentalidad-vial"
+    ],
     "line_ids": [
-      "line:agricultura",
       "line:transporte"
     ]
   },
@@ -666,7 +723,10 @@
     "url": "https://doi.org/10.1504/ijitst.2020.107076",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "",
-    "line_ids": []
+    "topic_ids": [],
+    "line_ids": [
+      "line:lenguajes"
+    ]
   },
   {
     "id": "pub:gjee:2020:interactive-software-tool-cs1",
@@ -679,10 +739,11 @@
     "url": "http://www.wiete.com.au/journals/GJEE/Publish/vol22no3/06-Echeverry-J.pdf",
     "plas_catalog_source": "minciencias_gruplac|site_inventory",
     "authors": "Felipe Restrepo Calle; Jhon Jairo Ramírez-Echeverry; Fabio A. González",
+    "topic_ids": [
+      "topic:evaluacion-automatica"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:educacion"
     ]
   },
   {
@@ -696,10 +757,12 @@
     "url": "https://doi.org/10.1109/itslatam.2019.8721339",
     "plas_catalog_source": "site_inventory",
     "authors": "Felipe Restrepo-Calle; Cesar Pedraza; Felix Vega",
+    "topic_ids": [
+      "topic:iot-rfid-vehicular",
+      "topic:transporte-masivo"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:transporte"
     ]
   },
   {
@@ -713,8 +776,12 @@
     "url": "https://doi.org/10.1007/978-3-030-31321-0_34",
     "plas_catalog_source": "manual_confirmed",
     "authors": "Camilo Camacho; Cesar Pedraza; Carolina Higuera",
+    "topic_ids": [
+      "topic:monitoreo-trafico",
+      "topic:imagenes-espectrales"
+    ],
     "line_ids": [
-      "line:agricultura",
+      "line:sensado",
       "line:transporte"
     ]
   },
@@ -729,7 +796,12 @@
     "url": "https://doi.org/10.3389/fpsyg.2019.02843",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "",
-    "line_ids": []
+    "topic_ids": [
+      "topic:autorregulacion"
+    ],
+    "line_ids": [
+      "line:educacion"
+    ]
   },
   {
     "id": "pub:doi:10.1109/latw.2019.8704578",
@@ -742,10 +814,11 @@
     "url": "https://doi.org/10.1109/latw.2019.8704578",
     "plas_catalog_source": "site_inventory",
     "authors": "Alexander Aponte-Moreno; Felipe Restrepo-Calle; Cesar Pedraza",
+    "topic_ids": [
+      "topic:evaluacion-confiabilidad"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -759,7 +832,12 @@
     "url": "https://doi.org/10.1007/s10836-019-05846-4",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "",
-    "line_ids": []
+    "topic_ids": [
+      "topic:tolerancia-fallos"
+    ],
+    "line_ids": [
+      "line:embebidos"
+    ]
   },
   {
     "id": "pub:doi:10.1109/latw.2019.8704586",
@@ -772,10 +850,11 @@
     "url": "https://doi.org/10.1109/latw.2019.8704586",
     "plas_catalog_source": "manual_confirmed",
     "authors": "Alexander Aponte-Moreno; Cesar Pedraza; Felipe Restrepo-Calle",
+    "topic_ids": [
+      "topic:computacion-aproximada"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -789,10 +868,11 @@
     "url": "https://doi.org/10.1109/latw.2019.8704614",
     "plas_catalog_source": "site_inventory",
     "authors": "Alejandro Serrano-Cases; Felipe Restrepo-Calle; Sergio Cuenca-Asensi; Antonio Martinez-Alvarez",
+    "topic_ids": [
+      "topic:tolerancia-fallos"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -806,12 +886,11 @@
     "url": "https://doi.org/10.3390/electronics8121539",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "A. Aponte-Moreno; Felipe Restrepo Calle; Cesar Pedraza",
+    "topic_ids": [
+      "topic:computacion-aproximada"
+    ],
     "line_ids": [
-      "line:agricultura",
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes",
-      "line:transporte"
+      "line:embebidos"
     ]
   },
   {
@@ -825,10 +904,11 @@
     "url": "https://doi.org/10.1109/latw.2018.8347241",
     "plas_catalog_source": "site_inventory",
     "authors": "Alexander Aponte-Moreno; Alejandro Moncada; Felipe Restrepo-Calle; Cesar Pedraza",
+    "topic_ids": [
+      "topic:computacion-aproximada"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -842,9 +922,10 @@
     "url": "https://doi.org/10.1007/978-3-319-98998-3_27",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Carlos Giovanny Hidalgo Suarez; Víctor Andrés Bucheli Guerrero; Felipe Restrepo Calle; Fabio A. González",
+    "topic_ids": [
+      "topic:analitica-software"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
       "line:lenguajes"
     ]
   },
@@ -859,7 +940,13 @@
     "url": "https://doi.org/10.14482/inde.36.2.10037",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "",
-    "line_ids": []
+    "topic_ids": [
+      "topic:iot-rfid-vehicular",
+      "topic:transporte-masivo"
+    ],
+    "line_ids": [
+      "line:transporte"
+    ]
   },
   {
     "id": "pub:doi:10.1002/cae.22058",
@@ -872,10 +959,11 @@
     "url": "https://doi.org/10.1002/cae.22058",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Felipe Restrepo Calle; Jhon J. Ramírez Echeverry; Fabio A. González",
+    "topic_ids": [
+      "topic:evaluacion-automatica"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:educacion"
     ]
   },
   {
@@ -889,9 +977,10 @@
     "url": "https://doi.org/10.1007/978-3-319-94135-6_9",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Jean Pierre Alfonso Hoyos; Felipe Restrepo-Calle",
+    "topic_ids": [
+      "topic:ciclo-vida-software"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
       "line:lenguajes"
     ]
   },
@@ -906,8 +995,11 @@
     "url": "https://doi.org/10.1109/mits.2018.2806641",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Cesar Pedraza; Felix Vega; Gabriel Manana",
+    "topic_ids": [
+      "topic:monitoreo-trafico",
+      "topic:iot-rfid-vehicular"
+    ],
     "line_ids": [
-      "line:agricultura",
       "line:transporte"
     ]
   },
@@ -922,10 +1014,11 @@
     "url": "https://doi.org/10.1109/rita.2018.2831758",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Jhon Jairo Ramírez-Echeverry; Lina F. Rosales-Castro; Felipe Restrepo Calle; Fabio A. González",
+    "topic_ids": [
+      "topic:autorregulacion"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:educacion"
     ]
   },
   {
@@ -939,10 +1032,11 @@
     "url": "https://doi.org/10.1016/j.microrel.2018.07.008",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "J. Isaza-González; Felipe Restrepo-Calle; A. Martínez-Álvarez; S. Cuenca-Asensi",
+    "topic_ids": [
+      "topic:tolerancia-fallos"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -956,9 +1050,8 @@
     "url": "https://doi.org/10.1109/w-ficloud.2018.00023",
     "plas_catalog_source": "site_inventory|manual_ieee_8488183",
     "authors": "Ivan Del Pozo; Mauricio Iturralde; Felipe Restrepo Calle",
+    "topic_ids": [],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
       "line:lenguajes"
     ]
   },
@@ -973,9 +1066,10 @@
     "url": "",
     "plas_catalog_source": "site_inventory",
     "authors": "Felipe Restrepo Calle",
+    "topic_ids": [
+      "topic:analitica-software"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
       "line:lenguajes"
     ]
   },
@@ -990,10 +1084,11 @@
     "url": "https://doi.org/10.21125/edulearn.2018.1632",
     "plas_catalog_source": "minciencias_gruplac|site_inventory",
     "authors": "Felipe Restrepo Calle; Jhon Jairo Ramírez-Echeverry; Fabio A. González",
+    "topic_ids": [
+      "topic:evaluacion-automatica"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:educacion"
     ]
   },
   {
@@ -1007,6 +1102,7 @@
     "url": "https://doi.org/10.26507/rei.v12n23.740",
     "plas_catalog_source": "manual_confirmed",
     "authors": "Zadkiel Zuluaga Rendón; Javier Alejandro Corredor Aristizábal; Jesús Maria Quintero Quintero; Jhon Jairo Ramírez-Echeverry; Fredy Andrés Olarte Dussán",
+    "topic_ids": [],
     "line_ids": [
       "line:educacion"
     ]
@@ -1022,10 +1118,11 @@
     "url": "https://doi.org/10.1109/latw.2017.7906744",
     "plas_catalog_source": "site_inventory",
     "authors": "Felipe Restrepo-Calle; Sergio Cuenca-Asensi; Antonio Martinez-Alvarez",
+    "topic_ids": [
+      "topic:tolerancia-fallos"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1039,9 +1136,10 @@
     "url": "https://doi.org/10.5220/0006333901030113",
     "plas_catalog_source": "site_inventory",
     "authors": "Jean Pierre Alfonso Hoyos; Felipe Restrepo-Calle",
+    "topic_ids": [
+      "topic:ciclo-vida-software"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
       "line:lenguajes"
     ]
   },
@@ -1056,9 +1154,10 @@
     "url": "",
     "plas_catalog_source": "manual_confirmed",
     "authors": "Felipe Restrepo Calle",
+    "topic_ids": [
+      "topic:ciclo-vida-software"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
       "line:lenguajes"
     ]
   },
@@ -1073,10 +1172,11 @@
     "url": "https://revistas.utp.ac.pa/index.php/id-tecnologico/article/view/1432",
     "plas_catalog_source": "minciencias_gruplac|site_inventory",
     "authors": "José Isaza-González; Alejandro Serrano-Cases; Felipe Restrepo Calle; Sergio Cuenca-Asensi; A. Martínez-Álvarez",
+    "topic_ids": [
+      "topic:evaluacion-confiabilidad"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1090,9 +1190,10 @@
     "url": "https://doi.org/10.1007/978-3-319-66562-7_15",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Juan F. Baquero; Jorge E. Camargo; Felipe Restrepo-Calle; Jairo H. Aponte; Fabio A. González",
+    "topic_ids": [
+      "topic:analitica-software"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
       "line:lenguajes"
     ]
   },
@@ -1107,10 +1208,12 @@
     "url": "https://doi.org/10.1109/fie.2017.8190467",
     "plas_catalog_source": "site_inventory",
     "authors": "Hugo Castellanos; Felipe Restrepo-Calle; Fabio A. González; Jhon Jairo Ramirez Echeverry",
+    "topic_ids": [
+      "topic:autorregulacion",
+      "topic:analitica-aprendizaje"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:educacion"
     ]
   },
   {
@@ -1124,10 +1227,11 @@
     "url": "https://doi.org/10.1109/tdsc.2014.2382593",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "A. Martínez-Álvarez; Felipe Restrepo-Calle; Sergio Cuenca-Asensi; Leonardo M. Reyneri; Almudena Lindoso; Luis Entrena",
+    "topic_ids": [
+      "topic:tolerancia-fallos"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1141,10 +1245,11 @@
     "url": "https://doi.org/10.1007/978-3-319-47955-2_33",
     "plas_catalog_source": "site_inventory",
     "authors": "Lina F. Rosales-Castro; Laura A. Chaparro-Gutiérrez; Andrés F. Cruz-Salinas; Felipe Restrepo-Calle; Jorge Camargo; Fabio A. González",
+    "topic_ids": [
+      "topic:evaluacion-automatica"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:educacion"
     ]
   },
   {
@@ -1158,10 +1263,11 @@
     "url": "https://doi.org/10.1109/latw.2016.7483335",
     "plas_catalog_source": "site_inventory",
     "authors": "Jose Isaza-Gonzalez; Alejandro Serrano-Cases; Felipe Restrepo-Calle; Sergio Cuenca-Asensi; Antonio Martinez-Alvarez",
+    "topic_ids": [
+      "topic:evaluacion-confiabilidad"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1175,7 +1281,12 @@
     "url": "https://doi.org/10.21754/tecnia.v26i1.5",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "",
-    "line_ids": []
+    "topic_ids": [
+      "topic:iot-rfid-vehicular"
+    ],
+    "line_ids": [
+      "line:transporte"
+    ]
   },
   {
     "id": "pub:doi:10.1145/2897586.2897611",
@@ -1188,9 +1299,10 @@
     "url": "https://doi.org/10.1145/2897586.2897611",
     "plas_catalog_source": "site_inventory",
     "authors": "Oscar Hernán Paruma-Pabón; Fabio A. González; Jairo Aponte; Jorge E. Camargo; Felipe Restrepo-Calle",
+    "topic_ids": [
+      "topic:analitica-software"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
       "line:lenguajes"
     ]
   },
@@ -1205,9 +1317,10 @@
     "url": "",
     "plas_catalog_source": "site_inventory",
     "authors": "Felipe Restrepo Calle",
+    "topic_ids": [
+      "topic:analitica-software"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
       "line:lenguajes"
     ]
   },
@@ -1222,10 +1335,11 @@
     "url": "https://doi.org/10.1007/978-3-319-14352-1_17",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Felipe Restrepo-Calle; Sergio Cuenca-Asensi; Antonio Martinez-Alvarez",
+    "topic_ids": [
+      "topic:tolerancia-fallos"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1239,10 +1353,11 @@
     "url": "https://doi.org/10.1007/978-3-319-14352-1_16",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Antonio Martinez-Alvarez; Sergio Cuenca-Asensi; Felipe Restrepo-Calle",
+    "topic_ids": [
+      "topic:tolerancia-fallos"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1256,10 +1371,11 @@
     "url": "https://doi.org/10.1007/s10836-015-5513-9",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Felipe Restrepo-Calle; Sergio Cuenca-Asensi; Antonio Martinez-Alvarez; Eduardo Chielle; Fernanda Lima Kastensmidt",
+    "topic_ids": [
+      "topic:evaluacion-confiabilidad"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1273,10 +1389,11 @@
     "url": "https://doi.org/10.1109/latw.2015.7102509",
     "plas_catalog_source": "site_inventory",
     "authors": "Felipe Restrepo-Calle; Sergio Cuenca-Asensi; Antonio Martinez-Alvarez; Fernanda Lima Kastensmidt",
+    "topic_ids": [
+      "topic:tolerancia-fallos"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1290,8 +1407,10 @@
     "url": "https://dialnet.unirioja.es/servlet/libro?codigo=878125",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Ernesto Neira; John Jairo Pantoja; Natalie Figueroa; Gabriel Mañana Guichón; Cesar Pedraza; Felix Vega; Paola Ordoñez",
+    "topic_ids": [
+      "topic:iot-rfid-vehicular"
+    ],
     "line_ids": [
-      "line:agricultura",
       "line:transporte"
     ]
   },
@@ -1306,10 +1425,11 @@
     "url": "https://doi.org/10.1109/latw.2014.6841922",
     "plas_catalog_source": "site_inventory",
     "authors": "F. Restrepo-Calle; S. Cuenca-Asensi; A. Martínez-Álvarez; E. Chielle; F. Kastensmidt",
+    "topic_ids": [
+      "topic:evaluacion-confiabilidad"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1323,10 +1443,11 @@
     "url": "https://doi.org/10.1109/tns.2014.2310492",
     "plas_catalog_source": "minciencias_gruplac",
     "authors": "Luis Parra; Almudena Lindoso; Marta Portela; Luis Entrena; Felipe Restrepo-Calle; Sergio Cuenca-Asensi; Antonio Martinez-Alvarez",
+    "topic_ids": [
+      "topic:tolerancia-fallos"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1340,10 +1461,11 @@
     "url": "https://doi.org/10.1109/radecs.2013.6937381",
     "plas_catalog_source": "manual_confirmed",
     "authors": "Luis Parra; Almudena Lindoso; Marta Portela; Luis Entrena; Felipe Restrepo-Calle; Sergio Cuenca-Asensi; Antonio Martinez-Alvarez",
+    "topic_ids": [
+      "topic:tolerancia-fallos"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1357,10 +1479,11 @@
     "url": "https://doi.org/10.1016/j.eswa.2013.06.060",
     "plas_catalog_source": "site_inventory",
     "authors": "Antonio Martinez-Alvarez; Felipe Restrepo-Calle; Luis Alberto Vivas Tejuelo; Sergio Cuenca-Asensi",
+    "topic_ids": [
+      "topic:tolerancia-fallos"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1374,10 +1497,11 @@
     "url": "https://doi.org/10.1007/s10836-013-5416-6",
     "plas_catalog_source": "personal_pre_plas",
     "authors": "Felipe Restrepo-Calle; Antonio Martinez-Alvarez; Sergio Cuenca-Asensi; Antonio Jimeno-Morenilla",
+    "topic_ids": [
+      "topic:tolerancia-fallos"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1391,10 +1515,11 @@
     "url": "https://doi.org/10.1109/tns.2011.2182524",
     "plas_catalog_source": "site_inventory",
     "authors": "Almudena Lindoso; Luis Entrena; Enrique San Millan; Sergio Cuenca-Asensi; Antonio Martinez-Alvarez; Felipe Restrepo-Calle",
+    "topic_ids": [
+      "topic:tolerancia-fallos"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1408,10 +1533,9 @@
     "url": "",
     "plas_catalog_source": "personal_pre_plas",
     "authors": "Sergio Cuenca-Asensi; Antonio Jimeno-Morenilla; A. Martínez-Álvarez; Felipe Restrepo Calle",
+    "topic_ids": [],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1425,10 +1549,11 @@
     "url": "https://doi.org/10.1109/tdsc.2011.54",
     "plas_catalog_source": "site_inventory",
     "authors": "A. Martínez-Álvarez; S. Cuenca-Asensi; F. Restrepo-Calle; F. R. P. Pinto; H. Guzman-Miranda; M. A. Aguirre",
+    "topic_ids": [
+      "topic:tolerancia-fallos"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1442,10 +1567,11 @@
     "url": "https://doi.org/10.1109/radecs.2011.6131423",
     "plas_catalog_source": "manual_confirmed",
     "authors": "A. Lindoso; L. Entrena; E. San Millan; S. Cuenca-Asensi; A. Martínez-Álvarez; F. Restrepo-Calle",
+    "topic_ids": [
+      "topic:tolerancia-fallos"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1459,10 +1585,11 @@
     "url": "https://doi.org/10.1109/tns.2011.2112379",
     "plas_catalog_source": "site_inventory",
     "authors": "Sergio Cuenca-Asensi; Antonio Martinez-Alvarez; Felipe Restrepo-Calle; Francisco R. Palomo; Hipólito Guzman-Miranda; Miguel A. Aguirre",
+    "topic_ids": [
+      "topic:tolerancia-fallos"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1476,10 +1603,11 @@
     "url": "http://rua.ua.es/dspace/handle/10045/23522",
     "plas_catalog_source": "personal_pre_plas",
     "authors": "Felipe Restrepo Calle",
+    "topic_ids": [
+      "topic:tolerancia-fallos"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1493,10 +1621,11 @@
     "url": "https://doi.org/10.1109/radecs.2011.6131425",
     "plas_catalog_source": "site_inventory",
     "authors": "Felipe Restrepo-Calle; Sergio Cuenca-Asensi; Miguel A. Aguirre; Francisco R. Palomo; Hipólito Guzman-Miranda; Antonio Martinez-Alvarez",
+    "topic_ids": [
+      "topic:evaluacion-confiabilidad"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1510,10 +1639,11 @@
     "url": "https://doi.org/10.1016/j.sysarc.2011.04.006",
     "plas_catalog_source": "site_inventory",
     "authors": "Sergio Cuenca-Asensi; Antonio Martinez-Alvarez; Felipe Restrepo-Calle; Francisco R. Palomo; Hipólito Guzman-Miranda; Miguel A. Aguirre",
+    "topic_ids": [
+      "topic:tolerancia-fallos"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1527,10 +1657,11 @@
     "url": "https://doi.org/10.1145/1811212.1811218",
     "plas_catalog_source": "site_inventory",
     "authors": "Felipe Restrepo-Calle; Antonio Martinez-Alvarez; Hipólito Guzman-Miranda; F. R. Palomo; M. A. Aguirre; Sergio Cuenca-Asensi",
+    "topic_ids": [
+      "topic:tolerancia-fallos"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1544,10 +1675,11 @@
     "url": "https://doi.org/10.1109/isie.2010.5637483",
     "plas_catalog_source": "site_inventory",
     "authors": "F. Restrepo-Calle; A. Martínez-Álvarez; H. Guzman-Miranday; F. R. Palomoy; S. Cuenca-As",
+    "topic_ids": [
+      "topic:tolerancia-fallos"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1561,10 +1693,11 @@
     "url": "",
     "plas_catalog_source": "manual_confirmed",
     "authors": "Felipe Restrepo Calle",
+    "topic_ids": [
+      "topic:tolerancia-fallos"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1578,10 +1711,11 @@
     "url": "http://rua.ua.es/dspace/handle/10045/14177",
     "plas_catalog_source": "personal_pre_plas",
     "authors": "Felipe Restrepo Calle; A. Martínez-Álvarez; Sergio Cuenca-Asensi; Francisco Rogelio Palomo; Miguel Aguirre",
+    "topic_ids": [
+      "topic:tolerancia-fallos"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1595,10 +1729,11 @@
     "url": "https://doi.org/10.1109/fpl.2010.71",
     "plas_catalog_source": "site_inventory",
     "authors": "F. Restrepo-Calle; A. Martínez-Álvarez; F. R. Palomo; H. Guzman-Miranda; M. A. Aguirre; S. Cuenca-Asensi",
+    "topic_ids": [
+      "topic:tolerancia-fallos"
+    ],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   },
   {
@@ -1612,10 +1747,9 @@
     "url": "",
     "plas_catalog_source": "manual_confirmed",
     "authors": "Felipe Restrepo Calle",
+    "topic_ids": [],
     "line_ids": [
-      "line:educacion",
-      "line:embebidos",
-      "line:lenguajes"
+      "line:embebidos"
     ]
   }
 ]

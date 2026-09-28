@@ -27,15 +27,14 @@ import { researchLines } from '../data/site';
               {line.title}
             </h2>
             <div class="line-block__panel">
-              <p class="line-block__text">{line.text}</p>
+              {line.paragraphs.map((text) => (
+                <p class="line-block__text">{text}</p>
+              ))}
               {line.topics.length > 0 && (
                 <ul class="line-block__topics">
-                  {line.topics
-                    .slice()
-                    .sort((a, b) => a.sort_order - b.sort_order)
-                    .map((t) => (
-                      <li>{t.topic}</li>
-                    ))}
+                  {line.topics.map((t) => (
+                    <li id={t.slug}>{t.name}</li>
+                  ))}
                 </ul>
               )}
               {line.topicGraph ? (

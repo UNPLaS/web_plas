@@ -11,6 +11,7 @@ import {
   stripAccents,
   yearFromCrossref,
 } from "./orcid-crossref.mjs";
+import { classifyTopics, linesForTopics } from "./topics.mjs";
 
 export const FABIO = "docente:fagonzalezo";
 /** Manual marker: hidden from the site and never re-harvested. */
@@ -130,7 +131,7 @@ export function hasStudentAuthor(authors, studentMatchers) {
  * Evaluate one ORCID work (+ optional Crossref message) for the catalog.
  * @returns {{ status: "quarantined" | "known" | "fabio_independent" | "added", pub?: object }}
  */
-export function evaluateOrcidWork({ work, msg, doc, faculty, studentMatchers, known }) {
+export function evaluateOrcidWork({ work, msg, doc, faculty, studentMatchers, known, lines = [] }) {
   const doi = normalizeDoi(work.doi);
   const id = doi ? pubIdFromDoi(doi) : pubIdFromOrcid(doc.orcid, work.putCode);
 
@@ -151,13 +152,16 @@ export function evaluateOrcidWork({ work, msg, doc, faculty, studentMatchers, kn
   }
 
   const typ = msg ? typologyFromCrossref(msg.type) : typologyFromOrcid(work.type);
-  const lineIds = new Set();
+  const candidateLines = new Set();
   for (const f of faculty) {
-    if (docentes.has(f.id)) for (const l of f.line_ids || []) lineIds.add(l);
+    if (docentes.has(f.id)) for (const l of f.line_ids || []) candidateLines.add(l);
   }
   const authorNames = authors
     .map((a) => `${a.given || ""} ${a.family || ""}`.trim())
     .filter(Boolean);
+  const venueTitle = msg?.["container-title"]?.[0] || "";
+  const topicIds = classifyTopics(`${title}\n${venueTitle}`, lines, [...candidateLines]);
+  const seedLine = faculty.find((f) => f.id === doc.id)?.line_ids?.[0];
 
   const pub = {
     id,
@@ -166,11 +170,12 @@ export function evaluateOrcidWork({ work, msg, doc, faculty, studentMatchers, kn
     year: (msg && yearFromCrossref(msg)) || String(work.year || ""),
     typology: typ.typology,
     typology_label_es: typ.typology_label_es,
-    venue_title: msg?.["container-title"]?.[0] || "",
+    venue_title: venueTitle,
     url: doi ? `https://doi.org/${doi}` : "",
     plas_catalog_source: HARVEST_SOURCE,
     authors: (authorNames.length ? authorNames : [doc.name_display]).join("; "),
-    line_ids: [...lineIds].sort(),
+    topic_ids: topicIds,
+    line_ids: topicIds.length ? linesForTopics(topicIds, lines) : seedLine ? [seedLine] : [],
   };
   addToKnownIndex(known, pub);
   return { status: "added", pub };
