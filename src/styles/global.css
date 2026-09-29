@@ -3081,6 +3081,49 @@ a.contact-item__value:hover {
   }
 }
 
+/* Estudiantes — filtro rápido por línea */
+.student-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.75rem;
+  padding: 1rem;
+  background: var(--page);
+  border: 2px solid var(--edge-soft);
+  border-radius: var(--radius);
+}
+
+.student-filter {
+  --filter-strong: color-mix(in srgb, var(--chip-color, var(--mid)) 45%, #1a1a1a);
+  padding: 0.45rem 0.85rem;
+  border: none;
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--chip-color, var(--mid)) 22%, white);
+  color: var(--filter-strong);
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.student-filter:hover {
+  background: color-mix(in srgb, var(--chip-color, var(--mid)) 40%, white);
+}
+
+.student-filter[aria-pressed='true'] {
+  background: var(--filter-strong);
+  color: #fff;
+}
+
+.student-filter:focus-visible {
+  outline: 2px solid var(--deep);
+  outline-offset: 2px;
+}
+
 /* Estudiantes — activos + histórico */
 .people-section__subtitle {
   margin: 0 0 0.85rem;
@@ -3119,10 +3162,18 @@ a.contact-item__value:hover {
   background: var(--page);
   border: none;
   color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
   overflow: hidden;
   transition:
     transform 0.2s ease,
     background-color 0.2s ease;
+}
+
+.student-card:focus-visible {
+  outline: 2px solid var(--deep);
+  outline-offset: 2px;
 }
 
 .student-card:is(:hover, .is-touch-hover) {
@@ -3145,14 +3196,12 @@ a.contact-item__value:hover {
 }
 
 .student-card__name {
-  margin: 0;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.3;
 }
 
 .student-card__year {
-  margin: 0;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -3161,7 +3210,6 @@ a.contact-item__value:hover {
 }
 
 .student-card__thesis {
-  margin: 0;
   font-size: 0.9rem;
   line-height: 1.45;
   color: var(--ink);
@@ -3171,6 +3219,165 @@ a.contact-item__value:hover {
   overflow: hidden;
 }
 
-.student-card__action {
-  margin: 0.25rem 0 0;
+/* Modal de estudiante (<dialog> nativo) */
+html:has(.student-dialog[open]) {
+  overflow: hidden;
+}
+
+.student-dialog {
+  width: min(40rem, calc(100vw - 2rem));
+  max-height: min(85vh, 48rem);
+  margin: auto;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--page);
+  color: var(--ink);
+  box-shadow: 0 1.5rem 3rem rgb(0 0 0 / 0.25);
+  overflow: hidden;
+}
+
+.student-dialog::backdrop {
+  background: rgb(12 20 19 / 0.55);
+}
+
+.student-dialog__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-height: min(85vh, 48rem);
+  padding: 1.25rem 1.5rem 1.5rem;
+  overflow-y: auto;
+}
+
+.student-dialog__head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.6rem 1rem;
+  align-items: start;
+}
+
+.student-dialog__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.student-dialog__close-form {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  margin: 0;
+}
+
+.student-dialog__close {
+  width: 2.25rem;
+  height: 2.25rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--mid-soft);
+  color: var(--deep);
+  font: inherit;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.student-dialog__close:hover {
+  background: var(--mid);
+  color: var(--page);
+}
+
+.student-dialog__close:focus-visible {
+  outline: 2px solid var(--deep);
+  outline-offset: 2px;
+}
+
+.student-dialog__name {
+  grid-column: 1;
+  margin: 0;
+  font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+  line-height: 1.25;
+}
+
+.student-dialog__section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.student-dialog__section + .student-dialog__section {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.student-dialog__label {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.student-dialog__topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.student-dialog__work-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.student-dialog__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.student-dialog__text p,
+.student-dialog__action,
+.student-dialog__empty {
+  margin: 0;
+}
+
+.student-dialog__action {
+  padding-top: 0.25rem;
+}
+
+.student-dialog__empty {
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .student-dialog[open] {
+    animation: student-dialog-in 0.2s ease;
+  }
+
+  .student-dialog[open]::backdrop {
+    animation: student-dialog-fade 0.2s ease;
+  }
+}
+
+@keyframes student-dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+}
+
+@keyframes student-dialog-fade {
+  from {
+    opacity: 0;
+  }
 }

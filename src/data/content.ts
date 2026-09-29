@@ -11,6 +11,7 @@ import publicationsJson from './publications.json';
 import resourcesJson from './resources.json';
 import studentsJson from './students.json';
 import thesesJson from './theses.json';
+import wipJson from './wip.json';
 import lineTopicGraphs from './line-topic-graphs.json';
 import { resolveCatalogSource } from './catalog-sources';
 import { resolveTypology } from './typologies';
@@ -103,6 +104,22 @@ const lineNameById: Record<string, string> = Object.fromEntries(
 
 function lineNamesFor(ids: string[] = []) {
   return ids.map((id) => lineNameById[id]).filter(Boolean);
+}
+
+/** Tema → nombre y ancla en la página de su línea (`/lines/<línea>#<tema>`). */
+const topicById = new Map(
+  linesJson.flatMap((l) =>
+    (l.topics ?? []).map((t) => [
+      t.id,
+      { name: t.name, href: withBase(`/lines/${l.slug}#${t.slug}`) },
+    ]),
+  ),
+);
+
+function topicsFor(ids: string[] = []) {
+  return ids
+    .map((id) => topicById.get(id))
+    .filter((t): t is NonNullable<typeof t> => Boolean(t));
 }
 
 function resolveLineColor(lineId?: string, lineName?: string) {
@@ -293,7 +310,35 @@ function thesisUrl(itemUrl: string) {
   return /^https?:\/\//i.test(itemUrl) ? itemUrl : `/${itemUrl.replace(/^\//, '')}`;
 }
 
-/** Tesis de mayor grado (y más reciente) del estudiante; con tesis pasa a Inactivo. */
+/** Trabajo en curso de estudiantes activos (sin tesis todavía); ver `wip.json`. */
+interface WipItem {
+  id: string;
+  title: string;
+  summary: string;
+  url?: string;
+  student_ids: string[];
+  advisor_ids?: string[];
+  line_ids?: string[];
+  topic_ids?: string[];
+}
+
+const wipByStudent = new Map<string, WipItem>();
+for (const w of wipJson as WipItem[]) {
+  for (const id of w.student_ids) if (!wipByStudent.has(id)) wipByStudent.set(id, w);
+}
+
+/** Párrafos de un abstract o descripción (el repositorio separa con saltos de línea). */
+function paragraphsOf(text = '') {
+  return text
+    .split(/\r?\n/)
+    .map((p) => p.trim())
+    .filter(Boolean);
+}
+
+/**
+ * Tesis de mayor grado (y más reciente) del estudiante; con tesis pasa a Inactivo
+ * y su entrada en `wip.json`, si quedó, deja de usarse.
+ */
 const resolvedStudents = studentsJson.map((s) => {
   const thesis = visibleTheses
     .filter((t) => t.student_ids.includes(s.id))
@@ -302,22 +347,57 @@ const resolvedStudents = studentsJson.map((s) => {
         (DEGREE_RANK[b.degree] ?? 0) - (DEGREE_RANK[a.degree] ?? 0) ||
         String(b.year).localeCompare(String(a.year)),
     )[0];
+  const wip = thesis ? null : (wipByStudent.get(s.id) ?? null);
   const status = thesis ? 'Inactivo' : s.status;
   const roleDegree = DEGREE_BY_ROLE_GROUP[s.role_group] ?? '';
   return {
     ...s,
-    line_ids: thesis ? thesis.line_ids : s.line_ids,
-    topic_ids: thesis ? thesis.topic_ids : [],
+    line_ids: thesis ? thesis.line_ids : wip?.line_ids?.length ? wip.line_ids : s.line_ids,
+    topic_ids: thesis ? thesis.topic_ids : (wip?.topic_ids ?? []),
     status,
     active: !thesis && status === 'Activo',
     exit_year: thesis?.year ?? '',
     degree_highest: thesis?.degree || roleDegree,
     role_label: ROLE_LABEL_BY_DEGREE[roleDegree || thesis?.degree || ''] ?? '',
     thesis: thesis
-      ? { title: thesis.title, year: thesis.year, degree: thesis.degree, url: thesisUrl(thesis.item_url) }
+      ? {
+          title: thesis.title,
+          abstract: thesis.abstract ?? '',
+          year: thesis.year,
+          degree: thesis.degree,
+          url: thesisUrl(thesis.item_url),
+        }
       : null,
+    wip,
   };
 });
+
+type ResolvedStudent = (typeof resolvedStudents)[number];
+
+/** Contenido del modal: la tesis si ya terminó, el trabajo en curso si está activo. */
+function studentWork(s: ResolvedStudent) {
+  if (s.thesis) {
+    return {
+      kind: 'thesis' as const,
+      eyebrow: ['Tesis', degreeLabel[s.thesis.degree], s.thesis.year].filter(Boolean).join(' · '),
+      title: s.thesis.title,
+      paragraphs: paragraphsOf(s.thesis.abstract),
+      href: s.thesis.url,
+      linkLabel: 'Ver tesis',
+    };
+  }
+  if (s.wip) {
+    return {
+      kind: 'wip' as const,
+      eyebrow: 'Trabajo en curso',
+      title: s.wip.title,
+      paragraphs: paragraphsOf(s.wip.summary),
+      href: s.wip.url ? withBase(s.wip.url) : '',
+      linkLabel: 'Ver página del trabajo',
+    };
+  }
+  return null;
+}
 
 export const students = resolvedStudents
   .sort((a, b) => Number(b.active) - Number(a.active) || a.name_sort.localeCompare(b.name_sort))
@@ -329,6 +409,7 @@ export const students = resolvedStudents
     const thesisUrl = s.thesis?.url || '';
     return {
       id: s.id,
+      dialogId: s.id.replace(/[^a-z0-9-]+/gi, '-'),
       name: s.name_display,
       role: typeLabel,
       meta: s.status,
@@ -339,6 +420,16 @@ export const students = resolvedStudents
       thesisTitle: s.thesis?.title || '',
       thesisYear: s.thesis?.year || s.exit_year || '',
       thesisHref: thesisUrl,
+      lineIds: s.line_ids,
+      lineChips: s.line_ids
+        .filter((id) => lineNameById[id])
+        .map((id) => ({
+          id: 'linea' as const,
+          label: lineNameById[id],
+          color: resolveLineColor(id, lineNameById[id]),
+        })),
+      topics: topicsFor(s.topic_ids),
+      work: studentWork(s),
       chips: [
         {
           id: 'nivel',

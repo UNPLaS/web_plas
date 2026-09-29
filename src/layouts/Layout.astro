@@ -87,6 +87,8 @@ const unalChromeJs = withBase('/unal/js/unal-chrome.js');
       import { syncSpineAndHeroPanel } from '../scripts/spine-sync';
       import { initCatalogFilters } from '../scripts/catalog-filters';
       import { initTopicAnchors } from '../scripts/topic-anchors';
+      import { initStudentDialogs } from '../scripts/student-dialogs';
+      import { initStudentFilters } from '../scripts/student-filters';
       import { isActivePath } from '../lib/with-base';
       import { pickHomeQuote } from '../scripts/home-quote';
 
@@ -118,6 +120,8 @@ const unalChromeJs = withBase('/unal/js/unal-chrome.js');
         document.fonts?.ready.then(() => syncSpineAndHeroPanel());
         initCatalogFilters();
         initTopicAnchors();
+        initStudentDialogs();
+        initStudentFilters();
 
         const content = document.querySelector<HTMLElement>('[data-plas-content]');
         if (content && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {

@@ -16,6 +16,8 @@ import {
   buildKeywordsMap,
   registerThesis,
   ensureStudent,
+  thesisAbstract,
+  withAbstract,
   FABIO,
 } from "./lib/theses-core.mjs";
 import { assignLine } from "./lib/lines.mjs";
@@ -471,6 +473,7 @@ describe("theses gates + register", () => {
       id: "tesis:unal/99999",
       handle: "unal/99999",
       title: "Sistema embebido tolerante a fallos",
+      abstract: "soft error fault tolerant",
       year: "2026",
       degree: "maestria",
       item_url: "https://repositorio.unal.edu.co/handle/unal/99999",
@@ -506,6 +509,20 @@ describe("theses gates + register", () => {
     assert.equal(data.theses.length, 1);
   });
 
+  it("thesisAbstract prefers Spanish and falls back to English", () => {
+    assert.equal(thesisAbstract({ abstractEs: " es ", abstractEn: "en" }), "es");
+    assert.equal(thesisAbstract({ abstractEs: "", abstractEn: "en" }), "en");
+    assert.equal(thesisAbstract({}), "");
+  });
+
+  it("withAbstract places abstract after title without touching other fields", () => {
+    const thesis = { id: "tesis:unal/1", handle: "unal/1", title: "T", year: "2020", line_ids: ["line:x"] };
+    const out = withAbstract(thesis, "A");
+    assert.deepEqual(Object.keys(out), ["id", "handle", "title", "abstract", "year", "line_ids"]);
+    assert.deepEqual({ ...out, abstract: undefined }, { ...thesis, abstract: undefined });
+    assert.deepEqual(Object.keys(withAbstract(out, "B")), Object.keys(out));
+  });
+
   it("ensureStudent reuses the id derived from the RI name", () => {
     const list = [];
     assert.equal(ensureStudent(list, "Lovelace, Ada").created, true);
@@ -533,6 +550,21 @@ describe("RI summarizeItem", () => {
     assert.equal(sum.year, "2025");
     assert.equal(sum.authorsList[0], "Author One");
     assert.equal(sum.advisors[0], "Felipe Restrepo Calle");
+  });
+
+  it("reads ISO 639-2 abstract languages (spa/eng)", () => {
+    const sum = summarizeItem({
+      handle: "unal/1",
+      metadata: {
+        "dc.description.abstract": [
+          { value: "", language: "spa" },
+          { value: "Resumen", language: "spa" },
+          { value: "Abstract", language: "eng" },
+        ],
+      },
+    });
+    assert.equal(sum.abstractEs, "Resumen");
+    assert.equal(sum.abstractEn, "Abstract");
   });
 });
 
@@ -615,6 +647,26 @@ describe("harvest data present", () => {
     }
     for (const s of students) {
       for (const id of s.line_ids) assert.ok(lineIds.has(id), `${s.id} → ${id}`);
+    }
+  });
+
+  it("wip entries link to existing students, faculty, lines and topics", async () => {
+    const wip = await readSite("wip.json");
+    const lines = await readSite("lines.json");
+    const lineIds = new Set(lines.map((l) => l.id));
+    const topicIds = new Set(lines.flatMap((l) => l.topics.map((t) => t.id)));
+    const facultyIds = new Set((await readSite("faculty.json")).map((f) => f.id));
+    const studentIds = new Set((await readSite("students.json")).map((s) => s.id));
+    assert.equal(new Set(wip.map((w) => w.id)).size, wip.length, "ids de wip repetidos");
+    for (const w of wip) {
+      assert.match(w.id, /^wip:[a-z0-9-]+$/, w.id);
+      assert.ok(w.title?.trim() && w.summary?.trim(), `${w.id} sin título o descripción`);
+      assert.ok(w.student_ids?.length, `${w.id} sin estudiantes`);
+      for (const id of w.student_ids) assert.ok(studentIds.has(id), `${w.id} → ${id}`);
+      for (const id of w.advisor_ids ?? []) assert.ok(facultyIds.has(id), `${w.id} → ${id}`);
+      for (const id of w.line_ids ?? []) assert.ok(lineIds.has(id), `${w.id} → ${id}`);
+      for (const id of w.topic_ids ?? []) assert.ok(topicIds.has(id), `${w.id} → ${id}`);
+      if (w.url) assert.match(w.url, /^(https?:\/\/|\/)/, `${w.id} url debe ser absoluta o empezar por /`);
     }
   });
 

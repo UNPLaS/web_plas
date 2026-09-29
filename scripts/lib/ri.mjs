@@ -43,6 +43,11 @@ export async function discoverSearch(query, { size = 50, maxPages = 40, delayMs 
   return items;
 }
 
+/** Item by handle (`unal/12345`) via the persistent-identifier resolver. */
+export async function fetchItemByHandle(handle) {
+  return getJson(`${BASE}/pid/find?id=${encodeURIComponent(`hdl:${handle}`)}`);
+}
+
 export async function fetchOwningCollectionName(uuid) {
   if (!uuid) return "";
   try {
@@ -66,15 +71,13 @@ export function summarizeItem(item) {
     ...metaValues(md, "dc.description.abstract"),
     ...metaValues(md, "dc.description"),
   ];
-  // Prefer language-tagged if present
-  const absEs = metaValues(md, "dc.description.abstract").filter((_, i, arr) => {
-    const lang = md["dc.description.abstract"]?.[i]?.language;
-    return !lang || String(lang).toLowerCase().startsWith("es");
-  });
-  const absEn = metaValues(md, "dc.description.abstract").filter((_, i) => {
-    const lang = md["dc.description.abstract"]?.[i]?.language;
-    return lang && String(lang).toLowerCase().startsWith("en");
-  });
+  // The RI tags languages as ISO 639-2 (`spa`, `eng`); older items use `es`/`en` or none.
+  const abstractEntries = (md["dc.description.abstract"] || []).filter((x) => x?.value);
+  const langOf = (x) => String(x.language || "").toLowerCase();
+  const absEs = abstractEntries
+    .filter((x) => !langOf(x) || langOf(x).startsWith("es") || langOf(x).startsWith("spa"))
+    .map((x) => x.value);
+  const absEn = abstractEntries.filter((x) => langOf(x).startsWith("en")).map((x) => x.value);
 
   return {
     uuid: item.uuid || item.id || "",

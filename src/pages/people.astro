@@ -1,10 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import TypeChip from '../components/TypeChip.astro';
+import StudentCard from '../components/StudentCard.astro';
 import {
   people,
   activeStudents,
   historicalStudentSections,
+  researchLines,
 } from '../data/site';
 ---
 
@@ -54,33 +56,48 @@ import {
     </ul>
   </section>
 
-  <section class="page-section wrap" aria-labelledby="students-heading">
+  <section
+    class="page-section wrap"
+    aria-labelledby="students-heading"
+    data-student-filter-root
+  >
     <h2 id="students-heading" class="people-section__title">Estudiantes</h2>
+
+    <div class="student-filters" role="group" aria-label="Filtrar estudiantes por línea">
+      <button type="button" class="student-filter" data-student-filter="all" aria-pressed="true">
+        Todos
+      </button>
+      {
+        researchLines.map((line) => (
+          <button
+            type="button"
+            class="student-filter"
+            data-student-filter={line.id}
+            aria-pressed="false"
+            style={`--chip-color: ${line.color}`}
+          >
+            {line.shortTitle}
+          </button>
+        ))
+      }
+    </div>
 
     <div class="students-block">
       <h3 class="people-section__subtitle">Activos</h3>
       {
         activeStudents.length > 0 ? (
-          <ul class="works-list">
-            {activeStudents.map((person) => {
-              const nivelChip = person.chips.find((chip) => chip.id === 'nivel');
-              const lineChip = person.chips.find((chip) => chip.id === 'linea');
-              return (
-                <li>
-                  <article class="student-card">
-                    <div class="student-card__topline">
-                      <h4 class="student-card__name">{person.name}</h4>
-                      {nivelChip ? <TypeChip typology={nivelChip} /> : null}
-                      {lineChip ? <TypeChip typology={lineChip} /> : null}
-                    </div>
-                    {person.meta && person.meta !== 'Activo' ? (
-                      <p class="student-card__thesis">{person.meta}</p>
-                    ) : null}
-                  </article>
+          <>
+            <ul class="works-list">
+              {activeStudents.map((person) => (
+                <li data-student-lines={person.lineIds.join(' ')}>
+                  <StudentCard student={person} />
                 </li>
-              );
-            })}
-          </ul>
+              ))}
+            </ul>
+            <p class="students-empty" data-students-empty hidden>
+              No hay estudiantes activos en esta línea.
+            </p>
+          </>
         ) : (
           <p class="students-empty">Pendiente el registro de estudiantes activos.</p>
         )
@@ -94,41 +111,18 @@ import {
           <div class="students-degree">
             <h4 class="students-degree__title">{sec.title}</h4>
             <ul class="works-list">
-              {sec.items.map((person) => {
-                const lineChip = person.chips.find((chip) => chip.id === 'linea');
-                return (
-                  <li>
-                    <article class="student-card">
-                      <div class="student-card__topline">
-                        <h5 class="student-card__name">{person.name}</h5>
-                        {person.thesisYear ? (
-                          <p class="student-card__year">{person.thesisYear}</p>
-                        ) : null}
-                        {lineChip ? <TypeChip typology={lineChip} /> : null}
-                      </div>
-                      {person.thesisTitle ? (
-                        <p class="student-card__thesis">{person.thesisTitle}</p>
-                      ) : null}
-                      {person.thesisHref ? (
-                        <p class="student-card__action">
-                          <a
-                            class="btn btn--soft"
-                            href={person.thesisHref}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            Ver tesis
-                          </a>
-                        </p>
-                      ) : null}
-                    </article>
-                  </li>
-                );
-              })}
+              {sec.items.map((person) => (
+                <li data-student-lines={person.lineIds.join(' ')}>
+                  <StudentCard student={person} />
+                </li>
+              ))}
             </ul>
           </div>
         ))
       }
+      <p class="students-empty" data-students-empty hidden>
+        No hay egresados en esta línea.
+      </p>
     </div>
   </section>
 </Layout>

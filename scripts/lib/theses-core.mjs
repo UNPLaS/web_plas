@@ -104,6 +104,26 @@ export function displayStudentName(raw) {
   return name;
 }
 
+/** Abstract shown on the site: Spanish first, English as fallback. */
+export function thesisAbstract(sum) {
+  return (sum.abstractEs || sum.abstractEn || "").trim();
+}
+
+/**
+ * Only field the harvest may add to an existing thesis; keeps key order
+ * (`abstract` right after `title`) so diffs stay readable.
+ */
+export function withAbstract(thesis, abstract) {
+  const { abstract: _prev, ...rest } = thesis;
+  const out = {};
+  for (const [key, value] of Object.entries(rest)) {
+    out[key] = value;
+    if (key === "title") out.abstract = abstract;
+  }
+  if (!("abstract" in out)) out.abstract = abstract;
+  return out;
+}
+
 /** Existing students are never modified; unknown authors get a new row. */
 export function ensureStudent(students, name) {
   const id = estudianteIdFromName(name);
@@ -172,6 +192,7 @@ export function registerThesis(data, sum, {
     id: `tesis:${sum.handle}`,
     handle: sum.handle,
     title: sum.title || "",
+    abstract: thesisAbstract(sum),
     year: sum.year || "",
     degree,
     item_url: sum.itemUrl || "",
