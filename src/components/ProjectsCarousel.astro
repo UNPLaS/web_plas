@@ -2,7 +2,7 @@
 import { withBase } from '../lib/with-base';
 
 import TypeChip from './TypeChip.astro';
-import { featuredProjects } from '../data/placeholders';
+import { featuredProjects } from '../data/site';
 ---
 
 <section class="projects-section wrap" aria-labelledby="projects-heading">
@@ -79,19 +79,19 @@ import { featuredProjects } from '../data/placeholders';
 <script>
   import { refreshTouchHover } from '../scripts/touch-hover';
 
-  function initCarousel(root) {
-    const track = root.querySelector('.carousel__track');
+  function initCarousel(root: HTMLElement) {
+    const track = root.querySelector<HTMLElement>('.carousel__track');
     const slides = [...root.querySelectorAll('.carousel__slide')];
-    const dots = [...root.querySelectorAll('[data-carousel-dot]')];
+    const dots = [...root.querySelectorAll<HTMLElement>('[data-carousel-dot]')];
     const prev = root.querySelector('[data-carousel-prev]');
     const next = root.querySelector('[data-carousel-next]');
     if (!track || slides.length === 0) return;
 
     let index = 0;
     const intervalMs = Number(root.dataset.interval) || 5000;
-    let timer = null;
+    let timer: number | null = null;
 
-    function goTo(nextIndex) {
+    const goTo = (nextIndex: number) => {
       index = ((nextIndex % slides.length) + slides.length) % slides.length;
       track.style.transform = `translateX(-${index * 100}%)`;
       dots.forEach((dot, i) => {
@@ -99,7 +99,7 @@ import { featuredProjects } from '../data/placeholders';
       });
       document.dispatchEvent(new CustomEvent('plas:gallery-update'));
       refreshTouchHover();
-    }
+    };
 
     function play() {
       stop();
@@ -112,7 +112,7 @@ import { featuredProjects } from '../data/placeholders';
       timer = null;
     }
 
-    function step(delta) {
+    function step(delta: number) {
       goTo(index + delta);
       play();
     }

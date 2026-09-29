@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 /**
  * Despliegues:
  * - UNAL (default): https://plas.unal.edu.co → DocumentRoot /var/www/html/plas
- * - GitHub Pages: PLAS_SITE=https://vethariel.github.io PLAS_BASE=/Front_plas
+ * - GitHub Pages: PLAS_SITE=https://unplas.github.io PLAS_BASE=/web_plas
  */
 const site = process.env.PLAS_SITE || 'https://plas.unal.edu.co';
 const rawBase = process.env.PLAS_BASE || '/';

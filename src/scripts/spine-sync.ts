@@ -1,6 +1,6 @@
 import {
+  HERO_TEXT_CLEARANCE_PX,
   SPINE_DX_PER_DY,
-  SPINE_MAX_BOUNCES,
   SPINE_START_X_FRAC,
 } from '../data/spine-geometry';
 import { renderNetworkMesh } from './network-mesh';
@@ -20,7 +20,7 @@ function xRelativeToShell(el: HTMLElement, shell: HTMLElement): number {
 
 /**
  * Polilínea con |pendiente| constante: al tocar un borde lateral
- * solo se invierte la dirección horizontal (mismo ángulo).
+ * solo se invierte la dirección horizontal (mismo ángulo). Rebota hasta el pie de página.
  */
 function buildSpinePoints(
   startX: number,
@@ -28,16 +28,16 @@ function buildSpinePoints(
   W: number,
   H: number,
   k: number,
-  maxBounces: number,
 ): Array<[number, number]> {
   const points: Array<[number, number]> = [[startX, startY]];
+  // Con ancho 0 la línea no avanza en y
+  if (W <= 0 || k <= 0) return points;
   let x = startX;
   let y = startY;
   /** -1 izquierda, +1 derecha */
   let dir = -1;
-  let bounces = 0;
 
-  while (bounces < maxBounces && y < H - 0.5) {
+  while (y < H - 0.5) {
     const xEdge = dir < 0 ? 0 : W;
     const dxToEdge = Math.abs(xEdge - x);
     const dyToEdge = dxToEdge / k;
@@ -54,7 +54,6 @@ function buildSpinePoints(
     y = yHit;
     points.push([x, y]);
     dir *= -1;
-    bounces += 1;
   }
 
   return points;
@@ -92,6 +91,24 @@ function rightFillD(points: Array<[number, number]>, W: number, H: number): stri
   return d;
 }
 
+/**
+ * X mínima (relativa al hero) donde debe nacer la diagonal para que cada línea de
+ * `[data-hero-clear]` quede a HERO_TEXT_CLEARANCE_PX de ella a la altura de su borde inferior.
+ */
+function heroTextReach(hero: HTMLElement, k: number): number {
+  const hr = hero.getBoundingClientRect();
+  let reach = 0;
+  hero.querySelectorAll('[data-hero-clear]').forEach((el) => {
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    for (const r of range.getClientRects()) {
+      if (r.width === 0) continue;
+      reach = Math.max(reach, r.right - hr.left + (r.bottom - hr.top) * k);
+    }
+  });
+  return reach > 0 ? reach + HERO_TEXT_CLEARANCE_PX : 0;
+}
+
 function syncFloatNetwork(W: number, H: number, rightD: string): void {
   const floatSvg = document.querySelector<SVGSVGElement>('.float-graphs');
   const clip = document.querySelector<SVGPathElement>('.float-graphs__clip');
@@ -121,7 +138,7 @@ export function syncSpineAndHeroPanel(): void {
   const H = Math.max(shell.offsetHeight, window.innerHeight);
   svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
 
-  const startX = W * SPINE_START_X_FRAC;
+  let startX = W * SPINE_START_X_FRAC;
   let startY = 0;
 
   if (hero) {
@@ -132,6 +149,7 @@ export function syncSpineAndHeroPanel(): void {
     const heroW = hero.offsetWidth || W;
 
     if (panel && window.matchMedia('(min-width: 1200px)').matches && heroW > 0) {
+      startX = Math.max(startX, heroX + heroTextReach(hero, SPINE_DX_PER_DY));
       // Misma pendiente que el spine: x = startX - (y - startY) * k
       const topX = startX;
       const bottomX = startX - heroH * SPINE_DX_PER_DY;
@@ -149,7 +167,6 @@ export function syncSpineAndHeroPanel(): void {
     W,
     H,
     SPINE_DX_PER_DY,
-    SPINE_MAX_BOUNCES,
   );
 
   path.setAttribute('points', points.map(([px, py]) => `${px},${py}`).join(' '));

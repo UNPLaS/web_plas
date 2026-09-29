@@ -5,19 +5,29 @@ import {
   classifyDegree,
   isEngineeringProgram,
   estudianteIdFromName,
-  nameKey,
   splitAuthors,
   normText,
 } from "./normalize.mjs";
 import { assignLine, FABIO } from "./lines.mjs";
+import { classifyTopics } from "./topics.mjs";
 
 export { FABIO, classifyDegree, isEngineeringProgram, splitAuthors, normText };
+
+/** Advisor aliases (RI name forms) from src/data/faculty.json `aliases`. */
+export function aliasesFromFaculty(faculty) {
+  return faculty.flatMap((f) =>
+    (f.aliases || []).map((alias) => ({
+      docente_id: f.id,
+      alias,
+      alias_norm: normText(alias.replace(/\(thesis advisor\)/gi, "")),
+    })),
+  );
+}
 
 export function buildAliasIndex(aliases) {
   const byDocente = new Map();
   const matchAliases = [];
   for (const a of aliases) {
-    if (String(a.use_for_advisor_match).toLowerCase() !== "yes") continue;
     const list = byDocente.get(a.docente_id) || [];
     list.push(a);
     byDocente.set(a.docente_id, list);
@@ -67,86 +77,88 @@ export function shouldRegister({ degree, engineering, plasDirectors }) {
   return { ok: true, reason: "" };
 }
 
-export function buildDocenteLineasMap(rows) {
-  const m = {};
-  for (const r of rows) {
-    if (!m[r.docente_id]) m[r.docente_id] = [];
-    if (r.line_id) m[r.docente_id].push(r.line_id);
-  }
-  return m;
+/** docente id → line ids, from src/data/faculty.json. */
+export function buildDocenteLineasMap(faculty) {
+  return Object.fromEntries(faculty.map((f) => [f.id, [...(f.line_ids || [])]]));
 }
 
-export function buildKeywordsMap(rows) {
-  const m = {};
-  for (const r of rows) {
-    if (!m[r.line_id]) m[r.line_id] = [];
-    m[r.line_id].push(r.keyword);
-  }
-  return m;
+/** line id → keywords, from src/data/lines.json. */
+export function buildKeywordsMap(lines) {
+  return Object.fromEntries(
+    lines.map((l) => [
+      l.id,
+      [...new Set([...(l.keywords || []), ...(l.topics || []).flatMap((t) => t.keywords || [])])],
+    ]),
+  );
 }
 
-export function upsertEstudiante(estudiantes, name, degree, year) {
-  const id = estudianteIdFromName(name);
-  let e = estudiantes.find((x) => x.id === id);
-  const rank = degree === "doctorado" ? 3 : 2;
-  if (!e) {
-    e = {
-      id,
-      name_display: name,
-      name_sort: name,
-      name_key: nameKey(name),
-      degree_highest: degree,
-      degree_rank: String(rank),
-      degrees_seen: degree,
-      n_tesis: "1",
-      year_first: year || "",
-      year_last: year || "",
-      name_variants: "",
-      source: "tesis_authors",
-      site_name: "",
-      site_role_group: "",
-      site_status: "",
-      site_lines: "",
-      image_src: "",
-      email: "",
-      linkedin: "",
-      github: "",
-      website: "",
-      office: "",
-      phone: "",
-      member_match: "",
-    };
-    estudiantes.push(e);
-    return { estudiante: e, created: true };
+/** "Apellido, Nombre" (RI form) → "Nombre Apellido". */
+export function displayStudentName(raw) {
+  const name = (raw || "").trim();
+  const comma = name.indexOf(",");
+  if (comma > 0) {
+    const family = name.slice(0, comma).trim();
+    const given = name.slice(comma + 1).trim();
+    if (family && given) return `${given} ${family}`;
   }
-  e.n_tesis = String(Number(e.n_tesis || 0) + 1);
-  if (year) {
-    if (!e.year_first || year < e.year_first) e.year_first = year;
-    if (!e.year_last || year > e.year_last) e.year_last = year;
-  }
-  const degrees = new Set(String(e.degrees_seen || "").split(/\s*\|\s*/).filter(Boolean));
-  degrees.add(degree);
-  e.degrees_seen = [...degrees].join(" | ");
-  if (rank > Number(e.degree_rank || 0)) {
-    e.degree_highest = degree;
-    e.degree_rank = String(rank);
-  }
-  return { estudiante: e, created: false };
+  return name;
+}
+
+/** Abstract shown on the site: Spanish first, English as fallback. */
+export function thesisAbstract(sum) {
+  return (sum.abstractEs || sum.abstractEn || "").trim();
 }
 
 /**
- * Register one summarized RI item into working harvest tables (mutates data).
- * @returns {{ ok: true, row } | { ok: false, reason: string }}
+ * Only field the harvest may add to an existing thesis; keeps key order
+ * (`abstract` right after `title`) so diffs stay readable.
+ */
+export function withAbstract(thesis, abstract) {
+  const { abstract: _prev, ...rest } = thesis;
+  const out = {};
+  for (const [key, value] of Object.entries(rest)) {
+    out[key] = value;
+    if (key === "title") out.abstract = abstract;
+  }
+  if (!("abstract" in out)) out.abstract = abstract;
+  return out;
+}
+
+/** Existing students are never modified; unknown authors get a new row. */
+export function ensureStudent(students, name) {
+  const id = estudianteIdFromName(name);
+  const existing = students.find((s) => s.id === id);
+  if (existing) return { student: existing, created: false };
+  const student = {
+    id,
+    name_display: displayStudentName(name),
+    name_sort: name.trim(),
+    role_group: "",
+    status: "",
+    line_ids: [],
+    image_path: "",
+    email: "",
+    links: [],
+  };
+  students.push(student);
+  return { student, created: true };
+}
+
+/**
+ * Register one summarized RI item into site data (mutates theses/students).
+ * Known handles (including plas_catalog_source "rejected") are skipped.
+ * @returns {{ ok: true, row, line, newStudents } | { ok: false, reason: string }}
  */
 export function registerThesis(data, sum, {
   matchAliases,
   docenteLineas,
   keywordsByLine,
-  harvestedAt,
+  lines = [],
   forceDirectors = null,
 }) {
-  const existing = new Set(data.tesis.map((t) => t.handle));
-  if (existing.has(sum.handle)) return { ok: false, reason: "already_present" };
+  if (data.theses.some((t) => t.handle === sum.handle)) {
+    return { ok: false, reason: "already_present" };
+  }
 
   let plasDirectors = matchAdvisors(sum.advisors || [], matchAliases);
   if (forceDirectors?.length && !plasDirectors.length) {
@@ -154,12 +166,10 @@ export function registerThesis(data, sum, {
   }
 
   const degree = classifyDegree(sum.dcTypes || []);
-  const degreeName = sum.degreeName || "";
-  const engineering = isEngineeringProgram(degreeName);
+  const engineering = isEngineeringProgram(sum.degreeName || "");
   const gate = shouldRegister({ degree, engineering, plasDirectors });
   if (!gate.ok) return { ok: false, reason: gate.reason };
 
-  const tid = `tesis:${sum.handle}`;
   const line = assignLine({
     directorIds: plasDirectors.map((d) => d.docente_id),
     docenteLineas,
@@ -170,69 +180,33 @@ export function registerThesis(data, sum, {
     researchArea: sum.researchArea,
   });
 
-  const hasAbs = sum.abstractEs || sum.abstractEn || sum.abstractOther ? "yes" : "no";
-  const row = {
-    id: tid,
-    handle: sum.handle,
-    uuid: sum.uuid || "",
-    title: sum.title || "",
-    year: sum.year || "",
-    degree,
-    degree_level_ri: sum.degreeLevel || (degree === "doctorado" ? "Doctorado" : "Maestría"),
-    degree_name_ri: degreeName,
-    authors: sum.authors || "",
-    abstract_es: sum.abstractEs || "",
-    abstract_en: sum.abstractEn || "",
-    abstract_other: sum.abstractOther || "",
-    has_abstract: hasAbs,
-    research_area: sum.researchArea || "",
-    dc_type: (sum.dcTypes || []).join(" | "),
-    item_url: sum.itemUrl || "",
-    n_directores_plas: String(plasDirectors.length),
-    director_docente_ids: plasDirectors.map((d) => d.docente_id).join(" | "),
-    source: "repositorio_unal",
-    harvested_at: harvestedAt,
-    line_id_primary: line.lineId,
-    line_method: line.method,
-    line_confidence: line.confidence,
-    line_needs_review: line.needsReview,
-    visible: "yes",
-    exclusion_reason: "",
-    exclusion_notes: "",
-  };
-  data.tesis.push(row);
-
-  for (const d of plasDirectors) {
-    data.directores.push({
-      tesis_id: tid,
-      docente_id: d.docente_id,
-      name_form_raw: d.name_form_raw,
-      role: "advisor",
-    });
-  }
-
-  data.tesisLineas.push({
-    tesis_id: tid,
-    line_id: line.lineId,
-    method: line.method,
-    confidence: line.confidence,
-    is_primary: "yes",
-    needs_review: line.needsReview,
-    notes: line.notes,
+  const authorNames = sum.authorsList?.length ? sum.authorsList : splitAuthors(sum.authors);
+  const newStudents = [];
+  const studentIds = authorNames.map((name) => {
+    const { student, created } = ensureStudent(data.students, name);
+    if (created) newStudents.push(student);
+    return student.id;
   });
 
-  const authors = (sum.authorsList?.length ? sum.authorsList : splitAuthors(sum.authors));
-  for (const [idx, name] of authors.entries()) {
-    const { estudiante } = upsertEstudiante(data.estudiantes, name, degree, sum.year);
-    data.autores.push({
-      tesis_id: tid,
-      estudiante_id: estudiante.id,
-      name_form_raw: name,
-      author_position: String(idx + 1),
-      degree_of_tesis: degree,
-      is_highest_degree_tesis: degree === estudiante.degree_highest ? "yes" : "no",
-    });
-  }
-
-  return { ok: true, row, line };
+  const row = {
+    id: `tesis:${sum.handle}`,
+    handle: sum.handle,
+    title: sum.title || "",
+    abstract: thesisAbstract(sum),
+    year: sum.year || "",
+    degree,
+    item_url: sum.itemUrl || "",
+    authors: sum.authors || authorNames.join(" | "),
+    topic_ids: classifyTopics(
+      [sum.title, sum.abstractEs, sum.abstractEn].filter(Boolean).join("\n"),
+      lines,
+      [line.lineId],
+    ),
+    line_ids: [line.lineId],
+    advisor_ids: plasDirectors.map((d) => d.docente_id),
+    student_ids: studentIds,
+    plas_catalog_source: "repositorio_unal",
+  };
+  data.theses.push(row);
+  return { ok: true, row, line, newStudents };
 }

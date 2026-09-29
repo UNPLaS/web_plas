@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import TopicGraph from '../components/TopicGraph.astro';
-import { researchLines } from '../data/placeholders';
+import LinesGallery from '../components/LinesGallery.astro';
 ---
 
 <Layout title="Líneas de investigación">
@@ -14,41 +13,6 @@ import { researchLines } from '../data/placeholders';
       </p>
     </header>
 
-    <div class="lines-sections">
-      {
-        researchLines.map((line) => (
-          <section
-            class="line-block"
-            id={line.slug}
-            style={line.color ? `--line-color: ${line.color}` : undefined}
-            aria-labelledby={`line-${line.slug}`}
-          >
-            <h2 id={`line-${line.slug}`} class="people-section__title line-block__title">
-              {line.title}
-            </h2>
-            <div class="line-block__panel">
-              <p class="line-block__text">{line.text}</p>
-              {line.topics.length > 0 && (
-                <ul class="line-block__topics">
-                  {line.topics
-                    .slice()
-                    .sort((a, b) => a.sort_order - b.sort_order)
-                    .map((t) => (
-                      <li>{t.topic}</li>
-                    ))}
-                </ul>
-              )}
-              {line.topicGraph ? (
-                <TopicGraph
-                  nodes={line.topicGraph.nodes}
-                  edges={line.topicGraph.edges}
-                  color={line.color}
-                />
-              ) : null}
-            </div>
-          </section>
-        ))
-      }
-    </div>
+    <LinesGallery />
   </section>
 </Layout>

@@ -1,0 +1,170 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TopicGraph from '../../components/TopicGraph.astro';
+import { lineDetails } from '../../data/site';
+
+export function getStaticPaths() {
+  return lineDetails.map((line) => ({ params: { slug: line.slug }, props: { line } }));
+}
+
+const { line } = Astro.props;
+/** Lenguajes usa la familia mid por defecto del sitio; las demás, su propia versión. */
+const lineTheme = line.slug === 'lenguajes' ? undefined : line.slug;
+const external = (href: string) =>
+  /^https?:\/\//i.test(href) ? { target: '_blank', rel: 'noreferrer' } : {};
+const worksLabel = (n: number) => (n === 1 ? '1 trabajo' : `${n} trabajos`);
+---
+
+<Layout title={line.title} description={line.summary} lineTheme={lineTheme}>
+  {
+    line.image && (
+      <figure class="line-banner">
+        <img
+          class="line-banner__img"
+          src={line.image}
+          alt=""
+          width="1200"
+          height="800"
+          style={`object-position: ${line.imagePosition}`}
+          fetchpriority="high"
+        />
+        {line.imageCredit && (
+          <figcaption class="line-banner__credit">
+            Imagen:{' '}
+            {line.imageSource ? (
+              <a href={line.imageSource} target="_blank" rel="noreferrer">
+                {line.imageCredit}
+              </a>
+            ) : (
+              line.imageCredit
+            )}
+          </figcaption>
+        )}
+      </figure>
+    )
+  }
+
+  <section class="page-section page-section--tight wrap" aria-labelledby="line-title">
+    <header class="page-head">
+      <p class="page-head__eyebrow">Línea de investigación</p>
+      <h1 id="line-title" class="page-head__title">{line.title}</h1>
+      <p class="page-head__lede">{line.summary}</p>
+    </header>
+
+    <div class="line-block__panel line-detail__intro">
+      {line.paragraphs.map((text) => <p>{text}</p>)}
+    </div>
+    {
+      line.topicGraph && (
+        <TopicGraph nodes={line.topicGraph.nodes} edges={line.topicGraph.edges} color="var(--mid)" />
+      )
+    }
+  </section>
+
+  <section class="line-detail wrap" aria-labelledby="topics-heading">
+    <h2 id="topics-heading" class="people-section__title line-detail__heading">Temas</h2>
+    <div class="topic-list">
+      {
+        line.topics.map((topic) => (
+          <details class="topic-item" id={topic.slug}>
+            <summary class="topic-item__summary">
+              <span class="topic-item__name">{topic.name}</span>
+              <span class="topic-item__count">
+                {topic.total ? worksLabel(topic.total) : 'Sin trabajos registrados'}
+              </span>
+            </summary>
+            <div class="topic-item__body">
+              <p class="topic-item__description">{topic.description}</p>
+              <div class="topic-item__grid">
+                {topic.people.length > 0 && (
+                  <div class="topic-item__block">
+                    <h3 class="topic-item__label">Personas</h3>
+                    <ul class="topic-people">
+                      {topic.people.map((person) => (
+                        <li>
+                          <a class="topic-people__link" href={person.href}>
+                            <span class="topic-people__avatar" aria-hidden="true">
+                              {person.image ? <img src={person.image} alt="" loading="lazy" /> : null}
+                            </span>
+                            <span>{person.name}</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                <div class="topic-item__block">
+                  <h3 class="topic-item__label">Trabajos activos</h3>
+                  {topic.activeWorks.length > 0 ? (
+                    <ul class="topic-works">
+                      {topic.activeWorks.map((work) => (
+                        <li>
+                          {work.href ? (
+                            <a class="topic-works__title" href={work.href} {...external(work.href)}>
+                              {work.title}
+                            </a>
+                          ) : (
+                            <span class="topic-works__title">{work.title}</span>
+                          )}
+                          <span class="topic-works__meta">{work.meta}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p class="topic-item__empty">
+                      Sin trabajos desde {line.activeSince}.
+                      {topic.total > 0 && ' Los anteriores están en la trayectoria.'}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </section>
+
+  {
+    line.timeline.length > 0 && (
+      <section class="line-detail wrap" aria-labelledby="timeline-heading">
+        <h2 id="timeline-heading" class="people-section__title line-detail__heading">
+          Trayectoria
+        </h2>
+        <ol class="line-timeline">
+          {line.timeline.map((entry) => (
+            <li class="line-timeline__year">
+              <h3 class="line-timeline__label">{entry.year}</h3>
+              <ul class="line-timeline__works">
+                {entry.works.map((work) => (
+                  <li class="timeline-work">
+                    {work.href ? (
+                      <a class="timeline-work__title" href={work.href} {...external(work.href)}>
+                        {work.title}
+                      </a>
+                    ) : (
+                      <span class="timeline-work__title">{work.title}</span>
+                    )}
+                    <p class="timeline-work__meta">{work.meta}</p>
+                    {work.author && <p class="timeline-work__author">{work.author}</p>}
+                    {work.topics.length > 0 && (
+                      <ul class="timeline-work__topics">
+                        {work.topics.map((t) => (
+                          <li>
+                            <a class="topic-chip" href={`#${t.slug}`}>
+                              {t.name}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ol>
+      </section>
+    )
+  }
+</Layout>

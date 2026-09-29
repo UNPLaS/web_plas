@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { describe, it, before, after } from "node:test";
 import path from "node:path";
-import { mkdtemp, rm, mkdir, writeFile, readFile } from "node:fs/promises";
+import { mkdtemp, rm, readFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { fileURLToPath } from "node:url";
 
@@ -10,24 +10,56 @@ import {
   isEngineeringProgram,
   shouldRegister,
   matchAdvisors,
+  aliasesFromFaculty,
   buildAliasIndex,
+  buildDocenteLineasMap,
+  buildKeywordsMap,
   registerThesis,
-  upsertEstudiante,
+  ensureStudent,
+  thesisAbstract,
+  withAbstract,
   FABIO,
 } from "./lib/theses-core.mjs";
 import { assignLine } from "./lib/lines.mjs";
-import { typologyFromCrossref, typologyFromOrcid } from "./lib/typology.mjs";
+import { labelEs, typologyFromCrossref, typologyFromOrcid } from "./lib/typology.mjs";
 import { identityConfidence, normalizeDoi } from "./lib/orcid-crossref.mjs";
 import {
-  mergeOrcidWork,
+  evaluateOrcidWork,
+  buildKnownIndex,
+  buildStudentMatchers,
+  isVisiblePublication,
+  orcidFromFaculty,
   MATCH,
   pubIdFromDoi,
+  REJECTED,
 } from "./lib/publications-core.mjs";
-import { projectCatalog } from "./lib/project-site.mjs";
 import { summarizeItem } from "./lib/ri.mjs";
+import { classifyTopics, linesForTopics } from "./lib/topics.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const HARVEST = path.join(ROOT, "data", "harvest");
+const SITE_DATA = path.join(ROOT, "src", "data");
+
+const TEST_LINES = [
+  { id: "line:embebidos", topics: [{ id: "topic:tolerancia-fallos", keywords: ["soft error", "fault tolerant"] }] },
+  { id: "line:educacion", topics: [{ id: "topic:evaluacion-automatica", keywords: ["grading", "automatic assessment"] }] },
+  { id: "line:lenguajes", topics: [{ id: "topic:analisis-codigo", keywords: ["static analysis"] }] },
+  { id: "line:transporte", topics: [{ id: "topic:accidentalidad-vial", keywords: ["traffic accidents", "crash"] }] },
+];
+
+describe("topics", () => {
+  it("classifies by keywords, optionally restricted to candidate lines", () => {
+    assert.deepEqual(classifyTopics("Automatic grading of notebooks", TEST_LINES), ["topic:evaluacion-automatica"]);
+    assert.deepEqual(classifyTopics("Static analysis of Python", TEST_LINES, ["line:embebidos"]), []);
+    assert.deepEqual(classifyTopics("Nothing relevant", TEST_LINES), []);
+  });
+
+  it("maps topics back to their lines", () => {
+    assert.deepEqual(
+      linesForTopics(["topic:accidentalidad-vial", "topic:tolerancia-fallos"], TEST_LINES),
+      ["line:embebidos", "line:transporte"],
+    );
+  });
+});
 
 describe("typology + identity", () => {
   it("maps crossref journal-article", () => {
@@ -75,100 +107,220 @@ describe("typology + identity", () => {
   });
 });
 
-describe("publications merge", () => {
-  it("accepts crossref hit and writes pending catalog", () => {
-    const pubs = new Map();
-    const personas = new Map();
-    const autorMap = new Map();
-    const doc = {
-      id: "docente:ferestrepoca",
-      orcid: "0000-0003-4226-1324",
-      name_display: "Felipe Restrepo Calle",
-    };
-    const work = {
-      doi: "10.1234/test.pub",
-      title: "ORCID title",
-      year: "2024",
-      type: "journal-article",
-      putCode: 99,
-    };
-    const msg = {
-      title: ["Crossref title"],
-      type: "journal-article",
-      URL: "https://doi.org/10.1234/test.pub",
-      author: [
-        { family: "Restrepo", given: "Felipe", ORCID: "https://orcid.org/0000-0003-4226-1324" },
-        { family: "Doe", given: "Jane" },
-      ],
-      published: { "date-parts": [[2024, 6, 1]] },
-      "container-title": ["Test Journal"],
-      publisher: "Test Pub",
-    };
-    const result = mergeOrcidWork({
+describe("publications harvest", () => {
+  const felipe = {
+    id: "docente:ferestrepoca",
+    orcid: "0000-0003-4226-1324",
+    name_display: "Felipe Restrepo Calle",
+    line_ids: ["line:embebidos"],
+  };
+  const fabio = {
+    id: "docente:fagonzalezo",
+    orcid: "0000-0001-9009-7288",
+    name_display: "Fabio González Osorio",
+    line_ids: ["line:educacion", "line:lenguajes"],
+  };
+  const cesar = {
+    id: "docente:capedrazab",
+    orcid: "0000-0002-6687-1429",
+    name_display: "César Pedraza Bonilla",
+    line_ids: ["line:transporte"],
+  };
+  const faculty = [felipe, fabio, cesar];
+  const fabioAuthor = { family: "González", given: "Fabio A.", ORCID: `https://orcid.org/${fabio.orcid}` };
+
+  function evaluate({ work, msg, doc, pubs = [], students = [] }) {
+    return evaluateOrcidWork({
       work,
       msg,
       doc,
-      matchOpts: MATCH[doc.id],
-      docentes: [doc],
-      pubs,
-      personas,
-      autorMap,
-      harvestedAt: "2026-09-13",
+      faculty,
+      studentMatchers: buildStudentMatchers(students),
+      known: buildKnownIndex(pubs),
+      lines: TEST_LINES,
     });
-    assert.equal(result.accepted, true);
-    assert.equal(result.pubId, pubIdFromDoi(work.doi));
-    const row = pubs.get(result.pubId);
-    assert.equal(row.title, "Crossref title");
-    assert.equal(row.plas_catalog, "pending");
-    assert.equal(row.identity_confidence, "A");
-    assert.equal(row.venue_title, "Test Journal");
-    assert.equal(autorMap.size, 2);
-    assert.ok([...autorMap.values()].some((a) => a.is_plas_docente === "yes"));
+  }
+
+  function work(doi, title = "Some title") {
+    return { doi, title, year: "2024", type: "journal-article", putCode: 7 };
+  }
+
+  it("adds a new crossref hit in site format", () => {
+    const result = evaluate({
+      work: work("10.1234/Test.Pub", "ORCID title"),
+      msg: {
+        title: ["Crossref <i>title</i>"],
+        type: "journal-article",
+        author: [
+          { family: "Restrepo", given: "Felipe", ORCID: `https://orcid.org/${felipe.orcid}` },
+          { family: "Doe", given: "Jane" },
+        ],
+        published: { "date-parts": [[2025, 6, 1]] },
+        "container-title": ["Test Journal"],
+      },
+      doc: felipe,
+    });
+    assert.equal(result.status, "added");
+    assert.deepEqual(result.pub, {
+      id: pubIdFromDoi("10.1234/test.pub"),
+      doi: "10.1234/test.pub",
+      title: "Crossref title",
+      year: "2025",
+      typology: "journal_article",
+      typology_label_es: "Artículos de revista",
+      venue_title: "Test Journal",
+      url: "https://doi.org/10.1234/test.pub",
+      plas_catalog_source: "orcid_harvest",
+      authors: "Felipe Restrepo; Jane Doe",
+      topic_ids: [],
+      line_ids: ["line:embebidos"],
+    });
+  });
+
+  it("derives lines from topics within the coauthors' lines", () => {
+    const crash = evaluate({
+      work: work("10.5/crash"),
+      msg: {
+        title: ["Deep learning for traffic accidents"],
+        type: "journal-article",
+        author: [fabioAuthor, { family: "Pedraza Bonilla", given: "César" }],
+      },
+      doc: fabio,
+    });
+    assert.deepEqual(crash.pub.topic_ids, ["topic:accidentalidad-vial"]);
+    assert.deepEqual(crash.pub.line_ids, ["line:transporte"]);
+
+    const outside = evaluate({
+      work: work("10.5/static"),
+      msg: {
+        title: ["Static analysis of embedded firmware"],
+        type: "journal-article",
+        author: [{ family: "Restrepo Calle", given: "Felipe", ORCID: `https://orcid.org/${felipe.orcid}` }],
+      },
+      doc: felipe,
+    });
+    assert.deepEqual(outside.pub.topic_ids, []);
+    assert.deepEqual(outside.pub.line_ids, ["line:embebidos"]);
   });
 
   it("quarantines identity E", () => {
-    const pubs = new Map();
-    const result = mergeOrcidWork({
-      work: { doi: "10.9/x", title: "x", year: "2020", type: "journal-article", putCode: 1 },
+    const result = evaluate({
+      work: work("10.9/x"),
       msg: { author: [{ family: "Nobody", given: "Else" }], title: ["x"], type: "journal-article" },
-      doc: { id: "docente:ferestrepoca", orcid: "0000-0003-4226-1324" },
-      matchOpts: MATCH["docente:ferestrepoca"],
-      docentes: [],
-      pubs,
-      personas: new Map(),
-      autorMap: new Map(),
-      harvestedAt: "2026-09-13",
+      doc: felipe,
     });
-    assert.equal(result.quarantined, true);
-    assert.equal(pubs.size, 0);
+    assert.equal(result.status, "quarantined");
   });
 
-  it("merges seed_docente_ids on existing pub", () => {
-    const pubs = new Map();
-    const personas = new Map();
-    const autorMap = new Map();
-    const d1 = { id: "docente:ferestrepoca", orcid: "0000-0003-4226-1324", name_display: "F" };
-    const d2 = { id: "docente:capedrazab", orcid: "0000-0001-1111-1111", name_display: "C" };
-    const work = { doi: "10.1/shared", title: "S", year: "2021", type: "journal-article", putCode: 2 };
+  it("skips known rows by id, DOI or title, including rejected ones", () => {
+    const pubs = [
+      { id: "pub:doi:10.1/a", doi: "10.1/a", title: "A", plas_catalog_source: REJECTED },
+      { id: "pub:gjee:2020:x", doi: "", title: "Interactive Software Tool for CS1" },
+    ];
     const msg = {
-      title: ["S"],
+      title: ["A"],
       type: "journal-article",
-      author: [
-        { family: "Restrepo", given: "Felipe", ORCID: `https://orcid.org/${d1.orcid}` },
-        { family: "Pedraza", given: "Cesar", ORCID: `https://orcid.org/${d2.orcid}` },
-      ],
+      author: [{ family: "Restrepo Calle", given: "Felipe" }],
     };
-    mergeOrcidWork({
-      work, msg, doc: d1, matchOpts: MATCH[d1.id], docentes: [d1, d2],
-      pubs, personas, autorMap, harvestedAt: "2026-09-13",
+    assert.equal(evaluate({ work: work("https://doi.org/10.1/A"), msg, doc: felipe, pubs }).status, "known");
+    assert.equal(
+      evaluate({
+        work: { doi: "", title: "Interactive software tool for CS1.", year: "2020", putCode: 3 },
+        msg: null,
+        doc: felipe,
+        pubs,
+      }).status,
+      "known",
+    );
+  });
+
+  it("skips Fabio works without another PLaS coauthor", () => {
+    const result = evaluate({
+      work: work("10.5/solo"),
+      msg: { title: ["Solo"], type: "book", author: [fabioAuthor, { family: "Pérez", given: "Ana" }] },
+      doc: fabio,
     });
-    mergeOrcidWork({
-      work, msg, doc: d2, matchOpts: MATCH[d2.id], docentes: [d1, d2],
-      pubs, personas, autorMap, harvestedAt: "2026-09-13",
+    assert.equal(result.status, "fabio_independent");
+  });
+
+  it("skips Fabio works without DOI metadata", () => {
+    const result = evaluate({
+      work: { doi: "", title: "No DOI", year: "2019", type: "journal-article", putCode: 9 },
+      msg: null,
+      doc: fabio,
     });
-    const row = pubs.get(pubIdFromDoi(work.doi));
-    assert.ok(row.seed_docente_ids.includes("docente:ferestrepoca"));
-    assert.ok(row.seed_docente_ids.includes("docente:capedrazab"));
+    assert.equal(result.status, "fabio_independent");
+  });
+
+  it("keeps Fabio works with a PLaS docente detected by name", () => {
+    const result = evaluate({
+      work: work("10.5/collab"),
+      msg: {
+        title: ["Collab"],
+        type: "proceedings-article",
+        author: [fabioAuthor, { family: "Pedraza Bonilla", given: "César" }],
+      },
+      doc: fabio,
+    });
+    assert.equal(result.status, "added");
+    assert.deepEqual(result.pub.line_ids, ["line:educacion"]);
+  });
+
+  it("keeps Fabio works with a PLaS student coauthor", () => {
+    const result = evaluate({
+      work: work("10.5/student"),
+      msg: {
+        title: ["With student"],
+        type: "journal-article",
+        author: [fabioAuthor, { family: "Hernández", given: "Juan Camilo" }],
+      },
+      doc: fabio,
+      students: ["Juan Camilo Hernández Ortiz"],
+    });
+    assert.equal(result.status, "added");
+  });
+
+  it("accepts books from other docentes", () => {
+    const result = evaluate({
+      work: work("10.7/book"),
+      msg: { title: ["Book"], type: "book", author: [{ family: "Restrepo-Calle", given: "F." }] },
+      doc: felipe,
+    });
+    assert.equal(result.status, "added");
+    assert.equal(result.pub.typology, "book");
+  });
+
+  it("does not add the same work twice in one run", () => {
+    const known = buildKnownIndex([]);
+    const args = {
+      work: work("10.8/dup"),
+      msg: {
+        title: ["Dup"],
+        type: "journal-article",
+        author: [
+          { family: "Restrepo Calle", given: "Felipe" },
+          { family: "Pedraza", given: "Cesar" },
+        ],
+      },
+      faculty,
+      studentMatchers: [],
+      known,
+    };
+    assert.equal(evaluateOrcidWork({ ...args, doc: felipe }).status, "added");
+    assert.equal(evaluateOrcidWork({ ...args, doc: cesar }).status, "known");
+  });
+
+  it("rejected marker hides a publication", () => {
+    assert.equal(isVisiblePublication({ plas_catalog_source: REJECTED }), false);
+    assert.equal(isVisiblePublication({ plas_catalog_source: "orcid_harvest" }), true);
+  });
+
+  it("reads ORCID from faculty profiles", () => {
+    assert.equal(
+      orcidFromFaculty({ profiles: [{ label: "ORCID", url: "https://orcid.org/0000-0002-6499-1785" }] }),
+      "0000-0002-6499-1785",
+    );
+    assert.equal(orcidFromFaculty({ profiles: [] }), "");
   });
 });
 
@@ -236,6 +388,47 @@ describe("theses gates + register", () => {
     assert.equal(hits[0].docente_id, "docente:ferestrepoca");
   });
 
+  it("aliasesFromFaculty normalizes RI name forms", () => {
+    const rows = aliasesFromFaculty([
+      { id: "docente:ferestrepoca", aliases: ["Restrepo Calle, Felipe (Thesis advisor)", "Restrepo-Calle, Felipe"] },
+      { id: "docente:x" },
+    ]);
+    assert.deepEqual(
+      rows.map((r) => [r.docente_id, r.alias_norm]),
+      [
+        ["docente:ferestrepoca", "restrepo calle felipe"],
+        ["docente:ferestrepoca", "restrepo calle felipe"],
+      ],
+    );
+    const { queries, matchAliases } = buildAliasIndex(rows);
+    assert.equal(queries.length, 2);
+    assert.equal(matchAdvisors(["Restrepo Calle, Felipe"], matchAliases)[0].docente_id, "docente:ferestrepoca");
+  });
+
+  it("line maps come from faculty and lines, keeping primary line first", () => {
+    const docenteLineas = buildDocenteLineasMap([
+      { id: "docente:capedrazab", line_ids: ["line:transporte", "line:sensado"] },
+    ]);
+    const keywordsByLine = buildKeywordsMap([
+      {
+        id: "line:transporte",
+        keywords: ["movilidad"],
+        topics: [{ keywords: ["rfid", "movilidad"] }],
+      },
+    ]);
+    assert.deepEqual(keywordsByLine, { "line:transporte": ["movilidad", "rfid"] });
+    const line = assignLine({
+      directorIds: ["docente:capedrazab"],
+      docenteLineas,
+      keywordsByLine: {},
+      title: "Sin pistas",
+      abstractEs: "",
+      abstractEn: "",
+      researchArea: "",
+    });
+    assert.equal(line.lineId, "line:transporte");
+  });
+
   it("assignLine never empty for single-advisor single-line", () => {
     const line = assignLine({
       directorIds: ["docente:ferestrepoca"],
@@ -250,58 +443,91 @@ describe("theses gates + register", () => {
     assert.equal(line.method, "advisor");
   });
 
-  it("registerThesis inserts row + student + line", () => {
-    const { matchAliases } = buildAliasIndex(aliases);
-    const data = {
-      tesis: [],
-      directores: [],
-      autores: [],
-      estudiantes: [],
-      tesisLineas: [],
-    };
-    const sum = {
-      handle: "unal/99999",
-      uuid: "u-test",
-      title: "Sistema embebido tolerante a fallos",
-      year: "2026",
-      authors: "Ada Lovelace",
-      authorsList: ["Ada Lovelace"],
-      advisors: ["Felipe Restrepo Calle"],
-      dcTypes: ["Master thesis"],
-      degreeName: "Maestría en Ingeniería de Sistemas y Computación",
-      degreeLevel: "Maestría",
-      researchArea: "sistemas embebidos",
-      abstractEs: "soft error fault tolerant",
-      abstractEn: "",
-      abstractOther: "",
-      itemUrl: "https://repositorio.unal.edu.co/handle/unal/99999",
-    };
-    const result = registerThesis(data, sum, {
-      matchAliases,
-      docenteLineas: {
-        "docente:ferestrepoca": ["line:embebidos", "line:educacion"],
-      },
-      keywordsByLine: {
-        "line:embebidos": ["embebido", "fault", "soft error"],
-      },
-      harvestedAt: "2026-09-13",
-    });
-    assert.equal(result.ok, true);
-    assert.equal(data.tesis.length, 1);
-    assert.equal(data.tesis[0].visible, "yes");
-    assert.ok(data.tesis[0].line_id_primary);
-    assert.equal(data.estudiantes.length, 1);
-    assert.equal(data.autores[0].estudiante_id, data.estudiantes[0].id);
-    assert.equal(data.directores[0].docente_id, "docente:ferestrepoca");
+  const riSum = {
+    handle: "unal/99999",
+    uuid: "u-test",
+    title: "Sistema embebido tolerante a fallos",
+    year: "2026",
+    authors: "Lovelace, Ada",
+    authorsList: ["Lovelace, Ada"],
+    advisors: ["Felipe Restrepo Calle"],
+    dcTypes: ["Master thesis"],
+    degreeName: "Maestría en Ingeniería de Sistemas y Computación",
+    researchArea: "sistemas embebidos",
+    abstractEs: "soft error fault tolerant",
+    abstractEn: "",
+    itemUrl: "https://repositorio.unal.edu.co/handle/unal/99999",
+  };
+  const registerOpts = () => ({
+    matchAliases: buildAliasIndex(aliases).matchAliases,
+    docenteLineas: { "docente:ferestrepoca": ["line:embebidos", "line:educacion"] },
+    keywordsByLine: { "line:embebidos": ["embebido", "fault", "soft error"] },
+    lines: TEST_LINES,
   });
 
-  it("upsertEstudiante increments n_tesis", () => {
+  it("registerThesis appends thesis and new student in site format", () => {
+    const data = { theses: [], students: [] };
+    const result = registerThesis(data, riSum, registerOpts());
+    assert.equal(result.ok, true);
+    assert.deepEqual(data.theses[0], {
+      id: "tesis:unal/99999",
+      handle: "unal/99999",
+      title: "Sistema embebido tolerante a fallos",
+      abstract: "soft error fault tolerant",
+      year: "2026",
+      degree: "maestria",
+      item_url: "https://repositorio.unal.edu.co/handle/unal/99999",
+      authors: "Lovelace, Ada",
+      topic_ids: ["topic:tolerancia-fallos"],
+      line_ids: ["line:embebidos"],
+      advisor_ids: ["docente:ferestrepoca"],
+      student_ids: ["estudiante:lovelace-ada"],
+      plas_catalog_source: "repositorio_unal",
+    });
+    assert.equal(data.students.length, 1);
+    assert.equal(data.students[0].name_display, "Ada Lovelace");
+    assert.equal(result.newStudents.length, 1);
+  });
+
+  it("registerThesis links existing students without modifying them", () => {
+    const existing = { id: "estudiante:lovelace-ada", name_display: "Ada L.", status: "Activo", line_ids: ["line:lenguajes"] };
+    const snapshot = structuredClone(existing);
+    const data = { theses: [], students: [existing] };
+    const result = registerThesis(data, riSum, registerOpts());
+    assert.equal(result.ok, true);
+    assert.equal(data.students.length, 1);
+    assert.deepEqual(data.students[0], snapshot);
+    assert.deepEqual(data.theses[0].student_ids, ["estudiante:lovelace-ada"]);
+  });
+
+  it("registerThesis skips known handles, including rejected ones", () => {
+    const data = {
+      theses: [{ id: "tesis:unal/99999", handle: "unal/99999", plas_catalog_source: "rejected" }],
+      students: [],
+    };
+    assert.equal(registerThesis(data, riSum, registerOpts()).reason, "already_present");
+    assert.equal(data.theses.length, 1);
+  });
+
+  it("thesisAbstract prefers Spanish and falls back to English", () => {
+    assert.equal(thesisAbstract({ abstractEs: " es ", abstractEn: "en" }), "es");
+    assert.equal(thesisAbstract({ abstractEs: "", abstractEn: "en" }), "en");
+    assert.equal(thesisAbstract({}), "");
+  });
+
+  it("withAbstract places abstract after title without touching other fields", () => {
+    const thesis = { id: "tesis:unal/1", handle: "unal/1", title: "T", year: "2020", line_ids: ["line:x"] };
+    const out = withAbstract(thesis, "A");
+    assert.deepEqual(Object.keys(out), ["id", "handle", "title", "abstract", "year", "line_ids"]);
+    assert.deepEqual({ ...out, abstract: undefined }, { ...thesis, abstract: undefined });
+    assert.deepEqual(Object.keys(withAbstract(out, "B")), Object.keys(out));
+  });
+
+  it("ensureStudent reuses the id derived from the RI name", () => {
     const list = [];
-    upsertEstudiante(list, "Ada Lovelace", "maestria", "2024");
-    upsertEstudiante(list, "Ada Lovelace", "doctorado", "2026");
+    assert.equal(ensureStudent(list, "Lovelace, Ada").created, true);
+    assert.equal(ensureStudent(list, "Lovelace,  Ada ").created, false);
     assert.equal(list.length, 1);
-    assert.equal(list[0].n_tesis, "2");
-    assert.equal(list[0].degree_highest, "doctorado");
   });
 });
 
@@ -325,127 +551,28 @@ describe("RI summarizeItem", () => {
     assert.equal(sum.authorsList[0], "Author One");
     assert.equal(sum.advisors[0], "Felipe Restrepo Calle");
   });
-});
 
-describe("projectCatalog", () => {
-  it("filters plas_catalog=yes and visible theses", () => {
-    const out = projectCatalog({
-      publications: [
-        {
-          id: "pub:doi:10.1/a",
-          doi: "10.1/a",
-          title: "In",
-          year: "2025",
-          typology: "journal_article",
-          typology_label_es: "Artículos de revista",
-          venue_title: "V",
-          url: "https://doi.org/10.1/a",
-          plas_catalog: "yes",
-          plas_catalog_source: "minciencias",
-          seed_docente_ids: "docente:ferestrepoca",
-        },
-        {
-          id: "pub:doi:10.1/b",
-          title: "Pending",
-          year: "2025",
-          plas_catalog: "pending",
-          seed_docente_ids: "docente:ferestrepoca",
-        },
-      ],
-      people: [
-        {
-          id: "persona:orcid:x",
-          name_display: "Felipe Restrepo",
-          docente_id: "docente:ferestrepoca",
-        },
-      ],
-      publicationAuthors: [
-        {
-          publicacion_id: "pub:doi:10.1/a",
-          persona_id: "persona:orcid:x",
-          author_position: "1",
-        },
-      ],
-      facultyLines: [{ docente_id: "docente:ferestrepoca", line_id: "line:educacion" }],
-      researchLines: [{ id: "line:educacion", name: "Educación en ingeniería" }],
-      theses: [
-        {
-          id: "tesis:unal/1",
-          handle: "unal/1",
-          title: "Visible",
-          year: "2024",
-          degree: "maestria",
-          item_url: "https://repositorio.unal.edu.co/handle/unal/1",
-          line_id_primary: "line:educacion",
-          authors: "A B",
-          visible: "yes",
-        },
-        {
-          id: "tesis:unal/2",
-          handle: "unal/2",
-          title: "Hidden",
-          year: "2023",
-          visible: "no",
-          line_id_primary: "line:educacion",
-          authors: "C",
-          degree: "maestria",
-          item_url: "",
-        },
-      ],
-      thesisAuthors: [
-        {
-          tesis_id: "tesis:unal/1",
-          estudiante_id: "estudiante:a-b",
-          degree_of_tesis: "maestria",
-          is_highest_degree_tesis: "yes",
-        },
-      ],
-      students: [
-        {
-          id: "estudiante:a-b",
-          name_display: "B, A",
-          name_sort: "B, A",
-          degree_highest: "maestria",
-          n_tesis: "1",
-          site_name: "",
-          site_status: "",
-          site_role_group: "",
-          site_lines: "",
-          image_src: "",
-          email: "",
-          website: "",
-          linkedin: "",
-          github: "",
-          member_match: "",
-        },
-      ],
+  it("reads ISO 639-2 abstract languages (spa/eng)", () => {
+    const sum = summarizeItem({
+      handle: "unal/1",
+      metadata: {
+        "dc.description.abstract": [
+          { value: "", language: "spa" },
+          { value: "Resumen", language: "spa" },
+          { value: "Abstract", language: "eng" },
+        ],
+      },
     });
-    assert.equal(out.publications.length, 1);
-    assert.equal(out.publications[0].authors, "Felipe Restrepo");
-    assert.deepEqual(out.publications[0].line_ids, ["line:educacion"]);
-    assert.equal(out.theses.length, 1);
-    assert.equal(out.students.length, 1);
-    assert.equal(out.students[0].thesis.id, "tesis:unal/1");
-    assert.equal(out.students[0].active, false);
+    assert.equal(sum.abstractEs, "Resumen");
+    assert.equal(sum.abstractEn, "Abstract");
   });
 });
 
 describe("json-store roundtrip", () => {
   let dir;
-  let store;
 
   before(async () => {
     dir = await mkdtemp(path.join(tmpdir(), "plas-harvest-"));
-    await mkdir(path.join(dir, "data", "harvest"), { recursive: true });
-    await writeFile(
-      path.join(dir, "data", "harvest", "faculty.json"),
-      JSON.stringify([{ id: "docente:x", orcid: "0000", name_display: "X" }], null, 2),
-      "utf8",
-    );
-    // Load module with patched paths via dynamic import after writing a tiny wrapper is hard;
-    // test the helpers by importing and writing via absolute API using temp files directly.
-    const { writeJson, readJson, rowToStrings } = await import("./lib/json-store.mjs");
-    store = { writeJson, readJson, rowToStrings };
   });
 
   after(async () => {
@@ -453,23 +580,106 @@ describe("json-store roundtrip", () => {
   });
 
   it("writeJson/readJson roundtrip", async () => {
-    const file = path.join(dir, "sample.json");
-    await store.writeJson(file, [{ a: 1, b: null }]);
-    const got = await store.readJson(file);
-    assert.equal(got[0].a, 1);
-    assert.deepEqual(store.rowToStrings({ a: 1, b: null }), { a: "1", b: "" });
+    const { writeJson, readJson } = await import("./lib/json-store.mjs");
+    const file = path.join(dir, "nested", "sample.json");
+    await writeJson(file, [{ a: 1, b: null }]);
+    assert.deepEqual(await readJson(file), [{ a: 1, b: null }]);
+    assert.deepEqual(await readJson(path.join(dir, "missing.json"), []), []);
   });
 });
 
 describe("harvest data present", () => {
-  it("has faculty with ORCID and theses aliases", async () => {
-    const faculty = JSON.parse(await readFile(path.join(HARVEST, "faculty.json"), "utf8"));
-    const aliases = JSON.parse(await readFile(path.join(HARVEST, "faculty_aliases.json"), "utf8"));
-    const pubs = JSON.parse(await readFile(path.join(HARVEST, "publications.json"), "utf8"));
-    assert.ok(faculty.some((f) => f.orcid));
-    assert.ok(aliases.some((a) => a.use_for_advisor_match === "yes"));
-    assert.ok(pubs.length > 50);
-    const catalogYes = pubs.filter((p) => p.plas_catalog === "yes").length;
-    assert.ok(catalogYes > 0);
+  const readSite = async (name) => JSON.parse(await readFile(path.join(SITE_DATA, name), "utf8"));
+
+  it("has faculty with ORCID, advisor aliases and known lines", async () => {
+    const faculty = await readSite("faculty.json");
+    const lines = await readSite("lines.json");
+    const lineIds = new Set(lines.map((l) => l.id));
+    for (const f of faculty) {
+      assert.ok(orcidFromFaculty(f), f.id);
+      assert.ok(f.aliases?.length, f.id);
+      for (const id of f.line_ids) assert.ok(lineIds.has(id), `${f.id} → ${id}`);
+    }
+    assert.ok(lines.every((l) => l.keywords?.length));
+  });
+
+  it("lines have slug, short name, paragraphs and unique topics", async () => {
+    const lines = await readSite("lines.json");
+    const topicIds = new Set();
+    for (const l of lines) {
+      assert.equal(l.slug, l.id.replace("line:", ""), l.id);
+      assert.ok(l.name && l.short_name && l.summary, l.id);
+      assert.ok(Array.isArray(l.description) && l.description.length, l.id);
+      assert.ok(l.topics.length, l.id);
+      for (const t of l.topics) {
+        assert.equal(t.id, `topic:${t.slug}`, t.id);
+        assert.ok(t.name && t.description && t.keywords?.length, t.id);
+        assert.ok(!topicIds.has(t.id), `tema repetido ${t.id}`);
+        topicIds.add(t.id);
+      }
+    }
+  });
+
+  it("publications reference known lines and have unique ids", async () => {
+    const pubs = await readSite("publications.json");
+    const lineIds = new Set((await readSite("lines.json")).map((l) => l.id));
+    assert.ok(pubs.filter(isVisiblePublication).length > 50);
+    assert.equal(new Set(pubs.map((p) => p.id)).size, pubs.length);
+    for (const p of pubs) {
+      for (const id of p.line_ids || []) assert.ok(lineIds.has(id), `${p.id} → ${id}`);
+      assert.equal(p.typology_label_es, labelEs(p.typology), p.id);
+    }
+  });
+
+  it("theses link to existing students, faculty and lines", async () => {
+    const theses = await readSite("theses.json");
+    const students = await readSite("students.json");
+    const lineIds = new Set((await readSite("lines.json")).map((l) => l.id));
+    const facultyIds = new Set((await readSite("faculty.json")).map((f) => f.id));
+    const studentIds = new Set(students.map((s) => s.id));
+    assert.equal(new Set(theses.map((t) => t.handle)).size, theses.length);
+    assert.equal(studentIds.size, students.length);
+    for (const t of theses) {
+      assert.ok(t.student_ids.length, t.id);
+      for (const id of t.student_ids) assert.ok(studentIds.has(id), `${t.id} → ${id}`);
+      for (const id of t.advisor_ids) assert.ok(facultyIds.has(id), `${t.id} → ${id}`);
+      for (const id of t.line_ids) assert.ok(lineIds.has(id), `${t.id} → ${id}`);
+    }
+    for (const s of students) {
+      for (const id of s.line_ids) assert.ok(lineIds.has(id), `${s.id} → ${id}`);
+    }
+  });
+
+  it("wip entries link to existing students, faculty, lines and topics", async () => {
+    const wip = await readSite("wip.json");
+    const lines = await readSite("lines.json");
+    const lineIds = new Set(lines.map((l) => l.id));
+    const topicIds = new Set(lines.flatMap((l) => l.topics.map((t) => t.id)));
+    const facultyIds = new Set((await readSite("faculty.json")).map((f) => f.id));
+    const studentIds = new Set((await readSite("students.json")).map((s) => s.id));
+    assert.equal(new Set(wip.map((w) => w.id)).size, wip.length, "ids de wip repetidos");
+    for (const w of wip) {
+      assert.match(w.id, /^wip:[a-z0-9-]+$/, w.id);
+      assert.ok(w.title?.trim() && w.summary?.trim(), `${w.id} sin título o descripción`);
+      assert.ok(w.student_ids?.length, `${w.id} sin estudiantes`);
+      for (const id of w.student_ids) assert.ok(studentIds.has(id), `${w.id} → ${id}`);
+      for (const id of w.advisor_ids ?? []) assert.ok(facultyIds.has(id), `${w.id} → ${id}`);
+      for (const id of w.line_ids ?? []) assert.ok(lineIds.has(id), `${w.id} → ${id}`);
+      for (const id of w.topic_ids ?? []) assert.ok(topicIds.has(id), `${w.id} → ${id}`);
+      if (w.url) assert.match(w.url, /^(https?:\/\/|\/)/, `${w.id} url debe ser absoluta o empezar por /`);
+    }
+  });
+
+  it("works with topics carry exactly the lines of those topics", async () => {
+    const lines = await readSite("lines.json");
+    const topicIds = new Set(lines.flatMap((l) => l.topics.map((t) => t.id)));
+    const works = [...(await readSite("publications.json")), ...(await readSite("theses.json"))];
+    for (const w of works) {
+      assert.ok(Array.isArray(w.topic_ids), `${w.id} sin topic_ids`);
+      for (const id of w.topic_ids) assert.ok(topicIds.has(id), `${w.id} → ${id}`);
+      if (w.topic_ids.length) {
+        assert.deepEqual([...w.line_ids].sort(), linesForTopics(w.topic_ids, lines), w.id);
+      }
+    }
   });
 });

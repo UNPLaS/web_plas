@@ -1,0 +1,27 @@
+---
+import { researchLines } from '../data/site';
+---
+
+<ul class="lines-gallery">
+  {
+    researchLines.map((line) => (
+      <li>
+        <a
+          class="lines-card"
+          href={line.href}
+          style={line.color ? `--line-color: ${line.color}` : undefined}
+        >
+          <div class="lines-card__media">
+            {line.image ? (
+              <img src={line.image} alt="" loading="lazy" width="600" height="400" />
+            ) : null}
+          </div>
+          <div class="lines-card__body">
+            <h3 class="lines-card__title">{line.title}</h3>
+            <p class="lines-card__text">{line.summary}</p>
+          </div>
+        </a>
+      </li>
+    ))
+  }
+</ul>

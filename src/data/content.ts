@@ -1,6 +1,6 @@
 /**
  * View-models desde JSON exportado de new_plas.
- * Rutas internas: convención Front_plas (/projects, /blog, …).
+ * Rutas internas: convención web_plas (/projects, /blog, …).
  */
 import blogJson from './blog.json';
 import facultyJson from './faculty.json';
@@ -11,6 +11,7 @@ import publicationsJson from './publications.json';
 import resourcesJson from './resources.json';
 import studentsJson from './students.json';
 import thesesJson from './theses.json';
+import wipJson from './wip.json';
 import lineTopicGraphs from './line-topic-graphs.json';
 import { resolveCatalogSource } from './catalog-sources';
 import { resolveTypology } from './typologies';
@@ -22,7 +23,7 @@ const degreeLabel: Record<string, string> = {
   doctorado: 'Doctorado',
 };
 
-/** Reescribe hrefs de new_plas a rutas Front_plas (+ base de GitHub Pages). */
+/** Reescribe hrefs de new_plas a rutas web_plas (+ base de GitHub Pages). */
 export function mapHref(href: string): string {
   if (!href) return href;
   if (/^(https?:|mailto:|tel:)/i.test(href)) return href;
@@ -61,18 +62,65 @@ export const eventIdFromParam = blogIdFromParam;
 
 export const group = groupJson;
 
+const numberWords = [
+  'cero', 'un', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho', 'nueve',
+  'diez', 'once', 'doce', 'trece', 'catorce', 'quince', 'dieciséis', 'diecisiete',
+  'dieciocho', 'diecinueve', 'veinte',
+];
+
+/** Años cumplidos a la fecha del build (el sitio es estático). */
+function groupAgeYears(founded: string, now = new Date()): number {
+  const [y, m, d] = founded.split('-').map(Number);
+  let years = now.getUTCFullYear() - y;
+  const beforeAnniversary =
+    now.getUTCMonth() + 1 < m || (now.getUTCMonth() + 1 === m && now.getUTCDate() < d);
+  if (beforeAnniversary) years -= 1;
+  return years;
+}
+
+const groupAge = groupAgeYears(groupJson.founded);
+const groupAgeLabel = `${numberWords[groupAge] ?? groupAge} ${groupAge === 1 ? 'año' : 'años'}`;
+
 export const site = {
   name: groupJson.name,
   nameFull: groupJson.name_full,
-  tagline: 'Investigamos construyendo herramientas, no solo publicando.',
-  subtitle:
-    'Lo que se prueba en el laboratorio se enseña, se evalúa y vuelve a la práctica: las líneas de PLaS se refuerzan entre sí.',
+  tagline: 'Investigamos construyendo, y construimos en equipo.',
+  subtitle: `Llevamos ${groupAgeLabel} creando herramientas que otros pueden usar, y con gusto compartimos el camino con quien quiera sumarse.`,
   logo: withBase('/images/PLaS/Logo_PLaS.png'),
 };
 
 /** Color de chip por id o nombre de línea (desde lines.json). */
 const lineColorById = Object.fromEntries(linesJson.map((l) => [l.id, l.color]));
-const lineColorByName = Object.fromEntries(linesJson.map((l) => [l.name, l.color]));
+const lineColorByName = Object.fromEntries(
+  linesJson.flatMap((l) => [
+    [l.name, l.color],
+    [l.short_name, l.color],
+  ]),
+);
+/** Nombre corto (chips, filtros, metadatos); el nombre completo va en /lines. */
+const lineNameById: Record<string, string> = Object.fromEntries(
+  linesJson.map((l) => [l.id, l.short_name]),
+);
+
+function lineNamesFor(ids: string[] = []) {
+  return ids.map((id) => lineNameById[id]).filter(Boolean);
+}
+
+/** Tema → nombre y ancla en la página de su línea (`/lines/<línea>#<tema>`). */
+const topicById = new Map(
+  linesJson.flatMap((l) =>
+    (l.topics ?? []).map((t) => [
+      t.id,
+      { name: t.name, href: withBase(`/lines/${l.slug}#${t.slug}`) },
+    ]),
+  ),
+);
+
+function topicsFor(ids: string[] = []) {
+  return ids
+    .map((id) => topicById.get(id))
+    .filter((t): t is NonNullable<typeof t> => Boolean(t));
+}
 
 function resolveLineColor(lineId?: string, lineName?: string) {
   if (lineId && lineColorById[lineId]) return lineColorById[lineId];
@@ -116,15 +164,17 @@ function resolveNivelColor(opts: {
 
 export const projectItems = [...projectsJson]
   .sort((a, b) => Number(a.sort_order) - Number(b.sort_order))
-  .map((p) => ({
+  .map((p) => {
+    const lineName = lineNameById[p.line_id] ?? '';
+    return {
     id: p.slug,
     rawId: p.id,
     title: p.title_short || p.title_full,
     titleFull: p.title_full,
-    meta: `Proyecto · ${p.line_name}`,
+    meta: `Proyecto · ${lineName}`,
     summary: p.summary,
     content: typeof p.content === 'string' ? p.content : '',
-    outcome: p.line_name,
+    outcome: lineName,
     href: withBase(`/projects/${p.slug}`),
     image: p.image_path ? withBase(p.image_path) : '',
     sections: p.sections ?? [],
@@ -134,12 +184,13 @@ export const projectItems = [...projectsJson]
       path: a.path ? withBase(a.path) : a.path,
     })),
     lineId: p.line_id || '',
-    lineName: p.line_name,
-    lineColor: resolveLineColor(p.line_id, p.line_name),
-    lineChip: p.line_name
-      ? { id: 'linea' as const, label: p.line_name, color: resolveLineColor(p.line_id, p.line_name) }
+    lineName,
+    lineColor: resolveLineColor(p.line_id, lineName),
+    lineChip: lineName
+      ? { id: 'linea' as const, label: lineName, color: resolveLineColor(p.line_id, lineName) }
       : null,
-  }));
+    };
+  });
 
 export const featuredProjects = projectItems.slice(0, 6).map((p) => ({
   id: p.id,
@@ -200,17 +251,23 @@ export const newsItems = blogItems.slice(0, 3).map((item) => ({
 
 /** @deprecated usar blogItems */
 export const eventItems = blogItems;
+function facultyAnchor(id: string) {
+  return id.replace('docente:', '');
+}
+
 export const facultyItems = facultyJson.map((f) => {
   const isFelipe = f.id === 'docente:ferestrepoca';
   const groupRole = f.group_role || (isFelipe ? 'Líder del grupo' : f.rank || 'Profesor asociado');
+  const lineNames = lineNamesFor(f.line_ids);
   return {
     id: f.id,
+    anchor: facultyAnchor(f.id),
     name: f.name_display,
     role: groupRole,
     rank: f.rank,
-    href: withBase('/people'),
+    href: withBase(`/people#${facultyAnchor(f.id)}`),
     image: f.image_path ? withBase(f.image_path) : '',
-    meta: f.line_names?.length ? `Líneas: ${f.line_names.join(', ')}` : '',
+    meta: lineNames.length ? `Líneas: ${lineNames.join(', ')}` : '',
     email: f.email,
     profiles: f.profiles ?? [],
     roleChip: {
@@ -223,6 +280,7 @@ export const facultyItems = facultyJson.map((f) => {
 
 export const people = facultyItems.map((f) => ({
   id: f.id,
+  anchor: f.anchor,
   name: f.name,
   role: f.role,
   rank: f.rank,
@@ -232,16 +290,126 @@ export const people = facultyItems.map((f) => ({
   profileLinks: f.profileLinks,
 }));
 
-export const students = [...studentsJson]
+/** `plas_catalog_source: "rejected"` oculta la tesis (y el harvest no la re-agrega). */
+const visibleTheses = thesesJson.filter((t) => t.plas_catalog_source !== 'rejected');
+
+const DEGREE_RANK: Record<string, number> = { doctorado: 3, maestria: 2, pregrado: 1 };
+const DEGREE_BY_ROLE_GROUP: Record<string, string> = {
+  estudiante_doctorado: 'doctorado',
+  estudiante_maestria: 'maestria',
+  estudiante_pregrado: 'pregrado',
+};
+const ROLE_LABEL_BY_DEGREE: Record<string, string> = {
+  doctorado: 'Estudiante de doctorado',
+  maestria: 'Estudiante de maestría',
+  pregrado: 'Estudiante de pregrado',
+};
+
+function thesisUrl(itemUrl: string) {
+  if (!itemUrl) return '';
+  return /^https?:\/\//i.test(itemUrl) ? itemUrl : `/${itemUrl.replace(/^\//, '')}`;
+}
+
+/** Trabajo en curso de estudiantes activos (sin tesis todavía); ver `wip.json`. */
+interface WipItem {
+  id: string;
+  title: string;
+  summary: string;
+  url?: string;
+  student_ids: string[];
+  advisor_ids?: string[];
+  line_ids?: string[];
+  topic_ids?: string[];
+}
+
+const wipByStudent = new Map<string, WipItem>();
+for (const w of wipJson as WipItem[]) {
+  for (const id of w.student_ids) if (!wipByStudent.has(id)) wipByStudent.set(id, w);
+}
+
+/** Párrafos de un abstract o descripción (el repositorio separa con saltos de línea). */
+function paragraphsOf(text = '') {
+  return text
+    .split(/\r?\n/)
+    .map((p) => p.trim())
+    .filter(Boolean);
+}
+
+/**
+ * Tesis de mayor grado (y más reciente) del estudiante; con tesis pasa a Inactivo
+ * y su entrada en `wip.json`, si quedó, deja de usarse.
+ */
+const resolvedStudents = studentsJson.map((s) => {
+  const thesis = visibleTheses
+    .filter((t) => t.student_ids.includes(s.id))
+    .sort(
+      (a, b) =>
+        (DEGREE_RANK[b.degree] ?? 0) - (DEGREE_RANK[a.degree] ?? 0) ||
+        String(b.year).localeCompare(String(a.year)),
+    )[0];
+  const wip = thesis ? null : (wipByStudent.get(s.id) ?? null);
+  const status = thesis ? 'Inactivo' : s.status;
+  const roleDegree = DEGREE_BY_ROLE_GROUP[s.role_group] ?? '';
+  return {
+    ...s,
+    line_ids: thesis ? thesis.line_ids : wip?.line_ids?.length ? wip.line_ids : s.line_ids,
+    topic_ids: thesis ? thesis.topic_ids : (wip?.topic_ids ?? []),
+    status,
+    active: !thesis && status === 'Activo',
+    exit_year: thesis?.year ?? '',
+    degree_highest: thesis?.degree || roleDegree,
+    role_label: ROLE_LABEL_BY_DEGREE[roleDegree || thesis?.degree || ''] ?? '',
+    thesis: thesis
+      ? {
+          title: thesis.title,
+          abstract: thesis.abstract ?? '',
+          year: thesis.year,
+          degree: thesis.degree,
+          url: thesisUrl(thesis.item_url),
+        }
+      : null,
+    wip,
+  };
+});
+
+type ResolvedStudent = (typeof resolvedStudents)[number];
+
+/** Contenido del modal: la tesis si ya terminó, el trabajo en curso si está activo. */
+function studentWork(s: ResolvedStudent) {
+  if (s.thesis) {
+    return {
+      kind: 'thesis' as const,
+      eyebrow: ['Tesis', degreeLabel[s.thesis.degree], s.thesis.year].filter(Boolean).join(' · '),
+      title: s.thesis.title,
+      paragraphs: paragraphsOf(s.thesis.abstract),
+      href: s.thesis.url,
+      linkLabel: 'Ver tesis',
+    };
+  }
+  if (s.wip) {
+    return {
+      kind: 'wip' as const,
+      eyebrow: 'Trabajo en curso',
+      title: s.wip.title,
+      paragraphs: paragraphsOf(s.wip.summary),
+      href: s.wip.url ? withBase(s.wip.url) : '',
+      linkLabel: 'Ver página del trabajo',
+    };
+  }
+  return null;
+}
+
+export const students = resolvedStudents
   .sort((a, b) => Number(b.active) - Number(a.active) || a.name_sort.localeCompare(b.name_sort))
   .map((s) => {
     const degree = s.thesis?.degree || s.degree_highest;
     const typeLabel = s.role_label || degreeLabel[degree] || degree;
-    const lineName = s.lines || '';
-    const thesisUrl =
-      s.thesis?.url || s.links?.find((l) => /tesis/i.test(l.label))?.url || '';
+    const lineId = s.line_ids[0] || '';
+    const lineName = lineNamesFor(s.line_ids).join(', ');
+    const thesisUrl = s.thesis?.url || '';
     return {
       id: s.id,
+      dialogId: s.id.replace(/[^a-z0-9-]+/gi, '-'),
       name: s.name_display,
       role: typeLabel,
       meta: s.status,
@@ -252,6 +420,16 @@ export const students = [...studentsJson]
       thesisTitle: s.thesis?.title || '',
       thesisYear: s.thesis?.year || s.exit_year || '',
       thesisHref: thesisUrl,
+      lineIds: s.line_ids,
+      lineChips: s.line_ids
+        .filter((id) => lineNameById[id])
+        .map((id) => ({
+          id: 'linea' as const,
+          label: lineNameById[id],
+          color: resolveLineColor(id, lineNameById[id]),
+        })),
+      topics: topicsFor(s.topic_ids),
+      work: studentWork(s),
       chips: [
         {
           id: 'nivel',
@@ -259,7 +437,7 @@ export const students = [...studentsJson]
           color: resolveNivelColor({ degree, levelLabel: typeLabel }),
         },
         ...(lineName
-          ? [{ id: 'linea', label: lineName, color: resolveLineColor(undefined, lineName) }]
+          ? [{ id: 'linea', label: lineName, color: resolveLineColor(lineId, lineName) }]
           : []),
       ],
     };
@@ -291,21 +469,39 @@ export const historicalStudentSections = (
   ),
 })).filter((sec) => sec.items.length > 0);
 
+export interface GraphNode {
+  id: string;
+  label: string;
+  weight: number;
+  x: number;
+  y: number;
+}
+
+export interface GraphEdge {
+  source: string;
+  target: string;
+  weight: number;
+}
+
 export const researchLines = linesJson.map((line) => {
-  const graph = (lineTopicGraphs as Record<string, { nodes: unknown[]; edges: unknown[] }>)[
+  const graph = (lineTopicGraphs as Record<string, { nodes: GraphNode[]; edges: GraphEdge[] }>)[
     line.id
   ];
   const imagePath = typeof line.image_path === 'string' ? line.image_path : '';
   return {
     id: line.id,
     title: line.name,
+    shortTitle: line.short_name,
     summary: line.summary,
-    text: line.description,
-    href: withBase(`/lines#${line.slug}`),
+    paragraphs: line.description,
+    href: withBase(`/lines/${line.slug}`),
     slug: line.slug,
     color: line.color,
     image: imagePath ? withBase(imagePath) : '',
     imageCredit: typeof line.image_credit === 'string' ? line.image_credit : '',
+    imageSource: typeof line.image_source === 'string' ? line.image_source : '',
+    /** Punto de enfoque (object-position) para el recorte del banner. */
+    imagePosition: typeof line.image_position === 'string' ? line.image_position : 'center',
     topics: line.topics ?? [],
     topicGraph: graph
       ? {
@@ -328,9 +524,40 @@ const TYPE_ORDER = [
   'unknown',
 ];
 
-const pubItems = publicationsJson.map((p) => {
+/** `plas_catalog_source: "rejected"` oculta la publicación (y el harvest no la re-agrega). */
+const visiblePublications = publicationsJson.filter((p) => p.plas_catalog_source !== 'rejected');
+
+function normName(s: string) {
+  return String(s || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/\p{M}/gu, '')
+    .replace(/[^a-z ]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+const facultyMatchers = facultyJson.map((f) => {
+  const [surname = '', given = ''] = f.name_sort.split(',').map(normName);
+  return { id: f.id, surname: surname.split(' ')[0], given: given.split(' ')[0] };
+});
+
+/** Docentes entre los autores: primer apellido más primer nombre o su inicial en la misma entrada. */
+function facultyIdsInAuthors(authors: string) {
+  const found = new Set<string>();
+  for (const author of String(authors || '').split(/[;|]/)) {
+    const n = ` ${normName(author)} `;
+    for (const f of facultyMatchers) {
+      if (!f.surname || !n.includes(` ${f.surname} `)) continue;
+      if (n.includes(` ${f.given} `) || n.includes(` ${f.given.charAt(0)} `)) found.add(f.id);
+    }
+  }
+  return [...found];
+}
+
+const pubItems = visiblePublications.map((p) => {
   const lineIds = p.line_ids || [];
-  const lineNames = p.line_names || [];
+  const lineNames = lineNamesFor(lineIds);
   const lineId = lineIds[0] || '';
   const line = lineNames[0] || '';
   const typology = p.typology || 'unknown';
@@ -349,6 +576,8 @@ const pubItems = publicationsJson.map((p) => {
     degreeLabel: '',
     lineId,
     lineIds,
+    topicIds: p.topic_ids ?? [],
+    facultyIds: facultyIdsInAuthors(p.authors),
     line,
     lineName: lineNames.join(', '),
     lineColor: resolveLineColor(lineId, line),
@@ -361,15 +590,10 @@ const pubItems = publicationsJson.map((p) => {
   };
 });
 
-const thesisItems = thesesJson.map((t) => {
-  const lineIds =
-    t.line_ids?.length
-      ? t.line_ids
-      : t.line_id_primary
-        ? [t.line_id_primary]
-        : [];
-  const lineNames = t.line_names || [];
-  const lineId = lineIds[0] || t.line_id_primary || '';
+const thesisItems = visibleTheses.map((t) => {
+  const lineIds = t.line_ids;
+  const lineNames = lineNamesFor(lineIds);
+  const lineId = lineIds[0] || '';
   const line = lineNames[0] || '';
   const degree = degreeLabel[t.degree] ?? t.degree ?? '';
   const href = t.item_url || '';
@@ -386,6 +610,8 @@ const thesisItems = thesesJson.map((t) => {
     degreeLabel: degree,
     lineId,
     lineIds,
+    topicIds: t.topic_ids ?? [],
+    facultyIds: t.advisor_ids,
     line,
     lineName: lineNames.join(', ') || line,
     lineColor: resolveLineColor(lineId, line),
@@ -406,6 +632,63 @@ export const catalogItems = [...pubItems, ...thesisItems]
       ? { id: 'linea' as const, label: item.line, color: item.lineColor }
       : null,
   }));
+
+/** Trabajos "activos" en la página de línea: año actual y los dos anteriores. */
+const ACTIVE_SINCE = new Date().getFullYear() - 2;
+const facultyById = new Map(facultyItems.map((f) => [f.id, f]));
+
+export const lineDetails = researchLines.map((line) => {
+  const topicById = new Map(line.topics.map((t) => [t.id, t]));
+  const works = catalogItems
+    .filter((w) => w.lineIds.includes(line.id))
+    .map((w) => ({
+      id: w.id,
+      title: w.title,
+      author: w.author,
+      year: w.year,
+      meta: w.meta,
+      outcome: w.outcome,
+      href: w.href,
+      topicIds: w.topicIds.filter((id) => topicById.has(id)),
+      topics: w.topicIds
+        .map((id) => topicById.get(id))
+        .filter((t): t is NonNullable<typeof t> => Boolean(t))
+        .map((t) => ({ slug: t.slug, name: t.name })),
+    }));
+
+  const topics = line.topics.map((t) => {
+    const topicWorks = catalogItems.filter((w) => w.topicIds.includes(t.id));
+    const workCountByFaculty = new Map<string, number>();
+    for (const w of topicWorks) {
+      for (const id of w.facultyIds) workCountByFaculty.set(id, (workCountByFaculty.get(id) ?? 0) + 1);
+    }
+    const people = [...workCountByFaculty.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .map(([id]) => facultyById.get(id))
+      .filter((f): f is NonNullable<typeof f> => Boolean(f))
+      .map((f) => ({ id: f.id, name: f.name, image: f.image, href: f.href }));
+    return {
+      id: t.id,
+      slug: t.slug,
+      name: t.name,
+      description: t.description,
+      total: topicWorks.length,
+      people,
+      activeWorks: works.filter((w) => w.topicIds.includes(t.id) && Number(w.year) >= ACTIVE_SINCE),
+    };
+  });
+
+  const years = [...new Set(works.map((w) => w.year).filter(Boolean))].sort((a, b) =>
+    b.localeCompare(a),
+  );
+  return {
+    ...line,
+    topics,
+    activeSince: ACTIVE_SINCE,
+    workCount: works.length,
+    timeline: years.map((year) => ({ year, works: works.filter((w) => w.year === year) })),
+  };
+});
 
 export const catalogYears = [
   ...new Set(catalogItems.map((i) => i.year).filter(Boolean)),

@@ -45,7 +45,7 @@ Datos públicos aproximados (export actual): 5 líneas, 13 proyectos, 4 docentes
 - **Astro 7** (sitio estático) + **Tailwind 4**
 - Chrome visual UNAL + identidad PLaS
 - Node **≥ 22.12**
-- Datos en JSON (`src/data/`); cosecha canónica en `data/harvest/`
+- Datos en JSON (`src/data/`), alimentados por los harvest de ORCID y del repositorio UNAL
 
 ## Desarrollo
 
@@ -70,17 +70,16 @@ astro dev stop
 
 ## Datos y harvest
 
-El canónico vive en `data/harvest/*.json`. Tras cosechar o editar catálogo (`plas_catalog`), se proyecta a `src/data/`:
+Todos los datos viven en `src/data/`. Los harvest agregan registros nuevos directamente ahí, sin tocar los existentes:
 
 ```bash
-npm run harvest:publications   # ORCID → Crossref → harvest + sitio
-npm run harvest:theses         # Repositorio UNAL → harvest + sitio
-npm run harvest:project        # Solo proyectar harvest → src/data
+npm run harvest:publications   # ORCID → Crossref → src/data/publications.json
+npm run harvest:theses         # Repositorio UNAL → src/data/{theses,students}.json
 ```
 
 Detalle: [`scripts/README.md`](scripts/README.md).
 
-Publicaciones nuevas entran como `plas_catalog=pending` hasta confirmarlas como producto del grupo (`yes`) y volver a proyectar.
+Publicaciones nuevas entran visibles, salvo las de Fabio González sin coautor PLaS. Para ocultar una publicación o tesis, cambiar su `plas_catalog_source` a `"rejected"`: no se renderiza y el harvest no la vuelve a traer.
 
 ## Despliegue
 

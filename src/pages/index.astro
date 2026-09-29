@@ -4,14 +4,8 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import ProjectsCarousel from '../components/ProjectsCarousel.astro';
 import TypeChip from '../components/TypeChip.astro';
-import {
-  facultyItems,
-  homeQuotes,
-  newsItems,
-  recentWorks,
-  researchLines,
-  site,
-} from '../data/placeholders';
+import LinesGallery from '../components/LinesGallery.astro';
+import { facultyItems, homeQuotes, newsItems, recentWorks, site } from '../data/site';
 
 const quoteFallback = homeQuotes[0];
 ---
@@ -144,29 +138,7 @@ const quoteFallback = homeQuotes[0];
       <h2 id="lines-heading" class="lines-section__title">Líneas de investigación</h2>
       <a class="btn btn--soft" href={withBase("/lines")}>Líneas</a>
     </div>
-    <ul class="lines-gallery">
-      {
-        researchLines.map((line) => (
-          <li>
-            <a
-              class="lines-card"
-              href={line.href}
-              style={line.color ? `--line-color: ${line.color}` : undefined}
-            >
-              <div class="lines-card__media">
-                {line.image ? (
-                  <img src={line.image} alt="" loading="lazy" width="600" height="400" />
-                ) : null}
-              </div>
-              <div class="lines-card__body">
-                <h3 class="lines-card__title">{line.title}</h3>
-                <p class="lines-card__text">{line.summary}</p>
-              </div>
-            </a>
-          </li>
-        ))
-      }
-    </ul>
+    <LinesGallery />
   </section>
 
   <section class="invite-section section-bleed" aria-labelledby="invite-heading">

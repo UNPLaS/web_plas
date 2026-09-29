@@ -1,0 +1,107 @@
+---
+import TypeChip from './TypeChip.astro';
+
+interface Chip {
+  id: string;
+  label: string;
+  color?: string;
+}
+
+interface Props {
+  student: {
+    dialogId: string;
+    name: string;
+    thesisTitle: string;
+    thesisYear: string;
+    chips: Chip[];
+    lineChips: Chip[];
+    topics: { name: string; href: string }[];
+    work: {
+      kind: 'thesis' | 'wip';
+      eyebrow: string;
+      title: string;
+      paragraphs: string[];
+      href: string;
+      linkLabel: string;
+    } | null;
+  };
+}
+
+const { student } = Astro.props;
+const nivelChip = student.chips.find((chip) => chip.id === 'nivel');
+const dialogId = student.dialogId;
+const titleId = `${dialogId}-title`;
+const external = (href: string) =>
+  /^https?:\/\//i.test(href) ? { target: '_blank', rel: 'noreferrer' } : {};
+---
+
+<button
+  type="button"
+  class="student-card"
+  data-student-dialog={dialogId}
+  aria-haspopup="dialog"
+>
+  <span class="student-card__topline">
+    <span class="student-card__name">{student.name}</span>
+    {student.thesisYear ? <span class="student-card__year">{student.thesisYear}</span> : null}
+    {student.lineChips.map((chip) => <TypeChip typology={chip} />)}
+  </span>
+  {student.thesisTitle ? <span class="student-card__thesis">{student.thesisTitle}</span> : null}
+</button>
+
+<dialog id={dialogId} class="student-dialog" aria-labelledby={titleId}>
+  <div class="student-dialog__panel">
+    <header class="student-dialog__head">
+      <div class="student-dialog__chips">
+        {nivelChip ? <TypeChip typology={nivelChip} /> : null}
+        {student.lineChips.map((chip) => <TypeChip typology={chip} />)}
+      </div>
+      <form method="dialog" class="student-dialog__close-form">
+        <button type="submit" class="student-dialog__close" aria-label="Cerrar">×</button>
+      </form>
+      <h3 id={titleId} class="student-dialog__name">{student.name}</h3>
+    </header>
+
+    {
+      student.topics.length > 0 && (
+        <section class="student-dialog__section">
+          <p class="student-dialog__label">Temas</p>
+          <ul class="student-dialog__topics">
+            {student.topics.map((topic) => (
+              <li>
+                <a class="topic-chip" href={topic.href}>
+                  {topic.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    {
+      student.work ? (
+        <section class="student-dialog__section">
+          <p class="student-dialog__label">{student.work.eyebrow}</p>
+          <h4 class="student-dialog__work-title">{student.work.title}</h4>
+          {student.work.paragraphs.length > 0 && (
+            <div class="student-dialog__text">
+              {student.work.paragraphs.map((p) => (
+                <p>{p}</p>
+              ))}
+            </div>
+          )}
+          {student.work.href && (
+            <p class="student-dialog__action">
+              <a class="btn btn--soft" href={student.work.href} {...external(student.work.href)}>
+                {student.work.linkLabel}
+              </a>
+            </p>
+          )}
+        </section>
+      ) : (
+        <p class="student-dialog__empty">Aún no hay descripción de su trabajo.</p>
+      )
+    }
+  </div>
+</dialog>
