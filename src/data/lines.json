@@ -163,6 +163,7 @@
     "image_path": "/images/PLaS/lineas/educacion.jpg",
     "image_credit": "Unsplash — Brooke Cagle",
     "image_source": "https://unsplash.com/photos/three-people-sitting-in-front-of-table-laughing-together-g1Kr4Ozfoac",
+    "image_position": "center 28%",
     "keywords": [
       "educacion",
       "aprendizaje",
@@ -494,6 +495,7 @@
     "image_path": "/images/PLaS/lineas/transporte.jpg",
     "image_credit": "Unsplash — Luca Bravo",
     "image_source": "https://unsplash.com/photos/vehicles-on-road-between-high-rise-buildings-1449824913935-59a10b8d2000",
+    "image_position": "center 68%",
     "keywords": [
       "transporte",
       "traffic",
@@ -629,6 +631,7 @@
     "image_path": "/images/PLaS/lineas/sensado.jpg",
     "image_credit": "Unsplash",
     "image_source": "https://unsplash.com/photos/a-large-satellite-dish-sitting-on-top-of-a-field-zf_p1DWTjGs",
+    "image_position": "center 45%",
     "keywords": [
       "agricultura",
       "agriculture",

@@ -1653,67 +1653,36 @@ a.btn--soft:is(:hover, .is-touch-hover) {
   line-height: 1.55;
 }
 
-/* Página de línea /lines/<slug> — hero, descripción, temas y trayectoria */
-.line-hero {
-  display: grid;
-  gap: 1.5rem;
-  align-items: center;
-  padding-block: 2.5rem 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .line-hero {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 2.5rem;
-  }
-}
-
-.line-hero__title {
+/* Página de línea /lines/<slug> — banner full-bleed, cabecera estándar, temas y trayectoria */
+.line-banner {
+  position: relative;
   margin: 0;
-  font-size: clamp(1.9rem, 4vw, 2.75rem);
-  line-height: 1.15;
-  color: var(--deep);
-}
-
-.line-hero__summary {
-  margin: 0.9rem 0 0;
-  max-width: 34rem;
-  font-size: 1.075rem;
-  color: var(--ink);
-  line-height: 1.5;
-}
-
-.line-hero__stats {
-  display: inline-block;
-  margin: 1.1rem 0 0;
-  padding: 0.3rem 0.75rem;
-  border-radius: 999px;
-  background: var(--mid-soft);
-  color: var(--mid-dark);
-  font-size: 0.875rem;
-  font-weight: 600;
-}
-
-.line-hero__media {
-  margin: 0;
-}
-
-.line-hero__media img {
-  display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
-  border-radius: var(--radius);
-  border-bottom: 4px solid var(--mid);
   background: var(--media);
 }
 
-.line-hero__credit {
-  margin-top: 0.4rem;
-  font-size: 0.75rem;
-  color: var(--muted);
-  text-align: right;
+.line-banner__img {
+  display: block;
+  width: 100%;
+  height: clamp(8rem, 18vw, 14rem);
+  object-fit: cover;
+  object-position: center;
+}
+
+.line-banner__credit {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.6rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  background: rgb(0 0 0 / 0.45);
+  color: #fff;
+  font-size: 0.7rem;
+}
+
+.line-banner__credit a,
+.line-banner__credit a:hover {
+  color: inherit;
 }
 
 .line-detail {
@@ -1725,13 +1694,9 @@ a.btn--soft:is(:hover, .is-touch-hover) {
   padding-left: 0.85rem;
 }
 
-.line-detail__intro {
-  max-width: 48rem;
-}
-
 .line-detail__intro p {
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.975rem;
   color: var(--ink);
   line-height: 1.6;
 }

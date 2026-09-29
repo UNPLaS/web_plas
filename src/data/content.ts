@@ -409,6 +409,8 @@ export const researchLines = linesJson.map((line) => {
     image: imagePath ? withBase(imagePath) : '',
     imageCredit: typeof line.image_credit === 'string' ? line.image_credit : '',
     imageSource: typeof line.image_source === 'string' ? line.image_source : '',
+    /** Punto de enfoque (object-position) para el recorte del banner. */
+    imagePosition: typeof line.image_position === 'string' ? line.image_position : 'center',
     topics: line.topics ?? [],
     topicGraph: graph
       ? {

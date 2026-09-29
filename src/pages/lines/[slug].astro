@@ -16,38 +16,42 @@ const worksLabel = (n: number) => (n === 1 ? '1 trabajo' : `${n} trabajos`);
 ---
 
 <Layout title={line.title} description={line.summary} lineTheme={lineTheme}>
-  <section class="line-hero wrap" aria-labelledby="line-title">
-    <div class="line-hero__text">
-      <p class="page-head__eyebrow">Línea de investigación</p>
-      <h1 id="line-title" class="line-hero__title">{line.title}</h1>
-      <p class="line-hero__summary">{line.summary}</p>
-      <p class="line-hero__stats">
-        {line.topics.length} temas · {worksLabel(line.workCount)}
-      </p>
-    </div>
-    {
-      line.image && (
-        <figure class="line-hero__media">
-          <img src={line.image} alt="" width="1200" height="800" fetchpriority="high" />
-          {line.imageCredit && (
-            <figcaption class="line-hero__credit">
-              Imagen:{' '}
-              {line.imageSource ? (
-                <a href={line.imageSource} target="_blank" rel="noreferrer">
-                  {line.imageCredit}
-                </a>
-              ) : (
-                line.imageCredit
-              )}
-            </figcaption>
-          )}
-        </figure>
-      )
-    }
-  </section>
+  {
+    line.image && (
+      <figure class="line-banner">
+        <img
+          class="line-banner__img"
+          src={line.image}
+          alt=""
+          width="1200"
+          height="800"
+          style={`object-position: ${line.imagePosition}`}
+          fetchpriority="high"
+        />
+        {line.imageCredit && (
+          <figcaption class="line-banner__credit">
+            Imagen:{' '}
+            {line.imageSource ? (
+              <a href={line.imageSource} target="_blank" rel="noreferrer">
+                {line.imageCredit}
+              </a>
+            ) : (
+              line.imageCredit
+            )}
+          </figcaption>
+        )}
+      </figure>
+    )
+  }
 
-  <section class="line-detail wrap" aria-label="Descripción">
-    <div class="line-detail__intro">
+  <section class="page-section page-section--tight wrap" aria-labelledby="line-title">
+    <header class="page-head">
+      <p class="page-head__eyebrow">Línea de investigación</p>
+      <h1 id="line-title" class="page-head__title">{line.title}</h1>
+      <p class="page-head__lede">{line.summary}</p>
+    </header>
+
+    <div class="line-block__panel line-detail__intro">
       {line.paragraphs.map((text) => <p>{text}</p>)}
     </div>
     {
