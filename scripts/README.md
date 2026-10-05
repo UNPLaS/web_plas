@@ -7,7 +7,7 @@ Los harvest leen y escriben directamente los JSON del sitio. Nunca modifican ni 
 - `students.json`: datos de la persona; estado, tesis y año de salida se calculan en `content.ts` desde `theses.json`.
 - `wip.json` (a mano, sin harvest): trabajo en curso de estudiantes activos. Ver abajo.
 - `faculty.json`: ORCID (perfil "ORCID"), `aliases` de director en el repositorio y `line_ids` (el primero es la línea principal).
-- `lines.json`: nombres de línea (única fuente) y `keywords` para asignar líneas a tesis. Cada tema admite `contact_ids` (a mano): docentes responsables, que la página de la línea muestra primero aunque no tengan trabajos recientes.
+- `lines.json`: nombres de línea (única fuente) y `keywords` para asignar líneas a tesis. Cada tema admite `contact_ids` (a mano): docentes responsables, que la página de la línea muestra primero aunque no tengan trabajos recientes. Campos editoriales para `/lines`: `question` (pregunta gancho de la línea), `map_label` (nombre de la línea en el mapa) y `short_name` en cada tema (etiqueta en el mapa).
 
 ## Comandos
 

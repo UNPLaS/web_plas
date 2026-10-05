@@ -541,7 +541,9 @@ export const researchLines = linesJson.map((line) => {
     id: line.id,
     title: line.name,
     shortTitle: line.short_name,
+    mapLabel: line.map_label,
     summary: line.summary,
+    question: line.question,
     paragraphs: line.description,
     href: withBase(`/lines/${line.slug}`),
     slug: line.slug,
@@ -767,6 +769,107 @@ export const lineDetails = researchLines.map((line) => {
     timeline: years.map((year) => ({ year, works: works.filter((w) => w.year === year) })),
   };
 });
+
+/** Capítulos de /lines: lo que invita a entrar a cada línea (pregunta, cifras, personas, lo último). */
+export const linesOverview = lineDetails.map((line) => {
+  const faculty = facultyJson
+    .filter((f) => f.line_ids.includes(line.id))
+    .map((f) => facultyById.get(f.id))
+    .filter((f): f is NonNullable<typeof f> => Boolean(f))
+    .map((f) => ({ name: f.name, image: f.image, href: f.href }));
+  const latest = line.timeline[0]?.works[0] ?? null;
+  return {
+    id: line.id,
+    slug: line.slug,
+    href: line.href,
+    title: line.title,
+    summary: line.summary,
+    question: line.question,
+    color: line.color,
+    image: line.image,
+    imagePosition: line.imagePosition,
+    topics: line.topics.map((t) => ({ name: t.name, href: `${line.href}#${t.slug}` })),
+    workCount: line.workCount,
+    activeCount: activeStudents.filter((s) => s.lineIds.includes(line.id)).length,
+    faculty,
+    latest: latest && { title: latest.title, meta: latest.meta, href: latest.href },
+  };
+});
+
+/** Centro de cada línea en el mapa (0–1): las líneas que comparten docentes o trabajos quedan cerca. */
+const MAP_HUBS: Record<string, { x: number; y: number }> = {
+  lenguajes: { x: 0.14, y: 0.3 },
+  educacion: { x: 0.28, y: 0.76 },
+  embebidos: { x: 0.5, y: 0.36 },
+  transporte: { x: 0.82, y: 0.28 },
+  sensado: { x: 0.72, y: 0.76 },
+};
+
+export interface MapNode extends GraphNode {
+  href: string;
+  color: string;
+  hub: boolean;
+}
+
+export interface MapEdge extends GraphEdge {
+  color: string;
+}
+
+/** Mapa de /lines: cada línea con sus temas alrededor y aristas donde las líneas se cruzan. */
+export const linesMap = (() => {
+  const nodes: MapNode[] = [];
+  const edges: MapEdge[] = [];
+  const lineOfTopic = new Map<string, string>();
+  lineDetails.forEach((line, i) => {
+    const angle0 = (i / lineDetails.length) * Math.PI * 2;
+    const hub = MAP_HUBS[line.slug] ?? {
+      x: 0.5 + 0.35 * Math.cos(angle0),
+      y: 0.5 + 0.35 * Math.sin(angle0),
+    };
+    nodes.push({ id: line.id, label: line.mapLabel, weight: 5, ...hub, href: line.href, color: line.color, hub: true });
+    line.topics.forEach((t, j) => {
+      lineOfTopic.set(t.id, line.id);
+      const angle = angle0 + (j / line.topics.length) * Math.PI * 2;
+      nodes.push({
+        id: t.id,
+        label: researchLines[i].topics[j]?.short_name || t.name,
+        weight: Math.min(1 + t.total / 4, 3),
+        x: Math.min(Math.max(hub.x + 0.12 * Math.cos(angle), 0), 1),
+        y: Math.min(Math.max(hub.y + 0.26 * Math.sin(angle), 0), 1),
+        href: `${line.href}#${t.slug}`,
+        color: line.color,
+        hub: false,
+      });
+      edges.push({ source: line.id, target: t.id, weight: 1 + t.total, color: line.color });
+    });
+  });
+
+  /** Cruces: trabajos con temas o líneas de dos líneas distintas y docentes compartidos. */
+  const cross = new Map<string, number>();
+  const bump = (a: string, b: string) => {
+    if (a === b) return;
+    const key = [a, b].sort().join('|');
+    cross.set(key, (cross.get(key) ?? 0) + 1);
+  };
+  for (const w of catalogItems) {
+    const topics = w.topicIds.filter((id) => lineOfTopic.has(id));
+    for (let i = 0; i < topics.length; i += 1)
+      for (let j = i + 1; j < topics.length; j += 1)
+        if (lineOfTopic.get(topics[i]) !== lineOfTopic.get(topics[j])) bump(topics[i], topics[j]);
+    const lines = [...new Set(w.lineIds)];
+    for (let i = 0; i < lines.length; i += 1)
+      for (let j = i + 1; j < lines.length; j += 1) bump(lines[i], lines[j]);
+  }
+  for (const f of facultyJson) {
+    for (let i = 0; i < f.line_ids.length; i += 1)
+      for (let j = i + 1; j < f.line_ids.length; j += 1) bump(f.line_ids[i], f.line_ids[j]);
+  }
+  for (const [key, weight] of cross) {
+    const [source, target] = key.split('|');
+    edges.push({ source, target, weight, color: 'var(--muted)' });
+  }
+  return { nodes, edges };
+})();
 
 export const catalogYears = [
   ...new Set(catalogItems.map((i) => i.year).filter(Boolean)),

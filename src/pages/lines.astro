@@ -1,18 +1,130 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import LinesGallery from '../components/LinesGallery.astro';
+import TopicGraph from '../components/TopicGraph.astro';
+import { linesMap, linesOverview } from '../data/site';
+
+const external = (href: string) =>
+  /^https?:\/\//i.test(href) ? { target: '_blank', rel: 'noreferrer' } : {};
 ---
 
 <Layout title="Líneas de investigación">
-  <section class="page-section wrap" aria-labelledby="lines-heading">
+  <section class="page-section wrap lines-overview" aria-labelledby="lines-heading">
     <header class="page-head">
       <p class="page-head__eyebrow">Líneas</p>
       <h1 id="lines-heading" class="page-head__title">Líneas de investigación</h1>
       <p class="page-head__lede">
-        Áreas en las que el grupo concentra su trabajo académico y de formación.
+        Cinco líneas, una red de temas. Explora dónde se cruzan y entra a la que despierte tu
+        curiosidad.
       </p>
     </header>
 
-    <LinesGallery />
+    <TopicGraph
+      nodes={linesMap.nodes}
+      edges={linesMap.edges}
+      title="Mapa de líneas y temas"
+      height={560}
+      mobileHeight={900}
+      transposeMobile
+    />
+    <p class="lines-map__hint">
+      Pasa el cursor por un nodo para ver sus conexiones, arrástralo o haz clic para entrar.
+    </p>
+
+    <ol class="line-chapters">
+      {
+        linesOverview.map((line, i) => {
+          const stats = [
+            { value: line.workCount, label: line.workCount === 1 ? 'trabajo' : 'trabajos' },
+            {
+              value: line.activeCount,
+              label: line.activeCount === 1 ? 'estudiante activo' : 'estudiantes activos',
+            },
+            { value: line.topics.length, label: 'temas' },
+          ].filter((s) => s.value > 0);
+          return (
+            <li
+              class="line-chapter"
+              id={line.slug}
+              data-line-theme={line.slug === 'lenguajes' ? undefined : line.slug}
+              style={`--band: ${line.color}`}
+            >
+              <a class="line-chapter__media" href={line.href} tabindex="-1" aria-hidden="true">
+                {line.image && (
+                  <img
+                    src={line.image}
+                    alt=""
+                    loading="lazy"
+                    width="600"
+                    height="450"
+                    style={`object-position: ${line.imagePosition}`}
+                  />
+                )}
+              </a>
+              <div class="line-chapter__body">
+                <p class="line-chapter__eyebrow">Línea {String(i + 1).padStart(2, '0')}</p>
+                <p class="line-chapter__question">
+                  <a href={line.href}>{line.question}</a>
+                </p>
+                <h2 class="line-chapter__title">{line.title}</h2>
+                <p class="line-chapter__summary">{line.summary}</p>
+                {stats.length > 0 && (
+                  <dl class="line-chapter__stats">
+                    {stats.map((s) => (
+                      <div>
+                        <dt>{s.label}</dt>
+                        <dd>{s.value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                )}
+                <ul class="line-chapter__topics" aria-label="Temas">
+                  {line.topics.map((t) => (
+                    <li>
+                      <a class="topic-chip" href={t.href}>
+                        {t.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                {line.latest &&
+                  (line.latest.href ? (
+                    <a
+                      class="line-chapter__latest"
+                      href={line.latest.href}
+                      {...external(line.latest.href)}
+                    >
+                      <span class="line-chapter__latest-label">Lo más reciente</span>
+                      <span class="line-chapter__latest-title">{line.latest.title}</span>
+                      <span class="line-chapter__latest-meta">{line.latest.meta}</span>
+                    </a>
+                  ) : (
+                    <p class="line-chapter__latest">
+                      <span class="line-chapter__latest-label">Lo más reciente</span>
+                      <span class="line-chapter__latest-title">{line.latest.title}</span>
+                      <span class="line-chapter__latest-meta">{line.latest.meta}</span>
+                    </p>
+                  ))}
+                <div class="line-chapter__foot">
+                  {line.faculty.length > 0 && (
+                    <ul class="line-chapter__faces" aria-label="Docentes">
+                      {line.faculty.map((f) => (
+                        <li>
+                          <a href={f.href} title={f.name}>
+                            {f.image ? <img src={f.image} alt={f.name} loading="lazy" /> : null}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <a class="btn btn--soft" href={line.href}>
+                    Explorar la línea
+                  </a>
+                </div>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ol>
   </section>
 </Layout>

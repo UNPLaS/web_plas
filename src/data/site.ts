@@ -17,6 +17,8 @@ export {
   featuredProjects,
   group,
   lineDetails,
+  linesMap,
+  linesOverview,
   newsItems,
   people,
   projectItems,

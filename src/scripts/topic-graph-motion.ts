@@ -34,6 +34,10 @@ type Drag = {
   offsetY: number;
   grabX: number;
   grabY: number;
+  startX: number;
+  startY: number;
+  /** Pasó el umbral de arrastre: al soltar no se sigue el enlace del nodo. */
+  moved: boolean;
 };
 
 type GraphSim = {
@@ -63,6 +67,8 @@ const HEAT_MAX_V = 6;
 const HEAT_DAMP = 0.88;
 /** Fracción de la distancia al puntero que recorre el nodo sostenido por cuadro (fricción). */
 const DRAG_FOLLOW = 0.2;
+/** Desplazamiento (px de pantalla) a partir del cual un toque es arrastre y no clic. */
+const CLICK_SLOP = 5;
 
 function reducedMotion() {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -80,7 +86,8 @@ function radiusFor(weight: number, mobile: boolean) {
 
 function labelMetrics(el: SVGGElement, r: number, mobile: boolean) {
   const label = el.querySelector('text')?.textContent?.trim() || '';
-  const charW = mobile ? 8.2 : 6.4;
+  const hubScale = el.classList.contains('topic-graph__node--hub') ? 1.2 : 1;
+  const charW = (mobile ? 8.2 : 6.4) * hubScale;
   const halfW = Math.max(r + 10, (label.length * charW) / 2 + 4);
   const pad = r + (mobile ? 22 : 16);
   return { halfW, pad };
@@ -104,7 +111,9 @@ function applyStaticLayout(root: HTMLElement, mobile: boolean) {
   const svg = root.querySelector<SVGSVGElement>('.topic-graph__svg');
   if (!svg) return null;
 
-  const box = mobile ? MOBILE : DESKTOP;
+  const base = mobile ? MOBILE : DESKTOP;
+  const h = Number((mobile ? root.dataset.mobileHeight : root.dataset.height) || base.h);
+  const box = { ...base, h };
   svg.setAttribute('viewBox', `0 0 ${box.w} ${box.h}`);
   root.classList.toggle('topic-graph--mobile', mobile);
 
@@ -115,8 +124,8 @@ function applyStaticLayout(root: HTMLElement, mobile: boolean) {
   nodeEls.forEach((el, i) => {
     const id = el.dataset.nodeId || String(i);
     indexById.set(id, i);
-    const nx = Number(el.dataset.nx ?? 0.5);
-    const ny = Number(el.dataset.ny ?? 0.5);
+    const nx = Number((mobile && el.dataset.mx) || el.dataset.nx || 0.5);
+    const ny = Number((mobile && el.dataset.my) || el.dataset.ny || 0.5);
     const weight = Number(el.dataset.weight ?? 3);
     const r = radiusFor(weight, mobile);
     const { x, y } = placeFromNormalized(nx, ny, box.w, box.h, box.padX, box.padY);
@@ -382,6 +391,7 @@ function onPointerOut(event: PointerEvent) {
 
 let drag: Drag | null = null;
 let dragBound = false;
+let suppressClick = false;
 
 function svgPoint(svg: SVGSVGElement, clientX: number, clientY: number) {
   const ctm = svg.getScreenCTM();
@@ -408,6 +418,9 @@ function onPointerDown(event: PointerEvent) {
     offsetY,
     grabX: p.x + offsetX,
     grabY: p.y + offsetY,
+    startX: event.clientX,
+    startY: event.clientY,
+    moved: false,
   };
   node.el.classList.add('is-dragging');
   sim.root.classList.add('topic-graph--dragging');
@@ -418,15 +431,31 @@ function onPointerMove(event: PointerEvent) {
   const p = svgPoint(drag.sim.svg, event.clientX, event.clientY);
   drag.grabX = p.x + drag.offsetX;
   drag.grabY = p.y + drag.offsetY;
+  if (Math.hypot(event.clientX - drag.startX, event.clientY - drag.startY) > CLICK_SLOP) {
+    drag.moved = true;
+  }
 }
 
 function onPointerUp(event: PointerEvent) {
   if (!drag || event.pointerId !== drag.pointerId) return;
-  const { sim, node } = drag;
+  const { sim, node, moved } = drag;
   node.el.classList.remove('is-dragging');
   sim.root.classList.remove('topic-graph--dragging');
   drag = null;
+  if (moved) {
+    suppressClick = true;
+    window.setTimeout(() => {
+      suppressClick = false;
+    }, 0);
+  }
   if (event.pointerType !== 'mouse' || nodeAt(event.target)?.node !== node) focusNode(sim, null);
+}
+
+function onClick(event: MouseEvent) {
+  if (!suppressClick || !nodeAt(event.target)) return;
+  suppressClick = false;
+  event.preventDefault();
+  event.stopPropagation();
 }
 
 function bindDrag() {
@@ -438,6 +467,7 @@ function bindDrag() {
   document.addEventListener('pointercancel', onPointerUp);
   document.addEventListener('pointerover', onPointerOver);
   document.addEventListener('pointerout', onPointerOut);
+  document.addEventListener('click', onClick, true);
 }
 
 let raf = 0;

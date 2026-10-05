@@ -4,7 +4,9 @@
     "slug": "lenguajes",
     "name": "Lenguajes de programación",
     "short_name": "Lenguajes de programación",
+    "map_label": "Lenguajes",
     "summary": "Exploramos aspectos teóricos y prácticos de la creación de lenguajes de programación.",
+    "question": "¿Y si cada problema tuviera su propio lenguaje de programación?",
     "description": [
       "¿Cómo pueden los lenguajes y las herramientas de programación facilitar la construcción y comprensión del software? En el grupo PLaS estudiamos el diseño, la implementación y el uso de lenguajes de propósito general y de dominio específico, así como el análisis y la transformación automática del código. Nos interesa conectar los fundamentos de los lenguajes con problemas del desarrollo y mantenimiento de software.",
       "Desarrollamos métodos para expresar requisitos, generar prototipos, analizar programas y extraer conocimiento de colecciones de código y de la información que producen las comunidades de desarrolladores. Combinamos técnicas de compilación, análisis de software, procesamiento del lenguaje natural y aprendizaje automático para apoyar estas tareas."
@@ -41,6 +43,7 @@
         "id": "topic:dsl",
         "slug": "dsl",
         "name": "Lenguajes de propósito general y de dominio específico (DSL)",
+        "short_name": "DSL",
         "description": "Estudiamos cómo definir e implementar lenguajes que permitan expresar soluciones de manera clara y adecuada a cada problema. Nos interesan tanto los lenguajes de propósito general como los lenguajes de dominio específico (DSL), que incorporan conceptos y reglas de un ámbito particular. Investigamos técnicas de análisis y traducción para construir procesadores de lenguaje y herramientas que conecten estas representaciones con programas ejecutables.",
         "keywords": [
           "domain-specific language",
@@ -70,6 +73,7 @@
         "id": "topic:ciclo-vida-software",
         "slug": "ciclo-vida-software",
         "name": "Lenguajes para el ciclo de vida del software",
+        "short_name": "Ciclo de vida",
         "description": "Exploramos lenguajes de especificación y modelado que apoyen las distintas etapas del desarrollo de software, desde la definición de requisitos hasta la construcción y evolución de las aplicaciones. Nos interesa facilitar la comunicación de requisitos y su transformación en modelos y código que permitan validar tempranamente una solución.",
         "keywords": [
           "requirements",
@@ -99,6 +103,7 @@
         "id": "topic:analisis-codigo",
         "slug": "analisis-codigo",
         "name": "Análisis y manipulación automática de código",
+        "short_name": "Análisis de código",
         "description": "Desarrollamos métodos para examinar la estructura y las características del código, identificar patrones y realizar transformaciones automáticas. Estudiamos aplicaciones que combinan análisis estáticos y representaciones del código con técnicas de aprendizaje automático para apoyar su comprensión, comparación y mejora, y para construir herramientas de asistencia al desarrollo.",
         "keywords": [
           "static analysis",
@@ -129,6 +134,7 @@
         "id": "topic:analitica-software",
         "slug": "analitica-software",
         "name": "Analítica de software / Big Code",
+        "short_name": "Big Code",
         "description": "Investigamos cómo extraer conocimiento de grandes colecciones de código, repositorios y espacios de colaboración entre desarrolladores. Aplicamos minería de datos, procesamiento del lenguaje natural y aprendizaje automático para relacionar el código con la información que lo acompaña. Nos interesa comprender patrones de desarrollo y aprovecharlos para facilitar la búsqueda, clasificación y reutilización de conocimiento sobre software.",
         "keywords": [
           "big code",
@@ -162,7 +168,9 @@
     "slug": "educacion",
     "name": "Educación en ingeniería potenciada por inteligencia artificial",
     "short_name": "Educación en ingeniería",
+    "map_label": "Educación",
     "summary": "Investigamos cómo la inteligencia artificial puede mejorar la enseñanza, el aprendizaje y la evaluación en ingeniería.",
+    "question": "¿Puede una inteligencia artificial enseñarte a programar sin pensar por ti?",
     "description": [
       "¿Cómo puede la inteligencia artificial contribuir a formar mejores ingenieros? En el grupo PLaS investigamos cómo integrar esta tecnología en la enseñanza, el aprendizaje y la evaluación, con especial énfasis en programación, ingeniería de software y electrónica analógica y digital.",
       "Diseñamos y evaluamos estrategias educativas y herramientas que aprovechen las capacidades de la IA para mejorar la educación en ingeniería. Todo ello mediante soluciones que acompañan a los estudiantes, ofrecen realimentación oportuna y ayudan a los docentes a comprender las dificultades de aprendizaje. Nos interesa estudiar cómo estas experiencias influyen en la comprensión de conceptos, la resolución de problemas, la motivación y la capacidad de aprender de manera autorregulada.",
@@ -222,6 +230,7 @@
         "id": "topic:analitica-aprendizaje",
         "slug": "analitica-aprendizaje",
         "name": "Analítica del aprendizaje y minería de datos educativos",
+        "short_name": "Analítica del aprendizaje",
         "description": "Estudiamos los datos que se generan durante las actividades de aprendizaje para comprender cómo aprenden los estudiantes y qué dificultades enfrentan. Combinamos análisis de datos e inteligencia artificial para identificar patrones, detectar necesidades de apoyo y ofrecer información útil para mejorar la enseñanza y ayudar a los estudiantes a orientar su propio aprendizaje.",
         "keywords": [
           "learning analytics",
@@ -246,6 +255,7 @@
         "id": "topic:agentes-conversacionales",
         "slug": "agentes-conversacionales",
         "name": "Agentes conversacionales, tutoría inteligente y aprendizaje adaptativo",
+        "short_name": "Tutoría inteligente",
         "description": "Exploramos el diseño de asistentes de IA con los que estudiantes y docentes puedan interactuar en lenguaje cotidiano para resolver dudas, discutir conceptos y explorar soluciones. Investigamos cómo adaptar estos agentes al contenido de los cursos y cómo evaluar la calidad de sus respuestas, sus limitaciones y su utilidad educativa. Además, investigamos herramientas que acompañan el aprendizaje mediante preguntas orientadoras, pistas y explicaciones ajustadas a las necesidades de cada estudiante. Buscamos que estos apoyos favorezcan la comprensión, la autonomía y la capacidad de revisar el propio razonamiento.",
         "keywords": [
           "asistente virtual",
@@ -272,6 +282,7 @@
         "id": "topic:evaluacion-automatica",
         "slug": "evaluacion-automatica",
         "name": "Evaluación automática y realimentación de código",
+        "short_name": "Evaluación automática",
         "description": "Desarrollamos y estudiamos métodos para analizar soluciones de programación y ofrecer comentarios que ayuden a comprender errores y mejorar el código. Nos interesa evaluar tanto el resultado como el proceso de resolución, y combinar pruebas automáticas con explicaciones que orienten el aprendizaje y apoyen la labor docente.",
         "keywords": [
           "automatic assessment",
@@ -301,6 +312,7 @@
         "id": "topic:autorregulacion",
         "slug": "autorregulacion",
         "name": "Autorregulación en el aprendizaje",
+        "short_name": "Autorregulación",
         "description": "Estudiamos y promovemos la autorregulación del aprendizaje, la motivación y las estrategias de estudio, en temas como programación de computadores, electrónica digital, sistemas de control electrónico y electrónica analógica. Evaluamos los efectos en la autorregulación de diversas estrategias metodológicas e innovaciones en el aula, tales como la retroalimentación automática e inmediata en tareas prácticas, los entornos de aprendizaje colaborativo, la evaluación entre pares, el uso de dinámicas de juego y creación de videojuegos, y la integración de laboratorios híbridos, remotos y pocket labs.",
         "keywords": [
           "self-regulated",
@@ -337,6 +349,7 @@
         "id": "topic:competencias-transversales",
         "slug": "competencias-transversales",
         "name": "Integración de competencias transversales",
+        "short_name": "Competencias transversales",
         "description": "Nos interesa profundizar en cómo incorporar y fortalecer intencionadamente el desarrollo de competencias transversales, tales como la administración del tiempo de estudio, el pensamiento crítico, la toma de decisiones y el trabajo colaborativo, de manera articulada dentro del aprendizaje de asignaturas técnicas de ingeniería. Como antecedente, hemos explorado el efecto de metodologías de gestión de proyectos como Scrum para apoyar la competencia de administración del tiempo en entornos de aprendizaje basado en proyectos. Con miras hacia el futuro, buscamos ampliar y escalar estos estudios incorporando herramientas de IA que permitan ofrecer andamiaje adaptativo, monitoreo metacognitivo y retroalimentación personalizada en el aula.",
         "keywords": [
           "competencias transversales",
@@ -366,7 +379,9 @@
     "slug": "embebidos",
     "name": "Sistemas embebidos confiables",
     "short_name": "Sistemas embebidos confiables",
+    "map_label": "Embebidos",
     "summary": "Desarrollamos técnicas y herramientas para el diseño de sistemas hardware/software tolerantes a fallos.",
+    "question": "¿Cómo sigue funcionando un sistema cuando una de sus piezas falla?",
     "description": [
       "¿Cómo lograr que un sistema embebido continúe operando correctamente cuando su hardware sufre fallos transitorios? En el grupo PLaS investigamos métodos y herramientas para mejorar la confiabilidad de sistemas basados en microprocesadores, con especial atención a los errores inducidos por radiación. Buscamos equilibrar la protección frente a fallos con las restricciones de memoria, área de hardware, consumo de energía y tiempo de ejecución propias de estos sistemas.",
       "Combinamos técnicas de protección implementadas en software y hardware, análisis de criticidad y computación aproximada. Desarrollamos y evaluamos herramientas de inyección de fallos y modelos predictivos que permiten comparar alternativas de diseño y orientar la selección de mecanismos de tolerancia a fallos desde etapas tempranas del desarrollo."
@@ -407,6 +422,7 @@
         "id": "topic:tolerancia-fallos",
         "slug": "tolerancia-fallos",
         "name": "Tolerancia a fallos",
+        "short_name": "Tolerancia a fallos",
         "description": "Diseñamos y evaluamos mecanismos para detectar y mitigar errores transitorios que pueden alterar los datos o el flujo de ejecución de un programa. Trabajamos con redundancia, transformaciones de código dirigidas por el compilador y estrategias de codiseño hardware/software, tanto en microprocesadores comerciales como en procesadores implementados en FPGA. Nos interesa aplicar la protección de manera selectiva, de acuerdo con las necesidades de cada aplicación, y medir su efectividad y su costo.",
         "keywords": [
           "fault tolerance",
@@ -453,6 +469,7 @@
         "id": "topic:computacion-aproximada",
         "slug": "computacion-aproximada",
         "name": "Computación aproximada para sistemas confiables",
+        "short_name": "Computación aproximada",
         "description": "Investigamos cómo aprovechar la tolerancia de algunas aplicaciones a pequeñas variaciones en sus resultados para reducir el costo de los mecanismos de protección. Combinamos versiones aproximadas de los cálculos con técnicas de redundancia y protección selectiva, y evaluamos el equilibrio entre calidad del resultado, confiabilidad y uso de recursos. Estudiamos en qué condiciones estas estrategias son útiles y qué límites de aproximación permiten cumplir los requisitos de la aplicación.",
         "keywords": [
           "approximate computing",
@@ -470,6 +487,7 @@
         "id": "topic:evaluacion-confiabilidad",
         "slug": "evaluacion-confiabilidad",
         "name": "Evaluación de la confiabilidad",
+        "short_name": "Confiabilidad",
         "description": "Desarrollamos herramientas y métodos para generar y comparar alternativas de protección mediante campañas de inyección de fallos, simulación y experimentación sobre procesadores reales. Analizamos la fidelidad de estas evaluaciones y su utilidad para anticipar el comportamiento del sistema. También investigamos modelos de aprendizaje automático que permitan estimar tempranamente la confiabilidad y apoyar la exploración del espacio de diseño.",
         "keywords": [
           "fault injection",
@@ -499,7 +517,9 @@
     "slug": "transporte",
     "name": "Sistemas inteligentes de transporte",
     "short_name": "Sistemas inteligentes de transporte",
+    "map_label": "Transporte",
     "summary": "Aplicamos tecnologías para enfrentar problemas de accidentalidad vial y tráfico en las ciudades.",
+    "question": "¿Qué revelan los datos sobre dónde y por qué ocurren los accidentes en la ciudad?",
     "description": [
       "Abordamos problemas urbanos de accidentalidad, congestión y operación del transporte con datos, visión por computador e IoT. Construimos modelos para anticipar tráfico y accidentes, detectar evasión en sistemas masivos y monitorear vehículos con sensores, RFID y análisis de video."
     ],
@@ -538,6 +558,7 @@
         "id": "topic:accidentalidad-vial",
         "slug": "accidentalidad-vial",
         "name": "Accidentalidad vial",
+        "short_name": "Accidentalidad vial",
         "description": "Analizamos la accidentalidad vial mediante ciencia de datos, aprendizaje automático y modelos espacio-temporales, integrando información de movilidad, variables socioeconómicas, uso del suelo y fuentes de datos no tradicionales. El objetivo es identificar patrones, caracterizar factores asociados y desarrollar modelos de predicción de siniestros en entornos urbanos.",
         "keywords": [
           "accident",
@@ -557,6 +578,7 @@
         "id": "topic:monitoreo-trafico",
         "slug": "monitoreo-trafico",
         "name": "Predicción y monitoreo de tráfico",
+        "short_name": "Tráfico",
         "description": "Desarrollamos métodos para el monitoreo, medición y caracterización del tráfico vehicular, combinando visión computacional, sensores inalámbricos y técnicas de análisis de datos. Trabajamos en detección y clasificación de vehículos, estimación de volúmenes de tráfico y seguimiento de patrones de movilidad para apoyar la gestión de sistemas de transporte.",
         "keywords": [
           "traffic volume",
@@ -586,6 +608,7 @@
         "id": "topic:iot-rfid-vehicular",
         "slug": "iot-rfid-vehicular",
         "name": "IoT y RFID para monitoreo vehicular",
+        "short_name": "IoT y RFID",
         "description": "Diseñamos sistemas de identificación, sensado y comunicación para monitorear vehículos y transporte público, utilizando RFID, Bluetooth, IoT y dispositivos embebidos. El trabajo incluye lectores inteligentes, plataformas de seguimiento vehicular, sistemas de localización y análisis de comunicaciones, integrando adquisición de datos, conectividad y procesamiento para aplicaciones ITS.",
         "keywords": [
           "rfid",
@@ -612,6 +635,7 @@
         "id": "topic:transporte-masivo",
         "slug": "transporte-masivo",
         "name": "Operación y evasión en transporte masivo",
+        "short_name": "Transporte masivo",
         "description": "Desarrollamos soluciones tecnológicas para apoyar la operación y supervisión de sistemas de transporte público, mediante seguimiento vehicular, estimación de tiempos de llegada, identificación electrónica y análisis de información operacional. Estas herramientas permiten observar el comportamiento del sistema y apoyar procesos de control, seguridad y gestión del servicio.",
         "keywords": [
           "public transport",
@@ -638,15 +662,15 @@
     "slug": "sensado",
     "name": "Sensado inteligente y percepción del entorno",
     "short_name": "Sensado inteligente",
+    "map_label": "Sensado",
     "summary": "Desarrollamos técnicas de sensado, procesamiento de señales e inteligencia artificial para observar e interpretar entornos complejos.",
+    "question": "¿Qué puede ver un radar o una cámara hiperespectral que el ojo humano no alcanza?",
     "description": [
       "Desarrollamos técnicas de sensado, procesamiento de señales e inteligencia artificial para observar, caracterizar e interpretar entornos complejos. Integramos imágenes, sensores IoT, plataformas aéreas y tecnologías de radar para aplicaciones que van desde la agricultura de precisión hasta la detección de objetos enterrados y el desminado humanitario."
     ],
     "color": "#b14fd8",
     "image_path": "/images/PLaS/lineas/sensado.jpg",
-    "image_credit": "Unsplash",
-    "image_source": "https://unsplash.com/photos/a-large-satellite-dish-sitting-on-top-of-a-field-zf_p1DWTjGs",
-    "image_position": "center 45%",
+    "image_position": "center 30%",
     "keywords": [
       "agricultura",
       "agriculture",
@@ -667,6 +691,7 @@
         "id": "topic:radar-sensado",
         "slug": "radar-sensado",
         "name": "Radar, sensado e inteligencia artificial",
+        "short_name": "Radar",
         "description": "Desarrollamos técnicas de radar y Ground Penetrating Radar (GPR) combinadas con procesamiento de señales, aprendizaje automático y aprendizaje profundo para la detección, clasificación y caracterización de fenómenos y objetos. Estudiamos tanto los sistemas de adquisición —antenas, respuesta temporal y retardo de grupo— como los métodos computacionales para extraer información de señales, imágenes y datos espacio-temporales.",
         "keywords": [
           "radar",
@@ -704,6 +729,7 @@
         "id": "topic:imagenes-espectrales",
         "slug": "imagenes-espectrales",
         "name": "Imágenes RGB, multiespectrales e hiperespectrales",
+        "short_name": "Imágenes espectrales",
         "description": "Investigamos técnicas de adquisición, procesamiento y análisis de imágenes para extracción automática de información, empleando visión computacional, descriptores de características y aprendizaje profundo. Las aplicaciones incluyen caracterización de cultivos, detección y cuantificación de malezas y detección y clasificación de objetos en escenarios de movilidad.",
         "keywords": [
           "multispectral",
@@ -734,6 +760,7 @@
         "id": "topic:agricultura-precision",
         "slug": "agricultura-precision",
         "name": "Agricultura de precisión",
+        "short_name": "Agricultura de precisión",
         "description": "Desarrollamos métodos de visión computacional, procesamiento de imágenes multiespectrales y aprendizaje profundo para caracterizar cultivos y automatizar tareas agrícolas, particularmente la detección, clasificación y cuantificación de malezas. El trabajo combina información espectral y espacial con técnicas de reconocimiento de patrones para apoyar el monitoreo y manejo de cultivos.",
         "keywords": [
           "weed",
