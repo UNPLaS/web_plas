@@ -2649,12 +2649,12 @@ a.line-chapter__latest:is(:hover, .is-touch-hover) :is(.line-chapter__latest-lab
   font-size: 1rem;
 }
 
-.page-prose a {
+.page-prose a:not(.btn) {
   color: var(--mid);
   text-underline-offset: 0.12em;
 }
 
-.page-prose a:hover {
+.page-prose a:not(.btn):hover {
   color: var(--deep);
 }
 
