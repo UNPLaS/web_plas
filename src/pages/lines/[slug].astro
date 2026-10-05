@@ -76,28 +76,61 @@ const worksLabel = (n: number) => (n === 1 ? '1 trabajo' : `${n} trabajos`);
             <div class="topic-item__body">
               <p class="topic-item__description">{topic.description}</p>
               <div class="topic-item__grid">
-                {topic.people.length > 0 && (
-                  <div class="topic-item__block">
-                    <h3 class="topic-item__label">Personas</h3>
-                    <ul class="topic-people">
-                      {topic.people.map((person) => (
-                        <li>
-                          <a class="topic-people__link" href={person.href}>
-                            <span class="topic-people__avatar" aria-hidden="true">
-                              {person.image ? <img src={person.image} alt="" loading="lazy" /> : null}
-                            </span>
-                            <span>{person.name}</span>
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
+                {(topic.faculty.length > 0 || topic.students.length > 0) && (
+                  <div class="topic-item__block topic-item__people">
+                    {topic.faculty.length > 0 && (
+                      <div>
+                        <h3 class="topic-item__label">Docentes</h3>
+                        <ul class="topic-people">
+                          {topic.faculty.map((person) => (
+                            <li>
+                              <a class="topic-people__link" href={person.href}>
+                                <span class="topic-people__avatar" aria-hidden="true">
+                                  {person.image ? <img src={person.image} alt="" loading="lazy" /> : null}
+                                </span>
+                                <span class="topic-people__text">
+                                  <span>{person.name}</span>
+                                  {person.contact && (
+                                    <span class="topic-people__meta">Responsable del tema</span>
+                                  )}
+                                </span>
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    {topic.students.length > 0 && (
+                      <div>
+                        <h3 class="topic-item__label">Estudiantes activos</h3>
+                        <ul class="topic-people">
+                          {topic.students.map((person) => (
+                            <li>
+                              <a class="topic-people__link" href={person.href}>
+                                <span class="topic-people__avatar" aria-hidden="true">
+                                  {person.image ? <img src={person.image} alt="" loading="lazy" /> : null}
+                                </span>
+                                <span class="topic-people__text">
+                                  <span>{person.name}</span>
+                                  {person.level && <span class="topic-people__meta">{person.level}</span>}
+                                </span>
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
                 )}
                 <div class="topic-item__block">
-                  <h3 class="topic-item__label">Trabajos activos</h3>
-                  {topic.activeWorks.length > 0 ? (
+                  <h3 class="topic-item__label">
+                    {topic.recentWorks.length > 0 || topic.historicalWorks.length === 0
+                      ? 'Trabajos recientes'
+                      : 'Trabajos históricos'}
+                  </h3>
+                  {topic.recentWorks.length + topic.historicalWorks.length > 0 ? (
                     <ul class="topic-works">
-                      {topic.activeWorks.map((work) => (
+                      {[...topic.recentWorks, ...topic.historicalWorks].map((work) => (
                         <li>
                           {work.href ? (
                             <a class="topic-works__title" href={work.href} {...external(work.href)}>
@@ -111,10 +144,7 @@ const worksLabel = (n: number) => (n === 1 ? '1 trabajo' : `${n} trabajos`);
                       ))}
                     </ul>
                   ) : (
-                    <p class="topic-item__empty">
-                      Sin trabajos desde {line.activeSince}.
-                      {topic.total > 0 && ' Los anteriores están en la trayectoria.'}
-                    </p>
+                    <p class="topic-item__empty">Aún no hay trabajos registrados en este tema.</p>
                   )}
                 </div>
               </div>

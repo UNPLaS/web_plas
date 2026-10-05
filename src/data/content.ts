@@ -473,6 +473,7 @@ export const students = resolvedStudents
           label: lineNameById[id],
           color: resolveLineColor(id, lineNameById[id]),
         })),
+      topicIds: s.topic_ids,
       topics: topicsFor(s.topic_ids),
       work: studentWork(s),
       chips: [
@@ -659,7 +660,10 @@ const thesisItems = visibleTheses.map((t) => {
     lineId,
     lineIds,
     topicIds: t.topic_ids ?? [],
-    facultyIds: t.advisor_ids,
+    facultyIds: [
+      ...t.advisor_ids,
+      ...((t as { codirector_ids?: string[] }).codirector_ids ?? []),
+    ],
     line,
     lineName: lineNames.join(', ') || line,
     lineColor: resolveLineColor(lineId, line),
@@ -681,8 +685,10 @@ export const catalogItems = [...pubItems, ...thesisItems]
       : null,
   }));
 
-/** Trabajos "activos" en la página de línea: año actual y los dos anteriores. */
-const ACTIVE_SINCE = new Date().getFullYear() - 2;
+/** Trabajos "recientes" en la página de línea: año actual y los tres anteriores. */
+const RECENT_SINCE = new Date().getFullYear() - 3;
+/** Si un tema no tiene trabajos recientes, se muestran sus últimos trabajos como históricos. */
+const HISTORICAL_SHOWN = 3;
 
 export const lineDetails = researchLines.map((line) => {
   const topicById = new Map(line.topics.map((t) => [t.id, t]));
@@ -705,23 +711,49 @@ export const lineDetails = researchLines.map((line) => {
 
   const topics = line.topics.map((t) => {
     const topicWorks = catalogItems.filter((w) => w.topicIds.includes(t.id));
-    const workCountByFaculty = new Map<string, number>();
-    for (const w of topicWorks) {
-      for (const id of w.facultyIds) workCountByFaculty.set(id, (workCountByFaculty.get(id) ?? 0) + 1);
+    const lineTopicWorks = works.filter((w) => w.topicIds.includes(t.id));
+    const recentWorks = lineTopicWorks.filter((w) => Number(w.year) >= RECENT_SINCE);
+    const topicStudents = activeStudents.filter((s) => s.topicIds.includes(t.id));
+    /** Docentes del tema: autores o directores de trabajos recientes, o quienes dirigen a un activo. */
+    const weightByFaculty = new Map<string, number>();
+    const credit = (id: string) => weightByFaculty.set(id, (weightByFaculty.get(id) ?? 0) + 1);
+    for (const w of topicWorks) if (Number(w.year) >= RECENT_SINCE) w.facultyIds.forEach(credit);
+    for (const s of topicStudents) {
+      [...(s.work?.directors ?? []), ...(s.work?.codirectors ?? [])].forEach((f) => credit(f.id));
     }
-    const people = [...workCountByFaculty.entries()]
+    /** Responsables elegidos por el grupo en `lines.json`: van primero aunque no tengan trabajos recientes. */
+    const contactIds = (t as { contact_ids?: string[] }).contact_ids ?? [];
+    const rankedIds = [...weightByFaculty.entries()]
       .sort((a, b) => b[1] - a[1])
-      .map(([id]) => facultyById.get(id))
+      .map(([id]) => id)
+      .filter((id) => !contactIds.includes(id));
+    const faculty = [...contactIds, ...rankedIds]
+      .map((id) => facultyById.get(id))
       .filter((f): f is NonNullable<typeof f> => Boolean(f))
-      .map((f) => ({ id: f.id, name: f.name, image: f.image, href: f.href }));
+      .map((f) => ({
+        id: f.id,
+        name: f.name,
+        image: f.image,
+        href: f.href,
+        contact: contactIds.includes(f.id),
+      }));
+    const students = topicStudents.map((s) => ({
+      id: s.dialogId,
+      name: s.name,
+      image: s.image,
+      level: degreeLabel[s.degree] ?? '',
+      href: withBase(`/people#${s.dialogId}`),
+    }));
     return {
       id: t.id,
       slug: t.slug,
       name: t.name,
       description: t.description,
       total: topicWorks.length,
-      people,
-      activeWorks: works.filter((w) => w.topicIds.includes(t.id) && Number(w.year) >= ACTIVE_SINCE),
+      faculty,
+      students,
+      recentWorks,
+      historicalWorks: recentWorks.length ? [] : lineTopicWorks.slice(0, HISTORICAL_SHOWN),
     };
   });
 
@@ -731,7 +763,6 @@ export const lineDetails = researchLines.map((line) => {
   return {
     ...line,
     topics,
-    activeSince: ACTIVE_SINCE,
     workCount: works.length,
     timeline: years.map((year) => ({ year, works: works.filter((w) => w.year === year) })),
   };

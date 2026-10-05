@@ -1844,6 +1844,24 @@ a.btn--soft:is(:hover, .is-touch-hover) {
   object-fit: cover;
 }
 
+.topic-item__people {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.topic-people__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.topic-people__meta {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
 .topic-works li {
   display: flex;
   flex-direction: column;
@@ -2097,8 +2115,44 @@ a.timeline-work__title:hover {
   stroke-width: 2;
 }
 
+.topic-graph__node {
+  cursor: grab;
+  touch-action: none;
+}
+
 .topic-graph__node:hover circle {
   transform: scale(1.12);
+}
+
+.topic-graph--dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.topic-graph__edges line,
+.topic-graph__node {
+  transition: opacity 0.2s ease;
+}
+
+.topic-graph--focus .topic-graph__node:not(.is-related) {
+  opacity: 0.25;
+}
+
+.topic-graph--focus .topic-graph__edges line:not(.is-related) {
+  opacity: 0.12;
+}
+
+.topic-graph--focus .topic-graph__edges line.is-related {
+  stroke-opacity: 0.9;
+}
+
+.topic-graph__node.is-dragging {
+  cursor: grabbing;
+}
+
+.topic-graph__node.is-dragging circle {
+  transform: scale(1.22);
+  filter: drop-shadow(0 4px 6px rgb(0 0 0 / 0.18));
 }
 
 @media (max-width: 767px) {

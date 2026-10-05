@@ -614,6 +614,7 @@ describe("harvest data present", () => {
 
   it("lines have slug, short name, paragraphs and unique topics", async () => {
     const lines = await readSite("lines.json");
+    const facultyIds = new Set((await readSite("faculty.json")).map((f) => f.id));
     const topicIds = new Set();
     for (const l of lines) {
       assert.equal(l.slug, l.id.replace("line:", ""), l.id);
@@ -625,6 +626,7 @@ describe("harvest data present", () => {
         assert.ok(t.name && t.description && t.keywords?.length, t.id);
         assert.ok(!topicIds.has(t.id), `tema repetido ${t.id}`);
         topicIds.add(t.id);
+        for (const id of t.contact_ids ?? []) assert.ok(facultyIds.has(id), `${t.id} → ${id}`);
       }
     }
   });

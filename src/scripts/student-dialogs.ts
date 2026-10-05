@@ -24,7 +24,17 @@ function onClick(event: MouseEvent) {
   }
 }
 
+/** `/people#<id>` (p. ej. desde un tema de línea) abre directamente el modal de ese estudiante. */
+function openFromHash() {
+  const id = decodeURIComponent(location.hash.slice(1));
+  const dialog = id ? document.getElementById(id) : null;
+  if (dialog instanceof HTMLDialogElement && dialog.classList.contains('student-dialog') && !dialog.open) {
+    dialog.showModal();
+  }
+}
+
 export function initStudentDialogs() {
+  openFromHash();
   if (bound) return;
   bound = true;
   document.addEventListener('click', onClick);

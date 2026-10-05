@@ -1,6 +1,9 @@
 /**
  * Layout responsivo + deriva lenta de nodos en grafos de temas:
  * canvas alto en mobile, etiquetas legibles, sin solaparse.
+ * Pasar el cursor resalta un nodo y sus vecinos. Arrastrar "calienta" el grafo: las
+ * aristas estiradas tiran de sus extremos en cadena (como d3-force) y el calor se
+ * disipa al soltar; el nodo queda donde se dejó y vuelve a la deriva.
  */
 
 type SimNode = {
@@ -18,6 +21,19 @@ type SimEdge = {
   line: SVGLineElement;
   a: number;
   b: number;
+  /** Largo de la arista en el layout inicial; solo tira cuando se estira más allá. */
+  rest: number;
+};
+
+type Drag = {
+  sim: GraphSim;
+  node: SimNode;
+  pointerId: number;
+  /** Dónde se tomó el nodo respecto a su centro, para que no salte al puntero. */
+  offsetX: number;
+  offsetY: number;
+  grabX: number;
+  grabY: number;
 };
 
 type GraphSim = {
@@ -28,6 +44,8 @@ type GraphSim = {
   w: number;
   h: number;
   mobile: boolean;
+  /** 1 mientras se arrastra; decae al soltar. Escala resortes y velocidad máxima. */
+  heat: number;
 };
 
 const DESKTOP = { w: 1100, h: 460, padX: 72, padY: 48 } as const;
@@ -39,6 +57,12 @@ const MAX_V = 0.22;
 const JITTER = 0.012;
 const EDGE_PAD = 8;
 const MOBILE_MQ = '(max-width: 767px)';
+const SPRING_K = 0.008;
+const HEAT_DECAY = 0.975;
+const HEAT_MAX_V = 6;
+const HEAT_DAMP = 0.88;
+/** Fracción de la distancia al puntero que recorre el nodo sostenido por cuadro (fricción). */
+const DRAG_FOLLOW = 0.2;
 
 function reducedMotion() {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -161,13 +185,14 @@ function buildSim(root: HTMLElement): GraphSim | null {
     const a = indexById.get(aId);
     const b = indexById.get(bId);
     if (a == null || b == null) return;
-    edges.push({ line, a, b });
+    const rest = Math.hypot(positions[a].x - positions[b].x, positions[a].y - positions[b].y);
+    edges.push({ line, a, b, rest });
   });
 
   // stash separation factor on root for step
   root.dataset.sep = String(sepBoost);
 
-  return { root, svg, nodes, edges, w: box.w, h: box.h, mobile };
+  return { root, svg, nodes, edges, w: box.w, h: box.h, mobile, heat: 0 };
 }
 
 function applyBounds(n: SimNode, w: number, h: number) {
@@ -193,7 +218,7 @@ function applyBounds(n: SimNode, w: number, h: number) {
   }
 }
 
-function separate(nodes: SimNode[], sep: number) {
+function separate(nodes: SimNode[], sep: number, strength = 0.05) {
   for (let i = 0; i < nodes.length; i += 1) {
     for (let j = i + 1; j < nodes.length; j += 1) {
       const a = nodes[i];
@@ -207,7 +232,7 @@ function separate(nodes: SimNode[], sep: number) {
         Math.abs(dy) < (a.pad + b.pad) * 0.5;
       if (dist >= minDist && !labelClash) continue;
       const target = labelClash ? Math.max(minDist, dist + 12) : minDist;
-      const push = ((target - dist) / dist) * 0.05;
+      const push = ((target - dist) / dist) * strength;
       const ox = dx * push;
       const oy = dy * push;
       a.x -= ox;
@@ -222,8 +247,8 @@ function separate(nodes: SimNode[], sep: number) {
   }
 }
 
-function clampVelocity(n: SimNode, mobile: boolean) {
-  const maxV = mobile ? MAX_V * 0.65 : MAX_V;
+function clampVelocity(n: SimNode, mobile: boolean, heat: number) {
+  const maxV = (mobile ? MAX_V * 0.65 : MAX_V) + heat * HEAT_MAX_V;
   const speed = mobile ? SPEED * 0.55 : SPEED;
   const sp = Math.hypot(n.vx, n.vy);
   if (sp > maxV) {
@@ -251,20 +276,168 @@ function paint(sim: GraphSim) {
   }
 }
 
+/** El nodo sostenido persigue al puntero (dentro del lienzo) con algo de retraso. */
+function followPointer(sim: GraphSim, d: Drag) {
+  const n = d.node;
+  const x = Math.min(Math.max(d.grabX, n.halfW + EDGE_PAD), sim.w - n.halfW - EDGE_PAD);
+  const y = Math.min(Math.max(d.grabY, n.r + EDGE_PAD + 6), sim.h - n.pad - EDGE_PAD);
+  n.vx = (x - n.x) * DRAG_FOLLOW;
+  n.vy = (y - n.y) * DRAG_FOLLOW;
+  n.x += n.vx;
+  n.y += n.vy;
+}
+
+/** Aristas estiradas tiran de sus extremos; así el arrastre se propaga a vecinos de vecinos. */
+function pullEdges(sim: GraphSim, held: SimNode | null) {
+  for (const e of sim.edges) {
+    const a = sim.nodes[e.a];
+    const b = sim.nodes[e.b];
+    const dx = b.x - a.x;
+    const dy = b.y - a.y;
+    const dist = Math.hypot(dx, dy) || 0.001;
+    const stretch = dist - e.rest;
+    if (stretch <= 0) continue;
+    const f = (stretch * SPRING_K * sim.heat) / dist;
+    if (a !== held) {
+      a.vx += dx * f;
+      a.vy += dy * f;
+    }
+    if (b !== held) {
+      b.vx -= dx * f;
+      b.vy -= dy * f;
+    }
+  }
+}
+
 function step(sim: GraphSim) {
   const sep = Number(sim.root.dataset.sep || 1.35);
+  const held = drag?.sim === sim ? drag.node : null;
+  if (held && drag) {
+    sim.heat = 1;
+    followPointer(sim, drag);
+  } else if (sim.heat > 0) {
+    sim.heat = sim.heat < 0.005 ? 0 : sim.heat * HEAT_DECAY;
+  }
+  if (sim.heat > 0) pullEdges(sim, held);
+
+  const damp = DAMP - (DAMP - HEAT_DAMP) * sim.heat;
   for (const n of sim.nodes) {
+    if (n === held) continue;
     n.vx += (Math.random() - 0.5) * (sim.mobile ? JITTER * 0.7 : JITTER);
     n.vy += (Math.random() - 0.5) * (sim.mobile ? JITTER * 0.7 : JITTER);
-    n.vx *= DAMP;
-    n.vy *= DAMP;
-    clampVelocity(n, sim.mobile);
+    n.vx *= damp;
+    n.vy *= damp;
+    clampVelocity(n, sim.mobile, sim.heat);
     n.x += n.vx;
     n.y += n.vy;
   }
-  separate(sim.nodes, sep);
+  const heldX = held?.x ?? 0;
+  const heldY = held?.y ?? 0;
+  separate(sim.nodes, sep, 0.05 + sim.heat * 0.3);
+  if (held) {
+    held.x = heldX;
+    held.y = heldY;
+  }
   for (const n of sim.nodes) applyBounds(n, sim.w, sim.h);
   paint(sim);
+}
+
+/** Resalta un nodo, sus aristas y sus vecinos; `null` quita el resaltado. */
+function focusNode(sim: GraphSim, node: SimNode | null) {
+  const related = new Set<SimNode>(node ? [node] : []);
+  for (const e of sim.edges) {
+    const a = sim.nodes[e.a];
+    const b = sim.nodes[e.b];
+    const on = node != null && (a === node || b === node);
+    e.line.classList.toggle('is-related', on);
+    if (on) {
+      related.add(a);
+      related.add(b);
+    }
+  }
+  for (const n of sim.nodes) n.el.classList.toggle('is-related', related.has(n));
+  sim.root.classList.toggle('topic-graph--focus', node != null);
+}
+
+function nodeAt(target: EventTarget | null) {
+  if (!(target instanceof Element)) return null;
+  const el = target.closest<SVGGElement>('.topic-graph__node');
+  const sim = el && sims.find((s) => s.svg.contains(el));
+  const node = sim?.nodes.find((n) => n.el === el);
+  return sim && node ? { sim, node } : null;
+}
+
+function onPointerOver(event: PointerEvent) {
+  if (drag) return;
+  const hit = nodeAt(event.target);
+  if (hit) focusNode(hit.sim, hit.node);
+}
+
+function onPointerOut(event: PointerEvent) {
+  if (drag) return;
+  const from = nodeAt(event.target);
+  if (!from || nodeAt(event.relatedTarget)?.node === from.node) return;
+  focusNode(from.sim, null);
+}
+
+let drag: Drag | null = null;
+let dragBound = false;
+
+function svgPoint(svg: SVGSVGElement, clientX: number, clientY: number) {
+  const ctm = svg.getScreenCTM();
+  if (!ctm) return { x: clientX, y: clientY };
+  const p = new DOMPoint(clientX, clientY).matrixTransform(ctm.inverse());
+  return { x: p.x, y: p.y };
+}
+
+function onPointerDown(event: PointerEvent) {
+  if (event.button !== 0) return;
+  const hit = nodeAt(event.target);
+  if (!hit) return;
+  const { sim, node } = hit;
+  event.preventDefault();
+  focusNode(sim, node);
+  const p = svgPoint(sim.svg, event.clientX, event.clientY);
+  const offsetX = node.x - p.x;
+  const offsetY = node.y - p.y;
+  drag = {
+    sim,
+    node,
+    pointerId: event.pointerId,
+    offsetX,
+    offsetY,
+    grabX: p.x + offsetX,
+    grabY: p.y + offsetY,
+  };
+  node.el.classList.add('is-dragging');
+  sim.root.classList.add('topic-graph--dragging');
+}
+
+function onPointerMove(event: PointerEvent) {
+  if (!drag || event.pointerId !== drag.pointerId) return;
+  const p = svgPoint(drag.sim.svg, event.clientX, event.clientY);
+  drag.grabX = p.x + drag.offsetX;
+  drag.grabY = p.y + drag.offsetY;
+}
+
+function onPointerUp(event: PointerEvent) {
+  if (!drag || event.pointerId !== drag.pointerId) return;
+  const { sim, node } = drag;
+  node.el.classList.remove('is-dragging');
+  sim.root.classList.remove('topic-graph--dragging');
+  drag = null;
+  if (event.pointerType !== 'mouse' || nodeAt(event.target)?.node !== node) focusNode(sim, null);
+}
+
+function bindDrag() {
+  if (dragBound) return;
+  dragBound = true;
+  document.addEventListener('pointerdown', onPointerDown);
+  document.addEventListener('pointermove', onPointerMove);
+  document.addEventListener('pointerup', onPointerUp);
+  document.addEventListener('pointercancel', onPointerUp);
+  document.addEventListener('pointerover', onPointerOver);
+  document.addEventListener('pointerout', onPointerOut);
 }
 
 let raf = 0;
@@ -291,6 +464,7 @@ export function stopTopicGraphMotion() {
   window.cancelAnimationFrame(raf);
   raf = 0;
   sims = [];
+  drag = null;
 }
 
 function startMotion() {
@@ -310,6 +484,7 @@ export function initTopicGraphMotion() {
 
   sims = roots.map(buildSim).filter((s): s is GraphSim => Boolean(s));
   if (sims.length === 0) return;
+  bindDrag();
 
   if (!visibilityBound) {
     visibilityBound = true;
