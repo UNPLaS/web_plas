@@ -15,6 +15,12 @@ function onClick(event: MouseEvent) {
   // El panel cubre todo el <dialog>: si el clic cae en el propio <dialog>, fue en el fondo.
   if (target instanceof HTMLDialogElement && target.classList.contains('student-dialog')) {
     target.close();
+    return;
+  }
+
+  // Un enlace interno (p. ej. al docente en esta misma página) debe verse sin el modal encima.
+  if (target.closest('a[href]:not([target="_blank"])')) {
+    target.closest<HTMLDialogElement>('dialog.student-dialog[open]')?.close();
   }
 }
 

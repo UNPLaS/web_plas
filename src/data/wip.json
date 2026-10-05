@@ -1,1 +1,141 @@
-[]
+[
+  {
+    "id": "wip:morales-jimenez-agente-conversacional",
+    "title": "Agente conversacional para apoyar la recolección de respuestas en cuestionarios de satisfacción docente",
+    "summary": "",
+    "student_ids": [
+      "estudiante:morales-jimenez-dairo-enrique"
+    ],
+    "advisor_ids": [
+      "docente:ferestrepoca"
+    ],
+    "codirector_ids": [],
+    "line_ids": [
+      "line:educacion"
+    ],
+    "topic_ids": [
+      "topic:agentes-conversacionales"
+    ]
+  },
+  {
+    "id": "wip:ortiz-mora-analitica-python",
+    "title": "Caracterización del proceso de aprendizaje de un curso de programación de computadores con Python mediante analítica del aprendizaje",
+    "summary": "",
+    "student_ids": [
+      "estudiante:ortiz-mora-maria-alejandra"
+    ],
+    "advisor_ids": [
+      "docente:ferestrepoca"
+    ],
+    "codirector_ids": [],
+    "line_ids": [
+      "line:educacion"
+    ],
+    "topic_ids": [
+      "topic:analitica-aprendizaje"
+    ]
+  },
+  {
+    "id": "wip:reyes-gomez-bases-datos-iag",
+    "title": "Aprendizaje del diseño de bases de datos en un contexto académico mediado por Inteligencia Artificial Generativa: un estudio cuasi-experimental",
+    "summary": "",
+    "student_ids": [
+      "estudiante:reyes-gomez-sergio-alberto"
+    ],
+    "advisor_ids": [
+      "docente:ferestrepoca"
+    ],
+    "codirector_ids": [
+      "docente:jjramireze"
+    ],
+    "line_ids": [
+      "line:educacion"
+    ],
+    "topic_ids": []
+  },
+  {
+    "id": "wip:ramirez-espejo-ilusion-competencia-genai",
+    "title": "Countering GenAI-Induced Illusion of Competence: A Pedagogical Framework for Critical Content Evaluation in Software Architecture and Systems Specification",
+    "summary": "",
+    "student_ids": [
+      "estudiante:ramirez-espejo-roger-steven"
+    ],
+    "advisor_ids": [
+      "docente:ferestrepoca"
+    ],
+    "codirector_ids": [],
+    "line_ids": [
+      "line:educacion",
+      "line:lenguajes"
+    ],
+    "topic_ids": [
+      "topic:ciclo-vida-software"
+    ]
+  },
+  {
+    "id": "wip:rodriguez-rivera-maestria",
+    "title": "",
+    "summary": "",
+    "student_ids": [
+      "estudiante:rodriguez-rivera-nelson-andres"
+    ],
+    "advisor_ids": [
+      "docente:ferestrepoca"
+    ],
+    "codirector_ids": [],
+    "line_ids": [],
+    "topic_ids": []
+  },
+  {
+    "id": "wip:diaz-cordoba-laboratorio-semiconductores",
+    "title": "Diseño e implementación de hardware y software para prácticas de laboratorio de fundamentos de dispositivos semiconductores",
+    "summary": "",
+    "student_ids": [
+      "estudiante:diaz-cordoba-alejandro"
+    ],
+    "advisor_ids": [
+      "docente:jjramireze"
+    ],
+    "codirector_ids": [],
+    "line_ids": [
+      "line:educacion"
+    ],
+    "topic_ids": []
+  },
+  {
+    "id": "wip:suat-rojas-riesgo-vial-dos-ruedas",
+    "title": "Influencia del comportamiento de vehículos de dos ruedas en el nivel del riesgo vial en intersecciones de Bogotá a partir de variables cinemáticas",
+    "summary": "",
+    "student_ids": [
+      "estudiante:suat-rojas-nestor-eduardo"
+    ],
+    "advisor_ids": [
+      "docente:capedrazab"
+    ],
+    "codirector_ids": [],
+    "line_ids": [
+      "line:transporte"
+    ],
+    "topic_ids": [
+      "topic:monitoreo-trafico"
+    ]
+  },
+  {
+    "id": "wip:rangel-retavisca-desminado-gpr",
+    "title": "Integrated detection and identification methodology for Humanitarian demining using artificial intelligence-based Algorithms on ground penetrating radar data",
+    "summary": "",
+    "student_ids": [
+      "estudiante:rangel-retavisca-john-alejandro"
+    ],
+    "advisor_ids": [
+      "docente:capedrazab"
+    ],
+    "codirector_ids": [],
+    "line_ids": [
+      "line:sensado"
+    ],
+    "topic_ids": [
+      "topic:radar-sensado"
+    ]
+  }
+]

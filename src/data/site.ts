@@ -26,6 +26,7 @@ export {
   site,
   students,
   activeStudents,
+  activeStudentSections,
   historicalStudentSections,
 } from './content';
 

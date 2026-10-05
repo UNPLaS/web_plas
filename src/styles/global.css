@@ -3252,20 +3252,23 @@ html:has(.student-dialog[open]) {
 
 .student-dialog__head {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    'chips close'
+    'name name';
   gap: 0.6rem 1rem;
   align-items: start;
 }
 
 .student-dialog__chips {
+  grid-area: chips;
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
 }
 
 .student-dialog__close-form {
-  grid-column: 2;
-  grid-row: 1 / span 2;
+  grid-area: close;
   margin: 0;
 }
 
@@ -3294,7 +3297,7 @@ html:has(.student-dialog[open]) {
 }
 
 .student-dialog__name {
-  grid-column: 1;
+  grid-area: name;
   margin: 0;
   font-size: clamp(1.25rem, 2.4vw, 1.5rem);
   line-height: 1.25;
@@ -3336,6 +3339,38 @@ html:has(.student-dialog[open]) {
   line-height: 1.4;
 }
 
+.student-dialog__advising {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.student-dialog__advising div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.4rem;
+}
+
+.student-dialog__advising dt {
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.student-dialog__advising dt::after {
+  content: ':';
+}
+
+.student-dialog__advising dd {
+  margin: 0;
+}
+
+.student-dialog__advising a {
+  color: var(--deep);
+  font-weight: 600;
+}
+
 .student-dialog__text {
   display: flex;
   flex-direction: column;
@@ -3348,10 +3383,6 @@ html:has(.student-dialog[open]) {
 .student-dialog__action,
 .student-dialog__empty {
   margin: 0;
-}
-
-.student-dialog__action {
-  padding-top: 0.25rem;
 }
 
 .student-dialog__empty {

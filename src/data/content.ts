@@ -290,6 +290,21 @@ export const people = facultyItems.map((f) => ({
   profileLinks: f.profileLinks,
 }));
 
+const facultyById = new Map(facultyItems.map((f) => [f.id, f]));
+
+/**
+ * Dirección de una tesis o trabajo en curso: `advisor_ids` dirige y `codirector_ids`
+ * codirige (el harvest no distingue roles; la codirección se marca a mano).
+ */
+function advisingOf(row: { advisor_ids?: string[]; codirector_ids?: string[] }) {
+  const toPeople = (ids: string[] = []) =>
+    ids
+      .map((id) => facultyById.get(id))
+      .filter((f): f is NonNullable<typeof f> => Boolean(f))
+      .map((f) => ({ id: f.id, name: f.name, href: f.href }));
+  return { directors: toPeople(row.advisor_ids), codirectors: toPeople(row.codirector_ids) };
+}
+
 /** `plas_catalog_source: "rejected"` oculta la tesis (y el harvest no la re-agrega). */
 const visibleTheses = thesesJson.filter((t) => t.plas_catalog_source !== 'rejected');
 
@@ -314,10 +329,11 @@ function thesisUrl(itemUrl: string) {
 interface WipItem {
   id: string;
   title: string;
-  summary: string;
+  summary?: string;
   url?: string;
   student_ids: string[];
-  advisor_ids?: string[];
+  advisor_ids: string[];
+  codirector_ids?: string[];
   line_ids?: string[];
   topic_ids?: string[];
 }
@@ -335,41 +351,68 @@ function paragraphsOf(text = '') {
     .filter(Boolean);
 }
 
+const degreeRank = (degree = '') => DEGREE_RANK[degree] ?? 0;
+
 /**
- * Tesis de mayor grado (y más reciente) del estudiante; con tesis pasa a Inactivo
- * y su entrada en `wip.json`, si quedó, deja de usarse.
+ * Una entrada por etapa del estudiante: la tesis de mayor grado (y más reciente) va al
+ * histórico, y si sigue "Activo" en un nivel superior (p. ej. doctorado tras la maestría)
+ * aparece además en activos con su trabajo de `wip.json`.
  */
-const resolvedStudents = studentsJson.map((s) => {
+const resolvedStudents = studentsJson.flatMap((s) => {
   const thesis = visibleTheses
     .filter((t) => t.student_ids.includes(s.id))
     .sort(
       (a, b) =>
-        (DEGREE_RANK[b.degree] ?? 0) - (DEGREE_RANK[a.degree] ?? 0) ||
+        degreeRank(b.degree) - degreeRank(a.degree) ||
         String(b.year).localeCompare(String(a.year)),
     )[0];
-  const wip = thesis ? null : (wipByStudent.get(s.id) ?? null);
-  const status = thesis ? 'Inactivo' : s.status;
   const roleDegree = DEGREE_BY_ROLE_GROUP[s.role_group] ?? '';
-  return {
-    ...s,
-    line_ids: thesis ? thesis.line_ids : wip?.line_ids?.length ? wip.line_ids : s.line_ids,
-    topic_ids: thesis ? thesis.topic_ids : (wip?.topic_ids ?? []),
-    status,
-    active: !thesis && status === 'Activo',
-    exit_year: thesis?.year ?? '',
-    degree_highest: thesis?.degree || roleDegree,
-    role_label: ROLE_LABEL_BY_DEGREE[roleDegree || thesis?.degree || ''] ?? '',
-    thesis: thesis
-      ? {
-          title: thesis.title,
-          abstract: thesis.abstract ?? '',
-          year: thesis.year,
-          degree: thesis.degree,
-          url: thesisUrl(thesis.item_url),
-        }
-      : null,
-    wip,
-  };
+  const studying =
+    s.status === 'Activo' && (!thesis || degreeRank(roleDegree) > degreeRank(thesis.degree));
+  const wip = studying ? (wipByStudent.get(s.id) ?? null) : null;
+
+  const entries = [];
+  if (studying) {
+    entries.push({
+      ...s,
+      key: thesis ? `${s.id}-${roleDegree}` : s.id,
+      line_ids: wip?.line_ids?.length ? wip.line_ids : s.line_ids,
+      topic_ids: wip?.topic_ids ?? [],
+      status: s.status,
+      active: true,
+      exit_year: '',
+      degree_highest: roleDegree,
+      role_label: ROLE_LABEL_BY_DEGREE[roleDegree] ?? '',
+      thesis: null,
+      wip,
+    });
+  }
+  if (thesis || !studying) {
+    const degree = thesis?.degree || roleDegree;
+    entries.push({
+      ...s,
+      key: s.id,
+      line_ids: thesis ? thesis.line_ids : s.line_ids,
+      topic_ids: thesis?.topic_ids ?? [],
+      status: thesis ? 'Inactivo' : s.status,
+      active: false,
+      exit_year: thesis?.year ?? '',
+      degree_highest: degree,
+      role_label: ROLE_LABEL_BY_DEGREE[degree] ?? '',
+      thesis: thesis
+        ? {
+            title: thesis.title,
+            abstract: thesis.abstract ?? '',
+            year: thesis.year,
+            degree: thesis.degree,
+            url: thesisUrl(thesis.item_url),
+            advising: advisingOf(thesis),
+          }
+        : null,
+      wip: null,
+    });
+  }
+  return entries;
 });
 
 type ResolvedStudent = (typeof resolvedStudents)[number];
@@ -384,6 +427,7 @@ function studentWork(s: ResolvedStudent) {
       paragraphs: paragraphsOf(s.thesis.abstract),
       href: s.thesis.url,
       linkLabel: 'Ver tesis',
+      ...s.thesis.advising,
     };
   }
   if (s.wip) {
@@ -394,6 +438,7 @@ function studentWork(s: ResolvedStudent) {
       paragraphs: paragraphsOf(s.wip.summary),
       href: s.wip.url ? withBase(s.wip.url) : '',
       linkLabel: 'Ver página del trabajo',
+      ...advisingOf(s.wip),
     };
   }
   return null;
@@ -409,7 +454,7 @@ export const students = resolvedStudents
     const thesisUrl = s.thesis?.url || '';
     return {
       id: s.id,
-      dialogId: s.id.replace(/[^a-z0-9-]+/gi, '-'),
+      dialogId: s.key.replace(/[^a-z0-9-]+/gi, '-'),
       name: s.name_display,
       role: typeLabel,
       meta: s.status,
@@ -445,29 +490,32 @@ export const students = resolvedStudents
 
 export const activeStudents = students.filter((s) => s.active);
 
-export const historicalStudentSections = (
-  [
-    {
-      title: 'Doctorado',
-      items: students.filter(
-        (s) => !s.active && /doctorado/i.test(s.degree || s.role || ''),
-      ),
-    },
-    {
-      title: 'Maestría',
-      items: students.filter(
-        (s) => !s.active && /maestria|maestría/i.test(s.degree || s.role || ''),
-      ),
-    },
-  ] as const
-).map((sec) => ({
-  ...sec,
-  items: [...sec.items].sort(
-    (a, b) =>
-      String(b.thesisYear).localeCompare(String(a.thesisYear)) ||
-      a.name.localeCompare(b.name),
-  ),
-})).filter((sec) => sec.items.length > 0);
+type StudentView = (typeof students)[number];
+
+const DEGREE_SECTIONS = [
+  { title: 'Doctorado', pattern: /doctorado/i },
+  { title: 'Maestría', pattern: /maestria|maestría/i },
+  { title: 'Pregrado', pattern: /pregrado/i },
+] as const;
+
+function studentSectionsByDegree(
+  items: StudentView[],
+  compare?: (a: StudentView, b: StudentView) => number,
+) {
+  return DEGREE_SECTIONS.map(({ title, pattern }) => {
+    const sectionItems = items.filter((s) => pattern.test(s.degree || s.role || ''));
+    if (compare) sectionItems.sort(compare);
+    return { title, items: sectionItems };
+  }).filter((sec) => sec.items.length > 0);
+}
+
+export const activeStudentSections = studentSectionsByDegree(activeStudents);
+
+export const historicalStudentSections = studentSectionsByDegree(
+  students.filter((s) => !s.active),
+  (a, b) =>
+    String(b.thesisYear).localeCompare(String(a.thesisYear)) || a.name.localeCompare(b.name),
+);
 
 export interface GraphNode {
   id: string;
@@ -635,7 +683,6 @@ export const catalogItems = [...pubItems, ...thesisItems]
 
 /** Trabajos "activos" en la página de línea: año actual y los dos anteriores. */
 const ACTIVE_SINCE = new Date().getFullYear() - 2;
-const facultyById = new Map(facultyItems.map((f) => [f.id, f]));
 
 export const lineDetails = researchLines.map((line) => {
   const topicById = new Map(line.topics.map((t) => [t.id, t]));
