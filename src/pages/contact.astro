@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { contactFields, contactIntro, contactLinks, group } from '../data/site';
+import { contactFields, contactForm, contactIntro, contactLinks, group } from '../data/site';
 ---
 
 <Layout title="Contacto">
@@ -9,16 +9,13 @@ import { contactFields, contactIntro, contactLinks, group } from '../data/site';
       <p class="page-head__eyebrow">Contacto</p>
       <h1 id="contact-heading" class="page-head__title">{contactIntro.title}</h1>
       <p class="page-head__lede">{contactIntro.lede}</p>
-      <p class="door-cta door-cta--inline">
-        <a class="btn btn--amber" href={contactIntro.ctaHref}>{contactIntro.ctaLabel}</a>
-      </p>
     </header>
   </section>
 
   <section class="contact-panel section-bleed" aria-labelledby="contact-details-heading">
     <div class="section-bleed__back" aria-hidden="true"></div>
     <div class="section-bleed__inner wrap">
-      <div class="contact-layout">
+      <div class:list={['contact-layout', contactForm && 'contact-layout--form']}>
         <div class="contact-layout__info">
           <h2 id="contact-details-heading" class="contact-panel__title">Datos del grupo</h2>
           <ul class="contact-list">
@@ -54,10 +51,38 @@ import { contactFields, contactIntro, contactLinks, group } from '../data/site';
             }
           </ul>
           <p class="contact-panel__note">
-            Preferimos correo para propuestas de tesis o colaboración. Incluye contexto,
-            plazos y qué esperas del grupo.
+            {
+              contactForm
+                ? 'Para propuestas de tesis o colaboración, usa el formulario o escríbenos al correo.'
+                : 'Preferimos correo para propuestas de tesis o colaboración.'
+            }{' '}
+            Incluye contexto, plazos y qué esperas del grupo.
           </p>
         </div>
+
+        {
+          contactForm && (
+            <div id="formulario" class="contact-layout__form contact-form">
+              <h2 class="contact-panel__title">Envíanos tu solicitud</h2>
+              <div class="contact-form__frame">
+                <iframe
+                  title="Formulario de contacto del grupo PLaS"
+                  src={contactForm.embed}
+                  loading="lazy"
+                >
+                  Cargando…
+                </iframe>
+              </div>
+              <p class="contact-form__fallback">
+                ¿No carga el formulario?{' '}
+                <a href={contactForm.href} target="_blank" rel="noreferrer">
+                  Ábrelo en una pestaña nueva
+                </a>{' '}
+                o escríbenos a <a href={`mailto:${group.email}`}>{group.email}</a>.
+              </p>
+            </div>
+          )
+        }
 
         {
           group.map_embed_url && (

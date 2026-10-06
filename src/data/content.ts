@@ -201,6 +201,18 @@ export const featuredProjects = projectItems.slice(0, 6).map((p) => ({
   lineChip: p.lineChip,
 }));
 
+const monthYearFormat = new Intl.DateTimeFormat('es-CO', {
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
+
+/** `2026-10-07` → `octubre de 2026`; vacío si la fecha no es válida. */
+function monthYear(date: string | undefined) {
+  const d = new Date(`${date}T00:00:00Z`);
+  return Number.isNaN(d.getTime()) ? '' : monthYearFormat.format(d);
+}
+
 export const blogItems = [...blogJson]
   .sort((a, b) => String(b.date_from).localeCompare(String(a.date_from)))
   .map((post) => {
@@ -213,7 +225,8 @@ export const blogItems = [...blogJson]
         .join(' · ');
     const typology = resolveTypology(post.typology);
     const meta =
-      [post.participation, post.year].filter(Boolean).join(' · ') + place;
+      [post.participation, monthYear(post.date_from) || post.year].filter(Boolean).join(' · ') +
+      place;
     return {
       id: blogParam(post.id),
       rawId: post.id,
@@ -462,7 +475,6 @@ export const students = resolvedStudents
       active: Boolean(s.active),
       degree,
       exitYear: s.exit_year || s.thesis?.year || '',
-      thesisTitle: s.thesis?.title || '',
       thesisYear: s.thesis?.year || s.exit_year || '',
       thesisHref: thesisUrl,
       lineIds: s.line_ids,
@@ -951,11 +963,16 @@ export const contactLinks = [
     : null,
 ].filter(Boolean) as { label: string; href: string }[];
 
+const contactFormEmbed = groupJson.contact_form_embed_url || '';
+
+/** Formulario de Google embebido en /contact; `href` abre la versión completa en otra pestaña. */
+export const contactForm = contactFormEmbed
+  ? { embed: contactFormEmbed, href: contactFormEmbed.replace(/[?&]embedded=true/, '') }
+  : null;
+
 export const contactIntro = {
   title: 'Escríbenos',
-  lede: 'Ideas de tesis, colaboraciones o preguntas sobre el grupo: leemos con criterio y respondemos cuando hay un camino claro.',
-  ctaLabel: 'Enviar correo',
-  ctaHref: `mailto:${groupJson.email}`,
+  lede: '¿Tienes una idea de tesis, una propuesta de colaboración o una pregunta sobre el grupo? Escríbenos y te responderemos.',
 };
 
 const RESOURCE_SECTION_ORDER = ['group_presentation', 'templates', 'talks_recordings'];

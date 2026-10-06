@@ -3008,6 +3008,56 @@ a.line-chapter__latest:is(:hover, .is-touch-hover) :is(.line-chapter__latest-lab
   padding-block: 2.75rem 3.25rem;
 }
 
+.contact-form {
+  scroll-margin-top: 1.5rem;
+}
+
+.contact-form .contact-panel__title {
+  margin-bottom: 1rem;
+}
+
+.contact-form__frame {
+  margin: 0;
+  overflow: hidden;
+  border: 2px solid var(--edge-soft);
+  border-radius: var(--radius);
+  background: var(--page);
+}
+
+/* El iframe de Google no ajusta su alto: valores holgados según el ancho para evitar scroll interno. */
+.contact-form__frame iframe {
+  display: block;
+  width: 100%;
+  height: 1520px;
+  border: 0;
+}
+
+@media (min-width: 380px) {
+  .contact-form__frame iframe {
+    height: 1300px;
+  }
+}
+
+@media (min-width: 640px) {
+  .contact-form__frame iframe {
+    height: 960px;
+  }
+}
+
+@media (min-width: 900px) {
+  .contact-layout--form .contact-form__frame iframe {
+    height: 1070px;
+  }
+}
+
+.contact-form__fallback {
+  max-width: 40rem;
+  margin: 0.85rem 0 0;
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
 .contact-layout {
   display: grid;
   gap: 2.5rem;
@@ -3018,6 +3068,26 @@ a.line-chapter__latest:is(:hover, .is-touch-hover) :is(.line-chapter__latest-lab
   .contact-layout {
     grid-template-columns: 1fr 1.1fr;
     gap: 2.75rem 2rem;
+  }
+
+  .contact-layout--form {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    grid-template-areas:
+      'info form'
+      'map form';
+    grid-template-rows: auto 1fr;
+  }
+
+  .contact-layout--form .contact-layout__info {
+    grid-area: info;
+  }
+
+  .contact-layout--form .contact-layout__form {
+    grid-area: form;
+  }
+
+  .contact-layout--form .contact-layout__map {
+    grid-area: map;
   }
 }
 
@@ -3424,7 +3494,6 @@ a.contact-item__value:hover {
   .faculty-card--stack {
     flex-direction: row;
     align-items: stretch;
-    gap: 1.25rem;
   }
 
   .faculty-card--stack .faculty-card__media {
@@ -3435,7 +3504,7 @@ a.contact-item__value:hover {
 
   .faculty-card--stack .faculty-card__body {
     justify-content: center;
-    padding: 0.85rem 1rem;
+    padding: 0.85rem 1.25rem;
   }
 
   .faculty-card--stack .faculty-card__profiles {

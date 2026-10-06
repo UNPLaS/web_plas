@@ -10,6 +10,7 @@ export {
   catalogTypologies,
   catalogFilterData,
   contactFields,
+  contactForm,
   contactIntro,
   contactLinks,
   eventItems,
