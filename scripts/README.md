@@ -7,7 +7,7 @@ Los harvest leen y escriben directamente los JSON del sitio. Nunca modifican ni 
 - `students.json`: datos de la persona; estado, tesis y año de salida se calculan en `content.ts` desde `theses.json`.
 - `wip.json` (a mano, sin harvest): trabajo en curso de estudiantes activos. Ver abajo.
 - `faculty.json`: ORCID (perfil "ORCID"), `aliases` de director en el repositorio y `line_ids` (el primero es la línea principal).
-- `lines.json`: nombres de línea (única fuente) y `keywords` para asignar líneas a tesis.
+- `lines.json`: nombres de línea (única fuente) y `keywords` para asignar líneas a tesis. Cada tema admite `contact_ids` (a mano): docentes responsables, que la página de la línea muestra primero aunque no tengan trabajos recientes. Campos editoriales para `/lines`: `question` (pregunta gancho de la línea), `map_label` (nombre de la línea en el mapa) y `short_name` en cada tema (etiqueta en el mapa).
 
 ## Comandos
 
@@ -33,7 +33,7 @@ Cambiar su `plas_catalog_source` a `"rejected"` (publicaciones y tesis): no se r
 
 ## Estudiantes activos y `wip.json`
 
-Un estudiante aparece como activo en `/people` si tiene `status: "Activo"` en `students.json` y ninguna tesis en `theses.json`. Cuando el harvest trae su tesis, pasa solo al histórico y su entrada en `wip.json` deja de mostrarse (se puede borrar después).
+Un estudiante aparece como activo en `/people` si tiene `status: "Activo"` en `students.json` y no tiene tesis en `theses.json` del nivel de su `role_group` o superior. Quien ya tiene tesis de maestría y cursa doctorado (`role_group: "estudiante_doctorado"`) aparece en ambos lados: en activos con su trabajo de `wip.json` y en el histórico con su tesis. Cuando el harvest trae la tesis de su nivel actual, pasa solo al histórico y su entrada en `wip.json` deja de mostrarse (se puede borrar después).
 
 ```json
 {
@@ -43,12 +43,17 @@ Un estudiante aparece como activo en `/people` si tiene `status: "Activo"` en `s
   "url": "https://… o /ruta/interna",
   "student_ids": ["estudiante:apellido-nombre"],
   "advisor_ids": ["docente:usuario"],
+  "codirector_ids": ["docente:otro-usuario"],
   "line_ids": ["line:educacion"],
   "topic_ids": ["topic:agentes-conversacionales"]
 }
 ```
 
-`url`, `advisor_ids`, `line_ids` y `topic_ids` son opcionales. Si hay `line_ids`, reemplazan a los del estudiante. `npm test` falla si algún id no existe en su archivo.
+`id`, `title`, `student_ids` y `advisor_ids` (quien dirige) son obligatorios; `title` puede quedar vacío (`""`) mientras el trabajo no tenga título, para registrar ya la dirección. `summary`, `url`, `codirector_ids`, `line_ids` y `topic_ids`, opcionales. Si hay `line_ids`, reemplazan a los del estudiante. El `id` del estudiante debe salir de su nombre como en el repositorio (`estudiante:apellido-apellido-nombre-nombre`, sin tildes) para que el harvest lo enlace con su tesis. `npm test` falla si algún id no existe en su archivo.
+
+## Dirección y codirección
+
+En `theses.json` y `wip.json`, `advisor_ids` es quien dirige y `codirector_ids` quien codirige (un docente no puede estar en ambos). El repositorio no distingue roles, así que el harvest pone a todos los docentes PLaS en `advisor_ids`; para marcar una codirección, mueve el id a `codirector_ids` a mano (el harvest no vuelve a tocar tesis existentes).
 
 ## Reglas de publicaciones
 
@@ -62,4 +67,4 @@ Un estudiante aparece como activo en `/people` si tiene `status: "Activo"` en `s
 2. Solo posgrados de ingeniería con al menos un director PLaS; se omiten las dirigidas solo por Fabio González.
 3. La línea se asigna por director, área y `keywords`; si nada decide, la primera línea del director.
 4. El autor se asocia al estudiante cuyo `id` sale del nombre en el repositorio (`estudiante:apellido-nombre`); si no existe, se crea con datos mínimos para completar a mano.
-5. El `abstract` se guarda en español y, si no hay, en inglés. `--backfill-abstracts` es la única operación que modifica tesis existentes, y solo agrega ese campo.
+5. El `abstract` se guarda en español y, si no hay, en inglés, sin la nota "(Texto tomado de la fuente)" que agrega el repositorio. `--backfill-abstracts` es la única operación que modifica tesis existentes, y solo agrega ese campo.

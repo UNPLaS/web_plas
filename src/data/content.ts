@@ -201,6 +201,18 @@ export const featuredProjects = projectItems.slice(0, 6).map((p) => ({
   lineChip: p.lineChip,
 }));
 
+const monthYearFormat = new Intl.DateTimeFormat('es-CO', {
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
+
+/** `2026-10-07` → `octubre de 2026`; vacío si la fecha no es válida. */
+function monthYear(date: string | undefined) {
+  const d = new Date(`${date}T00:00:00Z`);
+  return Number.isNaN(d.getTime()) ? '' : monthYearFormat.format(d);
+}
+
 export const blogItems = [...blogJson]
   .sort((a, b) => String(b.date_from).localeCompare(String(a.date_from)))
   .map((post) => {
@@ -213,7 +225,8 @@ export const blogItems = [...blogJson]
         .join(' · ');
     const typology = resolveTypology(post.typology);
     const meta =
-      [post.participation, post.year].filter(Boolean).join(' · ') + place;
+      [post.participation, monthYear(post.date_from) || post.year].filter(Boolean).join(' · ') +
+      place;
     return {
       id: blogParam(post.id),
       rawId: post.id,
@@ -290,6 +303,21 @@ export const people = facultyItems.map((f) => ({
   profileLinks: f.profileLinks,
 }));
 
+const facultyById = new Map(facultyItems.map((f) => [f.id, f]));
+
+/**
+ * Dirección de una tesis o trabajo en curso: `advisor_ids` dirige y `codirector_ids`
+ * codirige (el harvest no distingue roles; la codirección se marca a mano).
+ */
+function advisingOf(row: { advisor_ids?: string[]; codirector_ids?: string[] }) {
+  const toPeople = (ids: string[] = []) =>
+    ids
+      .map((id) => facultyById.get(id))
+      .filter((f): f is NonNullable<typeof f> => Boolean(f))
+      .map((f) => ({ id: f.id, name: f.name, href: f.href }));
+  return { directors: toPeople(row.advisor_ids), codirectors: toPeople(row.codirector_ids) };
+}
+
 /** `plas_catalog_source: "rejected"` oculta la tesis (y el harvest no la re-agrega). */
 const visibleTheses = thesesJson.filter((t) => t.plas_catalog_source !== 'rejected');
 
@@ -314,10 +342,11 @@ function thesisUrl(itemUrl: string) {
 interface WipItem {
   id: string;
   title: string;
-  summary: string;
+  summary?: string;
   url?: string;
   student_ids: string[];
-  advisor_ids?: string[];
+  advisor_ids: string[];
+  codirector_ids?: string[];
   line_ids?: string[];
   topic_ids?: string[];
 }
@@ -335,41 +364,68 @@ function paragraphsOf(text = '') {
     .filter(Boolean);
 }
 
+const degreeRank = (degree = '') => DEGREE_RANK[degree] ?? 0;
+
 /**
- * Tesis de mayor grado (y más reciente) del estudiante; con tesis pasa a Inactivo
- * y su entrada en `wip.json`, si quedó, deja de usarse.
+ * Una entrada por etapa del estudiante: la tesis de mayor grado (y más reciente) va al
+ * histórico, y si sigue "Activo" en un nivel superior (p. ej. doctorado tras la maestría)
+ * aparece además en activos con su trabajo de `wip.json`.
  */
-const resolvedStudents = studentsJson.map((s) => {
+const resolvedStudents = studentsJson.flatMap((s) => {
   const thesis = visibleTheses
     .filter((t) => t.student_ids.includes(s.id))
     .sort(
       (a, b) =>
-        (DEGREE_RANK[b.degree] ?? 0) - (DEGREE_RANK[a.degree] ?? 0) ||
+        degreeRank(b.degree) - degreeRank(a.degree) ||
         String(b.year).localeCompare(String(a.year)),
     )[0];
-  const wip = thesis ? null : (wipByStudent.get(s.id) ?? null);
-  const status = thesis ? 'Inactivo' : s.status;
   const roleDegree = DEGREE_BY_ROLE_GROUP[s.role_group] ?? '';
-  return {
-    ...s,
-    line_ids: thesis ? thesis.line_ids : wip?.line_ids?.length ? wip.line_ids : s.line_ids,
-    topic_ids: thesis ? thesis.topic_ids : (wip?.topic_ids ?? []),
-    status,
-    active: !thesis && status === 'Activo',
-    exit_year: thesis?.year ?? '',
-    degree_highest: thesis?.degree || roleDegree,
-    role_label: ROLE_LABEL_BY_DEGREE[roleDegree || thesis?.degree || ''] ?? '',
-    thesis: thesis
-      ? {
-          title: thesis.title,
-          abstract: thesis.abstract ?? '',
-          year: thesis.year,
-          degree: thesis.degree,
-          url: thesisUrl(thesis.item_url),
-        }
-      : null,
-    wip,
-  };
+  const studying =
+    s.status === 'Activo' && (!thesis || degreeRank(roleDegree) > degreeRank(thesis.degree));
+  const wip = studying ? (wipByStudent.get(s.id) ?? null) : null;
+
+  const entries = [];
+  if (studying) {
+    entries.push({
+      ...s,
+      key: thesis ? `${s.id}-${roleDegree}` : s.id,
+      line_ids: wip?.line_ids?.length ? wip.line_ids : s.line_ids,
+      topic_ids: wip?.topic_ids ?? [],
+      status: s.status,
+      active: true,
+      exit_year: '',
+      degree_highest: roleDegree,
+      role_label: ROLE_LABEL_BY_DEGREE[roleDegree] ?? '',
+      thesis: null,
+      wip,
+    });
+  }
+  if (thesis || !studying) {
+    const degree = thesis?.degree || roleDegree;
+    entries.push({
+      ...s,
+      key: s.id,
+      line_ids: thesis ? thesis.line_ids : s.line_ids,
+      topic_ids: thesis?.topic_ids ?? [],
+      status: thesis ? 'Inactivo' : s.status,
+      active: false,
+      exit_year: thesis?.year ?? '',
+      degree_highest: degree,
+      role_label: ROLE_LABEL_BY_DEGREE[degree] ?? '',
+      thesis: thesis
+        ? {
+            title: thesis.title,
+            abstract: thesis.abstract ?? '',
+            year: thesis.year,
+            degree: thesis.degree,
+            url: thesisUrl(thesis.item_url),
+            advising: advisingOf(thesis),
+          }
+        : null,
+      wip: null,
+    });
+  }
+  return entries;
 });
 
 type ResolvedStudent = (typeof resolvedStudents)[number];
@@ -384,6 +440,7 @@ function studentWork(s: ResolvedStudent) {
       paragraphs: paragraphsOf(s.thesis.abstract),
       href: s.thesis.url,
       linkLabel: 'Ver tesis',
+      ...s.thesis.advising,
     };
   }
   if (s.wip) {
@@ -394,6 +451,7 @@ function studentWork(s: ResolvedStudent) {
       paragraphs: paragraphsOf(s.wip.summary),
       href: s.wip.url ? withBase(s.wip.url) : '',
       linkLabel: 'Ver página del trabajo',
+      ...advisingOf(s.wip),
     };
   }
   return null;
@@ -409,7 +467,7 @@ export const students = resolvedStudents
     const thesisUrl = s.thesis?.url || '';
     return {
       id: s.id,
-      dialogId: s.id.replace(/[^a-z0-9-]+/gi, '-'),
+      dialogId: s.key.replace(/[^a-z0-9-]+/gi, '-'),
       name: s.name_display,
       role: typeLabel,
       meta: s.status,
@@ -417,7 +475,6 @@ export const students = resolvedStudents
       active: Boolean(s.active),
       degree,
       exitYear: s.exit_year || s.thesis?.year || '',
-      thesisTitle: s.thesis?.title || '',
       thesisYear: s.thesis?.year || s.exit_year || '',
       thesisHref: thesisUrl,
       lineIds: s.line_ids,
@@ -428,6 +485,7 @@ export const students = resolvedStudents
           label: lineNameById[id],
           color: resolveLineColor(id, lineNameById[id]),
         })),
+      topicIds: s.topic_ids,
       topics: topicsFor(s.topic_ids),
       work: studentWork(s),
       chips: [
@@ -445,29 +503,32 @@ export const students = resolvedStudents
 
 export const activeStudents = students.filter((s) => s.active);
 
-export const historicalStudentSections = (
-  [
-    {
-      title: 'Doctorado',
-      items: students.filter(
-        (s) => !s.active && /doctorado/i.test(s.degree || s.role || ''),
-      ),
-    },
-    {
-      title: 'Maestría',
-      items: students.filter(
-        (s) => !s.active && /maestria|maestría/i.test(s.degree || s.role || ''),
-      ),
-    },
-  ] as const
-).map((sec) => ({
-  ...sec,
-  items: [...sec.items].sort(
-    (a, b) =>
-      String(b.thesisYear).localeCompare(String(a.thesisYear)) ||
-      a.name.localeCompare(b.name),
-  ),
-})).filter((sec) => sec.items.length > 0);
+type StudentView = (typeof students)[number];
+
+const DEGREE_SECTIONS = [
+  { title: 'Doctorado', pattern: /doctorado/i },
+  { title: 'Maestría', pattern: /maestria|maestría/i },
+  { title: 'Pregrado', pattern: /pregrado/i },
+] as const;
+
+function studentSectionsByDegree(
+  items: StudentView[],
+  compare?: (a: StudentView, b: StudentView) => number,
+) {
+  return DEGREE_SECTIONS.map(({ title, pattern }) => {
+    const sectionItems = items.filter((s) => pattern.test(s.degree || s.role || ''));
+    if (compare) sectionItems.sort(compare);
+    return { title, items: sectionItems };
+  }).filter((sec) => sec.items.length > 0);
+}
+
+export const activeStudentSections = studentSectionsByDegree(activeStudents);
+
+export const historicalStudentSections = studentSectionsByDegree(
+  students.filter((s) => !s.active),
+  (a, b) =>
+    String(b.thesisYear).localeCompare(String(a.thesisYear)) || a.name.localeCompare(b.name),
+);
 
 export interface GraphNode {
   id: string;
@@ -492,7 +553,9 @@ export const researchLines = linesJson.map((line) => {
     id: line.id,
     title: line.name,
     shortTitle: line.short_name,
+    mapLabel: line.map_label,
     summary: line.summary,
+    question: line.question,
     paragraphs: line.description,
     href: withBase(`/lines/${line.slug}`),
     slug: line.slug,
@@ -611,7 +674,10 @@ const thesisItems = visibleTheses.map((t) => {
     lineId,
     lineIds,
     topicIds: t.topic_ids ?? [],
-    facultyIds: t.advisor_ids,
+    facultyIds: [
+      ...t.advisor_ids,
+      ...((t as { codirector_ids?: string[] }).codirector_ids ?? []),
+    ],
     line,
     lineName: lineNames.join(', ') || line,
     lineColor: resolveLineColor(lineId, line),
@@ -633,9 +699,10 @@ export const catalogItems = [...pubItems, ...thesisItems]
       : null,
   }));
 
-/** Trabajos "activos" en la página de línea: año actual y los dos anteriores. */
-const ACTIVE_SINCE = new Date().getFullYear() - 2;
-const facultyById = new Map(facultyItems.map((f) => [f.id, f]));
+/** Trabajos "recientes" en la página de línea: año actual y los tres anteriores. */
+const RECENT_SINCE = new Date().getFullYear() - 3;
+/** Si un tema no tiene trabajos recientes, se muestran sus últimos trabajos como históricos. */
+const HISTORICAL_SHOWN = 3;
 
 export const lineDetails = researchLines.map((line) => {
   const topicById = new Map(line.topics.map((t) => [t.id, t]));
@@ -658,23 +725,49 @@ export const lineDetails = researchLines.map((line) => {
 
   const topics = line.topics.map((t) => {
     const topicWorks = catalogItems.filter((w) => w.topicIds.includes(t.id));
-    const workCountByFaculty = new Map<string, number>();
-    for (const w of topicWorks) {
-      for (const id of w.facultyIds) workCountByFaculty.set(id, (workCountByFaculty.get(id) ?? 0) + 1);
+    const lineTopicWorks = works.filter((w) => w.topicIds.includes(t.id));
+    const recentWorks = lineTopicWorks.filter((w) => Number(w.year) >= RECENT_SINCE);
+    const topicStudents = activeStudents.filter((s) => s.topicIds.includes(t.id));
+    /** Docentes del tema: autores o directores de trabajos recientes, o quienes dirigen a un activo. */
+    const weightByFaculty = new Map<string, number>();
+    const credit = (id: string) => weightByFaculty.set(id, (weightByFaculty.get(id) ?? 0) + 1);
+    for (const w of topicWorks) if (Number(w.year) >= RECENT_SINCE) w.facultyIds.forEach(credit);
+    for (const s of topicStudents) {
+      [...(s.work?.directors ?? []), ...(s.work?.codirectors ?? [])].forEach((f) => credit(f.id));
     }
-    const people = [...workCountByFaculty.entries()]
+    /** Responsables elegidos por el grupo en `lines.json`: van primero aunque no tengan trabajos recientes. */
+    const contactIds = (t as { contact_ids?: string[] }).contact_ids ?? [];
+    const rankedIds = [...weightByFaculty.entries()]
       .sort((a, b) => b[1] - a[1])
-      .map(([id]) => facultyById.get(id))
+      .map(([id]) => id)
+      .filter((id) => !contactIds.includes(id));
+    const faculty = [...contactIds, ...rankedIds]
+      .map((id) => facultyById.get(id))
       .filter((f): f is NonNullable<typeof f> => Boolean(f))
-      .map((f) => ({ id: f.id, name: f.name, image: f.image, href: f.href }));
+      .map((f) => ({
+        id: f.id,
+        name: f.name,
+        image: f.image,
+        href: f.href,
+        contact: contactIds.includes(f.id),
+      }));
+    const students = topicStudents.map((s) => ({
+      id: s.dialogId,
+      name: s.name,
+      image: s.image,
+      level: degreeLabel[s.degree] ?? '',
+      href: withBase(`/people#${s.dialogId}`),
+    }));
     return {
       id: t.id,
       slug: t.slug,
       name: t.name,
       description: t.description,
       total: topicWorks.length,
-      people,
-      activeWorks: works.filter((w) => w.topicIds.includes(t.id) && Number(w.year) >= ACTIVE_SINCE),
+      faculty,
+      students,
+      recentWorks,
+      historicalWorks: recentWorks.length ? [] : lineTopicWorks.slice(0, HISTORICAL_SHOWN),
     };
   });
 
@@ -684,11 +777,111 @@ export const lineDetails = researchLines.map((line) => {
   return {
     ...line,
     topics,
-    activeSince: ACTIVE_SINCE,
     workCount: works.length,
     timeline: years.map((year) => ({ year, works: works.filter((w) => w.year === year) })),
   };
 });
+
+/** Capítulos de /lines: lo que invita a entrar a cada línea (pregunta, cifras, personas, lo último). */
+export const linesOverview = lineDetails.map((line) => {
+  const faculty = facultyJson
+    .filter((f) => f.line_ids.includes(line.id))
+    .map((f) => facultyById.get(f.id))
+    .filter((f): f is NonNullable<typeof f> => Boolean(f))
+    .map((f) => ({ name: f.name, image: f.image, href: f.href }));
+  const latest = line.timeline[0]?.works[0] ?? null;
+  return {
+    id: line.id,
+    slug: line.slug,
+    href: line.href,
+    title: line.title,
+    summary: line.summary,
+    question: line.question,
+    color: line.color,
+    image: line.image,
+    imagePosition: line.imagePosition,
+    topics: line.topics.map((t) => ({ name: t.name, href: `${line.href}#${t.slug}` })),
+    workCount: line.workCount,
+    activeCount: activeStudents.filter((s) => s.lineIds.includes(line.id)).length,
+    faculty,
+    latest: latest && { title: latest.title, meta: latest.meta, href: latest.href },
+  };
+});
+
+/** Centro de cada línea en el mapa (0–1): las líneas que comparten docentes o trabajos quedan cerca. */
+const MAP_HUBS: Record<string, { x: number; y: number }> = {
+  lenguajes: { x: 0.14, y: 0.3 },
+  educacion: { x: 0.28, y: 0.76 },
+  embebidos: { x: 0.5, y: 0.36 },
+  transporte: { x: 0.82, y: 0.28 },
+  sensado: { x: 0.72, y: 0.76 },
+};
+
+export interface MapNode extends GraphNode {
+  href: string;
+  color: string;
+  hub: boolean;
+}
+
+export interface MapEdge extends GraphEdge {
+  color: string;
+}
+
+/** Mapa de /lines: cada línea con sus temas alrededor y aristas donde las líneas se cruzan. */
+export const linesMap = (() => {
+  const nodes: MapNode[] = [];
+  const edges: MapEdge[] = [];
+  const lineOfTopic = new Map<string, string>();
+  lineDetails.forEach((line, i) => {
+    const angle0 = (i / lineDetails.length) * Math.PI * 2;
+    const hub = MAP_HUBS[line.slug] ?? {
+      x: 0.5 + 0.35 * Math.cos(angle0),
+      y: 0.5 + 0.35 * Math.sin(angle0),
+    };
+    nodes.push({ id: line.id, label: line.mapLabel, weight: 5, ...hub, href: line.href, color: line.color, hub: true });
+    line.topics.forEach((t, j) => {
+      lineOfTopic.set(t.id, line.id);
+      const angle = angle0 + (j / line.topics.length) * Math.PI * 2;
+      nodes.push({
+        id: t.id,
+        label: researchLines[i].topics[j]?.short_name || t.name,
+        weight: Math.min(1 + t.total / 4, 3),
+        x: Math.min(Math.max(hub.x + 0.12 * Math.cos(angle), 0), 1),
+        y: Math.min(Math.max(hub.y + 0.26 * Math.sin(angle), 0), 1),
+        href: `${line.href}#${t.slug}`,
+        color: line.color,
+        hub: false,
+      });
+      edges.push({ source: line.id, target: t.id, weight: 1 + t.total, color: line.color });
+    });
+  });
+
+  /** Cruces: trabajos con temas o líneas de dos líneas distintas y docentes compartidos. */
+  const cross = new Map<string, number>();
+  const bump = (a: string, b: string) => {
+    if (a === b) return;
+    const key = [a, b].sort().join('|');
+    cross.set(key, (cross.get(key) ?? 0) + 1);
+  };
+  for (const w of catalogItems) {
+    const topics = w.topicIds.filter((id) => lineOfTopic.has(id));
+    for (let i = 0; i < topics.length; i += 1)
+      for (let j = i + 1; j < topics.length; j += 1)
+        if (lineOfTopic.get(topics[i]) !== lineOfTopic.get(topics[j])) bump(topics[i], topics[j]);
+    const lines = [...new Set(w.lineIds)];
+    for (let i = 0; i < lines.length; i += 1)
+      for (let j = i + 1; j < lines.length; j += 1) bump(lines[i], lines[j]);
+  }
+  for (const f of facultyJson) {
+    for (let i = 0; i < f.line_ids.length; i += 1)
+      for (let j = i + 1; j < f.line_ids.length; j += 1) bump(f.line_ids[i], f.line_ids[j]);
+  }
+  for (const [key, weight] of cross) {
+    const [source, target] = key.split('|');
+    edges.push({ source, target, weight, color: 'var(--muted)' });
+  }
+  return { nodes, edges };
+})();
 
 export const catalogYears = [
   ...new Set(catalogItems.map((i) => i.year).filter(Boolean)),
@@ -770,11 +963,16 @@ export const contactLinks = [
     : null,
 ].filter(Boolean) as { label: string; href: string }[];
 
+const contactFormEmbed = groupJson.contact_form_embed_url || '';
+
+/** Formulario de Google embebido en /contact; `href` abre la versión completa en otra pestaña. */
+export const contactForm = contactFormEmbed
+  ? { embed: contactFormEmbed, href: contactFormEmbed.replace(/[?&]embedded=true/, '') }
+  : null;
+
 export const contactIntro = {
   title: 'Escríbenos',
-  lede: 'Ideas de tesis, colaboraciones o preguntas sobre el grupo: leemos con criterio y respondemos cuando hay un camino claro.',
-  ctaLabel: 'Enviar correo',
-  ctaHref: `mailto:${groupJson.email}`,
+  lede: '¿Tienes una idea de tesis, una propuesta de colaboración o una pregunta sobre el grupo? Escríbenos y te responderemos.',
 };
 
 const RESOURCE_SECTION_ORDER = ['group_presentation', 'templates', 'talks_recordings'];

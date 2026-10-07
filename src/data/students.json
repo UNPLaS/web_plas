@@ -64,7 +64,7 @@
   },
   {
     "id": "estudiante:gomez-rivera-andres-felipe",
-    "name_display": "Andrés Gómez",
+    "name_display": "Andrés Felipe Gómez Rivera",
     "name_sort": "Gómez Rivera, Andrés Felipe",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -127,7 +127,7 @@
   },
   {
     "id": "estudiante:rodriguez-peraza-cesar-ivan",
-    "name_display": "César Rodríguez",
+    "name_display": "César Ivan Rodríguez Peraza",
     "name_sort": "Rodríguez Peraza, César Ivan",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -136,7 +136,7 @@
   },
   {
     "id": "estudiante:rodriguez-pinto-father-alexander",
-    "name_display": "Father Alexander R.",
+    "name_display": "Father Alexander Rodriguez Pinto",
     "name_sort": "Rodriguez Pinto, Father Alexander",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -145,7 +145,7 @@
   },
   {
     "id": "estudiante:aponte-moreno-john-alexander",
-    "name_display": "Jhon Alexander Aponte",
+    "name_display": "John Alexander Aponte Moreno",
     "name_sort": "Aponte Moreno, John Alexander",
     "role_group": "estudiante_doctorado",
     "status": "Activo",
@@ -163,7 +163,7 @@
   },
   {
     "id": "estudiante:corso-pinzon-andres-francisco-jose",
-    "name_display": "Andrés Francisco Corso",
+    "name_display": "Andrés Francisco José Corso Pinzón",
     "name_sort": "Corso Pinzón, Andrés Francisco José",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -172,7 +172,7 @@
   },
   {
     "id": "estudiante:gutierrez-osorio-camilo-albeiro",
-    "name_display": "Camilo Gutierrez",
+    "name_display": "Camilo Albeiro Gutierrez Osorio",
     "name_sort": "Gutierrez Osorio, Camilo Albeiro",
     "role_group": "estudiante_doctorado",
     "status": "Activo",
@@ -183,8 +183,8 @@
     "id": "estudiante:ramirez-espejo-roger-steven",
     "name_display": "Roger Steven Ramírez Espejo",
     "name_sort": "Ramírez Espejo, Roger Steven",
-    "role_group": "",
-    "status": "",
+    "role_group": "estudiante_doctorado",
+    "status": "Activo",
     "line_ids": [],
     "image_path": ""
   },
@@ -199,7 +199,7 @@
   },
   {
     "id": "estudiante:chaparro-amaya-edna-johanna",
-    "name_display": "Edna Johanna Chaparro",
+    "name_display": "Edna Johanna Chaparro Amaya",
     "name_sort": "Chaparro Amaya, Edna Johanna",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -217,7 +217,7 @@
   },
   {
     "id": "estudiante:lozano-rojas-hernan-dario",
-    "name_display": "Hernán Darío Lozano",
+    "name_display": "Hernán Darío Lozano Rojas",
     "name_sort": "Lozano Rojas, Hernan Dario",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -244,7 +244,7 @@
   },
   {
     "id": "estudiante:cuervo-cely-karen-daniela",
-    "name_display": "Karen Cuervo",
+    "name_display": "Karen Daniela Cuervo Cely",
     "name_sort": "Cuervo Cely, Karen Daniela",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -253,7 +253,7 @@
   },
   {
     "id": "estudiante:mendez-lara-jhon-alexis",
-    "name_display": "Jhon Alexis Mendez",
+    "name_display": "Jhon Alexis Mendez Lara",
     "name_sort": "Mendez Lara, Jhon Alexis",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -262,7 +262,7 @@
   },
   {
     "id": "estudiante:osorio-delgado-anderson-kavir",
-    "name_display": "Anderson Osorio",
+    "name_display": "Anderson Kavir Osorio Delgado",
     "name_sort": "Osorio Delgado, Anderson Kavir",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -271,16 +271,16 @@
   },
   {
     "id": "estudiante:suat-rojas-nestor-eduardo",
-    "name_display": "Néstor Suat",
+    "name_display": "Néstor Eduardo Suat Rojas",
     "name_sort": "Suat Rojas, Nestor Eduardo",
-    "role_group": "estudiante_maestria",
+    "role_group": "estudiante_doctorado",
     "status": "Activo",
     "line_ids": [],
     "image_path": ""
   },
   {
     "id": "estudiante:torres-jimenez-stephanie",
-    "name_display": "Stephanie Torres",
+    "name_display": "Stephanie Torres Jiménez",
     "name_sort": "Torres Jiménez, Stephanie",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -289,7 +289,7 @@
   },
   {
     "id": "estudiante:echavarria-florez-ingrid-sofia",
-    "name_display": "Sofía Echavarría Florez",
+    "name_display": "Ingrid Sofía Echavarría Flórez",
     "name_sort": "Echavarría Flórez, Ingrid Sofía",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -298,7 +298,7 @@
   },
   {
     "id": "estudiante:navarro-avila-juan-sebastian",
-    "name_display": "Juan Sebastián Navarro",
+    "name_display": "Juan Sebastián Navarro Ávila",
     "name_sort": "Navarro Ávila, Juan Sebastián",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -307,7 +307,7 @@
   },
   {
     "id": "estudiante:rojas-real-yefersson-adrian",
-    "name_display": "Yefersson Rojas",
+    "name_display": "Yefersson Adrian Rojas Real",
     "name_sort": "Rojas Real, Yefersson Adrian",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -316,7 +316,7 @@
   },
   {
     "id": "estudiante:baquero-vargas-juan-felipe",
-    "name_display": "Juan Felipe Baquero",
+    "name_display": "Juan Felipe Baquero Vargas",
     "name_sort": "Baquero Vargas, Juan Felipe",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -325,7 +325,7 @@
   },
   {
     "id": "estudiante:cruz-camacho-elkin-alejandro",
-    "name_display": "Elkin Alejandro Cruz",
+    "name_display": "Elkin Alejandro Cruz Camacho",
     "name_sort": "Cruz Camacho, Elkin Alejandro",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -343,7 +343,7 @@
   },
   {
     "id": "estudiante:garavito-mendez-oscar-javier",
-    "name_display": "Oscar Javier Garavito",
+    "name_display": "Oscar Javier Garavito Mendez",
     "name_sort": "Garavito Mendez, Oscar Javier",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -352,7 +352,7 @@
   },
   {
     "id": "estudiante:morales-aguilar-santiago",
-    "name_display": "Santiago Morales",
+    "name_display": "Santiago Morales Aguilar",
     "name_sort": "Morales Aguilar, Santiago",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -370,7 +370,7 @@
   },
   {
     "id": "estudiante:rosales-castro-lina-fernanda",
-    "name_display": "Lina Fernanda Rosales",
+    "name_display": "Lina Fernanda Rosales Castro",
     "name_sort": "Rosales Castro, Lina Fernanda",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -379,7 +379,7 @@
   },
   {
     "id": "estudiante:silva-parra-daniel-arturo",
-    "name_display": "Daniel Silva",
+    "name_display": "Daniel Arturo Silva Parra",
     "name_sort": "Silva Parra, Daniel Arturo",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -388,7 +388,7 @@
   },
   {
     "id": "estudiante:camacho-poveda-edgar-camilo",
-    "name_display": "Camilo Camacho",
+    "name_display": "Edgar Camilo Camacho Poveda",
     "name_sort": "Camacho Poveda, Edgar Camilo",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -397,7 +397,7 @@
   },
   {
     "id": "estudiante:del-pozo-falconi-ivan-mauricio",
-    "name_display": "Ivan del Pozo",
+    "name_display": "Iván Mauricio del Pozo Falconí",
     "name_sort": "Del Pozo Falconí, Iván Mauricio",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -406,7 +406,7 @@
   },
   {
     "id": "estudiante:puerto-lara-andres-esteban",
-    "name_display": "Andrés Puerto",
+    "name_display": "Andrés Esteban Puerto Lara",
     "name_sort": "Puerto Lara, Andrés Esteban",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -415,7 +415,7 @@
   },
   {
     "id": "estudiante:urbano-vallejo-oscar-andres",
-    "name_display": "Óscar Urbano",
+    "name_display": "Óscar Andrés Urbano Vallejo",
     "name_sort": "Urbano Vallejo, Oscar Andrés",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -424,7 +424,7 @@
   },
   {
     "id": "estudiante:alfonso-hoyos-jean-pierre",
-    "name_display": "Jean Pierre Alonso",
+    "name_display": "Jean Pierre Alfonso Hoyos",
     "name_sort": "Alfonso Hoyos, Jean Pierre",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -433,7 +433,7 @@
   },
   {
     "id": "estudiante:castellanos-morales-hugo-armando",
-    "name_display": "Hugo Castellanos",
+    "name_display": "Hugo Armando Castellanos Morales",
     "name_sort": "Castellanos Morales, Hugo Armando",
     "role_group": "estudiante_maestria",
     "status": "Activo",
@@ -442,11 +442,75 @@
   },
   {
     "id": "estudiante:vergara-vargas-jeisson-andres",
-    "name_display": "Jeisson Andrés Vergara",
+    "name_display": "Jeisson Andrés Vergara Vargas",
     "name_sort": "Vergara Vargas, Jeisson Andrés",
     "role_group": "estudiante_doctorado",
     "status": "Activo",
     "line_ids": [],
+    "image_path": ""
+  },
+  {
+    "id": "estudiante:morales-jimenez-dairo-enrique",
+    "name_display": "Dairo Enrique Morales Jiménez",
+    "name_sort": "Morales Jiménez, Dairo Enrique",
+    "role_group": "estudiante_maestria",
+    "status": "Activo",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "image_path": ""
+  },
+  {
+    "id": "estudiante:ortiz-mora-maria-alejandra",
+    "name_display": "Maria Alejandra Ortiz Mora",
+    "name_sort": "Ortiz Mora, Maria Alejandra",
+    "role_group": "estudiante_maestria",
+    "status": "Activo",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "image_path": ""
+  },
+  {
+    "id": "estudiante:reyes-gomez-sergio-alberto",
+    "name_display": "Sergio Alberto Reyes Gómez",
+    "name_sort": "Reyes Gómez, Sergio Alberto",
+    "role_group": "estudiante_maestria",
+    "status": "Activo",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "image_path": ""
+  },
+  {
+    "id": "estudiante:rodriguez-rivera-nelson-andres",
+    "name_display": "Nelson Andrés Rodriguez Rivera",
+    "name_sort": "Rodriguez Rivera, Nelson Andrés",
+    "role_group": "estudiante_maestria",
+    "status": "Activo",
+    "line_ids": [],
+    "image_path": ""
+  },
+  {
+    "id": "estudiante:diaz-cordoba-alejandro",
+    "name_display": "Alejandro Díaz Córdoba",
+    "name_sort": "Díaz Córdoba, Alejandro",
+    "role_group": "estudiante_pregrado",
+    "status": "Activo",
+    "line_ids": [
+      "line:educacion"
+    ],
+    "image_path": ""
+  },
+  {
+    "id": "estudiante:rangel-retavisca-john-alejandro",
+    "name_display": "John Alejandro Rangel Retavisca",
+    "name_sort": "Rangel Retavisca, John Alejandro",
+    "role_group": "estudiante_doctorado",
+    "status": "Activo",
+    "line_ids": [
+      "line:sensado"
+    ],
     "image_path": ""
   }
 ]

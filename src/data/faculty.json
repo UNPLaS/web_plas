@@ -148,7 +148,8 @@
     "image_path": "/images/PLaS/profesores/cpb_pic.jpg",
     "line_ids": [
       "line:transporte",
-      "line:sensado"
+      "line:sensado",
+      "line:embebidos"
     ],
     "aliases": [
       "Pedraza Bonilla, César Augusto",

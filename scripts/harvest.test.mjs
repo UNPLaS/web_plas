@@ -17,6 +17,7 @@ import {
   registerThesis,
   ensureStudent,
   thesisAbstract,
+  cleanAbstract,
   withAbstract,
   FABIO,
 } from "./lib/theses-core.mjs";
@@ -515,6 +516,14 @@ describe("theses gates + register", () => {
     assert.equal(thesisAbstract({}), "");
   });
 
+  it("cleanAbstract drops the repository source note", () => {
+    assert.equal(cleanAbstract("Fin. (Texto tomado de la fuente)"), "Fin.");
+    assert.equal(cleanAbstract("Fin. (Texto tomado de la fuente)."), "Fin.");
+    assert.equal(cleanAbstract("Fin (texto tomado de la fuente)."), "Fin.");
+    assert.equal(cleanAbstract("Uno. (Texto tomado de la fuente)\n\nDos."), "Uno.\n\nDos.");
+    assert.equal(cleanAbstract("Sin nota."), "Sin nota.");
+  });
+
   it("withAbstract places abstract after title without touching other fields", () => {
     const thesis = { id: "tesis:unal/1", handle: "unal/1", title: "T", year: "2020", line_ids: ["line:x"] };
     const out = withAbstract(thesis, "A");
@@ -605,6 +614,7 @@ describe("harvest data present", () => {
 
   it("lines have slug, short name, paragraphs and unique topics", async () => {
     const lines = await readSite("lines.json");
+    const facultyIds = new Set((await readSite("faculty.json")).map((f) => f.id));
     const topicIds = new Set();
     for (const l of lines) {
       assert.equal(l.slug, l.id.replace("line:", ""), l.id);
@@ -616,6 +626,7 @@ describe("harvest data present", () => {
         assert.ok(t.name && t.description && t.keywords?.length, t.id);
         assert.ok(!topicIds.has(t.id), `tema repetido ${t.id}`);
         topicIds.add(t.id);
+        for (const id of t.contact_ids ?? []) assert.ok(facultyIds.has(id), `${t.id} → ${id}`);
       }
     }
   });
@@ -643,7 +654,12 @@ describe("harvest data present", () => {
       assert.ok(t.student_ids.length, t.id);
       for (const id of t.student_ids) assert.ok(studentIds.has(id), `${t.id} → ${id}`);
       for (const id of t.advisor_ids) assert.ok(facultyIds.has(id), `${t.id} → ${id}`);
+      for (const id of t.codirector_ids ?? []) {
+        assert.ok(facultyIds.has(id), `${t.id} → ${id}`);
+        assert.ok(!t.advisor_ids.includes(id), `${t.id}: ${id} dirige y codirige`);
+      }
       for (const id of t.line_ids) assert.ok(lineIds.has(id), `${t.id} → ${id}`);
+      assert.equal(t.abstract ?? "", cleanAbstract(t.abstract), `${t.id}: abstract con nota de fuente`);
     }
     for (const s of students) {
       for (const id of s.line_ids) assert.ok(lineIds.has(id), `${s.id} → ${id}`);
@@ -660,10 +676,17 @@ describe("harvest data present", () => {
     assert.equal(new Set(wip.map((w) => w.id)).size, wip.length, "ids de wip repetidos");
     for (const w of wip) {
       assert.match(w.id, /^wip:[a-z0-9-]+$/, w.id);
-      assert.ok(w.title?.trim() && w.summary?.trim(), `${w.id} sin título o descripción`);
+      assert.equal(typeof w.title, "string", `${w.id}: title debe ser texto (vacío si aún no hay)`);
       assert.ok(w.student_ids?.length, `${w.id} sin estudiantes`);
+      assert.ok(w.advisor_ids?.length, `${w.id} sin director`);
       for (const id of w.student_ids) assert.ok(studentIds.has(id), `${w.id} → ${id}`);
-      for (const id of w.advisor_ids ?? []) assert.ok(facultyIds.has(id), `${w.id} → ${id}`);
+      for (const id of [...w.advisor_ids, ...(w.codirector_ids ?? [])]) {
+        assert.ok(facultyIds.has(id), `${w.id} → ${id}`);
+      }
+      assert.ok(
+        !(w.codirector_ids ?? []).some((id) => w.advisor_ids.includes(id)),
+        `${w.id}: un docente no puede dirigir y codirigir`,
+      );
       for (const id of w.line_ids ?? []) assert.ok(lineIds.has(id), `${w.id} → ${id}`);
       for (const id of w.topic_ids ?? []) assert.ok(topicIds.has(id), `${w.id} → ${id}`);
       if (w.url) assert.match(w.url, /^(https?:\/\/|\/)/, `${w.id} url debe ser absoluta o empezar por /`);

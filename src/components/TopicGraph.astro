@@ -1,11 +1,19 @@
 ---
 import type { GraphEdge, GraphNode } from '../data/content';
 
+type Node = GraphNode & { href?: string; color?: string; hub?: boolean };
+type Edge = GraphEdge & { color?: string };
+
 interface Props {
-  nodes: GraphNode[];
-  edges: GraphEdge[];
+  nodes: Node[];
+  edges: Edge[];
   color?: string;
   title?: string;
+  /** Alto del lienzo (desktop y mobile); el ancho es fijo. */
+  height?: number;
+  mobileHeight?: number;
+  /** En mobile (lienzo vertical) intercambia x e y para aprovechar el alto. */
+  transposeMobile?: boolean;
 }
 
 const {
@@ -13,11 +21,14 @@ const {
   edges,
   color = 'var(--mid)',
   title = 'Mapa de temas',
+  height = 460,
+  mobileHeight = 680,
+  transposeMobile = false,
 } = Astro.props;
 
 /** Desktop defaults; layout script remaps for narrow viewports. */
 const vbW = 1100;
-const vbH = 460;
+const vbH = height;
 const padX = 72;
 const padY = 48;
 
@@ -36,15 +47,22 @@ function radius(weight: number) {
 }
 
 const maxEdge = Math.max(...edges.map((e) => e.weight), 1);
+const hasLinks = nodes.some((n) => n.href);
+const ratios = `--graph-ratio: ${vbW} / ${vbH}; --graph-ratio-mobile: 420 / ${mobileHeight}`;
 ---
 
-<figure class="topic-graph" style={`--graph-color: ${color}`}>
+<figure
+  class:list={['topic-graph', hasLinks && 'topic-graph--map']}
+  style={`--graph-color: ${color}; ${ratios}`}
+  data-height={height}
+  data-mobile-height={mobileHeight}
+>
   <figcaption class="topic-graph__caption">{title}</figcaption>
   <div class="topic-graph__frame">
     <svg
       class="topic-graph__svg"
       viewBox={`0 0 ${vbW} ${vbH}`}
-      role="img"
+      role={hasLinks ? 'group' : 'img'}
       aria-label={title}
     >
       <g class="topic-graph__edges">
@@ -65,6 +83,7 @@ const maxEdge = Math.max(...edges.map((e) => e.weight), 1);
                 y2={cy(b)}
                 stroke-width={stroke}
                 stroke-opacity={opacity}
+                style={edge.color ? `--graph-color: ${edge.color}` : undefined}
               />
             );
           })
@@ -76,19 +95,27 @@ const maxEdge = Math.max(...edges.map((e) => e.weight), 1);
             const r = radius(node.weight);
             const x = cx(node);
             const y = cy(node);
-            return (
-              <g
-                class="topic-graph__node"
-                data-node-id={node.id}
-                data-nx={node.x}
-                data-ny={node.y}
-                data-weight={node.weight}
-                transform={`translate(${x} ${y})`}
-              >
+            const shape = (
+              <>
                 <circle r={r} />
                 <text y={r + 16} text-anchor="middle">
                   {node.label}
                 </text>
+              </>
+            );
+            return (
+              <g
+                class:list={['topic-graph__node', node.hub && 'topic-graph__node--hub']}
+                data-node-id={node.id}
+                data-nx={node.x}
+                data-ny={node.y}
+                data-mx={transposeMobile ? node.y : undefined}
+                data-my={transposeMobile ? node.x : undefined}
+                data-weight={node.weight}
+                transform={`translate(${x} ${y})`}
+                style={node.color ? `--graph-color: ${node.color}` : undefined}
+              >
+                {node.href ? <a href={node.href} aria-label={node.label}>{shape}</a> : shape}
               </g>
             );
           })

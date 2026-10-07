@@ -10,6 +10,7 @@ export {
   catalogTypologies,
   catalogFilterData,
   contactFields,
+  contactForm,
   contactIntro,
   contactLinks,
   eventItems,
@@ -17,6 +18,8 @@ export {
   featuredProjects,
   group,
   lineDetails,
+  linesMap,
+  linesOverview,
   newsItems,
   people,
   projectItems,
@@ -26,6 +29,7 @@ export {
   site,
   students,
   activeStudents,
+  activeStudentSections,
   historicalStudentSections,
 } from './content';
 

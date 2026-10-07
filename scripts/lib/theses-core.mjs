@@ -104,9 +104,16 @@ export function displayStudentName(raw) {
   return name;
 }
 
+const SOURCE_NOTE = /\.?\s*\(\s*texto\s+tomado\s+de\s+la\s+fuente\s*\)(?:\s*\.)?/gi;
+
+/** Drops the repository's "(Texto tomado de la fuente)" note, keeping one closing period. */
+export function cleanAbstract(text) {
+  return String(text || "").replace(SOURCE_NOTE, ".").trim();
+}
+
 /** Abstract shown on the site: Spanish first, English as fallback. */
 export function thesisAbstract(sum) {
-  return (sum.abstractEs || sum.abstractEn || "").trim();
+  return cleanAbstract(sum.abstractEs || sum.abstractEn);
 }
 
 /**

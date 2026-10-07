@@ -7,11 +7,16 @@ interface Chip {
   color?: string;
 }
 
+interface Advisor {
+  id: string;
+  name: string;
+  href: string;
+}
+
 interface Props {
   student: {
     dialogId: string;
     name: string;
-    thesisTitle: string;
     thesisYear: string;
     chips: Chip[];
     lineChips: Chip[];
@@ -23,6 +28,8 @@ interface Props {
       paragraphs: string[];
       href: string;
       linkLabel: string;
+      directors: Advisor[];
+      codirectors: Advisor[];
     } | null;
   };
 }
@@ -33,6 +40,12 @@ const dialogId = student.dialogId;
 const titleId = `${dialogId}-title`;
 const external = (href: string) =>
   /^https?:\/\//i.test(href) ? { target: '_blank', rel: 'noreferrer' } : {};
+const advising = student.work
+  ? [
+      { label: 'Dirección', people: student.work.directors },
+      { label: 'Codirección', people: student.work.codirectors },
+    ].filter((row) => row.people.length > 0)
+  : [];
 ---
 
 <button
@@ -46,7 +59,7 @@ const external = (href: string) =>
     {student.thesisYear ? <span class="student-card__year">{student.thesisYear}</span> : null}
     {student.lineChips.map((chip) => <TypeChip typology={chip} />)}
   </span>
-  {student.thesisTitle ? <span class="student-card__thesis">{student.thesisTitle}</span> : null}
+  {student.work?.title ? <span class="student-card__thesis">{student.work.title}</span> : null}
 </button>
 
 <dialog id={dialogId} class="student-dialog" aria-labelledby={titleId}>
@@ -83,13 +96,23 @@ const external = (href: string) =>
       student.work ? (
         <section class="student-dialog__section">
           <p class="student-dialog__label">{student.work.eyebrow}</p>
-          <h4 class="student-dialog__work-title">{student.work.title}</h4>
-          {student.work.paragraphs.length > 0 && (
-            <div class="student-dialog__text">
-              {student.work.paragraphs.map((p) => (
-                <p>{p}</p>
+          {student.work.title && <h4 class="student-dialog__work-title">{student.work.title}</h4>}
+          {advising.length > 0 && (
+            <dl class="student-dialog__advising">
+              {advising.map((row) => (
+                <div>
+                  <dt>{row.label}</dt>
+                  <dd>
+                    {row.people.map((person, i) => (
+                      <>
+                        {i > 0 ? ', ' : ''}
+                        <a href={person.href}>{person.name}</a>
+                      </>
+                    ))}
+                  </dd>
+                </div>
               ))}
-            </div>
+            </dl>
           )}
           {student.work.href && (
             <p class="student-dialog__action">
@@ -97,6 +120,13 @@ const external = (href: string) =>
                 {student.work.linkLabel}
               </a>
             </p>
+          )}
+          {student.work.paragraphs.length > 0 && (
+            <div class="student-dialog__text">
+              {student.work.paragraphs.map((p) => (
+                <p>{p}</p>
+              ))}
+            </div>
           )}
         </section>
       ) : (
