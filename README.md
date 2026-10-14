@@ -80,6 +80,10 @@ npm run harvest:theses         # Repositorio UNAL → src/data/{theses,students}
 
 Detalle: [`scripts/README.md`](scripts/README.md).
 
+**Cosecha automática:** `.github/workflows/harvest.yml` corre ambos harvest cada lunes (6:00 a. m. en Colombia) sobre `main`. Si hay registros nuevos y `npm test`, `npm run check` y el build pasan, hace commit directo a `main` (`data: cosecha semanal …`, con la lista de lo agregado) y lanza los despliegues de GitHub Pages y UNAL. Si no hay novedades no hace nada; si una fuente falla, publica lo de la otra y el run queda en rojo. Se puede lanzar a mano en **Actions → Harvest → Run workflow**.
+
+Como esos commits llegan a `main` sin pasar por `dev`, conviene traer `main` a `dev` antes de trabajar (`git pull origin main` estando en `dev`). Los estudiantes nuevos que trae la cosecha de tesis aparecen en el resumen del commit para completar sus datos a mano.
+
 ## Idiomas (español / inglés)
 
 Cada página existe en español en la raíz (`/lines`) y en inglés bajo `/en` (`/en/lines`). Las páginas viven en `src/pages/[...lang]/`; solo `404.astro` y `robots.txt.ts` quedan fuera.
