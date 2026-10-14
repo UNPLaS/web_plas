@@ -34,6 +34,22 @@
     ]
   },
   {
+    "id": "pub:doi:10.28945/5884",
+    "doi": "10.28945/5884",
+    "title": "IoT-Enabled PocketLabs and the Instructional Model for Active Learning in Control Systems Education",
+    "year": "2026",
+    "typology": "journal_article",
+    "typology_label_es": "Artículos de revista",
+    "venue_title": "Journal of Information Technology Education: Research",
+    "url": "https://doi.org/10.28945/5884",
+    "plas_catalog_source": "orcid_harvest",
+    "authors": "Leonardo Enrique Bermeo Clavijo; Edgar Hernando Sepúlveda-Oviedo; Jhon J Ramírez-Echeverry",
+    "topic_ids": [],
+    "line_ids": [
+      "line:educacion"
+    ]
+  },
+  {
     "id": "pub:doi:10.2139/ssrn.6381013",
     "doi": "10.2139/ssrn.6381013",
     "title": "Knowledge Graph-Driven Identification of Security Weaknesses in Web-Based Software Architectures",
@@ -67,6 +83,24 @@
     ],
     "line_ids": [
       "line:educacion"
+    ]
+  },
+  {
+    "id": "pub:doi:10.1007/978-3-032-39143-8_9",
+    "doi": "10.1007/978-3-032-39143-8_9",
+    "title": "Sarch: An Integrated Tool for Architecture-Based Security Assurance",
+    "year": "2026",
+    "typology": "book_chapter",
+    "typology_label_es": "Capítulos de libros",
+    "venue_title": "Lecture Notes in Computer Science",
+    "url": "https://doi.org/10.1007/978-3-032-39143-8_9",
+    "plas_catalog_source": "orcid_harvest",
+    "authors": "Jeisson Vergara-Vargas; Felipe Restrepo-Calle; Salah Sadou; Chouki Tibermacine",
+    "topic_ids": [
+      "topic:ciclo-vida-software"
+    ],
+    "line_ids": [
+      "line:lenguajes"
     ]
   },
   {
