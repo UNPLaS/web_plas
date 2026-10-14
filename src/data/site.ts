@@ -15,6 +15,7 @@ export {
   contactLinks,
   eventItems,
   facultyItems,
+  facultyProfiles,
   featuredProjects,
   group,
   lineDetails,

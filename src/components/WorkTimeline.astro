@@ -1,0 +1,37 @@
+---
+interface Props {
+  groups: {
+    label: string;
+    items: { title: string; href: string; meta: string; author?: string }[];
+  }[];
+}
+
+const { groups } = Astro.props;
+const external = (href: string) =>
+  /^https?:\/\//i.test(href) ? { target: '_blank', rel: 'noreferrer' } : {};
+---
+
+<ol class="line-timeline">
+  {
+    groups.map((group) => (
+      <li class="line-timeline__year">
+        <h3 class="line-timeline__label">{group.label}</h3>
+        <ul class="line-timeline__works">
+          {group.items.map((work) => (
+            <li class="timeline-work">
+              {work.href ? (
+                <a class="timeline-work__title" href={work.href} {...external(work.href)}>
+                  {work.title}
+                </a>
+              ) : (
+                <span class="timeline-work__title">{work.title}</span>
+              )}
+              <p class="timeline-work__meta">{work.meta}</p>
+              {work.author && <p class="timeline-work__author">{work.author}</p>}
+            </li>
+          ))}
+        </ul>
+      </li>
+    ))
+  }
+</ol>

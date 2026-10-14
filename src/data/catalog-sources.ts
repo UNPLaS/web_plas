@@ -62,6 +62,11 @@ const sources = {
     label: 'Repositorio UNAL',
     logo: '/images/catalog-sources/unal-repo.png',
   },
+  univalle: {
+    id: 'univalle',
+    label: 'Universidad del Valle',
+    logo: '/images/catalog-sources/univalle.svg',
+  },
   uninorte: {
     id: 'uninorte',
     label: 'Universidad del Norte',
@@ -123,6 +128,7 @@ const doiPrefixToSource: Record<string, SourceId> = {
 /** Dominios (hostname sin www) → fuente. */
 const hostToSource: Record<string, SourceId> = {
   'repositorio.unal.edu.co': 'unal-repo',
+  'bibliotecadigital.univalle.edu.co': 'univalle',
   'dialnet.unirioja.es': 'dialnet',
   'wiete.com.au': 'wiete',
   'revistas.utp.ac.pa': 'utp',

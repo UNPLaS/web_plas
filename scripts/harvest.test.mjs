@@ -612,6 +612,25 @@ describe("harvest data present", () => {
     assert.ok(lines.every((l) => l.keywords?.length));
   });
 
+  it("faculty profile pages have bio, education and courses", async () => {
+    const faculty = await readSite("faculty.json");
+    for (const f of faculty) {
+      assert.equal(typeof f.bio, "string", `${f.id}: bio`);
+      for (const e of f.education ?? []) {
+        for (const key of ["degree", "program", "institution", "year"]) {
+          assert.ok(e[key], `${f.id}: education sin ${key}`);
+        }
+      }
+      for (const x of f.experience ?? []) {
+        assert.ok(x.institution && x.period, `${f.id}: trayectoria sin institución o periodo`);
+      }
+      for (const c of f.courses ?? []) {
+        assert.ok(c.name && c.level, `${f.id}: curso sin nombre o nivel`);
+        if (c.url) assert.match(c.url, /^https?:\/\//, `${f.id}: url de curso`);
+      }
+    }
+  });
+
   it("lines have slug, short name, paragraphs and unique topics", async () => {
     const lines = await readSite("lines.json");
     const facultyIds = new Set((await readSite("faculty.json")).map((f) => f.id));

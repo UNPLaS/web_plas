@@ -89,6 +89,7 @@ const unalChromeJs = withBase('/unal/js/unal-chrome.js');
       import { initTopicAnchors } from '../scripts/topic-anchors';
       import { initStudentDialogs } from '../scripts/student-dialogs';
       import { initStudentFilters } from '../scripts/student-filters';
+      import { initFacultyTabs } from '../scripts/faculty-tabs';
       import { isActivePath } from '../lib/with-base';
       import { pickHomeQuote } from '../scripts/home-quote';
 
@@ -122,6 +123,7 @@ const unalChromeJs = withBase('/unal/js/unal-chrome.js');
         initTopicAnchors();
         initStudentDialogs();
         initStudentFilters();
+        initFacultyTabs();
 
         const content = document.querySelector<HTMLElement>('[data-plas-content]');
         if (content && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {

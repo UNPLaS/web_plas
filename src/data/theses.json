@@ -272,6 +272,30 @@
     "plas_catalog_source": "repositorio_unal"
   },
   {
+    "id": "tesis:10893/36049",
+    "handle": "10893/36049",
+    "title": "Predictive models of academic performance for early intervention in computer programming courses",
+    "abstract": "El bajo rendimiento académico en los cursos de programación es un problema recurrente en las instituciones de educación superior y se ha convertido en un reto significativo para la formación de futuros ingenieros. Este desafío está asociado a factores como la falta de experiencia previa en programación, estilos de aprendizaje inadecuados y baja motivación, los cuales impactan negativamente en el progreso formativo de los estudiantes, comprometiendo su éxito académico como su competitividad profesional. La presente tesis propone un sistema de intervención temprana basado en la predicción del rendimiento académico y dos tipos de intervención denominadas preventiva y proactiva, que ofrecen estrategias personalizadas para apoyar a los estudiantes en riesgo, mejorando sus resultados académicos y fomentando la autorregulación y la motivación en el aprendizaje de la programación. La investigación aborda la pregunta: ¿Cómo las predicciones del rendimiento estudiantil apoyan la intervención temprana en los cursos de programación informática? Para responder a esta pregunta, se desarrolló un modelo predictivo de regresión y otro de clasificación, que utilizan características relacionadas con las actividades de programación y las calificaciones, con el propósito de identificar a estudiantes en riesgo de bajo rendimiento académico durante las primeras semanas del curso. Además, se diseñaron y probaron estrategias de intervención, como tutorías grupales, envío de sugerencias, códigos fuente de referencia y talleres de refuerzo, con el objetivo de mejorar el desempeño académico de los estudiantes. Asimismo, se llevó a cabo un estudio cuasi-experimental y se aplicó el cuestionario MSLQ-Colombia para evaluar la efectividad de las intervenciones implementadas, así como las estrategias de aprendizaje y motivación empleadas por los estudiantes en los cursos de programación informática. Como resultado del desarrollo de esta tesis, se escribieron ocho artículos que contribuyeron significativamente al logro de los objetivos de la investigación y al avance en el campo de las Ciencias de la Computación. Entre ellos, destacan tres publicaciones en revistas de categoría Q1, dos en categoría Q3, mientras que las tres restantes están en proceso de evaluación. Los primeros documentos abordan los modelos de predicción desarrollados y un modelo pedagógico basado en la propuesta de Kirkpatrick, diseñado para medir la eficacia de las estrategias de enseñanza en los cursos de programación informática. Los siguientes trabajos analizan cómo el aula invertida puede integrarse de manera efectiva en sistemas de intervención temprana en estos cursos. Los documentos restantes incluyen una revisión de la literatura sobre Sistemas de Alerta Temprana y su contribución a la predicción del rendimiento académico, así como la herramienta de intervención temprana desarrollada y el estudio cuasi-experimental realizado. Entre los resultados más significativos de la investigación se incluye la efectividad de los modelos predictivos implementados, que alcanzaron hasta un 96% de precisión en la predicción del rendimiento académico durante las primeras semanas del curso. La herramienta de intervención temprana desarrollada permitió identificar a los estudiantes en riesgo y ofrecer intervenciones personalizadas. Estos resultados demuestran que las intervenciones tempranas, basadas en la predicción académica, son esenciales para mejorar tanto el rendimiento como la retención de estudiantes en los cursos de programación informática.",
+    "year": "2024",
+    "degree": "doctorado",
+    "item_url": "https://bibliotecadigital.univalle.edu.co/entities/publication/51973cde-a4cb-4f3c-bd11-464119a43a97",
+    "authors": "Llanos Mosquera, José Miguel",
+    "topic_ids": [
+      "topic:analitica-aprendizaje"
+    ],
+    "line_ids": [
+      "line:educacion"
+    ],
+    "advisor_ids": [],
+    "codirector_ids": [
+      "docente:ferestrepoca"
+    ],
+    "student_ids": [
+      "estudiante:llanos-mosquera-jose-miguel"
+    ],
+    "plas_catalog_source": "repositorio_univalle"
+  },
+  {
     "id": "tesis:unal/87944",
     "handle": "unal/87944",
     "title": "Detección y conteo de evasores en el sistema de transporte Transmilenio",

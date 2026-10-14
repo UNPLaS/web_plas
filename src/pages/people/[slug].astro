@@ -1,0 +1,312 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TypeChip from '../../components/TypeChip.astro';
+import StudentCard from '../../components/StudentCard.astro';
+import WorkTimeline from '../../components/WorkTimeline.astro';
+import { facultyProfiles } from '../../data/site';
+
+export function getStaticPaths() {
+  return facultyProfiles.map((person) => ({ params: { slug: person.slug }, props: { person } }));
+}
+
+const { person } = Astro.props;
+/** Años de publicaciones visibles de entrada; los anteriores quedan plegados. */
+const OPEN_YEARS = 3;
+const external = (href: string) =>
+  /^https?:\/\//i.test(href) ? { target: '_blank', rel: 'noreferrer' } : {};
+const contact = [
+  { label: 'Correo', value: person.email, href: `mailto:${person.email}` },
+  { label: 'Oficina', value: person.office, href: '' },
+  { label: 'Teléfono', value: person.phone, href: '' },
+].filter((row) => row.value);
+const recentPublications = person.publications.slice(0, OPEN_YEARS);
+const olderPublications = person.publications.slice(OPEN_YEARS);
+const olderCount = olderPublications.reduce((n, group) => n + group.items.length, 0);
+const hasBackground = person.education.length > 0 || person.experience.length > 0;
+const hasTeaching = person.courses.length > 0 || person.resources.length > 0;
+const tabs = [
+  (hasBackground || hasTeaching) && { id: 'formacion', label: 'Formación y docencia', count: 0 },
+  person.studentCount > 0 && { id: 'estudiantes', label: 'Estudiantes', count: person.studentCount },
+  person.publicationCount > 0 && {
+    id: 'publicaciones',
+    label: 'Publicaciones',
+    count: person.publicationCount,
+  },
+  { id: 'contacto', label: 'Contacto y páginas', count: 0 },
+].filter((t): t is { id: string; label: string; count: number } => Boolean(t));
+const defaultTab = tabs[0].id;
+---
+
+<Layout title={person.name} description={person.bio}>
+  <section class="faculty-top" aria-labelledby="faculty-name">
+    <div class="faculty-hero wrap">
+      <div class="faculty-hero__media">
+        {person.image ? <img src={person.image} alt="" width="480" height="480" /> : null}
+      </div>
+      <div class="faculty-hero__body">
+        <div class="faculty-card__chips">
+          <TypeChip typology={person.roleChip} />
+        </div>
+        <h1 id="faculty-name" class="page-head__title">{person.name}</h1>
+        {person.rank && person.rank !== person.roleChip.label && (
+          <p class="faculty-hero__rank">{person.rank}</p>
+        )}
+        {person.bio && <p class="faculty-hero__bio">{person.bio}</p>}
+        {
+          person.lines.length > 0 && (
+            <ul class="faculty-hero__lines" aria-label="Líneas de investigación">
+              {person.lines.map((line) => (
+                <li>
+                  <a
+                    class="type-chip type-chip--linea"
+                    style={`--chip-color: ${line.color}`}
+                    href={line.href}
+                  >
+                    {line.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )
+        }
+        {
+          person.stats.length > 0 && (
+            <dl class="line-chapter__stats faculty-hero__stats">
+              {person.stats.map((stat) => (
+                <div>
+                  <dt>{stat.label}</dt>
+                  <dd>{stat.value}</dd>
+                </div>
+              ))}
+            </dl>
+          )
+        }
+      </div>
+    </div>
+  </section>
+
+  <div class="faculty-tabs wrap" data-faculty-tabs>
+    <div class="faculty-tabs__list" role="tablist" aria-label="Información del docente">
+      {
+        tabs.map((tab) => (
+          <button
+            type="button"
+            role="tab"
+            id={`tab-${tab.id}`}
+            class="faculty-tabs__tab"
+            aria-controls={tab.id}
+            aria-selected={tab.id === defaultTab ? 'true' : 'false'}
+            tabindex={tab.id === defaultTab ? 0 : -1}
+            data-faculty-tab={tab.id}
+          >
+            {tab.label}
+            {tab.count > 0 && <span class="faculty-tabs__count">{tab.count}</span>}
+          </button>
+        ))
+      }
+    </div>
+
+    {
+      (hasBackground || hasTeaching) && (
+        <section
+          id="formacion"
+          class="faculty-panel"
+          role="tabpanel"
+          aria-labelledby="tab-formacion"
+          hidden={defaultTab !== 'formacion'}
+        >
+          {person.education.length > 0 && (
+            <div class="faculty-block">
+              <h2 class="people-section__title line-detail__heading">Formación</h2>
+              <ol class="faculty-education">
+                {person.education.map((entry) => (
+                  <li class="line-block__panel">
+                    <span class="faculty-education__when">
+                      {entry.degree} · {entry.when}
+                    </span>
+                    <span class="faculty-education__program">{entry.program}</span>
+                    <span class="faculty-education__place">{entry.institution}</span>
+                    {entry.thesis && (
+                      <span class="faculty-education__thesis">Tesis: {entry.thesis}</span>
+                    )}
+                    {entry.honor && <span class="faculty-education__honor">{entry.honor}</span>}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
+          {person.experience.length > 0 && (
+            <div class="faculty-block">
+              <h2 class="people-section__title line-detail__heading">Trayectoria</h2>
+              <ol class="faculty-experience line-block__panel">
+                {person.experience.map((entry) => (
+                  <li>
+                    <span class="faculty-experience__period">{entry.period}</span>
+                    <span>
+                      <span class="faculty-experience__place">{entry.institution}</span>
+                      {entry.role && <span class="faculty-experience__role">{entry.role}</span>}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
+          {person.courses.length > 0 && (
+            <div class="faculty-block">
+              <h2 class="people-section__title line-detail__heading">Cursos</h2>
+              <ul class="faculty-courses">
+                {person.courses.map((course) => (
+                  <li class="line-block__panel">
+                    {course.url ? (
+                      <a class="faculty-courses__name" href={course.url} {...external(course.url)}>
+                        {course.name}
+                      </a>
+                    ) : (
+                      <span class="faculty-courses__name">{course.name}</span>
+                    )}
+                    <span class="faculty-courses__level">{course.level}</span>
+                  </li>
+                ))}
+              </ul>
+              {person.coursesUrl && (
+                <p class="faculty-courses__more">
+                  <a class="btn btn--soft" href={person.coursesUrl} {...external(person.coursesUrl)}>
+                    Ver historial de cursos
+                  </a>
+                </p>
+              )}
+            </div>
+          )}
+          {person.resources.length > 0 && (
+            <div class="faculty-block">
+              <h2 class="people-section__title line-detail__heading">Talleres y recursos</h2>
+              <ul class="topic-works line-block__panel">
+                {person.resources.map((resource) => (
+                  <li>
+                    {resource.href ? (
+                      <a class="topic-works__title" href={resource.href} {...external(resource.href)}>
+                        {resource.title}
+                      </a>
+                    ) : (
+                      <span class="topic-works__title">{resource.title}</span>
+                    )}
+                    <span class="topic-works__meta">{resource.section}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </section>
+      )
+    }
+
+    {
+      person.studentCount > 0 && (
+        <section
+          id="estudiantes"
+          class="faculty-panel"
+          role="tabpanel"
+          aria-labelledby="tab-estudiantes"
+          hidden={defaultTab !== 'estudiantes'}
+        >
+          <p class="faculty-panel__lede">
+            Abre cada tarjeta para ver el trabajo, su resumen y quién lo dirige.
+          </p>
+          {person.activeSections.length > 0 && (
+            <div class="faculty-block">
+              <h2 class="people-section__title line-detail__heading">En curso</h2>
+              {person.activeSections.map((sec) => (
+                <div class="students-degree">
+                  <h3 class="students-degree__title">{sec.title}</h3>
+                  <ul class="works-list faculty-students">
+                    {sec.items.map((student) => (
+                      <li>
+                        <StudentCard student={student} />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          )}
+          {person.graduateSections.length > 0 && (
+            <div class="faculty-block">
+              <h2 class="people-section__title line-detail__heading">Egresados</h2>
+              {person.graduateSections.map((sec) => (
+                <div class="students-degree">
+                  <h3 class="students-degree__title">{sec.title}</h3>
+                  <ul class="works-list faculty-students">
+                    {sec.items.map((student) => (
+                      <li>
+                        <StudentCard student={student} />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          )}
+        </section>
+      )
+    }
+
+    {
+      person.publicationCount > 0 && (
+        <section
+          id="publicaciones"
+          class="faculty-panel"
+          role="tabpanel"
+          aria-labelledby="tab-publicaciones"
+          hidden={defaultTab !== 'publicaciones'}
+        >
+          <WorkTimeline groups={recentPublications} />
+          {olderCount > 0 && (
+            <details class="faculty-more">
+              <summary class="btn btn--soft">
+                Ver {olderCount} {olderCount === 1 ? 'publicación anterior' : 'publicaciones anteriores'}
+              </summary>
+              <WorkTimeline groups={olderPublications} />
+            </details>
+          )}
+        </section>
+      )
+    }
+
+    <section
+      id="contacto"
+      class="faculty-panel"
+      role="tabpanel"
+      aria-labelledby="tab-contacto"
+      hidden={defaultTab !== 'contacto'}
+    >
+      <div class="faculty-block">
+        <h2 class="people-section__title line-detail__heading">Contacto</h2>
+        <dl class="faculty-contact line-block__panel">
+          {contact.map((row) => (
+            <div>
+              <dt>{row.label}</dt>
+              <dd>{row.href ? <a href={row.href}>{row.value}</a> : row.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      {
+        person.profileLinks.length > 0 && (
+          <div class="faculty-block">
+            <h2 class="people-section__title line-detail__heading">Páginas de investigador</h2>
+            <ul class="faculty-profile-links">
+              {person.profileLinks.map((link) => (
+                <li>
+                  <a class="faculty-profile-links__link" href={link.href} target="_blank" rel="noreferrer">
+                    <span class="faculty-profile-links__label">{link.label}</span>
+                    <span class="faculty-profile-links__host">{new URL(link.href).hostname.replace(/^www\./, '')}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+    </section>
+  </div>
+</Layout>

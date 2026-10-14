@@ -18,6 +18,7 @@ interface Props {
     dialogId: string;
     name: string;
     thesisYear: string;
+    note?: string;
     chips: Chip[];
     lineChips: Chip[];
     topics: { name: string; href: string }[];
@@ -58,6 +59,7 @@ const advising = student.work
     <span class="student-card__name">{student.name}</span>
     {student.thesisYear ? <span class="student-card__year">{student.thesisYear}</span> : null}
     {student.lineChips.map((chip) => <TypeChip typology={chip} />)}
+    {student.note ? <span class="student-card__note">{student.note}</span> : null}
   </span>
   {student.work?.title ? <span class="student-card__thesis">{student.work.title}</span> : null}
 </button>

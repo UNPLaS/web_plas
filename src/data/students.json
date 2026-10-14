@@ -512,5 +512,14 @@
       "line:sensado"
     ],
     "image_path": ""
+  },
+  {
+    "id": "estudiante:llanos-mosquera-jose-miguel",
+    "name_display": "José Miguel Llanos Mosquera",
+    "name_sort": "Llanos Mosquera, José Miguel",
+    "role_group": "estudiante_doctorado",
+    "status": "Activo",
+    "line_ids": [],
+    "image_path": ""
   }
 ]

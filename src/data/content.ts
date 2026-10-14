@@ -278,7 +278,8 @@ export const facultyItems = facultyJson.map((f) => {
     name: f.name_display,
     role: groupRole,
     rank: f.rank,
-    href: withBase(`/people#${facultyAnchor(f.id)}`),
+    bio: f.bio,
+    href: withBase(`/people/${facultyAnchor(f.id)}`),
     image: f.image_path ? withBase(f.image_path) : '',
     meta: lineNames.length ? `Líneas: ${lineNames.join(', ')}` : '',
     email: f.email,
@@ -297,6 +298,8 @@ export const people = facultyItems.map((f) => ({
   name: f.name,
   role: f.role,
   rank: f.rank,
+  bio: f.bio,
+  href: f.href,
   meta: f.meta,
   image: f.image,
   roleChip: f.roleChip,
@@ -511,9 +514,9 @@ const DEGREE_SECTIONS = [
   { title: 'Pregrado', pattern: /pregrado/i },
 ] as const;
 
-function studentSectionsByDegree(
-  items: StudentView[],
-  compare?: (a: StudentView, b: StudentView) => number,
+function studentSectionsByDegree<T extends StudentView>(
+  items: T[],
+  compare?: (a: T, b: T) => number,
 ) {
   return DEGREE_SECTIONS.map(({ title, pattern }) => {
     const sectionItems = items.filter((s) => pattern.test(s.degree || s.role || ''));
@@ -698,6 +701,90 @@ export const catalogItems = [...pubItems, ...thesisItems]
       ? { id: 'linea' as const, label: item.line, color: item.lineColor }
       : null,
   }));
+
+function groupByYear<T extends { year: string }>(items: T[]) {
+  const years = [...new Set(items.map((i) => i.year))].sort((a, b) => b.localeCompare(a));
+  return years.map((year) => ({ label: year, items: items.filter((i) => i.year === year) }));
+}
+
+/** Página de cada docente (`/people/<usuario>`): perfil, estudiantes, publicaciones, formación y cursos. */
+export const facultyProfiles = facultyJson.map((f) => {
+  const item = facultyById.get(f.id)!;
+
+  /** Estudiantes cuyo trabajo (tesis o en curso) dirige o codirige; `note` marca la codirección. */
+  const advised = students
+    .filter((s) => s.work)
+    .map((s) => {
+      const directs = s.work!.directors.some((d) => d.id === f.id);
+      const codirects = s.work!.codirectors.some((d) => d.id === f.id);
+      return directs || codirects ? { ...s, note: codirects && !directs ? 'Codirección' : '' } : null;
+    })
+    .filter((s): s is NonNullable<typeof s> => s !== null);
+  const activeAdvised = advised.filter((s) => s.active);
+  const graduates = advised.filter((s) => !s.active);
+
+  const publications = pubItems
+    .filter((p) => p.facultyIds.includes(f.id))
+    .sort((a, b) => b.year.localeCompare(a.year) || a.title.localeCompare(b.title))
+    .map((p) => ({
+      year: p.year,
+      title: p.title,
+      href: p.href,
+      meta: [p.typologyLabel, p.outcome].filter(Boolean).join(' · '),
+      author: p.author,
+    }));
+
+  const resources = resourcesJson
+    .filter((r) => facultyIdsInAuthors(r.authors_display || '').includes(f.id))
+    .map((r) => ({ title: r.title, href: r.url_primary || r.links?.[0]?.url || '', section: r.section }));
+
+  return {
+    slug: item.anchor,
+    name: item.name,
+    rank: item.rank,
+    roleChip: item.roleChip,
+    image: item.image,
+    bio: f.bio,
+    email: f.email,
+    office: f.office,
+    phone: f.phone,
+    lines: f.line_ids
+      .map((id) => researchLines.find((l) => l.id === id))
+      .filter((l): l is NonNullable<typeof l> => Boolean(l))
+      .map((l) => ({ id: 'linea' as const, label: l.shortTitle, color: l.color, href: l.href })),
+    profileLinks: item.profileLinks,
+    education: f.education.map((e) => ({
+      degree: e.degree,
+      program: e.program,
+      institution: e.institution,
+      when: ('period' in e && e.period) || e.year,
+      thesis: ('thesis' in e && e.thesis) || '',
+      honor: ('honor' in e && e.honor) || '',
+    })),
+    experience: f.experience.map((x) => ({
+      role: ('role' in x && x.role) || '',
+      institution: x.institution,
+      period: x.period,
+    })),
+    courses: f.courses.map((c) => ({ name: c.name, level: c.level, url: 'url' in c ? c.url : '' })),
+    coursesUrl: (f as { courses_url?: string }).courses_url ?? '',
+    stats: [
+      { label: 'Estudiantes activos', value: activeAdvised.length },
+      { label: 'Egresados', value: graduates.length },
+      { label: 'Publicaciones', value: publications.length },
+    ].filter((s) => s.value > 0),
+    activeSections: studentSectionsByDegree(activeAdvised),
+    graduateSections: studentSectionsByDegree(
+      graduates,
+      (a, b) =>
+        String(b.thesisYear).localeCompare(String(a.thesisYear)) || a.name.localeCompare(b.name),
+    ),
+    studentCount: advised.length,
+    publicationCount: publications.length,
+    publications: groupByYear(publications),
+    resources,
+  };
+});
 
 /** Trabajos "recientes" en la página de línea: año actual y los tres anteriores. */
 const RECENT_SINCE = new Date().getFullYear() - 3;
