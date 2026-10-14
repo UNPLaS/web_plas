@@ -204,7 +204,7 @@
     "role_group": "estudiante_maestria",
     "status": "Activo",
     "line_ids": [],
-    "image_path": "/images/PLaS/estudiantes/new/edna_chaparro.jpg"
+    "image_path": "/images/PLaS/estudiantes/new/edna_chaparro.webp"
   },
   {
     "id": "estudiante:chaparro-arce-daniel-felipe",
@@ -222,7 +222,7 @@
     "role_group": "estudiante_maestria",
     "status": "Activo",
     "line_ids": [],
-    "image_path": "/images/PLaS/estudiantes/new/hernan_lozano.jpg"
+    "image_path": "/images/PLaS/estudiantes/new/hernan_lozano.webp"
   },
   {
     "id": "estudiante:vargas-montero-fernando",
@@ -249,7 +249,7 @@
     "role_group": "estudiante_maestria",
     "status": "Activo",
     "line_ids": [],
-    "image_path": "/images/PLaS/estudiantes/new/karen_cuervo.jpg"
+    "image_path": "/images/PLaS/estudiantes/new/karen_cuervo.webp"
   },
   {
     "id": "estudiante:mendez-lara-jhon-alexis",
@@ -258,7 +258,7 @@
     "role_group": "estudiante_maestria",
     "status": "Activo",
     "line_ids": [],
-    "image_path": "/images/PLaS/estudiantes/new/jhon_mendez.jpg"
+    "image_path": "/images/PLaS/estudiantes/new/jhon_mendez.webp"
   },
   {
     "id": "estudiante:osorio-delgado-anderson-kavir",
@@ -511,6 +511,15 @@
     "line_ids": [
       "line:sensado"
     ],
+    "image_path": ""
+  },
+  {
+    "id": "estudiante:llanos-mosquera-jose-miguel",
+    "name_display": "José Miguel Llanos Mosquera",
+    "name_sort": "Llanos Mosquera, José Miguel",
+    "role_group": "estudiante_doctorado",
+    "status": "Activo",
+    "line_ids": [],
     "image_path": ""
   }
 ]

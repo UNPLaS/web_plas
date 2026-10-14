@@ -6,7 +6,7 @@ Los harvest leen y escriben directamente los JSON del sitio. Nunca modifican ni 
 - `theses.json`: tesis (repositorio UNAL), con `abstract`, `advisor_ids` y `student_ids`.
 - `students.json`: datos de la persona; estado, tesis y año de salida se calculan en `content.ts` desde `theses.json`.
 - `wip.json` (a mano, sin harvest): trabajo en curso de estudiantes activos. Ver abajo.
-- `faculty.json`: ORCID (perfil "ORCID"), `aliases` de director en el repositorio y `line_ids` (el primero es la línea principal).
+- `faculty.json`: ORCID (perfil "ORCID"), `aliases` de director en el repositorio y `line_ids` (el primero es la línea principal). Para la página de cada docente (`/people/<usuario>`), a mano: `bio` (descripción breve), `education` (`degree`, `program`, `institution`, `year`; opcionales `period`, `thesis` y `honor`), `experience` (`institution`, `period` y `role` opcional), `courses` (`name`, `level` y `url` opcional) y `courses_url` opcional (historial completo de cursos). La dirección de trabajos y las publicaciones de esa página salen solas de `theses.json`, `wip.json` y `publications.json`.
 - `lines.json`: nombres de línea (única fuente) y `keywords` para asignar líneas a tesis. Cada tema admite `contact_ids` (a mano): docentes responsables, que la página de la línea muestra primero aunque no tengan trabajos recientes. Campos editoriales para `/lines`: `question` (pregunta gancho de la línea), `map_label` (nombre de la línea en el mapa) y `short_name` en cada tema (etiqueta en el mapa).
 
 ## Comandos
@@ -67,4 +67,5 @@ En `theses.json` y `wip.json`, `advisor_ids` es quien dirige y `codirector_ids` 
 2. Solo posgrados de ingeniería con al menos un director PLaS; se omiten las dirigidas solo por Fabio González.
 3. La línea se asigna por director, área y `keywords`; si nada decide, la primera línea del director.
 4. El autor se asocia al estudiante cuyo `id` sale del nombre en el repositorio (`estudiante:apellido-nombre`); si no existe, se crea con datos mínimos para completar a mano.
-5. El `abstract` se guarda en español y, si no hay, en inglés, sin la nota "(Texto tomado de la fuente)" que agrega el repositorio. `--backfill-abstracts` es la única operación que modifica tesis existentes, y solo agrega ese campo.
+5. Excepción a mano: la tesis doctoral de José Miguel Llanos Mosquera está en el repositorio de Univalle (`handle: "10893/36049"`, `plas_catalog_source: "repositorio_univalle"`), codirigida por Felipe Restrepo. El harvest no la toca porque su handle no es del repositorio UNAL.
+6. El `abstract` se guarda en español y, si no hay, en inglés, sin la nota "(Texto tomado de la fuente)" que agrega el repositorio. `--backfill-abstracts` es la única operación que modifica tesis existentes, y solo agrega ese campo.

@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getContent } from '../../data/site';
+import { langFromParam, langPaths, t } from '../../i18n';
+
+export const getStaticPaths = () => langPaths();
+
+const lang = langFromParam(Astro.params.lang);
+const tr = t(lang).resources;
+const { resourceSections } = getContent(lang);
+---
+
+<Layout title={tr.title} description={t(lang).meta.resources}>
+  <section class="page-section wrap" aria-labelledby="resources-heading">
+    <header class="page-head">
+      <p class="page-head__eyebrow">{tr.title}</p>
+      <h1 id="resources-heading" class="page-head__title">{tr.title}</h1>
+      <p class="page-head__lede">{tr.lede}</p>
+    </header>
+
+    {
+      resourceSections.map((sec) => (
+        <section class="resource-block" id={sec.key} aria-labelledby={`resource-${sec.key}`}>
+          <h2 id={`resource-${sec.key}`} class="people-section__title">
+            {sec.title}
+          </h2>
+          <ul class="works-list">
+            {sec.items.map((item) => {
+              const actions =
+                item.links.length > 1
+                  ? item.links
+                  : item.href
+                    ? [{ url: item.href, label: t(lang).common.open, is_primary: true }]
+                    : [];
+              return (
+                <li id={item.id}>
+                  <article class="works-card resource-card">
+                    <div class="works-card__body">
+                      <h3 class="works-card__title">{item.title}</h3>
+                      {item.author && <p class="works-card__author">{item.author}</p>}
+                      {actions.length > 0 && (
+                        <p class="resource-card__actions">
+                          {actions.map((link) => (
+                            <a class="btn btn--soft" href={link.url} target="_blank" rel="noreferrer">
+                              {link.label}
+                            </a>
+                          ))}
+                        </p>
+                      )}
+                    </div>
+                  </article>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      ))
+    }
+  </section>
+</Layout>

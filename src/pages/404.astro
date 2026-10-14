@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { localePath, t } from '../i18n';
+
+/** El servidor entrega esta misma página para cualquier ruta inexistente, también bajo `/en/`. */
+const es = t('es');
+const en = t('en');
+
+const shortcuts = [
+  { href: '/lines', label: es.lines.title },
+  { href: '/catalog', label: es.notFound.catalog },
+  { href: '/people', label: es.nav.people },
+  { href: '/projects', label: es.nav.projects },
+  { href: '/blog', label: es.nav.blog },
+  { href: '/contact', label: es.nav.contact },
+];
+---
+
+<Layout title={es.notFound.title} description={es.notFound.description} noindex>
+  <section class="page-section wrap" aria-labelledby="notfound-heading">
+    <header class="page-head page-head--door">
+      <p class="page-head__eyebrow">Error 404</p>
+      <h1 id="notfound-heading" class="page-head__title">{es.notFound.heading}</h1>
+      <p class="page-head__lede">{es.notFound.lede}</p>
+      <p class="notfound__actions">
+        <a class="btn btn--amber-sm" href={localePath('es', '/')}>{es.notFound.home}</a>
+        {
+          shortcuts.map((item) => (
+            <a class="btn btn--soft" href={localePath('es', item.href)}>
+              {item.label}
+            </a>
+          ))
+        }
+      </p>
+      <p class="page-head__lede" lang="en">
+        <strong>{en.notFound.heading}.</strong>
+        {' '}
+        <a href={localePath('en', '/')}>{en.notFound.home}</a>
+      </p>
+    </header>
+  </section>
+</Layout>

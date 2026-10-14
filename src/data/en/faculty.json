@@ -1,0 +1,159 @@
+{
+  "docente:ferestrepoca": {
+    "rank": "Associate professor",
+    "group_role": "Group leader",
+    "bio": "Associate professor in the Department of Systems and Industrial Engineering and coordinator of the Master's program in Systems and Computing Engineering. He researches how to learn programming better and how to build more dependable software systems: programming education, automated code analysis and the dependability of computing systems.",
+    "office": "Office 114, Building 453 (Aulas de Ingeniería)",
+    "education": [
+      {
+        "degree": "Postdoctoral research",
+        "program": "Hybrid fault-tolerance techniques for embedded microprocessors",
+        "institution": "Universidade Federal do Rio Grande do Sul (Brazil) and Universidad de Alicante"
+      },
+      {
+        "degree": "Postdoctoral research",
+        "program": "Platform for the integrated design and analysis of digital circuits and systems for aerospace applications",
+        "institution": "Universidad de Sevilla and Universidad de Alicante (Spain)"
+      },
+      {
+        "degree": "PhD",
+        "program": "Technologies for the Information Society",
+        "institution": "Universidad de Alicante (Spain)",
+        "honor": "Outstanding cum laude · Extraordinary Doctorate Award"
+      },
+      {
+        "degree": "Master's",
+        "program": "Physical Instrumentation",
+        "honor": "Laureate distinction"
+      },
+      {
+        "degree": "Undergraduate",
+        "program": "Systems and Computing Engineering",
+        "honor": "Laureate distinction"
+      }
+    ],
+    "experience": [
+      { "role": "Associate professor", "period": "2014–present" },
+      { "role": "Postdoctoral researcher", "institution": "Universidade Federal do Rio Grande do Sul (Brazil)" },
+      { "institution": "Universidad de Sevilla (Spain)" },
+      null
+    ],
+    "courses": [
+      { "name": "Programming languages", "level": "Undergraduate" },
+      { "name": "Research/advanced seminar II", "level": "Master's" },
+      { "name": "Advanced seminar I", "level": "Master's" },
+      { "name": "Educational research in the engineering classroom", "level": "Master's" },
+      { "name": "Data analysis and visualization", "level": "Master's" },
+      { "name": "Natural language processing and understanding", "level": "Master's" }
+    ]
+  },
+  "docente:fagonzalezo": {
+    "rank": "Full professor",
+    "group_role": "Occasional collaborator",
+    "bio": "Full professor in the Department of Systems and Industrial Engineering, where he leads the Machine Learning, Perception and Discovery Lab (MindLab). His research focuses on artificial intelligence, machine learning and quantum computing, with an emphasis on the automatic analysis of multimodal data and, more recently, on quantum machine learning algorithms.",
+    "office": "Office 114, Building 453 (Aulas de Ingeniería)",
+    "education": [
+      {
+        "degree": "Postdoctoral research",
+        "institution": "University of Louisville (USA)"
+      },
+      {
+        "degree": "PhD",
+        "program": "Computer Science",
+        "institution": "The University of Memphis (USA)"
+      },
+      {
+        "degree": "Master's",
+        "program": "Computer Science",
+        "institution": "The University of Memphis (USA)"
+      },
+      {
+        "degree": "Master's",
+        "program": "Mathematics",
+        "honor": "Meritorious distinction"
+      },
+      {
+        "degree": "Undergraduate",
+        "program": "Systems Engineering",
+        "honor": "Meritorious distinction"
+      }
+    ],
+    "experience": [
+      { "role": "Professor", "period": "1996–present" },
+      { "institution": "The University of Memphis (USA)" },
+      null,
+      null
+    ],
+    "courses": [
+      { "name": "Introduction to intelligent systems", "level": "Undergraduate" },
+      { "name": "Machine learning", "level": "Undergraduate and graduate" }
+    ]
+  },
+  "docente:capedrazab": {
+    "rank": "Associate professor",
+    "group_role": "Faculty researcher",
+    "bio": "Associate professor in the Department of Systems and Industrial Engineering. He works on parallel computing, evolutionary algorithms and operating systems, and within the group he supports the intelligent transportation systems, smart sensing and dependable embedded systems research areas.",
+    "office": "Office 112, Building 453 (Aulas de Ingeniería)",
+    "education": [
+      {
+        "degree": "PhD",
+        "program": "Computer Engineering and New Technologies",
+        "institution": "Universidad Rey Juan Carlos (Spain)"
+      },
+      {
+        "degree": "Master's",
+        "program": "Electronics and Computer Engineering"
+      },
+      {
+        "degree": "Undergraduate",
+        "program": "Electronic Engineering",
+        "honor": "Meritorious thesis"
+      }
+    ],
+    "experience": [
+      { "role": "Professor", "period": "2015–present" },
+      null,
+      null
+    ],
+    "courses": [
+      { "name": "Operating systems", "level": "Undergraduate" },
+      { "name": "Parallel and distributed computing", "level": "Undergraduate" }
+    ]
+  },
+  "docente:jjramireze": {
+    "rank": "Associate professor",
+    "group_role": "Faculty researcher",
+    "bio": "Associate professor in the Department of Electrical and Electronic Engineering. His research focuses on engineering education, particularly self-regulated learning and the learning-to-learn competence, the subject of his doctoral thesis.",
+    "office": "Office 210, Building 453 (Aulas de Ingeniería)",
+    "education": [
+      {
+        "degree": "PhD",
+        "program": "Project and Systems Engineering",
+        "institution": "Universitat Politècnica de Catalunya (Spain)"
+      },
+      {
+        "degree": "Master's",
+        "program": "Telecommunications Engineering"
+      },
+      {
+        "degree": "Specialization",
+        "program": "Telecommunications"
+      },
+      {
+        "degree": "Undergraduate",
+        "program": "Electronic Engineering",
+        "institution": "Universidad Nacional de Colombia, Manizales campus"
+      }
+    ],
+    "experience": [
+      { "role": "Associate professor", "period": "2004–present" },
+      { "role": "Full-time professor" },
+      null
+    ],
+    "courses": [
+      { "name": "Analog electronics I", "level": "Undergraduate" },
+      { "name": "Introduction to electronic engineering", "level": "Undergraduate" },
+      { "name": "Educational research in the engineering classroom", "level": "Graduate" }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import TypeChip from '../../../components/TypeChip.astro';
+import { getContent } from '../../../data/site';
+import { langFromParam, langPaths, t } from '../../../i18n';
+
+export const getStaticPaths = () => langPaths();
+
+const lang = langFromParam(Astro.params.lang);
+const tr = t(lang).blog;
+const { blogItems } = getContent(lang);
+---
+
+<Layout title={tr.title} description={t(lang).meta.blog}>
+  <section class="page-section wrap" aria-labelledby="blog-heading">
+    <header class="page-head">
+      <p class="page-head__eyebrow">{tr.title}</p>
+      <h1 id="blog-heading" class="page-head__title">{tr.title}</h1>
+      <p class="page-head__lede">{tr.lede}</p>
+    </header>
+
+    <ul class="blog-list">
+      {
+        blogItems.map((item) => (
+          <li>
+            <a class="blog-card" href={item.href} lang={item.contentLang !== lang ? item.contentLang : undefined}>
+              <div class="blog-card__media" aria-hidden="true">
+                {item.image ? <img src={item.image} alt="" loading="lazy" /> : null}
+              </div>
+              <div class="blog-card__body">
+                <div class="card-topline">
+                  <TypeChip typology={item.typology} />
+                  <p class="blog-card__meta">{item.meta}</p>
+                </div>
+                <h2 class="blog-card__title">{item.title}</h2>
+                <p class="blog-card__excerpt">{item.summary}</p>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>

@@ -1,0 +1,161 @@
+{
+  "line:lenguajes": {
+    "name": "Programming languages",
+    "short_name": "Programming languages",
+    "map_label": "Languages",
+    "summary": "We explore theoretical and practical aspects of creating programming languages.",
+    "question": "What if every problem had its own programming language?",
+    "description": [
+      "How can programming languages and tools make software easier to build and understand? At PLaS we study the design, implementation and use of general-purpose and domain-specific languages, as well as the automated analysis and transformation of code. We aim to connect the foundations of programming languages with real problems in software development and maintenance.",
+      "We develop methods to express requirements, generate prototypes, analyze programs, and extract knowledge from code collections and from the information that developer communities produce. We combine compiler techniques, software analysis, natural language processing and machine learning to support these tasks."
+    ],
+    "topics": {
+      "topic:dsl": {
+        "name": "General-purpose and domain-specific languages (DSLs)",
+        "short_name": "DSLs",
+        "description": "We study how to define and implement languages that express solutions clearly and in a way suited to each problem. We are interested in both general-purpose languages and domain-specific languages (DSLs), which embed the concepts and rules of a particular field. We investigate analysis and translation techniques to build language processors and tools that connect these representations with executable programs."
+      },
+      "topic:ciclo-vida-software": {
+        "name": "Languages for the software life cycle",
+        "short_name": "Life cycle",
+        "description": "We explore specification and modeling languages that support the different stages of software development, from defining requirements to building and evolving applications. We aim to make requirements easier to communicate and to turn them into models and code that allow a solution to be validated early."
+      },
+      "topic:analisis-codigo": {
+        "name": "Automated code analysis and manipulation",
+        "short_name": "Code analysis",
+        "description": "We develop methods to examine the structure and characteristics of code, identify patterns and perform automatic transformations. We study applications that combine static analysis and code representations with machine learning to support code comprehension, comparison and improvement, and to build tools that assist developers."
+      },
+      "topic:analitica-software": {
+        "name": "Software analytics / Big Code",
+        "short_name": "Big Code",
+        "description": "We investigate how to extract knowledge from large collections of code, repositories and developer collaboration spaces. We apply data mining, natural language processing and machine learning to relate code to the information that accompanies it. We seek to understand development patterns and use them to make knowledge about software easier to find, classify and reuse."
+      }
+    }
+  },
+  "line:educacion": {
+    "name": "AI-enhanced engineering education",
+    "short_name": "Engineering education",
+    "map_label": "Education",
+    "summary": "We research how artificial intelligence can improve teaching, learning and assessment in engineering.",
+    "question": "Can an AI teach you to program without doing the thinking for you?",
+    "description": [
+      "How can artificial intelligence help educate better engineers? At PLaS we research how to integrate this technology into teaching, learning and assessment, with a particular focus on programming, software engineering, and analog and digital electronics.",
+      "We design and evaluate educational strategies and tools that draw on AI to improve engineering education, through solutions that support students, provide timely feedback and help instructors understand learning difficulties. We study how these experiences influence conceptual understanding, problem solving, motivation and the ability to self-regulate learning.",
+      "We promote a critical and responsible integration of AI that strengthens reasoning and the development of professional competencies, with attention to privacy, equity and academic integrity."
+    ],
+    "topics": {
+      "topic:analitica-aprendizaje": {
+        "name": "Learning analytics and educational data mining",
+        "short_name": "Learning analytics",
+        "description": "We study the data generated during learning activities to understand how students learn and what difficulties they face. We combine data analysis and artificial intelligence to identify patterns, detect where support is needed, and provide useful information to improve teaching and help students steer their own learning."
+      },
+      "topic:agentes-conversacionales": {
+        "name": "Conversational agents, intelligent tutoring and adaptive learning",
+        "short_name": "Intelligent tutoring",
+        "description": "We explore the design of AI assistants that students and instructors can talk to in everyday language to resolve questions, discuss concepts and explore solutions. We investigate how to adapt these agents to course content and how to evaluate the quality of their answers, their limitations and their educational value. We also research tools that support learning through guiding questions, hints and explanations tailored to each student's needs. Our goal is for this support to foster understanding, autonomy and the ability to review one's own reasoning."
+      },
+      "topic:evaluacion-automatica": {
+        "name": "Automated assessment and feedback on code",
+        "short_name": "Automated assessment",
+        "description": "We develop and study methods to analyze programming solutions and give feedback that helps students understand errors and improve their code. We are interested in assessing both the result and the problem-solving process, and in combining automated tests with explanations that guide learning and support instructors."
+      },
+      "topic:autorregulacion": {
+        "name": "Self-regulated learning",
+        "short_name": "Self-regulation",
+        "description": "We study and promote self-regulated learning, motivation and study strategies in subjects such as computer programming, digital electronics, electronic control systems and analog electronics. We evaluate how different teaching strategies and classroom innovations affect self-regulation, including automatic and immediate feedback on practical assignments, collaborative learning environments, peer assessment, game dynamics and video game creation, and hybrid, remote and pocket labs."
+      },
+      "topic:competencias-transversales": {
+        "name": "Integrating transversal competencies",
+        "short_name": "Transversal competencies",
+        "description": "We want to understand how to deliberately incorporate and strengthen transversal competencies, such as managing study time, critical thinking, decision making and teamwork, as an integral part of learning technical engineering subjects. As a starting point, we have explored the effect of project management methodologies such as Scrum on time management in project-based learning environments. Looking ahead, we aim to extend and scale these studies with AI tools that provide adaptive scaffolding, metacognitive monitoring and personalized feedback in the classroom."
+      }
+    }
+  },
+  "line:embebidos": {
+    "name": "Dependable embedded systems",
+    "short_name": "Dependable embedded systems",
+    "map_label": "Embedded",
+    "summary": "We develop techniques and tools for designing fault-tolerant hardware/software systems.",
+    "question": "How does a system keep working when one of its parts fails?",
+    "description": [
+      "How can an embedded system keep operating correctly when its hardware suffers transient faults? At PLaS we research methods and tools to improve the dependability of microprocessor-based systems, with special attention to radiation-induced errors. We seek to balance fault protection against the memory, hardware area, energy and execution-time constraints typical of these systems.",
+      "We combine software- and hardware-implemented protection techniques, criticality analysis and approximate computing. We develop and evaluate fault-injection tools and predictive models that make it possible to compare design alternatives and guide the choice of fault-tolerance mechanisms from the early stages of development."
+    ],
+    "topics": {
+      "topic:tolerancia-fallos": {
+        "name": "Fault tolerance",
+        "short_name": "Fault tolerance",
+        "description": "We design and evaluate mechanisms to detect and mitigate transient errors that can corrupt a program's data or control flow. We work with redundancy, compiler-driven code transformations and hardware/software co-design strategies, on both commercial microprocessors and FPGA-based processors. We aim to apply protection selectively, according to each application's needs, and to measure its effectiveness and cost."
+      },
+      "topic:computacion-aproximada": {
+        "name": "Approximate computing for dependable systems",
+        "short_name": "Approximate computing",
+        "description": "We investigate how to exploit the tolerance of some applications to small variations in their results in order to reduce the cost of protection mechanisms. We combine approximate versions of computations with redundancy and selective protection techniques, and evaluate the trade-off between output quality, dependability and resource usage. We study when these strategies are useful and which approximation limits still meet the application's requirements."
+      },
+      "topic:evaluacion-confiabilidad": {
+        "name": "Dependability assessment",
+        "short_name": "Dependability",
+        "description": "We develop tools and methods to generate and compare protection alternatives through fault-injection campaigns, simulation and experiments on real processors. We analyze the fidelity of these assessments and how well they anticipate system behavior. We also research machine learning models that estimate dependability early and support design space exploration."
+      }
+    }
+  },
+  "line:transporte": {
+    "name": "Intelligent transportation systems",
+    "short_name": "Intelligent transportation systems",
+    "map_label": "Transportation",
+    "summary": "We apply technology to tackle road crashes and traffic problems in cities.",
+    "question": "What does the data reveal about where and why crashes happen in the city?",
+    "description": [
+      "We tackle urban problems of road crashes, congestion and transit operations using data, computer vision and IoT. We build models to anticipate traffic and crashes, detect fare evasion in mass transit systems, and monitor vehicles with sensors, RFID and video analysis."
+    ],
+    "topics": {
+      "topic:accidentalidad-vial": {
+        "name": "Road crashes",
+        "short_name": "Road crashes",
+        "description": "We analyze road crashes using data science, machine learning and spatio-temporal models, integrating mobility information, socioeconomic variables, land use and non-traditional data sources. The goal is to identify patterns, characterize associated factors and develop crash prediction models for urban settings."
+      },
+      "topic:monitoreo-trafico": {
+        "name": "Traffic prediction and monitoring",
+        "short_name": "Traffic",
+        "description": "We develop methods for monitoring, measuring and characterizing vehicle traffic, combining computer vision, wireless sensors and data analysis. We work on vehicle detection and classification, traffic volume estimation and tracking of mobility patterns to support transportation system management."
+      },
+      "topic:iot-rfid-vehicular": {
+        "name": "IoT and RFID for vehicle monitoring",
+        "short_name": "IoT and RFID",
+        "description": "We design identification, sensing and communication systems to monitor vehicles and public transit, using RFID, Bluetooth, IoT and embedded devices. This work includes smart readers, vehicle tracking platforms, positioning systems and communication analysis, integrating data acquisition, connectivity and processing for ITS applications."
+      },
+      "topic:transporte-masivo": {
+        "name": "Mass transit operations and fare evasion",
+        "short_name": "Mass transit",
+        "description": "We develop technology to support the operation and supervision of public transit systems through vehicle tracking, arrival-time estimation, electronic identification and analysis of operational data. These tools make it possible to observe how the system behaves and to support control, safety and service management."
+      }
+    }
+  },
+  "line:sensado": {
+    "name": "Smart sensing and environment perception",
+    "short_name": "Smart sensing",
+    "map_label": "Sensing",
+    "summary": "We develop sensing, signal processing and artificial intelligence techniques to observe and interpret complex environments.",
+    "question": "What can a radar or a hyperspectral camera see that the human eye cannot?",
+    "description": [
+      "We develop sensing, signal processing and artificial intelligence techniques to observe, characterize and interpret complex environments. We integrate imagery, IoT sensors, aerial platforms and radar technologies for applications ranging from precision agriculture to buried object detection and humanitarian demining."
+    ],
+    "topics": {
+      "topic:radar-sensado": {
+        "name": "Radar, sensing and artificial intelligence",
+        "short_name": "Radar",
+        "description": "We develop radar and Ground Penetrating Radar (GPR) techniques combined with signal processing, machine learning and deep learning to detect, classify and characterize phenomena and objects. We study both the acquisition systems (antennas, time response and group delay) and the computational methods to extract information from signals, images and spatio-temporal data."
+      },
+      "topic:imagenes-espectrales": {
+        "name": "RGB, multispectral and hyperspectral imaging",
+        "short_name": "Spectral imaging",
+        "description": "We research image acquisition, processing and analysis techniques for automatic information extraction, using computer vision, feature descriptors and deep learning. Applications include crop characterization, weed detection and quantification, and object detection and classification in mobility scenarios."
+      },
+      "topic:agricultura-precision": {
+        "name": "Precision agriculture",
+        "short_name": "Precision agriculture",
+        "description": "We develop computer vision, multispectral image processing and deep learning methods to characterize crops and automate agricultural tasks, particularly weed detection, classification and quantification. This work combines spectral and spatial information with pattern recognition techniques to support crop monitoring and management."
+      }
+    }
+  }
+}

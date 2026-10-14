@@ -1,0 +1,108 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getAbout } from '../../data/about';
+import { langFromParam, langPaths, t } from '../../i18n';
+
+export const getStaticPaths = () => langPaths();
+
+const lang = langFromParam(Astro.params.lang);
+const tr = t(lang).about;
+const { intro, purpose, nucleos, anchors, signals } = getAbout(lang);
+---
+
+<Layout title={tr.title} description={intro.lead}>
+  <section class="page-section wrap" aria-labelledby="about-heading">
+    <header class="page-head">
+      <p class="page-head__eyebrow">{intro.eyebrow}</p>
+      <h1 id="about-heading" class="page-head__title">{intro.title}</h1>
+      <p class="page-head__lede">{intro.lead}</p>
+      <ul class="about-meta" aria-label={tr.factsLabel}>
+        {
+          intro.meta.map((item) => (
+            <li class="about-meta__item">{item}</li>
+          ))
+        }
+      </ul>
+      <p class="about-signals">
+        <a class="about-signals__link" href={signals.gruplac} target="_blank" rel="noreferrer">
+          GrupLAC
+        </a>
+        <span aria-hidden="true">·</span>
+        <a class="about-signals__link" href={signals.hermes} target="_blank" rel="noreferrer">
+          Hermes
+        </a>
+        <span aria-hidden="true">·</span>
+        <span>
+          Minciencias {signals.classLabel} · {tr.call} {signals.convocatoria}
+        </span>
+      </p>
+    </header>
+
+    <section
+      class="about-block"
+      id={purpose.id}
+      aria-labelledby="proposito-heading"
+    >
+      <h2 id="proposito-heading" class="people-section__title about-block__title">
+        {purpose.title}
+      </h2>
+      <div class="line-block__panel about-block__panel">
+        {
+          purpose.paragraphs.map((p) => (
+            <p class="line-block__text about-block__text">{p}</p>
+          ))
+        }
+      </div>
+    </section>
+
+    <section
+      class="about-block about-nucleos"
+      id={nucleos.id}
+      aria-labelledby="nucleos-heading"
+    >
+      <header class="about-anchors__head">
+        <h2 id="nucleos-heading" class="people-section__title about-block__title">
+          {nucleos.title}
+        </h2>
+        <p class="about-anchors__lede">{nucleos.lede}</p>
+      </header>
+      <ul class="about-nucleos__list">
+        {
+          nucleos.items.map((item) => (
+            <li class="about-nucleo line-block__panel">
+              <h3 class="about-nucleo__title">{item.title}</h3>
+              <p class="about-nucleo__text">{item.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="about-anchors" aria-labelledby="anchors-heading">
+      <header class="about-anchors__head">
+        <h2 id="anchors-heading" class="people-section__title about-block__title">
+          {anchors.title}
+        </h2>
+        <p class="about-anchors__lede">{anchors.lede}</p>
+      </header>
+      <ul class="news-gallery about-anchors__gallery">
+        {
+          anchors.items.map((item) => (
+            <li>
+              <a class="news-card" href={item.href} title={item.label}>
+                <div class="news-card__media" aria-hidden="true">
+                  {item.image ? <img src={item.image} alt="" loading="lazy" /> : null}
+                </div>
+                <div class="news-card__body">
+                  {item.meta ? <p class="news-card__meta">{item.meta}</p> : null}
+                  <h3 class="news-card__title">{item.label}</h3>
+                  <p class="about-anchor__excerpt">{item.text}</p>
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </section>
+</Layout>

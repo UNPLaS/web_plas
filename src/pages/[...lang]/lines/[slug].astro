@@ -1,0 +1,212 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import TopicGraph from '../../../components/TopicGraph.astro';
+import { getContent } from '../../../data/site';
+import { langFromParam, langPaths, t } from '../../../i18n';
+
+export function getStaticPaths() {
+  return langPaths().flatMap(({ params }) =>
+    getContent(langFromParam(params.lang)).lineDetails.map((line) => ({
+      params: { ...params, slug: line.slug },
+      props: { line },
+    })),
+  );
+}
+
+const lang = langFromParam(Astro.params.lang);
+const tr = t(lang).line;
+const { line } = Astro.props;
+/** Lenguajes usa la familia mid por defecto del sitio; las demás, su propia versión. */
+const lineTheme = line.slug === 'lenguajes' ? undefined : line.slug;
+const external = (href: string) =>
+  /^https?:\/\//i.test(href) ? { target: '_blank', rel: 'noreferrer' } : {};
+---
+
+<Layout title={line.title} description={line.summary} lineTheme={lineTheme}>
+  {
+    line.image && (
+      <figure class="line-banner">
+        <img
+          class="line-banner__img"
+          src={line.image}
+          alt=""
+          width="1200"
+          height="800"
+          style={`object-position: ${line.imagePosition}`}
+          fetchpriority="high"
+        />
+        {line.imageCredit && (
+          <figcaption class="line-banner__credit">
+            {t(lang).common.imageCredit}{' '}
+            {line.imageSource ? (
+              <a href={line.imageSource} target="_blank" rel="noreferrer">
+                {line.imageCredit}
+              </a>
+            ) : (
+              line.imageCredit
+            )}
+          </figcaption>
+        )}
+      </figure>
+    )
+  }
+
+  <section class="page-section page-section--tight wrap" aria-labelledby="line-title">
+    <header class="page-head">
+      <p class="page-head__eyebrow">{tr.eyebrow}</p>
+      <h1 id="line-title" class="page-head__title">{line.title}</h1>
+      <p class="page-head__lede">{line.summary}</p>
+    </header>
+
+    <div class="line-block__panel line-detail__intro">
+      {line.paragraphs.map((text) => <p>{text}</p>)}
+    </div>
+    {
+      line.topicGraph && (
+        <TopicGraph
+          nodes={line.topicGraph.nodes}
+          edges={line.topicGraph.edges}
+          color="var(--mid)"
+          title={t(lang).common.topicMap}
+        />
+      )
+    }
+  </section>
+
+  <section class="line-detail wrap" aria-labelledby="topics-heading">
+    <h2 id="topics-heading" class="people-section__title line-detail__heading">{tr.topics}</h2>
+    <div class="topic-list">
+      {
+        line.topics.map((topic) => (
+          <details class="topic-item" id={topic.slug}>
+            <summary class="topic-item__summary">
+              <span class="topic-item__name">{topic.name}</span>
+              <span class="topic-item__count">
+                {topic.total ? tr.worksCount(topic.total) : tr.noWorks}
+              </span>
+            </summary>
+            <div class="topic-item__body">
+              <p class="topic-item__description">{topic.description}</p>
+              <div class="topic-item__grid">
+                {(topic.faculty.length > 0 || topic.students.length > 0) && (
+                  <div class="topic-item__block topic-item__people">
+                    {topic.faculty.length > 0 && (
+                      <div>
+                        <h3 class="topic-item__label">{tr.faculty}</h3>
+                        <ul class="topic-people">
+                          {topic.faculty.map((person) => (
+                            <li>
+                              <a class="topic-people__link" href={person.href}>
+                                <span class="topic-people__avatar" aria-hidden="true">
+                                  {person.image ? <img src={person.image} alt="" loading="lazy" /> : null}
+                                </span>
+                                <span class="topic-people__text">
+                                  <span>{person.name}</span>
+                                  {person.contact && (
+                                    <span class="topic-people__meta">{tr.topicContact}</span>
+                                  )}
+                                </span>
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    {topic.students.length > 0 && (
+                      <div>
+                        <h3 class="topic-item__label">{tr.activeStudents}</h3>
+                        <ul class="topic-people">
+                          {topic.students.map((person) => (
+                            <li>
+                              <a class="topic-people__link" href={person.href}>
+                                <span class="topic-people__avatar" aria-hidden="true">
+                                  {person.image ? <img src={person.image} alt="" loading="lazy" /> : null}
+                                </span>
+                                <span class="topic-people__text">
+                                  <span>{person.name}</span>
+                                  {person.level && <span class="topic-people__meta">{person.level}</span>}
+                                </span>
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                )}
+                <div class="topic-item__block">
+                  <h3 class="topic-item__label">
+                    {topic.recentWorks.length > 0 || topic.historicalWorks.length === 0
+                      ? tr.recentWorks
+                      : tr.historicalWorks}
+                  </h3>
+                  {topic.recentWorks.length + topic.historicalWorks.length > 0 ? (
+                    <ul class="topic-works">
+                      {[...topic.recentWorks, ...topic.historicalWorks].map((work) => (
+                        <li>
+                          {work.href ? (
+                            <a class="topic-works__title" href={work.href} {...external(work.href)}>
+                              {work.title}
+                            </a>
+                          ) : (
+                            <span class="topic-works__title">{work.title}</span>
+                          )}
+                          <span class="topic-works__meta">{work.meta}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p class="topic-item__empty">{tr.emptyTopic}</p>
+                  )}
+                </div>
+              </div>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </section>
+
+  {
+    line.timeline.length > 0 && (
+      <section class="line-detail wrap" aria-labelledby="timeline-heading">
+        <h2 id="timeline-heading" class="people-section__title line-detail__heading">
+          {tr.timeline}
+        </h2>
+        <ol class="line-timeline">
+          {line.timeline.map((entry) => (
+            <li class="line-timeline__year">
+              <h3 class="line-timeline__label">{entry.year}</h3>
+              <ul class="line-timeline__works">
+                {entry.works.map((work) => (
+                  <li class="timeline-work">
+                    {work.href ? (
+                      <a class="timeline-work__title" href={work.href} {...external(work.href)}>
+                        {work.title}
+                      </a>
+                    ) : (
+                      <span class="timeline-work__title">{work.title}</span>
+                    )}
+                    <p class="timeline-work__meta">{work.meta}</p>
+                    {work.author && <p class="timeline-work__author">{work.author}</p>}
+                    {work.topics.length > 0 && (
+                      <ul class="timeline-work__topics">
+                        {work.topics.map((t) => (
+                          <li>
+                            <a class="topic-chip" href={`#${t.slug}`}>
+                              {t.name}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ol>
+      </section>
+    )
+  }
+</Layout>

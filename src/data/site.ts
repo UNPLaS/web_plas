@@ -1,47 +1,21 @@
-/** Punto de entrada de datos del sitio: navegación, citas y view-models de `content.ts`. */
+/** Punto de entrada de datos del sitio: navegación y view-models de `content.ts`. */
 
-import { withBase } from '../lib/with-base';
-import homeQuotesJson from './home-quotes.json';
+import { localePath, t, type Lang } from '../i18n';
 
-export {
-  blogItems,
-  catalogItems,
-  catalogYears,
-  catalogTypologies,
-  catalogFilterData,
-  contactFields,
-  contactForm,
-  contactIntro,
-  contactLinks,
-  eventItems,
-  facultyItems,
-  featuredProjects,
-  group,
-  lineDetails,
-  linesMap,
-  linesOverview,
-  newsItems,
-  people,
-  projectItems,
-  recentWorks,
-  researchLines,
-  resourceSections,
-  site,
-  students,
-  activeStudents,
-  activeStudentSections,
-  historicalStudentSections,
-} from './content';
+export { getContent, group, type Content } from './content';
 
-export const nav = [
-  { href: withBase('/about'), label: 'Grupo' },
-  { href: withBase('/lines'), label: 'Líneas' },
-  { href: withBase('/projects'), label: 'Proyectos' },
-  { href: withBase('/blog'), label: 'Blog' },
-  { href: withBase('/catalog'), label: 'Catálogo' },
-  { href: withBase('/resources'), label: 'Recursos' },
-  { href: withBase('/people'), label: 'Equipo' },
-  { href: withBase('/contact'), label: 'Contacto' },
+const NAV_PATHS = [
+  ['/about', 'about'],
+  ['/lines', 'lines'],
+  ['/projects', 'projects'],
+  ['/blog', 'blog'],
+  ['/catalog', 'catalog'],
+  ['/resources', 'resources'],
+  ['/people', 'people'],
+  ['/contact', 'contact'],
 ] as const;
 
-export const homeQuotes = homeQuotesJson;
+export function getNav(lang: Lang) {
+  const labels = t(lang).nav;
+  return NAV_PATHS.map(([path, key]) => ({ path, href: localePath(lang, path), label: labels[key] }));
+}

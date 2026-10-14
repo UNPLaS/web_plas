@@ -1,5 +1,6 @@
 ---
 import type { GraphEdge, GraphNode } from '../data/content';
+import { langOf, t } from '../i18n';
 
 type Node = GraphNode & { href?: string; color?: string; hub?: boolean };
 type Edge = GraphEdge & { color?: string };
@@ -20,7 +21,7 @@ const {
   nodes,
   edges,
   color = 'var(--mid)',
-  title = 'Mapa de temas',
+  title = t(langOf(Astro.url)).common.topicMap,
   height = 460,
   mobileHeight = 680,
   transposeMobile = false,

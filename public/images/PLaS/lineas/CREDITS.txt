@@ -1,7 +1,7 @@
 Imágenes bajo licencia Unsplash (https://unsplash.com/license) — uso libre con atribución apreciada.
 
-lenguajes.jpg   — photo-1515879218367-8466d910aaa4 (código / programación)
-educacion.jpg   — photo-1522202176988-66273c2fd55f (aprendizaje colaborativo)
-embebidos.jpg   — photo-1518770660439-4636190af475 (placa / hardware)
-transporte.jpg  — photo-1449824913935-59a10b8d2000 (movilidad urbana)
-sensado.jpg     — imagen del grupo (radar de penetración terrestre en laboratorio), no Unsplash
+lenguajes.webp   — photo-1515879218367-8466d910aaa4 (código / programación)
+educacion.webp   — photo-1522202176988-66273c2fd55f (aprendizaje colaborativo)
+embebidos.webp   — photo-1518770660439-4636190af475 (placa / hardware)
+transporte.webp  — photo-1449824913935-59a10b8d2000 (movilidad urbana)
+sensado.webp     — imagen del grupo (radar de penetración terrestre en laboratorio), no Unsplash

@@ -1,0 +1,64 @@
+{
+  "line:lenguajes": {
+    "nodes": {
+      "codigo": { "label": "Code analysis" },
+      "legibilidad": { "label": "Readability" },
+      "ir": { "label": "Multimodal IR" },
+      "estatico": { "label": "Static analysis" },
+      "reputacion": { "label": "Reputation" },
+      "prototipado": { "label": "NL prototyping" },
+      "pln": { "label": "NLP" },
+      "agentes": { "label": "Agents and AI" },
+      "seguridad": { "label": "Security" }
+    }
+  },
+  "line:educacion": {
+    "nodes": {
+      "evaluacion": { "label": "Auto. assessment" },
+      "realimentacion": { "label": "Feedback" },
+      "motivacion": { "label": "Motivation" },
+      "gamificacion": { "label": "Gamification" },
+      "autorregulacion": { "label": "Self-regulation" },
+      "analytics": { "label": "Learning analytics" },
+      "colaborativo": { "label": "Collaborative" },
+      "tel": { "label": "TEL / video games" },
+      "hdl": { "label": "HDL / digital" },
+      "llm": { "label": "LLM tutors" },
+      "codigoEst": { "label": "Student code" },
+      "curriculo": { "label": "Curriculum" }
+    }
+  },
+  "line:embebidos": {
+    "nodes": {
+      "tolerancia": { "label": "Fault tolerance" },
+      "aproximada": { "label": "Approx. computing" },
+      "criticidad": { "label": "Criticality" },
+      "codesign": { "label": "HW/SW co-design" },
+      "compilador": { "label": "Compiler" },
+      "cots": { "label": "COTS microprocessors" }
+    }
+  },
+  "line:transporte": {
+    "nodes": {
+      "accidentes": { "label": "Road crashes" },
+      "social": { "label": "Social / open data" },
+      "trafico": { "label": "Traffic prediction" },
+      "vision": { "label": "Vehicle vision" },
+      "conteo": { "label": "Vehicle counting" },
+      "evasion": { "label": "BRT fare evasion" },
+      "velocidad": { "label": "BT/WiFi speed" },
+      "inspeccion": { "label": "Inspection" },
+      "acustica": { "label": "Acoustic sensing" }
+    }
+  },
+  "line:sensado": {
+    "nodes": {
+      "maleza": { "label": "Weeds" },
+      "multiespectral": { "label": "Multispectral" },
+      "visionAerea": { "label": "Aerial vision" },
+      "llm": { "label": "LLM assistants" },
+      "iot": { "label": "Livestock IoT" },
+      "cobertura": { "label": "Quantification" }
+    }
+  }
+}

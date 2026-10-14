@@ -8,7 +8,7 @@
     "status": "Activo",
     "office": "114 Edificio 453 (Aulas de Ingeniería)",
     "phone": "+57 1 316 5000 ext. 14077/14011",
-    "image_path": "/images/PLaS/profesores/frc_pic.jpg",
+    "image_path": "/images/PLaS/profesores/frc_pic.webp",
     "line_ids": [
       "line:lenguajes",
       "line:educacion",
@@ -66,7 +66,100 @@
       }
     ],
     "is_leader": true,
-    "group_role": "Líder del grupo"
+    "group_role": "Líder del grupo",
+    "bio": "Profesor asociado del Departamento de Ingeniería de Sistemas e Industrial y coordinador de la Maestría en Ingeniería de Sistemas y Computación. Investiga cómo aprender a programar mejor y cómo construir sistemas de software más confiables: educación en programación, análisis automático de código y confiabilidad de sistemas computacionales.",
+    "education": [
+      {
+        "degree": "Posdoctorado",
+        "program": "Desarrollo de técnicas híbridas de tolerancia a fallos para microprocesadores embebidos",
+        "institution": "Universidade Federal do Rio Grande do Sul (Brasil) y Universidad de Alicante",
+        "year": "2014"
+      },
+      {
+        "degree": "Posdoctorado",
+        "program": "Plataforma para el diseño y análisis integral de circuitos y sistemas digitales para aplicaciones aeroespaciales",
+        "institution": "Universidad de Sevilla y Universidad de Alicante (España)",
+        "year": "2013",
+        "period": "2012–2013"
+      },
+      {
+        "degree": "Doctorado",
+        "program": "Tecnologías para la Sociedad de la Información",
+        "institution": "Universidad de Alicante (España)",
+        "year": "2011",
+        "period": "2007–2011",
+        "thesis": "Co-diseño de sistemas hardware/software tolerantes a fallos inducidos por radiación",
+        "honor": "Sobresaliente cum laude · Premio Extraordinario de Doctorado"
+      },
+      {
+        "degree": "Maestría",
+        "program": "Instrumentación Física",
+        "institution": "Universidad Tecnológica de Pereira",
+        "year": "2007",
+        "thesis": "Diseño, construcción e implementación de un prototipo comercial de un periférico para la percepción de imágenes por medio del tacto con fines educativos",
+        "honor": "Mención laureado"
+      },
+      {
+        "degree": "Pregrado",
+        "program": "Ingeniería de Sistemas y Computación",
+        "institution": "Universidad Tecnológica de Pereira",
+        "year": "2004",
+        "period": "1999–2004",
+        "thesis": "Proyecto IRIS",
+        "honor": "Mención laureado"
+      }
+    ],
+    "experience": [
+      {
+        "role": "Profesor asociado",
+        "institution": "Universidad Nacional de Colombia",
+        "period": "2014–hoy"
+      },
+      {
+        "role": "Investigador posdoctoral",
+        "institution": "Universidade Federal do Rio Grande do Sul (Brasil)",
+        "period": "2014"
+      },
+      {
+        "institution": "Universidad de Sevilla (España)",
+        "period": "2011–2013"
+      },
+      {
+        "institution": "Universidad Tecnológica de Pereira",
+        "period": "2005"
+      }
+    ],
+    "courses": [
+      {
+        "name": "Lenguajes de programación",
+        "level": "Pregrado",
+        "url": "https://sites.google.com/unal.edu.co/lenguajesdeprogramacion-2026-2/"
+      },
+      {
+        "name": "Seminario de investigación/profundización II",
+        "level": "Maestría",
+        "url": "https://sites.google.com/unal.edu.co/seminarioii2026-2/"
+      },
+      {
+        "name": "Seminario de profundización I",
+        "level": "Maestría",
+        "url": "https://sites.google.com/unal.edu.co/seminario-i-2026-1/"
+      },
+      {
+        "name": "Investigación educativa en el aula de ingeniería",
+        "level": "Maestría",
+        "url": "https://sites.google.com/unal.edu.co/inv-educativa-aula-ing-2026-1/"
+      },
+      {
+        "name": "Análisis y visualización de datos",
+        "level": "Maestría"
+      },
+      {
+        "name": "Procesamiento y entendimiento de lenguaje natural",
+        "level": "Maestría"
+      }
+    ],
+    "courses_url": "https://ferestrepoca.github.io/docencia"
   },
   {
     "id": "docente:fagonzalezo",
@@ -77,7 +170,7 @@
     "status": "Activo",
     "office": "114 Edificio 453 (Aulas de Ingeniería)",
     "phone": "+57 1 316 5000 ext. 14077/11",
-    "image_path": "/images/PLaS/profesores/fgo_pic.jpg",
+    "image_path": "/images/PLaS/profesores/fgo_pic.webp",
     "line_ids": [
       "line:lenguajes",
       "line:educacion"
@@ -134,7 +227,79 @@
       }
     ],
     "is_leader": false,
-    "group_role": ""
+    "group_role": "Colaborador ocasional",
+    "bio": "Profesor titular del Departamento de Ingeniería de Sistemas e Industrial, donde dirige el Machine Learning, Perception and Discovery Lab (MindLab). Su investigación gira en torno a la inteligencia artificial, el aprendizaje computacional y la computación cuántica, con énfasis en el análisis automático de datos multimodales y, más recientemente, en algoritmos de aprendizaje computacional cuántico.",
+    "education": [
+      {
+        "degree": "Posdoctorado",
+        "program": "Knowledge Discovery and Intelligent Web Applications Lab",
+        "institution": "University of Louisville (EE. UU.)",
+        "year": "2003"
+      },
+      {
+        "degree": "Doctorado",
+        "program": "Ciencias de la Computación",
+        "institution": "The University of Memphis (EE. UU.)",
+        "year": "2003",
+        "period": "2000–2003",
+        "thesis": "A Study of Artificial Immune Systems Applied to Anomaly Detection"
+      },
+      {
+        "degree": "Maestría",
+        "program": "Ciencias de la Computación",
+        "institution": "The University of Memphis (EE. UU.)",
+        "year": "2002",
+        "period": "2000–2002",
+        "thesis": "An immunogenetic technique to detect anomalies in network traffic"
+      },
+      {
+        "degree": "Maestría",
+        "program": "Matemáticas",
+        "institution": "Universidad Nacional de Colombia",
+        "year": "1998",
+        "period": "1994–1998",
+        "thesis": "Fórmulas, lambda-términos y combinadores: multicategorizaciones y correspondencias multifuntoriales",
+        "honor": "Mención meritoria"
+      },
+      {
+        "degree": "Pregrado",
+        "program": "Ingeniería de Sistemas",
+        "institution": "Universidad Nacional de Colombia",
+        "year": "1993",
+        "period": "1988–1993",
+        "thesis": "Herramienta para la edición, entrenamiento y simulación de redes neuronales",
+        "honor": "Mención meritoria"
+      }
+    ],
+    "experience": [
+      {
+        "role": "Profesor",
+        "institution": "Universidad Nacional de Colombia",
+        "period": "1996–hoy"
+      },
+      {
+        "institution": "The University of Memphis (EE. UU.)",
+        "period": "2000–2003"
+      },
+      {
+        "institution": "Pontificia Universidad Javeriana",
+        "period": "1999–2000"
+      },
+      {
+        "institution": "Universidad EAN",
+        "period": "1993–1996"
+      }
+    ],
+    "courses": [
+      {
+        "name": "Introducción a los sistemas inteligentes",
+        "level": "Pregrado"
+      },
+      {
+        "name": "Aprendizaje de máquina",
+        "level": "Pregrado y posgrado"
+      }
+    ]
   },
   {
     "id": "docente:capedrazab",
@@ -145,7 +310,7 @@
     "status": "Activo",
     "office": "112 Edificio 453 (Aulas de Ingeniería)",
     "phone": "+57 1 316 5000 ext. 14076",
-    "image_path": "/images/PLaS/profesores/cpb_pic.jpg",
+    "image_path": "/images/PLaS/profesores/cpb_pic.webp",
     "line_ids": [
       "line:transporte",
       "line:sensado",
@@ -196,7 +361,59 @@
       }
     ],
     "is_leader": false,
-    "group_role": ""
+    "group_role": "Docente investigador",
+    "bio": "Profesor asociado del Departamento de Ingeniería de Sistemas e Industrial. Trabaja en computación paralela, algoritmos evolutivos y sistemas operativos, y en el grupo acompaña las líneas de sistemas inteligentes de transporte, sensado inteligente y sistemas embebidos confiables.",
+    "education": [
+      {
+        "degree": "Doctorado",
+        "program": "Ingeniería Informática y Nuevas Tecnologías",
+        "institution": "Universidad Rey Juan Carlos (España)",
+        "year": "2010",
+        "period": "2006–2010"
+      },
+      {
+        "degree": "Maestría",
+        "program": "Ingeniería Electrónica y de Computadores",
+        "institution": "Universidad de los Andes",
+        "year": "2005",
+        "period": "2002–2005",
+        "thesis": "Sistema integrado de control de temperatura aplicado a sensores de gas de óxido metálico"
+      },
+      {
+        "degree": "Pregrado",
+        "program": "Ingeniería Electrónica",
+        "institution": "Universidad Santo Tomás",
+        "year": "2001",
+        "period": "1996–2001",
+        "thesis": "Prototipo de tarjeta de desarrollo para FPGA Spartan XCS10 con codiseño",
+        "honor": "Tesis meritoria"
+      }
+    ],
+    "experience": [
+      {
+        "role": "Profesor",
+        "institution": "Universidad Nacional de Colombia",
+        "period": "2015–hoy"
+      },
+      {
+        "institution": "Universidad Santo Tomás",
+        "period": "2003–2014"
+      },
+      {
+        "institution": "Universidad Central",
+        "period": "2002–2004"
+      }
+    ],
+    "courses": [
+      {
+        "name": "Sistemas operativos",
+        "level": "Pregrado"
+      },
+      {
+        "name": "Computación paralela y distribuida",
+        "level": "Pregrado"
+      }
+    ]
   },
   {
     "id": "docente:jjramireze",
@@ -207,7 +424,7 @@
     "status": "Activo",
     "office": "210 Edificio 453 (Aulas de Ingeniería)",
     "phone": "+57 1 316 5000 ext. 14086",
-    "image_path": "/images/PLaS/profesores/jre_pic.jpg",
+    "image_path": "/images/PLaS/profesores/jre_pic.webp",
     "line_ids": [
       "line:educacion"
     ],
@@ -250,6 +467,71 @@
       }
     ],
     "is_leader": false,
-    "group_role": ""
+    "group_role": "Docente investigador",
+    "bio": "Profesor asociado del Departamento de Ingeniería Eléctrica y Electrónica. Su investigación se centra en la educación en ingeniería, en particular en la autorregulación del aprendizaje y la competencia de aprender a aprender, tema de su tesis doctoral.",
+    "education": [
+      {
+        "degree": "Doctorado",
+        "program": "Ingeniería de Proyectos y Sistemas",
+        "institution": "Universitat Politècnica de Catalunya (España)",
+        "year": "2017",
+        "period": "2011–2017",
+        "thesis": "La competencia aprender a aprender en un contexto educativo de ingeniería",
+        "honor": "Excellent cum laude"
+      },
+      {
+        "degree": "Maestría",
+        "program": "Ingeniería de Telecomunicaciones",
+        "institution": "Universidad Nacional de Colombia",
+        "year": "2008",
+        "period": "2004–2008",
+        "thesis": "Determinación de un modelo de tarificación de servicios convergentes en redes móviles celulares"
+      },
+      {
+        "degree": "Especialización",
+        "program": "Telecomunicaciones",
+        "institution": "Universidad de Manizales",
+        "year": "2003",
+        "period": "2002–2003"
+      },
+      {
+        "degree": "Pregrado",
+        "program": "Ingeniería Electrónica",
+        "institution": "Universidad Nacional de Colombia, sede Manizales",
+        "year": "2000",
+        "period": "1994–2000",
+        "thesis": "Sistema para la segmentación de células en imágenes al microscopio del epitelio poliestratificado"
+      }
+    ],
+    "experience": [
+      {
+        "role": "Profesor asociado",
+        "institution": "Universidad Nacional de Colombia",
+        "period": "2004–hoy"
+      },
+      {
+        "role": "Profesor de tiempo completo",
+        "institution": "Universidad Católica de Manizales",
+        "period": "2001–2003"
+      },
+      {
+        "institution": "Universidad Antonio Nariño",
+        "period": "2002–2003"
+      }
+    ],
+    "courses": [
+      {
+        "name": "Electrónica análoga I",
+        "level": "Pregrado"
+      },
+      {
+        "name": "Introducción a la ingeniería electrónica",
+        "level": "Pregrado"
+      },
+      {
+        "name": "Investigación educativa en el aula de ingeniería",
+        "level": "Posgrado"
+      }
+    ]
   }
 ]

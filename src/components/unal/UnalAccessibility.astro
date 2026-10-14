@@ -1,11 +1,15 @@
 ---
+import { langOf, t } from '../../i18n';
+
+const lang = langOf(Astro.url);
+const tr = t(lang).unal.access;
 ---
 
-<div id="unal-access" class="tx-unal-accesibilidad" data-unal-chrome="access" transition:persist="unal-access">
+<div id="unal-access" class="tx-unal-accesibilidad" data-unal-chrome="access" transition:persist={`unal-access-${lang}`}>
   <div id="unal-access-panel" class="unal-access-panel" hidden>
     <div class="unal-access-grid">
       <div>
-        <h4>Tamaño letra</h4>
+        <h4>{tr.fontSize}</h4>
         <button type="button" class="unal-access-btn" data-unal-font="-">A<sup>-</sup></button>
         <button type="button" class="unal-access-btn" data-unal-font="+">A<sup>+</sup></button>
         <input
@@ -14,22 +18,22 @@
           type="text"
           value="100%"
           readonly
-          aria-label="Porcentaje de letra"
+          aria-label={tr.fontPercent}
         />
       </div>
       <div>
-        <h4>Cambiar contrastes</h4>
+        <h4>{tr.contrast}</h4>
         <button type="button" class="unal-access-btn" data-unal-contrast="1">1</button>
         <button type="button" class="unal-access-btn" data-unal-contrast="2">2</button>
         <button type="button" class="unal-access-btn" data-unal-contrast="3">3</button>
       </div>
       <div>
-        <h4>Invertir colores</h4>
-        <button type="button" class="unal-access-btn" id="unal-invert">Aplicar</button>
+        <h4>{tr.invert}</h4>
+        <button type="button" class="unal-access-btn" id="unal-invert">{tr.apply}</button>
       </div>
       <div>
-        <h4>Restablecer ajustes</h4>
-        <button type="button" class="unal-access-btn" id="unal-access-reset">Aplicar</button>
+        <h4>{tr.reset}</h4>
+        <button type="button" class="unal-access-btn" id="unal-access-reset">{tr.apply}</button>
       </div>
     </div>
   </div>
@@ -41,6 +45,6 @@
     aria-expanded="false"
     aria-controls="unal-access-panel"
   >
-    Panel de Accesibilidad
+    {tr.panel}
   </button>
 </div>
