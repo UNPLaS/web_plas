@@ -12,7 +12,7 @@
       "Desarrollamos métodos para expresar requisitos, generar prototipos, analizar programas y extraer conocimiento de colecciones de código y de la información que producen las comunidades de desarrolladores. Combinamos técnicas de compilación, análisis de software, procesamiento del lenguaje natural y aprendizaje automático para apoyar estas tareas."
     ],
     "color": "#00c9a7",
-    "image_path": "/images/PLaS/lineas/lenguajes.jpg",
+    "image_path": "/images/PLaS/lineas/lenguajes.webp",
     "image_credit": "Unsplash — Chris Ried",
     "image_source": "https://unsplash.com/photos/black-screen-with-code-1515879218367-8466d910aaa4",
     "keywords": [
@@ -177,7 +177,7 @@
       "Promovemos una integración crítica y responsable de la IA, que fortalezca el razonamiento y el desarrollo de competencias profesionales, con atención a la privacidad, la equidad y la integridad académica."
     ],
     "color": "#ff9f1a",
-    "image_path": "/images/PLaS/lineas/educacion.jpg",
+    "image_path": "/images/PLaS/lineas/educacion.webp",
     "image_credit": "Unsplash — Brooke Cagle",
     "image_source": "https://unsplash.com/photos/three-people-sitting-in-front-of-table-laughing-together-g1Kr4Ozfoac",
     "image_position": "center 28%",
@@ -387,7 +387,7 @@
       "Combinamos técnicas de protección implementadas en software y hardware, análisis de criticidad y computación aproximada. Desarrollamos y evaluamos herramientas de inyección de fallos y modelos predictivos que permiten comparar alternativas de diseño y orientar la selección de mecanismos de tolerancia a fallos desde etapas tempranas del desarrollo."
     ],
     "color": "#2f89ef",
-    "image_path": "/images/PLaS/lineas/embebidos.jpg",
+    "image_path": "/images/PLaS/lineas/embebidos.webp",
     "image_credit": "Unsplash — Vishnu Mohanan",
     "image_source": "https://unsplash.com/photos/macbook-pro-on-top-of-brown-table-1518770660439-4636190af475",
     "keywords": [
@@ -524,7 +524,7 @@
       "Abordamos problemas urbanos de accidentalidad, congestión y operación del transporte con datos, visión por computador e IoT. Construimos modelos para anticipar tráfico y accidentes, detectar evasión en sistemas masivos y monitorear vehículos con sensores, RFID y análisis de video."
     ],
     "color": "#ff6b4a",
-    "image_path": "/images/PLaS/lineas/transporte.jpg",
+    "image_path": "/images/PLaS/lineas/transporte.webp",
     "image_credit": "Unsplash — Luca Bravo",
     "image_source": "https://unsplash.com/photos/vehicles-on-road-between-high-rise-buildings-1449824913935-59a10b8d2000",
     "image_position": "center 68%",
@@ -669,7 +669,7 @@
       "Desarrollamos técnicas de sensado, procesamiento de señales e inteligencia artificial para observar, caracterizar e interpretar entornos complejos. Integramos imágenes, sensores IoT, plataformas aéreas y tecnologías de radar para aplicaciones que van desde la agricultura de precisión hasta la detección de objetos enterrados y el desminado humanitario."
     ],
     "color": "#b14fd8",
-    "image_path": "/images/PLaS/lineas/sensado.jpg",
+    "image_path": "/images/PLaS/lineas/sensado.webp",
     "image_position": "center 30%",
     "keywords": [
       "agricultura",

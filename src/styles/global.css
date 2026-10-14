@@ -35,9 +35,9 @@
   --type-recurso-fg: #a6441a;
 
   /* Tipografía — display Onest + cuerpo Source Sans + cita Source Serif */
-  --font-display: "Onest", "Segoe UI", system-ui, sans-serif;
-  --font-body: "Source Sans 3", "Source Sans Pro", "Segoe UI", system-ui, sans-serif;
-  --font-quote: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-display: var(--font-onest, "Segoe UI", system-ui, sans-serif);
+  --font-body: var(--font-source-sans, "Segoe UI", system-ui, sans-serif);
+  --font-quote: var(--font-source-serif, Georgia, serif);
 
   /* Spine split */
   --page-left: var(--mid-soft);
@@ -2548,6 +2548,13 @@ a.line-chapter__latest:is(:hover, .is-touch-hover) :is(.line-chapter__latest-lab
   font-size: 1.05rem;
   color: var(--muted);
   line-height: 1.5;
+}
+
+.notfound__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.5rem 0 0;
 }
 
 .page-back {

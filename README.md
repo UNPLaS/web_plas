@@ -79,6 +79,17 @@ npm run harvest:theses         # Repositorio UNAL → src/data/{theses,students}
 
 Detalle: [`scripts/README.md`](scripts/README.md).
 
+## Imágenes
+
+Las imágenes viven en `public/images/` y se sirven tal cual, así que conviene optimizarlas al agregarlas. Tras copiar una foto nueva (JPG o PNG) y referenciarla en los JSON:
+
+```bash
+npm run images:optimize -- --dry   # muestra qué convertiría
+npm run images:optimize            # pasa a WebP, redimensiona y actualiza las rutas en src/
+```
+
+Retratos quedan en máx. 640 px, logos de fuentes en 480 px y el resto en 1600 px. Si el WebP no ahorra al menos un 10 %, el original se deja como está. `public/images/og/` se excluye: la vista previa en redes (`og/plas.jpg`, 1200×630) debe ser JPG.
+
 Publicaciones nuevas entran visibles, salvo las de Fabio González sin coautor PLaS. Para ocultar una publicación o tesis, cambiar su `plas_catalog_source` a `"rejected"`: no se renderiza y el harvest no la vuelve a traer.
 
 ## Despliegue
@@ -95,6 +106,15 @@ sudo rsync -a --delete dist/ /var/www/html/plas/
 ```
 
 Comprobar que CSS/JS carguen desde `/_astro/...` (no `/web_plas/_astro/...`).
+
+En el vhost, para que las rutas inexistentes muestren la página propia del sitio y los assets con hash se cacheen:
+
+```apache
+ErrorDocument 404 /404.html
+<LocationMatch "^/_astro/">
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</LocationMatch>
+```
 
 ### GitHub Pages
 

@@ -25,7 +25,7 @@ const dateLabel =
 const hasMarkdown = Boolean(item.content?.trim());
 ---
 
-<Layout title={item.title}>
+<Layout title={item.title} description={item.summary || undefined} ogType="article">
   <article class="page-section page-section--tight wrap">
     <p class="page-back">
       <a class="btn btn--soft" href={withBase("/blog")}>← Volver al blog</a>

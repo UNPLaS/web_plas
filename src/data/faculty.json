@@ -8,7 +8,7 @@
     "status": "Activo",
     "office": "114 Edificio 453 (Aulas de Ingeniería)",
     "phone": "+57 1 316 5000 ext. 14077/14011",
-    "image_path": "/images/PLaS/profesores/frc_pic.jpg",
+    "image_path": "/images/PLaS/profesores/frc_pic.webp",
     "line_ids": [
       "line:lenguajes",
       "line:educacion",
@@ -170,7 +170,7 @@
     "status": "Activo",
     "office": "114 Edificio 453 (Aulas de Ingeniería)",
     "phone": "+57 1 316 5000 ext. 14077/11",
-    "image_path": "/images/PLaS/profesores/fgo_pic.jpg",
+    "image_path": "/images/PLaS/profesores/fgo_pic.webp",
     "line_ids": [
       "line:lenguajes",
       "line:educacion"
@@ -310,7 +310,7 @@
     "status": "Activo",
     "office": "112 Edificio 453 (Aulas de Ingeniería)",
     "phone": "+57 1 316 5000 ext. 14076",
-    "image_path": "/images/PLaS/profesores/cpb_pic.jpg",
+    "image_path": "/images/PLaS/profesores/cpb_pic.webp",
     "line_ids": [
       "line:transporte",
       "line:sensado",
@@ -424,7 +424,7 @@
     "status": "Activo",
     "office": "210 Edificio 453 (Aulas de Ingeniería)",
     "phone": "+57 1 316 5000 ext. 14086",
-    "image_path": "/images/PLaS/profesores/jre_pic.jpg",
+    "image_path": "/images/PLaS/profesores/jre_pic.webp",
     "line_ids": [
       "line:educacion"
     ],

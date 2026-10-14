@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { withBase } from '../lib/with-base';
+
+const shortcuts = [
+  { href: '/lines', label: 'Líneas de investigación' },
+  { href: '/catalog', label: 'Catálogo de trabajos' },
+  { href: '/people', label: 'Equipo' },
+  { href: '/projects', label: 'Proyectos' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/contact', label: 'Contacto' },
+];
+---
+
+<Layout
+  title="Página no encontrada"
+  description="La dirección que buscas no existe o cambió de lugar en el sitio del grupo PLaS."
+  noindex
+>
+  <section class="page-section wrap" aria-labelledby="notfound-heading">
+    <header class="page-head page-head--door">
+      <p class="page-head__eyebrow">Error 404</p>
+      <h1 id="notfound-heading" class="page-head__title">Esta página no existe</h1>
+      <p class="page-head__lede">
+        Puede que el enlace esté mal escrito o que el contenido haya cambiado de lugar. Desde aquí
+        puedes volver a las secciones principales.
+      </p>
+      <p class="notfound__actions">
+        <a class="btn btn--amber-sm" href={withBase('/')}>Ir al inicio</a>
+        {
+          shortcuts.map((item) => (
+            <a class="btn btn--soft" href={withBase(item.href)}>
+              {item.label}
+            </a>
+          ))
+        }
+      </p>
+    </header>
+  </section>
+</Layout>

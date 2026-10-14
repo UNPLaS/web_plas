@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { contactFields, contactForm, contactIntro, contactLinks, group } from '../data/site';
 ---
 
-<Layout title="Contacto">
+<Layout title="Contacto" description={contactIntro.lede}>
   <section class="page-section wrap" aria-labelledby="contact-heading">
     <header class="page-head page-head--door">
       <p class="page-head__eyebrow">Contacto</p>

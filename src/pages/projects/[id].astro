@@ -20,7 +20,7 @@ const { item } = Astro.props;
 const related = projectItems.filter((entry) => entry.id !== item.id).slice(0, 3);
 ---
 
-<Layout title={item.title}>
+<Layout title={item.title} description={item.summary || undefined}>
   <article class="page-section page-section--tight wrap">
     <p class="page-back">
       <a class="btn btn--soft" href={withBase("/projects")}>← Volver a proyectos</a>

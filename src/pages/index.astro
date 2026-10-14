@@ -10,7 +10,11 @@ import { facultyItems, homeQuotes, newsItems, recentWorks, site } from '../data/
 const quoteFallback = homeQuotes[0];
 ---
 
-<Layout title={`${site.name} — ${site.nameFull}`} spine>
+<Layout
+  title={`${site.name} — ${site.nameFull}`}
+  description="Grupo de investigación PLaS de la Universidad Nacional de Colombia: lenguajes de programación, educación en ingeniería, sistemas embebidos, transporte inteligente y sensado."
+  spine
+>
   <Hero />
 
   <section

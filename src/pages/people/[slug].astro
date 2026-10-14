@@ -37,7 +37,7 @@ const tabs = [
 const defaultTab = tabs[0].id;
 ---
 
-<Layout title={person.name} description={person.bio}>
+<Layout title={person.name} description={person.bio || undefined} ogType="profile">
   <section class="faculty-top" aria-labelledby="faculty-name">
     <div class="faculty-hero wrap">
       <div class="faculty-hero__media">

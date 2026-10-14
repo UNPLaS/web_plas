@@ -8,20 +8,20 @@ export type CatalogSource = {
 };
 
 const sources = {
-  ieee: { id: 'ieee', label: 'IEEE', logo: '/images/catalog-sources/ieee.png' },
-  mdpi: { id: 'mdpi', label: 'MDPI', logo: '/images/catalog-sources/mdpi.png' },
+  ieee: { id: 'ieee', label: 'IEEE', logo: '/images/catalog-sources/ieee.webp' },
+  mdpi: { id: 'mdpi', label: 'MDPI', logo: '/images/catalog-sources/mdpi.webp' },
   springer: {
     id: 'springer',
     label: 'Springer',
-    logo: '/images/catalog-sources/springer.png',
+    logo: '/images/catalog-sources/springer.webp',
   },
   elsevier: {
     id: 'elsevier',
     label: 'Elsevier',
-    logo: '/images/catalog-sources/elsevier.png',
+    logo: '/images/catalog-sources/elsevier.webp',
   },
   acm: { id: 'acm', label: 'ACM', logo: '/images/catalog-sources/acm.svg' },
-  wiley: { id: 'wiley', label: 'Wiley', logo: '/images/catalog-sources/wiley.png' },
+  wiley: { id: 'wiley', label: 'Wiley', logo: '/images/catalog-sources/wiley.webp' },
   sage: { id: 'sage', label: 'SAGE', logo: '/images/catalog-sources/sage.svg' },
   frontiers: {
     id: 'frontiers',
@@ -29,7 +29,7 @@ const sources = {
     logo: '/images/catalog-sources/frontiers.svg',
   },
   peerj: { id: 'peerj', label: 'PeerJ', logo: '/images/catalog-sources/peerj.svg' },
-  iated: { id: 'iated', label: 'IATED', logo: '/images/catalog-sources/iated.png' },
+  iated: { id: 'iated', label: 'IATED', logo: '/images/catalog-sources/iated.webp' },
   scitepress: {
     id: 'scitepress',
     label: 'SCITEPRESS',
@@ -60,7 +60,7 @@ const sources = {
   'unal-repo': {
     id: 'unal-repo',
     label: 'Repositorio UNAL',
-    logo: '/images/catalog-sources/unal-repo.png',
+    logo: '/images/catalog-sources/unal-repo.webp',
   },
   univalle: {
     id: 'univalle',

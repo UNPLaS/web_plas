@@ -1,4 +1,5 @@
 ---
+import { Font } from 'astro:assets';
 import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
 import '../styles/unal-chrome.css';
@@ -19,13 +20,34 @@ interface Props {
   spine?: boolean;
   /** Slug de línea: reemplaza la familia mid del sitio por la de esa línea (ver global.css). */
   lineTheme?: string;
+  /** Vista previa en redes: `article` para entradas del blog y proyectos. */
+  ogType?: 'website' | 'article' | 'profile';
+  /** Páginas que no deben aparecer en buscadores (p. ej. 404). */
+  noindex?: boolean;
 }
 
-const { title, description = site.tagline, spine = false, lineTheme } = Astro.props;
-const isHome = stripBase(Astro.url.pathname) === '/';
+const {
+  title,
+  description = site.tagline,
+  spine = false,
+  lineTheme,
+  ogType = 'website',
+  noindex = false,
+} = Astro.props;
+function clip(text: string, max = 180) {
+  const plain = text.replace(/[*_`#>\[\]]/g, '').replace(/\s+/g, ' ').trim();
+  if (plain.length <= max) return plain;
+  return `${plain.slice(0, plain.lastIndexOf(' ', max - 1)).replace(/[,;:.]$/, '')}…`;
+}
+const metaDescription = clip(description);
+const path = stripBase(Astro.url.pathname);
+const isHome = path === '/';
 const pageTitle = title.includes('Universidad Nacional')
   ? title
   : `${title} | Universidad Nacional de Colombia`;
+/** El sitio oficial es plas.unal.edu.co; la copia en GitHub Pages apunta ahí como canónica. */
+const canonical = new URL(path === '/' ? '/' : `${path}/`, 'https://plas.unal.edu.co').href;
+const ogImage = new URL(withBase('/images/og/plas.jpg'), Astro.site).href;
 const favicon = withBase('/favicon.ico');
 const escudoPreload = withBase('/unal/images/escudoUnal.svg');
 const sealPreload = withBase('/unal/images/sealColombia.png');
@@ -40,14 +62,29 @@ const unalChromeJs = withBase('/unal/js/unal-chrome.js');
     <link rel="icon" href={favicon} type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
+    <meta name="description" content={metaDescription} />
     <title>{pageTitle}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Onest:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,500&display=swap"
-      rel="stylesheet"
-    />
+    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
+    <link rel="sitemap" href={withBase('/sitemap-index.xml')} />
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={`${site.name} — Universidad Nacional de Colombia`} />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${site.name} — ${site.nameFull}`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <Font cssVariable="--font-source-sans" />
+    <Font cssVariable="--font-onest" />
+    <Font cssVariable="--font-source-serif" />
     <link rel="preload" href={escudoPreload} as="image" type="image/svg+xml" />
     <link rel="preload" href={sealPreload} as="image" type="image/png" />
     <ClientRouter />
