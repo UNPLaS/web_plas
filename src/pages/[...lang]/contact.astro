@@ -1,14 +1,21 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { contactFields, contactForm, contactIntro, contactLinks, group } from '../data/site';
+import Layout from '../../layouts/Layout.astro';
+import { getContent } from '../../data/site';
+import { langFromParam, langPaths, t } from '../../i18n';
+
+export const getStaticPaths = () => langPaths();
+
+const lang = langFromParam(Astro.params.lang);
+const tr = t(lang).contact;
+const { contactFields, contactForm, contactLinks, group } = getContent(lang);
 ---
 
-<Layout title="Contacto" description={contactIntro.lede}>
+<Layout title={tr.eyebrow} description={tr.lede}>
   <section class="page-section wrap" aria-labelledby="contact-heading">
     <header class="page-head page-head--door">
-      <p class="page-head__eyebrow">Contacto</p>
-      <h1 id="contact-heading" class="page-head__title">{contactIntro.title}</h1>
-      <p class="page-head__lede">{contactIntro.lede}</p>
+      <p class="page-head__eyebrow">{tr.eyebrow}</p>
+      <h1 id="contact-heading" class="page-head__title">{tr.title}</h1>
+      <p class="page-head__lede">{tr.lede}</p>
     </header>
   </section>
 
@@ -17,7 +24,7 @@ import { contactFields, contactForm, contactIntro, contactLinks, group } from '.
     <div class="section-bleed__inner wrap">
       <div class:list={['contact-layout', contactForm && 'contact-layout--form']}>
         <div class="contact-layout__info">
-          <h2 id="contact-details-heading" class="contact-panel__title">Datos del grupo</h2>
+          <h2 id="contact-details-heading" class="contact-panel__title">{tr.details}</h2>
           <ul class="contact-list">
             {
               contactFields.map((field) => (
@@ -36,7 +43,7 @@ import { contactFields, contactForm, contactIntro, contactLinks, group } from '.
             {
               contactLinks.length > 0 && (
                 <li class="contact-item">
-                  <p class="contact-item__label">Enlaces</p>
+                  <p class="contact-item__label">{tr.links}</p>
                   <ul class="contact-links">
                     {contactLinks.map((link) => (
                       <li>
@@ -52,33 +59,31 @@ import { contactFields, contactForm, contactIntro, contactLinks, group } from '.
           </ul>
           <p class="contact-panel__note">
             {
-              contactForm
-                ? 'Para propuestas de tesis o colaboración, usa el formulario o escríbenos al correo.'
-                : 'Preferimos correo para propuestas de tesis o colaboración.'
+              contactForm ? tr.noteForm : tr.noteEmail
             }{' '}
-            Incluye contexto, plazos y qué esperas del grupo.
+            {tr.noteTail}
           </p>
         </div>
 
         {
           contactForm && (
             <div id="formulario" class="contact-layout__form contact-form">
-              <h2 class="contact-panel__title">Envíanos tu solicitud</h2>
+              <h2 class="contact-panel__title">{tr.formTitle}</h2>
               <div class="contact-form__frame">
                 <iframe
-                  title="Formulario de contacto del grupo PLaS"
+                  title={tr.formFrameTitle}
                   src={contactForm.embed}
                   loading="lazy"
                 >
-                  Cargando…
+                  {tr.loading}
                 </iframe>
               </div>
               <p class="contact-form__fallback">
-                ¿No carga el formulario?{' '}
+                {tr.formFallback}{' '}
                 <a href={contactForm.href} target="_blank" rel="noreferrer">
-                  Ábrelo en una pestaña nueva
+                  {tr.formFallbackLink}
                 </a>{' '}
-                o escríbenos a <a href={`mailto:${group.email}`}>{group.email}</a>.
+                {tr.formFallbackOr} <a href={`mailto:${group.email}`}>{group.email}</a>.
               </p>
             </div>
           )
@@ -87,10 +92,10 @@ import { contactFields, contactForm, contactIntro, contactLinks, group } from '.
         {
           group.map_embed_url && (
             <div class="contact-layout__map">
-              <h2 class="contact-panel__title">Ubicación</h2>
+              <h2 class="contact-panel__title">{tr.location}</h2>
               <div class="contact-map">
                 <iframe
-                  title="Mapa — Aulas de Ingeniería, Universidad Nacional de Colombia"
+                  title={tr.mapTitle}
                   src={group.map_embed_url}
                   loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"
@@ -98,7 +103,7 @@ import { contactFields, contactForm, contactIntro, contactLinks, group } from '.
                 />
               </div>
               <p class="contact-map__caption">
-                Edificio Aulas de Ingeniería, campus Bogotá — Universidad Nacional de Colombia.
+                {tr.mapCaption}
               </p>
             </div>
           )

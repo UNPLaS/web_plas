@@ -1,9 +1,15 @@
 ---
-import { nav } from '../../data/site';
+import { getNav } from '../../data/site';
 import { isActivePath, withBase } from '../../lib/with-base';
+import { localePath, otherLang, splitLocale, t } from '../../i18n';
 
 const pathname = Astro.url.pathname;
-const homeHref = withBase('/');
+const { lang, path } = splitLocale(pathname);
+const alt = otherLang(lang);
+const dict = t(lang);
+const tr = dict.unal;
+const nav = getNav(lang);
+const homeHref = localePath(lang, '/');
 
 const sedes = [
   { label: 'Amazonia', href: 'http://amazonia.unal.edu.co' },
@@ -18,51 +24,51 @@ const sedes = [
 ];
 
 const profiles = [
-  { label: 'Aspirantes', href: 'http://aspirantes.unal.edu.co', className: 'item-aspirantes' },
-  { label: 'Estudiantes', href: 'http://estudiantes.unal.edu.co', className: 'item-estudiantes' },
-  { label: 'Egresados', href: 'http://egresados.unal.edu.co', className: 'item-egresados' },
-  { label: 'Docentes', href: 'http://docentes.unal.edu.co', className: 'item-docentes' },
-  { label: 'Administrativos', href: 'http://administrativos.unal.edu.co', className: 'item-administrativos' },
+  { label: tr.profileLinks.aspirantes, href: 'http://aspirantes.unal.edu.co', className: 'item-aspirantes' },
+  { label: tr.profileLinks.estudiantes, href: 'http://estudiantes.unal.edu.co', className: 'item-estudiantes' },
+  { label: tr.profileLinks.egresados, href: 'http://egresados.unal.edu.co', className: 'item-egresados' },
+  { label: tr.profileLinks.docentes, href: 'http://docentes.unal.edu.co', className: 'item-docentes' },
+  { label: tr.profileLinks.administrativos, href: 'http://administrativos.unal.edu.co', className: 'item-administrativos' },
 ];
 
 const services = [
   {
-    label: 'Correo Electrónico',
+    label: tr.serviceLinks.email,
     href: 'https://smartkey.xertica.com/cloudkey/a/unal.edu.co/user/login',
     icon: withBase('/unal/images/icnServEmail.png'),
   },
   {
-    label: 'DNINFOA - SIA',
+    label: tr.serviceLinks.sia,
     href: 'https://dninfoa.unal.edu.co',
     icon: withBase('/unal/images/icnServSia.png'),
   },
   {
-    label: 'Bibliotecas',
+    label: tr.serviceLinks.library,
     href: 'http://bibliotecas.unal.edu.co',
     icon: withBase('/unal/images/icnServLibrary.png'),
   },
   {
-    label: 'Convocatorias',
+    label: tr.serviceLinks.calls,
     href: 'http://personal.unal.edu.co',
     icon: withBase('/unal/images/icnServCall.png'),
   },
   {
-    label: 'Identidad UNAL',
+    label: tr.serviceLinks.identity,
     href: 'http://identidad.unal.edu.co',
     icon: withBase('/unal/images/icnServIdentidad.png'),
   },
 ];
 ---
 
-<header id="unal-header" data-unal-chrome="header" transition:persist="unal-header">
+<header id="unal-header" data-unal-chrome="header" transition:persist={`unal-header-${lang}`}>
   <div class="unal-logo">
-    <a href="https://unal.edu.co" title="Universidad Nacional de Colombia">
+    <a href="https://unal.edu.co" title={dict.university}>
       <img
         class="unal-logo__img"
         src={withBase('/unal/images/escudoUnal.svg')}
         width="180"
         height="110"
-        alt="Escudo de la Universidad Nacional de Colombia"
+        alt={tr.shieldAlt}
         decoding="sync"
         fetchpriority="high"
       />
@@ -74,7 +80,7 @@ const services = [
       src={withBase('/unal/images/sealColombia.png')}
       width="66"
       height="66"
-      alt="Escudo de la República de Colombia"
+      alt={tr.sealAlt}
       decoding="sync"
       fetchpriority="high"
     />
@@ -86,12 +92,12 @@ const services = [
     id="unal-access-toggle-mobile"
     aria-expanded="false"
     aria-controls="unal-access-panel"
-    title="Panel de accesibilidad"
-    aria-label="Abrir panel de accesibilidad"
+    title={tr.accessTitle}
+    aria-label={tr.accessOpen}
   ></button>
 
   <div class="unal-first-menu">
-    <ul class="unal-profiles" aria-label="Perfiles">
+    <ul class="unal-profiles" aria-label={tr.profilesLabel}>
       {
         profiles.map((p) => (
           <li class={p.className}>
@@ -100,7 +106,7 @@ const services = [
         ))
       }
     </ul>
-    <ul class="unal-social" aria-label="Redes sociales">
+    <ul class="unal-social" aria-label={tr.socialLabel}>
       <li>
         <a
           class="facebook"
@@ -129,11 +135,20 @@ const services = [
       id="unal-burger"
       aria-expanded="false"
       aria-controls="unal-main-nav"
-      aria-label="Abrir menú"
+      aria-label={tr.menuOpen}
     >
       <span class="unal-burger__icon" aria-hidden="true"></span>
     </button>
-    <button type="button" class="unal-lang" aria-label="Idioma">ES</button>
+    <a
+      class="unal-lang"
+      href={localePath(alt, path)}
+      hreflang={alt}
+      lang={alt}
+      title={dict.common.langSwitchLabel}
+      data-lang-switch={alt}
+    >
+      {alt.toUpperCase()}
+    </a>
   </div>
 
   <div class="unal-nav-row">
@@ -149,17 +164,17 @@ const services = [
         action="https://unal.edu.co/resultados-de-la-busqueda/"
         role="search"
       >
-        <label class="sr-only" for="unal-search-q">Buscar en la Universidad</label>
+        <label class="sr-only" for="unal-search-q">{tr.searchLabel}</label>
         <div class="unal-search-input-wrap">
           <input
             id="unal-search-q"
             type="search"
             name="q"
-            placeholder="Buscar en la Universidad"
+            placeholder={tr.searchLabel}
             autocomplete="off"
           />
         </div>
-        <button type="submit" aria-label="Buscar">
+        <button type="submit" aria-label={tr.search}>
           <svg width="16" height="16" viewBox="0 0 13 13" aria-hidden="true">
             <path
               d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"
@@ -169,7 +184,7 @@ const services = [
       </form>
     </div>
 
-    <nav id="unal-main-nav" class="unal-main-nav" aria-label="Navegación del sitio">
+    <nav id="unal-main-nav" class="unal-main-nav" aria-label={tr.navLabel}>
       <ul class="unal-main-links">
         {
           nav.map((item) => {
@@ -187,7 +202,7 @@ const services = [
 
       <ul class="unal-side-links">
         <li class="unal-dropdown" data-unal-dropdown>
-          <button type="button" class="unal-dropdown__btn" aria-expanded="false">Sedes</button>
+          <button type="button" class="unal-dropdown__btn" aria-expanded="false">{tr.campuses}</button>
           <ul class="unal-dropdown__menu">
             {
               sedes.map((s) => (
@@ -200,7 +215,7 @@ const services = [
         </li>
 
         <li class="unal-dropdown unal-mobile-extra" data-unal-dropdown>
-          <button type="button" class="unal-dropdown__btn" aria-expanded="false">Perfiles</button>
+          <button type="button" class="unal-dropdown__btn" aria-expanded="false">{tr.profiles}</button>
           <ul class="unal-dropdown__menu">
             {
               profiles.map((p) => (
@@ -213,7 +228,7 @@ const services = [
         </li>
 
         <li class="unal-dropdown unal-mobile-extra" data-unal-dropdown>
-          <button type="button" class="unal-dropdown__btn" aria-expanded="false">Servicios</button>
+          <button type="button" class="unal-dropdown__btn" aria-expanded="false">{tr.services}</button>
           <ul class="unal-dropdown__menu">
             {
               services.map((s) => (

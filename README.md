@@ -37,6 +37,7 @@ Investigamos cómo se enseñan, construyen y confían los lenguajes y los sistem
 | `/resources` | Recursos descargables |
 | `/people` | Docentes y trayectoria de estudiantes |
 | `/contact` | Contacto |
+| `/en/…` | Las mismas páginas en inglés |
 
 Datos públicos aproximados (export actual): 5 líneas, 13 proyectos, 4 docentes, 55 estudiantes, 94 publicaciones de catálogo, 54 tesis, 15 recursos.
 
@@ -78,6 +79,15 @@ npm run harvest:theses         # Repositorio UNAL → src/data/{theses,students}
 ```
 
 Detalle: [`scripts/README.md`](scripts/README.md).
+
+## Idiomas (español / inglés)
+
+Cada página existe en español en la raíz (`/lines`) y en inglés bajo `/en` (`/en/lines`). Las páginas viven en `src/pages/[...lang]/`; solo `404.astro` y `robots.txt.ts` quedan fuera.
+
+- **Textos de la interfaz:** `src/i18n/es.ts` y `src/i18n/en.ts`. `en.ts` está tipado contra `es.ts`, así que una clave faltante es un error de `npm run check`.
+- **Contenido:** los JSON de `src/data/` son la fuente en español; `src/data/en/*.json` guarda solo los campos traducidos, por `id` del registro (`lines`, `faculty`, `projects`, `blog`) o por línea y nodo (`line-topic-graphs`). Lo que no esté traducido se muestra en español y se marca con `lang="es"`. Títulos y resúmenes de publicaciones y tesis se quedan en su idioma original.
+- **Ejemplo:** para traducir un proyecto, agregar a `src/data/en/projects.json` `{ "<id del proyecto>": { "title_short": "…", "summary": "…", "content": "…" } }`.
+- **Primera visita:** si el navegador no prefiere español, se redirige a `/en/…` (los bots no). El selector ES/EN del encabezado guarda la elección y desactiva la redirección.
 
 ## Imágenes
 

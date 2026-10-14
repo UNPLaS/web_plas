@@ -1,18 +1,25 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import TopicGraph from '../../components/TopicGraph.astro';
-import { lineDetails } from '../../data/site';
+import Layout from '../../../layouts/Layout.astro';
+import TopicGraph from '../../../components/TopicGraph.astro';
+import { getContent } from '../../../data/site';
+import { langFromParam, langPaths, t } from '../../../i18n';
 
 export function getStaticPaths() {
-  return lineDetails.map((line) => ({ params: { slug: line.slug }, props: { line } }));
+  return langPaths().flatMap(({ params }) =>
+    getContent(langFromParam(params.lang)).lineDetails.map((line) => ({
+      params: { ...params, slug: line.slug },
+      props: { line },
+    })),
+  );
 }
 
+const lang = langFromParam(Astro.params.lang);
+const tr = t(lang).line;
 const { line } = Astro.props;
 /** Lenguajes usa la familia mid por defecto del sitio; las demás, su propia versión. */
 const lineTheme = line.slug === 'lenguajes' ? undefined : line.slug;
 const external = (href: string) =>
   /^https?:\/\//i.test(href) ? { target: '_blank', rel: 'noreferrer' } : {};
-const worksLabel = (n: number) => (n === 1 ? '1 trabajo' : `${n} trabajos`);
 ---
 
 <Layout title={line.title} description={line.summary} lineTheme={lineTheme}>
@@ -30,7 +37,7 @@ const worksLabel = (n: number) => (n === 1 ? '1 trabajo' : `${n} trabajos`);
         />
         {line.imageCredit && (
           <figcaption class="line-banner__credit">
-            Imagen:{' '}
+            {t(lang).common.imageCredit}{' '}
             {line.imageSource ? (
               <a href={line.imageSource} target="_blank" rel="noreferrer">
                 {line.imageCredit}
@@ -46,7 +53,7 @@ const worksLabel = (n: number) => (n === 1 ? '1 trabajo' : `${n} trabajos`);
 
   <section class="page-section page-section--tight wrap" aria-labelledby="line-title">
     <header class="page-head">
-      <p class="page-head__eyebrow">Línea de investigación</p>
+      <p class="page-head__eyebrow">{tr.eyebrow}</p>
       <h1 id="line-title" class="page-head__title">{line.title}</h1>
       <p class="page-head__lede">{line.summary}</p>
     </header>
@@ -56,13 +63,18 @@ const worksLabel = (n: number) => (n === 1 ? '1 trabajo' : `${n} trabajos`);
     </div>
     {
       line.topicGraph && (
-        <TopicGraph nodes={line.topicGraph.nodes} edges={line.topicGraph.edges} color="var(--mid)" />
+        <TopicGraph
+          nodes={line.topicGraph.nodes}
+          edges={line.topicGraph.edges}
+          color="var(--mid)"
+          title={t(lang).common.topicMap}
+        />
       )
     }
   </section>
 
   <section class="line-detail wrap" aria-labelledby="topics-heading">
-    <h2 id="topics-heading" class="people-section__title line-detail__heading">Temas</h2>
+    <h2 id="topics-heading" class="people-section__title line-detail__heading">{tr.topics}</h2>
     <div class="topic-list">
       {
         line.topics.map((topic) => (
@@ -70,7 +82,7 @@ const worksLabel = (n: number) => (n === 1 ? '1 trabajo' : `${n} trabajos`);
             <summary class="topic-item__summary">
               <span class="topic-item__name">{topic.name}</span>
               <span class="topic-item__count">
-                {topic.total ? worksLabel(topic.total) : 'Sin trabajos registrados'}
+                {topic.total ? tr.worksCount(topic.total) : tr.noWorks}
               </span>
             </summary>
             <div class="topic-item__body">
@@ -80,7 +92,7 @@ const worksLabel = (n: number) => (n === 1 ? '1 trabajo' : `${n} trabajos`);
                   <div class="topic-item__block topic-item__people">
                     {topic.faculty.length > 0 && (
                       <div>
-                        <h3 class="topic-item__label">Docentes</h3>
+                        <h3 class="topic-item__label">{tr.faculty}</h3>
                         <ul class="topic-people">
                           {topic.faculty.map((person) => (
                             <li>
@@ -91,7 +103,7 @@ const worksLabel = (n: number) => (n === 1 ? '1 trabajo' : `${n} trabajos`);
                                 <span class="topic-people__text">
                                   <span>{person.name}</span>
                                   {person.contact && (
-                                    <span class="topic-people__meta">Responsable del tema</span>
+                                    <span class="topic-people__meta">{tr.topicContact}</span>
                                   )}
                                 </span>
                               </a>
@@ -102,7 +114,7 @@ const worksLabel = (n: number) => (n === 1 ? '1 trabajo' : `${n} trabajos`);
                     )}
                     {topic.students.length > 0 && (
                       <div>
-                        <h3 class="topic-item__label">Estudiantes activos</h3>
+                        <h3 class="topic-item__label">{tr.activeStudents}</h3>
                         <ul class="topic-people">
                           {topic.students.map((person) => (
                             <li>
@@ -125,8 +137,8 @@ const worksLabel = (n: number) => (n === 1 ? '1 trabajo' : `${n} trabajos`);
                 <div class="topic-item__block">
                   <h3 class="topic-item__label">
                     {topic.recentWorks.length > 0 || topic.historicalWorks.length === 0
-                      ? 'Trabajos recientes'
-                      : 'Trabajos históricos'}
+                      ? tr.recentWorks
+                      : tr.historicalWorks}
                   </h3>
                   {topic.recentWorks.length + topic.historicalWorks.length > 0 ? (
                     <ul class="topic-works">
@@ -144,7 +156,7 @@ const worksLabel = (n: number) => (n === 1 ? '1 trabajo' : `${n} trabajos`);
                       ))}
                     </ul>
                   ) : (
-                    <p class="topic-item__empty">Aún no hay trabajos registrados en este tema.</p>
+                    <p class="topic-item__empty">{tr.emptyTopic}</p>
                   )}
                 </div>
               </div>
@@ -159,7 +171,7 @@ const worksLabel = (n: number) => (n === 1 ? '1 trabajo' : `${n} trabajos`);
     line.timeline.length > 0 && (
       <section class="line-detail wrap" aria-labelledby="timeline-heading">
         <h2 id="timeline-heading" class="people-section__title line-detail__heading">
-          Trayectoria
+          {tr.timeline}
         </h2>
         <ol class="line-timeline">
           {line.timeline.map((entry) => (

@@ -1,14 +1,17 @@
 ---
-import { withBase } from '../lib/with-base';
-
 import TypeChip from './TypeChip.astro';
-import { featuredProjects } from '../data/site';
+import { getContent } from '../data/site';
+import { langOf, localePath, t } from '../i18n';
+
+const lang = langOf(Astro.url);
+const tr = t(lang).carousel;
+const { featuredProjects } = getContent(lang);
 ---
 
 <section class="projects-section wrap" aria-labelledby="projects-heading">
   <div class="projects-section__head">
-    <h2 id="projects-heading" class="projects-section__title">Proyectos destacados</h2>
-    <a class="btn btn--soft" href={withBase("/projects")}>Proyectos</a>
+    <h2 id="projects-heading" class="projects-section__title">{tr.title}</h2>
+    <a class="btn btn--soft" href={localePath(lang, '/projects')}>{tr.button}</a>
   </div>
 
   <div class="carousel" data-carousel data-interval="5000">
@@ -17,7 +20,7 @@ import { featuredProjects } from '../data/site';
         type="button"
         class="carousel__nav carousel__nav--prev"
         data-carousel-prev
-        aria-label="Proyecto anterior"
+        aria-label={tr.prev}
       >
         <span aria-hidden="true">‹</span>
       </button>
@@ -27,7 +30,7 @@ import { featuredProjects } from '../data/site';
           {
             featuredProjects.map((project) => (
               <li class="carousel__slide">
-                <a class="project-slide" href={project.href}>
+                <a class="project-slide" href={project.href} lang={project.contentLang !== lang ? project.contentLang : undefined}>
                   <div class="project-slide__media">
                     {project.image ? <img src={project.image} alt="" loading="lazy" /> : null}
                   </div>
@@ -53,20 +56,20 @@ import { featuredProjects } from '../data/site';
         type="button"
         class="carousel__nav carousel__nav--next"
         data-carousel-next
-        aria-label="Proyecto siguiente"
+        aria-label={tr.next}
       >
         <span aria-hidden="true">›</span>
       </button>
     </div>
 
-    <div class="carousel__dots" role="tablist" aria-label="Proyectos">
+    <div class="carousel__dots" role="tablist" aria-label={tr.dots}>
       {
         featuredProjects.map((_, i) => (
           <button
             type="button"
             class="carousel__dot"
             role="tab"
-            aria-label={`Ir al proyecto ${i + 1}`}
+            aria-label={tr.goTo(i + 1)}
             aria-selected={i === 0 ? 'true' : 'false'}
             data-carousel-dot={i}
           />

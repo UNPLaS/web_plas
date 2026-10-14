@@ -67,7 +67,12 @@ function fontsourceVariants(pkg, file, weight, styles) {
 export default defineConfig({
   site,
   base,
-  integrations: [sitemap({ filter: (page) => !/\/404\/?$/.test(page) })],
+  integrations: [
+    sitemap({
+      filter: (page) => !/\/404\/?$/.test(page),
+      i18n: { defaultLocale: 'es', locales: { es: 'es', en: 'en' } },
+    }),
+  ],
   fonts: [
     {
       provider: fontProviders.local(),

@@ -1,29 +1,27 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import TypeChip from '../components/TypeChip.astro';
-import StudentCard from '../components/StudentCard.astro';
-import {
-  people,
-  activeStudentSections,
-  historicalStudentSections,
-  researchLines,
-} from '../data/site';
+import Layout from '../../layouts/Layout.astro';
+import TypeChip from '../../components/TypeChip.astro';
+import StudentCard from '../../components/StudentCard.astro';
+import { getContent } from '../../data/site';
+import { langFromParam, langPaths, t } from '../../i18n';
+
+export const getStaticPaths = () => langPaths();
+
+const lang = langFromParam(Astro.params.lang);
+const tr = t(lang).people;
+const { people, activeStudentSections, historicalStudentSections, researchLines } =
+  getContent(lang);
 ---
 
-<Layout
-  title="Equipo"
-  description="Docentes, estudiantes de doctorado, maestría y pregrado, y egresados del grupo PLaS de la Universidad Nacional de Colombia."
->
+<Layout title={tr.title} description={t(lang).meta.people}>
   <section class="page-section wrap" aria-labelledby="people-heading">
     <header class="page-head">
-      <p class="page-head__eyebrow">Equipo</p>
-      <h1 id="people-heading" class="page-head__title">Equipo</h1>
-      <p class="page-head__lede">
-        Docentes e integrantes del grupo de investigación.
-      </p>
+      <p class="page-head__eyebrow">{tr.title}</p>
+      <h1 id="people-heading" class="page-head__title">{tr.title}</h1>
+      <p class="page-head__lede">{tr.lede}</p>
     </header>
 
-    <h2 class="people-section__title">Docentes</h2>
+    <h2 class="people-section__title">{tr.faculty}</h2>
     <ul class="faculty-list">
       {
         people.map((person) => (
@@ -39,7 +37,7 @@ import {
                 <h3 class="faculty-card__name">{person.name}</h3>
                 {person.meta ? <p class="faculty-card__meta">{person.meta}</p> : null}
                 {person.bio ? <p class="faculty-card__bio">{person.bio}</p> : null}
-                <span class="faculty-card__cta">Ver perfil, trabajos y estudiantes →</span>
+                <span class="faculty-card__cta">{tr.profileCta}</span>
               </div>
             </a>
           </li>
@@ -53,11 +51,11 @@ import {
     aria-labelledby="students-heading"
     data-student-filter-root
   >
-    <h2 id="students-heading" class="people-section__title">Estudiantes</h2>
+    <h2 id="students-heading" class="people-section__title">{tr.students}</h2>
 
-    <div class="student-filters" role="group" aria-label="Filtrar estudiantes por línea">
+    <div class="student-filters" role="group" aria-label={tr.filterLabel}>
       <button type="button" class="student-filter" data-student-filter="all" aria-pressed="true">
-        Todos
+        {tr.all}
       </button>
       {
         researchLines.map((line) => (
@@ -75,7 +73,7 @@ import {
     </div>
 
     <div class="students-block">
-      <h3 class="people-section__subtitle">Activos</h3>
+      <h3 class="people-section__subtitle">{tr.active}</h3>
       {
         activeStudentSections.length > 0 ? (
           <>
@@ -92,17 +90,17 @@ import {
               </div>
             ))}
             <p class="students-empty" data-students-empty hidden>
-              No hay estudiantes activos en esta línea.
+              {tr.noActiveInLine}
             </p>
           </>
         ) : (
-          <p class="students-empty">Pendiente el registro de estudiantes activos.</p>
+          <p class="students-empty">{tr.noActive}</p>
         )
       }
     </div>
 
     <div class="students-block">
-      <h3 class="people-section__subtitle">Histórico</h3>
+      <h3 class="people-section__subtitle">{tr.historical}</h3>
       {
         historicalStudentSections.map((sec) => (
           <div class="students-degree">
@@ -118,7 +116,7 @@ import {
         ))
       }
       <p class="students-empty" data-students-empty hidden>
-        No hay egresados en esta línea.
+        {tr.noGraduatesInLine}
       </p>
     </div>
   </section>

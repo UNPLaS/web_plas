@@ -1,5 +1,6 @@
 ---
 import TypeChip from './TypeChip.astro';
+import { langOf, t } from '../i18n';
 
 interface Chip {
   id: string;
@@ -36,6 +37,8 @@ interface Props {
 }
 
 const { student } = Astro.props;
+const lang = langOf(Astro.url);
+const tr = t(lang).student;
 const nivelChip = student.chips.find((chip) => chip.id === 'nivel');
 const dialogId = student.dialogId;
 const titleId = `${dialogId}-title`;
@@ -43,8 +46,8 @@ const external = (href: string) =>
   /^https?:\/\//i.test(href) ? { target: '_blank', rel: 'noreferrer' } : {};
 const advising = student.work
   ? [
-      { label: 'Dirección', people: student.work.directors },
-      { label: 'Codirección', people: student.work.codirectors },
+      { label: tr.direction, people: student.work.directors },
+      { label: tr.codirection, people: student.work.codirectors },
     ].filter((row) => row.people.length > 0)
   : [];
 ---
@@ -72,7 +75,7 @@ const advising = student.work
         {student.lineChips.map((chip) => <TypeChip typology={chip} />)}
       </div>
       <form method="dialog" class="student-dialog__close-form">
-        <button type="submit" class="student-dialog__close" aria-label="Cerrar">×</button>
+        <button type="submit" class="student-dialog__close" aria-label={t(lang).common.close}>×</button>
       </form>
       <h3 id={titleId} class="student-dialog__name">{student.name}</h3>
     </header>
@@ -80,7 +83,7 @@ const advising = student.work
     {
       student.topics.length > 0 && (
         <section class="student-dialog__section">
-          <p class="student-dialog__label">Temas</p>
+          <p class="student-dialog__label">{tr.topics}</p>
           <ul class="student-dialog__topics">
             {student.topics.map((topic) => (
               <li>
@@ -132,7 +135,7 @@ const advising = student.work
           )}
         </section>
       ) : (
-        <p class="student-dialog__empty">Aún no hay descripción de su trabajo.</p>
+        <p class="student-dialog__empty">{tr.noWork}</p>
       )
     }
   </div>

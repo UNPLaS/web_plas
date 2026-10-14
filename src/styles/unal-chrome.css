@@ -218,6 +218,7 @@ body.unal-shell {
 }
 
 #unal-header .unal-lang {
+  display: inline-block;
   background-color: #666;
   border: none;
   color: var(--unal-blanco);
@@ -225,8 +226,13 @@ body.unal-shell {
   height: 30px;
   line-height: 30px;
   font-size: 14px;
-  cursor: default;
   box-sizing: border-box;
+  text-decoration: none;
+}
+
+#unal-header .unal-lang:hover,
+#unal-header .unal-lang:focus-visible {
+  background-color: #444;
 }
 
 #unal-header .unal-nav-row {

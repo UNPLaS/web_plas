@@ -1,45 +1,48 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import {
-  catalogFilterData,
-  catalogTypologies,
-  catalogYears,
-  researchLines,
-} from '../data/site';
+import Layout from '../../layouts/Layout.astro';
+import { getContent } from '../../data/site';
+import { langFromParam, langPaths, t } from '../../i18n';
 
+export const getStaticPaths = () => langPaths();
+
+const lang = langFromParam(Astro.params.lang);
+const tr = t(lang).catalog;
+const { catalogFilterData, catalogTypologies, catalogYears, researchLines } = getContent(lang);
 const catalogJson = JSON.stringify(catalogFilterData).replace(/</g, '\\u003c');
 ---
 
-<Layout
-  title="Catálogo"
-  description="Publicaciones, tesis y trabajos de grado del grupo PLaS, filtrables por tipo, línea de investigación y año."
->
+<Layout title={tr.title} description={t(lang).meta.catalog}>
   <section class="page-section wrap" aria-labelledby="catalog-heading">
     <header class="page-head">
-      <p class="page-head__eyebrow">Catálogo</p>
-      <h1 id="catalog-heading" class="page-head__title">Catálogo</h1>
-      <p class="page-head__lede">
-        Publicaciones y tesis del grupo ({catalogFilterData.length} registros). Filtra por
-        tipo, línea, año o búsqueda.
-      </p>
+      <p class="page-head__eyebrow">{tr.title}</p>
+      <h1 id="catalog-heading" class="page-head__title">{tr.title}</h1>
+      <p class="page-head__lede">{tr.lede(catalogFilterData.length)}</p>
     </header>
 
-    <form class="catalog-filters" role="search" onsubmit="return false">
+    <form
+      class="catalog-filters"
+      role="search"
+      onsubmit="return false"
+      data-msg-none={tr.noResults}
+      data-msg-empty={tr.emptyHint}
+      data-msg-one={tr.results(1)}
+      data-msg-many={tr.results(0).replace('0', '{n}')}
+    >
       <label class="catalog-filters__search">
-        <span>Buscar</span>
+        <span>{tr.search}</span>
         <input
           id="catalog-q"
           type="search"
           name="q"
-          placeholder="Título, autores, venue…"
+          placeholder={tr.searchPlaceholder}
           autocomplete="off"
         />
       </label>
 
       <label class="catalog-filters__field">
-        <span>Tipo</span>
+        <span>{tr.type}</span>
         <select id="catalog-typology">
-          <option value="all">Todos</option>
+          <option value="all">{tr.all}</option>
           {
             catalogTypologies.map(([value, label]) => (
               <option value={value}>{label}</option>
@@ -49,24 +52,24 @@ const catalogJson = JSON.stringify(catalogFilterData).replace(/</g, '\\u003c');
       </label>
 
       <label class="catalog-filters__field">
-        <span>Línea</span>
+        <span>{tr.line}</span>
         <select id="catalog-line">
-          <option value="all">Todas</option>
+          <option value="all">{tr.allFem}</option>
           {researchLines.map((line) => <option value={line.id}>{line.title}</option>)}
         </select>
       </label>
 
       <label class="catalog-filters__field catalog-filters__field--year">
-        <span>Año</span>
+        <span>{tr.year}</span>
         <select id="catalog-year">
-          <option value="all">Todos</option>
+          <option value="all">{tr.all}</option>
           {catalogYears.map((year) => <option value={year}>{year}</option>)}
         </select>
       </label>
 
       <div class="catalog-filters__clear">
         <button type="button" id="catalog-clear" class="btn btn--ghost">
-          Limpiar filtros
+          {tr.clear}
         </button>
       </div>
     </form>

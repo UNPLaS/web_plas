@@ -1,53 +1,54 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import {
-  aboutAnchors,
-  aboutIntro,
-  aboutNucleos,
-  aboutPurpose,
-  aboutSignals,
-} from '../data/about';
+import Layout from '../../layouts/Layout.astro';
+import { getAbout } from '../../data/about';
+import { langFromParam, langPaths, t } from '../../i18n';
+
+export const getStaticPaths = () => langPaths();
+
+const lang = langFromParam(Astro.params.lang);
+const tr = t(lang).about;
+const { intro, purpose, nucleos, anchors, signals } = getAbout(lang);
 ---
 
-<Layout title="Sobre PLaS" description={aboutIntro.lead}>
+<Layout title={tr.title} description={intro.lead}>
   <section class="page-section wrap" aria-labelledby="about-heading">
     <header class="page-head">
-      <p class="page-head__eyebrow">{aboutIntro.eyebrow}</p>
-      <h1 id="about-heading" class="page-head__title">{aboutIntro.title}</h1>
-      <p class="page-head__lede">{aboutIntro.lead}</p>
-      <ul class="about-meta" aria-label="Ficha del grupo">
+      <p class="page-head__eyebrow">{intro.eyebrow}</p>
+      <h1 id="about-heading" class="page-head__title">{intro.title}</h1>
+      <p class="page-head__lede">{intro.lead}</p>
+      <ul class="about-meta" aria-label={tr.factsLabel}>
         {
-          aboutIntro.meta.map((item) => (
+          intro.meta.map((item) => (
             <li class="about-meta__item">{item}</li>
           ))
         }
       </ul>
       <p class="about-signals">
-        <a class="about-signals__link" href={aboutSignals.gruplac} target="_blank" rel="noreferrer">
+        <a class="about-signals__link" href={signals.gruplac} target="_blank" rel="noreferrer">
           GrupLAC
         </a>
         <span aria-hidden="true">·</span>
-        <a class="about-signals__link" href={aboutSignals.hermes} target="_blank" rel="noreferrer">
+        <a class="about-signals__link" href={signals.hermes} target="_blank" rel="noreferrer">
           Hermes
         </a>
         <span aria-hidden="true">·</span>
         <span>
-          Minciencias {aboutSignals.classLabel} · conv. {aboutSignals.convocatoria}
+          Minciencias {signals.classLabel} · {tr.call} {signals.convocatoria}
         </span>
       </p>
     </header>
 
     <section
       class="about-block"
-      id={aboutPurpose.id}
+      id={purpose.id}
       aria-labelledby="proposito-heading"
     >
       <h2 id="proposito-heading" class="people-section__title about-block__title">
-        {aboutPurpose.title}
+        {purpose.title}
       </h2>
       <div class="line-block__panel about-block__panel">
         {
-          aboutPurpose.paragraphs.map((p) => (
+          purpose.paragraphs.map((p) => (
             <p class="line-block__text about-block__text">{p}</p>
           ))
         }
@@ -56,18 +57,18 @@ import {
 
     <section
       class="about-block about-nucleos"
-      id={aboutNucleos.id}
+      id={nucleos.id}
       aria-labelledby="nucleos-heading"
     >
       <header class="about-anchors__head">
         <h2 id="nucleos-heading" class="people-section__title about-block__title">
-          {aboutNucleos.title}
+          {nucleos.title}
         </h2>
-        <p class="about-anchors__lede">{aboutNucleos.lede}</p>
+        <p class="about-anchors__lede">{nucleos.lede}</p>
       </header>
       <ul class="about-nucleos__list">
         {
-          aboutNucleos.items.map((item) => (
+          nucleos.items.map((item) => (
             <li class="about-nucleo line-block__panel">
               <h3 class="about-nucleo__title">{item.title}</h3>
               <p class="about-nucleo__text">{item.text}</p>
@@ -80,13 +81,13 @@ import {
     <section class="about-anchors" aria-labelledby="anchors-heading">
       <header class="about-anchors__head">
         <h2 id="anchors-heading" class="people-section__title about-block__title">
-          {aboutAnchors.title}
+          {anchors.title}
         </h2>
-        <p class="about-anchors__lede">{aboutAnchors.lede}</p>
+        <p class="about-anchors__lede">{anchors.lede}</p>
       </header>
       <ul class="news-gallery about-anchors__gallery">
         {
-          aboutAnchors.items.map((item) => (
+          anchors.items.map((item) => (
             <li>
               <a class="news-card" href={item.href} title={item.label}>
                 <div class="news-card__media" aria-hidden="true">

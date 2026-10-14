@@ -227,7 +227,7 @@
       }
     ],
     "is_leader": false,
-    "group_role": "",
+    "group_role": "Colaborador ocasional",
     "bio": "Profesor titular del Departamento de Ingeniería de Sistemas e Industrial, donde dirige el Machine Learning, Perception and Discovery Lab (MindLab). Su investigación gira en torno a la inteligencia artificial, el aprendizaje computacional y la computación cuántica, con énfasis en el análisis automático de datos multimodales y, más recientemente, en algoritmos de aprendizaje computacional cuántico.",
     "education": [
       {
@@ -361,7 +361,7 @@
       }
     ],
     "is_leader": false,
-    "group_role": "",
+    "group_role": "Docente investigador",
     "bio": "Profesor asociado del Departamento de Ingeniería de Sistemas e Industrial. Trabaja en computación paralela, algoritmos evolutivos y sistemas operativos, y en el grupo acompaña las líneas de sistemas inteligentes de transporte, sensado inteligente y sistemas embebidos confiables.",
     "education": [
       {
@@ -467,7 +467,7 @@
       }
     ],
     "is_leader": false,
-    "group_role": "",
+    "group_role": "Docente investigador",
     "bio": "Profesor asociado del Departamento de Ingeniería Eléctrica y Electrónica. Su investigación se centra en la educación en ingeniería, en particular en la autorregulación del aprendizaje y la competencia de aprender a aprender, tema de su tesis doctoral.",
     "education": [
       {

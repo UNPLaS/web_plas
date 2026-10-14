@@ -1,5 +1,8 @@
 ---
-import { researchLines } from '../data/site';
+import { getContent } from '../data/site';
+import { langOf } from '../i18n';
+
+const { researchLines } = getContent(langOf(Astro.url));
 ---
 
 <ul class="lines-gallery">

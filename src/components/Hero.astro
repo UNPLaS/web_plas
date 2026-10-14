@@ -1,6 +1,7 @@
 ---
-import { group, site } from '../data/site';
+import { getContent } from '../data/site';
 import { withBase } from '../lib/with-base';
+import { langOf, localePath, t } from '../i18n';
 
 interface Props {
   ctaHref?: string;
@@ -10,31 +11,22 @@ interface Props {
   imageSrc?: string;
 }
 
+const lang = langOf(Astro.url);
+const tr = t(lang).hero;
+const { group, site } = getContent(lang);
+
 const {
-  ctaHref = withBase('/contact'),
-  ctaLabel = 'Escríbenos',
-  secondaryHref = withBase('/about'),
-  secondaryLabel = 'Conoce el grupo',
+  ctaHref = localePath(lang, '/contact'),
+  ctaLabel = tr.cta,
+  secondaryHref = localePath(lang, '/about'),
+  secondaryLabel = tr.secondary,
   imageSrc = withBase('/images/hero-plas-warm.webp'),
 } = Astro.props;
 
 function formatResultsDate(iso: string) {
   if (!iso || !/^\d{4}-\d{2}-\d{2}/.test(iso)) return iso;
   const [y, m, d] = iso.split('-');
-  const months = [
-    'ene.',
-    'feb.',
-    'mar.',
-    'abr.',
-    'may.',
-    'jun.',
-    'jul.',
-    'ago.',
-    'sep.',
-    'oct.',
-    'nov.',
-    'dic.',
-  ];
+  const months = tr.months;
   return `${String(Number(d))} ${months[Number(m) - 1] || ''} ${y}`;
 }
 
@@ -42,9 +34,9 @@ const resultsLabel = group.minciencias_results_published
   ? formatResultsDate(group.minciencias_results_published)
   : '';
 const mincienciasTitle = [
-  `Clasificación Minciencias ${group.minciencias_class}`,
-  group.minciencias_convocatoria ? `Conv. ${group.minciencias_convocatoria}` : '',
-  resultsLabel ? `Resultados ${resultsLabel}` : '',
+  `${tr.classification} ${group.minciencias_class}`,
+  group.minciencias_convocatoria ? `${tr.call} ${group.minciencias_convocatoria}` : '',
+  resultsLabel ? `${tr.results} ${resultsLabel}` : '',
 ]
   .filter(Boolean)
   .join(' · ');
@@ -64,7 +56,7 @@ const mincienciasTitle = [
 
   <div class="hero__body">
     <div class="hero__rail">
-      <p class="hero__eyebrow" data-hero-clear>Grupo de investigación</p>
+      <p class="hero__eyebrow" data-hero-clear>{tr.eyebrow}</p>
 
       <div class="hero__brand">
         <h1 class="hero__logo" data-hero-clear>

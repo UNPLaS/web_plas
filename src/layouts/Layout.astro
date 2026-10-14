@@ -10,8 +10,10 @@ import UnalFooter from '../components/unal/UnalFooter.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import Spine from '../components/Spine.astro';
 import FloatGraphs from '../components/FloatGraphs.astro';
-import { site } from '../data/site';
-import { stripBase, withBase } from '../lib/with-base';
+import { getContent } from '../data/site';
+import { withBase } from '../lib/with-base';
+import { LANGS, DEFAULT_LANG, localePath, otherLang, splitLocale, t, type Lang } from '../i18n';
+import { LANG_KEY } from '../scripts/lang-switch';
 
 interface Props {
   title: string;
@@ -25,6 +27,10 @@ interface Props {
   /** Páginas que no deben aparecer en buscadores (p. ej. 404). */
   noindex?: boolean;
 }
+
+const { lang, path } = splitLocale(Astro.url.pathname);
+const dict = t(lang);
+const { site } = getContent(lang);
 
 const {
   title,
@@ -40,13 +46,16 @@ function clip(text: string, max = 180) {
   return `${plain.slice(0, plain.lastIndexOf(' ', max - 1)).replace(/[,;:.]$/, '')}…`;
 }
 const metaDescription = clip(description);
-const path = stripBase(Astro.url.pathname);
 const isHome = path === '/';
-const pageTitle = title.includes('Universidad Nacional')
-  ? title
-  : `${title} | Universidad Nacional de Colombia`;
+const pageTitle = title.includes(dict.university) ? title : `${title} | ${dict.university}`;
 /** El sitio oficial es plas.unal.edu.co; la copia en GitHub Pages apunta ahí como canónica. */
-const canonical = new URL(path === '/' ? '/' : `${path}/`, 'https://plas.unal.edu.co').href;
+function canonicalFor(l: Lang) {
+  const p = l === DEFAULT_LANG ? path : `/${l}${path === '/' ? '' : path}`;
+  return new URL(p === '/' ? '/' : `${p}/`, 'https://plas.unal.edu.co').href;
+}
+const canonical = canonicalFor(lang);
+/** La misma página en el otro idioma (con la base del despliegue); la 404 cae al inicio. */
+const langAlt = localePath(otherLang(lang), noindex ? '/' : path);
 const ogImage = new URL(withBase('/images/og/plas.jpg'), Astro.site).href;
 const favicon = withBase('/favicon.ico');
 const escudoPreload = withBase('/unal/images/escudoUnal.svg');
@@ -55,9 +64,37 @@ const unalChromeJs = withBase('/unal/js/unal-chrome.js');
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang} data-lang-alt={langAlt}>
   <head>
     <meta charset="utf-8" />
+    {
+      !noindex && (
+        <script is:inline define:vars={{ LANG_KEY }}>
+          // Primera visita: idioma del navegador (es si es el primero entre es/en; si no, en).
+          try {
+            if (
+              !localStorage.getItem(LANG_KEY) &&
+              !/bot|crawl|spider|slurp|preview|lighthouse|headless/i.test(navigator.userAgent)
+            ) {
+              var root = document.documentElement;
+              var prefs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+              var pick = 'en';
+              for (var i = 0; i < prefs.length; i++) {
+                var code = String(prefs[i]).slice(0, 2).toLowerCase();
+                if (code === 'es' || code === 'en') {
+                  pick = code;
+                  break;
+                }
+              }
+              localStorage.setItem(LANG_KEY, pick);
+              if (pick !== root.lang && root.dataset.langAlt) {
+                location.replace(root.dataset.langAlt + location.search + location.hash);
+              }
+            }
+          } catch (e) {}
+        </script>
+      )
+    }
     <link rel="shortcut icon" href={favicon} type="image/x-icon" />
     <link rel="icon" href={favicon} type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
@@ -65,11 +102,18 @@ const unalChromeJs = withBase('/unal/js/unal-chrome.js');
     <meta name="description" content={metaDescription} />
     <title>{pageTitle}</title>
     {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
+    {!noindex && LANGS.map((l) => <link rel="alternate" hreflang={l} href={canonicalFor(l)} />)}
+    {!noindex && <link rel="alternate" hreflang="x-default" href={canonicalFor(DEFAULT_LANG)} />}
     <link rel="sitemap" href={withBase('/sitemap-index.xml')} />
 
     <meta property="og:type" content={ogType} />
-    <meta property="og:site_name" content={`${site.name} — Universidad Nacional de Colombia`} />
-    <meta property="og:locale" content="es_CO" />
+    <meta property="og:site_name" content={`${site.name} — ${dict.university}`} />
+    <meta property="og:locale" content={dict.ogLocale} />
+    {
+      !noindex && (
+        <meta property="og:locale:alternate" content={t(otherLang(lang)).ogLocale} />
+      )
+    }
     <meta property="og:title" content={title} />
     <meta property="og:description" content={metaDescription} />
     <meta property="og:url" content={canonical} />
@@ -129,6 +173,7 @@ const unalChromeJs = withBase('/unal/js/unal-chrome.js');
       import { initFacultyTabs } from '../scripts/faculty-tabs';
       import { isActivePath } from '../lib/with-base';
       import { pickHomeQuote } from '../scripts/home-quote';
+      import { initLangSwitch } from '../scripts/lang-switch';
 
       function syncPersistedNav() {
         const path = window.location.pathname;
@@ -145,6 +190,7 @@ const unalChromeJs = withBase('/unal/js/unal-chrome.js');
 
       document.addEventListener('astro:page-load', () => {
         syncPersistedNav();
+        initLangSwitch();
         startTouchHover();
         markExternalLinks();
         initTopicGraphMotion();

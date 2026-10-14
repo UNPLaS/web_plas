@@ -1,36 +1,40 @@
 ---
 import { withBase } from '../../lib/with-base';
+import { langOf, t } from '../../i18n';
+
+const lang = langOf(Astro.url);
+const tr = t(lang).unal;
 
 const services = [
   {
-    label: 'Correo Electrónico',
+    label: tr.serviceLinks.email,
     href: 'https://smartkey.xertica.com/cloudkey/a/unal.edu.co/user/login',
     icon: withBase('/unal/images/icnServEmail.png'),
   },
   {
-    label: 'DNINFOA - SIA',
+    label: tr.serviceLinks.sia,
     href: 'https://dninfoa.unal.edu.co',
     icon: withBase('/unal/images/icnServSia.png'),
   },
   {
-    label: 'Bibliotecas',
+    label: tr.serviceLinks.library,
     href: 'http://bibliotecas.unal.edu.co',
     icon: withBase('/unal/images/icnServLibrary.png'),
   },
   {
-    label: 'Convocatorias',
+    label: tr.serviceLinks.calls,
     href: 'http://personal.unal.edu.co',
     icon: withBase('/unal/images/icnServCall.png'),
   },
   {
-    label: 'Identidad UNAL',
+    label: tr.serviceLinks.identity,
     href: 'http://identidad.unal.edu.co',
     icon: withBase('/unal/images/icnServIdentidad.png'),
   },
 ];
 ---
 
-<div id="unal-services" data-unal-chrome="services" transition:persist="unal-services">
+<div id="unal-services" data-unal-chrome="services" transition:persist={`unal-services-${lang}`}>
   <div class="unal-services-panel" id="unal-services-panel" aria-hidden="true">
     <ul>
       {
@@ -52,8 +56,8 @@ const services = [
       id="unal-services-toggle"
       aria-expanded="false"
       aria-controls="unal-services-panel"
-      title="Servicios"
-      aria-label="Abrir servicios institucionales"
+      title={tr.services}
+      aria-label={tr.servicesOpen}
     ></button>
   </div>
 </div>

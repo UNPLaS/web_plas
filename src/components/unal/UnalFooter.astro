@@ -1,52 +1,58 @@
 ---
 import { group } from '../../data/content';
 import { withBase } from '../../lib/with-base';
+import { langOf, localePath, t } from '../../i18n';
+
+const lang = langOf(Astro.url);
+const tr = t(lang).unal.footer;
+const home = localePath(lang, '/');
+const contact = localePath(lang, '/contact');
 
 /** Fecha de actualización del sitio (DD/MM/AA), como en la plantilla UNAL. */
 const updatedAt = '04/08/26';
 const contactEmail = group.email;
 
 const govLeft = [
-  { label: 'Régimen Legal', href: 'http://www.legal.unal.edu.co' },
-  { label: 'Talento humano', href: 'http://personal.unal.edu.co' },
-  { label: 'Contratación', href: 'http://contratacion.unal.edu.co' },
-  { label: 'Ofertas de empleo', href: 'http://personal.unal.edu.co' },
-  { label: 'Rendición de cuentas', href: 'http://launalcuenta.unal.edu.co/' },
-  { label: 'Concurso docente', href: 'http://docentes.unal.edu.co/concurso-profesoral/' },
-  { label: 'Pago Virtual', href: 'http://www.pagovirtual.unal.edu.co/' },
-  { label: 'Control interno', href: 'http://controlinterno.unal.edu.co/' },
-  { label: 'Calidad', href: 'http://siga.unal.edu.co' },
-  { label: 'Buzón de notificaciones', href: 'http://unal.edu.co/buzon-de-notificaciones/' },
+  { label: tr.legal, href: 'http://www.legal.unal.edu.co' },
+  { label: tr.people, href: 'http://personal.unal.edu.co' },
+  { label: tr.procurement, href: 'http://contratacion.unal.edu.co' },
+  { label: tr.jobs, href: 'http://personal.unal.edu.co' },
+  { label: tr.accountability, href: 'http://launalcuenta.unal.edu.co/' },
+  { label: tr.facultyContest, href: 'http://docentes.unal.edu.co/concurso-profesoral/' },
+  { label: tr.payment, href: 'http://www.pagovirtual.unal.edu.co/' },
+  { label: tr.internalControl, href: 'http://controlinterno.unal.edu.co/' },
+  { label: tr.quality, href: 'http://siga.unal.edu.co' },
+  { label: tr.notifications, href: 'http://unal.edu.co/buzon-de-notificaciones/' },
 ];
 
 const govRight = [
   {
-    label: 'Correo institucional',
+    label: tr.mail,
     href: 'https://smartkey.xertica.com/cloudkey/a/unal.edu.co/user/login',
   },
-  { label: 'Mapa del sitio', href: withBase('/') },
-  { label: 'Redes Sociales', href: 'http://redessociales.unal.edu.co' },
-  { label: 'FAQ', href: withBase('/contact') },
-  { label: 'Quejas y reclamos', href: 'http://unal.edu.co/quejas-y-reclamos/' },
-  { label: 'Atención en línea', href: 'http://unal.edu.co/atencion-en-linea/' },
-  { label: 'Encuesta', href: 'http://unal.edu.co/encuesta/' },
-  { label: 'Contáctenos', href: withBase('/contact') },
-  { label: 'Estadísticas', href: 'http://estadisticas.unal.edu.co/' },
-  { label: 'Glosario', href: withBase('/') },
+  { label: tr.siteMap, href: home },
+  { label: tr.social, href: 'http://redessociales.unal.edu.co' },
+  { label: tr.faq, href: contact },
+  { label: tr.complaints, href: 'http://unal.edu.co/quejas-y-reclamos/' },
+  { label: tr.online, href: 'http://unal.edu.co/atencion-en-linea/' },
+  { label: tr.survey, href: 'http://unal.edu.co/encuesta/' },
+  { label: tr.contactUs, href: contact },
+  { label: tr.statistics, href: 'http://estadisticas.unal.edu.co/' },
+  { label: tr.glossary, href: home },
 ];
 ---
 
-<footer id="unal-footer" class="container-fluid" data-unal-chrome="footer" transition:persist="unal-footer">
+<footer id="unal-footer" class="container-fluid" data-unal-chrome="footer" transition:persist={`unal-footer-${lang}`}>
   <div class="unal-footer-grid">
-    <nav class="unal-gov-nav" aria-label="Gobierno en línea">
+    <nav class="unal-gov-nav" aria-label={tr.govLabel}>
       {govLeft.map((l) => <a href={l.href}>{l.label}</a>)}
     </nav>
-    <nav class="unal-gov-nav" aria-label="Servicios de información">
+    <nav class="unal-gov-nav" aria-label={tr.infoLabel}>
       {govRight.map((l) => <a href={l.href}>{l.label}</a>)}
     </nav>
     <div class="unal-footer-contact">
       <div class="contacto">
-        <b>Contacto página web:</b><br />
+        <b>{tr.webContact}</b><br />
         Carrera 30 No 45A-03<br />
         Edif. Aulas de Ingeniería — 453<br />
         Bogotá D.C., Colombia<br />
@@ -56,13 +62,13 @@ const govRight = [
         <a href="https://unal.edu.co/fileadmin/user_upload/docs/legal.pdf"
           >&copy; Copyright 2021</a
         ><br />
-        Algunos derechos reservados.<br />
+        {tr.rights}<br />
         <a
-          title="Comuníquese con el administrador de este sitio web"
+          title={tr.adminTitle}
           href={`mailto:${contactEmail}`}>{contactEmail}</a
         ><br />
-        <a href={withBase("/contact")}>Acerca de este sitio web</a><br />
-        Actualización:{updatedAt}
+        <a href={contact}>{tr.aboutSite}</a><br />
+        {tr.updated}{updatedAt}
       </div>
     </div>
     <div class="unal-footer-logos">
@@ -72,18 +78,18 @@ const govRight = [
       <a href="https://www.gov.co/">
         <img
           src={withBase("/unal/images/log_gobiern.png")}
-          alt="Portal Único del Estado Colombiano"
+          alt={tr.govPortal}
           width="88"
           height="30"
         />
       </a>
       <a href="http://agenciadenoticias.unal.edu.co">
-        <img src={withBase("/unal/images/log_agenc.png")} alt="Agencia de Noticias" width="88" height="30" />
+        <img src={withBase("/unal/images/log_agenc.png")} alt={tr.newsAgency} width="88" height="30" />
       </a>
       <a href="http://www.contaduria.gov.co/">
         <img
           src={withBase("/unal/images/log_contra.png")}
-          alt="Contaduría General de la República"
+          alt={tr.comptroller}
           width="88"
           height="30"
         />

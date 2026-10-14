@@ -1,48 +1,43 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import TopicGraph from '../components/TopicGraph.astro';
-import { linesMap, linesOverview } from '../data/site';
+import Layout from '../../layouts/Layout.astro';
+import TopicGraph from '../../components/TopicGraph.astro';
+import { getContent } from '../../data/site';
+import { langFromParam, langPaths, t } from '../../i18n';
 
+export const getStaticPaths = () => langPaths();
+
+const lang = langFromParam(Astro.params.lang);
+const tr = t(lang).lines;
+const { linesMap, linesOverview } = getContent(lang);
 const external = (href: string) =>
   /^https?:\/\//i.test(href) ? { target: '_blank', rel: 'noreferrer' } : {};
 ---
 
-<Layout
-  title="Líneas de investigación"
-  description="Las cinco líneas del grupo PLaS y la red de temas que las conecta: lenguajes, educación, embebidos, transporte y sensado."
->
+<Layout title={tr.title} description={t(lang).meta.lines}>
   <section class="page-section wrap lines-overview" aria-labelledby="lines-heading">
     <header class="page-head">
-      <p class="page-head__eyebrow">Líneas</p>
-      <h1 id="lines-heading" class="page-head__title">Líneas de investigación</h1>
-      <p class="page-head__lede">
-        Cinco líneas, una red de temas. Explora dónde se cruzan y entra a la que despierte tu
-        curiosidad.
-      </p>
+      <p class="page-head__eyebrow">{tr.eyebrow}</p>
+      <h1 id="lines-heading" class="page-head__title">{tr.title}</h1>
+      <p class="page-head__lede">{tr.lede}</p>
     </header>
 
     <TopicGraph
       nodes={linesMap.nodes}
       edges={linesMap.edges}
-      title="Mapa de líneas y temas"
+      title={tr.mapTitle}
       height={560}
       mobileHeight={900}
       transposeMobile
     />
-    <p class="lines-map__hint">
-      Pasa el cursor por un nodo para ver sus conexiones, arrástralo o haz clic para entrar.
-    </p>
+    <p class="lines-map__hint">{tr.mapHint}</p>
 
     <ol class="line-chapters">
       {
         linesOverview.map((line, i) => {
           const stats = [
-            { value: line.workCount, label: line.workCount === 1 ? 'trabajo' : 'trabajos' },
-            {
-              value: line.activeCount,
-              label: line.activeCount === 1 ? 'estudiante activo' : 'estudiantes activos',
-            },
-            { value: line.topics.length, label: 'temas' },
+            { value: line.workCount, label: tr.works(line.workCount) },
+            { value: line.activeCount, label: tr.activeStudents(line.activeCount) },
+            { value: line.topics.length, label: tr.topics },
           ].filter((s) => s.value > 0);
           return (
             <li
@@ -64,7 +59,7 @@ const external = (href: string) =>
                 )}
               </a>
               <div class="line-chapter__body">
-                <p class="line-chapter__eyebrow">Línea {String(i + 1).padStart(2, '0')}</p>
+                <p class="line-chapter__eyebrow">{tr.lineNumber(i + 1)}</p>
                 <p class="line-chapter__question">
                   <a href={line.href}>{line.question}</a>
                 </p>
@@ -80,11 +75,11 @@ const external = (href: string) =>
                     ))}
                   </dl>
                 )}
-                <ul class="line-chapter__topics" aria-label="Temas">
-                  {line.topics.map((t) => (
+                <ul class="line-chapter__topics" aria-label={tr.topicsLabel}>
+                  {line.topics.map((topic) => (
                     <li>
-                      <a class="topic-chip" href={t.href}>
-                        {t.name}
+                      <a class="topic-chip" href={topic.href}>
+                        {topic.name}
                       </a>
                     </li>
                   ))}
@@ -96,20 +91,20 @@ const external = (href: string) =>
                       href={line.latest.href}
                       {...external(line.latest.href)}
                     >
-                      <span class="line-chapter__latest-label">Lo más reciente</span>
+                      <span class="line-chapter__latest-label">{tr.latest}</span>
                       <span class="line-chapter__latest-title">{line.latest.title}</span>
                       <span class="line-chapter__latest-meta">{line.latest.meta}</span>
                     </a>
                   ) : (
                     <p class="line-chapter__latest">
-                      <span class="line-chapter__latest-label">Lo más reciente</span>
+                      <span class="line-chapter__latest-label">{tr.latest}</span>
                       <span class="line-chapter__latest-title">{line.latest.title}</span>
                       <span class="line-chapter__latest-meta">{line.latest.meta}</span>
                     </p>
                   ))}
                 <div class="line-chapter__foot">
                   {line.faculty.length > 0 && (
-                    <ul class="line-chapter__faces" aria-label="Docentes">
+                    <ul class="line-chapter__faces" aria-label={tr.faculty}>
                       {line.faculty.map((f) => (
                         <li>
                           <a href={f.href} title={f.name}>
@@ -120,7 +115,7 @@ const external = (href: string) =>
                     </ul>
                   )}
                   <a class="btn btn--soft" href={line.href}>
-                    Explorar la línea
+                    {tr.explore}
                   </a>
                 </div>
               </div>

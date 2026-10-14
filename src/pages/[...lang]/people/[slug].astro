@@ -1,23 +1,31 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import TypeChip from '../../components/TypeChip.astro';
-import StudentCard from '../../components/StudentCard.astro';
-import WorkTimeline from '../../components/WorkTimeline.astro';
-import { facultyProfiles } from '../../data/site';
+import Layout from '../../../layouts/Layout.astro';
+import TypeChip from '../../../components/TypeChip.astro';
+import StudentCard from '../../../components/StudentCard.astro';
+import WorkTimeline from '../../../components/WorkTimeline.astro';
+import { getContent } from '../../../data/site';
+import { langFromParam, langPaths, t } from '../../../i18n';
 
 export function getStaticPaths() {
-  return facultyProfiles.map((person) => ({ params: { slug: person.slug }, props: { person } }));
+  return langPaths().flatMap(({ params }) =>
+    getContent(langFromParam(params.lang)).facultyProfiles.map((person) => ({
+      params: { ...params, slug: person.slug },
+      props: { person },
+    })),
+  );
 }
 
+const lang = langFromParam(Astro.params.lang);
+const tr = t(lang).faculty;
 const { person } = Astro.props;
 /** Años de publicaciones visibles de entrada; los anteriores quedan plegados. */
 const OPEN_YEARS = 3;
 const external = (href: string) =>
   /^https?:\/\//i.test(href) ? { target: '_blank', rel: 'noreferrer' } : {};
 const contact = [
-  { label: 'Correo', value: person.email, href: `mailto:${person.email}` },
-  { label: 'Oficina', value: person.office, href: '' },
-  { label: 'Teléfono', value: person.phone, href: '' },
+  { label: tr.email, value: person.email, href: `mailto:${person.email}` },
+  { label: tr.office, value: person.office, href: '' },
+  { label: tr.phone, value: person.phone, href: '' },
 ].filter((row) => row.value);
 const recentPublications = person.publications.slice(0, OPEN_YEARS);
 const olderPublications = person.publications.slice(OPEN_YEARS);
@@ -25,14 +33,14 @@ const olderCount = olderPublications.reduce((n, group) => n + group.items.length
 const hasBackground = person.education.length > 0 || person.experience.length > 0;
 const hasTeaching = person.courses.length > 0 || person.resources.length > 0;
 const tabs = [
-  (hasBackground || hasTeaching) && { id: 'formacion', label: 'Formación y docencia', count: 0 },
-  person.studentCount > 0 && { id: 'estudiantes', label: 'Estudiantes', count: person.studentCount },
+  (hasBackground || hasTeaching) && { id: 'formacion', label: tr.tabBackground, count: 0 },
+  person.studentCount > 0 && { id: 'estudiantes', label: tr.tabStudents, count: person.studentCount },
   person.publicationCount > 0 && {
     id: 'publicaciones',
-    label: 'Publicaciones',
+    label: tr.tabPublications,
     count: person.publicationCount,
   },
-  { id: 'contacto', label: 'Contacto y páginas', count: 0 },
+  { id: 'contacto', label: tr.tabContact, count: 0 },
 ].filter((t): t is { id: string; label: string; count: number } => Boolean(t));
 const defaultTab = tabs[0].id;
 ---
@@ -54,7 +62,7 @@ const defaultTab = tabs[0].id;
         {person.bio && <p class="faculty-hero__bio">{person.bio}</p>}
         {
           person.lines.length > 0 && (
-            <ul class="faculty-hero__lines" aria-label="Líneas de investigación">
+            <ul class="faculty-hero__lines" aria-label={tr.linesLabel}>
               {person.lines.map((line) => (
                 <li>
                   <a
@@ -86,7 +94,7 @@ const defaultTab = tabs[0].id;
   </section>
 
   <div class="faculty-tabs wrap" data-faculty-tabs>
-    <div class="faculty-tabs__list" role="tablist" aria-label="Información del docente">
+    <div class="faculty-tabs__list" role="tablist" aria-label={tr.tabsLabel}>
       {
         tabs.map((tab) => (
           <button
@@ -117,7 +125,7 @@ const defaultTab = tabs[0].id;
         >
           {person.education.length > 0 && (
             <div class="faculty-block">
-              <h2 class="people-section__title line-detail__heading">Formación</h2>
+              <h2 class="people-section__title line-detail__heading">{tr.education}</h2>
               <ol class="faculty-education">
                 {person.education.map((entry) => (
                   <li class="line-block__panel">
@@ -127,7 +135,7 @@ const defaultTab = tabs[0].id;
                     <span class="faculty-education__program">{entry.program}</span>
                     <span class="faculty-education__place">{entry.institution}</span>
                     {entry.thesis && (
-                      <span class="faculty-education__thesis">Tesis: {entry.thesis}</span>
+                      <span class="faculty-education__thesis">{tr.thesis} {entry.thesis}</span>
                     )}
                     {entry.honor && <span class="faculty-education__honor">{entry.honor}</span>}
                   </li>
@@ -137,7 +145,7 @@ const defaultTab = tabs[0].id;
           )}
           {person.experience.length > 0 && (
             <div class="faculty-block">
-              <h2 class="people-section__title line-detail__heading">Trayectoria</h2>
+              <h2 class="people-section__title line-detail__heading">{tr.experience}</h2>
               <ol class="faculty-experience line-block__panel">
                 {person.experience.map((entry) => (
                   <li>
@@ -153,7 +161,7 @@ const defaultTab = tabs[0].id;
           )}
           {person.courses.length > 0 && (
             <div class="faculty-block">
-              <h2 class="people-section__title line-detail__heading">Cursos</h2>
+              <h2 class="people-section__title line-detail__heading">{tr.courses}</h2>
               <ul class="faculty-courses">
                 {person.courses.map((course) => (
                   <li class="line-block__panel">
@@ -171,7 +179,7 @@ const defaultTab = tabs[0].id;
               {person.coursesUrl && (
                 <p class="faculty-courses__more">
                   <a class="btn btn--soft" href={person.coursesUrl} {...external(person.coursesUrl)}>
-                    Ver historial de cursos
+                    {tr.coursesMore}
                   </a>
                 </p>
               )}
@@ -179,7 +187,7 @@ const defaultTab = tabs[0].id;
           )}
           {person.resources.length > 0 && (
             <div class="faculty-block">
-              <h2 class="people-section__title line-detail__heading">Talleres y recursos</h2>
+              <h2 class="people-section__title line-detail__heading">{tr.resources}</h2>
               <ul class="topic-works line-block__panel">
                 {person.resources.map((resource) => (
                   <li>
@@ -210,11 +218,11 @@ const defaultTab = tabs[0].id;
           hidden={defaultTab !== 'estudiantes'}
         >
           <p class="faculty-panel__lede">
-            Abre cada tarjeta para ver el trabajo, su resumen y quién lo dirige.
+            {tr.studentsLede}
           </p>
           {person.activeSections.length > 0 && (
             <div class="faculty-block">
-              <h2 class="people-section__title line-detail__heading">En curso</h2>
+              <h2 class="people-section__title line-detail__heading">{tr.inProgress}</h2>
               {person.activeSections.map((sec) => (
                 <div class="students-degree">
                   <h3 class="students-degree__title">{sec.title}</h3>
@@ -231,7 +239,7 @@ const defaultTab = tabs[0].id;
           )}
           {person.graduateSections.length > 0 && (
             <div class="faculty-block">
-              <h2 class="people-section__title line-detail__heading">Egresados</h2>
+              <h2 class="people-section__title line-detail__heading">{tr.graduates}</h2>
               {person.graduateSections.map((sec) => (
                 <div class="students-degree">
                   <h3 class="students-degree__title">{sec.title}</h3>
@@ -263,7 +271,7 @@ const defaultTab = tabs[0].id;
           {olderCount > 0 && (
             <details class="faculty-more">
               <summary class="btn btn--soft">
-                Ver {olderCount} {olderCount === 1 ? 'publicación anterior' : 'publicaciones anteriores'}
+                {tr.olderPublications(olderCount)}
               </summary>
               <WorkTimeline groups={olderPublications} />
             </details>
@@ -280,7 +288,7 @@ const defaultTab = tabs[0].id;
       hidden={defaultTab !== 'contacto'}
     >
       <div class="faculty-block">
-        <h2 class="people-section__title line-detail__heading">Contacto</h2>
+        <h2 class="people-section__title line-detail__heading">{tr.contact}</h2>
         <dl class="faculty-contact line-block__panel">
           {contact.map((row) => (
             <div>
@@ -293,7 +301,7 @@ const defaultTab = tabs[0].id;
       {
         person.profileLinks.length > 0 && (
           <div class="faculty-block">
-            <h2 class="people-section__title line-detail__heading">Páginas de investigador</h2>
+            <h2 class="people-section__title line-detail__heading">{tr.profiles}</h2>
             <ul class="faculty-profile-links">
               {person.profileLinks.map((link) => (
                 <li>

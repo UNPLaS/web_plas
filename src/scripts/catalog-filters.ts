@@ -44,6 +44,7 @@ export function initCatalogFilters() {
   const lineSelect = document.getElementById('catalog-line') as HTMLSelectElement | null;
   const yearSelect = document.getElementById('catalog-year') as HTMLSelectElement | null;
   const clearBtn = document.getElementById('catalog-clear');
+  const msg: DOMStringMap = qInput?.form?.dataset ?? {};
 
   let debounceTimer = 0;
 
@@ -127,12 +128,15 @@ export function initCatalogFilters() {
 
     meta.textContent =
       list.length === 0
-        ? 'Sin resultados con estos filtros.'
-        : `${list.length} resultado${list.length === 1 ? '' : 's'}`;
+        ? (msg.msgNone ?? '')
+        : (list.length === 1 ? (msg.msgOne ?? '') : (msg.msgMany ?? '')).replace(
+            '{n}',
+            String(list.length),
+          );
 
     results.innerHTML = list.length
       ? list.map(renderItem).join('')
-      : `<li class="catalog-empty">Prueba otra búsqueda o limpia los filtros.</li>`;
+      : `<li class="catalog-empty">${escapeHtml(msg.msgEmpty ?? '')}</li>`;
   };
 
   qInput?.addEventListener('input', () => {

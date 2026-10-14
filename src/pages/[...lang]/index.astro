@@ -1,25 +1,26 @@
 ---
-import { withBase } from '../lib/with-base';
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import ProjectsCarousel from '../components/ProjectsCarousel.astro';
-import TypeChip from '../components/TypeChip.astro';
-import LinesGallery from '../components/LinesGallery.astro';
-import { facultyItems, homeQuotes, newsItems, recentWorks, site } from '../data/site';
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import ProjectsCarousel from '../../components/ProjectsCarousel.astro';
+import TypeChip from '../../components/TypeChip.astro';
+import LinesGallery from '../../components/LinesGallery.astro';
+import { getContent } from '../../data/site';
+import { langFromParam, langPaths, localePath, t } from '../../i18n';
 
+export const getStaticPaths = () => langPaths();
+
+const lang = langFromParam(Astro.params.lang);
+const tr = t(lang).home;
+const { facultyItems, homeQuotes, newsItems, recentWorks, site } = getContent(lang);
 const quoteFallback = homeQuotes[0];
 ---
 
-<Layout
-  title={`${site.name} — ${site.nameFull}`}
-  description="Grupo de investigación PLaS de la Universidad Nacional de Colombia: lenguajes de programación, educación en ingeniería, sistemas embebidos, transporte inteligente y sensado."
-  spine
->
+<Layout title={`${site.name} — ${site.nameFull}`} description={t(lang).meta.home} spine>
   <Hero />
 
   <section
     class="quote-section section-bleed"
-    aria-label="Cita"
+    aria-label={tr.quoteLabel}
     data-home-quotes={JSON.stringify(homeQuotes)}
   >
     <div class="section-bleed__back" aria-hidden="true"></div>
@@ -35,8 +36,8 @@ const quoteFallback = homeQuotes[0];
 
   <section class="news-section wrap" aria-labelledby="news-heading">
     <div class="news-section__head">
-      <h2 id="news-heading" class="news-section__title">Últimas novedades</h2>
-      <a class="btn btn--soft" href={withBase("/blog")}>Ver todas</a>
+      <h2 id="news-heading" class="news-section__title">{tr.news}</h2>
+      <a class="btn btn--soft" href={localePath(lang, '/blog')}>{t(lang).common.seeAllFem}</a>
     </div>
     <ul class="news-gallery">
       {
@@ -66,8 +67,8 @@ const quoteFallback = homeQuotes[0];
 
   <section class="works-section wrap" aria-labelledby="works-heading">
     <div class="works-section__head">
-      <h2 id="works-heading" class="works-section__title">Trabajos recientes</h2>
-      <a class="btn btn--soft" href={withBase("/catalog")}>Catálogo</a>
+      <h2 id="works-heading" class="works-section__title">{tr.recentWorks}</h2>
+      <a class="btn btn--soft" href={localePath(lang, '/catalog')}>{tr.catalog}</a>
     </div>
     <ul class="works-list">
       {
@@ -112,8 +113,8 @@ const quoteFallback = homeQuotes[0];
     <div class="section-bleed__back" aria-hidden="true"></div>
     <div class="section-bleed__inner wrap">
       <div class="faculty-section__head">
-        <h2 id="faculty-heading" class="faculty-section__title">Nuestros docentes</h2>
-        <a class="btn btn--soft" href={withBase("/people")}>Equipo</a>
+        <h2 id="faculty-heading" class="faculty-section__title">{tr.faculty}</h2>
+        <a class="btn btn--soft" href={localePath(lang, '/people')}>{tr.team}</a>
       </div>
       <ul class="faculty-gallery">
         {
@@ -139,8 +140,8 @@ const quoteFallback = homeQuotes[0];
 
   <section class="lines-section wrap" aria-labelledby="lines-heading">
     <div class="lines-section__head">
-      <h2 id="lines-heading" class="lines-section__title">Líneas de investigación</h2>
-      <a class="btn btn--soft" href={withBase("/lines")}>Líneas</a>
+      <h2 id="lines-heading" class="lines-section__title">{tr.lines}</h2>
+      <a class="btn btn--soft" href={localePath(lang, '/lines')}>{tr.linesButton}</a>
     </div>
     <LinesGallery />
   </section>
@@ -148,13 +149,10 @@ const quoteFallback = homeQuotes[0];
   <section class="invite-section section-bleed" aria-labelledby="invite-heading">
     <div class="section-bleed__back" aria-hidden="true"></div>
     <div class="section-bleed__inner wrap">
-      <h2 id="invite-heading" class="invite-section__title">¿Quieres construir con nosotros?</h2>
-      <p class="invite-section__text">
-        Si traes una idea, buscas tesis o quieres colaborar, escríbenos. Revisamos
-        propuestas con criterio y acompañamos el trabajo hasta un resultado sólido.
-      </p>
+      <h2 id="invite-heading" class="invite-section__title">{tr.inviteTitle}</h2>
+      <p class="invite-section__text">{tr.inviteText}</p>
       <p class="invite-section__cta">
-        <a class="btn btn--amber" href={withBase("/contact")}>Escribir al grupo</a>
+        <a class="btn btn--amber" href={localePath(lang, '/contact')}>{tr.inviteCta}</a>
       </p>
     </div>
   </section>
