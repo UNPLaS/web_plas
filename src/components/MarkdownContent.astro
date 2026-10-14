@@ -1,5 +1,6 @@
 ---
 import { renderMarkdown } from '../lib/render-markdown';
+import { langOf } from '../i18n';
 
 interface Props {
   content: string;
@@ -7,7 +8,7 @@ interface Props {
 }
 
 const { content, class: className = 'page-prose' } = Astro.props;
-const html = renderMarkdown(content);
+const html = renderMarkdown(content, langOf(Astro.url));
 ---
 
 {html ? <div class={className} set:html={html} /> : null}

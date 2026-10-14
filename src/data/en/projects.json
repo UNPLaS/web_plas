@@ -1,1 +1,138 @@
-{}
+{
+  "project:paradigmas": {
+    "title_short": "Programming paradigms",
+    "title_full": "Programming paradigms",
+    "summary": "The Programming Paradigms website offers educational content on the subject, built collaboratively semester after semester by students of the Programming Languages course at Universidad Nacional de Colombia.",
+    "links": [
+      {
+        "label": "Visit site",
+        "section": "More information",
+        "context": "Website: Visit site"
+      }
+    ],
+    "content": "# Programming paradigms\n\n![Programming paradigms](/images/PLaS/proyectos/lenguajes/lenguajes_0.webp)\n\n## Description\n\nThe **Programming Paradigms** website brings together educational content on this subject. The materials have been developed collaboratively by students of the *Programming Languages* course at Universidad Nacional de Colombia, who contribute to it semester after semester.\n\nThe site offers theoretical and practical information on several paradigms:\n\n- Object-Oriented Programming (OOP)\n- Functional Programming\n- Logic Programming\n- Parallel Programming\n- Concurrent Programming\n- Aspect-Oriented Programming (AOP)\n\nBesides the basic concepts and their explanation, it includes tutorials on representative languages for each paradigm.\n"
+  },
+  "project:uncode": {
+    "summary": "A tool for learning programming and automatically grading programming exercises. UNCode supports many programming languages, such as Python, Java, C and C++, as well as hardware description languages and Jupyter notebooks.",
+    "links": [
+      {
+        "label": "Visit site",
+        "section": "More information",
+        "context": "Website: Visit site"
+      },
+      {
+        "label": "Visit site",
+        "section": "More information",
+        "context": "Software: Visit site"
+      },
+      {
+        "label": "Visit site",
+        "section": "More information",
+        "context": "Source code repository: Visit site"
+      },
+      {
+        "label": "Visit site",
+        "section": "More information",
+        "context": "Papers: Visit site"
+      }
+    ],
+    "content": "# UNCode\n\n![UNCode](/images/PLaS/proyectos/proyecto1.svg)\n\n## Description\n\n**UNCode** is a tool for learning programming and automatically grading programming exercises. It supports many languages, such as Python, Java, C and C++, hardware description languages (Verilog and VHDL), and assignments solved in Jupyter notebooks.\n\nThe platform uses a grading system based on INGInious: flexible, secure, scalable and configurable to each course's goals. After every submission, students receive automatic feedback.\n\n### Feedback\n\nLearning support combines **summative** and **formative** assessment:\n\n- **Summative:** a numerical grade for the submission.\n- **Formative:** help with syntax, semantics, code maintainability and custom tests.\n\n### Platform features\n\n- Linter with good-practice suggestions\n- Execution visualizer (Python Tutor)\n- Custom input/output testing environment\n- Code templates for assignments\n- Interactive statistical reports for instructors and students\n- Assignment creation wizard, problem bank, manual grading and plagiarism reports\n"
+  },
+  "project:analytics": {
+    "summary": "Learning analytics draws on the large amount of data generated in educational settings to make decisions that improve teaching and learning. This project relates learning-process metrics to academic performance in an introductory programming course using mixed methods.",
+    "links": [
+      {
+        "section": "Authors",
+        "context": "Edna Johanna Chaparro Amaya · Master's student in Systems and Computing Engineering, Universidad Nacional de Colombia · Email: edchaparroa@unal.edu.co"
+      }
+    ],
+    "content": "# Learning Analytics\n\n![Learning Analytics](/images/PLaS/proyectos/proyecto2.webp)\n\n## Description\n\nLearning analytics uses the data generated in educational settings to improve teaching and learning. In programming courses these applications are often effective at guiding interventions; however, many rely only on quantitative data and leave aside qualitative approaches and mixed methods.\n\n### Goal\n\nTo determine the relationships between learning-process metrics and academic performance in the *Computer Programming* course, through an analytics strategy grounded in **mixed methods**.\n\n### Methodology\n\nWe used an explanatory sequential mixed-methods design:\n\n1. Data preparation and metric design\n2. Quantitative and qualitative analysis\n3. Identification of relationships with academic performance\n\nWe obtained **55 variables** describing the learning process (submissions, verdict rates, software metrics on the code, and use of platform tools).\n\n### Results\n\n- The number of submissions, the success rate and the number of correct and incorrect answers correlate positively with performance.\n- Students who failed the course used UNCode more as an automatic grading tool; those who passed used it more to get feedback.\n\n### Keywords\n\nLearning analytics · Computer programming · Mixed methods · Correlation analysis · Academic performance\n\n### Authors\n\n**Edna Johanna Chaparro Amaya**  \nMaster's student in Systems and Computing Engineering  \nUniversidad Nacional de Colombia  \nEmail: [edchaparroa@unal.edu.co](mailto:edchaparroa@unal.edu.co)\n"
+  },
+  "project:gamificacion": {
+    "title_short": "Gamification",
+    "title_full": "Assessing the effect of computer-assisted gamification on the motivation of computer programming students",
+    "summary": "Teaching and learning computer programming calls for methodologies in which students take an active role. This project studies the effect of computer-assisted gamification on the motivation to learn of computer programming students.",
+    "links": [
+      null,
+      {
+        "section": "Authors",
+        "context": "Edna Johanna Chaparro Amaya · Master's student in Systems and Computing Engineering, Universidad Nacional de Colombia · Email: edchaparroa@unal.edu.co"
+      }
+    ],
+    "content": "# Assessing the effect of computer-assisted gamification on the motivation of computer programming students\n\n*Original title (Spanish): Evaluación del efecto de la gamificación asistida por computador en la motivación de los estudiantes de programación de computadores*\n\n![Computer-assisted gamification in a programming course](/images/PLaS/proyectos/proyecto3.webp)\n\n## Description\n\nTeaching and learning Computer Programming poses challenges that call for methodologies in which students take an active role. Game-related methodologies, including **gamification** (the use of game elements in non-game contexts), are studied for their possible effect on motivation, participation, performance and engagement.\n\nComputer-assisted gamified environments have been integrated into programming courses; qualitative findings tend to be positive, while several quantitative analyses find no statistically significant effects. More empirical evidence is needed.\n\n### Goal\n\nTo study the effect of computer-assisted gamification on the **motivation to learn** of Computer Programming students.\n\n### Method\n\n- Selection of **CodeGym** as the gamified environment (literature review and comparative analysis)\n- **Quasi-experimental** study with an educational intervention\n- Measurement with the **MSLQ-Colombia** questionnaire and a perception survey\n- **48 students** in two control groups and one experimental group (convenience sampling)\n\n### Results\n\nIn the experimental group, the levels associated with *task value* (importance, usefulness, and liking of or interest in the course topics) increased significantly.\n\n### Keywords\n\nGamification · Computer programming · Gamified environments · Learning motivation\n\n### Related publication\n\nK.D. Cuervo-Cely, J.J. Ramírez-Echeverry, F. Restrepo-Calle (2020). *Computer-Assisted Gamification In A Computer Programming Course: An Experience Report*. ICERI 2020, pp. 6006–6015.\n\n### Authors\n\n**Edna Johanna Chaparro Amaya**  \nMaster's student in Systems and Computing Engineering  \nUniversidad Nacional de Colombia  \nEmail: [edchaparroa@unal.edu.co](mailto:edchaparroa@unal.edu.co)\n"
+  },
+  "project:vpl": {
+    "title_short": "Automated assessment with VPL",
+    "title_full": "Assessing the impact of an automated assessment tool on the learning motivation of computer programming students",
+    "summary": "Computer programming is a core competency in engineering and computer science programs. This project measures the impact of an automated source-code assessment tool (VPL) on the learning motivation of programming students.",
+    "links": [
+      {
+        "section": "Authors",
+        "context": "Hernan Dario Lozano Rojas · Master's student in Systems and Computing Engineering, Universidad Nacional de Colombia · Email: hlozanor@unal.edu.co · CvLAC"
+      },
+      {
+        "section": "Authors",
+        "context": "Hernan Dario Lozano Rojas · Master's student in Systems and Computing Engineering, Universidad Nacional de Colombia · Email: hlozanor@unal.edu.co · CvLAC"
+      }
+    ],
+    "content": "# Assessing the impact of an automated assessment tool on the learning motivation of computer programming students\n\n*Original title (Spanish): Evaluación del impacto en la motivación en el aprendizaje de los estudiantes de programación de computadores mediante el uso de una herramienta de evaluación automática*\n\n![Automated assessment with VPL](/images/PLaS/proyectos/proyecto4.webp)\n\n## Description\n\nIn engineering, and particularly in computer science, programming is a core competency. These courses develop the ability to solve problems, write programs, define functions, debug and choose suitable control structures, skills that are also in demand in the workplace.\n\n### Goal\n\nTo determine the impact of an **automated source-code assessment** tool on the learning motivation of Computer Programming students at U Compensar university.\n\n### Method\n\n- **Quasi-experimental** study integrating automated assessment into an Algorithms course\n- Selection of **VPL** (*Virtual Programming Lab*) after a literature review\n- Control and experimental groups\n- Measurement with **MSLQ-Colombia**\n- **42 participating students**\n\n### Analysis approach\n\nThe MSLQ data reveal changes in motivation, while the tool's logs provide evidence about attempts, progress and coding while solving exercises.\n\n### Keywords\n\nAutomated assessment · Computer programming · Learning motivation\n\n### Authors\n\n**Hernan Dario Lozano Rojas**  \nMaster's student in Systems and Computing Engineering  \nUniversidad Nacional de Colombia  \nEmail: [hlozanor@unal.edu.co](mailto:hlozanor@unal.edu.co)\n"
+  },
+  "project:estrategias": {
+    "title_short": "Learning strategies",
+    "title_full": "Design and content validation of a self-report instrument to characterize computer programming learning strategies",
+    "summary": "Design and content validation of a self-report instrument to characterize the learning strategies students use in computer programming.",
+    "links": [
+      {
+        "section": "Authors",
+        "context": "Stephanie Torres Jiménez · Master's student in Systems and Computing Engineering, Universidad Nacional de Colombia · Email: sttorresji@unal.edu.co"
+      }
+    ],
+    "content": "# Design and content validation of a self-report instrument to characterize computer programming learning strategies\n\n*Original title (Spanish): Diseño y validación de contenido de un instrumento de autoinforme para caracterizar las estrategias de aprendizaje de programación de computadores*\n\n![Learning strategies in computer programming](/images/PLaS/proyectos/proyecto5.webp)\n\n## Description\n\nDesign and content validation of a self-report instrument to characterize **learning strategies** in engineering education.\n\n### Authors\n\n**Stephanie Torres Jiménez**  \nMaster's student in Systems and Computing Engineering  \nUniversidad Nacional de Colombia  \nEmail: [sttorresji@unal.edu.co](mailto:sttorresji@unal.edu.co)\n"
+  },
+  "project:aprendizaje": {
+    "title_short": "Collaborative learning",
+    "title_full": "Prototype of a computational tool for collaborative learning of computer programming",
+    "summary": "This project studies the effects of computer-supported collaborative learning in introductory programming courses, through UNColab, a prototype that mediates how students interact while solving programming problems.",
+    "links": [
+      {
+        "label": "Visit site",
+        "context": "UN Colab: Visit site"
+      },
+      {
+        "section": "Authors",
+        "context": "Jhon Méndez · Master's student in Systems and Computing Engineering, Universidad Nacional de Colombia · Email: jmendezl@unal.edu.co · CvLAC"
+      },
+      {
+        "section": "Authors",
+        "context": "Jhon Méndez · Master's student in Systems and Computing Engineering, Universidad Nacional de Colombia · Email: jmendezl@unal.edu.co · CvLAC"
+      }
+    ],
+    "content": "# Prototype of a computational tool for collaborative learning of computer programming\n\n*Original title (Spanish): Prototipo de herramienta computacional para el aprendizaje colaborativo de programación de computadores*\n\n![UNColab, a collaborative learning prototype](/images/PLaS/proyectos/proyecto9.webp)\n\n## Description\n\nThis project studies the effects of **computer-supported collaborative learning** in introductory programming courses.\n\nWe developed **UNColab**, a prototype that mediates the interaction between participants while they solve programming problems. The prototype was based on:\n\n- A computer-supported collaborative learning script\n- A group formation technique\n- A prototype-oriented development methodology\n\n### Keywords\n\nCollaborative learning · CSCL · Computer programming\n\n### Authors\n\n**Jhon Méndez**  \nMaster's student in Systems and Computing Engineering  \nUniversidad Nacional de Colombia  \nEmail: [jmendezl@unal.edu.co](mailto:jmendezl@unal.edu.co)\n"
+  },
+  "project:she": {
+    "summary": "SHE (Software Hardening Environment) is a tool for developing fault-tolerant software: it designs software-based fault-tolerance techniques and applies them to programs automatically and selectively.",
+    "links": [
+      {
+        "section": "Try it online",
+        "context": "Available at the Fault Tolerance Lab (Universidad de Alicante, Spain)."
+      }
+    ],
+    "content": "# SHE: Software Hardening Environment\n\n![SHE: Software Hardening Environment](/images/PLaS/proyectos/proyecto11.webp)\n\n## Description\n\n**SHE** (*Software Hardening Environment*) is a tool for developing fault-tolerant software. It makes it possible to design and implement software-based fault-tolerance techniques and apply them to programs automatically.\n\nThe *hardening* (protection) strategy relies on low-level (assembly) code transformation rules. Techniques can be applied **selectively**, protecting only the critical parts of the program: this reduces overheads and gives designers flexibility to balance the system's requirements.\n\nIt is cross-platform (tested on GNU/Linux and Windows).\n\n### Supported microprocessors\n\n- Xilinx PicoBlaze 8-bit (KCPSM3)\n- Xilinx PicoBlaze 8-bit (KCPSM6)\n- Texas Instruments MSP430 16-bit\n- *Coming soon:* ARM and RISC-V\n\n### Try it online\n\nAvailable at the Fault Tolerance Lab of Universidad de Alicante (Spain).\n"
+  },
+  "project:ftxac": {
+    "summary": "Higher integration in semiconductor devices has made integrated circuits more susceptible to radiation-induced faults. FTxAC uses approximate computing to design fault-tolerant embedded systems with lower overheads than traditional redundancy.",
+    "content": "# FTxAC\n\n![FTxAC](/images/PLaS/proyectos/proyecto12.webp)\n\n## Description\n\nHigher integration levels in semiconductors have made circuits more susceptible to **radiation-induced faults**. Software, hardware or hybrid mitigation techniques usually impose significant overheads in area, energy and performance.\n\n**FTxAC** explores the **approximate computing** paradigm to propose a systematic strategy for designing radiation-tolerant embedded systems, reducing those overheads compared with the redundancy of traditional approaches.\n\n### Results / publications\n\n- A. Aponte-Moreno, F. Restrepo-Calle and C. Pedraza. *FTxAC: Leveraging the Approximate Computing Paradigm…* IEEE Transactions on Emerging Topics in Computing, 2021. doi: [10.1109/TETC.2020.2986235](https://doi.org/10.1109/TETC.2020.2986235)\n- A. Aponte-Moreno, F. Restrepo-Calle, C. Pedraza. *Using Approximate Computing and Selective Hardening…* Electronics, 2019.\n- A. Aponte-Moreno, F. Restrepo-Calle and C. Pedraza. *A Low-Overhead Radiation Hardening Approach…* RADECS 2019.\n- A. Aponte-Moreno, C. Pedraza and F. Restrepo-Calle. *Reducing Overheads in Software-based Fault Tolerant Systems…* LATS 2019. doi: [10.1109/LATW.2019.8704586](https://doi.org/10.1109/LATW.2019.8704586)\n- A. Aponte-Moreno et al. *A review of approximate computing techniques towards fault mitigation…* LATS 2018. doi: [10.1109/LATW.2018.8347241](https://doi.org/10.1109/LATW.2018.8347241)\n"
+  },
+  "project:transito": {
+    "title_short": "Road crash prediction model",
+    "title_full": "Road crash prediction model",
+    "summary": "Adding variables on road crashes and road infrastructure problems taken from social networks and mobility apps can improve estimates of where crashes occur, compared with models based only on official crash data.",
+    "content": "# Road crash prediction model\n\n![Road crash prediction model](/images/PLaS/proyectos/proyecto13.webp)\n\n## Description\n\nAdding variables on crashes and road infrastructure taken from **social networks** and mobility apps can improve estimates of crash occurrence, compared with models that use only official crash data.\n\nThe project seeks to identify variables that contribute to a more complete model of crash probability in a city like **Bogotá**.\n\n### Results / publications\n\nCamilo Gutierrez-Osorio; Cesar Augusto Pedraza. *Characterizing road accidents in urban areas of Bogota (Colombia): A data science approach*. 2019 2nd Latin American Conference on Intelligent Transportation Systems (ITS LATAM). IEEE.\n"
+  },
+  "project:maleza": {
+    "title_short": "Weed quantification in vegetable crops",
+    "title_full": "Weed quantification in vegetable crops",
+    "summary": "This project develops software to quantify weeds in vegetable crops in Colombian farming areas from multispectral images, so that herbicides can be applied more precisely.",
+    "content": "# Weed quantification in vegetable crops\n\n![Weed quantification in vegetable crops](/images/PLaS/proyectos/proyecto14.jpg)\n\n## Description\n\nThe goal is to develop software that **quantifies weeds** in vegetable crops in Colombian farming areas from **multispectral images**.\n\nThis technology is expected to locate more precisely where to apply herbicides, improving economic efficiency and bringing environmental and health benefits.\n"
+  }
+}

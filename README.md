@@ -86,6 +86,7 @@ Cada página existe en español en la raíz (`/lines`) y en inglés bajo `/en` (
 
 - **Textos de la interfaz:** `src/i18n/es.ts` y `src/i18n/en.ts`. `en.ts` está tipado contra `es.ts`, así que una clave faltante es un error de `npm run check`.
 - **Contenido:** los JSON de `src/data/` son la fuente en español; `src/data/en/*.json` guarda solo los campos traducidos, por `id` del registro (`lines`, `faculty`, `projects`, `blog`) o por línea y nodo (`line-topic-graphs`). Lo que no esté traducido se muestra en español y se marca con `lang="es"`. Títulos y resúmenes de publicaciones y tesis se quedan en su idioma original.
+- **Enlaces en el markdown** de proyectos y blog: escribir rutas sin idioma (`/contact`, `/lines/educacion`); en las páginas en inglés se convierten solas a `/en/…`.
 - **Ejemplo:** para traducir un proyecto, agregar a `src/data/en/projects.json` `{ "<id del proyecto>": { "title_short": "…", "summary": "…", "content": "…" } }`.
 - **Primera visita:** si el navegador no prefiere español, se redirige a `/en/…` (los bots no). El selector ES/EN del encabezado guarda la elección y desactiva la redirección.
 
